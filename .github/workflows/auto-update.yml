@@ -1,5 +1,71 @@
 name: Auto Update API Stations
 
+'on':
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-stations:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: stable
+    
+    - name: Install ChromeDriver
+      uses: nanasess/setup-chromedriver@master
+    
+    - name: Install Python dependencies
+      run: |
+        pip install requests beautifulsoup4 selenium webdriver-manager
+    
+    - name: Run crawler
+      run: |
+        python scripts/crawler.py
+      env:
+        PYTHONUNBUFFERED: 1
+    
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if git diff --quiet; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add index.html data/
+        git commit -m "自动更新中转站数据 - $(date +'%Y-%m-%d %H:%M')"
+        git push
+    
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: crawler-results
+        path: |
+          data/stations.json
+          data/report.json
+        retention-days: 30name: Auto Update API Stations
+
 on:
   schedule:
     # 每天北京时间早上8点运行 (UTC 0点)
