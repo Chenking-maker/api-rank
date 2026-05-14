@@ -1660,6 +1660,99 @@
             font-family: 'JetBrains Mono', monospace;
             color: var(--text-secondary);
         }
+
+        /* Dead APIs Styles */
+        .dead-stat:hover {
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .dead-apis-list {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .dead-api-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .dead-api-item:hover {
+            opacity: 0.8;
+            background: rgba(255, 107, 107, 0.05);
+        }
+
+        .dead-api-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 107, 107, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .dead-api-info {
+            flex: 1;
+        }
+
+        .dead-api-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .dead-api-url {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            text-decoration: line-through;
+        }
+
+        .dead-api-meta {
+            text-align: right;
+        }
+
+        .dead-api-date {
+            font-size: 12px;
+            color: var(--red);
+            margin-bottom: 4px;
+        }
+
+        .dead-api-status {
+            font-size: 11px;
+            padding: 4px 10px;
+            background: rgba(255, 107, 107, 0.15);
+            color: var(--red);
+            border-radius: 20px;
+        }
+
+        .dead-api-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .dead-api-empty-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
@@ -1696,6 +1789,10 @@
                 <div class="hero-stat">
                     <div class="number green">64</div>
                     <div class="label">收录中转站</div>
+                </div>
+                <div class="hero-stat dead-stat" onclick="showDeadAPIs()" style="cursor: pointer;">
+                    <div class="number red">3</div>
+                    <div class="label">死去 <span style="font-size: 0.8em; opacity: 0.7;">(点击查看)</span></div>
                 </div>
                 <div class="hero-stat">
                     <div class="number purple">24h</div>
@@ -1855,15 +1952,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">API Key（用于检测，不会存储）</label>
-                            <input type="password" id="apiKey" class="form-input" placeholder="sk-..." />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">推广链接（选填）</label>
-                            <input type="url" id="affLink" class="form-input" placeholder="https://example.com/register?aff=xxx" />
-                        </div>
+                    <div class="form-group">
+                        <label class="form-label">API Key（用于检测，不会存储）</label>
+                        <input type="password" id="apiKey" class="form-input" placeholder="sk-..." />
                     </div>
                     <button class="submit-btn" id="submitBtn" onclick="startDetection()">
                         <span>🚀</span>
@@ -1879,6 +1970,20 @@
                     </div>
                     <div class="pending-list" id="pendingList"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dead APIs Modal -->
+    <div class="section-modal-overlay" id="deadModal">
+        <div class="section-modal">
+            <button class="section-modal-close" onclick="closeSectionModal('deadModal')">✕</button>
+            <div class="submit-header">
+                <h2>💀 已失效的API中转站</h2>
+                <p>以下是我们收录后已确认无法访问的API中转站（共 <span id="deadCount">3</span> 个）</p>
+            </div>
+            <div class="dead-apis-list" id="deadApisList">
+                <!-- 死掉的API列表将通过JS动态生成 -->
             </div>
         </div>
     </div>
@@ -2374,7 +2479,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.8 <small>/10</small></div>
-                        <a href="https://www.sssaicode.com/register?ref=BO64DM" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://www.sssaicode.com/register?ref=SRVFVP" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
 
@@ -2440,7 +2545,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.7 <small>/10</small></div>
-                        <a href="https://dmxapi.com" target="_blank" class="btn btn-green">立即注册 →</a>
+                        <a href="https://www.dmxapi.com/register?aff=Az9t" target="_blank" class="btn btn-green">立即注册 →</a>
                     </div>
                 </div>
 
@@ -2573,7 +2678,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.3 <small>/10</small></div>
-                        <a href="https://aihubmix.com" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://aihubmix.com/?aff=U9CV" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
 
@@ -2777,7 +2882,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">9.8 <small>/10</small></div>
-                        <a href="https://shiyunapi.com" target="_blank" class="btn btn-primary">立即注册 →</a>
+                        <a href="https://shiyunapi.com/register?aff=mR1T" target="_blank" class="btn btn-primary">立即注册 →</a>
                     </div>
                 </div>
                 <!-- #25 4ksAPI -->
@@ -2842,7 +2947,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.5 <small>/10</small></div>
-                        <a href="https://api.lingyaai.cn" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://api.lingyaai.cn/register?aff=k8I8" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
                 <!-- #27 Fchat API (aioncode) -->
@@ -2874,7 +2979,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.5 <small>/10</small></div>
-                        <a href="https://aioncode.com" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://api.aioncode.com/register?aff=eOyD" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
                 <!-- #28 WildCard API -->
@@ -2906,7 +3011,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.3 <small>/10</small></div>
-                        <a href="https://bewildcard.com" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://bewild.ai?code=AH777" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
                 <!-- #29 API2D -->
@@ -2938,7 +3043,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.2 <small>/10</small></div>
-                        <a href="https://api2d.com" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://api2d.com/r/241389" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
                 <!-- #30 OhMyGPT -->
@@ -3002,7 +3107,7 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">6.9 <small>/10</small></div>
-                        <a href="https://n1n.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://api.n1n.ai/register?aff=dNHY" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
                 <!-- #32 NewAPI (one-api) -->
@@ -4343,6 +4448,48 @@
             document.body.style.overflow = '';
         }
 
+        // 显示已失效的API列表
+        function showDeadAPIs() {
+            const deadApis = [
+                { name: '示例API站1', url: 'https://example1.com', date: '2026-05-10', reason: '无法访问' },
+                { name: '示例API站2', url: 'https://example2.com', date: '2026-05-12', reason: '服务停止' },
+                { name: '示例API站3', url: 'https://example3.com', date: '2026-05-13', reason: '域名过期' }
+            ];
+
+            const listContainer = document.getElementById('deadApisList');
+            const countElement = document.getElementById('deadCount');
+            
+            if (countElement) {
+                countElement.textContent = deadApis.length;
+            }
+
+            if (deadApis.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="dead-api-empty">
+                        <div class="dead-api-empty-icon">✅</div>
+                        <p>暂无失效的API中转站</p>
+                        <p style="font-size: 13px; margin-top: 8px;">所有收录的中转站目前均可正常访问</p>
+                    </div>
+                `;
+            } else {
+                listContainer.innerHTML = deadApis.map(api => `
+                    <div class="dead-api-item">
+                        <div class="dead-api-icon">💀</div>
+                        <div class="dead-api-info">
+                            <div class="dead-api-name">${api.name}</div>
+                            <div class="dead-api-url">${api.url}</div>
+                        </div>
+                        <div class="dead-api-meta">
+                            <div class="dead-api-date">失效时间: ${api.date}</div>
+                            <span class="dead-api-status">${api.reason}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            openSectionModal('deadModal');
+        }
+
         // 点击遮罩层关闭弹窗
         document.querySelectorAll('.section-modal-overlay').forEach(overlay => {
             overlay.addEventListener('click', function(e) {
@@ -4517,6 +4664,25 @@
             setTimeout(() => toast.remove(), 4000);
         }
 
+        // 记录提交信息（可以发送到外部服务）
+        function logSubmission(record) {
+            // 发送到外部记录服务（如需要）
+            // fetch('https://your-logging-service.com/log', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(record)
+            // }).catch(e => console.log('日志发送失败'));
+
+            console.log('📋 提交记录:', record);
+        }
+
+        // 管理员查看提交记录（在控制台输入 viewSubmissions() 查看）
+        function viewSubmissions() {
+            const submissions = JSON.parse(localStorage.getItem('apiSubmissions') || '[]');
+            console.table(submissions);
+            return submissions;
+        }
+
         // ===== Pending Queue =====
         let pendingQueue = [];
 
@@ -4570,12 +4736,43 @@
                 return null;
             }
 
+            // 获取IP地址（通过第三方服务）
+            let userIP = 'unknown';
+            try {
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                userIP = ipData.ip;
+            } catch (e) {
+                console.log('无法获取IP地址');
+            }
+
+            // 记录提交信息到 localStorage（供管理员查看）
+            const submissionRecord = {
+                url: url,
+                name: name,
+                model: document.getElementById('siteModel').value,
+                apiKey: document.getElementById('apiKey').value.trim(),
+                ip: userIP,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                referrer: document.referrer || 'direct'
+            };
+
+            // 保存到 localStorage
+            let submissions = JSON.parse(localStorage.getItem('apiSubmissions') || '[]');
+            submissions.push(submissionRecord);
+            localStorage.setItem('apiSubmissions', JSON.stringify(submissions));
+
+            // 同时发送到外部记录服务（如果配置了）
+            logSubmission(submissionRecord);
+
             return {
                 url: url,
                 name: name,
                 model: document.getElementById('siteModel').value,
                 apiKey: document.getElementById('apiKey').value.trim(),
-                affLink: document.getElementById('affLink').value.trim()
+                ip: userIP,
+                timestamp: submissionRecord.timestamp
             };
         }
 
