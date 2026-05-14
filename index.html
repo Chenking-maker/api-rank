@@ -834,6 +834,225 @@
             background: var(--text-secondary);
         }
 
+        /* ===== Finder Section ===== */
+        .finder-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .finder-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green), var(--accent));
+        }
+
+        .finder-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .finder-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .finder-header p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .finder-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .finder-btn {
+            width: 100%;
+            margin-top: 20px;
+            background: linear-gradient(135deg, var(--green), #00b894);
+        }
+
+        .finder-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 210, 160, 0.3);
+        }
+
+        .finder-results {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .finder-results-header h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .finder-paywall {
+            background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(0,210,160,0.1));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .paywall-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .paywall-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .paywall-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .paywall-price {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .admin-entry {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+            opacity: 0.7;
+        }
+
+        .admin-entry:hover {
+            opacity: 1;
+        }
+
+        .finder-cards {
+            display: grid;
+            gap: 16px;
+        }
+
+        .finder-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 40px 1fr auto;
+            gap: 16px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .finder-card:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .finder-card-rank {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .finder-card-rank.rank-1 { background: linear-gradient(135deg, #ffd43b, #f0932b); color: #000; }
+        .finder-card-rank.rank-2 { background: linear-gradient(135deg, #a8a8a8, #888); color: #000; }
+        .finder-card-rank.rank-3 { background: linear-gradient(135deg, #cd7f32, #b87333); color: #fff; }
+        .finder-card-rank.rank-4, .finder-card-rank.rank-5 { background: var(--bg-card); color: var(--text-secondary); }
+
+        .finder-card-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .finder-card-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .finder-card-score {
+            text-align: right;
+        }
+
+        .finder-card-score .score {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .finder-card-score .label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .finder-report {
+            margin-top: 40px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .finder-report h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .report-section {
+            margin-bottom: 24px;
+        }
+
+        .report-section h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--accent-light);
+        }
+
+        .report-section p, .report-section li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .report-section ul {
+            padding-left: 20px;
+        }
+
+        .report-section li::marker {
+            color: var(--accent);
+        }
+
+        .blurred-content {
+            filter: blur(5px);
+            user-select: none;
+            pointer-events: none;
+        }
+
         /* ===== Submit Section ===== */
         .submit-section {
             background: var(--bg-card);
@@ -1404,6 +1623,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#ranking">排行榜</a></li>
+                <li><a href="#finder" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
                 <li><a href="#submit">提交收录</a></li>
                 <li><a href="#price">价格对比</a></li>
                 <li><a href="#guide">选站指南</a></li>
@@ -1430,6 +1650,124 @@
                 <div class="hero-stat">
                     <div class="number yellow">6</div>
                     <div class="label">评测维度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finder Section - 找适合自己的中转站 -->
+    <section class="section" id="finder">
+        <div class="container">
+            <div class="finder-section">
+                <div class="finder-header">
+                    <h2>🎯 找适合自己的中转站</h2>
+                    <p>填写您的需求，系统将智能匹配最适合的5个API中转站</p>
+                </div>
+                
+                <div class="finder-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">使用模型 *</label>
+                            <select id="finderModel" class="form-select">
+                                <option value="all">不限</option>
+                                <option value="claude">Claude</option>
+                                <option value="gpt">GPT</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="domestic">国产模型（DeepSeek/通义/豆包等）</option>
+                                <option value="multi">多模型都需要</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">月预算 *</label>
+                            <select id="finderBudget" class="form-select">
+                                <option value="low">低预算（50元以内）</option>
+                                <option value="medium">中等预算（50-200元）</option>
+                                <option value="high">高预算（200元以上）</option>
+                                <option value="enterprise">企业级（预算充足）</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">使用场景 *</label>
+                            <select id="finderScene" class="form-select">
+                                <option value="coding">编程开发（Claude Code/Cursor等）</option>
+                                <option value="chat">日常对话/写作</option>
+                                <option value="api">API调用/应用开发</option>
+                                <option value="enterprise">企业生产环境</option>
+                                <option value="learning">学习测试</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">特殊需求</label>
+                            <select id="finderSpecial" class="form-select">
+                                <option value="none">无特殊需求</option>
+                                <option value="direct">国内直连（无需翻墙）</option>
+                                <option value="stable">高稳定性（企业级SLA）</option>
+                                <option value="cheap">最低价格优先</option>
+                                <option value="fast">响应速度优先</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">并发需求</label>
+                            <select id="finderConcurrency" class="form-select">
+                                <option value="low">低并发（个人使用）</option>
+                                <option value="medium">中等并发（小团队）</option>
+                                <option value="high">高并发（企业/大流量）</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">付费方式偏好</label>
+                            <select id="finderPayment" class="form-select">
+                                <option value="both">都可以</option>
+                                <option value="payg">按量计费（用多少付多少）</option>
+                                <option value="monthly">包月套餐（固定费用）</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="submit-btn finder-btn" onclick="startFinder()">
+                        <span>🔍</span>
+                        <span>开始智能匹配</span>
+                    </button>
+                </div>
+
+                <!-- Finder Results -->
+                <div class="finder-results" id="finderResults" style="display:none;">
+                    <div class="finder-results-header">
+                        <h3>📊 为您推荐以下 5 个中转站</h3>
+                        <div class="finder-paywall" id="finderPaywall">
+                            <div class="paywall-content">
+                                <div class="paywall-icon">🔒</div>
+                                <div class="paywall-title">查看完整推荐结果</div>
+                                <div class="paywall-desc">购买《API中转站选择指南》解锁完整分析报告</div>
+                                <div class="paywall-price">¥199</div>
+                                <button class="btn btn-primary" onclick="showPaymentInfo()">立即购买</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 商家内部入口 -->
+                    <div class="admin-entry">
+                        <input type="password" id="adminPassword" class="form-input" placeholder="商家内部入口（输入密码）" style="max-width: 300px;" />
+                        <button class="btn btn-outline btn-sm" onclick="verifyAdmin()">验证</button>
+                    </div>
+
+                    <div class="finder-cards" id="finderCards">
+                        <!-- 结果卡片将通过JS动态生成 -->
+                    </div>
+
+                    <!-- 对比报告 -->
+                    <div class="finder-report" id="finderReport" style="display:none;">
+                        <h3>📋 详细对比分析报告</h3>
+                        <div class="report-content" id="reportContent">
+                            <!-- 报告内容将通过JS动态生成 -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3298,6 +3636,149 @@
                 };
                 titleEl.textContent = (labels[type] || type) + ' · ' + visibleCount + '个';
             }
+        }
+
+        // ===== Finder System - 智能筛选 =====
+        const ADMIN_PASSWORD = 'apirank2026'; // 商家内部密码
+        
+        // 中转站数据库（用于筛选匹配）
+        const stationDatabase = [
+            { name: '诗云API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路'], freeAmount: '新用户送额度' },
+            { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable'], concurrency: 'high', payment: 'both', score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['智能路由','对公开票','企业级'], freeAmount: '无免费额度' },
+            { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
+            { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
+            { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
+            { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 8.5, support: 7.5, features: ['GPT专精','低价','按量计费'], freeAmount: '新用户送额度' },
+            { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
+            { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '无免费额度' },
+            { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
+            { name: '火山引擎(豆包)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
+        ];
+
+        let isAdminUnlocked = false;
+
+        function startFinder() {
+            const model = document.getElementById('finderModel').value;
+            const budget = document.getElementById('finderBudget').value;
+            const scene = document.getElementById('finderScene').value;
+            const special = document.getElementById('finderSpecial').value;
+            const concurrency = document.getElementById('finderConcurrency').value;
+            const payment = document.getElementById('finderPayment').value;
+
+            // 计算匹配分数
+            const results = stationDatabase.map(station => {
+                let score = station.score;
+                
+                // 模型匹配
+                if (model !== 'all' && !station.models.includes(model) && !station.models.includes('domestic')) {
+                    score -= 3;
+                }
+                
+                // 预算匹配
+                if (budget === 'low' && station.price === 'high') score -= 2;
+                if (budget === 'high' && station.price === 'low') score += 0.5;
+                if (budget === 'enterprise' && station.concurrency !== 'high') score -= 1;
+                
+                // 场景匹配
+                if (!station.scene.includes(scene)) score -= 1;
+                
+                // 特殊需求
+                if (special !== 'none' && !station.special.includes(special)) score -= 1.5;
+                
+                // 并发匹配
+                if (concurrency === 'high' && station.concurrency !== 'high') score -= 1;
+                
+                // 付费方式
+                if (payment !== 'both' && station.payment !== payment && station.payment !== 'both') score -= 0.5;
+
+                return { ...station, matchScore: Math.max(score, 5).toFixed(1) };
+            }).sort((a, b) => b.matchScore - a.matchScore).slice(0, 5);
+
+            // 显示结果
+            displayFinderResults(results);
+        }
+
+        function displayFinderResults(results) {
+            document.getElementById('finderResults').style.display = 'block';
+            
+            const cardsHtml = results.map((station, index) => `
+                <div class="finder-card">
+                    <div class="finder-card-rank rank-${index + 1}">${index + 1}</div>
+                    <div class="finder-card-info">
+                        <h4>${station.name}</h4>
+                        <p>${station.features.slice(0, 3).join(' · ')}</p>
+                    </div>
+                    <div class="finder-card-score">
+                        <div class="score">${station.matchScore}</div>
+                        <div class="label">匹配分</div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('finderCards').innerHTML = cardsHtml;
+
+            // 生成报告
+            generateReport(results);
+
+            // 滚动到结果
+            document.getElementById('finderResults').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateReport(results) {
+            const topStation = results[0];
+            const reportHtml = `
+                <div class="report-section">
+                    <h4>🏆 最佳推荐：${topStation.name}</h4>
+                    <p>根据您的需求，<strong>${topStation.name}</strong>是最匹配的选择，综合匹配度 ${topStation.matchScore} 分。</p>
+                    <p>核心优势：${topStation.features.join('、')}</p>
+                </div>
+                <div class="report-section">
+                    <h4>⚡ 响应速度对比</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：${s.speed >= 9 ? '极快' : s.speed >= 8 ? '较快' : '一般'} (${s.speed}/10)</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h4>💰 价格对比</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：${s.price === 'low' ? '低价实惠' : s.price === 'medium' ? '中等价位' : '高端定位'} · ${s.payment === 'payg' ? '按量计费' : s.payment === 'monthly' ? '包月套餐' : '两种都支持'}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h4>🛡️ 稳定性与口碑</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：稳定性 ${s.stability}/10 · 售后评分 ${s.support}/10</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h4>🎁 免费额度/新用户优惠</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：${s.freeAmount}</li>`).join('')}
+                    </ul>
+                    <p style="margin-top: 12px; color: var(--green);"><strong>推荐白嫖党：</strong>硅基流动（每日免费）、DeepSeek官方（每月免费）、OpenRouter（新用户$1）</p>
+                </div>
+            `;
+
+            document.getElementById('reportContent').innerHTML = reportHtml;
+        }
+
+        function verifyAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                isAdminUnlocked = true;
+                document.getElementById('finderPaywall').style.display = 'none';
+                document.getElementById('finderReport').style.display = 'block';
+                document.querySelector('.admin-entry').innerHTML = '<span style="color: var(--green);">✓ 商家模式已解锁</span>';
+                showToast('商家模式已解锁，可查看完整报告', 'success');
+            } else {
+                showToast('密码错误，请重试', 'error');
+            }
+        }
+
+        function showPaymentInfo() {
+            showToast('请联系客服购买《API中转站选择指南》', 'info');
+            // 这里可以跳转到购买页面或显示支付二维码
+            alert('购买《API中转站选择指南》¥199\n\n请联系客服：\n淘宝店铺：[您的店铺名]\n微信：[您的微信号]\n\n购买后可获得：\n1. 完整筛选结果\n2. 详细对比分析报告\n3. 一对一选站建议');
         }
 
         // ===== Toast System =====
