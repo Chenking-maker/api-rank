@@ -177,6 +177,41 @@
             font-weight: 600;
         }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         /* ===== Hero ===== */
         .hero {
             padding: 160px 0 80px;
@@ -805,8 +840,36 @@
                 gap: 24px;
             }
 
+            .mobile-menu-btn {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 20px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border-color);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-color);
             }
 
             .rank-metrics {
@@ -1753,6 +1816,42 @@
             margin-bottom: 16px;
             opacity: 0.5;
         }
+
+        /* Dead API Card Style */
+        .rank-card.dead {
+            opacity: 0.5;
+            filter: grayscale(80%);
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(30,30,40,0.8));
+            border-color: rgba(255,107,107,0.3);
+        }
+
+        .rank-card.dead .rank-name {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .rank-card.dead .rank-desc {
+            color: var(--text-muted);
+        }
+
+        .rank-card.dead .btn {
+            background: var(--text-muted);
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        .rank-card.dead .rank-score {
+            color: var(--red);
+        }
+
+        .rank-card.dead::before {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .tag-dead {
+            background: rgba(255,107,107,0.2);
+            color: var(--red);
+        }
     </style>
 </head>
 <body>
@@ -1768,6 +1867,11 @@
                 <div class="logo-icon">A</div>
                 <div class="logo-text">API<span>排行榜</span></div>
             </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#ranking">排行榜</a></li>
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
@@ -2149,14 +2253,14 @@
                     </div>
                 </div>
 
-                <!-- #3 非线智能Api -->
-                <div class="rank-card top-3 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
+                <!-- #3 非线智能Api (已失效) -->
+                <div class="rank-card top-3 dead fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
                     <div class="rank-number">#3</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">非线智能Api</span>
                             <div class="rank-tags">
-                                <span class="tag tag-new">模型最全</span>
+                                <span class="tag tag-dead">💀 已失效</span>
                                 <span class="tag tag-stable">480+模型</span>
                                 <span class="tag tag-upstream">企业级</span>
                             </div>
@@ -2164,12 +2268,12 @@
                         <div class="rank-desc">支持480+模型，Claude/GPT/Gemini/DeepSeek/千问全覆盖。三协议兼容，企业子账号管理，SLA 99.99%。</div>
                         <div class="rank-metrics">
                             <div class="metric">
-                                <span class="metric-label">模型覆盖</span>
-                                <span class="metric-value green">480+</span>
+                                <span class="metric-label">状态</span>
+                                <span class="metric-value" style="color: var(--red);">404 Not Found</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">新模型</span>
-                                <span class="metric-value accent">当天上架</span>
+                                <span class="metric-label">失效时间</span>
+                                <span class="metric-value">2026-05-15</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">新人福利</span>
@@ -2178,8 +2282,8 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.1 <small>/10</small></div>
-                        <a href="https://api.nonelinear.com" target="_blank" class="btn btn-green">立即注册 →</a>
+                        <div class="rank-score" style="color: var(--red);">失效</div>
+                        <span class="btn" style="background: var(--text-muted); cursor: not-allowed;">已失效</span>
                     </div>
                 </div>
 
@@ -4134,26 +4238,25 @@
                         <a href="https://gptsapi.net" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #64 CloseAI -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <!-- #64 CloseAI (已失效) -->
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#64</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">CloseAI</span>
                             <div class="rank-tags">
-                                <span class="tag tag-new">🆕新收录</span>
-                                <span class="tag tag-stable">评测推荐</span>
+                                <span class="tag tag-dead">💀 已失效</span>
                             </div>
                         </div>
                         <div class="rank-desc">多个评测平台推荐的中转站，支持Claude和GPT系列，接口稳定。</div>
                         <div class="rank-metrics">
                             <div class="metric">
-                                <span class="metric-label">特色</span>
-                                <span class="metric-value green">评测推荐</span>
+                                <span class="metric-label">状态</span>
+                                <span class="metric-value" style="color: var(--red);">无法访问</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">模型</span>
-                                <span class="metric-value accent">Claude/GPT</span>
+                                <span class="metric-label">失效时间</span>
+                                <span class="metric-value">2026-05-15</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">来源</span>
@@ -4162,8 +4265,8 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">6.9 <small>/10</small></div>
-                        <a href="https://closeai.net" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <div class="rank-score" style="color: var(--red);">失效</div>
+                        <span class="btn" style="background: var(--text-muted); cursor: not-allowed;">已失效</span>
                     </div>
                 </div>
             </div>
@@ -4437,10 +4540,21 @@
             }
         }
 
+        // ===== Mobile Menu Toggle =====
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+        }
+
         // ===== Section Modal System =====
         function openSectionModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
+            // 关闭移动端菜单
+            document.querySelector('.nav-links').classList.remove('active');
+            document.querySelector('.mobile-menu-btn').classList.remove('active');
         }
 
         function closeSectionModal(id) {
@@ -4451,9 +4565,9 @@
         // 显示已失效的API列表
         function showDeadAPIs() {
             const deadApis = [
-                { name: '示例API站1', url: 'https://example1.com', date: '2026-05-10', reason: '无法访问' },
-                { name: '示例API站2', url: 'https://example2.com', date: '2026-05-12', reason: '服务停止' },
-                { name: '示例API站3', url: 'https://example3.com', date: '2026-05-13', reason: '域名过期' }
+                { name: '非线智能Api', url: 'https://api.nonelinear.com', date: '2026-05-15', reason: '404 Not Found' },
+                { name: 'CloseAI', url: 'https://closeai-asia.com', date: '2026-05-15', reason: '无法访问' },
+                { name: 'OpenAI-SB', url: 'https://openai-sb.com', date: '2026-05-15', reason: '无法访问' }
             ];
 
             const listContainer = document.getElementById('deadApisList');
@@ -4520,9 +4634,9 @@
             { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
             { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
             { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
-            { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 8.5, support: 7.5, features: ['GPT专精','低价','按量计费'], freeAmount: '新用户送额度' },
+            { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 0, stability: 0, speed: 0, support: 0, features: ['GPT专精','低价','按量计费'], freeAmount: '已失效', dead: true, deadDate: '2026-05-15', deadReason: '无法访问' },
             { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
-            { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '无免费额度' },
+            { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 0, stability: 0, speed: 0, support: 0, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '已失效', dead: true, deadDate: '2026-05-15', deadReason: '无法访问' },
             { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
             { name: '火山引擎(豆包)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
         ];
@@ -4736,7 +4850,16 @@
                 return null;
             }
 
-            // 获取IP地址（通过第三方服务）
+            return {
+                url: url,
+                name: name,
+                model: document.getElementById('siteModel').value,
+                apiKey: document.getElementById('apiKey').value.trim()
+            };
+        }
+
+        // 异步获取用户IP并记录提交信息
+        async function recordSubmission(formData) {
             let userIP = 'unknown';
             try {
                 const ipResponse = await fetch('https://api.ipify.org?format=json');
@@ -4748,12 +4871,11 @@
 
             // 记录提交信息到 localStorage（供管理员查看）
             const submissionRecord = {
-                url: url,
-                name: name,
-                model: document.getElementById('siteModel').value,
-                apiKey: document.getElementById('apiKey').value.trim(),
-                ip: userIP,
+                url: formData.url,
+                name: formData.name,
+                model: formData.model,
                 timestamp: new Date().toISOString(),
+                ip: userIP,
                 userAgent: navigator.userAgent,
                 referrer: document.referrer || 'direct'
             };
@@ -4766,14 +4888,7 @@
             // 同时发送到外部记录服务（如果配置了）
             logSubmission(submissionRecord);
 
-            return {
-                url: url,
-                name: name,
-                model: document.getElementById('siteModel').value,
-                apiKey: document.getElementById('apiKey').value.trim(),
-                ip: userIP,
-                timestamp: submissionRecord.timestamp
-            };
+            return submissionRecord;
         }
 
         function setStepState(stepNum, state, resultText) {
@@ -4812,6 +4927,9 @@
 
             const formData = validateForm();
             if (!formData) return;
+
+            // 异步记录提交信息（不阻塞检测流程）
+            recordSubmission(formData);
 
             isDetecting = true;
             const btn = document.getElementById('submitBtn');
@@ -5095,10 +5213,19 @@
         // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // 跳过空锚点或只有#的链接
+                if (!href || href === '#') return;
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                try {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } catch (err) {
+                    // 忽略无效选择器错误
+                    console.log('Invalid selector:', href);
                 }
             });
         });
