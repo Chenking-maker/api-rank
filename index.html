@@ -1189,6 +1189,60 @@
             box-shadow: none;
         }
 
+        /* ===== Generic Section Modal ===== */
+        .section-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            z-index: 150;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 24px;
+            overflow-y: auto;
+        }
+
+        .section-modal-overlay.active {
+            display: flex;
+        }
+
+        .section-modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            animation: modalIn 0.3s ease;
+            margin: auto 0;
+        }
+
+        .section-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .section-modal-close:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
         /* ===== Detection Result Modal ===== */
         .detect-overlay {
             display: none;
@@ -1623,8 +1677,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#ranking">排行榜</a></li>
-                <li><a href="#finder" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
-                <li><a href="#submit">提交收录</a></li>
+                <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
+                <li><a href="javascript:void(0)" onclick="openSectionModal('submitModal')">提交收录</a></li>
                 <li><a href="#price">价格对比</a></li>
                 <li><a href="#guide">选站指南</a></li>
                 <li><span class="nav-badge">实时更新</span></li>
@@ -1655,14 +1709,14 @@
         </div>
     </section>
 
-    <!-- Finder Section - 找适合自己的中转站 -->
-    <section class="section" id="finder">
-        <div class="container">
-            <div class="finder-section">
-                <div class="finder-header">
-                    <h2>🎯 找适合自己的中转站</h2>
-                    <p>填写您的需求，系统将智能匹配最适合的5个API中转站</p>
-                </div>
+    <!-- Finder Modal - 找适合自己的中转站 -->
+    <div class="section-modal-overlay" id="finderModal">
+        <div class="section-modal">
+            <button class="section-modal-close" onclick="closeSectionModal('finderModal')">✕</button>
+            <div class="finder-header">
+                <h2>🎯 找适合自己的中转站</h2>
+                <p>填写您的需求，系统将智能匹配最适合的5个API中转站</p>
+            </div>
                 
                 <div class="finder-form">
                     <div class="form-row">
@@ -1771,16 +1825,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Submit & Detect Section -->
-    <section class="section" id="submit">
-        <div class="container">
-            <div class="submit-section">
-                <div class="submit-header">
-                    <h2>🔍 提交中转站收录</h2>
-                    <p>输入中转站网址，系统将自动检测其可用性并评估是否收录</p>
-                </div>
+    <!-- Submit Modal - 提交收录 -->
+    <div class="section-modal-overlay" id="submitModal">
+        <div class="section-modal">
+            <button class="section-modal-close" onclick="closeSectionModal('submitModal')">✕</button>
+            <div class="submit-header">
+                <h2>🔍 提交中转站收录</h2>
+                <p>输入中转站网址，系统将自动检测其可用性并评估是否收录</p>
+            </div>
                 <div class="submit-form">
                     <div class="form-group">
                         <label class="form-label">中转站网址 *</label>
@@ -1827,7 +1881,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Detection Modal -->
     <div class="detect-overlay" id="detectOverlay">
@@ -3637,6 +3691,37 @@
                 titleEl.textContent = (labels[type] || type) + ' · ' + visibleCount + '个';
             }
         }
+
+        // ===== Section Modal System =====
+        function openSectionModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSectionModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // 点击遮罩层关闭弹窗
+        document.querySelectorAll('.section-modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // ESC 关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.section-modal-overlay.active').forEach(m => {
+                    m.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
 
         // ===== Finder System - 智能筛选 =====
         const ADMIN_PASSWORD = 'apirank2026'; // 商家内部密码
