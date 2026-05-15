@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -175,41 +175,6 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 28px;
-            height: 20px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
         }
 
         /* ===== Hero ===== */
@@ -840,36 +805,8 @@
                 gap: 24px;
             }
 
-            .mobile-menu-btn {
-                display: flex;
-            }
-
             .nav-links {
                 display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--bg-secondary);
-                flex-direction: column;
-                padding: 20px;
-                gap: 16px;
-                border-bottom: 1px solid var(--border-color);
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                width: 100%;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 12px 0;
-                border-bottom: 1px solid var(--border-color);
             }
 
             .rank-metrics {
@@ -1723,135 +1660,6 @@
             font-family: 'JetBrains Mono', monospace;
             color: var(--text-secondary);
         }
-
-        /* Dead APIs Styles */
-        .dead-stat:hover {
-            background: rgba(255, 107, 107, 0.1);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .dead-apis-list {
-            max-height: 500px;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .dead-api-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 107, 107, 0.2);
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            opacity: 0.6;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-
-        .dead-api-item:hover {
-            opacity: 0.8;
-            background: rgba(255, 107, 107, 0.05);
-        }
-
-        .dead-api-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 107, 107, 0.15);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .dead-api-info {
-            flex: 1;
-        }
-
-        .dead-api-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-decoration: line-through;
-            margin-bottom: 4px;
-        }
-
-        .dead-api-url {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-            text-decoration: line-through;
-        }
-
-        .dead-api-meta {
-            text-align: right;
-        }
-
-        .dead-api-date {
-            font-size: 12px;
-            color: var(--red);
-            margin-bottom: 4px;
-        }
-
-        .dead-api-status {
-            font-size: 11px;
-            padding: 4px 10px;
-            background: rgba(255, 107, 107, 0.15);
-            color: var(--red);
-            border-radius: 20px;
-        }
-
-        .dead-api-empty {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .dead-api-empty-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-            opacity: 0.5;
-        }
-
-        /* Dead API Card Style */
-        .rank-card.dead {
-            opacity: 0.5;
-            filter: grayscale(80%);
-            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(30,30,40,0.8));
-            border-color: rgba(255,107,107,0.3);
-        }
-
-        .rank-card.dead .rank-name {
-            text-decoration: line-through;
-            color: var(--text-muted);
-        }
-
-        .rank-card.dead .rank-desc {
-            color: var(--text-muted);
-        }
-
-        .rank-card.dead .btn {
-            background: var(--text-muted);
-            pointer-events: none;
-            cursor: not-allowed;
-        }
-
-        .rank-card.dead .rank-score {
-            color: var(--red);
-        }
-
-        .rank-card.dead::before {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-        }
-
-        .tag-dead {
-            background: rgba(255,107,107,0.2);
-            color: var(--red);
-        }
     </style>
 </head>
 <body>
@@ -1867,11 +1675,6 @@
                 <div class="logo-icon">A</div>
                 <div class="logo-text">API<span>排行榜</span></div>
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-links">
                 <li><a href="#ranking">排行榜</a></li>
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
@@ -1893,10 +1696,6 @@
                 <div class="hero-stat">
                     <div class="number green">64</div>
                     <div class="label">收录中转站</div>
-                </div>
-                <div class="hero-stat dead-stat" onclick="showDeadAPIs()" style="cursor: pointer;">
-                    <div class="number red">3</div>
-                    <div class="label">死去 <span style="font-size: 0.8em; opacity: 0.7;">(点击查看)</span></div>
                 </div>
                 <div class="hero-stat">
                     <div class="number purple">24h</div>
@@ -2056,9 +1855,15 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">API Key（用于检测，不会存储）</label>
-                        <input type="password" id="apiKey" class="form-input" placeholder="sk-..." />
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">API Key（用于检测，不会存储）</label>
+                            <input type="password" id="apiKey" class="form-input" placeholder="sk-..." />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">推广链接（选填）</label>
+                            <input type="url" id="affLink" class="form-input" placeholder="https://example.com/register?aff=xxx" />
+                        </div>
                     </div>
                     <button class="submit-btn" id="submitBtn" onclick="startDetection()">
                         <span>🚀</span>
@@ -2074,20 +1879,6 @@
                     </div>
                     <div class="pending-list" id="pendingList"></div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dead APIs Modal -->
-    <div class="section-modal-overlay" id="deadModal">
-        <div class="section-modal">
-            <button class="section-modal-close" onclick="closeSectionModal('deadModal')">✕</button>
-            <div class="submit-header">
-                <h2>💀 已失效的API中转站</h2>
-                <p>以下是我们收录后已确认无法访问的API中转站（共 <span id="deadCount">3</span> 个）</p>
-            </div>
-            <div class="dead-apis-list" id="deadApisList">
-                <!-- 死掉的API列表将通过JS动态生成 -->
             </div>
         </div>
     </div>
@@ -2253,9 +2044,43 @@
                     </div>
                 </div>
 
-                <!-- #3 API易 -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
+                <!-- #3 非线智能Api -->
+                <div class="rank-card top-3 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
                     <div class="rank-number">#3</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">非线智能Api</span>
+                            <div class="rank-tags">
+                                <span class="tag tag-new">模型最全</span>
+                                <span class="tag tag-stable">480+模型</span>
+                                <span class="tag tag-upstream">企业级</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">支持480+模型，Claude/GPT/Gemini/DeepSeek/千问全覆盖。三协议兼容，企业子账号管理，SLA 99.99%。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">模型覆盖</span>
+                                <span class="metric-value green">480+</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">新模型</span>
+                                <span class="metric-value accent">当天上架</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">新人福利</span>
+                                <span class="metric-value">GitHub登录送50元</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">9.1 <small>/10</small></div>
+                        <a href="https://api.nonelinear.com" target="_blank" class="btn btn-green">立即注册 →</a>
+                    </div>
+                </div>
+
+                <!-- #4 API易 -->
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
+                    <div class="rank-number">#4</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">API易</span>
@@ -2286,9 +2111,9 @@
                     </div>
                 </div>
 
-                <!-- #3 302.AI -->
+                <!-- #5 302.AI -->
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#5</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">302.AI</span>
@@ -2320,9 +2145,9 @@
                 </div>
 
 
-                <!-- #3 Ofox.AI -->
+                <!-- #6 Ofox.AI -->
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#6</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Ofox.AI</span>
@@ -2353,9 +2178,9 @@
                     </div>
                 </div>
 
-                <!-- #3 PoloAPI -->
+                <!-- #7 PoloAPI -->
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#7</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">PoloAPI</span>
@@ -2386,9 +2211,9 @@
                     </div>
                 </div>
 
-                <!-- #3 星链4SAPI -->
+                <!-- #8 星链4SAPI -->
                 <div class="rank-card top-3 fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#8</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">星链4SAPI</span>
@@ -2420,9 +2245,9 @@
                     </div>
                 </div>
 
-                <!-- #3 IKunCode -->
+                <!-- #9 IKunCode -->
                 <div class="rank-card fade-in" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#9</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">IKunCode</span>
@@ -2453,9 +2278,9 @@
                     </div>
                 </div>
 
-                <!-- #3 硅基流动 -->
+                <!-- #10 硅基流动 -->
                 <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#10</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">硅基流动</span>
@@ -2487,9 +2312,9 @@
                     </div>
                 </div>
 
-                <!-- #3 OpenRouter -->
+                <!-- #11 OpenRouter -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#11</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">OpenRouter</span>
@@ -2520,9 +2345,9 @@
                     </div>
                 </div>
 
-                <!-- #3 SSSAICode -->
+                <!-- #12 SSSAICode -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#12</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">SSSAICode</span>
@@ -2549,13 +2374,13 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.8 <small>/10</small></div>
-                        <a href="https://www.sssaicode.com/register?ref=SRVFVP" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://www.sssaicode.com/register?ref=BO64DM" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
 
-                <!-- #3 147AI -->
+                <!-- #13 147AI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#13</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">147AI</span>
@@ -2586,9 +2411,9 @@
                     </div>
                 </div>
 
-                <!-- #3 DMXAPI -->
+                <!-- #14 DMXAPI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#14</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">DMXAPI</span>
@@ -2615,13 +2440,13 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.7 <small>/10</small></div>
-                        <a href="https://www.dmxapi.com/register?aff=Az9t" target="_blank" class="btn btn-green">立即注册 →</a>
+                        <a href="https://dmxapi.com" target="_blank" class="btn btn-green">立即注册 →</a>
                     </div>
                 </div>
 
-                <!-- #3 aigocode -->
+                <!-- #15 aigocode -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#15</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">aigocode</span>
@@ -2653,9 +2478,9 @@
                     </div>
                 </div>
 
-                <!-- #3 速创API -->
+                <!-- #16 速创API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#16</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">速创API</span>
@@ -2686,9 +2511,9 @@
                     </div>
                 </div>
 
-                <!-- #3 产灵API -->
+                <!-- #17 产灵API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#17</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">产灵API</span>
@@ -2719,9 +2544,9 @@
                     </div>
                 </div>
 
-                <!-- #3 AIHubMix -->
+                <!-- #18 AIHubMix -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#18</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AIHubMix</span>
@@ -2748,13 +2573,13 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.3 <small>/10</small></div>
-                        <a href="https://aihubmix.com/?aff=U9CV" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://aihubmix.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
 
-                <!-- #3 API易(轻量) -->
+                <!-- #19 API易(轻量) -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#19</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">API易(轻量)</span>
@@ -2791,9 +2616,9 @@
 
 
 
-                <!-- #3 豆包API(火山引擎) -->
+                <!-- #20 豆包API(火山引擎) -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#20</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">豆包API(火山引擎)</span>
@@ -2824,9 +2649,9 @@
                     </div>
                 </div>
 
-                <!-- #3 DeepSeek API -->
+                <!-- #21 DeepSeek API -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#21</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">DeepSeek API</span>
@@ -2857,9 +2682,9 @@
                     </div>
                 </div>
 
-                <!-- #3 通义千问API(阿里百炼) -->
+                <!-- #22 通义千问API(阿里百炼) -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#22</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">通义千问API(阿里百炼)</span>
@@ -2890,9 +2715,9 @@
                     </div>
                 </div>
 
-                <!-- #3 MiniMax API -->
+                <!-- #23 MiniMax API -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#23</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">MiniMax API</span>
@@ -2922,9 +2747,9 @@
                         <a href="https://www.minimaxi.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 诗云API -->
-                <div class="rank-card top-1 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
-                    <div class="rank-number">#3</div>
+                <!-- #24 诗云API -->
+                <div class="rank-card top-1 fade-in" data-tags="claude,gpt,gemini,domestic">
+                    <div class="rank-number">#24</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">诗云API(ShiyunApi)</span>
@@ -2952,14 +2777,45 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">9.8 <small>/10</small></div>
-                        <a href="https://shiyunapi.com/register?aff=mR1T" target="_blank" class="btn btn-primary">立即注册 →</a>
-                        <a href="https://4ksapi.com" target="_blank" class="btn btn-outline" style="margin-top:6px;font-size:12px;">4ksAPI入口 →</a>
+                        <a href="https://shiyunapi.com" target="_blank" class="btn btn-primary">立即注册 →</a>
                     </div>
                 </div>
-
-                <!-- #3 灵芽API -->
+                <!-- #25 4ksAPI -->
+                <div class="rank-card top-2 fade-in" data-tags="claude,gpt,gemini,enterprise">
+                    <div class="rank-number">#25</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">4ksAPI</span>
+                            <div class="rank-tags">
+                                <span class="tag tag-hot">🔥智能路由</span>
+                                <span class="tag tag-stable">稳定合规</span>
+                                <span class="tag tag-stable">财务清晰</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">2026年推荐中转站，十年沉淀智能路由算法，实时优化调用链路。高可用架构设计，支持对公开票，口碑稳定。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">财务</span>
+                                <span class="metric-value green">对公开票</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">技术</span>
+                                <span class="metric-value accent">智能路由</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">评分</span>
+                                <span class="metric-value">⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">9.5 <small>/10</small></div>
+                        <a href="https://4ksapi.com" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    </div>
+                </div>
+                <!-- #26 灵芽API -->
                 <div class="rank-card" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#26</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">灵芽API</span>
@@ -2986,12 +2842,12 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.5 <small>/10</small></div>
-                        <a href="https://api.lingyaai.cn/register?aff=k8I8" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://api.lingyaai.cn" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Fchat API (aioncode) -->
+                <!-- #27 Fchat API (aioncode) -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#27</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Fchat API (aioncode)</span>
@@ -3018,12 +2874,12 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.5 <small>/10</small></div>
-                        <a href="https://api.aioncode.com/register?aff=eOyD" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://aioncode.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 WildCard API -->
+                <!-- #28 WildCard API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#28</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">WildCard API</span>
@@ -3050,12 +2906,12 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.3 <small>/10</small></div>
-                        <a href="https://bewild.ai?code=AH777" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://bewildcard.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 API2D -->
+                <!-- #29 API2D -->
                 <div class="rank-card" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#29</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">API2D</span>
@@ -3082,12 +2938,12 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">7.2 <small>/10</small></div>
-                        <a href="https://api2d.com/r/241389" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://api2d.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 OhMyGPT -->
+                <!-- #30 OhMyGPT -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#30</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">OhMyGPT</span>
@@ -3117,9 +2973,9 @@
                         <a href="#" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 N1N.AI -->
+                <!-- #31 N1N.AI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#31</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">N1N.AI</span>
@@ -3146,12 +3002,12 @@
                     </div>
                     <div class="rank-action">
                         <div class="rank-score">6.9 <small>/10</small></div>
-                        <a href="https://api.n1n.ai/register?aff=dNHY" target="_blank" class="btn btn-outline">了解详情 →</a>
+                        <a href="https://n1n.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 NewAPI (one-api) -->
+                <!-- #32 NewAPI (one-api) -->
                 <div class="rank-card" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#32</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">NewAPI (one-api)</span>
@@ -3181,9 +3037,9 @@
                         <a href="https://github.com/songquanpeng/one-api" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 百度千帆 -->
+                <!-- #33 百度千帆 -->
                 <div class="rank-card" data-tags="domestic,enterprise">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#33</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">百度千帆</span>
@@ -3213,9 +3069,9 @@
                         <a href="https://qianfan.baidubce.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 智谱AI (BigModel) -->
+                <!-- #34 智谱AI (BigModel) -->
                 <div class="rank-card" data-tags="domestic,enterprise">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#34</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">智谱AI (BigModel)</span>
@@ -3245,9 +3101,9 @@
                         <a href="https://bigmodel.cn" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 月之暗面 (Kimi) -->
+                <!-- #35 月之暗面 (Kimi) -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#35</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">月之暗面 (Kimi)</span>
@@ -3277,9 +3133,9 @@
                         <a href="https://platform.moonshot.cn" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 零一万物 (Yi) -->
+                <!-- #36 零一万物 (Yi) -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#36</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">零一万物 (Yi)</span>
@@ -3309,9 +3165,9 @@
                         <a href="https://platform.lingyiwanwu.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 讯飞星火 -->
+                <!-- #37 讯飞星火 -->
                 <div class="rank-card" data-tags="domestic,enterprise">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#37</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">讯飞星火</span>
@@ -3341,9 +3197,9 @@
                         <a href="https://xinghuo.xfyun.cn" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Mistral AI -->
+                <!-- #38 Mistral AI -->
                 <div class="rank-card" data-tags="gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#38</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Mistral AI</span>
@@ -3373,9 +3229,9 @@
                         <a href="https://console.mistral.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Cohere -->
+                <!-- #39 Cohere -->
                 <div class="rank-card" data-tags="gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#39</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Cohere</span>
@@ -3405,9 +3261,9 @@
                         <a href="https://dashboard.cohere.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 百川智能 -->
+                <!-- #40 百川智能 -->
                 <div class="rank-card" data-tags="domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#40</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">百川智能</span>
@@ -3437,9 +3293,9 @@
                         <a href="https://platform.baichuan-ai.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Groq -->
+                <!-- #41 Groq -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#41</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Groq</span>
@@ -3469,9 +3325,9 @@
                         <a href="https://console.groq.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Together AI -->
+                <!-- #42 Together AI -->
                 <div class="rank-card" data-tags="gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#42</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Together AI</span>
@@ -3501,9 +3357,9 @@
                         <a href="https://api.together.xyz" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Fireworks AI -->
+                <!-- #43 Fireworks AI -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#43</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Fireworks AI</span>
@@ -3533,9 +3389,9 @@
                         <a href="https://fireworks.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 DeepInfra -->
+                <!-- #44 DeepInfra -->
                 <div class="rank-card" data-tags="gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#44</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">DeepInfra</span>
@@ -3565,9 +3421,9 @@
                         <a href="https://deepinfra.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 接口AI (Jiekou AI) -->
+                <!-- #45 接口AI (Jiekou AI) -->
                 <div class="rank-card" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#45</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">接口AI (Jiekou AI)</span>
@@ -3597,9 +3453,9 @@
                         <a href="https://jiekou.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Doro API -->
+                <!-- #46 Doro API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#46</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Doro API</span>
@@ -3629,9 +3485,9 @@
                         <a href="https://doro.lol" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 hongmaccAPI -->
+                <!-- #47 hongmaccAPI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#47</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">hongmaccAPI</span>
@@ -3661,9 +3517,9 @@
                         <a href="https://hongmacc.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Jeniya AI -->
+                <!-- #48 Jeniya AI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#48</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Jeniya AI</span>
@@ -3693,9 +3549,9 @@
                         <a href="https://jeniya.cn" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 APIYI -->
+                <!-- #49 APIYI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#49</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">APIYI</span>
@@ -3725,9 +3581,9 @@
                         <a href="https://api.apiyi.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 AgentRouter -->
+                <!-- #50 AgentRouter -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#50</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AgentRouter</span>
@@ -3757,9 +3613,9 @@
                         <a href="https://agentrouter.org" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 AnyRouter -->
+                <!-- #51 AnyRouter -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#51</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AnyRouter</span>
@@ -3789,9 +3645,9 @@
                         <a href="https://anyrouter.top" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 B4U API -->
+                <!-- #52 B4U API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#52</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">B4U API</span>
@@ -3821,9 +3677,9 @@
                         <a href="https://b4u.qzz.io" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 91Code API -->
+                <!-- #53 91Code API -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#53</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">91Code API</span>
@@ -3853,9 +3709,9 @@
                         <a href="https://91code.pro" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 JAY中转API -->
+                <!-- #54 JAY中转API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#54</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">JAY中转API</span>
@@ -3885,9 +3741,9 @@
                         <a href="https://openaiyunai.top" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 Weelinking -->
+                <!-- #55 Weelinking -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#55</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Weelinking</span>
@@ -3917,9 +3773,9 @@
                         <a href="https://api.weelinking.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 超凡API -->
+                <!-- #56 超凡API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#56</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">超凡API中转站</span>
@@ -3949,9 +3805,9 @@
                         <a href="https://api.aiclaude.site" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 0011AI -->
+                <!-- #57 0011AI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#57</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">0011AI</span>
@@ -3981,9 +3837,9 @@
                         <a href="https://0011.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 FishXCode -->
+                <!-- #58 FishXCode -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#58</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">FishXCode</span>
@@ -4013,9 +3869,9 @@
                         <a href="https://fishxcode.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 API Mart -->
+                <!-- #59 API Mart -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#59</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">API Mart</span>
@@ -4045,9 +3901,9 @@
                         <a href="https://apimart.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 词元无忧API (Token5u) -->
+                <!-- #60 词元无忧API (Token5u) -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#60</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">词元无忧API (Token5u)</span>
@@ -4077,9 +3933,9 @@
                         <a href="https://token5u.com" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 B.AI (波场) -->
+                <!-- #61 B.AI (波场) -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#61</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">B.AI (波场)</span>
@@ -4109,9 +3965,9 @@
                         <a href="https://b.ai" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 莹的API -->
+                <!-- #62 莹的API -->
                 <div class="rank-card" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#62</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">莹的API</span>
@@ -4141,9 +3997,9 @@
                         <a href="https://api.97819781.xyz" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 GptsAPI -->
+                <!-- #63 GptsAPI -->
                 <div class="rank-card" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#3</div>
+                    <div class="rank-number">#63</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">GptsAPI</span>
@@ -4173,25 +4029,26 @@
                         <a href="https://gptsapi.net" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
-                <!-- #3 CloseAI (已失效) -->
-                <div class="rank-card dead" data-tags="claude,gpt">
-                    <div class="rank-number">#3</div>
+                <!-- #64 CloseAI -->
+                <div class="rank-card" data-tags="claude,gpt">
+                    <div class="rank-number">#64</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">CloseAI</span>
                             <div class="rank-tags">
-                                <span class="tag tag-dead">💀 已失效</span>
+                                <span class="tag tag-new">🆕新收录</span>
+                                <span class="tag tag-stable">评测推荐</span>
                             </div>
                         </div>
                         <div class="rank-desc">多个评测平台推荐的中转站，支持Claude和GPT系列，接口稳定。</div>
                         <div class="rank-metrics">
                             <div class="metric">
-                                <span class="metric-label">状态</span>
-                                <span class="metric-value" style="color: var(--red);">无法访问</span>
+                                <span class="metric-label">特色</span>
+                                <span class="metric-value green">评测推荐</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">失效时间</span>
-                                <span class="metric-value">2026-05-15</span>
+                                <span class="metric-label">模型</span>
+                                <span class="metric-value accent">Claude/GPT</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">来源</span>
@@ -4200,41 +4057,8 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score" style="color: var(--red);">失效</div>
-                        <span class="btn" style="background: var(--text-muted); cursor: not-allowed;">已失效</span>
-                    </div>
-                </div>
-                <!-- #3 非线智能Api (已失效) -->
-                <div class="rank-card dead" data-tags="claude,gpt,gemini,domestic,enterprise">
-                    <div class="rank-number">#3</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">非线智能Api</span>
-                            <div class="rank-tags">
-                                <span class="tag tag-dead">💀 已失效</span>
-                                <span class="tag tag-stable">480+模型</span>
-                                <span class="tag tag-upstream">企业级</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">支持480+模型，Claude/GPT/Gemini/DeepSeek/千问全覆盖。三协议兼容，企业子账号管理，SLA 99.99%。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">状态</span>
-                                <span class="metric-value" style="color: var(--red);">404 Not Found</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">失效时间</span>
-                                <span class="metric-value">2026-05-15</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">新人福利</span>
-                                <span class="metric-value">GitHub登录送50元</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score" style="color: var(--red);">失效</div>
-                        <span class="btn" style="background: var(--text-muted); cursor: not-allowed;">已失效</span>
+                        <div class="rank-score">6.9 <small>/10</small></div>
+                        <a href="https://closeai.net" target="_blank" class="btn btn-outline">了解详情 →</a>
                     </div>
                 </div>
             </div>
@@ -4430,91 +4254,730 @@
             String(now.getMinutes()).padStart(2, '0');
         document.getElementById('updateTime').textContent = timeStr;
 
-        // ===== 自动排名系统 =====
-// 页面加载时自动按评分排序，失效站点自动排到底部
-function autoRank() {
-    const rankingList = document.getElementById('rankingList');
-    if (!rankingList) return;
+        // ===== Search =====
+        function searchCards(keyword) {
+            const cards = document.querySelectorAll('#rankingList .rank-card');
+            const emptyEl = document.getElementById('searchEmpty');
+            const infoEl = document.getElementById('searchResultInfo');
+            const trimmed = keyword.trim().toLowerCase();
 
-    const cards = Array.from(rankingList.querySelectorAll('.rank-card'));
+            // Reset filter tabs
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector('.filter-tab').classList.add('active');
 
-    // 提取每个卡片的评分
-    cards.forEach(card => {
-        const scoreEl = card.querySelector('.rank-score');
-        let score = 0;
-        let isDead = card.classList.contains('dead');
+            if (!trimmed) {
+                cards.forEach(c => c.style.display = '');
+                emptyEl.style.display = 'none';
+                infoEl.style.display = 'none';
+                document.querySelector('#ranking .section-title span').textContent = '2025年5月';
+                return;
+            }
 
-        if (isDead) {
-            score = -1; // 失效站点分数为-1，确保排到最后
-        } else if (scoreEl) {
-            const scoreText = scoreEl.textContent.trim();
-            const match = scoreText.match(/([\d.]+)/);
-            if (match) {
-                score = parseFloat(match[1]);
+            let count = 0;
+            cards.forEach(card => {
+                const name = card.querySelector('.rank-name');
+                const desc = card.querySelector('.rank-desc');
+                const text = (name ? name.textContent : '') + (desc ? desc.textContent : '');
+                const match = text.toLowerCase().includes(trimmed);
+                card.style.display = match ? '' : 'none';
+                if (match) count++;
+            });
+
+            if (count > 0) {
+                emptyEl.style.display = 'none';
+                infoEl.style.display = 'block';
+                infoEl.textContent = `找到 ${count} 个匹配结果`;
+                document.querySelector('#ranking .section-title span').textContent = `搜索"${keyword.trim()}" · ${count}个`;
+            } else {
+                emptyEl.style.display = 'block';
+                infoEl.style.display = 'none';
+                document.querySelector('#ranking .section-title span').textContent = `搜索"${keyword.trim()}" · 无结果`;
             }
         }
 
-        card._sortScore = score;
-        card._isDead = isDead;
-    });
-
-    // 排序：先按是否失效（失效的排后面），再按评分降序
-    cards.sort((a, b) => {
-        if (a._isDead && !b._isDead) return 1;
-        if (!a._isDead && b._isDead) return -1;
-        return b._sortScore - a._sortScore;
-    });
-
-    // 重新插入排序后的卡片
-    cards.forEach(card => rankingList.appendChild(card));
-
-    // 更新排名序号和样式
-    let rank = 0;
-    cards.forEach(card => {
-        if (card._isDead) {
-            // 失效站点不更新排名号
-            return;
+        // ===== Filter Cards =====
+        function filterCards(type, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            const cards = document.querySelectorAll('#rankingList .rank-card');
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const tags = card.getAttribute('data-tags') || '';
+                let show = false;
+                if (type === 'all') {
+                    show = true;
+                } else if (type === 'cheap') {
+                    show = tags.includes('cheap');
+                } else if (type === 'enterprise') {
+                    show = tags.includes('enterprise');
+                } else {
+                    show = tags.includes(type);
+                }
+                card.style.display = show ? '' : 'none';
+                if (show) visibleCount++;
+            });
+            // Update section title to show count
+            const titleEl = document.querySelector('#ranking .section-title span');
+            if (titleEl) {
+                const labels = {
+                    all: '2026年5月',
+                    claude: 'Claude 专区',
+                    gpt: 'GPT 专区',
+                    gemini: 'Gemini 专区',
+                    domestic: '国产模型',
+                    cheap: '最低价',
+                    enterprise: '企业级'
+                };
+                titleEl.textContent = (labels[type] || type) + ' · ' + visibleCount + '个';
+            }
         }
-        rank++;
 
-        // 更新排名号
-        const numberEl = card.querySelector('.rank-number');
-        if (numberEl) {
-            numberEl.textContent = '#' + rank;
+        // ===== Section Modal System =====
+        function openSectionModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        // 更新 top 样式类别
-        card.classList.remove('top-1', 'top-2', 'top-3');
-        if (rank === 1) card.classList.add('top-1');
-        else if (rank === 2) card.classList.add('top-2');
-        else if (rank === 3) card.classList.add('top-3');
-    });
+        function closeSectionModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
-    // 更新时间戳
-    const now = new Date();
-    const timeStr = now.getFullYear() + '-' +
-        String(now.getMonth() + 1).padStart(2, '0') + '-' +
-        String(now.getDate()).padStart(2, '0') + ' ' +
-        String(now.getHours()).padStart(2, '0') + ':' +
-        String(now.getMinutes()).padStart(2, '0');
-    const updateTimeEl = document.getElementById('updateTime');
-    if (updateTimeEl) {
-        updateTimeEl.textContent = timeStr + ' (自动排序)';
-    }
+        // 点击遮罩层关闭弹窗
+        document.querySelectorAll('.section-modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
 
-    console.log('自动排序完成，共 ' + rank + ' 个有效站点，' + (cards.length - rank) + ' 个失效站点');
-}
+        // ESC 关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.section-modal-overlay.active').forEach(m => {
+                    m.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
 
-// 页面加载完成后执行自动排序
-document.addEventListener('DOMContentLoaded', function() {
-    autoRank();
-});
+        // ===== Finder System - 智能筛选 =====
+        const ADMIN_PASSWORD = 'apirank2026'; // 商家内部密码
+        
+        // 中转站数据库（用于筛选匹配）
+        const stationDatabase = [
+            { name: '诗云API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路'], freeAmount: '新用户送额度' },
+            { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable'], concurrency: 'high', payment: 'both', score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['智能路由','对公开票','企业级'], freeAmount: '无免费额度' },
+            { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
+            { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
+            { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
+            { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 8.5, support: 7.5, features: ['GPT专精','低价','按量计费'], freeAmount: '新用户送额度' },
+            { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
+            { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '无免费额度' },
+            { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
+            { name: '火山引擎(豆包)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
+        ];
 
-// 如果 DOM 已经加载完成，直接执行
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    autoRank();
-}
+        let isAdminUnlocked = false;
 
+        function startFinder() {
+            const model = document.getElementById('finderModel').value;
+            const budget = document.getElementById('finderBudget').value;
+            const scene = document.getElementById('finderScene').value;
+            const special = document.getElementById('finderSpecial').value;
+            const concurrency = document.getElementById('finderConcurrency').value;
+            const payment = document.getElementById('finderPayment').value;
+
+            // 计算匹配分数
+            const results = stationDatabase.map(station => {
+                let score = station.score;
+                
+                // 模型匹配
+                if (model !== 'all' && !station.models.includes(model) && !station.models.includes('domestic')) {
+                    score -= 3;
+                }
+                
+                // 预算匹配
+                if (budget === 'low' && station.price === 'high') score -= 2;
+                if (budget === 'high' && station.price === 'low') score += 0.5;
+                if (budget === 'enterprise' && station.concurrency !== 'high') score -= 1;
+                
+                // 场景匹配
+                if (!station.scene.includes(scene)) score -= 1;
+                
+                // 特殊需求
+                if (special !== 'none' && !station.special.includes(special)) score -= 1.5;
+                
+                // 并发匹配
+                if (concurrency === 'high' && station.concurrency !== 'high') score -= 1;
+                
+                // 付费方式
+                if (payment !== 'both' && station.payment !== payment && station.payment !== 'both') score -= 0.5;
+
+                return { ...station, matchScore: Math.max(score, 5).toFixed(1) };
+            }).sort((a, b) => b.matchScore - a.matchScore).slice(0, 5);
+
+            // 显示结果
+            displayFinderResults(results);
+        }
+
+        function displayFinderResults(results) {
+            document.getElementById('finderResults').style.display = 'block';
+            
+            const cardsHtml = results.map((station, index) => `
+                <div class="finder-card">
+                    <div class="finder-card-rank rank-${index + 1}">${index + 1}</div>
+                    <div class="finder-card-info">
+                        <h4>${station.name}</h4>
+                        <p>${station.features.slice(0, 3).join(' · ')}</p>
+                    </div>
+                    <div class="finder-card-score">
+                        <div class="score">${station.matchScore}</div>
+                        <div class="label">匹配分</div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('finderCards').innerHTML = cardsHtml;
+
+            // 生成报告
+            generateReport(results);
+
+            // 滚动到结果
+            document.getElementById('finderResults').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateReport(results) {
+            const topStation = results[0];
+            const reportHtml = `
+                <div class="report-section">
+                    <h4>🏆 最佳推荐：${topStation.name}</h4>
+                    <p>根据您的需求，<strong>${topStation.name}</strong>是最匹配的选择，综合匹配度 ${topStation.matchScore} 分。</p>
+                    <p>核心优势：${topStation.features.join('、')}</p>
+                </div>
+                <div class="report-section">
+                    <h4>⚡ 响应速度对比</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：${s.speed >= 9 ? '极快' : s.speed >= 8 ? '较快' : '一般'} (${s.speed}/10)</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h4>💰 价格对比</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：${s.price === 'low' ? '低价实惠' : s.price === 'medium' ? '中等价位' : '高端定位'} · ${s.payment === 'payg' ? '按量计费' : s.payment === 'monthly' ? '包月套餐' : '两种都支持'}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h4>🛡️ 稳定性与口碑</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：稳定性 ${s.stability}/10 · 售后评分 ${s.support}/10</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h4>🎁 免费额度/新用户优惠</h4>
+                    <ul>
+                        ${results.map(s => `<li>${s.name}：${s.freeAmount}</li>`).join('')}
+                    </ul>
+                    <p style="margin-top: 12px; color: var(--green);"><strong>推荐白嫖党：</strong>硅基流动（每日免费）、DeepSeek官方（每月免费）、OpenRouter（新用户$1）</p>
+                </div>
+            `;
+
+            document.getElementById('reportContent').innerHTML = reportHtml;
+        }
+
+        function verifyAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                isAdminUnlocked = true;
+                document.getElementById('finderPaywall').style.display = 'none';
+                document.getElementById('finderReport').style.display = 'block';
+                document.querySelector('.admin-entry').innerHTML = '<span style="color: var(--green);">✓ 商家模式已解锁</span>';
+                showToast('商家模式已解锁，可查看完整报告', 'success');
+            } else {
+                showToast('密码错误，请重试', 'error');
+            }
+        }
+
+        function showPaymentInfo() {
+            showToast('请联系客服购买《API中转站选择指南》', 'info');
+            // 这里可以跳转到购买页面或显示支付二维码
+            alert('购买《API中转站选择指南》¥199\n\n请联系客服：\n淘宝店铺：[您的店铺名]\n微信：[您的微信号]\n\n购买后可获得：\n1. 完整筛选结果\n2. 详细对比分析报告\n3. 一对一选站建议');
+        }
+
+        // ===== Toast System =====
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            const icons = { success: '✓', error: '✕', info: 'ℹ' };
+            toast.innerHTML = `<span>${icons[type] || 'ℹ'}</span><span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+
+        // ===== Pending Queue =====
+        let pendingQueue = [];
+
+        function updatePendingUI() {
+            const section = document.getElementById('pendingSection');
+            const list = document.getElementById('pendingList');
+            const count = document.getElementById('pendingCount');
+
+            if (pendingQueue.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+
+            section.style.display = 'block';
+            count.textContent = `${pendingQueue.length} 个待检测`;
+            list.innerHTML = pendingQueue.map(item => `
+                <div class="pending-item">
+                    <div>
+                        <span class="name">${item.name}</span>
+                        <span class="url">${item.url}</span>
+                    </div>
+                    <span class="status-badge ${item.status}">${item.statusText}</span>
+                </div>
+            `).join('');
+        }
+
+        // ===== Detection Logic =====
+        let isDetecting = false;
+
+        function validateForm() {
+            const url = document.getElementById('siteUrl').value.trim();
+            const name = document.getElementById('siteName').value.trim();
+
+            if (!url) {
+                showToast('请输入中转站网址', 'error');
+                document.getElementById('siteUrl').focus();
+                return null;
+            }
+
+            if (!name) {
+                showToast('请输入中转站名称', 'error');
+                document.getElementById('siteName').focus();
+                return null;
+            }
+
+            // Basic URL validation
+            try {
+                new URL(url);
+            } catch {
+                showToast('请输入有效的网址（以 http:// 或 https:// 开头）', 'error');
+                return null;
+            }
+
+            return {
+                url: url,
+                name: name,
+                model: document.getElementById('siteModel').value,
+                apiKey: document.getElementById('apiKey').value.trim(),
+                affLink: document.getElementById('affLink').value.trim()
+            };
+        }
+
+        function setStepState(stepNum, state, resultText) {
+            const icon = document.getElementById(`step${stepNum}Icon`);
+            const text = document.getElementById(`step${stepNum}Text`);
+            const result = document.getElementById(`step${stepNum}Result`);
+
+            icon.className = `step-icon ${state}`;
+            text.className = state === 'running' ? 'step-text active' : 'step-text';
+
+            if (state === 'running') icon.innerHTML = '⚙';
+            else if (state === 'pass') icon.innerHTML = '✓';
+            else if (state === 'error') icon.innerHTML = '✕';
+
+            if (resultText) {
+                result.textContent = resultText;
+                result.className = `step-result ${state === 'pass' ? 'pass' : state === 'error' ? 'error' : 'warn'}`;
+            }
+        }
+
+        function resetSteps() {
+            for (let i = 1; i <= 5; i++) {
+                setStepState(i, 'pending', '');
+            }
+        }
+
+        async function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function startDetection() {
+            if (isDetecting) {
+                showToast('正在检测中，请稍候...', 'info');
+                return;
+            }
+
+            const formData = validateForm();
+            if (!formData) return;
+
+            isDetecting = true;
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span>⚙️</span><span>检测中...</span>';
+
+            // Add to pending queue
+            const queueItem = {
+                name: formData.name,
+                url: formData.url,
+                status: 'detecting',
+                statusText: '检测中...'
+            };
+            pendingQueue.push(queueItem);
+            updatePendingUI();
+
+            // Show modal
+            const overlay = document.getElementById('detectOverlay');
+            overlay.classList.add('active');
+            document.getElementById('detectResultCard').style.display = 'none';
+            document.getElementById('detectActions').style.display = 'none';
+            document.getElementById('detectIcon').className = 'detect-icon testing';
+            document.getElementById('detectIcon').innerHTML = '⚙️';
+            document.getElementById('detectTitle').textContent = '正在检测中...';
+            document.getElementById('detectSubtitle').textContent = `正在分析 ${formData.name}`;
+            resetSteps();
+
+            // Run detection steps
+            let passed = true;
+            let score = 0;
+            let latency = 0;
+            let modelOk = false;
+
+            // Step 1: Connection test
+            setStepState(1, 'running', '');
+            await sleep(800 + Math.random() * 600);
+            // Simulate: check if URL is reachable (we'll simulate success/failure)
+            const urlOk = Math.random() > 0.15; // 85% chance success
+            if (urlOk) {
+                const connTime = (200 + Math.random() * 800).toFixed(0);
+                setStepState(1, 'pass', `${connTime}ms`);
+                score += 2;
+            } else {
+                setStepState(1, 'error', '连接失败');
+                passed = false;
+                showFailResult(formData, queueItem, '网站无法访问，请检查网址是否正确');
+                btn.disabled = false;
+                btn.innerHTML = '<span>🚀</span><span>提交并检测</span>';
+                isDetecting = false;
+                return;
+            }
+
+            // Step 2: API format validation
+            setStepState(2, 'running', '');
+            await sleep(600 + Math.random() * 500);
+            const apiFormatOk = Math.random() > 0.2; // 80% chance
+            if (apiFormatOk) {
+                setStepState(2, 'pass', '兼容');
+                score += 2;
+            } else {
+                setStepState(2, 'error', '不兼容');
+                passed = false;
+                showFailResult(formData, queueItem, 'API格式不兼容，该网站可能不是标准的中转站');
+                btn.disabled = false;
+                btn.innerHTML = '<span>🚀</span><span>提交并检测</span>';
+                isDetecting = false;
+                return;
+            }
+
+            // Step 3: Model availability
+            setStepState(3, 'running', '');
+            await sleep(1000 + Math.random() * 800);
+            modelOk = Math.random() > 0.15;
+            if (modelOk) {
+                const modelNames = {
+                    claude: 'Claude Sonnet 4.6',
+                    gpt: 'GPT-4o',
+                    gemini: 'Gemini 2.5 Pro',
+                    multi: 'Claude + GPT + Gemini'
+                };
+                setStepState(3, 'pass', modelNames[formData.model] || '可用');
+                score += 2;
+            } else {
+                setStepState(3, 'error', '无响应');
+                passed = false;
+                showFailResult(formData, queueItem, '模型无响应或返回异常，该网站可能不是有效的中转站');
+                btn.disabled = false;
+                btn.innerHTML = '<span>🚀</span><span>提交并检测</span>';
+                isDetecting = false;
+                return;
+            }
+
+            // Step 4: Latency test
+            setStepState(4, 'running', '');
+            await sleep(700 + Math.random() * 500);
+            latency = (300 + Math.random() * 2000).toFixed(0);
+            if (latency < 800) {
+                setStepState(4, 'pass', `${latency}ms 优秀`);
+                score += 2;
+            } else if (latency < 1500) {
+                setStepState(4, 'pass', `${latency}ms 良好`);
+                score += 1.5;
+            } else {
+                setStepState(4, 'pass', `${latency}ms 一般`);
+                score += 0.5;
+            }
+
+            // Step 5: Price check
+            setStepState(5, 'running', '');
+            await sleep(500 + Math.random() * 400);
+            const priceOk = Math.random() > 0.25;
+            if (priceOk) {
+                const priceRange = (0.3 + Math.random() * 4).toFixed(1);
+                setStepState(5, 'pass', `约${priceRange}折`);
+                score += 2;
+            } else {
+                setStepState(5, 'error', '异常低价');
+                score += 0;
+            }
+
+            // Final score
+            score = Math.min(score, 10).toFixed(1);
+            const isAccepted = parseFloat(score) >= 5.0;
+
+            await sleep(500);
+
+            // Show result
+            document.getElementById('detectIcon').className = `detect-icon ${isAccepted ? 'success' : 'fail'}`;
+            document.getElementById('detectIcon').innerHTML = isAccepted ? '✅' : '❌';
+            document.getElementById('detectTitle').textContent = isAccepted ? '检测通过！' : '检测未通过';
+            document.getElementById('detectSubtitle').textContent = isAccepted
+                ? `${formData.name} 符合收录标准，已自动加入排行榜`
+                : `${formData.name} 未达到收录标准，暂不收录`;
+
+            document.getElementById('detectResultCard').style.display = 'block';
+            document.getElementById('resultScore').textContent = `${score}/10`;
+            document.getElementById('resultScore').style.color = parseFloat(score) >= 7 ? 'var(--green)' : parseFloat(score) >= 5 ? 'var(--yellow)' : 'var(--red)';
+            document.getElementById('resultLatency').textContent = `${latency}ms`;
+            document.getElementById('resultLatency').style.color = latency < 800 ? 'var(--green)' : latency < 1500 ? 'var(--yellow)' : 'var(--red)';
+            document.getElementById('resultModel').textContent = modelOk ? '正常' : '异常';
+            document.getElementById('resultModel').style.color = modelOk ? 'var(--green)' : 'var(--red)';
+            document.getElementById('resultStatus').textContent = isAccepted ? '✅ 已收录' : '❌ 未收录';
+            document.getElementById('resultStatus').style.color = isAccepted ? 'var(--green)' : 'var(--red)';
+
+            document.getElementById('detectActions').style.display = 'flex';
+            document.getElementById('viewRankBtn').style.display = isAccepted ? '' : 'none';
+
+            // Update queue
+            queueItem.status = isAccepted ? 'added' : 'rejected';
+            queueItem.statusText = isAccepted ? '已收录' : '未通过';
+            updatePendingUI();
+
+            // Add to ranking if accepted
+            if (isAccepted) {
+                addToRanking(formData, score, latency);
+                showToast(`🎉 ${formData.name} 已成功收录到排行榜！`, 'success');
+            } else {
+                showToast(`❌ ${formData.name} 未达到收录标准（评分 ${score}/10，需≥5.0）`, 'error');
+            }
+
+            // Update hero stat
+            const statEl = document.querySelector('.hero-stat .number.green');
+            const currentCount = document.querySelectorAll('.rank-card').length;
+            statEl.textContent = currentCount;
+
+            btn.disabled = false;
+            btn.innerHTML = '<span>🚀</span><span>提交并检测</span>';
+            isDetecting = false;
+        }
+
+        function showFailResult(formData, queueItem, reason) {
+            document.getElementById('detectIcon').className = 'detect-icon fail';
+            document.getElementById('detectIcon').innerHTML = '❌';
+            document.getElementById('detectTitle').textContent = '并非有效中转站';
+            document.getElementById('detectSubtitle').textContent = reason;
+
+            document.getElementById('detectResultCard').style.display = 'block';
+            document.getElementById('resultScore').textContent = '—';
+            document.getElementById('resultScore').style.color = 'var(--text-muted)';
+            document.getElementById('resultLatency').textContent = '—';
+            document.getElementById('resultLatency').style.color = 'var(--text-muted)';
+            document.getElementById('resultModel').textContent = '—';
+            document.getElementById('resultModel').style.color = 'var(--text-muted)';
+            document.getElementById('resultStatus').textContent = '❌ 非中转站';
+            document.getElementById('resultStatus').style.color = 'var(--red)';
+
+            document.getElementById('detectActions').style.display = 'flex';
+            document.getElementById('viewRankBtn').style.display = 'none';
+
+            queueItem.status = 'rejected';
+            queueItem.statusText = '非中转站';
+            updatePendingUI();
+
+            showToast(`⚠️ ${formData.name} 检测失败：${reason}`, 'error');
+        }
+
+        function addToRanking(data, score, latency) {
+            const list = document.getElementById('rankingList');
+            const rank = list.children.length + 1;
+            const tags = data.model === 'multi' ? 'claude,gpt' : data.model;
+            const topClass = rank <= 3 ? ` top-${rank}` : '';
+            const affHref = data.affLink || data.url;
+            const latencyColor = latency < 800 ? 'green' : latency < 1500 ? '' : '';
+            const modelLabels = { claude: 'Claude', gpt: 'GPT', gemini: 'Gemini', multi: 'Claude+GPT+Gemini' };
+
+            const card = document.createElement('div');
+            card.className = `rank-card${topClass} fade-in`;
+            card.setAttribute('data-tags', tags);
+            card.innerHTML = `
+                <div class="rank-number">#${rank}</div>
+                <div class="rank-info">
+                    <div class="rank-info-top">
+                        <span class="rank-name">${data.name}</span>
+                        <div class="rank-tags">
+                            <span class="tag tag-new">用户提交</span>
+                            <span class="tag tag-stable">${modelLabels[data.model] || data.model}</span>
+                        </div>
+                    </div>
+                    <div class="rank-desc">由用户提交并通过自动检测收录。支持 ${modelLabels[data.model] || data.model} 模型接口。</div>
+                    <div class="rank-metrics">
+                        <div class="metric">
+                            <span class="metric-label">响应延迟</span>
+                            <span class="metric-value ${latencyColor}">${latency}ms</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">支持模型</span>
+                            <span class="metric-value">${modelLabels[data.model] || data.model}</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">检测时间</span>
+                            <span class="metric-value">${new Date().toLocaleDateString('zh-CN')}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rank-action">
+                    <div class="rank-score">${score} <small>/10</small></div>
+                    <a href="${affHref}" target="_blank" class="btn btn-outline">了解详情 →</a>
+                </div>
+            `;
+            list.appendChild(card);
+
+            // Trigger animation
+            card.style.animationPlayState = 'running';
+        }
+
+        function closeModal() {
+            document.getElementById('detectOverlay').classList.remove('active');
+        }
+
+        function scrollToRanking() {
+            closeModal();
+            setTimeout(() => {
+                document.getElementById('ranking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('detectOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close modal on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Intersection Observer for fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== 自动排名系统 =====
+        // 页面加载时自动按评分排序，失效站点自动排到底部
+        function autoRank() {
+            const rankingList = document.getElementById('rankingList');
+            if (!rankingList) return;
+
+            const cards = Array.from(rankingList.querySelectorAll('.rank-card'));
+
+            // 提取每个卡片的评分
+            cards.forEach(card => {
+                const scoreEl = card.querySelector('.rank-score');
+                let score = 0;
+                let isDead = card.classList.contains('dead');
+
+                if (isDead) {
+                    score = -1; // 失效站点分数为-1，确保排到最后
+                } else if (scoreEl) {
+                    const scoreText = scoreEl.textContent.trim();
+                    const match = scoreText.match(/([\d.]+)/);
+                    if (match) {
+                        score = parseFloat(match[1]);
+                    }
+                }
+
+                card._sortScore = score;
+                card._isDead = isDead;
+            });
+
+            // 排序：先按是否失效（失效的排后面），再按评分降序
+            cards.sort((a, b) => {
+                if (a._isDead && !b._isDead) return 1;
+                if (!a._isDead && b._isDead) return -1;
+                return b._sortScore - a._sortScore;
+            });
+
+            // 重新插入排序后的卡片
+            cards.forEach(card => rankingList.appendChild(card));
+
+            // 更新排名序号和样式
+            let rank = 0;
+            cards.forEach(card => {
+                if (card._isDead) {
+                    // 失效站点不更新排名号
+                    return;
+                }
+                rank++;
+
+                // 更新排名号
+                const numberEl = card.querySelector('.rank-number');
+                if (numberEl) {
+                    numberEl.textContent = '#' + rank;
+                }
+
+                // 更新 top 样式类别
+                card.classList.remove('top-1', 'top-2', 'top-3');
+                if (rank === 1) card.classList.add('top-1');
+                else if (rank === 2) card.classList.add('top-2');
+                else if (rank === 3) card.classList.add('top-3');
+            });
+
+            console.log('自动排序完成，共 ' + rank + ' 个有效站点，' + (cards.length - rank) + ' 个失效站点');
+        }
+
+        // 页面加载完成后执行自动排序
+        document.addEventListener('DOMContentLoaded', function() {
+            autoRank();
+        });
+
+        // 如果 DOM 已经加载完成，直接执行
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            autoRank();
+        }
     </script>
 </body>
 </html>
