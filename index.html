@@ -2748,7 +2748,7 @@
                     </div>
                 </div>
                 <!-- #24 诗云API -->
-                <div class="rank-card top-1 fade-in" data-tags="claude,gpt,gemini,domestic">
+                <div class="rank-card top-1 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
                     <div class="rank-number">#24</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -2778,41 +2778,10 @@
                     <div class="rank-action">
                         <div class="rank-score">9.8 <small>/10</small></div>
                         <a href="https://shiyunapi.com" target="_blank" class="btn btn-primary">立即注册 →</a>
+                        <a href="https://4ksapi.com" target="_blank" class="btn btn-outline btn-sm" style="margin-top:4px;">4ksAPI入口 →</a>
                     </div>
                 </div>
-                <!-- #25 4ksAPI -->
-                <div class="rank-card top-2 fade-in" data-tags="claude,gpt,gemini,enterprise">
-                    <div class="rank-number">#25</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">4ksAPI</span>
-                            <div class="rank-tags">
-                                <span class="tag tag-hot">🔥智能路由</span>
-                                <span class="tag tag-stable">稳定合规</span>
-                                <span class="tag tag-stable">财务清晰</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">2026年推荐中转站，十年沉淀智能路由算法，实时优化调用链路。高可用架构设计，支持对公开票，口碑稳定。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">财务</span>
-                                <span class="metric-value green">对公开票</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">技术</span>
-                                <span class="metric-value accent">智能路由</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">评分</span>
-                                <span class="metric-value">⭐⭐⭐⭐</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">9.5 <small>/10</small></div>
-                        <a href="https://4ksapi.com" target="_blank" class="btn btn-primary">立即注册 →</a>
-                    </div>
-                </div>
+
                 <!-- #26 灵芽API -->
                 <div class="rank-card" data-tags="claude,gpt,gemini,domestic">
                     <div class="rank-number">#26</div>
@@ -4368,8 +4337,7 @@
         
         // 中转站数据库（用于筛选匹配）
         const stationDatabase = [
-            { name: '诗云API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路'], freeAmount: '新用户送额度' },
-            { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable'], concurrency: 'high', payment: 'both', score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['智能路由','对公开票','企业级'], freeAmount: '无免费额度' },
+            { name: '诗云API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning','enterprise'], special: ['cheap','stable'], concurrency: 'high', payment: 'both', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路','智能路由','对公开票','企业级'], freeAmount: '新用户送额度' },
             { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
             { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
             { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
@@ -4915,16 +4883,16 @@
             const cards = Array.from(rankingList.querySelectorAll('.rank-card'));
 
             // 提取每个卡片的评分
-            cards.forEach(card => {
+            cards.forEach(function(card) {
                 const scoreEl = card.querySelector('.rank-score');
-                let score = 0;
-                let isDead = card.classList.contains('dead');
+                var score = 0;
+                var isDead = card.classList.contains('dead');
 
                 if (isDead) {
-                    score = -1; // 失效站点分数为-1，确保排到最后
+                    score = -1;
                 } else if (scoreEl) {
-                    const scoreText = scoreEl.textContent.trim();
-                    const match = scoreText.match(/([\d.]+)/);
+                    var scoreText = scoreEl.textContent.trim();
+                    var match = scoreText.match(/([\d.]+)/);
                     if (match) {
                         score = parseFloat(match[1]);
                     }
@@ -4935,38 +4903,35 @@
             });
 
             // 排序：先按是否失效（失效的排后面），再按评分降序
-            cards.sort((a, b) => {
+            cards.sort(function(a, b) {
                 if (a._isDead && !b._isDead) return 1;
                 if (!a._isDead && b._isDead) return -1;
                 return b._sortScore - a._sortScore;
             });
 
             // 重新插入排序后的卡片
-            cards.forEach(card => rankingList.appendChild(card));
+            cards.forEach(function(card) { rankingList.appendChild(card); });
 
             // 更新排名序号和样式
-            let rank = 0;
-            cards.forEach(card => {
+            var rank = 0;
+            cards.forEach(function(card) {
                 if (card._isDead) {
-                    // 失效站点不更新排名号
                     return;
                 }
                 rank++;
 
-                // 更新排名号
-                const numberEl = card.querySelector('.rank-number');
+                var numberEl = card.querySelector('.rank-number');
                 if (numberEl) {
                     numberEl.textContent = '#' + rank;
                 }
 
-                // 更新 top 样式类别
                 card.classList.remove('top-1', 'top-2', 'top-3');
                 if (rank === 1) card.classList.add('top-1');
                 else if (rank === 2) card.classList.add('top-2');
                 else if (rank === 3) card.classList.add('top-3');
             });
 
-            console.log('自动排序完成，共 ' + rank + ' 个有效站点，' + (cards.length - rank) + ' 个失效站点');
+            console.log('自动排序完成，共 ' + rank + ' 个有效站点');
         }
 
         // 页面加载完成后执行自动排序
