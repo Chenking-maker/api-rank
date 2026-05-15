@@ -391,6 +391,54 @@
         .top-2 .rank-number { color: var(--green); }
         .top-3 .rank-number { color: var(--yellow); }
         .rank-card:not(.top-1):not(.top-2):not(.top-3) .rank-number { color: var(--text-muted); }
+        /* ===== Dead Site Style (失效站点) ===== */
+        .rank-card.dead {
+            opacity: 0.45;
+            filter: grayscale(0.8);
+            pointer-events: none;
+            border-color: rgba(255,255,255,0.03);
+            background: rgba(22,22,31,0.5);
+        }
+        .rank-card.dead:hover {
+            transform: none;
+            border-color: rgba(255,255,255,0.03);
+            background: rgba(22,22,31,0.5);
+        }
+        .rank-card.dead::before {
+            display: none;
+        }
+        .rank-card.dead .rank-number {
+            color: var(--text-muted) !important;
+            text-decoration: line-through;
+        }
+        .rank-card.dead .rank-name {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+        .rank-card.dead .btn {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .rank-card.dead .rank-score {
+            color: var(--text-muted) !important;
+        }
+        .rank-card.dead .tag {
+            opacity: 0.4;
+        }
+        /* Dead badge in section header */
+        .dead-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255,107,107,0.12);
+            color: var(--red);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 12px;
+        }
+
 
         .rank-info {
             display: flex;
@@ -934,6 +982,22 @@
                 height: 300px;
                 filter: blur(100px);
                 opacity: 0.1;
+            }
+
+            .rank-card.dead {
+                opacity: 0.35;
+                padding: 12px;
+            }
+            .rank-card.dead .rank-desc {
+                display: none;
+            }
+            .rank-card.dead .rank-metrics {
+                display: none;
+            }
+            .dead-badge {
+                font-size: 11px;
+                padding: 3px 8px;
+                margin-left: 8px;
             }
         }
         
@@ -1841,13 +1905,17 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">已收录 64+ 中转站 · 2026年5月14日更新</div>
+            <div class="hero-badge">已收录 64+ 中转站（52 有效 · 12 失效） · 2026年5月15日更新</div>
             <h1>找到最适合你的<br><span class="gradient-text">AI API 中转站</span></h1>
             <p>基于延迟、价格、稳定性、模型真实性等多维度自动测试，帮你快速筛选性价比最高的 API 中转服务</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="number green">64</div>
-                    <div class="label">收录中转站</div>
+                    <div class="number green">52</div>
+                    <div class="label">有效中转站</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number" style="color: var(--red);">12</div>
+                    <div class="label">已失效</div>
                 </div>
                 <div class="hero-stat">
                     <div class="number purple">24h</div>
@@ -2105,7 +2173,7 @@
     <section class="section" id="ranking">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">综合排行榜 <span>2026年5月</span></h2>
+                <h2 class="section-title">综合排行榜 <span>2026年5月</span> <span class="dead-badge" id="deadBadge">12 已失效</span></h2>
                 <div class="filter-tabs">
                     <button class="filter-tab active" onclick="filterCards('all', this)">全部</button>
                     <button class="filter-tab" onclick="filterCards('claude', this)">Claude</button>
@@ -2666,7 +2734,7 @@
                 </div>
 
                 <!-- #16 速创API -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#16</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -3770,7 +3838,7 @@
                     </div>
                 </div>
                 <!-- #51 AnyRouter -->
-                <div class="rank-card" data-tags="claude,gpt,gemini">
+                <div class="rank-card dead" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#51</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -3802,7 +3870,7 @@
                     </div>
                 </div>
                 <!-- #52 B4U API -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#52</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -3834,7 +3902,7 @@
                     </div>
                 </div>
                 <!-- #53 91Code API -->
-                <div class="rank-card" data-tags="claude,gpt,gemini">
+                <div class="rank-card dead" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#53</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -3866,7 +3934,7 @@
                     </div>
                 </div>
                 <!-- #54 JAY中转API -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#54</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -3930,7 +3998,7 @@
                     </div>
                 </div>
                 <!-- #56 超凡API -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#56</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -4058,7 +4126,7 @@
                     </div>
                 </div>
                 <!-- #60 词元无忧API (Token5u) -->
-                <div class="rank-card" data-tags="claude,gpt,gemini">
+                <div class="rank-card dead" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#60</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -4090,7 +4158,7 @@
                     </div>
                 </div>
                 <!-- #61 B.AI (波场) -->
-                <div class="rank-card" data-tags="claude,gpt,gemini">
+                <div class="rank-card dead" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#61</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -4122,7 +4190,7 @@
                     </div>
                 </div>
                 <!-- #62 莹的API -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#62</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -4186,7 +4254,7 @@
                     </div>
                 </div>
                 <!-- #64 CloseAI -->
-                <div class="rank-card" data-tags="claude,gpt">
+                <div class="rank-card dead" data-tags="claude,gpt">
                     <div class="rank-number">#64</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -5121,6 +5189,9 @@
                     return { card, score, isDead };
                 });
 
+                // 统计失效数量
+                var deadCount = cardData.filter(item => item.isDead).length;
+
                 // 排序
                 cardData.sort((a, b) => {
                     if (a.isDead && !b.isDead) return 1;
@@ -5150,7 +5221,14 @@
                     else if (rank === 3) item.card.classList.add('top-3');
                 });
 
-                console.log('自动排序完成，共 ' + rank + ' 个有效站点');
+                console.log('自动排序完成，共 ' + rank + ' 个有效站点，' + deadCount + ' 个失效站点');
+
+            // 更新失效徽章
+            var deadBadge = document.getElementById('deadBadge');
+            if (deadBadge) {
+                deadBadge.textContent = deadCount + ' 已失效';
+                deadBadge.style.display = deadCount > 0 ? 'inline-flex' : 'none';
+            }
             });
         }
 
