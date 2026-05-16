@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>已失效站点 - API排行榜</title>
+    <meta name="description" content="API排行榜已失效的中转站列表">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #f0f0f5;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 16px 0;
+            background: rgba(10,10,15,0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            z-index: 100;
+        }
+        .navbar .container {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: #f0f0f5;
+        }
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 16px; color: white;
+        }
+        .logo-text { font-weight: 700; font-size: 18px; }
+        .nav-links a {
+            color: #8888a0; text-decoration: none; font-size: 14px; font-weight: 500;
+        }
+        .nav-links a:hover { color: #f0f0f5; }
+        .hero {
+            padding: 140px 0 60px; text-align: center;
+        }
+        .hero h1 {
+            font-size: 36px; font-weight: 800; margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 16px; color: #8888a0; max-width: 600px; margin: 0 auto;
+        }
+        .dead-sites-section { padding: 40px 0 80px; }
+        .section-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        .section-title { font-size: 24px; font-weight: 700; }
+        .back-link {
+            color: #a29bfe; text-decoration: none; font-size: 14px; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .dead-sites-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
+        }
+        .dead-site-card {
+            background: #16161f;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px; padding: 20px;
+            transition: all 0.2s;
+        }
+        .dead-site-card:hover {
+            border-color: rgba(255,255,255,0.12);
+            background: #1c1c28;
+        }
+        .dead-site-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .dead-site-name {
+            font-size: 16px; font-weight: 600; color: #f0f0f5;
+        }
+        .dead-badge {
+            background: rgba(255,107,107,0.15);
+            color: #ff6b6b;
+            padding: 4px 10px; border-radius: 20px;
+            font-size: 11px; font-weight: 600;
+        }
+        .dead-site-reason {
+            font-size: 13px; color: #ff6b6b; margin-bottom: 8px;
+        }
+        .dead-site-desc {
+            font-size: 13px; color: #8888a0; line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .dead-site-link {
+            display: inline-flex; align-items: center; gap: 4px;
+            color: #a29bfe; text-decoration: none;
+            font-size: 13px; font-weight: 500;
+        }
+        .dead-site-link:hover { text-decoration: underline; }
+        .footer {
+            padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+        .footer-text { font-size: 13px; color: #555570; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">API</div>
+                <span class="logo-text">排行榜</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">返回首页</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>&#9888; 已失效站点</h1>
+            <p>以下中转站已无法访问或停止服务，已自动从首页排行榜移除。<br>点击链接可尝试访问（可能已更换域名）。</p>
+        </div>
+    </section>
+
+    <section class="dead-sites-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">共 12 个失效站点</h2>
+                <a href="index.html" class="back-link">&#8592; 返回首页</a>
+            </div>
+            <div class="dead-sites-grid">
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">非线智能Api</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：404错误</div>
+                    <p class="dead-site-desc">支持480+模型，Claude/GPT/Gemini/DeepSeek/千问全覆盖</p>
+                    <a href="https://api.nonelinear.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">PoloAPI</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：连接超时</div>
+                    <p class="dead-site-desc">支持Claude/GPT/Gemini，接口稳定</p>
+                    <a href="https://poloai.top" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">速创API</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">快速创建API密钥，支持多种模型</p>
+                    <a href="https://sc-api.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">AnyRouter</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">多路由切换，高可用性</p>
+                    <a href="https://anyrouter.top" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">B4U API</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：403禁止</div>
+                    <p class="dead-site-desc">企业级API服务</p>
+                    <a href="https://b4uapi.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">91Code API</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">开发者友好的API平台</p>
+                    <a href="https://91codeapi.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">JAY中转API</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">个人运营的API中转</p>
+                    <a href="https://jayapi.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">超凡API中转站</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">超凡API服务</p>
+                    <a href="https://chaofanapi.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">词元无忧API</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">Token无忧API服务</p>
+                    <a href="https://token5u.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">B.AI (波场)</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">波场生态API服务</p>
+                    <a href="https://b.ai" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">莹的API</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：SSL错误</div>
+                    <p class="dead-site-desc">个人API服务</p>
+                    <a href="https://yingapi.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+                <div class="dead-site-card">
+                    <div class="dead-site-header">
+                        <h3 class="dead-site-name">CloseAI</h3>
+                        <span class="dead-badge">已失效</span>
+                    </div>
+                    <div class="dead-site-reason">失效原因：无法访问</div>
+                    <p class="dead-site-desc">AI API聚合服务</p>
+                    <a href="https://closeai.com" target="_blank" class="dead-site-link">尝试访问 &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">API排行榜 - 数据仅供参考，使用请谨慎</p>
+        </div>
+    </footer>
+</body>
+</html>
