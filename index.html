@@ -345,10 +345,10 @@
             background: linear-gradient(135deg, rgba(30,30,45,0.9), rgba(20,20,35,0.95));
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px;
-            padding: 24px;
+            padding: 20px 24px 20px 60px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
             transition: all 0.3s ease;
             cursor: default;
             position: relative;
@@ -403,26 +403,40 @@
         }
 
         .rank-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 44px;
+            background: rgba(108,92,231,0.1);
+            border-right: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 14px;
-            font-weight: 600;
-            color: var(--accent-light);
-            background: rgba(108,92,231,0.15);
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
+            font-weight: 700;
+            color: #a29bfe;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
         }
         
-        .top-1 .rank-number,
-        .top-2 .rank-number,
-        .top-3 .rank-number {
-            background: rgba(108,92,231,0.25);
+        .top-1 .rank-number {
+            background: linear-gradient(180deg, rgba(108,92,231,0.2), rgba(108,92,231,0.05));
             color: #fff;
         }
+        
+        .top-2 .rank-number {
+            background: linear-gradient(180deg, rgba(46,213,115,0.2), rgba(46,213,115,0.05));
+            color: #2ed573;
+        }
+        
+        .top-3 .rank-number {
+            background: linear-gradient(180deg, rgba(255,193,7,0.2), rgba(255,193,7,0.05));
+            color: #ffc107;
+        }
+        
 
-        .top-1 .rank-number { color: var(--accent-light); }
-        .top-2 .rank-number { color: var(--green); }
-        .top-3 .rank-number { color: var(--yellow); }
-        .rank-card:not(.top-1):not(.top-2):not(.top-3) .rank-number { color: var(--text-muted); }
         /* ===== Dead Site Style (失效站点) ===== */
         .rank-card.dead {
             opacity: 0.45;
@@ -580,20 +594,22 @@
         .rank-info-top {
             display: flex;
             align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            gap: 8px;
+            flex-wrap: nowrap;
         }
 
         .rank-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             letter-spacing: -0.3px;
+            flex: 1;
         }
 
         .rank-tags {
             display: flex;
             gap: 6px;
             flex-wrap: wrap;
+            margin-left: auto;
         }
 
         .tag {
