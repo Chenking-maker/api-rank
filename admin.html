@@ -3,1547 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIRank 商家后台 - 智能中转站推荐</title>
+    <title>后台管理 - API排行榜</title>
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #16161f;
-            --accent: #6c5ce7;
-            --accent-hover: #7c6ef7;
-            --green: #00d2a0;
-            --green-hover: #00e8b0;
-            --text-primary: #e4e4e7;
-            --text-secondary: #a1a1aa;
-            --border: #27272a;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --radius: 12px;
-            --radius-sm: 8px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.4);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        /* ========== LOGIN PAGE ========== */
-        .login-page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: var(--bg-primary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .login-page::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(108,92,231,0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(0,210,160,0.05) 0%, transparent 50%);
-            animation: bgPulse 8s ease-in-out infinite alternate;
-        }
-
-        @keyframes bgPulse {
-            0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.1) rotate(3deg); }
-        }
-
-        .login-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 48px 40px;
-            width: 420px;
-            max-width: 90vw;
-            position: relative;
-            z-index: 1;
-            box-shadow: var(--shadow);
-        }
-
-        .login-logo {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .login-logo .logo-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--accent), var(--green));
-            border-radius: 14px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 16px;
-        }
-
-        .login-logo h1 {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .login-logo p {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 16px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
-            font-size: 14px;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(108,92,231,0.15);
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, var(--accent), #5a4bd4);
-            color: #fff;
-            border: none;
-            border-radius: var(--radius-sm);
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s, transform 0.1s;
-            font-family: inherit;
-        }
-
-        .login-btn:hover {
-            opacity: 0.9;
-        }
-
-        .login-btn:active {
-            transform: scale(0.98);
-        }
-
-        .login-error {
-            color: var(--danger);
-            font-size: 13px;
-            text-align: center;
-            margin-top: 12px;
-            min-height: 20px;
-        }
-
-        /* ========== DASHBOARD ========== */
-        .dashboard {
-            display: none;
-            min-height: 100vh;
-        }
-
-        .dashboard.active {
-            display: block;
-        }
-
-        /* Top Bar */
-        .topbar {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 0 32px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .topbar-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .topbar-logo {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--accent), var(--green));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .topbar-title {
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .topbar-title span {
-            color: var(--text-secondary);
-            font-weight: 400;
-            font-size: 13px;
-            margin-left: 8px;
-        }
-
-        .topbar-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .topbar-time {
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .logout-btn {
-            padding: 6px 16px;
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text-secondary);
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .logout-btn:hover {
-            border-color: var(--danger);
-            color: var(--danger);
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 32px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .page-header {
-            margin-bottom: 32px;
-        }
-
-        .page-header h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .page-header p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        /* Workspace Layout */
-        .workspace {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            align-items: start;
-        }
-
-        /* Input Panel */
-        .input-panel {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px;
-        }
-
-        .panel-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .panel-title .icon {
-            width: 28px;
-            height: 28px;
-            background: rgba(108,92,231,0.15);
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
-
-        .customer-textarea {
-            width: 100%;
-            min-height: 200px;
-            padding: 16px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
-            font-size: 14px;
-            font-family: inherit;
-            line-height: 1.7;
-            resize: vertical;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .customer-textarea:focus {
-            border-color: var(--accent);
-        }
-
-        .customer-textarea::placeholder {
-            color: #52525b;
-        }
-
-        .parse-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .btn-primary {
-            flex: 1;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--accent), #5a4bd4);
-            color: #fff;
-            border: none;
-            border-radius: var(--radius-sm);
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary {
-            padding: 12px 20px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text-secondary);
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--text-secondary);
-            color: var(--text-primary);
-        }
-
-        /* Parsed Tags */
-        .parsed-tags {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            display: none;
-        }
-
-        .parsed-tags.active {
-            display: block;
-        }
-
-        .parsed-tags .tag-label {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .tag-model {
-            background: rgba(108,92,231,0.15);
-            color: #a78bfa;
-        }
-
-        .tag-budget {
-            background: rgba(0,210,160,0.15);
-            color: var(--green);
-        }
-
-        .tag-scene {
-            background: rgba(245,158,11,0.15);
-            color: var(--warning);
-        }
-
-        .tag-special {
-            background: rgba(239,68,68,0.15);
-            color: #f87171;
-        }
-
-        /* Results Panel */
-        .results-panel {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px;
-            min-height: 400px;
-        }
-
-        .results-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-            color: var(--text-secondary);
-            text-align: center;
-        }
-
-        .results-placeholder .placeholder-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-            opacity: 0.3;
-        }
-
-        .results-placeholder p {
-            font-size: 14px;
-        }
-
-        .results-list {
-            display: none;
-        }
-
-        .results-list.active {
-            display: block;
-        }
-
-        /* Station Card */
-        .station-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 16px;
-            margin-bottom: 12px;
-            transition: all 0.2s;
-            position: relative;
-        }
-
-        .station-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 1px rgba(108,92,231,0.2);
-        }
-
-        .station-card.first {
-            border-color: var(--green);
-            background: linear-gradient(135deg, rgba(0,210,160,0.05), var(--bg-secondary));
-        }
-
-        .station-card.first::before {
-            content: 'BEST';
-            position: absolute;
-            top: -1px;
-            right: 16px;
-            background: var(--green);
-            color: #000;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 0 0 6px 6px;
-            letter-spacing: 0.5px;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .card-rank {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-
-        .rank-1 { background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; }
-        .rank-2 { background: linear-gradient(135deg, #94a3b8, #64748b); color: #fff; }
-        .rank-3 { background: linear-gradient(135deg, #cd7f32, #a0522d); color: #fff; }
-        .rank-4, .rank-5 { background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border); }
-
-        .card-name {
-            font-size: 15px;
-            font-weight: 600;
-            flex: 1;
-        }
-
-        .card-score {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--green);
-        }
-
-        .card-score span {
-            font-size: 12px;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .card-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .card-meta .meta-item {
-            font-size: 11px;
-            padding: 2px 8px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 4px;
-            color: var(--text-secondary);
-        }
-
-        .card-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 14px;
-        }
-
-        .card-features .feature-tag {
-            font-size: 11px;
-            padding: 2px 8px;
-            background: rgba(108,92,231,0.1);
-            border-radius: 4px;
-            color: #a78bfa;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-report {
-            flex: 1;
-            padding: 8px 16px;
-            background: rgba(0,210,160,0.1);
-            border: 1px solid rgba(0,210,160,0.3);
-            border-radius: 6px;
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .btn-report:hover {
-            background: rgba(0,210,160,0.2);
-            border-color: var(--green);
-        }
-
-        .btn-visit {
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            text-decoration: none;
-        }
-
-        .btn-visit:hover {
-            border-color: var(--text-secondary);
-            color: var(--text-primary);
-        }
-
-        /* ========== MODAL ========== */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            width: 800px;
-            max-width: 95vw;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-        }
-
-        .modal::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .modal::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .modal::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 3px;
-        }
-
-        .modal-header {
-            padding: 24px 28px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            background: var(--bg-card);
-            z-index: 10;
-            border-radius: 16px 16px 0 0;
-        }
-
-        .modal-header h3 {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .modal-close {
-            width: 32px;
-            height: 32px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-
-        .modal-close:hover {
-            border-color: var(--danger);
-            color: var(--danger);
-        }
-
-        .modal-body {
-            padding: 28px;
-        }
-
-        /* Report Content */
-        .report-section {
-            margin-bottom: 28px;
-        }
-
-        .report-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .report-section-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* Best Recommendation */
-        .best-rec {
-            background: linear-gradient(135deg, rgba(0,210,160,0.08), rgba(108,92,231,0.05));
-            border: 1px solid rgba(0,210,160,0.3);
-            border-radius: var(--radius);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .best-rec-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--green), #00b890);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-
-        .best-rec-info h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .best-rec-info p {
-            font-size: 13px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        .best-rec-score {
-            margin-left: auto;
-            text-align: center;
-        }
-
-        .best-rec-score .score-num {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--green);
-        }
-
-        .best-rec-score .score-label {
-            font-size: 11px;
-            color: var(--text-secondary);
-        }
-
-        /* Comparison Table */
-        .compare-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .compare-table th,
-        .compare-table td {
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-            font-size: 13px;
-        }
-
-        .compare-table th {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .compare-table tr:hover td {
-            background: rgba(255,255,255,0.02);
-        }
-
-        .compare-table .station-name-col {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .compare-table .highlight {
-            color: var(--green);
-            font-weight: 600;
-        }
-
-        /* Bar Chart */
-        .bar-chart {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .bar-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .bar-label {
-            width: 120px;
-            font-size: 13px;
-            color: var(--text-secondary);
-            flex-shrink: 0;
-            text-align: right;
-        }
-
-        .bar-track {
-            flex: 1;
-            height: 24px;
-            background: var(--bg-secondary);
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .bar-fill {
-            height: 100%;
-            border-radius: 6px;
-            transition: width 0.6s ease;
-            display: flex;
-            align-items: center;
-            padding-left: 8px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .bar-fill.speed { background: linear-gradient(90deg, #6c5ce7, #a78bfa); }
-        .bar-fill.price { background: linear-gradient(90deg, #00d2a0, #00e8b0); }
-        .bar-fill.stability { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-        .bar-fill.support { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-
-        .bar-value {
-            width: 36px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-            flex-shrink: 0;
-        }
-
-        /* Free Amount Cards */
-        .free-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 12px;
-        }
-
-        .free-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 14px;
-        }
-
-        .free-card.has-free {
-            border-color: rgba(0,210,160,0.3);
-        }
-
-        .free-card .free-name {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .free-card .free-amount {
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .free-card .free-amount.has {
-            color: var(--green);
-        }
-
-        /* Customer Need Summary */
-        .need-summary {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 16px;
-            margin-bottom: 24px;
-        }
-
-        .need-summary h4 {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
-
-        .need-items {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-        }
-
-        .need-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-        }
-
-        .need-item .need-key {
-            color: var(--text-secondary);
-        }
-
-        .need-item .need-val {
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .workspace {
-                grid-template-columns: 1fr;
-            }
-            .main-content {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .topbar {
-                padding: 0 16px;
-            }
-            .login-box {
-                padding: 32px 24px;
-            }
-            .need-items {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .station-card {
-            animation: fadeInUp 0.4s ease forwards;
-            opacity: 0;
-        }
-
-        .station-card:nth-child(1) { animation-delay: 0.05s; }
-        .station-card:nth-child(2) { animation-delay: 0.1s; }
-        .station-card:nth-child(3) { animation-delay: 0.15s; }
-        .station-card:nth-child(4) { animation-delay: 0.2s; }
-        .station-card:nth-child(5) { animation-delay: 0.25s; }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .loading-spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-        }
-
-        /* Quick Examples */
-        .quick-examples {
-            margin-top: 16px;
-        }
-
-        .quick-examples .examples-label {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .example-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .example-chip {
-            padding: 4px 10px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            font-size: 11px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .example-chip:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #f0f0f5; line-height: 1.6; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        .navbar { position: fixed; top: 0; left: 0; right: 0; padding: 16px 0; background: rgba(10,10,15,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); z-index: 100; }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f0f0f5; }
+        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, #6c5ce7, #a29bfe); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: white; }
+        .logo-text { font-weight: 700; font-size: 18px; }
+        .nav-links a { color: #8888a0; text-decoration: none; font-size: 14px; margin-left: 20px; }
+        .nav-links a:hover { color: #a29bfe; }
+        
+        .page-header { padding: 120px 0 40px; }
+        .page-header h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+        .page-header p { font-size: 14px; color: #8888a0; }
+        
+        .stats-bar { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 24px; flex: 1; min-width: 120px; text-align: center; }
+        .stat-number { font-size: 24px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+        .stat-number.green { color: #2ed573; }
+        .stat-number.yellow { color: #ffc107; }
+        .stat-number.red { color: #ff6b6b; }
+        .stat-number.blue { color: #6c5ce7; }
+        .stat-label { font-size: 12px; color: #8888a0; margin-top: 4px; }
+        
+        .admin-list { display: flex; flex-direction: column; gap: 12px; padding-bottom: 80px; }
+        .admin-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px; display: flex; gap: 20px; align-items: flex-start; transition: all 0.2s; }
+        .admin-item:hover { border-color: rgba(108,92,231,0.3); background: rgba(108,92,231,0.03); }
+        .admin-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+        .admin-name { font-size: 18px; font-weight: 700; color: #fff; }
+        .admin-url { font-size: 12px; color: rgba(255,255,255,0.4); word-break: break-all; }
+        .admin-url a { color: #a29bfe; text-decoration: none; }
+        .admin-url a:hover { text-decoration: underline; }
+        .admin-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+        .admin-models, .admin-features { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+        .admin-scores { font-size: 11px; color: #a29bfe; margin-top: 6px; font-family: 'JetBrains Mono', monospace; background: rgba(108,92,231,0.08); padding: 8px 12px; border-radius: 8px; }
+        .admin-meta { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+        .admin-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; min-width: 100px; }
+        .admin-status { font-size: 12px; padding: 4px 12px; border-radius: 12px; font-weight: 500; }
+        .status-pass { color: #2ed573; background: rgba(46,213,115,0.1); }
+        .status-fail { color: #ff6b6b; background: rgba(255,107,107,0.1); }
+        .status-testing { color: #6c5ce7; background: rgba(108,92,231,0.1); }
+        .status-pending { color: #ffc107; background: rgba(255,193,7,0.1); }
+        .admin-btn { padding: 8px 16px; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 500; transition: all 0.2s; width: 100%; text-align: center; }
+        .admin-btn.approve { background: rgba(46,213,115,0.12); color: #2ed573; }
+        .admin-btn.approve:hover { background: rgba(46,213,115,0.25); }
+        .admin-btn.reject { background: rgba(255,107,107,0.12); color: #ff6b6b; }
+        .admin-btn.reject:hover { background: rgba(255,107,107,0.25); }
+        .admin-btn.delete { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.5); }
+        .admin-btn.delete:hover { background: rgba(255,107,107,0.15); color: #ff6b6b; }
+        .admin-empty { text-align: center; padding: 60px 20px; color: rgba(255,255,255,0.3); font-size: 15px; }
+        
+        .footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; color: #555570; font-size: 13px; }
+        
+        @media (max-width: 768px) {
+            .admin-item { flex-direction: column; }
+            .admin-actions { flex-direction: row; align-items: center; width: 100%; }
+            .admin-btn { flex: 1; }
+            .stats-bar { gap: 8px; }
+            .stat-item { padding: 12px 16px; }
         }
     </style>
 </head>
 <body>
-
-<!-- ========== LOGIN PAGE ========== -->
-<div class="login-page" id="loginPage">
-    <div class="login-box">
-        <div class="login-logo">
-            <div class="logo-icon">AR</div>
-            <h1>APIRank 商家后台</h1>
-            <p>智能中转站推荐管理系统</p>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <span class="logo-text">API<span>排行榜</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">返回首页</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label>管理密码</label>
-            <input type="password" id="passwordInput" placeholder="请输入后台管理密码" autocomplete="off">
-        </div>
-        <button class="login-btn" id="loginBtn" onclick="handleLogin()">进入工作台</button>
-        <div class="login-error" id="loginError"></div>
-    </div>
-</div>
-
-<!-- ========== DASHBOARD ========== -->
-<div class="dashboard" id="dashboard">
-    <!-- Top Bar -->
-    <div class="topbar">
-        <div class="topbar-left">
-            <div class="topbar-logo">AR</div>
-            <div class="topbar-title">工作台 <span>智能推荐引擎</span></div>
-        </div>
-        <div class="topbar-right">
-            <div class="topbar-time" id="topbarTime"></div>
-            <button class="logout-btn" onclick="handleLogout()">退出登录</button>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
+    </nav>
+    
+    <div class="container">
         <div class="page-header">
-            <h2>客户需求智能解析</h2>
-            <p>粘贴客户发来的文字，系统自动识别需求并推荐最合适的中转站</p>
+            <h1>⚙️ 后台管理</h1>
+            <p>审核提交的站点，管理排行榜内容</p>
         </div>
-
-        <div class="workspace">
-            <!-- Left: Input Panel -->
-            <div class="input-panel">
-                <div class="panel-title">
-                    <span class="icon">&#9998;</span>
-                    客户需求输入
-                </div>
-                <textarea class="customer-textarea" id="customerText" placeholder="在此粘贴客户发来的文字，例如：&#10;&#10;「我要用Claude写代码，预算100块，希望稳定一点，最好国内能直连」&#10;&#10;「帮我推荐一个便宜的GPT中转站，用来聊天，预算50以内」&#10;&#10;「企业用，需要Gemini，对公开票，稳定性最重要」"></textarea>
-
-                <div class="parse-actions">
-                    <button class="btn-primary" id="parseBtn" onclick="handleParse()">
-                        <span id="parseBtnText">&#9889; 智能解析</span>
-                    </button>
-                    <button class="btn-secondary" onclick="clearAll()">清空</button>
-                </div>
-
-                <!-- Parsed Tags -->
-                <div class="parsed-tags" id="parsedTags">
-                    <div class="tag-label">识别到的需求标签</div>
-                    <div class="tag-list" id="tagList"></div>
-                </div>
-
-                <!-- Quick Examples -->
-                <div class="quick-examples">
-                    <div class="examples-label">快速示例（点击填入）</div>
-                    <div class="example-chips">
-                        <button class="example-chip" onclick="fillExample(0)">Claude写代码 100预算</button>
-                        <button class="example-chip" onclick="fillExample(1)">便宜GPT聊天 50以内</button>
-                        <button class="example-chip" onclick="fillExample(2)">企业Gemini 对公开票</button>
-                        <button class="example-chip" onclick="fillExample(3)">DeepSeek 国内直连</button>
-                        <button class="example-chip" onclick="fillExample(4)">全模型 超快响应</button>
-                    </div>
-                </div>
+        
+        <div class="stats-bar" id="statsBar">
+            <div class="stat-item">
+                <div class="stat-number blue" id="statTotal">0</div>
+                <div class="stat-label">总提交</div>
             </div>
-
-            <!-- Right: Results Panel -->
-            <div class="results-panel">
-                <div class="panel-title">
-                    <span class="icon">&#127919;</span>
-                    推荐结果 <span style="font-size:12px;color:var(--text-secondary);font-weight:400;margin-left:auto;">Top 5 中转站</span>
-                </div>
-
-                <div class="results-placeholder" id="resultsPlaceholder">
-                    <div class="placeholder-icon">&#128269;</div>
-                    <p>输入客户需求并点击「智能解析」<br>即可获得精准推荐</p>
-                </div>
-
-                <div class="results-list" id="resultsList"></div>
+            <div class="stat-item">
+                <div class="stat-number yellow" id="statPending">0</div>
+                <div class="stat-label">待审核</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number green" id="statApproved">0</div>
+                <div class="stat-label">已通过</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number red" id="statRejected">0</div>
+                <div class="stat-label">已拒绝</div>
             </div>
         </div>
-    </div>
-</div>
-
-<!-- ========== REPORT MODAL ========== -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-    <div class="modal" id="reportModal">
-        <div class="modal-header">
-            <h3 id="modalTitle">详细对比报告</h3>
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+        
+        <div id="adminList" class="admin-list">
+            <div class="admin-empty">加载中...</div>
         </div>
-        <div class="modal-body" id="modalBody"></div>
     </div>
-</div>
+    
+    <footer class="footer">
+        <div class="container">API排行榜 - 后台管理（仅管理员可见）</div>
+    </footer>
 
-<script>
-// ========== STATION DATABASE ==========
-const stationDatabase = [
-    { name: '诗云API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路'], freeAmount: '新用户送额度' },
-    { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable'], concurrency: 'high', payment: 'both', score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['智能路由','对公开票','企业级'], freeAmount: '无免费额度' },
-    { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
-    { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
-    { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
-    { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 8.5, support: 7.5, features: ['GPT专精','低价','按量计费'], freeAmount: '新用户送额度' },
-    { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
-    { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '无免费额度' },
-    { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
-    { name: '火山引擎(豆包)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
-];
-
-// ========== EXAMPLES ==========
-const examples = [
-    '我要用Claude写代码，预算100块，希望稳定一点，最好国内能直连',
-    '帮我推荐一个便宜的GPT中转站，用来聊天，预算50以内',
-    '企业用，需要Gemini，对公开票，稳定性最重要，预算充足',
-    '想用DeepSeek写代码，国内直连，越便宜越好，最好有免费额度',
-    '需要全模型支持的中转站，Claude和GPT都要，响应速度要快'
-];
-
-// ========== LABELS ==========
-const modelLabels = { claude: 'Claude', gpt: 'GPT', gemini: 'Gemini', domestic: '国产模型' };
-const priceLabels = { low: '低价 (50以内)', medium: '中等 (50-200)', high: '高价 (200+)' };
-const sceneLabels = { coding: '写代码/编程', chat: '聊天/写作', api: 'API调用', enterprise: '企业级', learning: '学习' };
-const specialLabels = { direct: '国内直连', stable: '稳定可靠', cheap: '性价比高', fast: '快速响应' };
-
-// ========== LOGIN ==========
-function handleLogin() {
-    const pwd = document.getElementById('passwordInput').value;
-    if (pwd === 'apirank2026') {
-        document.getElementById('loginPage').style.display = 'none';
-        document.getElementById('dashboard').classList.add('active');
-        sessionStorage.setItem('admin_auth', '1');
-    } else {
-        document.getElementById('loginError').textContent = '密码错误，请重试';
-        document.getElementById('passwordInput').style.borderColor = 'var(--danger)';
-        setTimeout(() => {
-            document.getElementById('passwordInput').style.borderColor = '';
-        }, 1500);
-    }
-}
-
-// Enter key login
-document.getElementById('passwordInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') handleLogin();
-});
-
-function handleLogout() {
-    sessionStorage.removeItem('admin_auth');
-    document.getElementById('dashboard').classList.remove('active');
-    document.getElementById('loginPage').style.display = 'flex';
-    document.getElementById('passwordInput').value = '';
-    document.getElementById('loginError').textContent = '';
-}
-
-// Check session
-(function() {
-    if (sessionStorage.getItem('admin_auth') === '1') {
-        document.getElementById('loginPage').style.display = 'none';
-        document.getElementById('dashboard').classList.add('active');
-    }
-})();
-
-// ========== TIME ==========
-function updateTime() {
-    const now = new Date();
-    const str = now.getFullYear() + '/' +
-        String(now.getMonth()+1).padStart(2,'0') + '/' +
-        String(now.getDate()).padStart(2,'0') + ' ' +
-        String(now.getHours()).padStart(2,'0') + ':' +
-        String(now.getMinutes()).padStart(2,'0') + ':' +
-        String(now.getSeconds()).padStart(2,'0');
-    document.getElementById('topbarTime').textContent = str;
-}
-setInterval(updateTime, 1000);
-updateTime();
-
-// ========== FILL EXAMPLE ==========
-function fillExample(idx) {
-    document.getElementById('customerText').value = examples[idx];
-}
-
-// ========== CLEAR ==========
-function clearAll() {
-    document.getElementById('customerText').value = '';
-    document.getElementById('parsedTags').classList.remove('active');
-    document.getElementById('resultsList').classList.remove('active');
-    document.getElementById('resultsList').innerHTML = '';
-    document.getElementById('resultsPlaceholder').style.display = 'flex';
-}
-
-// ========== PARSE ==========
-function handleParse() {
-    const text = document.getElementById('customerText').value.trim();
-    if (!text) return;
-
-    // Show loading
-    const btn = document.getElementById('parseBtn');
-    const btnText = document.getElementById('parseBtnText');
-    btn.disabled = true;
-    btnText.innerHTML = '<span class="loading-spinner"></span> 解析中...';
-
-    setTimeout(() => {
-        const needs = parseCustomerText(text);
-        displayParsedTags(needs);
-        const results = rankStations(needs);
-        displayResults(results, needs);
-
-        btn.disabled = false;
-        btnText.innerHTML = '&#9889; 智能解析';
-    }, 600);
-}
-
-function parseCustomerText(text) {
-    const lower = text.toLowerCase();
-
-    // Models
-    const models = [];
-    if (/claude/i.test(text)) models.push('claude');
-    if (/gpt|chatgpt/i.test(text)) models.push('gpt');
-    if (/gemini/i.test(text)) models.push('gemini');
-    if (/deepseek|豆包|通义|文心|国产|kimi|智谱|glm/i.test(text)) models.push('domestic');
-    if (models.length === 0) models.push('claude', 'gpt'); // default
-
-    // Budget
-    const budgetMatch = text.match(/(\d+)\s*[块元]|预算\s*(\d+)/);
-    let budget = 'medium';
-    if (budgetMatch) {
-        const amount = parseInt(budgetMatch[1] || budgetMatch[2]) || 100;
-        if (amount <= 50) budget = 'low';
-        else if (amount <= 200) budget = 'medium';
-        else budget = 'high';
-    }
-    if (/便宜|低价|性价比|越.*越.*便宜|省钱|免费/i.test(text)) budget = 'low';
-    if (/预算充足|不限预算|贵.*没关系|企业/i.test(text)) budget = 'high';
-
-    // Scene
-    const scenes = [];
-    if (/写代码|编程|cursor|claude\s*code|copilot|开发/i.test(text)) scenes.push('coding');
-    if (/聊天|写作|对话|问答/i.test(text)) scenes.push('chat');
-    if (/企业|公司|团队|商用/i.test(text)) scenes.push('enterprise');
-    if (/api|接口|接入|调用|集成/i.test(text)) scenes.push('api');
-    if (/学习|学生|入门|练习/i.test(text)) scenes.push('learning');
-    if (scenes.length === 0) scenes.push('coding', 'chat'); // default
-
-    // Special
-    const specials = [];
-    if (/国内|直连|翻墙|免翻|不用翻/i.test(text)) specials.push('direct');
-    if (/稳定|可靠|不掉线|SLA/i.test(text)) specials.push('stable');
-    if (/便宜|低价|性价比|省钱/i.test(text)) specials.push('cheap');
-    if (/快|速度|延迟|响应/i.test(text)) specials.push('fast');
-
-    return { models, budget, scenes, specials, originalText: text };
-}
-
-function rankStations(needs) {
-    const scored = stationDatabase.map(station => {
-        let score = station.score; // base score
-
-        // Model match (critical)
-        const modelMatch = needs.models.filter(m => station.models.includes(m)).length;
-        const modelRatio = modelMatch / needs.models.length;
-        score += modelRatio * 3; // up to +3
-
-        // Budget match
-        const priceMap = { low: 0, medium: 1, high: 2 };
-        const budgetVal = priceMap[needs.budget];
-        const stationPriceVal = priceMap[station.price];
-        if (stationPriceVal <= budgetVal) {
-            score += (budgetVal - stationPriceVal === 0) ? 1.5 : 1; // exact or cheaper
-        } else {
-            score -= 2; // over budget penalty
+    <script>
+        // 从 localStorage 读取审核队列
+        function getQueue() {
+            return JSON.parse(localStorage.getItem('reviewQueue') || '[]');
         }
-
-        // Scene match
-        const sceneMatch = needs.scenes.filter(s => station.scene.includes(s)).length;
-        score += sceneMatch * 0.8;
-
-        // Special match
-        const specialMatch = needs.specials.filter(s => station.special.includes(s)).length;
-        score += specialMatch * 1.2;
-
-        // Bonus for free amount
-        if (station.freeAmount.includes('✅')) score += 0.5;
-
-        return { ...station, matchedScore: Math.round(score * 10) / 10 };
-    });
-
-    scored.sort((a, b) => b.matchedScore - a.matchedScore);
-    return scored.slice(0, 5);
-}
-
-function displayParsedTags(needs) {
-    const container = document.getElementById('tagList');
-    container.innerHTML = '';
-
-    needs.models.forEach(m => {
-        container.innerHTML += `<span class="tag tag-model">${modelLabels[m] || m}</span>`;
-    });
-    container.innerHTML += `<span class="tag tag-budget">${priceLabels[needs.budget]}</span>`;
-    needs.scenes.forEach(s => {
-        container.innerHTML += `<span class="tag tag-scene">${sceneLabels[s] || s}</span>`;
-    });
-    needs.specials.forEach(s => {
-        container.innerHTML += `<span class="tag tag-special">${specialLabels[s] || s}</span>`;
-    });
-
-    document.getElementById('parsedTags').classList.add('active');
-}
-
-function displayResults(results, needs) {
-    document.getElementById('resultsPlaceholder').style.display = 'none';
-    const container = document.getElementById('resultsList');
-    container.innerHTML = '';
-    container.classList.add('active');
-
-    results.forEach((station, idx) => {
-        const rank = idx + 1;
-        const isFirst = idx === 0;
-        const modelTags = station.models.map(m => `<span class="meta-item">${modelLabels[m] || m}</span>`).join('');
-        const featureTags = station.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
-
-        container.innerHTML += `
-            <div class="station-card ${isFirst ? 'first' : ''}">
-                <div class="card-header">
-                    <span class="card-rank rank-${rank}">${rank}</span>
-                    <span class="card-name">${station.name}</span>
-                    <span class="card-score">${station.matchedScore} <span>/ 10</span></span>
-                </div>
-                <div class="card-meta">${modelTags}<span class="meta-item">${station.url}</span></div>
-                <div class="card-features">${featureTags}</div>
-                <div class="card-actions">
-                    <button class="btn-report" onclick="openReport(${idx}, true)">&#128196; 领取该客户的分析报告</button>
-                    <a class="btn-visit" href="https://${station.url}" target="_blank">&#8599; 访问</a>
-                </div>
-            </div>
-        `;
-    });
-}
-
-// ========== REPORT MODAL ==========
-function openReport(stationIdx, isForCustomer) {
-    const needs = parseCustomerText(document.getElementById('customerText').value.trim());
-    const results = rankStations(needs);
-    const station = results[stationIdx];
-    if (!station) return;
-
-    document.getElementById('modalTitle').textContent = `${station.name} - 详细对比报告`;
-
-    const body = document.getElementById('modalBody');
-    body.innerHTML = '';
-
-    // Customer Need Summary
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#128100; 客户需求摘要</div>
-            <div class="need-summary">
-                <div class="need-items">
-                    <div class="need-item"><span class="need-key">使用模型：</span><span class="need-val">${needs.models.map(m => modelLabels[m]).join('、')}</span></div>
-                    <div class="need-item"><span class="need-key">预算范围：</span><span class="need-val">${priceLabels[needs.budget]}</span></div>
-                    <div class="need-item"><span class="need-key">使用场景：</span><span class="need-val">${needs.scenes.map(s => sceneLabels[s]).join('、')}</span></div>
-                    <div class="need-item"><span class="need-key">特殊需求：</span><span class="need-val">${needs.specials.length ? needs.specials.map(s => specialLabels[s]).join('、') : '无'}</span></div>
-                </div>
-            </div>
-        </div>
-    `;
-
-    // Best Recommendation
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#127942; 最佳推荐</div>
-            <div class="best-rec">
-                <div class="best-rec-icon">&#127775;</div>
-                <div class="best-rec-info">
-                    <h4>${results[0].name}</h4>
-                    <p>综合评分 ${results[0].matchedScore} 分 | ${results[0].features.slice(0, 3).join(' / ')}<br>${results[0].freeAmount}</p>
-                </div>
-                <div class="best-rec-score">
-                    <div class="score-num">${results[0].matchedScore}</div>
-                    <div class="score-label">综合评分</div>
-                </div>
-            </div>
-        </div>
-    `;
-
-    // Speed Comparison
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#9889; 响应速度对比</div>
-            <div class="bar-chart">
-                ${results.map(s => `
-                    <div class="bar-row">
-                        <span class="bar-label">${s.name.length > 10 ? s.name.substring(0, 10) + '...' : s.name}</span>
-                        <div class="bar-track">
-                            <div class="bar-fill speed" style="width: ${s.speed * 10}%">${s.speed}</div>
-                        </div>
-                        <span class="bar-value">${s.speed}</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-
-    // Price Comparison Table
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#128176; 价格与综合对比</div>
-            <table class="compare-table">
-                <thead>
-                    <tr>
-                        <th>中转站</th>
-                        <th>价格</th>
-                        <th>稳定性</th>
-                        <th>响应速度</th>
-                        <th>客服支持</th>
-                        <th>综合评分</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${results.map((s, i) => `
-                        <tr>
-                            <td class="station-name-col">${i === 0 ? '&#127775; ' : ''}${s.name}</td>
-                            <td>${s.price === 'low' ? '<span class="highlight">低</span>' : s.price === 'medium' ? '中' : '高'}</td>
-                            <td>${s.stability}</td>
-                            <td>${s.speed}</td>
-                            <td>${s.support}</td>
-                            <td><strong class="highlight">${s.matchedScore}</strong></td>
-                        </tr>
-                    `).join('')}
-                </tbody>
-            </table>
-        </div>
-    `;
-
-    // Stability & Reputation
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#128737; 稳定性 & 口碑</div>
-            <div class="bar-chart">
-                ${results.map(s => `
-                    <div class="bar-row">
-                        <span class="bar-label">${s.name.length > 10 ? s.name.substring(0, 10) + '...' : s.name}</span>
-                        <div class="bar-track">
-                            <div class="bar-fill stability" style="width: ${s.stability * 10}%">${s.stability}</div>
-                        </div>
-                        <span class="bar-value">${s.stability}</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-
-    // Support
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#128172; 客服支持</div>
-            <div class="bar-chart">
-                ${results.map(s => `
-                    <div class="bar-row">
-                        <span class="bar-label">${s.name.length > 10 ? s.name.substring(0, 10) + '...' : s.name}</span>
-                        <div class="bar-track">
-                            <div class="bar-fill support" style="width: ${s.support * 10}%">${s.support}</div>
-                        </div>
-                        <span class="bar-value">${s.support}</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-
-    // Free Amount
-    body.innerHTML += `
-        <div class="report-section">
-            <div class="report-section-title">&#127873; 免费额度</div>
-            <div class="free-cards">
-                ${results.map(s => {
-                    const hasFree = s.freeAmount.includes('✅');
-                    return `
-                        <div class="free-card ${hasFree ? 'has-free' : ''}">
-                            <div class="free-name">${s.name}</div>
-                            <div class="free-amount ${hasFree ? 'has' : ''}">${s.freeAmount}</div>
-                        </div>
-                    `;
-                }).join('')}
-            </div>
-        </div>
-    `;
-
-    document.getElementById('modalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function closeModalOutside(e) {
-    if (e.target === document.getElementById('modalOverlay')) {
-        closeModal();
-    }
-}
-
-// ESC to close
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-});
-</script>
-
+        
+        function saveQueue(queue) {
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+        }
+        
+        // 渲染管理面板
+        function renderAdminPanel() {
+            const queue = getQueue();
+            const container = document.getElementById('adminList');
+            
+            // 更新统计
+            const pending = queue.filter(s => s.status === 'pending').length;
+            const approved = queue.filter(s => s.status === 'approved').length;
+            const rejected = queue.filter(s => s.status === 'rejected').length;
+            document.getElementById('statTotal').textContent = queue.length;
+            document.getElementById('statPending').textContent = pending;
+            document.getElementById('statApproved').textContent = approved;
+            document.getElementById('statRejected').textContent = rejected;
+            
+            if (queue.length === 0) {
+                container.innerHTML = '<div class="admin-empty">暂无提交记录<br><span style="font-size:12px;margin-top:8px;display:block;">用户在首页提交中转站后，记录会出现在这里</span></div>';
+                return;
+            }
+            
+            // 按时间倒序
+            const sorted = [...queue].reverse();
+            
+            let html = '';
+            sorted.forEach(function(site, reverseIdx) {
+                const idx = queue.length - 1 - reverseIdx;
+                const statusClass = site.status === 'approved' ? 'status-pass' : site.status === 'rejected' ? 'status-fail' : site.status === 'pending' ? 'status-pending' : 'status-testing';
+                const statusText = site.status === 'approved' ? '已通过' : site.status === 'rejected' ? '已拒绝' : '待审核';
+                const scoresHtml = site.scores ? 
+                    '<div class="admin-scores">速度:' + site.scores.speed + ' | 模型:' + site.scores.models + ' | 价格:' + site.scores.price + ' | 稳定:' + site.scores.stability + ' | 口碑:' + site.scores.reputation + ' | 功能:' + site.scores.feature + ' | <b>总分:' + site.scores.total + '</b></div>' : '';
+                
+                html += '<div class="admin-item">' +
+                    '<div class="admin-info">' +
+                        '<div class="admin-name">' + site.name + '</div>' +
+                        '<div class="admin-url"><a href="' + site.url + '" target="_blank">' + site.url + '</a></div>' +
+                        (site.description ? '<div class="admin-desc">' + site.description + '</div>' : '') +
+                        '<div class="admin-models">模型: ' + (site.models || []).join(', ') + '</div>' +
+                        '<div class="admin-features">特点: ' + (site.features || []).join(', ') + '</div>' +
+                        scoresHtml +
+                        '<div class="admin-meta">响应: ' + (site.responseTime || '?') + 's | 总分: ' + (site.score || '?') + '/10 | 提交: ' + (site.submitTime ? new Date(site.submitTime).toLocaleString('zh-CN') : '未知') + '</div>' +
+                    '</div>' +
+                    '<div class="admin-actions">' +
+                        '<span class="admin-status ' + statusClass + '">' + statusText + '</span>' +
+                        (site.status !== 'approved' ? '<button class="admin-btn approve" onclick="approveSite(' + idx + ')">✅ 通过</button>' : '') +
+                        (site.status !== 'rejected' ? '<button class="admin-btn reject" onclick="rejectSite(' + idx + ')">❌ 拒绝</button>' : '') +
+                        '<button class="admin-btn delete" onclick="deleteSite(' + idx + ')">🗑️ 删除</button>' +
+                    '</div>' +
+                '</div>';
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // 审核通过
+        function approveSite(index) {
+            let queue = getQueue();
+            if (index < 0 || index >= queue.length) return;
+            
+            const site = queue[index];
+            site.status = 'approved';
+            site.approvedTime = new Date().toISOString();
+            queue[index] = site;
+            saveQueue(queue);
+            
+            // 保存到已通过列表（供 index.html 读取）
+            let approved = JSON.parse(localStorage.getItem('approvedSites') || '[]');
+            if (!approved.find(s => s.name === site.name)) {
+                approved.push(site);
+                localStorage.setItem('approvedSites', JSON.stringify(approved));
+            }
+            
+            renderAdminPanel();
+        }
+        
+        // 拒绝
+        function rejectSite(index) {
+            let queue = getQueue();
+            if (index < 0 || index >= queue.length) return;
+            
+            queue[index].status = 'rejected';
+            saveQueue(queue);
+            
+            // 从已通过列表移除
+            let approved = JSON.parse(localStorage.getItem('approvedSites') || '[]');
+            approved = approved.filter(s => s.name !== queue[index].name);
+            localStorage.setItem('approvedSites', JSON.stringify(approved));
+            
+            renderAdminPanel();
+        }
+        
+        // 删除
+        function deleteSite(index) {
+            if (!confirm('确定要删除这条记录吗？')) return;
+            
+            let queue = getQueue();
+            if (index < 0 || index >= queue.length) return;
+            
+            const site = queue[index];
+            
+            // 从已通过列表移除
+            let approved = JSON.parse(localStorage.getItem('approvedSites') || '[]');
+            approved = approved.filter(s => s.name !== site.name);
+            localStorage.setItem('approvedSites', JSON.stringify(approved));
+            
+            // 从队列删除
+            queue.splice(index, 1);
+            saveQueue(queue);
+            
+            renderAdminPanel();
+        }
+        
+        // 页面加载
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAdminPanel();
+        });
+    </script>
 </body>
 </html>

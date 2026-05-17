@@ -1116,6 +1116,70 @@
             
             .mobile-menu-btn {
                 display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                z-index: 200;
+            }
+            
+            .mobile-menu-btn span {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: #f0f0f5;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            
+            .nav-links.mobile-open {
+                display: flex !important;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                z-index: 150;
+                padding: 80px 24px 40px;
+            }
+            
+            .nav-links.mobile-open li {
+                list-style: none;
+            }
+            
+            .nav-links.mobile-open a {
+                font-size: 18px;
+                color: #f0f0f5;
+                text-decoration: none;
+                padding: 12px 24px;
+                display: block;
+                text-align: center;
+                border-radius: 12px;
+                transition: background 0.2s;
+            }
+            
+            .nav-links.mobile-open a:hover {
+                background: rgba(108, 92, 231, 0.15);
             }
 
             .rank-metrics {
@@ -2074,13 +2138,17 @@
                 <div class="logo-icon">A</div>
                 <div class="logo-text">API<span>排行榜</span></div>
             </a>
-            <ul class="nav-links">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#ranking">排行榜</a></li>
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
                 <li><a href="javascript:void(0)" onclick="openSectionModal('submitModal')">提交收录</a></li>
                 <li><a href="#price">价格对比</a></li>
                 <li><a href="#guide">选站指南</a></li>
                 <li><a href="dead-sites.html" style="color: #ff6b6b;">&#9888; 失效站点</a></li>
+
                 <li><span class="nav-badge">实时更新</span></li>
             </ul>
         </div>
@@ -2214,7 +2282,7 @@
                     <!-- 商家内部入口 -->
                     <div class="admin-entry">
                         <input type="password" id="adminPassword" class="form-input" placeholder="商家内部入口（输入密码）" style="max-width: 300px;" />
-                        <button class="btn btn-outline btn-sm" onclick="verifyAdmin()">验证</button>
+                        <button class="btn btn-primary btn-sm" onclick="verifyAdmin()">验证</button>
                     </div>
 
                     <div class="finder-cards" id="finderCards">
@@ -2243,37 +2311,16 @@
             </div>
                 <div class="submit-form">
                     <div class="form-group">
-                        <label class="form-label">中转站网址 *</label>
-                        <input type="url" id="siteUrl" class="form-input" placeholder="https://example.com" />
+                        <label class="form-label">中转站网址</label>
+                        <input type="url" id="siteUrl" class="form-input" placeholder="输入中转站网址，系统将自动识别名称、模型、特点等信息" />
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">中转站名称 *</label>
-                            <input type="text" id="siteName" class="form-input" placeholder="例如：PackyCode" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">主要支持的模型</label>
-                            <select id="siteModel" class="form-select">
-                                <option value="claude">Claude</option>
-                                <option value="gpt">GPT</option>
-                                <option value="gemini">Gemini</option>
-                                <option value="multi">多模型 (Claude+GPT+Gemini)</option>
-                            </select>
-                        </div>
+                    <div class="submit-hint">
+                        <span>💡 只需填写网址即可，系统会自动：</span>
+                        <span>① 验证是否为中转站 → ② 识别名称和特点 → ③ 检测模型支持 → ④ 6维度评分 → ⑤ 提交审核</span>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">API Key（用于检测，不会存储）</label>
-                            <input type="password" id="apiKey" class="form-input" placeholder="sk-..." />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">推广链接（选填）</label>
-                            <input type="url" id="affLink" class="form-input" placeholder="https://example.com/register?aff=xxx" />
-                        </div>
-                    </div>
-                    <button class="submit-btn" id="submitBtn" onclick="startDetection()">
+                    <button class="submit-btn" id="submitBtn" onclick="submitSite()">
                         <span>🚀</span>
-                        <span>提交并检测</span>
+                        <span>提交并自动检测</span>
                     </button>
                 </div>
 
@@ -2330,19 +2377,19 @@
                 <h4>📊 检测报告</h4>
                 <div class="detect-result-row">
                     <span class="label">综合评分</span>
-                    <span class="value" id="resultScore" style="color:var(--green);">—</span>
+                    <span class="value" id="resultScore" style="color:var(--green);" class="empty-price">暂无</span>
                 </div>
                 <div class="detect-result-row">
                     <span class="label">响应延迟</span>
-                    <span class="value" id="resultLatency">—</span>
+                    <span class="value" id="resultLatency" class="empty-price">暂无</span>
                 </div>
                 <div class="detect-result-row">
                     <span class="label">模型可用性</span>
-                    <span class="value" id="resultModel">—</span>
+                    <span class="value" id="resultModel" class="empty-price">暂无</span>
                 </div>
                 <div class="detect-result-row">
                     <span class="label">收录状态</span>
-                    <span class="value" id="resultStatus">—</span>
+                    <span class="value" id="resultStatus" class="empty-price">暂无</span>
                 </div>
             </div>
             <div class="detect-actions" id="detectActions" style="display:none;">
@@ -2504,7 +2551,7 @@
                     <div class="rank-action">
                         <div class="rank-score">9.8 <small>/10</small></div>
                         <a href="https://shiyunapi.com" target="_blank" class="btn btn-primary">立即注册 →</a>
-                        <a href="https://4ksapi.com" target="_blank" class="btn btn-outline btn-sm" style="margin-top:4px;">4ksAPI入口 →</a>
+                        <a href="https://4ksapi.com" target="_blank" class="btn btn-primary btn-sm" style="margin-top:4px;">4ksAPI入口 →</a>
                     </div>
                 </div>
                 <!-- #4 RightCode -->
@@ -4205,92 +4252,92 @@
                         <tr>
                             <td><span class="rank-badge gold">1</span></td>
                             <td><span class="name-cell">PackyCode</span></td>
-                            <td class="highlight">¥0.45</td>
-                            <td>¥2.25</td>
-                            <td>—</td>
+                            <td class="highlight price-cell">¥0.45</td>
+                            <td class="price-cell">¥2.25</td>
+                            <td class="empty-price">暂无</td>
                             <td>注册送$1</td>
                             <td><a href="https://www.packyapi.com/register?aff=zrXb" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge silver">2</span></td>
                             <td><span class="name-cell">RightCode</span></td>
-                            <td>—</td>
-                            <td class="highlight">¥1.50</td>
-                            <td>¥1</td>
-                            <td>¥1=$5</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="highlight price-cell">¥1.50</td>
+                            <td class="price-cell">¥1</td>
+                            <td class="price-cell">¥1=$5</td>
                             <td><a href="https://www.right.codes/register?aff=56503380" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge bronze">3</span></td>
                             <td><span class="name-cell">SSSAICode</span></td>
-                            <td>—</td>
-                            <td>¥1.80</td>
-                            <td>¥149/月</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="price-cell">¥1.80</td>
+                            <td class="price-cell">¥149/月</td>
                             <td>$300额度/月</td>
-                            <td><a href="https://www.sssaicode.com/register?ref=BO64DM" target="_blank" class="btn btn-outline btn-sm">注册</a></td>
+                            <td><a href="https://www.sssaicode.com/register?ref=BO64DM" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
-                            <td><span class="rank-badge normal">4</span></td>
+                            <td><span class="rank-badge top5">4</span></td>
                             <td><span class="name-cell">IKunCode</span></td>
-                            <td>—</td>
-                            <td>¥2.00</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="price-cell">¥2.00</td>
                             <td>按量</td>
                             <td>状态监控</td>
-                            <td><a href="https://api.ikuncode.cc" target="_blank" class="btn btn-outline btn-sm">注册</a></td>
+                            <td><a href="https://api.ikuncode.cc" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
-                            <td><span class="rank-badge normal">5</span></td>
+                            <td><span class="rank-badge top5">5</span></td>
                             <td><span class="name-cell">aigocode</span></td>
-                            <td>—</td>
-                            <td>¥2.00</td>
-                            <td>¥399/4周</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="price-cell">¥2.00</td>
+                            <td class="price-cell">¥399/4周</td>
                             <td>$110额度/周</td>
                             <td><a href="https://aigocode.com/invite/FY2CMDBZ" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge normal">6</span></td>
                             <td><span class="name-cell">ToAPIs</span></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
                             <td>0.2美金体验金</td>
                             <td><a href="https://toapis.gaigaiya.cn/t/r?t=8" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge normal">7</span></td>
                             <td><span class="name-cell">Fchat API</span></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
                             <td>赠¥5体验</td>
-                            <td><a href="https://aioncode.com" target="_blank" class="btn btn-outline btn-sm">注册</a></td>
+                            <td><a href="https://aioncode.com" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge normal">8</span></td>
                             <td><span class="name-cell">API易</span></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
                             <td>注册送额度</td>
-                            <td><a href="https://api.easyapi.com" target="_blank" class="btn btn-green btn-sm">注册</a></td>
+                            <td><a href="https://api.easyapi.com" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge normal">9</span></td>
                             <td><span class="name-cell">302.AI</span></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
                             <td>5PTC/天</td>
-                            <td><a href="https://302.ai" target="_blank" class="btn btn-green btn-sm">注册</a></td>
+                            <td><a href="https://302.ai" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge normal">10</span></td>
                             <td><span class="name-cell">OpenRouter</span></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
+                            <td class="empty-price">暂无</td>
                             <td>25+免费模型</td>
-                            <td><a href="https://openrouter.ai" target="_blank" class="btn btn-green btn-sm">注册</a></td>
+                            <td><a href="https://openrouter.ai" target="_blank" class="btn btn-primary btn-sm">注册</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -4719,7 +4766,7 @@
                 name: name,
                 model: document.getElementById('siteModel').value,
                 apiKey: document.getElementById('apiKey').value.trim(),
-                affLink: document.getElementById('affLink').value.trim()
+                siteUrl: document.getElementById('siteUrl').value.trim()
             };
         }
 
@@ -4960,7 +5007,7 @@
             const rank = list.children.length + 1;
             const tags = data.model === 'multi' ? 'claude,gpt' : data.model;
             const topClass = rank <= 3 ? ` top-${rank}` : '';
-            const affHref = data.affLink || data.url;
+            const siteHref = data.siteUrl || data.url;
             const latencyColor = latency < 800 ? 'green' : latency < 1500 ? '' : '';
             const modelLabels = { claude: 'Claude', gpt: 'GPT', gemini: 'Gemini', multi: 'Claude+GPT+Gemini' };
 
@@ -5057,6 +5104,622 @@
             // Scroll-based animations or updates here
         }, 16), { passive: true });
 
+
+        // ===== 提交收录：自动识别+6维评分+后台审核 =====
+        
+        // 提交站点（只需网址）
+        function submitSite() {
+            const url = document.getElementById('siteUrl').value.trim();
+            if (!url) { alert('请填写中转站网址'); return; }
+            
+            document.getElementById('pendingSection').style.display = 'block';
+            const itemId = 'pending_' + Date.now();
+            
+            addToPendingList({ url: url, id: itemId, status: 'testing', name: '检测中...' });
+            
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.querySelector('span:last-child').textContent = '正在分析...';
+            
+            // 开始全自动检测流程
+            fullAutoDetect(url, itemId, function(result) {
+                btn.disabled = false;
+                btn.querySelector('span:last-child').textContent = '提交并自动检测';
+                
+                if (result.pass) {
+                    updatePendingItem(itemId, 'pass', result.score, result.name);
+                    // 保存到待审核队列（不是直接加入排行榜）
+                    saveToReviewQueue(result);
+                    alert('检测完成！' + result.name + ' 已提交审核，请在后台管理页面查看。');
+                    document.getElementById('siteUrl').value = '';
+                } else {
+                    updatePendingItem(itemId, 'fail', 0, result.name || '');
+                }
+            });
+        }
+        
+        // 全自动检测流程
+        function fullAutoDetect(url, itemId, callback) {
+            let testUrl = url;
+            if (!testUrl.startsWith('http')) testUrl = 'https://' + testUrl;
+            
+            // 步骤1：抓取页面分析
+            updatePendingStatus(itemId, '正在抓取页面分析...');
+            
+            fetch(testUrl, { method: 'GET', mode: 'cors', cache: 'no-cache' })
+            .then(function(r) { return r.ok ? r.text() : Promise.reject('HTTP ' + r.status); })
+            .then(function(html) {
+                // 步骤2：验证是否为中转站
+                updatePendingStatus(itemId, '正在验证身份...');
+                
+                if (!verifyApiSite(html)) {
+                    callback({ pass: false, reason: '该网站不是API中转站，请提交正规的API中转/代理服务网站。' });
+                    return;
+                }
+                
+                // 步骤3：自动识别信息
+                updatePendingStatus(itemId, '正在识别站点信息...');
+                const siteInfo = extractSiteInfo(html, url);
+                
+                // 步骤4：检测响应速度
+                updatePendingStatus(itemId, '正在检测响应速度...');
+                const startTime = performance.now();
+                
+                fetch(testUrl, { method: 'HEAD', mode: 'no-cors', cache: 'no-cache' })
+                .then(function() {
+                    const endTime = performance.now();
+                    const responseTime = (endTime - startTime) / 1000;
+                    
+                    // 步骤5：6维度评分
+                    updatePendingStatus(itemId, '正在6维度评分...');
+                    const scores = calculateSixDimensions(siteInfo, responseTime, html);
+                    
+                    callback({
+                        pass: true,
+                        name: siteInfo.name,
+                        url: url,
+                        description: siteInfo.description,
+                        models: siteInfo.models,
+                        features: siteInfo.features,
+                        reputation: siteInfo.reputation,
+                        responseTime: Math.round(responseTime * 100) / 100,
+                        scores: scores,
+                        score: scores.total
+                    });
+                })
+                .catch(function() {
+                    const endTime = performance.now();
+                    const responseTime = (endTime - startTime) / 1000;
+                    const scores = calculateSixDimensions(siteInfo, responseTime, html);
+                    
+                    callback({
+                        pass: true,
+                        name: siteInfo.name,
+                        url: url,
+                        description: siteInfo.description,
+                        models: siteInfo.models,
+                        features: siteInfo.features,
+                        reputation: siteInfo.reputation,
+                        responseTime: Math.round(responseTime * 100) / 100,
+                        scores: scores,
+                        score: scores.total
+                    });
+                });
+            })
+            .catch(function(err) {
+                // CORS失败，用URL特征验证
+                updatePendingStatus(itemId, '正在通过URL特征验证...');
+                
+                if (!verifyApiSiteByUrl(url)) {
+                    callback({ pass: false, reason: '无法验证该网站是否为API中转站，且网址特征不匹配。' });
+                    return;
+                }
+                
+                const siteInfo = extractSiteInfoFromUrl(url);
+                const startTime = performance.now();
+                
+                fetch(testUrl, { method: 'HEAD', mode: 'no-cors', cache: 'no-cache' })
+                .then(function() {
+                    const endTime = performance.now();
+                    const responseTime = (endTime - startTime) / 1000;
+                    const scores = calculateSixDimensions(siteInfo, responseTime, '');
+                    
+                    callback({
+                        pass: true,
+                        name: siteInfo.name,
+                        url: url,
+                        description: siteInfo.description,
+                        models: siteInfo.models,
+                        features: siteInfo.features,
+                        reputation: siteInfo.reputation,
+                        responseTime: Math.round(responseTime * 100) / 100,
+                        scores: scores,
+                        score: scores.total
+                    });
+                })
+                .catch(function() {
+                    callback({ pass: false, reason: '网站无法访问，请检查网址。' });
+                });
+            });
+        }
+        
+        // 从页面HTML提取站点信息
+        function extractSiteInfo(html, url) {
+            const text = html.toLowerCase();
+            
+            // 提取名称：优先从 <title> 获取
+            let name = '未知中转站';
+            const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+            if (titleMatch) {
+                name = titleMatch[1].trim()
+                    .replace(/[-_|,，].*$/g, '')
+                    .replace(/\s*(API|api|首页|Home|中转站|代理|平台|官方).*/g, '')
+                    .trim();
+                if (name.length < 2 || name.length > 20) name = '未知中转站';
+            }
+            
+            // 提取描述
+            let description = '';
+            const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i)
+                || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["']/i);
+            if (descMatch) {
+                description = descMatch[1].trim().substring(0, 100);
+            }
+            if (!description) {
+                // 从页面提取第一段有意义的文字
+                const bodyMatch = html.replace(/<script[\s\S]*?<\/script>/gi, '')
+                    .replace(/<style[\s\S]*?<\/style>/gi, '')
+                    .replace(/<[^>]+>/g, ' ')
+                    .match(/\s{2,}([一-龥a-zA-Z0-9，。、！？：；""''（）\s]{20,120})/);
+                if (bodyMatch) description = bodyMatch[1].trim().substring(0, 100);
+            }
+            
+            // 识别支持的模型
+            const models = [];
+            const modelMap = {
+                'claude': 'claude', 'anthropic': 'claude',
+                'openai': 'gpt', 'gpt-4': 'gpt', 'gpt-4o': 'gpt', 'chatgpt': 'gpt',
+                'gemini': 'gemini', 'google ai': 'gemini',
+                'deepseek': 'deepseek', '深度求索': 'deepseek',
+                'doubao': 'doubao', '豆包': 'doubao', 'ark': 'doubao',
+                'qwen': 'qwen', '通义': 'qwen', '千问': 'qwen', 'tongyi': 'qwen',
+                'kimi': 'kimi', 'moonshot': 'kimi', '月之暗面': 'kimi',
+                'glm': 'glm', 'chatglm': 'glm', '智谱': 'glm', 'bigmodel': 'glm',
+                'baichuan': 'baichuan', '百川': 'baichuan',
+                'minimax': 'minimax',
+                'xunfei': 'xunfei', '讯飞': 'xunfei', 'spark': 'xunfei', '星火': 'xunfei',
+                'yi-': 'yi', '零一万物': 'yi', '01.ai': 'yi',
+                'ernie': 'yi', '文心': 'yi',
+                'llama': 'llama', 'mistral': 'mistral', 'cohere': 'cohere'
+            };
+            for (const [keyword, model] of Object.entries(modelMap)) {
+                if (text.includes(keyword) && !models.includes(model)) {
+                    models.push(model);
+                }
+            }
+            
+            // 识别特点
+            const features = [];
+            if (text.includes('低价') || text.includes('便宜') || text.includes('优惠') || text.includes('折扣')) features.push('低价');
+            if (text.includes('稳定') || text.includes('高可用')) features.push('稳定');
+            if (text.includes('快速') || text.includes('低延迟') || text.includes('高速')) features.push('快速');
+            if (text.includes('免费') || text.includes('赠送') || text.includes('体验金')) features.push('有免费额度');
+            if (text.includes('企业') || text.includes('团队') || text.includes('商用')) features.push('企业级');
+            if (text.includes('one-api') || text.includes('new-api')) features.push('One-API');
+            if (features.length === 0) features.push('待评估');
+            
+            // 识别口碑
+            let reputation = '待评估';
+            if (text.includes('好评') || text.includes('推荐') || text.includes('口碑')) reputation = '有好评';
+            if (text.includes('老牌') || text.includes('运营') || text.includes('成立')) reputation = '运营中';
+            
+            return { name, description, models, features, reputation };
+        }
+        
+        // 从URL提取基本信息（CORS失败时）
+        function extractSiteInfoFromUrl(url) {
+            let name = '未知中转站';
+            try {
+                const urlObj = new URL(url);
+                const host = urlObj.hostname.replace('www.', '').split('.')[0];
+                name = host.charAt(0).toUpperCase() + host.slice(1);
+            } catch(e) {}
+            
+            return {
+                name: name,
+                description: '自动提交的中转站',
+                models: ['multi'],
+                features: ['待评估'],
+                reputation: '待评估'
+            };
+        }
+        
+        // 6维度评分系统
+        function calculateSixDimensions(siteInfo, responseTime, html) {
+            const text = (html || '').toLowerCase();
+            
+            // 维度1：响应速度 (0-10)
+            let speedScore;
+            if (responseTime < 0.5) speedScore = 9.5;
+            else if (responseTime < 1) speedScore = 8.5;
+            else if (responseTime < 2) speedScore = 7.5;
+            else if (responseTime < 3) speedScore = 6.5;
+            else if (responseTime < 5) speedScore = 5.5;
+            else speedScore = 4.0;
+            
+            // 维度2：模型丰富度 (0-10)
+            let modelScore = Math.min(10, siteInfo.models.length * 2);
+            if (siteInfo.models.length >= 5) modelScore = 9;
+            if (siteInfo.models.length >= 3) modelScore = 7;
+            
+            // 维度3：价格竞争力 (0-10) - 基于页面关键词
+            let priceScore = 5;
+            if (text.includes('低价') || text.includes('便宜')) priceScore += 2;
+            if (text.includes('折扣') || text.includes('优惠')) priceScore += 1;
+            if (text.includes('免费') || text.includes('赠送')) priceScore += 1;
+            if (text.includes('按量') || text.includes('pay-as-you-go')) priceScore += 1;
+            priceScore = Math.min(10, priceScore);
+            
+            // 维度4：稳定性 (0-10) - 新站默认较低
+            let stabilityScore = 5;
+            if (text.includes('稳定') || text.includes('高可用')) stabilityScore += 2;
+            if (text.includes('99%') || text.includes('sla')) stabilityScore += 1;
+            if (text.includes('老牌') || text.includes('多年')) stabilityScore += 1;
+            stabilityScore = Math.min(10, stabilityScore);
+            
+            // 维度5：口碑评价 (0-10)
+            let reputationScore = 5;
+            if (siteInfo.reputation === '有好评') reputationScore = 7;
+            if (siteInfo.reputation === '运营中') reputationScore = 6;
+            if (text.includes('推荐') || text.includes('好评')) reputationScore += 1;
+            reputationScore = Math.min(10, reputationScore);
+            
+            // 维度6：功能完善度 (0-10)
+            let featureScore = 5;
+            if (text.includes('one-api') || text.includes('new-api')) featureScore += 2;
+            if (text.includes('文档') || text.includes('docs')) featureScore += 1;
+            if (text.includes('充值') && text.includes('余额')) featureScore += 1;
+            if (text.includes('工单') || text.includes('客服') || text.includes('支持')) featureScore += 1;
+            featureScore = Math.min(10, featureScore);
+            
+            // 加权总分（新站权重：速度25% + 模型15% + 价格20% + 稳定15% + 口碑10% + 功能15%）
+            const total = Math.round((
+                speedScore * 0.25 +
+                modelScore * 0.15 +
+                priceScore * 0.20 +
+                stabilityScore * 0.15 +
+                reputationScore * 0.10 +
+                featureScore * 0.15
+            ) * 10) / 10;
+            
+            return {
+                speed: Math.round(speedScore * 10) / 10,
+                models: Math.round(modelScore * 10) / 10,
+                price: Math.round(priceScore * 10) / 10,
+                stability: Math.round(stabilityScore * 10) / 10,
+                reputation: Math.round(reputationScore * 10) / 10,
+                feature: Math.round(featureScore * 10) / 10,
+                total: Math.max(4.0, Math.min(9.5, total))  // 新站限制在4.0-9.5
+            };
+        }
+        
+        // 保存到待审核队列
+        function saveToReviewQueue(siteData) {
+            let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            queue.push({ ...siteData, submitTime: new Date().toISOString(), status: 'pending' });
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+        }
+        
+        // 更新待审核列表中的状态文字
+        function updatePendingStatus(itemId, statusText) {
+            const item = document.getElementById(itemId);
+            if (!item) return;
+            const statusEl = item.querySelector('.pending-status');
+            if (statusEl) {
+                statusEl.className = 'pending-status status-testing';
+                statusEl.textContent = statusText;
+            }
+        }
+        
+        // 更新待审核项状态
+        function updatePendingItem(itemId, status, score, name) {
+            const item = document.getElementById(itemId);
+            if (!item) return;
+            
+            const nameEl = item.querySelector('.pending-name');
+            const statusEl = item.querySelector('.pending-status');
+            
+            if (name && nameEl) nameEl.textContent = name;
+            
+            if (status === 'pass') {
+                statusEl.className = 'pending-status status-pass';
+                statusEl.textContent = '待管理员审核 (' + score + '分)';
+            } else if (status === 'fail') {
+                statusEl.className = 'pending-status status-fail';
+                statusEl.textContent = '未通过审核';
+            }
+        }
+        
+        // 添加到待审核列表
+        function addToPendingList(site) {
+            const pendingList = document.getElementById('pendingList');
+            const item = document.createElement('div');
+            item.className = 'pending-item';
+            item.id = site.id || ('pending_' + Date.now());
+            item.innerHTML = `
+                <div class="pending-info">
+                    <div class="pending-name">${site.name || site.url}</div>
+                    <div class="pending-url">${site.url}</div>
+                </div>
+                <div class="pending-status ${site.status === 'testing' ? 'status-testing' : ''}">${site.status === 'testing' ? '检测中...' : '待审核'}</div>
+            `;
+            pendingList.insertBefore(item, pendingList.firstChild);
+            const count = pendingList.children.length;
+            document.getElementById('pendingCount').textContent = count + ' 个记录';
+        }
+        
+        // 页面加载时恢复待审核列表
+        function loadPendingSites() {
+            const queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            if (queue.length > 0) {
+                document.getElementById('pendingSection').style.display = 'block';
+                queue.forEach(function(site) {
+                    addToPendingList({ name: site.name, url: site.url, id: 'review_' + Date.now() + '_' + Math.random().toString(36).substr(2,5), status: 'pass' });
+                });
+            }
+        }
+        
+        // ===== 后台管理：审核通过/拒绝/删除 =====
+        
+        // 审核通过：将站点加入排行榜
+        function approveSite(index) {
+            let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            if (index < 0 || index >= queue.length) return;
+            
+            const site = queue[index];
+            if (site.status === 'approved') { alert('该站点已通过审核'); return; }
+            
+            site.status = 'approved';
+            site.approvedTime = new Date().toISOString();
+            queue[index] = site;
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+            
+            // 生成卡片并插入排行榜
+            addSiteToRanking(site);
+            autoRank();
+            
+            renderAdminPanel();
+            alert(site.name + ' 已通过审核并加入排行榜！');
+        }
+        
+        // 拒绝审核
+        function rejectSite(index) {
+            let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            if (index < 0 || index >= queue.length) return;
+            
+            const site = queue[index];
+            site.status = 'rejected';
+            queue[index] = site;
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+            
+            // 从排行榜移除
+            removeSiteFromRanking(site.name);
+            
+            renderAdminPanel();
+            alert(site.name + ' 已拒绝。');
+        }
+        
+        // 删除站点（从排行榜和队列中移除）
+        function deleteSite(index) {
+            let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            if (index < 0 || index >= queue.length) return;
+            
+            const site = queue[index];
+            
+            // 从排行榜移除
+            removeSiteFromRanking(site.name);
+            
+            // 从队列中移除
+            queue.splice(index, 1);
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+            
+            renderAdminPanel();
+            alert(site.name + ' 已删除。');
+        }
+        
+        // 从排行榜移除指定名称的卡片
+        function removeSiteFromRanking(name) {
+            const rankingList = document.getElementById('rankingList');
+            if (!rankingList) return;
+            
+            const cards = rankingList.querySelectorAll('.rank-card');
+            cards.forEach(function(card) {
+                const nameEl = card.querySelector('.rank-name');
+                if (nameEl && nameEl.textContent.trim() === name) {
+                    card.remove();
+                }
+            });
+        }
+        
+        // 渲染后台管理面板
+        function renderAdminPanel() {
+            const container = document.getElementById('adminList');
+            if (!container) return;
+            
+            const queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            
+            if (queue.length === 0) {
+                container.innerHTML = '<div class="admin-empty">暂无待审核站点</div>';
+                return;
+            }
+            
+            let html = '';
+            queue.forEach(function(site, index) {
+                const statusClass = site.status === 'approved' ? 'status-pass' : site.status === 'rejected' ? 'status-fail' : 'status-testing';
+                const statusText = site.status === 'approved' ? '已通过' : site.status === 'rejected' ? '已拒绝' : '待审核';
+                const scoresHtml = site.scores ? 
+                    `<div class="admin-scores">速度:${site.scores.speed} | 模型:${site.scores.models} | 价格:${site.scores.price} | 稳定:${site.scores.stability} | 口碑:${site.scores.reputation} | 功能:${site.scores.feature}</div>` : '';
+                
+                html += `
+                <div class="admin-item">
+                    <div class="admin-info">
+                        <div class="admin-name">${site.name}</div>
+                        <div class="admin-url"><a href="${site.url}" target="_blank">${site.url}</a></div>
+                        <div class="admin-desc">${site.description || ''}</div>
+                        <div class="admin-models">模型: ${(site.models || []).join(', ') || '未知'}</div>
+                        <div class="admin-features">特点: ${(site.features || []).join(', ') || '未知'}</div>
+                        ${scoresHtml}
+                        <div class="admin-meta">响应: ${site.responseTime || '?'}s | 总分: ${site.score || '?'}/10</div>
+                    </div>
+                    <div class="admin-actions">
+                        <span class="admin-status ${statusClass}">${statusText}</span>
+                        <button class="admin-btn approve" onclick="approveSite(${index})">✅ 通过</button>
+                        <button class="admin-btn reject" onclick="rejectSite(${index})">❌ 拒绝</button>
+                        <button class="admin-btn delete" onclick="deleteSite(${index})">🗑️ 删除</button>
+                    </div>
+                </div>`;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // 打开后台管理面板
+        function openAdminPanel() {
+            renderAdminPanel();
+            document.getElementById('adminModal').classList.add('active');
+        }
+        
+        // 关闭后台管理面板
+        function closeAdminPanel() {
+            document.getElementById('adminModal').classList.remove('active');
+        }
+        
+        // 页面加载时恢复已通过的站点到排行榜
+        function loadApprovedSites() {
+            const queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            queue.forEach(function(site) {
+                if (site.status === 'approved') {
+                    addSiteToRanking(site);
+                }
+            });
+        }
+        
+        // 生成卡片HTML并插入排行榜
+        function addSiteToRanking(site) {
+            const rankingList = document.getElementById('rankingList');
+            if (!rankingList) return;
+            
+            // 检查是否已存在
+            const existing = rankingList.querySelectorAll('.rank-card');
+            for (const card of existing) {
+                const nameEl = card.querySelector('.rank-name');
+                if (nameEl && nameEl.textContent.trim() === site.name) return;
+            }
+            
+            const modelLabels = {
+                'claude': 'Claude', 'gpt': 'GPT', 'gemini': 'Gemini',
+                'deepseek': 'DeepSeek', 'doubao': '豆包', 'qwen': '通义千问',
+                'kimi': 'Kimi', 'glm': 'ChatGLM', 'baichuan': '百川',
+                'yi': '零一万物', 'minimax': 'MiniMax', 'xunfei': '讯飞星火',
+                'multi': '多模型', 'domestic': '国产模型'
+            };
+            
+            const modelTags = (site.models || ['multi']).map(m => modelLabels[m] || m).slice(0, 3);
+            const featureTags = (site.features || ['待评估']).slice(0, 2);
+            const tags = (site.models || ['multi']).join(',');
+            
+            const card = document.createElement('div');
+            card.className = 'rank-card fade-in';
+            card.setAttribute('data-tags', tags);
+            card.innerHTML = `
+                <div class="rank-number">#?</div>
+                <div class="rank-info">
+                    <div class="rank-info-top">
+                        <span class="rank-name">${site.name}</span>
+                        <div class="rank-tags">
+                            <span class="tag tag-new">🆕新收录</span>
+                            ${modelTags.map(t => '<span class="tag tag-stable">' + t + '</span>').join('')}
+                            ${featureTags.map(t => '<span class="tag tag-hot">' + t + '</span>').join('')}
+                        </div>
+                    </div>
+                    <div class="rank-desc">${site.description || '用户提交的中转站，经自动检测评分 ' + (site.score || '?') + '/10。'}</div>
+                    <div class="rank-metrics">
+                        <div class="metric">
+                            <span class="metric-label">响应</span>
+                            <span class="metric-value green">${site.responseTime || '?'}s</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">评分</span>
+                            <span class="metric-value accent">${site.score || '?'}/10</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">来源</span>
+                            <span class="metric-value">用户提交</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rank-action">
+                    <div class="rank-score">${site.score || '?'} <small>/10</small></div>
+                    <a href="${site.url}" target="_blank" class="btn btn-primary">立即注册 →</a>
+                </div>
+            `;
+            
+            rankingList.appendChild(card);
+            card.style.animationPlayState = 'running';
+        }
+        
+        // 验证页面内容是否是API中转站
+        function verifyApiSite(html) {
+            if (!html || html.length < 50) return false;
+            const text = html.toLowerCase();
+            const coreKeywords = [
+                'api', 'openai', 'claude', 'gpt', 'chatgpt', 'gemini',
+                'ai模型', 'ai接口', 'api接口', 'api中转', 'api代理',
+                '大模型', '语言模型', 'token', 'api key', 'apikey',
+                'sk-', '密钥', '充值', '余额', '额度',
+                '中转', '代理', '转发', 'one-api', 'new-api',
+                'deepseek', '通义', '千问', '豆包', 'kimi',
+                'glm', '智谱', 'minimax', '百川', '讯飞',
+                '模型调用', '接口调用', 'api调用',
+                'openrouter', 'together', 'fireworks', 'groq',
+                'anthropic', 'cohere', 'mistral',
+                'completion', 'chat/completions', 'v1/chat',
+                '反向代理'
+            ];
+            let matchCount = 0;
+            for (const kw of coreKeywords) {
+                if (text.includes(kw)) matchCount++;
+                if (matchCount >= 2) return true;
+            }
+            return false;
+        }
+        
+        // 通过URL特征验证
+        function verifyApiSiteByUrl(url) {
+            const urlLower = url.toLowerCase();
+            const blacklist = [
+                'baidu.com', 'google.com', 'bing.com', 'sogou.com',
+                'zhihu.com', 'weibo.com', 'bilibili.com', 'douyin.com',
+                'taobao.com', 'jd.com', 'tmall.com', 'pinduoduo.com',
+                'qq.com', '163.com', 'sina.com', 'sohu.com',
+                'github.com', 'stackoverflow.com', 'csdn.net',
+                'juejin.cn', 'toutiao.com', 'alipay.com',
+                'youtube.com', 'facebook.com', 'twitter.com',
+                'instagram.com', 'tiktok.com', 'xiaohongshu.com',
+                'apple.com', 'microsoft.com', 'amazon.com',
+                'wikipedia.org', 'reddit.com', 'pinterest.com'
+            ];
+            for (const domain of blacklist) {
+                if (urlLower.includes(domain)) return false;
+            }
+            const urlHints = ['api', 'ai', 'gpt', 'claude', 'openai', 'llm', 'model', 'token', 'proxy', 'relay', 'deepseek', 'qwen', 'doubao', 'kimi', 'glm', 'minimax', 'baichuan', 'one-api', 'new-api'];
+            for (const hint of urlHints) {
+                if (urlLower.includes(hint)) return true;
+            }
+            return false;
+        }
+        
+                // ===== 自动排名系统 =====
         // ===== 自动排名系统 =====
         // 页面加载时自动按评分排序，失效站点自动排到底部
 
@@ -5144,8 +5807,10 @@
             });
         }
 
-        // 页面加载完成后执行自动排序
+        // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
+            loadApprovedSites();
+            loadPendingSites();
             autoRank();
         });
 
@@ -5153,6 +5818,32 @@
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
             autoRank();
         }
+    
+        // 移动端菜单切换
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.toggle('mobile-open');
+            menuBtn.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : '';
+        }
+        
+        // 点击菜单链接后自动关闭
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('mobile-open');
+                        const menuBtn = document.querySelector('.mobile-menu-btn');
+                        if (menuBtn) menuBtn.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+        });
     </script>
+
+
 </body>
 </html>
