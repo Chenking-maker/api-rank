@@ -1,0 +1,26 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CF_TOKEN }}
+        accountId: ${{ secrets.CF_ACCOUNT_ID }}
+        projectName: api-rank
+        directory: .
+        gitHubToken: ${{ secrets.GH_TOKEN }}
