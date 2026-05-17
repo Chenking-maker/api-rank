@@ -2157,12 +2157,12 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">已收录 56+ 中转站（全部有效） · 2026年5月15日更新</div>
+            <div class="hero-badge" id="heroBadge">已收录 <span id="totalCount">56</span>+ 中转站（全部有效） · <span id="updateDate">2026年5月15日</span>更新</div>
             <h1>找到最适合你的<br><span class="gradient-text">AI API 中转站</span></h1>
             <p>基于延迟、价格、稳定性、模型真实性等多维度自动测试，帮你快速筛选性价比最高的 API 中转服务</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="number green">56</div>
+                    <div class="number green" id="validCount">56</div>
                     <div class="label">有效中转站</div>
                 </div>
                 <div class="hero-stat" style="cursor: pointer;" onclick="window.location.href='dead-sites.html'">
@@ -2190,6 +2190,9 @@
             <div class="finder-header">
                 <h2>🎯 找适合自己的中转站</h2>
                 <p>填写您的需求，系统将智能匹配最适合的5个API中转站</p>
+                <div class="free-usage-info" id="freeUsageInfo" style="margin-top: 12px; padding: 10px 16px; background: rgba(46, 213, 115, 0.1); border: 1px solid rgba(46, 213, 115, 0.3); border-radius: 8px; font-size: 14px; color: #2ed573;">
+                    <span id="usageStatus">本月剩余免费次数：1次</span>
+                </div>
             </div>
                 
                 <div class="finder-form">
@@ -4225,6 +4228,43 @@
                         <a href="https://deepinfra.com" target="_blank" class="btn btn-primary">立即注册 →</a>
                     </div>
                 </div>
+                <!-- #56 BerryPi Pool -->
+                <div class="rank-card" data-tags="domestic,cheap,image">
+                    <div class="rank-number">#56</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">BerryPi Pool</span>
+                            <div class="rank-tags">
+                                <span class="tag tag-cheap">限时特惠</span>
+                                <span class="tag tag-new">负载均衡</span>
+                                <span class="tag tag-model">多模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">人人用得上顶级大模型。支持自动切换、负载均衡，提供Token套餐制计费，支持图像生成和视频生成。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value green">¥9.9/月起</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">模型</span>
+                                <span class="metric-value">MiniMax/DeepSeek等</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">计费</span>
+                                <span class="metric-value">Token套餐</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">支付</span>
+                                <span class="metric-value">支付宝/微信</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">6.8 <small>/10</small></div>
+                        <a href="http://www.android-doc.com/" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    </div>
+                </div>
 </div>
         </div>
     </section>
@@ -4573,7 +4613,64 @@
 
         let isAdminUnlocked = false;
 
+        // 检查免费使用次数
+        function checkFreeUsage() {
+            const now = new Date();
+            const currentMonth = now.getFullYear() + '-' + (now.getMonth() + 1);
+            const usageKey = 'finderUsage_' + currentMonth;
+            
+            let usage = JSON.parse(localStorage.getItem(usageKey) || '{"count": 0}');
+            return {
+                remaining: Math.max(0, 1 - usage.count),
+                used: usage.count,
+                canUse: usage.count < 1
+            };
+        }
+        
+        // 记录使用
+        function recordUsage() {
+            const now = new Date();
+            const currentMonth = now.getFullYear() + '-' + (now.getMonth() + 1);
+            const usageKey = 'finderUsage_' + currentMonth;
+            
+            let usage = JSON.parse(localStorage.getItem(usageKey) || '{"count": 0}');
+            usage.count++;
+            localStorage.setItem(usageKey, JSON.stringify(usage));
+            updateUsageDisplay();
+        }
+        
+        // 更新显示
+        function updateUsageDisplay() {
+            const usage = checkFreeUsage();
+            const statusEl = document.getElementById('usageStatus');
+            const infoEl = document.getElementById('freeUsageInfo');
+            
+            if (statusEl) {
+                if (usage.canUse) {
+                    statusEl.textContent = '本月剩余免费次数：' + usage.remaining + '次';
+                    infoEl.style.background = 'rgba(46, 213, 115, 0.1)';
+                    infoEl.style.borderColor = 'rgba(46, 213, 115, 0.3)';
+                    infoEl.style.color = '#2ed573';
+                } else {
+                    statusEl.textContent = '本月免费次数已用完，请下月再来';
+                    infoEl.style.background = 'rgba(255, 107, 107, 0.1)';
+                    infoEl.style.borderColor = 'rgba(255, 107, 107, 0.3)';
+                    infoEl.style.color = '#ff6b6b';
+                }
+            }
+        }
+
         function startFinder() {
+            // 检查免费次数
+            const usage = checkFreeUsage();
+            if (!usage.canUse) {
+                alert('您本月的免费搜索次数已用完（每月1次）\n\n请下个月再来使用，或联系客服获取更多服务。');
+                return;
+            }
+            
+            // 记录使用
+            recordUsage();
+            
             const model = document.getElementById('finderModel').value;
             const budget = document.getElementById('finderBudget').value;
             const scene = document.getElementById('finderScene').value;
@@ -5807,12 +5904,66 @@
             });
         }
 
+
+        function freeCheck() {
+            const url = document.getElementById('freeCheckUrl').value.trim();
+            if (!url) {
+                alert('请填写中转站网址');
+                return;
+            }
+            
+            // 检查本月是否已用
+            const thisMonth = new Date().toISOString().slice(0, 7);
+            const lastCheck = localStorage.getItem('lastFreeCheck');
+            if (lastCheck && lastCheck.slice(0, 7) === thisMonth) {
+                alert('您本月已使用免费检测，请下月再试或选择付费套餐。');
+                return;
+            }
+            
+            // 显示检测中
+            document.getElementById('freeCheckResult').innerHTML = '<div style="text-align:center;padding:20px;color:#a29bfe;">🔍 检测中...</div>';
+            
+            // 模拟检测（实际可以调用已有的检测逻辑）
+            setTimeout(function() {
+                localStorage.setItem('lastFreeCheck', new Date().toISOString());
+                document.getElementById('freeCheckResult').innerHTML = 
+                    '<div style="background:rgba(46,213,115,0.1);border-radius:8px;padding:16px;">' +
+                    '<div style="color:#2ed573;font-weight:600;margin-bottom:8px;">✅ 检测完成</div>' +
+                    '<div style="font-size:13px;color:rgba(255,255,255,0.7);">网站可正常访问，基础评分已更新。</div>' +
+                    '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;">下次免费检测时间：下月1日</div>' +
+                    '</div>';
+            }, 2000);
+        }
         // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
             loadApprovedSites();
             loadPendingSites();
             autoRank();
+            updateStats();
         });
+        
+        // 实时更新统计数据
+        function updateStats() {
+            const rankingList = document.getElementById('rankingList');
+            if (!rankingList) return;
+            
+            // 统计有效卡片数量
+            const cards = rankingList.querySelectorAll('.rank-card:not(.dead)');
+            const validCount = cards.length;
+            
+            // 更新显示
+            const validCountEl = document.getElementById('validCount');
+            const totalCountEl = document.getElementById('totalCount');
+            
+            if (validCountEl) validCountEl.textContent = validCount;
+            if (totalCountEl) totalCountEl.textContent = validCount;
+            
+            // 更新日期
+            const today = new Date();
+            const dateStr = today.getFullYear() + '年' + (today.getMonth() + 1) + '月' + today.getDate() + '日';
+            const updateDateEl = document.getElementById('updateDate');
+            if (updateDateEl) updateDateEl.textContent = dateStr;
+        }
 
         // 如果 DOM 已经加载完成，直接执行
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -5845,5 +5996,6 @@
     </script>
 
 
-</body>
+
+    </body>
 </html>

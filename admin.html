@@ -1323,8 +1323,9 @@
             </button>
             <button class="tab-btn" onclick="switchTab('review')">
                 &#128203; 提交审核
-                <span class="badge" id="reviewBadge" style="display:none;">0</span>
+                <span class="badge" id="reviewBadge">0</span>
             </button>
+
         </div>
 
         <!-- Tab: Recommend -->
@@ -1424,6 +1425,8 @@
                 </div>
             </div>
         </div><!-- end tab-review -->
+
+
 
     </div>
 </div>
@@ -1853,6 +1856,7 @@ document.addEventListener('keydown', function(e) {
 
 
 // ========== TAB SWITCHING ==========
+
 function switchTab(tabName) {
     document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
     document.querySelectorAll('.tab-content').forEach(function(tc) { tc.classList.remove('active'); });
@@ -1860,7 +1864,7 @@ function switchTab(tabName) {
     if (tabName === 'recommend') {
         document.querySelectorAll('.tab-btn')[0].classList.add('active');
         document.getElementById('tab-recommend').classList.add('active');
-    } else {
+    } else if (tabName === 'review') {
         document.querySelectorAll('.tab-btn')[1].classList.add('active');
         document.getElementById('tab-review').classList.add('active');
         renderReviewQueue();
