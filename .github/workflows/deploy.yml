@@ -13,14 +13,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GH_TOKEN }}
 
     - name: Deploy to Cloudflare Pages
-      uses: cloudflare/pages-action@v1
+      uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CF_TOKEN }}
         accountId: ${{ secrets.CF_ACCOUNT_ID }}
-        projectName: api-rank
-        directory: .
-        gitHubToken: ${{ secrets.GH_TOKEN }}
+        command: pages deploy . --project-name=api-rank
