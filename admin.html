@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIRank 商家后台 - 智能中转站推荐</title>
+    <title>APIRank 鍟嗗鍚庡彴 - 鏅鸿兘涓浆绔欐帹鑽?/title>
     <style>
         :root {
             --bg-primary: #0a0a0f;
@@ -1288,14 +1288,14 @@
     <div class="login-box">
         <div class="login-logo">
             <div class="logo-icon">AR</div>
-            <h1>APIRank 商家后台</h1>
-            <p>智能中转站推荐管理系统</p>
+            <h1>APIRank 鍟嗗鍚庡彴</h1>
+            <p>鏅鸿兘涓浆绔欐帹鑽愮鐞嗙郴缁?/p>
         </div>
         <div class="form-group">
-            <label>管理密码</label>
-            <input type="password" id="passwordInput" placeholder="请输入后台管理密码" autocomplete="off">
+            <label>绠＄悊瀵嗙爜</label>
+            <input type="password" id="passwordInput" placeholder="璇疯緭鍏ュ悗鍙扮鐞嗗瘑鐮? autocomplete="off">
         </div>
-        <button class="login-btn" id="loginBtn" onclick="handleLogin()">进入工作台</button>
+        <button class="login-btn" id="loginBtn" onclick="handleLogin()">杩涘叆宸ヤ綔鍙?/button>
         <div class="login-error" id="loginError"></div>
     </div>
 </div>
@@ -1306,11 +1306,11 @@
     <div class="topbar">
         <div class="topbar-left">
             <div class="topbar-logo">AR</div>
-            <div class="topbar-title">工作台 <span>智能推荐引擎</span></div>
+            <div class="topbar-title">宸ヤ綔鍙?<span>鏅鸿兘鎺ㄨ崘寮曟搸</span></div>
         </div>
         <div class="topbar-right">
             <div class="topbar-time" id="topbarTime"></div>
-            <button class="logout-btn" onclick="handleLogout()">退出登录</button>
+            <button class="logout-btn" onclick="handleLogout()">閫€鍑虹櫥褰?/button>
         </div>
     </div>
 
@@ -1319,10 +1319,10 @@
         <!-- Tab Navigation -->
         <div class="tab-nav">
             <button class="tab-btn active" onclick="switchTab('recommend')">
-                &#9889; 智能推荐
+                &#9889; 鏅鸿兘鎺ㄨ崘
             </button>
             <button class="tab-btn" onclick="switchTab('review')">
-                &#128203; 提交审核
+                &#128203; 鎻愪氦瀹℃牳
                 <span class="badge" id="reviewBadge">0</span>
             </button>
 
@@ -1331,8 +1331,8 @@
         <!-- Tab: Recommend -->
         <div class="tab-content active" id="tab-recommend">
         <div class="page-header">
-            <h2>客户需求智能解析</h2>
-            <p>粘贴客户发来的文字，系统自动识别需求并推荐最合适的中转站</p>
+            <h2>瀹㈡埛闇€姹傛櫤鑳借В鏋?/h2>
+            <p>绮樿创瀹㈡埛鍙戞潵鐨勬枃瀛楋紝绯荤粺鑷姩璇嗗埆闇€姹傚苟鎺ㄨ崘鏈€鍚堥€傜殑涓浆绔?/p>
         </div>
 
         <div class="workspace">
@@ -1340,32 +1340,32 @@
             <div class="input-panel">
                 <div class="panel-title">
                     <span class="icon">&#9998;</span>
-                    客户需求输入
+                    瀹㈡埛闇€姹傝緭鍏?
                 </div>
-                <textarea class="customer-textarea" id="customerText" placeholder="在此粘贴客户发来的文字，例如：&#10;&#10;「我要用Claude写代码，预算100块，希望稳定一点，最好国内能直连」&#10;&#10;「帮我推荐一个便宜的GPT中转站，用来聊天，预算50以内」&#10;&#10;「企业用，需要Gemini，对公开票，稳定性最重要」"></textarea>
+                <textarea class="customer-textarea" id="customerText" placeholder="鍦ㄦ绮樿创瀹㈡埛鍙戞潵鐨勬枃瀛楋紝渚嬪锛?#10;&#10;銆屾垜瑕佺敤Claude鍐欎唬鐮侊紝棰勭畻100鍧楋紝甯屾湜绋冲畾涓€鐐癸紝鏈€濂藉浗鍐呰兘鐩磋繛銆?#10;&#10;銆屽府鎴戞帹鑽愪竴涓究瀹滅殑GPT涓浆绔欙紝鐢ㄦ潵鑱婂ぉ锛岄绠?0浠ュ唴銆?#10;&#10;銆屼紒涓氱敤锛岄渶瑕丟emini锛屽鍏紑绁紝绋冲畾鎬ф渶閲嶈銆?></textarea>
 
                 <div class="parse-actions">
                     <button class="btn-primary" id="parseBtn" onclick="handleParse()">
-                        <span id="parseBtnText">&#9889; 智能解析</span>
+                        <span id="parseBtnText">&#9889; 鏅鸿兘瑙ｆ瀽</span>
                     </button>
-                    <button class="btn-secondary" onclick="clearAll()">清空</button>
+                    <button class="btn-secondary" onclick="clearAll()">娓呯┖</button>
                 </div>
 
                 <!-- Parsed Tags -->
                 <div class="parsed-tags" id="parsedTags">
-                    <div class="tag-label">识别到的需求标签</div>
+                    <div class="tag-label">璇嗗埆鍒扮殑闇€姹傛爣绛?/div>
                     <div class="tag-list" id="tagList"></div>
                 </div>
 
                 <!-- Quick Examples -->
                 <div class="quick-examples">
-                    <div class="examples-label">快速示例（点击填入）</div>
+                    <div class="examples-label">蹇€熺ず渚嬶紙鐐瑰嚮濉叆锛?/div>
                     <div class="example-chips">
-                        <button class="example-chip" onclick="fillExample(0)">Claude写代码 100预算</button>
-                        <button class="example-chip" onclick="fillExample(1)">便宜GPT聊天 50以内</button>
-                        <button class="example-chip" onclick="fillExample(2)">企业Gemini 对公开票</button>
-                        <button class="example-chip" onclick="fillExample(3)">DeepSeek 国内直连</button>
-                        <button class="example-chip" onclick="fillExample(4)">全模型 超快响应</button>
+                        <button class="example-chip" onclick="fillExample(0)">Claude鍐欎唬鐮?100棰勭畻</button>
+                        <button class="example-chip" onclick="fillExample(1)">渚垮疁GPT鑱婂ぉ 50浠ュ唴</button>
+                        <button class="example-chip" onclick="fillExample(2)">浼佷笟Gemini 瀵瑰叕寮€绁?/button>
+                        <button class="example-chip" onclick="fillExample(3)">DeepSeek 鍥藉唴鐩磋繛</button>
+                        <button class="example-chip" onclick="fillExample(4)">鍏ㄦā鍨?瓒呭揩鍝嶅簲</button>
                     </div>
                 </div>
             </div>
@@ -1374,12 +1374,12 @@
             <div class="results-panel">
                 <div class="panel-title">
                     <span class="icon">&#127919;</span>
-                    推荐结果 <span style="font-size:12px;color:var(--text-secondary);font-weight:400;margin-left:auto;">Top 5 中转站</span>
+                    鎺ㄨ崘缁撴灉 <span style="font-size:12px;color:var(--text-secondary);font-weight:400;margin-left:auto;">Top 5 涓浆绔?/span>
                 </div>
 
                 <div class="results-placeholder" id="resultsPlaceholder">
                     <div class="placeholder-icon">&#128269;</div>
-                    <p>输入客户需求并点击「智能解析」<br>即可获得精准推荐</p>
+                    <p>杈撳叆瀹㈡埛闇€姹傚苟鐐瑰嚮銆屾櫤鑳借В鏋愩€?br>鍗冲彲鑾峰緱绮惧噯鎺ㄨ崘</p>
                 </div>
 
                 <div class="results-list" id="resultsList"></div>
@@ -1391,36 +1391,36 @@
         <div class="tab-content" id="tab-review">
             <div class="review-section">
                 <div class="page-header">
-                    <h2>站点提交审核</h2>
-                    <p>审核用户提交的中转站，通过后将展示在首页推荐列表中</p>
+                    <h2>绔欑偣鎻愪氦瀹℃牳</h2>
+                    <p>瀹℃牳鐢ㄦ埛鎻愪氦鐨勪腑杞珯锛岄€氳繃鍚庡皢灞曠ず鍦ㄩ椤垫帹鑽愬垪琛ㄤ腑</p>
                 </div>
 
                 <!-- Stats -->
                 <div class="review-stats">
                     <div class="review-stat-card pending">
                         <div class="stat-num" id="statPending">0</div>
-                        <div class="stat-label">待审核</div>
+                        <div class="stat-label">寰呭鏍?/div>
                     </div>
                     <div class="review-stat-card approved">
                         <div class="stat-num" id="statApproved">0</div>
-                        <div class="stat-label">已通过</div>
+                        <div class="stat-label">宸查€氳繃</div>
                     </div>
                     <div class="review-stat-card rejected">
                         <div class="stat-num" id="statRejected">0</div>
-                        <div class="stat-label">已拒绝</div>
+                        <div class="stat-label">宸叉嫆缁?/div>
                     </div>
                 </div>
 
                 <!-- Pending Review List -->
                 <div class="review-list-header">
-                    <h3>&#128203; 待审核列表</h3>
-                    <span class="count" id="pendingCount">共 0 条</span>
+                    <h3>&#128203; 寰呭鏍稿垪琛?/h3>
+                    <span class="count" id="pendingCount">鍏?0 鏉?/span>
                 </div>
                 <div id="reviewList"></div>
 
                 <!-- Review History -->
                 <div class="review-history" id="reviewHistory" style="display:none;">
-                    <div class="review-history-title">&#128337; 审核记录</div>
+                    <div class="review-history-title">&#128337; 瀹℃牳璁板綍</div>
                     <div id="historyList"></div>
                 </div>
             </div>
@@ -1435,7 +1435,7 @@
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
     <div class="modal" id="reportModal">
         <div class="modal-header">
-            <h3 id="modalTitle">详细对比报告</h3>
+            <h3 id="modalTitle">璇︾粏瀵规瘮鎶ュ憡</h3>
             <button class="modal-close" onclick="closeModal()">&times;</button>
         </div>
         <div class="modal-body" id="modalBody"></div>
@@ -1445,32 +1445,32 @@
 <script>
 // ========== STATION DATABASE ==========
 const stationDatabase = [
-    { name: '诗云API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路'], freeAmount: '新用户送额度' },
-    { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable'], concurrency: 'high', payment: 'both', score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['智能路由','对公开票','企业级'], freeAmount: '无免费额度' },
-    { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
-    { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
-    { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
-    { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 8.5, support: 7.5, features: ['GPT专精','低价','按量计费'], freeAmount: '新用户送额度' },
-    { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
-    { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '无免费额度' },
-    { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
-    { name: '火山引擎(豆包)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
+    { name: '璇椾簯API(ShiyunApi)', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['澶氭ā鎬?,'鎴愭湰鍑忓崐','鏃犲璺?], freeAmount: '鏂扮敤鎴烽€侀搴? },
+    { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable'], concurrency: 'high', payment: 'both', score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['鏅鸿兘璺敱','瀵瑰叕寮€绁?,'浼佷笟绾?], freeAmount: '鏃犲厤璐归搴? },
+    { name: '鏄熼摼4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', scene: ['enterprise','api'], special: ['stable','fast'], concurrency: 'high', payment: 'both', score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['浼佷笟绾LA','鍏ㄥ満鏅?,'澧炲€肩◣鍙戠エ'], freeAmount: '鏃犲厤璐归搴? },
+    { name: '纭呭熀娴佸姩', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['鍥戒骇妯″瀷褰撳ぉ鍚屾','DeepSeek鍏ㄧ郴','600涓囩敤鎴?], freeAmount: '鉁?姣忔棩鍏嶈垂棰濆害' },
+    { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['澶氭ā鍨嬭仛鍚?,'瀹樻柟浠锋牸','鏃犻渶缈诲'], freeAmount: '鉁?鏂扮敤鎴?1鍏嶈垂' },
+    { name: 'OpenAI-SB', url: 'openai-sb.com', models: ['gpt'], price: 'low', scene: ['chat','api','learning'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 8.5, support: 7.5, features: ['GPT涓撶簿','浣庝环','鎸夐噺璁¤垂'], freeAmount: '鏂扮敤鎴烽€侀搴? },
+    { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['澶氭ā鍨?,'绋冲畾杩愯惀','鍥藉唴鐩磋繛'], freeAmount: '鏂扮敤鎴烽€侀搴? },
+    { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['浜氭床鑺傜偣','浣庡欢杩?,'鍥藉唴鐩磋繛'], freeAmount: '鏃犲厤璐归搴? },
+    { name: 'DeepSeek瀹樻柟', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['瀹樻柟API','瓒呬綆浠?,'DeepSeek鍏ㄧ郴'], freeAmount: '鉁?姣忔湀鍏嶈垂棰濆害' },
+    { name: '鐏北寮曟搸(璞嗗寘)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['瀛楄妭瀹樻柟','璞嗗寘鍏ㄧ郴','浼佷笟鏀寔'], freeAmount: '鉁?鏂扮敤鎴峰厤璐归搴? }
 ];
 
 // ========== EXAMPLES ==========
 const examples = [
-    '我要用Claude写代码，预算100块，希望稳定一点，最好国内能直连',
-    '帮我推荐一个便宜的GPT中转站，用来聊天，预算50以内',
-    '企业用，需要Gemini，对公开票，稳定性最重要，预算充足',
-    '想用DeepSeek写代码，国内直连，越便宜越好，最好有免费额度',
-    '需要全模型支持的中转站，Claude和GPT都要，响应速度要快'
+    '鎴戣鐢–laude鍐欎唬鐮侊紝棰勭畻100鍧楋紝甯屾湜绋冲畾涓€鐐癸紝鏈€濂藉浗鍐呰兘鐩磋繛',
+    '甯垜鎺ㄨ崘涓€涓究瀹滅殑GPT涓浆绔欙紝鐢ㄦ潵鑱婂ぉ锛岄绠?0浠ュ唴',
+    '浼佷笟鐢紝闇€瑕丟emini锛屽鍏紑绁紝绋冲畾鎬ф渶閲嶈锛岄绠楀厖瓒?,
+    '鎯崇敤DeepSeek鍐欎唬鐮侊紝鍥藉唴鐩磋繛锛岃秺渚垮疁瓒婂ソ锛屾渶濂芥湁鍏嶈垂棰濆害',
+    '闇€瑕佸叏妯″瀷鏀寔鐨勪腑杞珯锛孋laude鍜孏PT閮借锛屽搷搴旈€熷害瑕佸揩'
 ];
 
 // ========== LABELS ==========
-const modelLabels = { claude: 'Claude', gpt: 'GPT', gemini: 'Gemini', domestic: '国产模型' };
-const priceLabels = { low: '低价 (50以内)', medium: '中等 (50-200)', high: '高价 (200+)' };
-const sceneLabels = { coding: '写代码/编程', chat: '聊天/写作', api: 'API调用', enterprise: '企业级', learning: '学习' };
-const specialLabels = { direct: '国内直连', stable: '稳定可靠', cheap: '性价比高', fast: '快速响应' };
+const modelLabels = { claude: 'Claude', gpt: 'GPT', gemini: 'Gemini', domestic: '鍥戒骇妯″瀷' };
+const priceLabels = { low: '浣庝环 (50浠ュ唴)', medium: '涓瓑 (50-200)', high: '楂樹环 (200+)' };
+const sceneLabels = { coding: '鍐欎唬鐮?缂栫▼', chat: '鑱婂ぉ/鍐欎綔', api: 'API璋冪敤', enterprise: '浼佷笟绾?, learning: '瀛︿範' };
+const specialLabels = { direct: '鍥藉唴鐩磋繛', stable: '绋冲畾鍙潬', cheap: '鎬т环姣旈珮', fast: '蹇€熷搷搴? };
 
 // ========== LOGIN ==========
 function handleLogin() {
@@ -1480,7 +1480,7 @@ function handleLogin() {
         document.getElementById('dashboard').classList.add('active');
         sessionStorage.setItem('admin_auth', '1');
     } else {
-        document.getElementById('loginError').textContent = '密码错误，请重试';
+        document.getElementById('loginError').textContent = '瀵嗙爜閿欒锛岃閲嶈瘯';
         document.getElementById('passwordInput').style.borderColor = 'var(--danger)';
         setTimeout(() => {
             document.getElementById('passwordInput').style.borderColor = '';
@@ -1546,7 +1546,7 @@ function handleParse() {
     const btn = document.getElementById('parseBtn');
     const btnText = document.getElementById('parseBtnText');
     btn.disabled = true;
-    btnText.innerHTML = '<span class="loading-spinner"></span> 解析中...';
+    btnText.innerHTML = '<span class="loading-spinner"></span> 瑙ｆ瀽涓?..';
 
     setTimeout(() => {
         const needs = parseCustomerText(text);
@@ -1555,7 +1555,7 @@ function handleParse() {
         displayResults(results, needs);
 
         btn.disabled = false;
-        btnText.innerHTML = '&#9889; 智能解析';
+        btnText.innerHTML = '&#9889; 鏅鸿兘瑙ｆ瀽';
     }, 600);
 }
 
@@ -1567,11 +1567,11 @@ function parseCustomerText(text) {
     if (/claude/i.test(text)) models.push('claude');
     if (/gpt|chatgpt/i.test(text)) models.push('gpt');
     if (/gemini/i.test(text)) models.push('gemini');
-    if (/deepseek|豆包|通义|文心|国产|kimi|智谱|glm/i.test(text)) models.push('domestic');
+    if (/deepseek|璞嗗寘|閫氫箟|鏂囧績|鍥戒骇|kimi|鏅鸿氨|glm/i.test(text)) models.push('domestic');
     if (models.length === 0) models.push('claude', 'gpt'); // default
 
     // Budget
-    const budgetMatch = text.match(/(\d+)\s*[块元]|预算\s*(\d+)/);
+    const budgetMatch = text.match(/(\d+)\s*[鍧楀厓]|棰勭畻\s*(\d+)/);
     let budget = 'medium';
     if (budgetMatch) {
         const amount = parseInt(budgetMatch[1] || budgetMatch[2]) || 100;
@@ -1579,24 +1579,24 @@ function parseCustomerText(text) {
         else if (amount <= 200) budget = 'medium';
         else budget = 'high';
     }
-    if (/便宜|低价|性价比|越.*越.*便宜|省钱|免费/i.test(text)) budget = 'low';
-    if (/预算充足|不限预算|贵.*没关系|企业/i.test(text)) budget = 'high';
+    if (/渚垮疁|浣庝环|鎬т环姣攟瓒?*瓒?*渚垮疁|鐪侀挶|鍏嶈垂/i.test(text)) budget = 'low';
+    if (/棰勭畻鍏呰冻|涓嶉檺棰勭畻|璐?*娌″叧绯粅浼佷笟/i.test(text)) budget = 'high';
 
     // Scene
     const scenes = [];
-    if (/写代码|编程|cursor|claude\s*code|copilot|开发/i.test(text)) scenes.push('coding');
-    if (/聊天|写作|对话|问答/i.test(text)) scenes.push('chat');
-    if (/企业|公司|团队|商用/i.test(text)) scenes.push('enterprise');
-    if (/api|接口|接入|调用|集成/i.test(text)) scenes.push('api');
-    if (/学习|学生|入门|练习/i.test(text)) scenes.push('learning');
+    if (/鍐欎唬鐮亅缂栫▼|cursor|claude\s*code|copilot|寮€鍙?i.test(text)) scenes.push('coding');
+    if (/鑱婂ぉ|鍐欎綔|瀵硅瘽|闂瓟/i.test(text)) scenes.push('chat');
+    if (/浼佷笟|鍏徃|鍥㈤槦|鍟嗙敤/i.test(text)) scenes.push('enterprise');
+    if (/api|鎺ュ彛|鎺ュ叆|璋冪敤|闆嗘垚/i.test(text)) scenes.push('api');
+    if (/瀛︿範|瀛︾敓|鍏ラ棬|缁冧範/i.test(text)) scenes.push('learning');
     if (scenes.length === 0) scenes.push('coding', 'chat'); // default
 
     // Special
     const specials = [];
-    if (/国内|直连|翻墙|免翻|不用翻/i.test(text)) specials.push('direct');
-    if (/稳定|可靠|不掉线|SLA/i.test(text)) specials.push('stable');
-    if (/便宜|低价|性价比|省钱/i.test(text)) specials.push('cheap');
-    if (/快|速度|延迟|响应/i.test(text)) specials.push('fast');
+    if (/鍥藉唴|鐩磋繛|缈诲|鍏嶇炕|涓嶇敤缈?i.test(text)) specials.push('direct');
+    if (/绋冲畾|鍙潬|涓嶆帀绾縷SLA/i.test(text)) specials.push('stable');
+    if (/渚垮疁|浣庝环|鎬т环姣攟鐪侀挶/i.test(text)) specials.push('cheap');
+    if (/蹇珅閫熷害|寤惰繜|鍝嶅簲/i.test(text)) specials.push('fast');
 
     return { models, budget, scenes, specials, originalText: text };
 }
@@ -1629,7 +1629,7 @@ function rankStations(needs) {
         score += specialMatch * 1.2;
 
         // Bonus for free amount
-        if (station.freeAmount.includes('✅')) score += 0.5;
+        if (station.freeAmount.includes('鉁?)) score += 0.5;
 
         return { ...station, matchedScore: Math.round(score * 10) / 10 };
     });
@@ -1678,8 +1678,8 @@ function displayResults(results, needs) {
                 <div class="card-meta">${modelTags}<span class="meta-item">${station.url}</span></div>
                 <div class="card-features">${featureTags}</div>
                 <div class="card-actions">
-                    <button class="btn-report" onclick="openReport(${idx}, true)">&#128196; 领取该客户的分析报告</button>
-                    <a class="btn-visit" href="https://${station.url}" target="_blank">&#8599; 访问</a>
+                    <button class="btn-report" onclick="openReport(${idx}, true)">&#128196; 棰嗗彇璇ュ鎴风殑鍒嗘瀽鎶ュ憡</button>
+                    <a class="btn-visit" href="https://${station.url}" target="_blank">&#8599; 璁块棶</a>
                 </div>
             </div>
         `;
@@ -1693,7 +1693,7 @@ function openReport(stationIdx, isForCustomer) {
     const station = results[stationIdx];
     if (!station) return;
 
-    document.getElementById('modalTitle').textContent = `${station.name} - 详细对比报告`;
+    document.getElementById('modalTitle').textContent = `${station.name} - 璇︾粏瀵规瘮鎶ュ憡`;
 
     const body = document.getElementById('modalBody');
     body.innerHTML = '';
@@ -1701,13 +1701,13 @@ function openReport(stationIdx, isForCustomer) {
     // Customer Need Summary
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#128100; 客户需求摘要</div>
+            <div class="report-section-title">&#128100; 瀹㈡埛闇€姹傛憳瑕?/div>
             <div class="need-summary">
                 <div class="need-items">
-                    <div class="need-item"><span class="need-key">使用模型：</span><span class="need-val">${needs.models.map(m => modelLabels[m]).join('、')}</span></div>
-                    <div class="need-item"><span class="need-key">预算范围：</span><span class="need-val">${priceLabels[needs.budget]}</span></div>
-                    <div class="need-item"><span class="need-key">使用场景：</span><span class="need-val">${needs.scenes.map(s => sceneLabels[s]).join('、')}</span></div>
-                    <div class="need-item"><span class="need-key">特殊需求：</span><span class="need-val">${needs.specials.length ? needs.specials.map(s => specialLabels[s]).join('、') : '无'}</span></div>
+                    <div class="need-item"><span class="need-key">浣跨敤妯″瀷锛?/span><span class="need-val">${needs.models.map(m => modelLabels[m]).join('銆?)}</span></div>
+                    <div class="need-item"><span class="need-key">棰勭畻鑼冨洿锛?/span><span class="need-val">${priceLabels[needs.budget]}</span></div>
+                    <div class="need-item"><span class="need-key">浣跨敤鍦烘櫙锛?/span><span class="need-val">${needs.scenes.map(s => sceneLabels[s]).join('銆?)}</span></div>
+                    <div class="need-item"><span class="need-key">鐗规畩闇€姹傦細</span><span class="need-val">${needs.specials.length ? needs.specials.map(s => specialLabels[s]).join('銆?) : '鏃?}</span></div>
                 </div>
             </div>
         </div>
@@ -1716,16 +1716,16 @@ function openReport(stationIdx, isForCustomer) {
     // Best Recommendation
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#127942; 最佳推荐</div>
+            <div class="report-section-title">&#127942; 鏈€浣虫帹鑽?/div>
             <div class="best-rec">
                 <div class="best-rec-icon">&#127775;</div>
                 <div class="best-rec-info">
                     <h4>${results[0].name}</h4>
-                    <p>综合评分 ${results[0].matchedScore} 分 | ${results[0].features.slice(0, 3).join(' / ')}<br>${results[0].freeAmount}</p>
+                    <p>缁煎悎璇勫垎 ${results[0].matchedScore} 鍒?| ${results[0].features.slice(0, 3).join(' / ')}<br>${results[0].freeAmount}</p>
                 </div>
                 <div class="best-rec-score">
                     <div class="score-num">${results[0].matchedScore}</div>
-                    <div class="score-label">综合评分</div>
+                    <div class="score-label">缁煎悎璇勫垎</div>
                 </div>
             </div>
         </div>
@@ -1734,7 +1734,7 @@ function openReport(stationIdx, isForCustomer) {
     // Speed Comparison
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#9889; 响应速度对比</div>
+            <div class="report-section-title">&#9889; 鍝嶅簲閫熷害瀵规瘮</div>
             <div class="bar-chart">
                 ${results.map(s => `
                     <div class="bar-row">
@@ -1752,23 +1752,23 @@ function openReport(stationIdx, isForCustomer) {
     // Price Comparison Table
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#128176; 价格与综合对比</div>
+            <div class="report-section-title">&#128176; 浠锋牸涓庣患鍚堝姣?/div>
             <table class="compare-table">
                 <thead>
                     <tr>
-                        <th>中转站</th>
-                        <th>价格</th>
-                        <th>稳定性</th>
-                        <th>响应速度</th>
-                        <th>客服支持</th>
-                        <th>综合评分</th>
+                        <th>涓浆绔?/th>
+                        <th>浠锋牸</th>
+                        <th>绋冲畾鎬?/th>
+                        <th>鍝嶅簲閫熷害</th>
+                        <th>瀹㈡湇鏀寔</th>
+                        <th>缁煎悎璇勫垎</th>
                     </tr>
                 </thead>
                 <tbody>
                     ${results.map((s, i) => `
                         <tr>
                             <td class="station-name-col">${i === 0 ? '&#127775; ' : ''}${s.name}</td>
-                            <td>${s.price === 'low' ? '<span class="highlight">低</span>' : s.price === 'medium' ? '中' : '高'}</td>
+                            <td>${s.price === 'low' ? '<span class="highlight">浣?/span>' : s.price === 'medium' ? '涓? : '楂?}</td>
                             <td>${s.stability}</td>
                             <td>${s.speed}</td>
                             <td>${s.support}</td>
@@ -1783,7 +1783,7 @@ function openReport(stationIdx, isForCustomer) {
     // Stability & Reputation
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#128737; 稳定性 & 口碑</div>
+            <div class="report-section-title">&#128737; 绋冲畾鎬?& 鍙ｇ</div>
             <div class="bar-chart">
                 ${results.map(s => `
                     <div class="bar-row">
@@ -1801,7 +1801,7 @@ function openReport(stationIdx, isForCustomer) {
     // Support
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#128172; 客服支持</div>
+            <div class="report-section-title">&#128172; 瀹㈡湇鏀寔</div>
             <div class="bar-chart">
                 ${results.map(s => `
                     <div class="bar-row">
@@ -1819,10 +1819,10 @@ function openReport(stationIdx, isForCustomer) {
     // Free Amount
     body.innerHTML += `
         <div class="report-section">
-            <div class="report-section-title">&#127873; 免费额度</div>
+            <div class="report-section-title">&#127873; 鍏嶈垂棰濆害</div>
             <div class="free-cards">
                 ${results.map(s => {
-                    const hasFree = s.freeAmount.includes('✅');
+                    const hasFree = s.freeAmount.includes('鉁?);
                     return `
                         <div class="free-card ${hasFree ? 'has-free' : ''}">
                             <div class="free-name">${s.name}</div>
@@ -1928,11 +1928,11 @@ function updateReviewStats() {
     document.getElementById('statPending').textContent = queue.length;
     document.getElementById('statApproved').textContent = approved.length;
     document.getElementById('statRejected').textContent = rejectedCount;
-    document.getElementById('pendingCount').textContent = '共 ' + queue.length + ' 条';
+    document.getElementById('pendingCount').textContent = '鍏?' + queue.length + ' 鏉?;
 }
 
 function formatTime(timestamp) {
-    if (!timestamp) return '未知时间';
+    if (!timestamp) return '鏈煡鏃堕棿';
     var d = new Date(timestamp);
     return d.getFullYear() + '/' +
         String(d.getMonth()+1).padStart(2,'0') + '/' +
@@ -1957,7 +1957,7 @@ function renderReviewQueue() {
     if (queue.length === 0) {
         container.innerHTML = '<div class="review-empty">' +
             '<div class="empty-icon">&#128203;</div>' +
-            '<p>暂无待审核的站点提交</p>' +
+            '<p>鏆傛棤寰呭鏍哥殑绔欑偣鎻愪氦</p>' +
             '</div>';
         renderReviewHistory();
         return;
@@ -1980,16 +1980,16 @@ function renderReviewQueue() {
 
         html += '<div class="review-item" id="review-item-' + idx + '">' +
             '<div class="review-item-header">' +
-                '<span class="review-item-name">' + escapeHtml(item.name || '未命名站点') + '</span>' +
+                '<span class="review-item-name">' + escapeHtml(item.name || '鏈懡鍚嶇珯鐐?) + '</span>' +
                 '<span class="review-item-time">' + formatTime(item.submitTime) + '</span>' +
             '</div>' +
             (item.url ? '<div class="review-item-url">' + escapeHtml(item.url) + '</div>' : '') +
             (item.description ? '<div class="review-item-desc">' + escapeHtml(item.description) + '</div>' : '') +
             '<div class="review-item-meta">' + modelTags + priceTag + featureTags + '</div>' +
             '<div class="review-actions">' +
-                '<button class="btn-approve" onclick="approveSite(' + idx + ')">&#9989; 通过</button>' +
-                '<button class="btn-reject" onclick="rejectSite(' + idx + ')">&#10060; 拒绝</button>' +
-                '<button class="btn-delete" onclick="deleteSite(' + idx + ')">&#128465; 删除</button>' +
+                '<button class="btn-approve" onclick="approveSite(' + idx + ')">&#9989; 閫氳繃</button>' +
+                '<button class="btn-reject" onclick="rejectSite(' + idx + ')">&#10060; 鎷掔粷</button>' +
+                '<button class="btn-delete" onclick="deleteSite(' + idx + ')">&#128465; 鍒犻櫎</button>' +
             '</div>' +
         '</div>';
     }
@@ -2018,11 +2018,11 @@ function renderReviewHistory() {
         html += '<div class="history-item">' +
             '<div class="history-status ' + (isApproved ? 'approved' : 'rejected') + '"></div>' +
             '<div class="history-info">' +
-                '<div class="history-name">' + escapeHtml(item.name || '未命名站点') + '</div>' +
+                '<div class="history-name">' + escapeHtml(item.name || '鏈懡鍚嶇珯鐐?) + '</div>' +
                 '<div class="history-time">' + formatTime(item.actionTime) + '</div>' +
             '</div>' +
             '<span class="history-action-label ' + (isApproved ? 'approved' : 'rejected') + '">' +
-                (isApproved ? '已通过' : '已拒绝') +
+                (isApproved ? '宸查€氳繃' : '宸叉嫆缁?) +
             '</span>' +
         '</div>';
     }
@@ -2040,7 +2040,7 @@ function approveSite(idx) {
     // Check for duplicate
     var exists = approvedSites.some(function(s) { return s.url === site.url && site.url; });
     if (exists) {
-        showToast('该站点已在已通过列表中', 'warning');
+        showToast('璇ョ珯鐐瑰凡鍦ㄥ凡閫氳繃鍒楄〃涓?, 'warning');
         return;
     }
 
@@ -2063,7 +2063,7 @@ function approveSite(idx) {
     queue.splice(idx, 1);
     saveReviewQueue(queue);
 
-    showToast('已通过: ' + (site.name || '未命名站点'), 'success');
+    showToast('宸查€氳繃: ' + (site.name || '鏈懡鍚嶇珯鐐?), 'success');
     renderReviewQueue();
 }
 
@@ -2087,7 +2087,7 @@ function rejectSite(idx) {
     queue.splice(idx, 1);
     saveReviewQueue(queue);
 
-    showToast('已拒绝: ' + (site.name || '未命名站点'), 'error');
+    showToast('宸叉嫆缁? ' + (site.name || '鏈懡鍚嶇珯鐐?), 'error');
     renderReviewQueue();
 }
 
@@ -2099,7 +2099,7 @@ function deleteSite(idx) {
     queue.splice(idx, 1);
     saveReviewQueue(queue);
 
-    showToast('已删除: ' + (site.name || '未命名站点'), 'warning');
+    showToast('宸插垹闄? ' + (site.name || '鏈懡鍚嶇珯鐐?), 'warning');
     renderReviewQueue();
 }
 
@@ -2125,7 +2125,87 @@ function showToast(message, type) {
 // Initialize badge on page load
 updateReviewBadge();
 
+// ========== CRAWLER DATA INTEGRATION ==========
+// 从爬虫JSON文件加载数据
+let crawlerPendingSites = [];
+let crawlerActiveSites = [];
+let crawlerDeadSites = [];
+
+async function loadCrawlerData() {
+    try {
+        // 加载待审核站点
+        const pendingRes = await fetch('data/pending_stations.json');
+        if (pendingRes.ok) {
+            crawlerPendingSites = await pendingRes.json();
+        }
+        
+        // 加载活跃站点
+        const activeRes = await fetch('data/stations.json');
+        if (activeRes.ok) {
+            crawlerActiveSites = await activeRes.json();
+        }
+        
+        // 加载失效站点
+        const deadRes = await fetch('data/dead_sites.json');
+        if (deadRes.ok) {
+            crawlerDeadSites = await deadRes.json();
+        }
+        
+        // 合并到审核队列
+        mergeCrawlerDataToReviewQueue();
+        
+        console.log('爬虫数据加载完成:', {
+            pending: crawlerPendingSites.length,
+            active: crawlerActiveSites.length,
+            dead: crawlerDeadSites.length
+        });
+    } catch (e) {
+        console.log('加载爬虫数据失败:', e);
+    }
+}
+
+function mergeCrawlerDataToReviewQueue() {
+    // 将爬虫发现的站点合并到审核队列
+    const existingQueue = getReviewQueue();
+    let addedCount = 0;
+    
+    crawlerPendingSites.forEach(site => {
+        // 检查是否已存在
+        const exists = existingQueue.some(q => q.url === site.url);
+        if (!exists && site.url && !site.url.includes('beian.cac.gov.cn')) {
+            existingQueue.push({
+                name: site.name || site.domain,
+                url: site.url,
+                description: site.description || '',
+                models: [],
+                price: '',
+                features: site.features || [],
+                source: site.source || 'crawler',
+                submitTime: new Date(site.discovered_at).getTime()
+            });
+            addedCount++;
+        }
+    });
+    
+    if (addedCount > 0) {
+        saveReviewQueue(existingQueue);
+        updateReviewBadge();
+        updateReviewStats();
+        showToast(`从爬虫加载了 ${addedCount} 个新站点`, 'success');
+    }
+}
+
+// 页面加载时读取爬虫数据
+loadCrawlerData();
+
+// 定期刷新数据（每5分钟）
+setInterval(loadCrawlerData, 5 * 60 * 1000);
+
 </script>
 
 </body>
 </html>
+
+</body>
+</html>
+
