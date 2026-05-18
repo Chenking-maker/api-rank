@@ -1,0 +1,62 @@
+﻿name: Auto Update API Stations v3
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # 北京时间12点
+  workflow_dispatch:
+
+jobs:
+  update-stations:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install scrapling requests beautifulsoup4
+    
+    - name: Run Smart Crawler v3
+      run: |
+        python scripts/crawler_v3.py
+      env:
+        PYTHONUNBUFFERED: 1
+    
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if git diff --quiet; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        git commit -m "Auto update: $(date +'%Y-%m-%d %H:%M')
+
+        - 新站点自动进入待审核队列
+        - 自动检测失效站点
+        - 自动检测站点恢复
+        - 爬虫: 百度/知乎/抖音/小红书"
+        git push
+    
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: crawler-results
+        path: data/
+        retention-days: 30

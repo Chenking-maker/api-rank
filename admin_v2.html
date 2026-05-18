@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIRank 商家后台 - 中转站审核管理</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --accent: #6c5ce7;
+            --accent-hover: #7c6ef7;
+            --green: #00d2a0;
+            --green-hover: #00e8b0;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border: #27272a;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Login Page */
+        .login-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: var(--bg-primary);
+        }
+
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px 40px;
+            width: 420px;
+            max-width: 90vw;
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .login-logo .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), var(--green));
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent), #5a4bd4);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-error {
+            color: var(--danger);
+            font-size: 13px;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Dashboard */
+        .dashboard { display: none; min-height: 100vh; }
+        .dashboard.active { display: block; }
+
+        /* Top Bar */
+        .topbar {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0 32px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-logo {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent), var(--green));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .topbar-title { font-size: 16px; font-weight: 600; }
+        .topbar-right { display: flex; align-items: center; gap: 16px; }
+        .logout-btn {
+            padding: 6px 16px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            padding: 16px 32px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-tab:hover { border-color: var(--accent); color: var(--text-primary); }
+        .nav-tab.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .nav-tab .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 20px;
+            height: 20px;
+            background: var(--danger);
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 6px;
+            padding: 0 6px;
+        }
+
+        /* Main Content */
+        .main-content { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .stat-card h3 {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .stat-card .number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-card .change {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .stat-card .change.up { color: var(--green); }
+        .stat-card .change.down { color: var(--danger); }
+
+        /* Site Cards */
+        .sites-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .site-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .site-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .site-info .url {
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .site-info .description {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .site-info .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .site-info .meta span {
+            font-size: 11px;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        .site-info .meta span.source {
+            background: rgba(108,92,231,0.15);
+            color: #a78bfa;
+        }
+
+        .site-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-approve {
+            background: rgba(0,210,160,0.15);
+            border: 1px solid rgba(0,210,160,0.3);
+            color: var(--green);
+        }
+
+        .btn-approve:hover {
+            background: rgba(0,210,160,0.25);
+        }
+
+        .btn-reject {
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: var(--danger);
+        }
+
+        .btn-reject:hover {
+            background: rgba(239,68,68,0.25);
+        }
+
+        .btn-check {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-check:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .btn-recover {
+            background: rgba(245,158,11,0.15);
+            border: 1px solid rgba(245,158,11,0.3);
+            color: var(--warning);
+        }
+
+        .btn-recover:hover {
+            background: rgba(245,158,11,0.25);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            width: 600px;
+            max-width: 95vw;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-header h3 { font-size: 18px; font-weight: 600; }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .modal-body { padding: 24px; }
+
+        .form-row { margin-bottom: 16px; }
+        .form-row label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-row input, .form-row textarea, .form-row select {
+            width: 100%;
+            padding: 10px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .form-row textarea { min-height: 80px; resize: vertical; }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status-pending { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .status-active { background: rgba(0,210,160,0.15); color: var(--green); }
+        .status-dead { background: rgba(239,68,68,0.15); color: var(--danger); }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-page" id="loginPage">
+        <div class="login-box">
+            <div class="login-logo">
+                <div class="logo-icon">API</div>
+                <h1>中转站审核后台</h1>
+            </div>
+            <div class="form-group">
+                <label>管理密码</label>
+                <input type="password" id="passwordInput" placeholder="请输入密码">
+            </div>
+            <button class="login-btn" onclick="handleLogin()">登录</button>
+            <div class="login-error" id="loginError"></div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <!-- Top Bar -->
+        <div class="topbar">
+            <div class="topbar-left">
+                <div class="topbar-logo">API</div>
+                <div class="topbar-title">中转站审核后台</div>
+            </div>
+            <div class="topbar-right">
+                <button class="logout-btn" onclick="handleLogout()">退出登录</button>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('pending')">
+                待审核 <span class="badge" id="pendingCount">0</span>
+            </button>
+            <button class="nav-tab" onclick="switchTab('active')">
+                已上线
+            </button>
+            <button class="nav-tab" onclick="switchTab('dead')">
+                已失效
+            </button>
+            <button class="nav-tab" onclick="switchTab('stats')">
+                数据统计
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Pending Panel -->
+            <div class="tab-panel active" id="pendingPanel">
+                <div class="sites-grid" id="pendingList"></div>
+            </div>
+
+            <!-- Active Panel -->
+            <div class="tab-panel" id="activePanel">
+                <div class="sites-grid" id="activeList"></div>
+            </div>
+
+            <!-- Dead Panel -->
+            <div class="tab-panel" id="deadPanel">
+                <div class="sites-grid" id="deadList"></div>
+            </div>
+
+            <!-- Stats Panel -->
+            <div class="tab-panel" id="statsPanel">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>已上线站点</h3>
+                        <div class="number" id="statActive">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>待审核</h3>
+                        <div class="number" id="statPending">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>已失效</h3>
+                        <div class="number" id="statDead">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div class="modal-overlay" id="approveModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>审核通过 - 添加到排行榜</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <label>站点名称</label>
+                    <input type="text" id="approveName">
+                </div>
+                <div class="form-row">
+                    <label>站点URL</label>
+                    <input type="text" id="approveUrl" readonly>
+                </div>
+                <div class="form-row">
+                    <label>描述</label>
+                    <textarea id="approveDesc"></textarea>
+                </div>
+                <div class="form-row">
+                    <label>支持模型</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="claude"> Claude</label>
+                        <label><input type="checkbox" value="gpt"> GPT</label>
+                        <label><input type="checkbox" value="gemini"> Gemini</label>
+                        <label><input type="checkbox" value="domestic"> 国产模型</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>价格等级</label>
+                    <select id="approvePrice">
+                        <option value="low">低价 (50以内)</option>
+                        <option value="medium">中等 (50-200)</option>
+                        <option value="high">高价 (200+)</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>特点标签</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="direct"> 国内直连</label>
+                        <label><input type="checkbox" value="stable"> 稳定可靠</label>
+                        <label><input type="checkbox" value="cheap"> 性价比高</label>
+                        <label><input type="checkbox" value="fast"> 快速响应</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn-approve" onclick="confirmApprove()">确认添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
