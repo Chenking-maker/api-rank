@@ -712,8 +712,11 @@ async function loadCrawlerData() {
 
         pending.forEach(site => {
             const siteKey = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-            // 跳过已在 crawlerQueue 中的
-            if (existing.some(e => e.url === site.url)) return;
+            // 跳过已在 crawlerQueue 中的（用域名key去重，避免URL格式不一致导致重复）
+            if (existing.some(e => {
+                const eKey = (e.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                return eKey === siteKey;
+            })) return;
             // 跳过已在排行榜中的（stations_info.json）
             if (approvedUrls.has(siteKey)) return;
             // 跳过无效 URL
@@ -783,21 +786,62 @@ function loadDeadSitesFromStorage() {
 
 async function loadDeadSites() {
     try {
-        // 优先从 localStorage 加载（保持用户修改的状态）
-        const savedData = loadDeadSitesFromStorage();
-        if (savedData && savedData.length > 0) {
-            deadSitesData = savedData;
-            console.log('从 localStorage 加载了 ' + deadSitesData.length + ' 个失效站点');
-        } else {
-            // 首次加载从服务器获取
+        // 1. 始终从服务器获取最新数据
+        let serverData = [];
+        try {
             const res = await fetch('data/dead_sites.json');
-            if (!res.ok) return;
-            deadSitesData = await res.json();
-            if (!Array.isArray(deadSitesData)) deadSitesData = [];
-            console.log('从服务器加载了 ' + deadSitesData.length + ' 个失效站点');
-        }
+            if (res.ok) {
+                serverData = await res.json();
+                if (!Array.isArray(serverData)) serverData = [];
+                console.log('从服务器加载了 ' + serverData.length + ' 个失效站点');
+            }
+        } catch(e) {}
 
-        // 从 deadSitesResults 恢复检测状态
+        // 2. 加载本地缓存（保留用户手动修改的状态：恢复/移除等）
+        const savedData = loadDeadSitesFromStorage();
+        const localData = (savedData && savedData.length > 0) ? savedData : [];
+
+        // 3. 合并策略：以服务器数据为主，本地状态覆盖
+        //    - 服务器有、本地没有 → 新增（爬虫新检测到的失效站点）
+        //    - 服务器有、本地也有 → 保留本地的 status（用户可能已标记恢复）
+        //    - 服务器没有、本地有 → 保留（用户手动添加的或已移除的）
+        const localMap = new Map();
+        localData.forEach(s => {
+            const key = s.url || s.domain || s.name;
+            if (key) localMap.set(key, s);
+        });
+
+        deadSitesData = [];
+        const seenKeys = new Set();
+
+        // 先加入服务器数据
+        serverData.forEach(s => {
+            const key = s.url || s.domain || s.name;
+            if (!key || seenKeys.has(key)) return;
+            seenKeys.add(key);
+            // 如果本地有该站点且用户修改过状态，保留本地状态
+            if (localMap.has(key)) {
+                const local = localMap.get(key);
+                deadSitesData.push({
+                    ...s,
+                    status: local.status || s.status,
+                    recovered_at: local.recovered_at || s.recovered_at,
+                    checked_at: local.checked_at || s.checked_at
+                });
+            } else {
+                deadSitesData.push({...s});
+            }
+        });
+
+        // 再加入本地独有的（用户手动添加的或已移除的）
+        localData.forEach(s => {
+            const key = s.url || s.domain || s.name;
+            if (!key || seenKeys.has(key)) return;
+            seenKeys.add(key);
+            deadSitesData.push({...s});
+        });
+
+        // 4. 从 deadSitesResults 恢复检测状态
         const savedResults = JSON.parse(localStorage.getItem('deadSitesResults') || '{}');
         deadSitesData.forEach(s => {
             if (savedResults[s.url]) {
@@ -805,6 +849,10 @@ async function loadDeadSites() {
             }
         });
 
+        // 5. 同步回 localStorage
+        saveDeadSitesData();
+
+        console.log('合并后共 ' + deadSitesData.length + ' 个失效站点（服务器 ' + serverData.length + ' + 本地独有 ' + (deadSitesData.length - serverData.length) + '）');
         renderDeadSites();
     } catch(e) {
         console.log('加载失效站点失败:', e);
