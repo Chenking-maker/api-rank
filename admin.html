@@ -1,0 +1,1230 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIRank 商家后台 - 智能中转站推荐</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --accent: #6c5ce7;
+            --green: #00d2a0;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border: #27272a;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+        
+        .login-page { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .login-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; width: 420px; }
+        .login-logo { text-align: center; margin-bottom: 32px; }
+        .login-logo .logo-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--accent), var(--green)); border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 16px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+        .form-group input { width: 100%; padding: 12px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; }
+        .login-btn { width: 100%; padding: 12px; background: linear-gradient(135deg, var(--accent), #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+        .login-error { color: var(--danger); font-size: 13px; text-align: center; margin-top: 12px; }
+        
+        .dashboard { display: none; }
+        .dashboard.active { display: block; }
+        .topbar { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-logo { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--green)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; }
+        .logout-btn { padding: 6px 16px; background: transparent; border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 13px; cursor: pointer; }
+        
+        .main-content { padding: 32px; max-width: 1400px; margin: 0 auto; }
+        
+        .tab-nav { display: flex; gap: 8px; margin-bottom: 24px; }
+        .tab-btn { padding: 10px 20px; background: transparent; border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 14px; cursor: pointer; }
+        .tab-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .tab-btn .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; background: var(--danger); border-radius: 10px; font-size: 11px; margin-left: 6px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+        .panel-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+        .customer-textarea { width: 100%; min-height: 180px; padding: 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; resize: vertical; }
+        .parse-actions { display: flex; gap: 12px; margin-top: 16px; }
+        .btn-primary { flex: 1; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .btn-secondary { padding: 12px 20px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 14px; cursor: pointer; }
+        
+        .results-placeholder { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
+        .station-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s; }
+        .station-card:hover { border-color: var(--accent); }
+        .station-card.selected { border-color: var(--green); box-shadow: 0 0 0 2px rgba(0,210,160,0.2); }
+        .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .card-rank { width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-right: 10px; }
+        .rank-1 { background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; }
+        .rank-2 { background: linear-gradient(135deg, #94a3b8, #64748b); color: #fff; }
+        .rank-3 { background: linear-gradient(135deg, #cd7f32, #a0522d); color: #fff; }
+        .card-name { font-size: 15px; font-weight: 600; flex: 1; }
+        .card-score { font-size: 18px; font-weight: 700; color: var(--green); }
+        .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+        .meta-item { font-size: 11px; padding: 2px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--text-secondary); }
+        .card-actions { display: flex; gap: 8px; margin-top: 12px; }
+        .btn-report { flex: 1; padding: 8px 16px; background: rgba(0,210,160,0.1); border: 1px solid rgba(0,210,160,0.3); border-radius: 6px; color: var(--green); font-size: 12px; cursor: pointer; }
+        .btn-compare { padding: 8px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); font-size: 12px; cursor: pointer; }
+        .btn-compare.active { background: rgba(108,92,231,0.2); border-color: var(--accent); color: var(--accent); }
+        
+        .compare-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 1px solid var(--border); padding: 16px 32px; z-index: 50; }
+        .compare-bar.active { display: flex; align-items: center; justify-content: space-between; }
+        .compare-info { display: flex; align-items: center; gap: 16px; }
+        .compare-count { font-size: 14px; color: var(--text-secondary); }
+        .compare-count span { color: var(--green); font-weight: 600; }
+        .btn-compare-now { padding: 10px 24px; background: var(--accent); border: none; border-radius: 8px; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+        
+        .review-stats { display: flex; gap: 16px; margin-bottom: 32px; }
+        .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; flex: 1; text-align: center; }
+        .stat-card .number { font-size: 32px; font-weight: 700; }
+        .stat-card .label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        
+        .review-section { margin-bottom: 32px; }
+        .review-section-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .review-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; }
+        .review-item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .review-item-name { font-size: 15px; font-weight: 600; }
+        .review-item-time { font-size: 12px; color: var(--text-secondary); }
+        .review-item-url { font-size: 13px; color: var(--accent); margin-bottom: 6px; }
+        .review-item-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px; padding: 8px 10px; background: rgba(255,255,255,0.02); border-radius: 6px; border: 1px solid rgba(255,255,255,0.04); }
+        .review-item-models { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+        .tag-model { font-size: 11px; padding: 2px 8px; background: rgba(78,205,196,0.1); color: #4ecdc4; border-radius: 4px; }
+        .tag-score { font-size: 12px; font-weight: 600; padding: 2px 8px; background: rgba(254,202,87,0.1); color: #feca57; border-radius: 4px; }
+        .tag-enriched { font-size: 11px; padding: 2px 8px; background: rgba(78,205,196,0.1); color: #4ecdc4; border-radius: 4px; }
+        .tag-pending { font-size: 11px; padding: 2px 8px; background: rgba(254,202,87,0.1); color: #feca57; border-radius: 4px; }
+        .review-item-source { display: inline-block; font-size: 11px; padding: 2px 8px; background: rgba(108,92,231,0.15); border-radius: 4px; color: #a78bfa; margin-bottom: 12px; }
+        .review-actions { display: flex; gap: 8px; }
+        .btn-approve { padding: 8px 16px; background: rgba(0,210,160,0.15); border: 1px solid rgba(0,210,160,0.3); border-radius: 6px; color: var(--green); font-size: 12px; cursor: pointer; }
+        .btn-reject { padding: 8px 16px; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); border-radius: 6px; color: var(--danger); font-size: 12px; cursor: pointer; }
+        .btn-view { padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); font-size: 12px; cursor: pointer; text-decoration: none; }
+        
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 24px; overflow-y: auto; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; width: 900px; max-width: 95vw; max-height: 90vh; overflow-y: auto; }
+        .modal-header { padding: 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+        .modal-header h3 { font-size: 18px; font-weight: 700; }
+        .modal-close { width: 32px; height: 32px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
+        .modal-body { padding: 24px; }
+        
+        .report-section { margin-bottom: 28px; }
+        .report-section-title { font-size: 14px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .best-rec { background: linear-gradient(135deg, rgba(0,210,160,0.08), rgba(108,92,231,0.05)); border: 1px solid rgba(0,210,160,0.3); border-radius: var(--radius); padding: 20px; display: flex; align-items: center; gap: 16px; }
+        .best-rec-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--green), #00b890); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .best-rec-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .best-rec-info p { font-size: 13px; color: var(--text-secondary); }
+        .best-rec-score { margin-left: auto; text-align: center; }
+        .best-rec-score .score-num { font-size: 32px; font-weight: 800; color: var(--green); }
+        .best-rec-score .score-label { font-size: 11px; color: var(--text-secondary); }
+        
+        .bar-chart { display: flex; flex-direction: column; gap: 12px; }
+        .bar-row { display: flex; align-items: center; gap: 12px; }
+        .bar-label { width: 120px; font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .bar-track { flex: 1; height: 24px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 600; color: #fff; }
+        .bar-fill.speed { background: linear-gradient(90deg, #10b981, #34d399); }
+        .bar-fill.stability { background: linear-gradient(90deg, #6366f1, #818cf8); }
+        .bar-fill.support { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .bar-value { width: 30px; text-align: right; font-size: 12px; font-weight: 600; }
+        
+        .compare-table { width: 100%; border-collapse: collapse; }
+        .compare-table th, .compare-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
+        .compare-table th { color: var(--text-secondary); font-weight: 500; font-size: 12px; }
+        .highlight { color: var(--green); font-weight: 700; }
+        
+        .compare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .compare-station { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+        .compare-station.winner { border-color: var(--green); background: rgba(0,210,160,0.05); }
+        .compare-station-header { text-align: center; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .compare-station-header h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .compare-station-header .score { font-size: 36px; font-weight: 800; color: var(--green); }
+        .compare-station-header .score-label { font-size: 12px; color: var(--text-secondary); }
+        .compare-metrics { display: flex; flex-direction: column; gap: 12px; }
+        .compare-metric { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .compare-metric-label { font-size: 13px; color: var(--text-secondary); }
+        .compare-metric-value { font-size: 14px; font-weight: 600; }
+        .compare-metric-value.high { color: var(--green); }
+        .compare-metric-value.medium { color: var(--warning); }
+        .compare-metric-value.low { color: var(--danger); }
+        
+        .winner-badge { display: inline-block; background: var(--green); color: #000; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-top: 8px; }
+        
+        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 24px; font-size: 14px; z-index: 9999; opacity: 0; transition: all 0.3s; }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    </style>
+</head>
+<body>
+    <div class="login-page" id="loginPage">
+        <div class="login-box">
+            <div class="login-logo">
+                <div class="logo-icon">API</div>
+                <h1>商家后台</h1>
+            </div>
+            <div class="form-group">
+                <label>管理密码</label>
+                <input type="password" id="passwordInput" placeholder="请输入密码" onkeydown="if(event.key==='Enter')handleLogin()">
+            </div>
+            <button class="login-btn" onclick="handleLogin()">登录</button>
+            <div class="login-error" id="loginError"></div>
+        </div>
+    </div>
+
+    <div class="dashboard" id="dashboard">
+        <div class="topbar">
+            <div class="topbar-left">
+                <div class="topbar-logo">AR</div>
+                <div class="topbar-title">工作台 <span>智能推荐引擎</span></div>
+            </div>
+            <div class="topbar-right">
+                <button class="logout-btn" onclick="handleLogout()">退出登录</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab('recommend')">智能推荐</button>
+                <button class="tab-btn" onclick="switchTab('review')">
+                    审核管理
+                    <span class="badge" id="totalBadge">0</span>
+                </button>
+            </div>
+
+            <div class="tab-content active" id="tab-recommend">
+                <div class="workspace">
+                    <div class="panel">
+                        <div class="panel-title">客户需求输入</div>
+                        <textarea class="customer-textarea" id="customerText" placeholder="粘贴客户发来的文字，例如：我要用Claude写代码，预算100块，希望稳定一点"></textarea>
+                        <div class="parse-actions">
+                            <button class="btn-primary" onclick="handleParse()">智能解析</button>
+                            <button class="btn-secondary" onclick="clearAll()">清空</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-title">推荐结果 (点击卡片选择对比)</div>
+                        <div class="results-placeholder" id="resultsPlaceholder">
+                            <p>输入客户需求并点击「智能解析」</p>
+                        </div>
+                        <div id="resultsList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-review">
+                <div class="review-stats">
+                    <div class="stat-card">
+                        <div class="number" id="statCrawler">0</div>
+                        <div class="label">爬虫发现待审核</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number" id="statManual">0</div>
+                        <div class="label">手动提交待审核</div>
+                    </div>
+                    <div class="stat-card" style="cursor:pointer;" onclick="exportApprovedSites()" title="点击导出已审核站点">
+                        <div class="number" id="statApproved">0</div>
+                        <div class="label">已通过 (点击导出)</div>
+                    </div>
+                </div>
+
+                <div class="review-section">
+                    <div class="review-section-title">🤖 爬虫自动发现 (来自百度/知乎/抖音/小红书)</div>
+                    <div id="crawlerList"></div>
+                </div>
+
+                <div class="review-section">
+                    <div class="review-section-title">📝 手动提交收录</div>
+                    <div id="manualList"></div>
+                </div>
+
+                <!-- 失效站点管理 -->
+                <div style="margin-top:24px;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                        <h3 style="font-size:15px;font-weight:600;color:var(--text-secondary);">⚠️ 失效站点管理</h3>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <span id="statDead" style="font-size:12px;color:#ff6b6b;background:rgba(255,107,107,0.1);padding:2px 10px;border-radius:10px;">0 个失效</span>
+                            <span id="statRecovered" style="font-size:12px;color:#4ecdc4;background:rgba(78,205,196,0.1);padding:2px 10px;border-radius:10px;">0 已恢复</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
+                        <button onclick="checkAllDeadSites()" id="btnCheckAll" style="padding:8px 16px;background:linear-gradient(135deg,#6c5ce7,#5a4bd4);color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500;">🔍 一键检测全部</button>
+                        <button onclick="exportDeadSitesChanges()" style="padding:8px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text-secondary);cursor:pointer;">📤 导出变更</button>
+                        <button onclick="clearRecoveredSites()" style="padding:8px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text-secondary);cursor:pointer;">🧹 清除已恢复</button>
+                    </div>
+                    <div id="deadCheckProgress" style="display:none;margin-bottom:12px;">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                            <span style="font-size:12px;color:var(--text-secondary);" id="deadCheckText">正在检测...</span>
+                            <span style="font-size:12px;color:var(--accent);" id="deadCheckCount">0/0</span>
+                        </div>
+                        <div style="height:4px;background:var(--bg-primary);border-radius:2px;overflow:hidden;">
+                            <div id="deadCheckBar" style="height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:2px;width:0%;transition:width 0.3s;"></div>
+                        </div>
+                    </div>
+                    <div id="deadList" style="display:flex;flex-direction:column;gap:8px;">
+                        <div style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">暂无失效站点数据，等待爬虫检测...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="compare-bar" id="compareBar">
+        <div class="compare-info">
+            <span class="compare-count">已选择 <span id="compareCount">0</span>/3 个中转站</span>
+        </div>
+        <button class="btn-compare-now" onclick="openCompareModal()">开始对比</button>
+    </div>
+
+    <div class="modal-overlay" id="reportModal" onclick="if(event.target===this)closeReportModal()">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="reportTitle">详细分析报告</h3>
+                <button class="modal-close" onclick="closeReportModal()">×</button>
+            </div>
+            <div class="modal-body" id="reportBody"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="compareModal" onclick="if(event.target===this)closeCompareModal()">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>中转站对比分析</h3>
+                <button class="modal-close" onclick="closeCompareModal()">×</button>
+            </div>
+            <div class="modal-body" id="compareBody"></div>
+        </div>
+    </div>
+
+<script>
+const stationDatabase = [
+    { name: '诗云API', url: 'shiyunapi.com', models: ['claude','gpt','gemini','domestic'], price: 'low', special: ['cheap'], score: 9.8, stability: 9.5, speed: 9.0, support: 9.5, features: ['多模态','成本减半','无套路'], freeAmount: '新用户送额度' },
+    { name: '4ksAPI', url: '4ksapi.com', models: ['claude','gpt','gemini'], price: 'medium', special: ['stable'], score: 9.5, stability: 9.8, speed: 9.2, support: 9.0, features: ['智能路由','对公开票','企业级'], freeAmount: '无免费额度' },
+    { name: '星链4SAPI', url: '4sapi.com', models: ['claude','gpt','gemini'], price: 'high', special: ['stable','fast'], score: 9.9, stability: 9.9, speed: 9.8, support: 9.5, features: ['企业级SLA','全场景','增值税发票'], freeAmount: '无免费额度' },
+    { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', special: ['fast','direct'], score: 8.8, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '每日免费额度' },
+    { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', special: ['fast'], score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '新用户$1免费' },
+    { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', special: ['cheap','direct'], score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '每月免费额度' },
+    { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', special: ['stable'], score: 8.2, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' }
+];
+
+const modelLabels = { claude: 'Claude', gpt: 'GPT', gemini: 'Gemini', domestic: '国产模型' };
+const priceLabels = { low: '低价 (50以内)', medium: '中等 (50-200)', high: '高价 (200+)' };
+
+let selectedForCompare = [];
+let lastParseResults = [];
+
+function handleLogin() {
+    const pwd = document.getElementById('passwordInput').value;
+    if (pwd === 'apirank2026') {
+        localStorage.setItem('adminLoggedIn', 'true');
+        localStorage.setItem('adminLoginTime', Date.now().toString());
+        showDashboard();
+    } else {
+        document.getElementById('loginError').textContent = '密码错误';
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem('adminLoggedIn');
+    localStorage.removeItem('adminLoginTime');
+    document.getElementById('dashboard').classList.remove('active');
+    document.getElementById('loginPage').style.display = 'flex';
+}
+
+function showDashboard() {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('dashboard').classList.add('active');
+    loadCrawlerData();
+    loadDeadSites();
+    syncReviewQueue();
+}
+
+// 页面加载时自动检查登录状态（7天内有效）
+(function checkAutoLogin() {
+    const loggedIn = localStorage.getItem('adminLoggedIn');
+    const loginTime = parseInt(localStorage.getItem('adminLoginTime') || '0');
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+    if (loggedIn === 'true' && (Date.now() - loginTime) < sevenDays) {
+        showDashboard();
+    }
+})();
+
+function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+    if (tab === 'review') renderReviewLists();
+}
+
+function handleParse() {
+    const text = document.getElementById('customerText').value.trim();
+    if (!text) return;
+    
+    const needs = parseNeeds(text);
+    const results = rankStations(needs);
+    lastParseResults = results;
+    displayResults(results);
+}
+
+function parseNeeds(text) {
+    const models = [];
+    if (/claude/i.test(text)) models.push('claude');
+    if (/gpt|chatgpt/i.test(text)) models.push('gpt');
+    if (/gemini/i.test(text)) models.push('gemini');
+    if (/deepseek|豆包|通义|国产|kimi/i.test(text)) models.push('domestic');
+    if (models.length === 0) models.push('claude', 'gpt');
+    
+    let budget = 'medium';
+    const budgetMatch = text.match(/(\d+)\s*块|预算\s*(\d+)/);
+    if (budgetMatch) {
+        const amount = parseInt(budgetMatch[1] || budgetMatch[2]);
+        if (amount <= 50) budget = 'low';
+        else if (amount <= 200) budget = 'medium';
+        else budget = 'high';
+    }
+    if (/便宜|低价|性价比/i.test(text)) budget = 'low';
+    
+    const specials = [];
+    if (/国内|直连|翻墙/i.test(text)) specials.push('direct');
+    if (/稳定|可靠|不掉线/i.test(text)) specials.push('stable');
+    if (/便宜|低价|省钱/i.test(text)) specials.push('cheap');
+    if (/快|速度|延迟/i.test(text)) specials.push('fast');
+    
+    return { models, budget, specials, text };
+}
+
+function rankStations(needs) {
+    return stationDatabase.map(station => {
+        let score = station.score;
+        const modelMatch = needs.models.filter(m => station.models.includes(m)).length;
+        score += (modelMatch / needs.models.length) * 3;
+        const specialMatch = needs.specials.filter(s => station.special.includes(s)).length;
+        score += specialMatch * 1.2;
+        if (station.freeAmount.includes('免费')) score += 0.5;
+        return { ...station, matchedScore: Math.round(score * 10) / 10 };
+    }).sort((a, b) => b.matchedScore - a.matchedScore).slice(0, 5);
+}
+
+function displayResults(results) {
+    document.getElementById('resultsPlaceholder').style.display = 'none';
+    const container = document.getElementById('resultsList');
+    container.innerHTML = '';
+    
+    results.forEach((station, idx) => {
+        const isSelected = selectedForCompare.some(s => s.name === station.name);
+        const modelTags = station.models.map(m => `<span class="meta-item">${modelLabels[m]}</span>`).join('');
+        const featureTags = station.features.slice(0, 3).map(f => `<span class="meta-item">${f}</span>`).join('');
+        
+        container.innerHTML += `
+            <div class="station-card ${isSelected ? 'selected' : ''}" data-idx="${idx}">
+                <div class="card-header">
+                    <span class="card-rank rank-${idx+1}">${idx+1}</span>
+                    <span class="card-name">${station.name}</span>
+                    <span class="card-score">${station.matchedScore}</span>
+                </div>
+                <div class="card-meta">${modelTags}${featureTags}</div>
+                <div class="card-actions">
+                    <button class="btn-report" onclick="openReport(${idx})">查看分析报告</button>
+                    <button class="btn-compare ${isSelected ? 'active' : ''}" onclick="toggleCompare(${idx})">${isSelected ? '已选择' : '加入对比'}</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+function openReport(idx) {
+    const station = lastParseResults[idx];
+    if (!station) return;
+    
+    document.getElementById('reportTitle').textContent = station.name + ' - 详细分析报告';
+    
+    const body = document.getElementById('reportBody');
+    body.innerHTML = `
+        <div class="report-section">
+            <div class="report-section-title">最佳推荐</div>
+            <div class="best-rec">
+                <div class="best-rec-icon">🏆</div>
+                <div class="best-rec-info">
+                    <h4>${station.name}</h4>
+                    <p>${station.features.join(' / ')}<br>${station.freeAmount}</p>
+                </div>
+                <div class="best-rec-score">
+                    <div class="score-num">${station.matchedScore}</div>
+                    <div class="score-label">综合评分</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <div class="report-section-title">响应速度对比</div>
+            <div class="bar-chart">
+                ${lastParseResults.map(s => `
+                    <div class="bar-row">
+                        <span class="bar-label">${s.name}</span>
+                        <div class="bar-track"><div class="bar-fill speed" style="width:${s.speed*10}%">${s.speed}</div></div>
+                        <span class="bar-value">${s.speed}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <div class="report-section-title">稳定性对比</div>
+            <div class="bar-chart">
+                ${lastParseResults.map(s => `
+                    <div class="bar-row">
+                        <span class="bar-label">${s.name}</span>
+                        <div class="bar-track"><div class="bar-fill stability" style="width:${s.stability*10}%">${s.stability}</div></div>
+                        <span class="bar-value">${s.stability}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <div class="report-section-title">综合对比表</div>
+            <table class="compare-table">
+                <tr><th>中转站</th><th>价格</th><th>稳定性</th><th>速度</th><th>支持</th><th>评分</th></tr>
+                ${lastParseResults.map(s => `
+                    <tr>
+                        <td>${s.name}</td>
+                        <td>${priceLabels[s.price]}</td>
+                        <td>${s.stability}</td>
+                        <td>${s.speed}</td>
+                        <td>${s.support}</td>
+                        <td class="highlight">${s.matchedScore}</td>
+                    </tr>
+                `).join('')}
+            </table>
+        </div>
+    `;
+    
+    document.getElementById('reportModal').classList.add('active');
+}
+
+function closeReportModal() {
+    document.getElementById('reportModal').classList.remove('active');
+}
+
+function toggleCompare(idx) {
+    const station = lastParseResults[idx];
+    const existingIdx = selectedForCompare.findIndex(s => s.name === station.name);
+    
+    if (existingIdx >= 0) {
+        selectedForCompare.splice(existingIdx, 1);
+    } else if (selectedForCompare.length < 3) {
+        selectedForCompare.push(station);
+    } else {
+        showToast('最多选择3个中转站对比');
+        return;
+    }
+    
+    updateCompareBar();
+    displayResults(lastParseResults);
+}
+
+function updateCompareBar() {
+    const bar = document.getElementById('compareBar');
+    const count = document.getElementById('compareCount');
+    
+    count.textContent = selectedForCompare.length;
+    
+    if (selectedForCompare.length >= 2) {
+        bar.classList.add('active');
+    } else {
+        bar.classList.remove('active');
+    }
+}
+
+function openCompareModal() {
+    if (selectedForCompare.length < 2) return;
+    
+    const body = document.getElementById('compareBody');
+    const winner = selectedForCompare.reduce((max, s) => s.matchedScore > max.matchedScore ? s : max);
+    
+    body.innerHTML = `
+        <div class="compare-grid">
+            ${selectedForCompare.map(s => `
+                <div class="compare-station ${s.name === winner.name ? 'winner' : ''}">
+                    <div class="compare-station-header">
+                        <h4>${s.name}</h4>
+                        <div class="score">${s.matchedScore}</div>
+                        <div class="score-label">综合评分</div>
+                        ${s.name === winner.name ? '<div class="winner-badge">🏆 推荐</div>' : ''}
+                    </div>
+                    <div class="compare-metrics">
+                        <div class="compare-metric">
+                            <span class="compare-metric-label">稳定性</span>
+                            <span class="compare-metric-value ${s.stability >= 9 ? 'high' : s.stability >= 8 ? 'medium' : 'low'}">${s.stability}</span>
+                        </div>
+                        <div class="compare-metric">
+                            <span class="compare-metric-label">响应速度</span>
+                            <span class="compare-metric-value ${s.speed >= 9 ? 'high' : s.speed >= 8 ? 'medium' : 'low'}">${s.speed}</span>
+                        </div>
+                        <div class="compare-metric">
+                            <span class="compare-metric-label">客服支持</span>
+                            <span class="compare-metric-value ${s.support >= 9 ? 'high' : s.support >= 8 ? 'medium' : 'low'}">${s.support}</span>
+                        </div>
+                        <div class="compare-metric">
+                            <span class="compare-metric-label">价格</span>
+                            <span class="compare-metric-value">${priceLabels[s.price]}</span>
+                        </div>
+                        <div class="compare-metric">
+                            <span class="compare-metric-label">免费额度</span>
+                            <span class="compare-metric-value" style="font-size:12px">${s.freeAmount}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+    
+    document.getElementById('compareModal').classList.add('active');
+}
+
+function closeCompareModal() {
+    document.getElementById('compareModal').classList.remove('active');
+}
+
+function clearAll() {
+    document.getElementById('customerText').value = '';
+    document.getElementById('resultsList').innerHTML = '';
+    document.getElementById('resultsPlaceholder').style.display = 'block';
+    selectedForCompare = [];
+    updateCompareBar();
+}
+
+// Review Management
+function getCrawlerQueue() { return JSON.parse(localStorage.getItem('crawlerQueue') || '[]'); }
+function saveCrawlerQueue(q) { localStorage.setItem('crawlerQueue', JSON.stringify(q)); }
+function getManualQueue() { return JSON.parse(localStorage.getItem('manualQueue') || '[]'); }
+function saveManualQueue(q) { localStorage.setItem('manualQueue', JSON.stringify(q)); }
+function getApprovedSites() { return JSON.parse(localStorage.getItem('approvedSites') || '[]'); }
+
+// 同步前端提交收录的 reviewQueue 到 admin 的 manualQueue
+function syncReviewQueue() {
+    const reviewQueue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+    if (reviewQueue.length === 0) return;
+
+    const manualQueue = getManualQueue();
+    const approved = getApprovedSites();
+    const crawler = getCrawlerQueue();
+
+    // 收集所有已存在的URL（去重用）
+    const existingUrls = new Set();
+    [...manualQueue, ...approved, ...crawler].forEach(s => {
+        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+        if (key) existingUrls.add(key);
+    });
+
+    let added = 0;
+    reviewQueue.forEach(item => {
+        const key = (item.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+        if (!key || existingUrls.has(key)) return;
+
+        manualQueue.push({
+            name: item.name || item.domain || key,
+            url: item.url,
+            domain: item.domain || key,
+            description: item.description || '',
+            models: item.models || [],
+            features: item.features || [],
+            score: item.score || item.scores?.total || 7.0,
+            response_time: item.responseTime || null,
+            free_amount: item.free_amount || '',
+            price: item.price || '',
+            source: '用户提交收录',
+            submitTime: item.submitTime || Date.now(),
+            enriched: false
+        });
+        existingUrls.add(key);
+        added++;
+    });
+
+    if (added > 0) {
+        saveManualQueue(manualQueue);
+        // 清空前端 reviewQueue 中已同步的
+        localStorage.setItem('reviewQueue', '[]');
+        showToast(`同步了 ${added} 个来自提交收录的站点`);
+    }
+
+    renderReviewLists();
+}
+
+async function loadCrawlerData() {
+    try {
+        const res = await fetch('data/pending_stations.json');
+        if (!res.ok) return;
+        const pending = await res.json();
+        let existing = getCrawlerQueue();
+        let added = 0;
+
+        // 从 stations_info.json 获取真实站点数据，用于自动补充
+        let realDataMap = {};
+        try {
+            const resp2 = await fetch('data/stations_info.json');
+            if (resp2.ok) {
+                const stations = await resp2.json();
+                if (Array.isArray(stations)) {
+                    stations.forEach(s => {
+                        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        if (key) realDataMap[key] = s;
+                    });
+                }
+            }
+        } catch(e) {}
+
+        // 获取 stations_info.json 中已上线的站点（已上排行榜的）
+        let approvedUrls = new Set();
+        try {
+            const resp3 = await fetch('data/stations_info.json');
+            if (resp3.ok) {
+                const approved = await resp3.json();
+                if (Array.isArray(approved)) {
+                    approved.forEach(s => {
+                        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        if (key) approvedUrls.add(key);
+                    });
+                }
+            }
+        } catch(e) {}
+
+        // 获取 approvedSites（已审核通过的站点）用于去重
+        const approvedSites = getApprovedSites();
+        approvedSites.forEach(s => {
+            const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            if (key) approvedUrls.add(key);
+        });
+
+        // 清理 crawlerQueue：移除已在排行榜中的站点
+        const beforeCount = existing.length;
+        existing = existing.filter(site => {
+            const siteKey = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            return !approvedUrls.has(siteKey);
+        });
+        if (existing.length < beforeCount) {
+            saveCrawlerQueue(existing);
+            console.log(`清理crawlerQueue: 移除 ${beforeCount - existing.length} 个已上排行榜的站点`);
+        }
+
+        pending.forEach(site => {
+            const siteKey = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            // 跳过已在 crawlerQueue 中的
+            if (existing.some(e => e.url === site.url)) return;
+            // 跳过已在排行榜中的（stations_info.json）
+            if (approvedUrls.has(siteKey)) return;
+            // 跳过无效 URL
+            if (!site.url || site.url.includes('beian') || site.url.includes('.css')) return;
+
+            // 自动从 stations_info.json 补充真实数据
+            const real = realDataMap[siteKey];
+            const enriched = {
+                name: real ? (real.name || site.name || site.domain) : (site.name || site.domain),
+                url: site.url,
+                domain: site.domain || (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, ''),
+                description: real ? (real.description || site.description || '') : (site.description || ''),
+                models: real ? (real.models || site.models || []) : (site.models || []),
+                features: real ? (real.features || site.features || []) : (site.features || []),
+                score: real ? (real.score || site.score || 7.0) : (site.score || 7.0),
+                response_time: real ? real.response_time : null,
+                free_amount: real ? (real.free_amount || '') : '',
+                price: real ? (real.price || '') : '',
+                source: site.source || 'crawler',
+                submitTime: site.submitTime || Date.now(),
+                enriched: !!real  // 标记是否已补充
+            };
+            existing.push(enriched);
+            added++;
+        });
+
+        if (added > 0) {
+            saveCrawlerQueue(existing);
+            showToast(`加载了 ${added} 个爬虫发现的站点`);
+        }
+        renderReviewLists();
+    } catch(e) { console.log('加载爬虫数据失败'); }
+}
+
+// ========== 失效站点管理 ==========
+let deadSitesData = [];      // 当前失效站点列表
+let deadChanges = { recovered: [], stillDead: [], removed: [] }; // 变更记录
+
+// 保存当前失效站点数据到 localStorage（用于刷新后保持状态）
+function saveDeadSitesData() {
+    // 只保存可序列化的数据（去掉 _lastCheck 等临时字段）
+    const dataToSave = deadSitesData.map(s => ({
+        url: s.url,
+        name: s.name,
+        domain: s.domain,
+        reason: s.reason,
+        status: s.status,
+        died_at: s.died_at,
+        checked_at: s.checked_at,
+        recovered_at: s.recovered_at
+    }));
+    localStorage.setItem('deadSitesData', JSON.stringify(dataToSave));
+}
+
+// 从 localStorage 加载失效站点数据
+function loadDeadSitesFromStorage() {
+    const saved = localStorage.getItem('deadSitesData');
+    if (saved) {
+        try {
+            return JSON.parse(saved);
+        } catch(e) {
+            return null;
+        }
+    }
+    return null;
+}
+
+async function loadDeadSites() {
+    try {
+        // 优先从 localStorage 加载（保持用户修改的状态）
+        const savedData = loadDeadSitesFromStorage();
+        if (savedData && savedData.length > 0) {
+            deadSitesData = savedData;
+            console.log('从 localStorage 加载了 ' + deadSitesData.length + ' 个失效站点');
+        } else {
+            // 首次加载从服务器获取
+            const res = await fetch('data/dead_sites.json');
+            if (!res.ok) return;
+            deadSitesData = await res.json();
+            if (!Array.isArray(deadSitesData)) deadSitesData = [];
+            console.log('从服务器加载了 ' + deadSitesData.length + ' 个失效站点');
+        }
+
+        // 从 deadSitesResults 恢复检测状态
+        const savedResults = JSON.parse(localStorage.getItem('deadSitesResults') || '{}');
+        deadSitesData.forEach(s => {
+            if (savedResults[s.url]) {
+                s._lastCheck = savedResults[s.url];
+            }
+        });
+
+        renderDeadSites();
+    } catch(e) {
+        console.log('加载失效站点失败:', e);
+    }
+}
+
+function renderDeadSites() {
+    const dead = deadSitesData.filter(s => s.status !== 'recovered');
+    const recovered = deadSitesData.filter(s => s.status === 'recovered');
+
+    document.getElementById('statDead').textContent = dead.length + ' 个失效';
+    document.getElementById('statRecovered').textContent = recovered.length + ' 已恢复';
+
+    const container = document.getElementById('deadList');
+    if (deadSitesData.length === 0) {
+        container.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">暂无失效站点数据</div>';
+        return;
+    }
+
+    container.innerHTML = deadSitesData.map((site, idx) => {
+        const isRecovered = site.status === 'recovered';
+        const checkResult = site._lastCheck;
+        const borderColor = isRecovered ? 'rgba(78,205,196,0.2)' : 'rgba(255,107,107,0.15)';
+        const checkStatus = checkResult
+            ? (checkResult.alive
+                ? '<span style="font-size:11px;color:#4ecdc4;background:rgba(78,205,196,0.1);padding:2px 8px;border-radius:6px;">✓ 可访问</span>'
+                : '<span style="font-size:11px;color:#ff6b6b;background:rgba(255,107,107,0.1);padding:2px 8px;border-radius:6px;">✗ 仍失效</span>')
+            : '';
+
+        return `
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg-primary);border-radius:10px;border:1px solid ${borderColor};${isRecovered ? 'opacity:0.6;' : ''}">
+            <div style="flex:1;min-width:0;">
+                <div style="display:flex;align-items:center;gap:6px;">
+                    <span style="font-size:14px;font-weight:500;color:var(--text-primary);${isRecovered ? 'text-decoration:line-through;' : ''}">${site.name || site.domain || site.url}</span>
+                    ${isRecovered ? '<span style="font-size:10px;color:#4ecdc4;background:rgba(78,205,196,0.15);padding:1px 6px;border-radius:4px;">已恢复</span>' : ''}
+                </div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${site.url || ''}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:12px;">
+                <span style="font-size:11px;color:#ff6b6b;background:rgba(255,107,107,0.1);padding:2px 8px;border-radius:6px;">${site.reason || '无法访问'}</span>
+                ${checkStatus}
+                <span style="font-size:11px;color:var(--text-muted);">${site.died_at || site.checked_at ? new Date(site.died_at || site.checked_at).toLocaleDateString() : ''}</span>
+                ${!isRecovered ? `
+                <button onclick="checkSingleDead(${idx})" style="padding:4px 10px;background:rgba(108,92,231,0.15);border:1px solid rgba(108,92,231,0.3);border-radius:6px;color:var(--accent);font-size:11px;cursor:pointer;" title="重新检测">检测</button>
+                <button onclick="markRecovered(${idx})" style="padding:4px 10px;background:rgba(78,205,196,0.1);border:1px solid rgba(78,205,196,0.3);border-radius:6px;color:#4ecdc4;font-size:11px;cursor:pointer;" title="标记为已恢复">恢复</button>
+                <button onclick="removeDead(${idx})" style="padding:4px 10px;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);border-radius:6px;color:#ff6b6b;font-size:11px;cursor:pointer;" title="从列表移除">移除</button>
+                ` : `
+                <button onclick="markDead(${idx})" style="padding:4px 10px;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);border-radius:6px;color:#ff6b6b;font-size:11px;cursor:pointer;" title="标记回失效">撤回</button>
+                `}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// 检测单个站点是否存活
+async function checkSiteAlive(url) {
+    try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(url, { method: 'HEAD', mode: 'no-cors', signal: controller.signal });
+        clearTimeout(timeout);
+        return { alive: true, msg: '可访问' };
+    } catch(e) {
+        // no-cors 模式下 opaque response 也算成功
+        if (e.name !== 'AbortError') {
+            try {
+                const controller2 = new AbortController();
+                const timeout2 = setTimeout(() => controller2.abort(), 10000);
+                await fetch(url, { mode: 'no-cors', signal: controller2.signal });
+                clearTimeout(timeout2);
+                return { alive: true, msg: '可访问(GET)' };
+            } catch(e2) {
+                return { alive: false, msg: e2.name === 'AbortError' ? '超时' : '连接失败' };
+            }
+        }
+        return { alive: false, msg: '超时' };
+    }
+}
+
+// 检测单个失效站点
+async function checkSingleDead(idx) {
+    const site = deadSitesData[idx];
+    if (!site || !site.url) return;
+
+    showToast('正在检测: ' + (site.name || site.url));
+    const result = await checkSiteAlive(site.url);
+    site._lastCheck = result;
+
+    // 保存检测结果到 localStorage
+    const saved = JSON.parse(localStorage.getItem('deadSitesResults') || '{}');
+    saved[site.url] = result;
+    localStorage.setItem('deadSitesResults', JSON.stringify(saved));
+
+    if (result.alive) {
+        showToast((site.name || site.url) + ' 已恢复访问！', 'success');
+    } else {
+        showToast((site.name || site.url) + ' 仍无法访问');
+    }
+    renderDeadSites();
+}
+
+// 一键检测全部失效站点
+async function checkAllDeadSites() {
+    const toCheck = deadSitesData.filter(s => s.status !== 'recovered' && s.url);
+    if (toCheck.length === 0) {
+        showToast('没有需要检测的失效站点');
+        return;
+    }
+
+    const btn = document.getElementById('btnCheckAll');
+    const progress = document.getElementById('deadCheckProgress');
+    const bar = document.getElementById('deadCheckBar');
+    const text = document.getElementById('deadCheckText');
+    const count = document.getElementById('deadCheckCount');
+
+    btn.disabled = true;
+    btn.textContent = '检测中...';
+    progress.style.display = 'block';
+
+    let recoveredCount = 0;
+    let stillDeadCount = 0;
+    const saved = JSON.parse(localStorage.getItem('deadSitesResults') || '{}');
+
+    for (let i = 0; i < toCheck.length; i++) {
+        const site = toCheck[i];
+        text.textContent = '正在检测: ' + (site.name || site.domain || site.url);
+        count.textContent = (i + 1) + '/' + toCheck.length;
+        bar.style.width = ((i + 1) / toCheck.length * 100) + '%';
+
+        const result = await checkSiteAlive(site.url);
+        site._lastCheck = result;
+        saved[site.url] = result;
+
+        if (result.alive) {
+            site.status = 'recovered';
+            recoveredCount++;
+        } else {
+            stillDeadCount++;
+        }
+
+        // 每检测完一个就更新界面
+        renderDeadSites();
+        // 间隔避免请求过快
+        await new Promise(r => setTimeout(r, 500));
+    }
+
+    localStorage.setItem('deadSitesResults', JSON.stringify(saved));
+    saveDeadSitesData();  // 保存状态
+
+    btn.disabled = false;
+    btn.textContent = '🔍 一键检测全部';
+    progress.style.display = 'none';
+
+    showToast('检测完成: ' + recoveredCount + ' 个已恢复, ' + stillDeadCount + ' 个仍失效', 'success');
+    renderDeadSites();
+}
+
+// 手动标记为已恢复
+function markRecovered(idx) {
+    const site = deadSitesData[idx];
+    if (!site) return;
+    site.status = 'recovered';
+    site.recovered_at = new Date().toISOString();
+
+    // 同步到 localStorage，让首页可以读取
+    const recoveredSites = JSON.parse(localStorage.getItem('recoveredSites') || '[]');
+    const existingIdx = recoveredSites.findIndex(s => s.url === site.url);
+    if (existingIdx === -1) {
+        recoveredSites.push({
+            url: site.url,
+            name: site.name || site.domain,
+            domain: site.domain,
+            recovered_at: site.recovered_at,
+            score: site.score || 7.5,
+            description: site.description || ''
+        });
+        localStorage.setItem('recoveredSites', JSON.stringify(recoveredSites));
+    }
+
+    // 同时从 deadSitesResults 缓存中移除（避免首页检测时误判为失效）
+    const saved = JSON.parse(localStorage.getItem('deadSitesResults') || '{}');
+    if (saved[site.url]) {
+        saved[site.url].alive = true;
+        saved[site.url].msg = '已恢复';
+        localStorage.setItem('deadSitesResults', JSON.stringify(saved));
+    }
+
+    saveDeadSitesData();  // 保存状态
+    renderDeadSites();
+    showToast((site.name || site.url) + ' 已标记为恢复，刷新首页可见', 'success');
+}
+
+// 撤回恢复，标记回失效
+function markDead(idx) {
+    const site = deadSitesData[idx];
+    if (!site) return;
+    site.status = 'dead';
+    delete site.recovered_at;
+
+    // 从 localStorage 的恢复列表中移除
+    const recoveredSites = JSON.parse(localStorage.getItem('recoveredSites') || '[]');
+    const filtered = recoveredSites.filter(s => s.url !== site.url);
+    localStorage.setItem('recoveredSites', JSON.stringify(filtered));
+
+    saveDeadSitesData();  // 保存状态
+    renderDeadSites();
+    showToast((site.name || site.url) + ' 已标记回失效');
+}
+
+// 从列表移除
+function removeDead(idx) {
+    const site = deadSitesData[idx];
+    if (!site) return;
+    if (!confirm('确定要从失效列表中移除 ' + (site.name || site.url) + ' 吗？')) return;
+    deadSitesData.splice(idx, 1);
+    saveDeadSitesData();  // 保存状态
+    renderDeadSites();
+    showToast('已移除: ' + (site.name || site.url));
+}
+
+// 清除所有已恢复的站点
+function clearRecoveredSites() {
+    const before = deadSitesData.length;
+    deadSitesData = deadSitesData.filter(s => s.status !== 'recovered');
+    const removed = before - deadSitesData.length;
+    if (removed === 0) {
+        showToast('没有已恢复的站点需要清除');
+        return;
+    }
+    saveDeadSitesData();  // 保存状态
+    renderDeadSites();
+    showToast('已清除 ' + removed + ' 个已恢复站点', 'success');
+}
+
+// 导出失效站点变更（生成可提交到 GitHub 的 JSON 文件）
+function exportDeadSitesChanges() {
+    const dead = deadSitesData.filter(s => s.status !== 'recovered');
+    const recovered = deadSitesData.filter(s => s.status === 'recovered');
+
+    const exportData = {
+        _说明: 'dead_sites: 仍失效的站点（替换 data/dead_sites.json）',
+        _操作: '将 dead_sites 数组内容替换到 data/dead_sites.json，然后提交到 GitHub',
+        dead_sites: dead.map(s => ({
+            url: s.url,
+            name: s.name || s.domain,
+            domain: s.domain,
+            reason: s.reason || '无法访问',
+            status: 'dead',
+            checked_at: s.checked_at || s.died_at || new Date().toISOString().split('T')[0]
+        })),
+        recovered_sites: recovered.map(s => ({
+            url: s.url,
+            name: s.name || s.domain,
+            domain: s.domain,
+            recovered_at: s.recovered_at || new Date().toISOString(),
+            _操作: '这些站点可重新加入排行榜，将信息添加到 data/stations_info.json'
+        })),
+        export_time: new Date().toISOString()
+    };
+
+    const jsonStr = JSON.stringify(exportData, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dead_sites_update.json';
+    a.click();
+    URL.revokeObjectURL(url);
+
+    showToast(`已导出: ${dead.length} 个失效 + ${recovered.length} 个恢复`, 'success');
+}
+
+function renderReviewLists() {
+    const crawler = getCrawlerQueue();
+    const manual = getManualQueue();
+    const approved = getApprovedSites();
+    
+    document.getElementById('statCrawler').textContent = crawler.length;
+    document.getElementById('statManual').textContent = manual.length;
+    document.getElementById('statApproved').textContent = approved.length;
+    document.getElementById('totalBadge').textContent = crawler.length + manual.length;
+    
+    const crawlerContainer = document.getElementById('crawlerList');
+    if (crawler.length === 0) {
+        crawlerContainer.innerHTML = '<p style="color:var(--text-secondary);padding:20px;text-align:center;">暂无爬虫发现的站点</p>';
+    } else {
+        crawlerContainer.innerHTML = crawler.map((site, idx) => {
+            const desc = site.description ? (site.description.length > 100 ? site.description.substring(0, 100) + '...' : site.description) : '暂无描述';
+            const models = Array.isArray(site.models) && site.models.length > 0 ? site.models.slice(0, 5).map(m => '<span class="tag-model">' + m + '</span>').join('') : '';
+            const score = site.score ? ('<span class="tag-score">' + Number(site.score).toFixed(1) + '</span>') : '';
+            const enriched = site.enriched ? '<span class="tag-enriched">已补充</span>' : '<span class="tag-pending">待补充</span>';
+            return `
+            <div class="review-item">
+                <div class="review-item-header">
+                    <span class="review-item-name">${site.name || site.domain || site.url}</span>
+                    <div style="display:flex;align-items:center;gap:6px;">
+                        ${score}
+                        ${enriched}
+                        <span class="review-item-time">${site.submitTime ? new Date(site.submitTime).toLocaleString() : ''}</span>
+                    </div>
+                </div>
+                <div class="review-item-url">${site.url}</div>
+                <div class="review-item-desc">${desc}</div>
+                ${models ? '<div class="review-item-models">' + models + '</div>' : ''}
+                <span class="review-item-source">来源: ${site.source || '爬虫'}</span>
+                <div class="review-actions">
+                    <a class="btn-view" href="${site.url}" target="_blank">访问</a>
+                    <button class="btn-approve" onclick="approveCrawler(${idx})">通过</button>
+                    <button class="btn-reject" onclick="rejectCrawler(${idx})">拒绝</button>
+                </div>
+            </div>`;
+        }).join('');
+    }
+    
+    const manualContainer = document.getElementById('manualList');
+    if (manual.length === 0) {
+        manualContainer.innerHTML = '<p style="color:var(--text-secondary);padding:20px;text-align:center;">暂无手动提交的站点</p>';
+    } else {
+        manualContainer.innerHTML = manual.map((site, idx) => `
+            <div class="review-item">
+                <div class="review-item-header">
+                    <span class="review-item-name">${site.name}</span>
+                    <span class="review-item-time">${new Date(site.submitTime).toLocaleString()}</span>
+                </div>
+                <div class="review-item-url">${site.url}</div>
+                <span class="review-item-source">来源: 手动提交</span>
+                <div class="review-actions">
+                    <a class="btn-view" href="${site.url}" target="_blank">访问</a>
+                    <button class="btn-approve" onclick="approveManual(${idx})">通过</button>
+                    <button class="btn-reject" onclick="rejectManual(${idx})">拒绝</button>
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+function approveCrawler(idx) {
+    const queue = getCrawlerQueue();
+    const site = queue[idx];
+    const approved = getApprovedSites();
+    approved.push({...site, approvedAt: Date.now()});
+    localStorage.setItem('approvedSites', JSON.stringify(approved));
+    queue.splice(idx, 1);
+    saveCrawlerQueue(queue);
+    showToast('已通过: ' + site.name, 'success');
+    renderReviewLists();
+}
+
+function rejectCrawler(idx) {
+    const queue = getCrawlerQueue();
+    queue.splice(idx, 1);
+    saveCrawlerQueue(queue);
+    showToast('已拒绝');
+    renderReviewLists();
+}
+
+function approveManual(idx) {
+    const queue = getManualQueue();
+    const site = queue[idx];
+    const approved = getApprovedSites();
+    approved.push({...site, approvedAt: Date.now()});
+    localStorage.setItem('approvedSites', JSON.stringify(approved));
+    queue.splice(idx, 1);
+    saveManualQueue(queue);
+    showToast('已通过: ' + site.name, 'success');
+    renderReviewLists();
+}
+
+function rejectManual(idx) {
+    const queue = getManualQueue();
+    queue.splice(idx, 1);
+    saveManualQueue(queue);
+    showToast('已拒绝');
+    renderReviewLists();
+}
+
+function showToast(msg, type) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 300); }, 2500);
+}
+
+// 导出已审核站点为 stations_info.json 格式
+function exportApprovedSites() {
+    const approved = getApprovedSites();
+    if (approved.length === 0) {
+        showToast('没有已审核的站点');
+        return;
+    }
+    
+    const stationsData = approved.map(s => ({
+        url: s.url,
+        domain: s.domain || s.url.replace(/^https?:\/\//, '').replace(/\/$/, ''),
+        name: s.name,
+        description: s.description || '',
+        models: s.models || [],
+        features: s.features || [],
+        price: s.price || 'medium',
+        free_amount: s.free_amount || '',
+        score: s.score || 7.0,
+        response_time: s.response_time || null,
+        alive: true,
+        last_check: new Date().toISOString(),
+        check_count: 1
+    }));
+    
+    const jsonStr = JSON.stringify(stationsData, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'new_stations.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    
+    showToast(`已导出 ${approved.length} 个站点，请提交到 GitHub`, 'success');
+}
+</script>
+</body>
+</html>

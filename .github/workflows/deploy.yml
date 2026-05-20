@@ -1,0 +1,40 @@
+name: Deploy to EdgeOne + Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy-cloudflare:
+    name: Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CF_TOKEN }}
+        accountId: ${{ secrets.CF_ACCOUNT_ID }}
+        command: pages deploy . --project-name=api-rank
+
+  # EdgeOne Pages 会自动从 GitHub 同步
+  # 如需手动部署，可取消下面的注释并配置 EO_API_TOKEN
+  #
+  # deploy-edgeone:
+  #   name: Deploy to EdgeOne Pages
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v4
+  #
+  #   - name: Deploy to EdgeOne Pages
+  #     run: |
+  #       # 安装 EdgeOne CLI（如有）
+  #       # npm install -g @edgeone/cli
+  #       # edgeone deploy --project api-rank
+  #       echo "EdgeOne Pages 会自动从 GitHub 同步更新"

@@ -1,0 +1,107 @@
+[
+  {
+    "name": "挑选靠谱的中转站",
+    "url": "https://hvoy.ai",
+    "domain": "hvoy.ai",
+    "description": "禾维 AI | API 中转站真假检测,价格对比与推荐",
+    "models": [
+      "claude",
+      "gemini"
+    ],
+    "features": [
+      "cheap",
+      "stable",
+      "fast",
+      "multi"
+    ],
+    "score": 9.0,
+    "price": "low",
+    "freeAmount": "",
+    "source": "crawler_collected",
+    "status": "pending",
+    "submitTime": "",
+    "checked_at": "",
+    "check_count": 1
+  },
+  {
+    "name": "神马中转API",
+    "url": "https://docs.whatai.cc",
+    "domain": "docs.whatai.cc",
+    "description": "神马中转API - 一站式AI大模型API中转站，低价好用稳定的中转API服务",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "kimi",
+      "glm"
+    ],
+    "features": [
+      "cheap",
+      "stable",
+      "fast",
+      "multi"
+    ],
+    "score": 9.9,
+    "price": "low",
+    "freeAmount": "",
+    "source": "crawler_collected",
+    "status": "pending",
+    "submitTime": "",
+    "checked_at": "",
+    "check_count": 1
+  },
+  {
+    "name": "智增增",
+    "url": "https://gpt.zhizengzeng.com",
+    "domain": "gpt.zhizengzeng.com",
+    "description": "智增增 - 大模型的API接口服务商",
+    "models": [],
+    "features": [],
+    "score": 7.3,
+    "price": "medium",
+    "freeAmount": "",
+    "source": "crawler_collected",
+    "status": "pending",
+    "submitTime": "",
+    "checked_at": "",
+    "check_count": 1
+  },
+  {
+    "name": "智增增",
+    "url": "https://api.zhizengzeng.com",
+    "domain": "api.zhizengzeng.com",
+    "description": "智增增 - 大模型的API接口服务商",
+    "models": [],
+    "features": [],
+    "score": 7.3,
+    "price": "medium",
+    "freeAmount": "",
+    "source": "crawler_collected",
+    "status": "pending",
+    "submitTime": "",
+    "checked_at": "",
+    "check_count": 1
+  },
+  {
+    "name": "AI快站",
+    "url": "https://www.aifast.club",
+    "domain": "aifast.club",
+    "description": "AI快站 - Claude、OpenAI、Gemini 与国产大模型 API 中转平台",
+    "features": [],
+    "models": [
+      "claude",
+      "gemini",
+      "domestic"
+    ],
+    "score": 8.2,
+    "responseTime": null,
+    "freeAmount": "",
+    "source": "github:ChatGPT _extract",
+    "status": "pending",
+    "submitTime": "2026-05-19T14:15:48.258727",
+    "checked_at": "2026-05-19T14:15:48.258747",
+    "check_count": 1
+  }
+]
