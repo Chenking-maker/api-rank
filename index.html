@@ -9583,23 +9583,12 @@
             try {
                 // 只加载 approved_stations.json（admin审核通过的站点）
                 // pending_stations.json 中的待审核站点不会自动进入排行榜，必须经过审核
-                let approved = [];
-                try {
-                    const resp = await fetch('data/approved_stations.json');
-                    if (resp.ok) approved = await resp.json();
-                } catch(e) {}
+                const approved = await fetchOnce('data/approved_stations.json');
                 
                 if (!Array.isArray(approved) || approved.length === 0) return;
                 
-                // 获取已有硬编码卡片的URL集合，防止重复
-                const rankingList = document.getElementById('rankingList');
-                const existingUrls = new Set();
-                if (rankingList) {
-                    rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                        const href = btn.getAttribute('href');
-                        if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                    });
-                }
+                // 获取已有硬编码卡片的URL集合（使用缓存）
+                const existingUrls = getExistingUrls();
 
                 let addedCount = 0;
                 approved.forEach(site => {
@@ -9634,16 +9623,14 @@
         // 加载爬虫检测的失效站点
         async function loadDeadSitesFromCrawler() {
             try {
-                const resp = await fetch('data/dead_sites.json');
-                if (!resp.ok) return;
-                const deadSites = await resp.json();
+                const deadSites = await fetchOnce('data/dead_sites.json');
                 if (!Array.isArray(deadSites) || deadSites.length === 0) return;
 
-                // 交叉验证：从 daily_check_cache.json 获取最新状态
+                // 交叉验证：从 daily_check_cache.json 获取最新状态（使用缓存）
                 let cacheData = {};
                 try {
-                    const cacheResp = await fetch('data/daily_check_cache.json');
-                    if (cacheResp.ok) cacheData = await cacheResp.json();
+                    const cacheResp = await fetchOnce('data/daily_check_cache.json');
+                    if (cacheResp) cacheData = cacheResp;
                 } catch(e) {}
 
                 // 获取 admin 标记的恢复站点列表
@@ -9748,20 +9735,11 @@
         // 加载站点状态（恢复的站点自动移除.dead类并添加到排行榜）
         async function loadSiteStatus() {
             try {
-                const resp = await fetch('data/site_status.json');
-                if (!resp.ok) return;
-                const status = await resp.json();
-                if (!status) return;
+                const status = await fetchOnce('data/site_status.json');
+                if (!status || (Array.isArray(status) && status.length === 0)) return;
 
-                // 获取排行榜中已有的URL，避免重复添加
-                const rankingList = document.getElementById('rankingList');
-                const existingUrls = new Set();
-                if (rankingList) {
-                    rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                        const href = btn.getAttribute('href');
-                        if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                    });
-                }
+                // 获取排行榜中已有的URL（使用缓存）
+                const existingUrls = getExistingUrls();
 
                 // 恢复的站点：移除 .dead 类，如果不在排行榜中则添加
                 if (Array.isArray(status.recovered) && status.recovered.length > 0) {
@@ -9802,7 +9780,7 @@
                             console.log('添加恢复站点到排行榜:', site.name || domain);
                         }
                     });
-                    autoRank();
+                    scheduleAutoRank();
                     console.log('恢复了 ' + status.recovered.length + ' 个站点');
                 }
 
@@ -9824,7 +9802,7 @@
                             });
                         });
                     });
-                    autoRank();
+                    scheduleAutoRank();
                     console.log('新增 ' + status.new_dead.length + ' 个失效站点');
                 }
             } catch (e) {
@@ -9832,24 +9810,14 @@
             }
         }
 
-        // 加载 admin.html 标记的恢复站点（从 localStorage）
+        // 加载 admin.html 标记的恢复站点（从 localStorage，使用缓存）
         async function loadRecoveredFromAdmin() {
             try {
-                const recoveredSites = JSON.parse(localStorage.getItem('recoveredSites') || '[]');
+                const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
 
-                // 收集已存在的URL
-                const existingUrls = new Set();
-                document.querySelectorAll('#rankingList .rank-card').forEach(card => {
-                    const linkEl = card.querySelector('.btn-primary');
-                    if (linkEl) {
-                        const url = linkEl.getAttribute('href');
-                        if (url) {
-                            const key = url.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                            existingUrls.add(key);
-                        }
-                    }
-                });
+                // 收集已存在的URL（使用缓存）
+                const existingUrls = getExistingUrls();
 
                 let added = 0;
                 recoveredSites.forEach(site => {
@@ -9889,7 +9857,7 @@
 
         function loadPendingSites() {
 
-            let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            let queue = getCached('reviewQueue') || [];
 
             // 清理：移除爬虫自动抓取的数据（source 为 crawler 相关的），只保留用户手动提交的
             const cleanedQueue = queue.filter(function(site) {
@@ -10220,33 +10188,23 @@
         // 页面加载时恢复已通过的站点到排行榜
         // 改为 async：先从 stations_info.json 获取真实数据，覆盖 localStorage 中的脏数据
         async function loadApprovedSites() {
-            // 先尝试从 stations_info.json 获取真实站点数据，用于覆盖脏数据
+            // 先尝试从 stations_info.json 获取真实站点数据，用于覆盖脏数据（使用缓存，不会重复请求）
             let realDataMap = {};
             try {
-                const resp = await fetch('data/stations_info.json');
-                if (resp.ok) {
-                    const stations = await resp.json();
-                    if (Array.isArray(stations)) {
-                        stations.forEach(function(s) {
-                            const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                            if (key) realDataMap[key] = s;
-                        });
-                        console.log('loadApprovedSites: 从 stations_info.json 加载了 ' + Object.keys(realDataMap).length + ' 条真实数据');
-                    }
+                const stations = await fetchOnce('data/stations_info.json');
+                if (Array.isArray(stations)) {
+                    stations.forEach(function(s) {
+                        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        if (key) realDataMap[key] = s;
+                    });
+                    console.log('loadApprovedSites: 从缓存加载了 ' + Object.keys(realDataMap).length + ' 条真实数据');
                 }
             } catch(e) {
                 console.log('loadApprovedSites: 无法加载 stations_info.json', e);
             }
 
-            // 获取硬编码排行榜中已有的URL集合，避免动态重复添加
-            const rankingList = document.getElementById('rankingList');
-            const existingUrls = new Set();
-            if (rankingList) {
-                rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                    const href = btn.getAttribute('href');
-                    if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                });
-            }
+            // 获取硬编码排行榜中已有的URL集合（使用缓存）
+            const existingUrls = getExistingUrls();
 
             // 收集所有已添加的URL，防止approvedSites和reviewQueue重复
             const addedUrls = new Set();
@@ -10335,8 +10293,8 @@
             localStorage.setItem('approvedSites', JSON.stringify(cleanedApproved));
 
             console.log('loadApprovedSites: 渲染了 ' + addedUrls.size + ' 个审核站点');
-            // 重新排序
-            if (typeof autoRank === 'function') autoRank();
+            // 延迟排序（等所有数据加载完）
+            scheduleAutoRank();
         }
 
         
@@ -10365,31 +10323,7 @@
                 return; // 已在全局集合中，跳过
             }
 
-            // 检查是否已存在（按URL去重，防止重复收录）
-            const existing = rankingList.querySelectorAll('.rank-card');
-            for (const card of existing) {
-                const linkEl = card.querySelector('.btn-primary');
-                const cardUrl = linkEl ? linkEl.getAttribute('href') : '';
-                const cardUrlNorm = normalizeUrl(cardUrl);
-                const cardDomain = cardUrlNorm.split('.').slice(-2).join('.');
-                if (siteUrlNorm && cardUrlNorm && (siteUrlNorm === cardUrlNorm || siteDomain === cardDomain)) {
-                    const scoreEl = card.querySelector('.rank-score');
-                    const needUpdate = scoreEl && scoreEl.textContent.includes('?');
-                    if (needUpdate && site.score) {
-                        const scoreText = Number(site.score).toFixed(2) + ' /10';
-                        if (scoreEl) scoreEl.innerHTML = scoreText + ' <small>/10</small>';
-                        const descEl = card.querySelector('.rank-desc');
-                        if (descEl && site.description) descEl.textContent = site.description.substring(0, 120) + (site.description.length > 120 ? '...' : '');
-                        console.log('更新站点信息: ' + site.name);
-                    }
-                    return;
-                }
-                // 记录已有卡片的URL到全局集合
-                globalAddedUrls.add(cardUrlNorm);
-                globalAddedUrls.add(cardDomain);
-            }
-
-            // 新卡片：加入全局集合
+            // 预注册到全局集合（防止后续重复添加）
             globalAddedUrls.add(siteUrlNorm);
             globalAddedUrls.add(siteDomain);
 
@@ -10819,30 +10753,85 @@
 
         }
 
+        // ========== 全局数据缓存（避免重复 fetch 和 JSON.parse） ==========
+        const _dataCache = {
+            stationsInfo: null,   // data/stations_info.json
+            approvedStations: null, // data/approved_stations.json
+            deadSites: null,      // data/dead_sites.json
+            dailyCheckCache: null, // data/daily_check_cache.json
+            siteStatus: null,     // data/site_status.json
+            localStorage: {}      // localStorage 读取缓存
+        };
+
+        // 缓存版 localStorage.getItem（同一 key 只 JSON.parse 一次）
+        function getCached(key) {
+            if (_dataCache.localStorage[key] !== undefined) return _dataCache.localStorage[key];
+            try {
+                const raw = localStorage.getItem(key);
+                _dataCache.localStorage[key] = raw ? JSON.parse(raw) : null;
+            } catch(e) {
+                _dataCache.localStorage[key] = null;
+            }
+            return _dataCache.localStorage[key];
+        }
+
+        // 缓存版 fetch（同一 URL 只请求一次）
+        async function fetchOnce(url) {
+            const cacheKey = url.replace(/^data\//, '').replace(/\.json$/, '');
+            const camelKey = cacheKey.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
+            if (_dataCache[camelKey] !== null) return _dataCache[camelKey];
+            try {
+                const resp = await fetch(url);
+                if (!resp.ok) { _dataCache[camelKey] = []; return []; }
+                const data = await resp.json();
+                _dataCache[camelKey] = Array.isArray(data) ? data : (data || []);
+                return _dataCache[camelKey];
+            } catch(e) {
+                _dataCache[camelKey] = [];
+                return [];
+            }
+        }
+
+        // ========== 获取已有卡片URL集合（全局缓存，只计算一次） ==========
+        let _existingUrlsCache = null;
+        function getExistingUrls() {
+            if (_existingUrlsCache) return _existingUrlsCache;
+            const rankingList = document.getElementById('rankingList');
+            _existingUrlsCache = new Set();
+            if (rankingList) {
+                rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
+                    const href = btn.getAttribute('href');
+                    if (href) _existingUrlsCache.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
+                });
+            }
+            return _existingUrlsCache;
+        }
+        // 数据加载完成后失效缓存（因为动态添加了新卡片）
+        function invalidateExistingUrlsCache() { _existingUrlsCache = null; }
+
+        // ========== 全局 autoRank 控制 ==========
+        let _autoRankScheduled = false;
+        function scheduleAutoRank() {
+            if (_autoRankScheduled) return; // 防止重复调度
+            _autoRankScheduled = true;
+            requestAnimationFrame(() => {
+                _autoRankScheduled = false;
+                if (typeof autoRank === 'function') autoRank();
+            });
+        }
+
         // 页面加载完成后执行
         // 从文件加载所有站点并渲染
         async function renderAllStationsFromData() {
             try {
-                const resp = await fetch('data/stations_info.json');
-                if (!resp.ok) {
-                    console.log('无法加载站点数据文件');
-                    return;
-                }
-                const stations = await resp.json();
+                const stations = await fetchOnce('data/stations_info.json');
                 if (!Array.isArray(stations) || stations.length === 0) {
                     console.log('站点数据为空');
                     return;
                 }
 
                 // 获取已有硬编码卡片的URL集合，防止重复
-                const rankingList = document.getElementById('rankingList');
-                const existingUrls = new Set();
-                if (rankingList) {
-                    rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                        const href = btn.getAttribute('href');
-                        if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                    });
-                }
+                const existingUrls = getExistingUrls();
 
                 // 按评分排序（高的在前）
                 stations.sort((a, b) => (b.score || 0) - (a.score || 0));
@@ -10871,7 +10860,7 @@
                 });
 
                 console.log('从文件渲染了 ' + count + ' 个站点');
-                autoRank();
+                scheduleAutoRank();
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
@@ -10880,16 +10869,34 @@
 
 
         document.addEventListener('DOMContentLoaded', async function() {
+            // 预填充全局URL集合（硬编码卡片的URL），避免 addSiteToRanking 重复添加
+            const initUrls = getExistingUrls();
+            initUrls.forEach(url => {
+                globalAddedUrls.add(url);
+                const parts = url.split('.');
+                if (parts.length > 2) globalAddedUrls.add(parts.slice(-2).join('.'));
+            });
+
+            // 并行加载所有数据（原来串行 await 需要等待每个完成才执行下一个）
+            // renderAllStationsFromData 必须先执行（加载主数据）
             await renderAllStationsFromData();
+
+            // 以下4个互不依赖，并行执行
             loadCrawlerResults();
-            await loadDeadSitesFromCrawler();
-            await loadSiteStatus();
-            await loadRecoveredFromAdmin();  // 加载 admin 标记的恢复站点
-            await loadApprovedFromData();
+            await Promise.all([
+                loadDeadSitesFromCrawler(),
+                loadSiteStatus(),
+                loadRecoveredFromAdmin(),
+                loadApprovedFromData(),
+            ]);
+
+            // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行
             await loadApprovedSites();
 
             loadPendingSites();
 
+            // 所有数据加载完成后，统一排序一次（替代之前每个函数内部的 autoRank）
+            invalidateExistingUrlsCache();
             autoRank();
 
             updateStats();
