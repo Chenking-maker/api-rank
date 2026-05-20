@@ -94,6 +94,9 @@ DEAD_FILE = f'{DATA_DIR}/dead_sites.json'
 REPORT_FILE = f'{DATA_DIR}/crawler_report.json'
 CACHE_FILE = f'{DATA_DIR}/daily_check_cache.json'
 
+# 每日新站点上限（达到后停止搜索）
+MAX_NEW_SITES_PER_DAY = 10
+
 # 搜索时跳过的域名（非内容页面）
 SKIP_SEARCH_DOMAINS = {
     'github.com', 'google.com', 'youtube.com', 'facebook.com',
@@ -733,10 +736,53 @@ class SmartCrawler:
         return results
 
     def discover_new_sites(self):
-        """搜索发现新站点：Bing文章→全文提取 + GitHub README + DuckDuckGo补充"""
-        print(f"\n{'='*50}\n开始搜索发现新站点...\n{'='*50}")
+        """搜索发现新站点：Bing文章→全文提取 + GitHub README + DuckDuckGo补充
+        每日最多新增 MAX_NEW_SITES_PER_DAY 个站点，达到上限后停止搜索
+        """
+        # 先检查今日已有多少待审核站点（避免重复运行时超限）
+        today = datetime.now().strftime('%Y-%m-%d')
+        today_pending = [s for s in self.pending_stations
+                         if s.get('status') == 'pending' and s.get('submitTime', '').startswith(today)]
+        remaining_quota = MAX_NEW_SITES_PER_DAY - len(today_pending)
+        if remaining_quota <= 0:
+            print(f"\n{'='*50}")
+            print(f"今日已发现 {len(today_pending)} 个新站点，已达上限 {MAX_NEW_SITES_PER_DAY}，跳过搜索")
+            print(f"{'='*50}")
+            return
+
+        print(f"\n{'='*50}\n开始搜索发现新站点...（今日剩余额度: {remaining_quota}）\n{'='*50}")
         all_discovered = []
         seen_domains = set()
+
+        # 强化排重：加载所有已知域名（index.html + pending + dead + stations_info.json）
+        known_domains = set(self.existing_domains | self.pending_domains | self.dead_domains)
+        try:
+            stations_info_path = 'data/stations_info.json'
+            if os.path.exists(stations_info_path):
+                with open(stations_info_path, 'r', encoding='utf-8') as f:
+                    for item in json.load(f):
+                        url = item.get('url', '')
+                        if url:
+                            known_domains.add(get_domain(url))
+                print(f"  排重域名池: {len(known_domains)} 个（含 stations_info.json）")
+        except:
+            pass
+
+        def is_duplicate(domain: str) -> bool:
+            """严格排重：主域名 + 子域名去重"""
+            if domain in known_domains or domain in seen_domains:
+                return True
+            # 子域名去重：api.example.com 和 example.com 视为同一站点
+            parts = domain.split('.')
+            if len(parts) > 2:
+                root = '.'.join(parts[-2:])
+                if root in known_domains or root in seen_domains:
+                    return True
+            return False
+
+        def check_quota() -> bool:
+            """检查是否还有剩余额度"""
+            return len(all_discovered) < remaining_quota
 
         # 第1步: Bing搜索文章 → 爬取全文提取URL
         print("  === 第1步：Bing搜索相关文章 ===")
@@ -774,13 +820,19 @@ class SmartCrawler:
         print(f"\n  === 第2步：爬取文章全文 ===")
         crawl_count = 0
         for i, article_url in enumerate(article_urls[:20]):
+            if not check_quota():
+                print(f"  已达今日额度上限 {MAX_NEW_SITES_PER_DAY}，停止搜索")
+                break
             stations = self._crawl_page_for_stations(article_url, f'article:{i}')
             for s in stations:
-                if s['domain'] not in seen_domains:
-                    seen_domains.add(s['domain'])
-                    all_discovered.append(s)
-                    crawl_count += 1
-                    print(f"    ✓ {s['domain']}")
+                if is_duplicate(s['domain']):
+                    continue
+                if not check_quota():
+                    break
+                seen_domains.add(s['domain'])
+                all_discovered.append(s)
+                crawl_count += 1
+                print(f"    ✓ {s['domain']}（剩余额度: {remaining_quota - len(all_discovered)}）")
             time.sleep(random.uniform(0.5, 1.5))
         print(f"  文章提取: {crawl_count} 个")
 
@@ -788,6 +840,9 @@ class SmartCrawler:
         print(f"\n  === 第3步：GitHub搜索 ===")
         github_count = 0
         for query in ['API中转站 推荐', 'ChatGPT API proxy China', 'OpenAI API 中转', 'AI API 中转站 列表']:
+            if not check_quota():
+                print(f"  已达今日额度上限 {MAX_NEW_SITES_PER_DAY}，停止搜索")
+                break
             try:
                 ok, html = self.http_get(f'https://github.com/search?q={quote(query)}&type=repositories', timeout=10)
                 if ok:
@@ -801,11 +856,14 @@ class SmartCrawler:
                             ok2, readme = self.http_get(readme_url, timeout=8)
                             if ok2:
                                 for s in self._extract_urls_from_text(readme, f'github:{query[:8]}'):
-                                    if s['domain'] not in seen_domains:
-                                        seen_domains.add(s['domain'])
-                                        all_discovered.append(s)
-                                        github_count += 1
-                                        print(f"    ✓ {s['domain']}")
+                                    if is_duplicate(s['domain']):
+                                        continue
+                                    if not check_quota():
+                                        break
+                                    seen_domains.add(s['domain'])
+                                    all_discovered.append(s)
+                                    github_count += 1
+                                    print(f"    ✓ {s['domain']}（剩余额度: {remaining_quota - len(all_discovered)}）")
                                 break
                             time.sleep(0.5)
             except:
@@ -817,6 +875,9 @@ class SmartCrawler:
         print(f"\n  === 第4步：DuckDuckGo补充 ===")
         ddg_count = 0
         for query in ['API中转站 推荐 排行', 'ChatGPT API proxy cheap reliable', 'AI API中转站 最新']:
+            if not check_quota():
+                print(f"  已达今日额度上限 {MAX_NEW_SITES_PER_DAY}，停止搜索")
+                break
             try:
                 ok, html = self.http_get(f'https://html.duckduckgo.com/html/?q={quote(query)}', timeout=10)
                 if ok:
@@ -834,12 +895,17 @@ class SmartCrawler:
                     for article_url in ddg_urls[:5]:
                         if article_url in article_urls:
                             continue
+                        if not check_quota():
+                            break
                         for s in self._crawl_page_for_stations(article_url, f'ddg'):
-                            if s['domain'] not in seen_domains:
-                                seen_domains.add(s['domain'])
-                                all_discovered.append(s)
-                                ddg_count += 1
-                                print(f"    ✓ {s['domain']}")
+                            if is_duplicate(s['domain']):
+                                continue
+                            if not check_quota():
+                                break
+                            seen_domains.add(s['domain'])
+                            all_discovered.append(s)
+                            ddg_count += 1
+                            print(f"    ✓ {s['domain']}（剩余额度: {remaining_quota - len(all_discovered)}）")
                         time.sleep(0.5)
             except:
                 pass
@@ -870,6 +936,10 @@ class SmartCrawler:
             else:
                 print(f"  ✗ {domain} (不可访问)")
             time.sleep(0.3)
+
+        if not valid:
+            print(f"\n  未发现有效新站点")
+            return
 
         # 转为前端格式（包含完整信息）
         for site in valid:
@@ -931,7 +1001,7 @@ class SmartCrawler:
         s = report['summary']
         print(f"\n{'='*60}\n爬虫完成! 耗时 {report['elapsed_seconds']} 秒")
         print(f"  已收录: {s['total_existing']} | 新失效: {s['new_dead']} | 恢复: {s['new_recovered']}")
-        print(f"  新发现: {s['new_discovered']} | 待审核: {s['total_pending']} | 失效: {s['total_dead']}")
+        print(f"  新发现: {s['new_discovered']}/{MAX_NEW_SITES_PER_DAY} | 待审核: {s['total_pending']} | 失效: {s['total_dead']}")
         print(f"{'='*60}")
         return report
 
