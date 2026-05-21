@@ -1,0 +1,318 @@
+{
+  "check_time": "2026-05-21T14:26:22.562688",
+  "total_sites": 13,
+  "results": [
+    {
+      "name": "PackyCode",
+      "url": "https://www.packyapi.com",
+      "aff_link": "https://www.packyapi.com/register?aff=zrXb",
+      "timestamp": "2026-05-21T14:26:07.754636",
+      "availability": {
+        "status": "online",
+        "response_time": 437.16,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.69,
+        "review_count": 3,
+        "avg_rating": 4.7
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.9
+      },
+      "old_score": 10.0,
+      "new_score": 9.1,
+      "score_change": -0.9
+    },
+    {
+      "name": "RightCode",
+      "url": "https://www.right.codes",
+      "aff_link": "https://www.right.codes/register?aff=56503380",
+      "timestamp": "2026-05-21T14:26:08.610518",
+      "availability": {
+        "status": "online",
+        "response_time": 355.65,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.73,
+        "review_count": 2,
+        "avg_rating": 5.0
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.85
+      },
+      "old_score": 9.7,
+      "new_score": 9.1,
+      "score_change": -0.6
+    },
+    {
+      "name": "ToAPIs",
+      "url": "https://toapis.com",
+      "aff_link": "https://toapis.com/login?aff=yjH5",
+      "timestamp": "2026-05-21T14:26:09.332145",
+      "availability": {
+        "status": "online",
+        "response_time": 221.41,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.69,
+        "review_count": 2,
+        "avg_rating": 4.0
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.88
+      },
+      "old_score": 9.3,
+      "new_score": 8.9,
+      "score_change": -0.4
+    },
+    {
+      "name": "API易",
+      "url": "https://api.easyapi.com",
+      "aff_link": "https://api.easyapi.com",
+      "timestamp": "2026-05-21T14:26:10.928973",
+      "availability": {
+        "status": "online",
+        "response_time": 1096.66,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.7,
+        "review_count": 2,
+        "avg_rating": 4.5
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.9
+      },
+      "old_score": 9.4,
+      "new_score": 8.4,
+      "score_change": -1.0
+    },
+    {
+      "name": "302.AI",
+      "url": "https://302.ai",
+      "aff_link": "https://302.ai",
+      "timestamp": "2026-05-21T14:26:11.851093",
+      "availability": {
+        "status": "offline",
+        "response_time": 0,
+        "status_code": 0
+      },
+      "authenticity": {
+        "score": 0.65,
+        "review_count": 2,
+        "avg_rating": 4.0
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.89
+      },
+      "old_score": 8.8,
+      "new_score": 6.800000000000001,
+      "score_change": -2.0
+    },
+    {
+      "name": "Ofox.AI",
+      "url": "https://ofox.ai",
+      "aff_link": "https://ofox.ai",
+      "timestamp": "2026-05-21T14:26:12.584552",
+      "availability": {
+        "status": "online",
+        "response_time": 233.23,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.71,
+        "review_count": 2,
+        "avg_rating": 3.5
+      },
+      "cost_performance": {
+        "score": 0.8,
+        "price_level": "good",
+        "price_ratio": 0.92
+      },
+      "old_score": 8.4,
+      "new_score": 8.5,
+      "score_change": 0.1
+    },
+    {
+      "name": "星链4SAPI",
+      "url": "https://4sapi.com",
+      "aff_link": "https://4sapi.com",
+      "timestamp": "2026-05-21T14:26:13.876109",
+      "availability": {
+        "status": "online",
+        "response_time": 791.34,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.69,
+        "review_count": 3,
+        "avg_rating": 5.0
+      },
+      "cost_performance": {
+        "score": 0.8,
+        "price_level": "good",
+        "price_ratio": 0.95
+      },
+      "old_score": 9.9,
+      "new_score": 8.6,
+      "score_change": -1.3
+    },
+    {
+      "name": "IKunCode",
+      "url": "https://api.ikuncode.cc",
+      "aff_link": "https://api.ikuncode.cc",
+      "timestamp": "2026-05-21T14:26:14.772559",
+      "availability": {
+        "status": "online",
+        "response_time": 396.18,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.68,
+        "review_count": 2,
+        "avg_rating": 3.5
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.87
+      },
+      "old_score": 8.3,
+      "new_score": 8.6,
+      "score_change": 0.3
+    },
+    {
+      "name": "硅基流动",
+      "url": "https://siliconflow.cn",
+      "aff_link": "https://siliconflow.cn",
+      "timestamp": "2026-05-21T14:26:16.858878",
+      "availability": {
+        "status": "online",
+        "response_time": 1586.08,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.71,
+        "review_count": 2,
+        "avg_rating": 5.0
+      },
+      "cost_performance": {
+        "score": 1.0,
+        "price_level": "excellent",
+        "price_ratio": 0.8
+      },
+      "old_score": 8.8,
+      "new_score": 8.5,
+      "score_change": -0.3
+    },
+    {
+      "name": "OpenRouter",
+      "url": "https://openrouter.ai",
+      "aff_link": "https://openrouter.ai",
+      "timestamp": "2026-05-21T14:26:17.455885",
+      "availability": {
+        "status": "online",
+        "response_time": 96.79,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.71,
+        "review_count": 2,
+        "avg_rating": 4.0
+      },
+      "cost_performance": {
+        "score": 0.8,
+        "price_level": "good",
+        "price_ratio": 1.0
+      },
+      "old_score": 8.0,
+      "new_score": 8.4,
+      "score_change": 0.4
+    },
+    {
+      "name": "SSSAICode",
+      "url": "https://www.sssaicode.com",
+      "aff_link": "https://www.sssaicode.com/register?ref=BO64DM",
+      "timestamp": "2026-05-21T14:26:18.164148",
+      "availability": {
+        "status": "online",
+        "response_time": 208.04,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.69,
+        "review_count": 2,
+        "avg_rating": 3.5
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.86
+      },
+      "old_score": 7.8,
+      "new_score": 8.5,
+      "score_change": 0.7
+    },
+    {
+      "name": "147AI",
+      "url": "https://147ai.com",
+      "aff_link": "https://147ai.com",
+      "timestamp": "2026-05-21T14:26:19.317277",
+      "availability": {
+        "status": "online",
+        "response_time": 652.91,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.69,
+        "review_count": 2,
+        "avg_rating": 4.0
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.88
+      },
+      "old_score": 7.8,
+      "new_score": 8.2,
+      "score_change": 0.4
+    },
+    {
+      "name": "BerryPi Pool",
+      "url": "http://www.android-doc.com/",
+      "aff_link": "http://www.android-doc.com/",
+      "timestamp": "2026-05-21T14:26:22.062557",
+      "availability": {
+        "status": "online",
+        "response_time": 2245.05,
+        "status_code": 200
+      },
+      "authenticity": {
+        "score": 0.59,
+        "review_count": 1,
+        "avg_rating": 3.0
+      },
+      "cost_performance": {
+        "score": 0.9,
+        "price_level": "very_good",
+        "price_ratio": 0.9
+      },
+      "old_score": 6.8,
+      "new_score": 7.1,
+      "score_change": 0.3
+    }
+  ]
+}
