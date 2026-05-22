@@ -1,15 +1,15 @@
 {
-  "check_time": "2026-05-21T14:26:22.562688",
+  "check_time": "2026-05-22T12:36:48.440866",
   "total_sites": 13,
   "results": [
     {
       "name": "PackyCode",
       "url": "https://www.packyapi.com",
       "aff_link": "https://www.packyapi.com/register?aff=zrXb",
-      "timestamp": "2026-05-21T14:26:07.754636",
+      "timestamp": "2026-05-22T12:36:33.652338",
       "availability": {
         "status": "online",
-        "response_time": 437.16,
+        "response_time": 160.9,
         "status_code": 200
       },
       "authenticity": {
@@ -30,10 +30,10 @@
       "name": "RightCode",
       "url": "https://www.right.codes",
       "aff_link": "https://www.right.codes/register?aff=56503380",
-      "timestamp": "2026-05-21T14:26:08.610518",
+      "timestamp": "2026-05-22T12:36:34.568509",
       "availability": {
         "status": "online",
-        "response_time": 355.65,
+        "response_time": 415.92,
         "status_code": 200
       },
       "authenticity": {
@@ -54,10 +54,10 @@
       "name": "ToAPIs",
       "url": "https://toapis.com",
       "aff_link": "https://toapis.com/login?aff=yjH5",
-      "timestamp": "2026-05-21T14:26:09.332145",
+      "timestamp": "2026-05-22T12:36:35.360864",
       "availability": {
         "status": "online",
-        "response_time": 221.41,
+        "response_time": 292.12,
         "status_code": 200
       },
       "authenticity": {
@@ -78,10 +78,10 @@
       "name": "API易",
       "url": "https://api.easyapi.com",
       "aff_link": "https://api.easyapi.com",
-      "timestamp": "2026-05-21T14:26:10.928973",
+      "timestamp": "2026-05-22T12:36:36.902278",
       "availability": {
         "status": "online",
-        "response_time": 1096.66,
+        "response_time": 1041.17,
         "status_code": 200
       },
       "authenticity": {
@@ -102,11 +102,11 @@
       "name": "302.AI",
       "url": "https://302.ai",
       "aff_link": "https://302.ai",
-      "timestamp": "2026-05-21T14:26:11.851093",
+      "timestamp": "2026-05-22T12:36:38.167878",
       "availability": {
-        "status": "offline",
-        "response_time": 0,
-        "status_code": 0
+        "status": "online",
+        "response_time": 765.36,
+        "status_code": 200
       },
       "authenticity": {
         "score": 0.65,
@@ -119,17 +119,17 @@
         "price_ratio": 0.89
       },
       "old_score": 8.8,
-      "new_score": 6.800000000000001,
-      "score_change": -2.0
+      "new_score": 8.4,
+      "score_change": -0.4
     },
     {
       "name": "Ofox.AI",
       "url": "https://ofox.ai",
       "aff_link": "https://ofox.ai",
-      "timestamp": "2026-05-21T14:26:12.584552",
+      "timestamp": "2026-05-22T12:36:38.833375",
       "availability": {
         "status": "online",
-        "response_time": 233.23,
+        "response_time": 165.22,
         "status_code": 200
       },
       "authenticity": {
@@ -150,10 +150,10 @@
       "name": "星链4SAPI",
       "url": "https://4sapi.com",
       "aff_link": "https://4sapi.com",
-      "timestamp": "2026-05-21T14:26:13.876109",
+      "timestamp": "2026-05-22T12:36:39.953794",
       "availability": {
         "status": "online",
-        "response_time": 791.34,
+        "response_time": 620.17,
         "status_code": 200
       },
       "authenticity": {
@@ -174,10 +174,10 @@
       "name": "IKunCode",
       "url": "https://api.ikuncode.cc",
       "aff_link": "https://api.ikuncode.cc",
-      "timestamp": "2026-05-21T14:26:14.772559",
+      "timestamp": "2026-05-22T12:36:40.887176",
       "availability": {
         "status": "online",
-        "response_time": 396.18,
+        "response_time": 433.11,
         "status_code": 200
       },
       "authenticity": {
@@ -198,10 +198,10 @@
       "name": "硅基流动",
       "url": "https://siliconflow.cn",
       "aff_link": "https://siliconflow.cn",
-      "timestamp": "2026-05-21T14:26:16.858878",
+      "timestamp": "2026-05-22T12:36:42.712643",
       "availability": {
         "status": "online",
-        "response_time": 1586.08,
+        "response_time": 1325.21,
         "status_code": 200
       },
       "authenticity": {
@@ -222,10 +222,10 @@
       "name": "OpenRouter",
       "url": "https://openrouter.ai",
       "aff_link": "https://openrouter.ai",
-      "timestamp": "2026-05-21T14:26:17.455885",
+      "timestamp": "2026-05-22T12:36:43.307866",
       "availability": {
         "status": "online",
-        "response_time": 96.79,
+        "response_time": 94.98,
         "status_code": 200
       },
       "authenticity": {
@@ -246,10 +246,10 @@
       "name": "SSSAICode",
       "url": "https://www.sssaicode.com",
       "aff_link": "https://www.sssaicode.com/register?ref=BO64DM",
-      "timestamp": "2026-05-21T14:26:18.164148",
+      "timestamp": "2026-05-22T12:36:44.010238",
       "availability": {
         "status": "online",
-        "response_time": 208.04,
+        "response_time": 202.13,
         "status_code": 200
       },
       "authenticity": {
@@ -270,10 +270,10 @@
       "name": "147AI",
       "url": "https://147ai.com",
       "aff_link": "https://147ai.com",
-      "timestamp": "2026-05-21T14:26:19.317277",
+      "timestamp": "2026-05-22T12:36:45.169445",
       "availability": {
         "status": "online",
-        "response_time": 652.91,
+        "response_time": 658.99,
         "status_code": 200
       },
       "authenticity": {
@@ -294,10 +294,10 @@
       "name": "BerryPi Pool",
       "url": "http://www.android-doc.com/",
       "aff_link": "http://www.android-doc.com/",
-      "timestamp": "2026-05-21T14:26:22.062557",
+      "timestamp": "2026-05-22T12:36:47.940720",
       "availability": {
         "status": "online",
-        "response_time": 2245.05,
+        "response_time": 2271.08,
         "status_code": 200
       },
       "authenticity": {
