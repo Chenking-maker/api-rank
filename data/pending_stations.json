@@ -103,5 +103,186 @@
     "submitTime": "2026-05-19T14:15:48.258727",
     "checked_at": "2026-05-19T14:15:48.258747",
     "check_count": 1
+  },
+  {
+    "name": "demo.sub2api.org",
+    "url": "https://demo.sub2api.org",
+    "submitTime": "2026-05-23T09:48:51.511947",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.511966",
+    "check_count": 1
+  },
+  {
+    "name": "CTokClaude Code æç¨",
+    "url": "https://ctok.ai",
+    "submitTime": "2026-05-23T09:48:51.511976",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "CTok | Claude Code æç¨ä¸èµæº",
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gemini"
+    ],
+    "score": 8.2,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.511978",
+    "check_count": 1
+  },
+  {
+    "name": "apikey.fun",
+    "url": "https://apikey.fun",
+    "submitTime": "2026-05-23T09:48:51.511982",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "FUN - AI中转，一个Api Key就够了",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.3,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.511984",
+    "check_count": 1
+  },
+  {
+    "name": "bestproxy.com",
+    "url": "https://bestproxy.com",
+    "submitTime": "2026-05-23T09:48:51.511987",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "Resell Your Way Our scalable proxy network is ideal for resellers, ready for API integration, and requires no commitment",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.3,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.511989",
+    "check_count": 1
+  },
+  {
+    "name": "runapi.co",
+    "url": "https://runapi.co",
+    "submitTime": "2026-05-23T09:48:51.511992",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "RunAPI:高质量API中转平台 RunAPI — 高质量AI模型API中转平台，国内OpenRouter替代 RunAPI 是高效稳定的AI模型API中转api供应商，一个API Key即可访问 OpenAI、Claude、Gemini、DeepSeek、Grok 等150+主流模型，低至70%折扣",
+    "features": [
+      "stable"
+    ],
+    "models": [
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
+    "score": 8.7,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.511994",
+    "check_count": 1
+  },
+  {
+    "name": "all-api-hub.qixing1217.top",
+    "url": "https://all-api-hub.qixing1217.top",
+    "submitTime": "2026-05-23T09:48:51.511997",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "首页 | All API Hub - 你的全能 AI 资产管家 📦 资产统一看板 把多个站点与账号集中在一个面板里，余额、用量与健康状态一眼看清，支持智能识别地址自动添加🏷️ API 凭据库 无需账号，直接保存 Base URL + API Key，用于快速复制、验证接口、查看模型与余额/用量💰 模型价格比对 跨站对比各模型实际折合单价，自动锁定当前最优分组，助你寻找最实惠的调用路径",
+    "features": [
+      "fast"
+    ],
+    "models": [
+      "claude"
+    ],
+    "score": 7.9,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.511999",
+    "check_count": 1
+  },
+  {
+    "name": "Tailwind CSS",
+    "url": "https://tailwindcss.com",
+    "submitTime": "2026-05-23T09:48:51.512001",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.",
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "multi"
+    ],
+    "score": 7.6,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.512003",
+    "check_count": 1
+  },
+  {
+    "name": "studio-api.suno.ai",
+    "url": "https://studio-api.suno.ai",
+    "submitTime": "2026-05-23T09:48:51.512006",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.512007",
+    "check_count": 1
+  },
+  {
+    "name": "ä»¤çæ¥è¯¢",
+    "url": "https://chaxun.wlai.vip",
+    "submitTime": "2026-05-23T09:48:51.512010",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "ä»¤çæ¥è¯¢",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.3,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.512012",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.apifox.cn",
+    "url": "https://yunwu.apifox.cn",
+    "submitTime": "2026-05-23T09:48:51.512014",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-23T09:48:51.512016",
+    "check_count": 1
   }
 ]

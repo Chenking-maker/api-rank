@@ -80,11 +80,11 @@
     "checked_at": "2026-05-19"
   },
   {
-    "url": "https://0011.ai",
-    "name": "0011AI",
-    "domain": "0011.ai",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "url": "https://openai-sb.com",
+    "name": "OpenAI-SB",
+    "domain": "openai-sb.com",
+    "died_at": "2026-05-23T09:45:02.865618",
+    "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c",
+    "status": "dead"
   }
 ]
