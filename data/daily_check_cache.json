@@ -398,5 +398,15 @@
     "alive": true,
     "date": "2026-05-23",
     "msg": "HTTP 200"
+  },
+  "poloapi.com": {
+    "alive": true,
+    "date": "2026-05-23",
+    "msg": "HTTP 200"
+  },
+  "b.ai": {
+    "alive": true,
+    "date": "2026-05-23",
+    "msg": "HTTP 200"
   }
 }
