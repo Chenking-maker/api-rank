@@ -192,6 +192,7 @@
                     审核管理
                     <span class="badge" id="totalBadge">0</span>
                 </button>
+                <button class="tab-btn" onclick="switchTab('checklog')">检测记录</button>
             </div>
 
             <div class="tab-content active" id="tab-recommend">
@@ -268,6 +269,23 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 检测记录面板 -->
+            <div class="tab-content" id="tab-checklog">
+                <div style="padding:16px;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                        <div>
+                            <h3 style="font-size:15px;font-weight:600;color:var(--text-secondary);">📊 每日检测记录</h3>
+                            <p style="font-size:12px;color:var(--text-muted);margin:4px 0 0;">数据来源：daily_check.py 自动检测结果</p>
+                        </div>
+                        <div id="checkLogTime" style="font-size:12px;color:var(--accent);background:rgba(108,92,231,0.1);padding:4px 12px;border-radius:8px;">--</div>
+                    </div>
+                    <div id="checkLogSummary" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;"></div>
+                    <div id="checkLogList" style="display:flex;flex-direction:column;gap:8px;">
+                        <div style="text-align:center;color:var(--text-muted);padding:30px;font-size:13px;">正在加载检测记录...</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -339,6 +357,7 @@ function showDashboard() {
     loadCrawlerData();
     loadDeadSites();
     syncReviewQueue();
+    loadCheckResults();
 }
 
 // 页面加载时自动检查登录状态（7天内有效）
@@ -749,6 +768,97 @@ async function loadCrawlerData() {
         }
         renderReviewLists();
     } catch(e) { console.log('加载爬虫数据失败'); }
+}
+
+// ========== 每日检测记录 ==========
+async function loadCheckResults() {
+    const summaryEl = document.getElementById('checkLogSummary');
+    const listEl = document.getElementById('checkLogList');
+    const timeEl = document.getElementById('checkLogTime');
+    if (!summaryEl || !listEl) return;
+
+    try {
+        const res = await fetch('data/check_results.json');
+        if (!res.ok) {
+            listEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:30px;font-size:13px;">暂无检测记录，等待 daily_check.py 运行...</div>';
+            return;
+        }
+        const data = await res.json();
+        const results = data.results || [];
+        const checkTime = data.check_time || '--';
+
+        // 格式化时间
+        if (checkTime !== '--') {
+            const d = new Date(checkTime);
+            timeEl.textContent = d.toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+        }
+
+        // 统计摘要
+        const online = results.filter(r => r.availability && r.availability.status === 'online').length;
+        const offline = results.length - online;
+        const avgScore = results.length > 0 ? (results.reduce((s, r) => s + (r.new_score || 0), 0) / results.length).toFixed(2) : '--';
+        const avgResp = results.filter(r => r.availability && r.availability.response_time).length > 0
+            ? Math.round(results.filter(r => r.availability && r.availability.response_time).reduce((s, r) => s + r.availability.response_time, 0) / results.filter(r => r.availability && r.availability.response_time).length) + 'ms'
+            : '--';
+
+        summaryEl.innerHTML = `
+            <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+                <div style="font-size:22px;font-weight:700;color:#4ecdc4;">${online}</div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">在线</div>
+            </div>
+            <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+                <div style="font-size:22px;font-weight:700;color:var(--accent);">${avgScore}</div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">平均评分</div>
+            </div>
+            <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+                <div style="font-size:22px;font-weight:700;color:var(--yellow);">${avgResp}</div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">平均响应</div>
+            </div>
+        `;
+
+        // 检测结果列表
+        if (results.length === 0) {
+            listEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">暂无检测数据</div>';
+            return;
+        }
+
+        // 按评分排序
+        const sorted = [...results].sort((a, b) => (b.new_score || 0) - (a.new_score || 0));
+
+        listEl.innerHTML = sorted.map(r => {
+            const isOnline = r.availability && r.availability.status === 'online';
+            const icon = isOnline ? '🟢' : '🔴';
+            const statusColor = isOnline ? '#4ecdc4' : '#ff6b6b';
+            const statusText = isOnline ? '在线' : '离线';
+            const score = (r.new_score || 0).toFixed(2);
+            const oldScore = (r.old_score || 0).toFixed(2);
+            const change = (r.score_change || 0).toFixed(2);
+            const changeColor = parseFloat(change) > 0 ? '#4ecdc4' : parseFloat(change) < 0 ? '#ff6b6b' : '#888';
+            const changePrefix = parseFloat(change) > 0 ? '+' : '';
+            const respTime = r.availability && r.availability.response_time ? Math.round(r.availability.response_time) + 'ms' : '--';
+            const name = r.name || new URL(r.url).hostname;
+
+            return `
+                <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;">
+                    <span style="font-size:16px;">${icon}</span>
+                    <div style="flex:1;min-width:0;">
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <span style="font-size:13px;font-weight:600;color:var(--text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${name}</span>
+                            <span style="font-size:10px;color:${statusColor};background:${statusColor}15;padding:1px 6px;border-radius:4px;">${statusText}</span>
+                        </div>
+                        <div style="display:flex;gap:12px;margin-top:4px;font-size:11px;color:var(--text-muted);">
+                            <span>评分: <b style="color:var(--text-primary);">${score}</b> <span style="color:${changeColor};font-size:10px;">(${changePrefix}${change})</span></span>
+                            <span>响应: ${respTime}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+    } catch (e) {
+        console.log('加载检测记录失败:', e);
+        listEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">加载失败，请检查 data/check_results.json 是否存在</div>';
+    }
 }
 
 // ========== 失效站点管理 ==========
