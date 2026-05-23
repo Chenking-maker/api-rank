@@ -29,7 +29,7 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-        cache: 'pip'  # 缓存pip依赖，加速后续运行
+        # 不启用pip缓存，因为仓库没有requirements.txt
 
     - name: Install system dependencies
       run: |
