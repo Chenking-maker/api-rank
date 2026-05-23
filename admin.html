@@ -622,6 +622,8 @@ function saveCrawlerQueue(q) { localStorage.setItem('crawlerQueue', JSON.stringi
 function getManualQueue() { return JSON.parse(localStorage.getItem('manualQueue') || '[]'); }
 function saveManualQueue(q) { localStorage.setItem('manualQueue', JSON.stringify(q)); }
 function getApprovedSites() { return JSON.parse(localStorage.getItem('approvedSites') || '[]'); }
+function getRejectedSites() { return JSON.parse(localStorage.getItem('rejectedSites') || '[]'); }
+function saveRejectedSites(q) { localStorage.setItem('rejectedSites', JSON.stringify(q)); }
 
 // 同步前端提交收录的 reviewQueue 到 admin 的 manualQueue
 function syncReviewQueue() {
@@ -718,15 +720,23 @@ async function loadCrawlerData() {
             if (key) approvedUrls.add(key);
         });
 
-        // 清理 crawlerQueue：移除已在排行榜中的站点
+        // 获取 rejectedSites（已拒绝的站点）用于去重
+        const rejectedSites = getRejectedSites();
+        const rejectedUrls = new Set();
+        rejectedSites.forEach(s => {
+            const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            if (key) rejectedUrls.add(key);
+        });
+
+        // 清理 crawlerQueue：移除已在排行榜中、已批准或已拒绝的站点
         const beforeCount = existing.length;
         existing = existing.filter(site => {
             const siteKey = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-            return !approvedUrls.has(siteKey);
+            return !approvedUrls.has(siteKey) && !rejectedUrls.has(siteKey);
         });
         if (existing.length < beforeCount) {
             saveCrawlerQueue(existing);
-            console.log(`清理crawlerQueue: 移除 ${beforeCount - existing.length} 个已上排行榜的站点`);
+            console.log(`清理crawlerQueue: 移除 ${beforeCount - existing.length} 个已处理的站点`);
         }
 
         pending.forEach(site => {
@@ -738,6 +748,8 @@ async function loadCrawlerData() {
             })) return;
             // 跳过已在排行榜中的（stations_info.json）
             if (approvedUrls.has(siteKey)) return;
+            // 跳过已拒绝的站点
+            if (rejectedUrls.has(siteKey)) return;
             // 跳过无效 URL
             if (!site.url || site.url.includes('beian') || site.url.includes('.css')) return;
 
@@ -1313,6 +1325,11 @@ function approveCrawler(idx) {
 
 function rejectCrawler(idx) {
     const queue = getCrawlerQueue();
+    const site = queue[idx];
+    // 记录到已拒绝列表
+    const rejected = getRejectedSites();
+    rejected.push({...site, rejectedAt: Date.now()});
+    saveRejectedSites(rejected);
     queue.splice(idx, 1);
     saveCrawlerQueue(queue);
     showToast('已拒绝');
@@ -1333,6 +1350,11 @@ function approveManual(idx) {
 
 function rejectManual(idx) {
     const queue = getManualQueue();
+    const site = queue[idx];
+    // 记录到已拒绝列表
+    const rejected = getRejectedSites();
+    rejected.push({...site, rejectedAt: Date.now()});
+    saveRejectedSites(rejected);
     queue.splice(idx, 1);
     saveManualQueue(queue);
     showToast('已拒绝');
