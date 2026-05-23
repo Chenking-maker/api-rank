@@ -25,7 +25,7 @@ SITES = [
     {"name": "Ofox.AI", "url": "https://ofox.ai", "aff_link": "https://ofox.ai", "base_score": 8.4},
     {"name": "星链4SAPI", "url": "https://4sapi.com", "aff_link": "https://4sapi.com", "base_score": 9.9},
     {"name": "IKunCode", "url": "https://api.ikuncode.cc", "aff_link": "https://api.ikuncode.cc", "base_score": 8.3},
-    {"name": "硅基流动", "url": "https://siliconflow.cn", "aff_link": "https://siliconflow.cn", "base_score": 8.8},
+    {"name": "硅基流动", "url": "https://cloud.siliconflow.cn", "aff_link": "https://cloud.siliconflow.cn/i/E5yUpjCP", "base_score": 8.8},
     {"name": "OpenRouter", "url": "https://openrouter.ai", "aff_link": "https://openrouter.ai", "base_score": 8.0},
     {"name": "SSSAICode", "url": "https://www.sssaicode.com", "aff_link": "https://www.sssaicode.com/register?ref=BO64DM", "base_score": 7.8},
     {"name": "147AI", "url": "https://147ai.com", "aff_link": "https://147ai.com", "base_score": 7.8},
@@ -258,21 +258,27 @@ class DailyChecker:
         if response_time < 500:
             speed_score = 1.0
         elif response_time < 1000:
-            speed_score = 0.9
+            speed_score = 0.95
         elif response_time < 2000:
-            speed_score = 0.8
+            speed_score = 0.9
         else:
-            speed_score = 0.7
+            speed_score = 0.8
         
-        final_score = (
+        # 综合检测因子（0.85~1.0之间）
+        check_factor = (
             speed_score * 0.4 +
             authenticity["score"] * 0.3 +
             cost_performance["score"] * 0.3
-        ) * 10
+        )
         
-        final_score = base_score * 0.3 + final_score * 0.7
+        # 检测因子映射到 ±0.5 的浮动范围
+        # check_factor ≈ 0.9 → 调整 ≈ 0 (不变)
+        # check_factor ≈ 1.0 → 调整 ≈ +0.5
+        # check_factor ≈ 0.8 → 调整 ≈ -0.5
+        adjustment = (check_factor - 0.9) * 5.0  # -0.5 ~ +0.5
+        final_score = base_score + adjustment
         
-        return round(min(final_score, 10.0), 1)
+        return round(min(max(final_score, 1.0), 10.0), 2)
     
     def check_site(self, site):
         """综合检测单个站点"""
@@ -298,11 +304,11 @@ class DailyChecker:
             "cost_performance": cost_performance,
             "old_score": site["base_score"],
             "new_score": final_score,
-            "score_change": round(final_score - site["base_score"], 1)
+            "score_change": round(final_score - site["base_score"], 2)
         }
         
         status_icon = "🟢" if availability['status'] == 'online' else "🔴"
-        print(f"{status_icon} {availability['status']} | 评分: {site['base_score']}→{final_score}")
+        print(f"{status_icon} {availability['status']} | 评分: {site['base_score']:.2f}→{final_score:.2f}")
         
         return result
     
@@ -324,13 +330,18 @@ class DailyChecker:
     
     def save_results(self):
         """保存检测结果"""
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        data_dir = os.path.join(os.path.dirname(script_dir), "data")
+        os.makedirs(data_dir, exist_ok=True)
+        output_path = os.path.join(data_dir, "check_results.json")
+
         output = {
             "check_time": datetime.now().isoformat(),
             "total_sites": len(SITES),
             "results": self.results
         }
-        
-        with open("check_results.json", "w", encoding="utf-8") as f:
+
+        with open(output_path, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
     
     def update_html(self):
@@ -366,7 +377,7 @@ class DailyChecker:
             
             for pattern in patterns:
                 if re.search(pattern, content, re.DOTALL):
-                    content = re.sub(pattern, rf'\g<1>{new_score:.1f}\g<2>', content, count=1, flags=re.DOTALL)
+                    content = re.sub(pattern, rf'\g<1>{new_score:.2f}\g<2>', content, count=1, flags=re.DOTALL)
                     break
         
         with open(html_path, 'w', encoding='utf-8', errors='ignore') as f:
@@ -389,7 +400,7 @@ class DailyChecker:
         print("\n🏆 排名:")
         for i, r in enumerate(sorted_results[:5], 1):
             icon = "🟢" if r["availability"]["status"] == "online" else "🔴"
-            print(f"  {i}. {icon} {r['name']}: {r['new_score']:.1f}")
+            print(f"  {i}. {icon} {r['name']}: {r['new_score']:.2f}")
         
         offline_sites = [r for r in self.results if r["availability"]["status"] != "online"]
         if offline_sites:
