@@ -1,7 +1,32 @@
 {
-  "updated_at": "2026-05-24T11:04:56.348727",
-  "recovered": [],
+  "updated_at": "2026-05-25T16:12:53.429825",
+  "recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI",
+      "domain": "poloapi.com",
+      "recovered_at": "2026-05-25T16:09:18.559130"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)",
+      "domain": "b.ai",
+      "recovered_at": "2026-05-25T16:10:30.385255"
+    },
+    {
+      "url": "https://www.volcengine.com",
+      "name": "豆包API(火山引擎)",
+      "domain": "volcengine.com",
+      "recovered_at": "2026-05-25T16:10:50.539405"
+    }
+  ],
   "new_dead": [
+    {
+      "url": "https://www.volcengine.com",
+      "name": "豆包API(火山引擎)",
+      "domain": "volcengine.com",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    },
     {
       "url": "https://openai-sb.com",
       "name": "OpenAI-SB",

@@ -284,5 +284,58 @@
     "freeAmount": "",
     "checked_at": "2026-05-23T09:48:51.512016",
     "check_count": 1
+  },
+  {
+    "name": "Unity2.Ai - 企业级 AI 中转方案",
+    "url": "https://unity2.ai",
+    "submitTime": "2026-05-25T16:12:53.428801",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "Ai - 企业级 AI 中转方案",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.3,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-25T16:12:53.428821",
+    "check_count": 1
+  },
+  {
+    "name": "FastAPI¶",
+    "url": "https://fastapi.tiangolo.com",
+    "submitTime": "2026-05-25T16:12:53.428835",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "FastAPI - FastAPI Skip to content Join the FastAPI Cloud waiting list 🚀 FastAPI Conf '26 — Oct 28, 2026, Amsterdam 🎤 Follow @fastapi on X (Twitter) to stay updated Follow FastAPI on LinkedIn to stay u",
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "multi"
+    ],
+    "score": 7.6,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-25T16:12:53.428837",
+    "check_count": 1
+  },
+  {
+    "name": "Think fast,build faster",
+    "url": "https://claude.com",
+    "submitTime": "2026-05-25T16:12:53.428840",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "Claude",
+    "features": [],
+    "models": [
+      "claude"
+    ],
+    "score": 7.6,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-05-25T16:12:53.428843",
+    "check_count": 1
   }
 ]

@@ -1,18 +1,39 @@
 {
-  "timestamp": "2026-05-24T11:04:56.349462",
-  "elapsed_seconds": 247.9,
+  "timestamp": "2026-05-25T16:12:53.430636",
+  "elapsed_seconds": 337.8,
   "summary": {
     "total_existing": 61,
     "total_existing_with_url": 61,
-    "total_pending": 15,
+    "total_pending": 18,
     "total_dead": 11,
-    "new_discovered": 0,
-    "new_dead": 2,
-    "new_recovered": 0,
+    "new_discovered": 3,
+    "new_dead": 3,
+    "new_recovered": 3,
     "scrapling_available": true
   },
-  "new_discovered": [],
+  "new_discovered": [
+    {
+      "url": "https://unity2.ai",
+      "name": "Unity2.Ai - 企业级 AI 中转方案",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://fastapi.tiangolo.com",
+      "name": "FastAPI¶",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://claude.com",
+      "name": "Think fast,build faster",
+      "source": "github:OpenAI A_extract"
+    }
+  ],
   "new_dead": [
+    {
+      "url": "https://www.volcengine.com",
+      "name": "豆包API(火山引擎)",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    },
     {
       "url": "https://openai-sb.com",
       "name": "OpenAI-SB",
@@ -24,5 +45,18 @@
       "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
     }
   ],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    },
+    {
+      "url": "https://www.volcengine.com",
+      "name": "豆包API(火山引擎)"
+    }
+  ]
 }
