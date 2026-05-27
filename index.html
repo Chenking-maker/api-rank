@@ -9909,7 +9909,13 @@
         }
 
         // 从data文件直接加载爬虫验证通过的站点（不依赖localStorage）
+        // 注意：当前版本只显示硬编码的61个站点，不动态加载approved_stations.json
         async function loadApprovedFromData() {
+            // 暂时禁用动态加载，只显示硬编码站点
+            console.log('动态加载已禁用，只显示硬编码的61个中转站');
+            return;
+            
+            /* 如需恢复动态加载，取消下面注释
             try {
                 // 只加载 approved_stations.json（admin审核通过的站点）
                 // pending_stations.json 中的待审核站点不会自动进入排行榜，必须经过审核
@@ -9948,6 +9954,7 @@
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
+            */
         }
 
         // 加载爬虫检测的失效站点
@@ -10093,22 +10100,11 @@
                             });
                         });
 
-                        // 如果不在排行榜中，动态添加
-                        if (!found && domain && !existingUrls.has(domain)) {
-                            existingUrls.add(domain);
-                            addSiteToRanking({
-                                name: site.name || domain,
-                                url: site.url || ('https://' + domain),
-                                description: (site.name || domain) + ' - AI API中转服务（已恢复）',
-                                score: 7.5,
-                                models: ['multi'],
-                                features: ['stable'],
-                                responseTime: '?',
-                                source: 'recovered',
-                                freeAmount: '',
-                            });
-                            console.log('添加恢复站点到排行榜:', site.name || domain);
-                        }
+                        // 动态添加已禁用 - 只显示硬编码的61个站点
+                        // if (!found && domain && !existingUrls.has(domain)) {
+                        //     existingUrls.add(domain);
+                        //     addSiteToRanking({...});
+                        // }
                     });
                     scheduleAutoRank();
                     console.log('恢复了 ' + status.recovered.length + ' 个站点');
@@ -10141,7 +10137,12 @@
         }
 
         // 加载 admin.html 标记的恢复站点（从 localStorage，使用缓存）
+        // 注意：当前版本只显示硬编码的61个站点，不从admin恢复列表动态加载
         async function loadRecoveredFromAdmin() {
+            console.log('loadRecoveredFromAdmin: 已禁用，只显示硬编码的61个中转站');
+            return;
+            
+            /* 如需恢复动态加载，取消下面注释
             try {
                 const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
@@ -10181,6 +10182,7 @@
             } catch (e) {
                 console.log('加载恢复站点失败:', e);
             }
+            */
         }
 
         // 页面加载时恢复待审核列表
@@ -10295,11 +10297,10 @@
 
             
 
-            // 生成卡片并插入排行榜
-
-            addSiteToRanking(site);
-
-            autoRank();
+            // 动态添加已禁用 - 只显示硬编码的61个站点
+            // addSiteToRanking(site);
+            // autoRank();
+            console.log('approveSite: 动态添加已禁用，' + site.name + ' 不会显示在排行榜中');
 
             
 
@@ -10516,8 +10517,12 @@
         
 
         // 页面加载时恢复已通过的站点到排行榜
-        // 改为 async：先从 stations_info.json 获取真实数据，覆盖 localStorage 中的脏数据
+        // 注意：当前版本只显示硬编码的61个站点，不从localStorage动态加载
         async function loadApprovedSites() {
+            console.log('loadApprovedSites: 已禁用，只显示硬编码的61个中转站');
+            return;
+            
+            /* 如需恢复动态加载，取消下面注释
             // 先尝试从 stations_info.json 获取真实站点数据，用于覆盖脏数据（使用缓存，不会重复请求）
             let realDataMap = {};
             try {
@@ -10625,6 +10630,7 @@
             console.log('loadApprovedSites: 渲染了 ' + addedUrls.size + ' 个审核站点');
             // 延迟排序（等所有数据加载完）
             scheduleAutoRank();
+            */
         }
 
         
@@ -11475,7 +11481,12 @@
 
         // 页面加载完成后执行
         // 从文件加载所有站点并渲染
+        // 注意：当前版本只显示硬编码的61个站点，不从data文件动态加载
         async function renderAllStationsFromData() {
+            console.log('renderAllStationsFromData: 已禁用，只显示硬编码的61个中转站');
+            return;
+            
+            /* 如需恢复动态加载，取消下面注释
             try {
                 const stations = await fetchOnce('data/stations_info.json');
                 if (!Array.isArray(stations) || stations.length === 0) {
@@ -11517,6 +11528,7 @@
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
+            */
         }
 
 
