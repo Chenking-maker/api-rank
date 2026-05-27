@@ -9898,6 +9898,30 @@
         // 黑名单：非中转站域名，不应出现在排行榜中
         const BLACKLIST_DOMAINS = [
             'qixing1217.top',  // All API Hub - 浏览器插件/管理工具，非中转站
+            // 国内官方平台（非中转站）
+            'qianfan.baidubce.com',  // 百度千帆
+            'bigmodel.cn',  // 智谱AI
+            'volcengine.com',  // 火山引擎/豆包
+            'platform.moonshot.cn',  // 月之暗面/Kimi
+            'platform.lingyiwanwu.com',  // 零一万物
+            'platform.deepseek.com',  // DeepSeek官方
+            'xinghuo.xfyun.cn',  // 讯飞星火
+            'bailian.console.aliyun.com',  // 阿里百炼
+            'platform.baichuan-ai.com',  // 百川智能
+            'platform.minimaxi.com',  // MiniMax
+            'minimaxi.com',  // MiniMax
+            // 海外官方平台（非中转站）
+            'openrouter.ai',  // OpenRouter
+            'console.mistral.ai',  // Mistral
+            'dashboard.cohere.com',  // Cohere
+            'console.groq.com',  // Groq
+            'api.together.xyz',  // Together AI
+            'fireworks.ai',  // Fireworks AI
+            'deepinfra.com',  // DeepInfra
+            'api.anthropic.com',  // Anthropic官方
+            'api.openai.com',  // OpenAI官方
+            // 非API服务
+            'bewildcard.com',  // WildCard虚拟卡
         ];
 
         function isBlacklisted(url) {
@@ -9908,31 +9932,59 @@
             return false;
         }
 
+        // 乱码检测：检查文本是否包含乱码字符
+        function isGarbledText(text) {
+            if (!text) return false;
+            // 检测常见的UTF-8乱码模式（mojibake）
+            const garbledPatterns = [
+                /[æ][\x80-\xbf]{2,}/,  // UTF-8乱码
+                /[ÃÂ][\x80-\xbf]/,      // Latin-1转UTF-8乱码
+                /[ï¿½]/,                // 替换字符
+                /[\x00-\x08\x0b\x0c\x0e-\x1f]/,  // 控制字符
+            ];
+            for (const pat of garbledPatterns) {
+                if (pat.test(text)) return true;
+            }
+            // 检查是否包含大量非ASCII非中文非日文字符
+            let weirdCount = 0;
+            for (let i = 0; i < text.length; i++) {
+                const code = text.charCodeAt(i);
+                // 如果不是常见字符范围
+                if (code > 127 && !(code >= 0x4e00 && code <= 0x9fff) && !(code >= 0x3000 && code <= 0x303f) && !(code >= 0xff00 && code <= 0xffef) && !(code >= 0x3040 && code <= 0x30ff)) {
+                    weirdCount++;
+                }
+            }
+            // 如果超过30%的字符是奇怪的字符，认为是乱码
+            return weirdCount > text.length * 0.3;
+        }
+
+        // 综合检查：站点是否适合显示在排行榜中
+        function isValidStation(site) {
+            if (!site || !site.url) return false;
+            // 检查黑名单
+            if (isBlacklisted(site.url)) return false;
+            // 检查脏数据
+            if (isDirtySite(site)) return false;
+            // 检查名称乱码
+            if (isGarbledText(site.name)) return false;
+            // 检查描述乱码
+            if (isGarbledText(site.description)) return false;
+            return true;
+        }
+
         // 从data文件直接加载爬虫验证通过的站点（不依赖localStorage）
-        // 注意：当前版本只显示硬编码的61个站点，不动态加载approved_stations.json
         async function loadApprovedFromData() {
-            // 暂时禁用动态加载，只显示硬编码站点
-            console.log('动态加载已禁用，只显示硬编码的61个中转站');
-            return;
-            
-            /* 如需恢复动态加载，取消下面注释
             try {
-                // 只加载 approved_stations.json（admin审核通过的站点）
-                // pending_stations.json 中的待审核站点不会自动进入排行榜，必须经过审核
                 const approved = await fetchOnce('data/approved_stations.json');
-                
                 if (!Array.isArray(approved) || approved.length === 0) return;
                 
-                // 获取已有硬编码卡片的URL集合（使用缓存）
                 const existingUrls = getExistingUrls();
-
                 let addedCount = 0;
                 approved.forEach(site => {
                     const siteUrlClean = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                    // 跳过已在硬编码排行榜中的站点
                     if (existingUrls.has(siteUrlClean)) return;
-                    // 跳过脏数据站点
-                    if (isDirtySite(site)) return;
+                    // 综合检查：黑名单 + 脏数据 + 乱码
+                    if (!isValidStation(site)) return;
                     if (site.url) {
                         addSiteToRanking({
                             name: site.name || site.domain || '',
@@ -9949,12 +10001,12 @@
                     }
                 });
                 if (addedCount > 0) {
-                    console.log('从文件加载 ' + addedCount + ' 个站点（' + approved.length + ' 已审核 + ' + (addedCount - approved.length) + ' 待审核）');
+                    console.log('从文件加载 ' + addedCount + ' 个审核站点');
                 }
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
-            */
+        }
         }
 
         // 加载爬虫检测的失效站点
@@ -10100,11 +10152,25 @@
                             });
                         });
 
-                        // 动态添加已禁用 - 只显示硬编码的61个站点
-                        // if (!found && domain && !existingUrls.has(domain)) {
-                        //     existingUrls.add(domain);
-                        //     addSiteToRanking({...});
-                        // }
+                        // 如果不在排行榜中，动态添加（带过滤）
+                        if (!found && domain && !existingUrls.has(domain)) {
+                            var recoverSite = {
+                                name: site.name || domain,
+                                url: site.url || ('https://' + domain),
+                                description: (site.name || domain) + ' - AI API中转服务（已恢复）',
+                                score: 7.5,
+                                models: ['multi'],
+                                features: ['stable'],
+                                responseTime: '?',
+                                source: 'recovered',
+                                freeAmount: '',
+                            };
+                            if (isValidStation(recoverSite)) {
+                                existingUrls.add(domain);
+                                addSiteToRanking(recoverSite);
+                                console.log('添加恢复站点到排行榜:', site.name || domain);
+                            }
+                        }
                     });
                     scheduleAutoRank();
                     console.log('恢复了 ' + status.recovered.length + ' 个站点');
@@ -10139,10 +10205,7 @@
         // 加载 admin.html 标记的恢复站点（从 localStorage，使用缓存）
         // 注意：当前版本只显示硬编码的61个站点，不从admin恢复列表动态加载
         async function loadRecoveredFromAdmin() {
-            console.log('loadRecoveredFromAdmin: 已禁用，只显示硬编码的61个中转站');
-            return;
             
-            /* 如需恢复动态加载，取消下面注释
             try {
                 const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
@@ -10153,6 +10216,7 @@
                 let added = 0;
                 recoveredSites.forEach(site => {
                     if (!site || !site.url) return;
+                    if (!isValidStation(site)) return;
                     const domain = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
                     if (!domain || existingUrls.has(domain)) return;
 
@@ -10182,8 +10246,7 @@
             } catch (e) {
                 console.log('加载恢复站点失败:', e);
             }
-            */
-        }
+            
 
         // 页面加载时恢复待审核列表
 
@@ -10297,10 +10360,13 @@
 
             
 
-            // 动态添加已禁用 - 只显示硬编码的61个站点
-            // addSiteToRanking(site);
-            // autoRank();
-            console.log('approveSite: 动态添加已禁用，' + site.name + ' 不会显示在排行榜中');
+            // 生成卡片并插入排行榜（带过滤）
+            if (isValidStation(site)) {
+                addSiteToRanking(site);
+                autoRank();
+            } else {
+                console.log('approveSite: 站点未通过验证（黑名单/乱码/脏数据）', site.name);
+            }
 
             
 
@@ -10519,10 +10585,7 @@
         // 页面加载时恢复已通过的站点到排行榜
         // 注意：当前版本只显示硬编码的61个站点，不从localStorage动态加载
         async function loadApprovedSites() {
-            console.log('loadApprovedSites: 已禁用，只显示硬编码的61个中转站');
-            return;
             
-            /* 如需恢复动态加载，取消下面注释
             // 先尝试从 stations_info.json 获取真实站点数据，用于覆盖脏数据（使用缓存，不会重复请求）
             let realDataMap = {};
             try {
@@ -10563,7 +10626,7 @@
                     };
                 }
                 // 没有真实数据 → 使用脏数据过滤 + 清理
-                if (isDirtySite(site)) return null;
+                if (!isValidStation(site)) return null;
                 return {
                     name: site.name || site.domain || '',
                     url: site.url,
@@ -10630,8 +10693,7 @@
             console.log('loadApprovedSites: 渲染了 ' + addedUrls.size + ' 个审核站点');
             // 延迟排序（等所有数据加载完）
             scheduleAutoRank();
-            */
-        }
+            
 
         
 
@@ -11483,10 +11545,7 @@
         // 从文件加载所有站点并渲染
         // 注意：当前版本只显示硬编码的61个站点，不从data文件动态加载
         async function renderAllStationsFromData() {
-            console.log('renderAllStationsFromData: 已禁用，只显示硬编码的61个中转站');
-            return;
             
-            /* 如需恢复动态加载，取消下面注释
             try {
                 const stations = await fetchOnce('data/stations_info.json');
                 if (!Array.isArray(stations) || stations.length === 0) {
@@ -11508,7 +11567,7 @@
                     const siteUrlClean = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
                     if (existingUrls.has(siteUrlClean)) return;
                     // 跳过脏数据站点
-                    if (isDirtySite(site)) return;
+                    if (!isValidStation(site)) return;
                     addSiteToRanking({
                         name: site.name || site.domain || '',
                         url: site.url,
@@ -11528,8 +11587,7 @@
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
-            */
-        }
+            
 
 
 
