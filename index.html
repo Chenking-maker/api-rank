@@ -10007,7 +10007,6 @@
                 console.log('加载站点数据失败:', e);
             }
         }
-        }
 
         // 加载爬虫检测的失效站点
         async function loadDeadSitesFromCrawler() {
@@ -10246,7 +10245,7 @@
             } catch (e) {
                 console.log('加载恢复站点失败:', e);
             }
-            
+        }
 
         // 页面加载时恢复待审核列表
 
@@ -10693,9 +10692,7 @@
             console.log('loadApprovedSites: 渲染了 ' + addedUrls.size + ' 个审核站点');
             // 延迟排序（等所有数据加载完）
             scheduleAutoRank();
-            
-
-        
+        }
 
         // 生成卡片HTML并插入排行榜
 
@@ -11587,9 +11584,7 @@
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
-            
-
-
+        }
 
         document.addEventListener('DOMContentLoaded', async function() {
             // 渲染流量排行榜（纯静态数据，不依赖异步加载）
