@@ -4211,6 +4211,56 @@
 
         }
 
+        /* 流量排行榜 */
+        #trafficRanking {
+            padding: 40px 0;
+            margin-bottom: 20px;
+        }
+        .traffic-rank-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.05) 0%, rgba(0, 210, 160, 0.05) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+        #trafficWaveCanvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+        .traffic-tooltip {
+            position: absolute;
+            background: rgba(22, 22, 31, 0.95);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .traffic-tooltip.show {
+            opacity: 1;
+        }
+        .traffic-tooltip-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .traffic-tooltip-visits {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .traffic-tooltip-domain {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
     </style>
 
 </head>
@@ -4805,6 +4855,32 @@
 
 
     <div class="toast-container" id="toastContainer"></div>
+
+
+
+    <!-- Traffic Ranking Section -->
+
+    <section class="section" id="trafficRanking">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2 class="section-title">流量排行榜 <span>SimilarWeb 2026年4月 · 月访问量估算</span></h2>
+
+            </div>
+
+            <div class="traffic-rank-container">
+
+                <canvas id="trafficWaveCanvas" width="1200" height="280"></canvas>
+
+                <div class="traffic-tooltip" id="trafficTooltip"></div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
 
@@ -10993,6 +11069,193 @@
             });
         });
 
+        // ===== 流量排行榜波浪动画 =====
+        const trafficData = [
+            { name: '禾维AI', domain: 'hvoy.ai', visits: 126500 },
+            { name: 'SNAKE GPT', domain: 'snakegpt.vip', visits: 15600 },
+            { name: 'API2D', domain: 'api2d.com', visits: 9100 },
+            { name: '智增增API', domain: 'api.zhizengzeng.com', visits: 6200 },
+            { name: '诗云API', domain: 'shiyunapi.com', visits: 4800 },
+        ];
+
+        function initWaveCanvas() {
+            const canvas = document.getElementById('trafficWaveCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const tooltip = document.getElementById('trafficTooltip');
+            
+            // 排序并取前5
+            const sortedData = [...trafficData].sort((a, b) => b.visits - a.visits).slice(0, 5);
+            const maxVisits = sortedData[0].visits;
+            
+            // 波浪配置
+            const waves = sortedData.map((item, index) => ({
+                baseHeight: 40 + (item.visits / maxVisits) * 120,
+                amplitude: 8 + (item.visits / maxVisits) * 15,
+                speed: 0.015 + (5 - index) * 0.003,
+                phase: index * 0.8,
+                color: `hsla(${220 + index * 15}, 70%, ${50 + index * 8}%, ${0.6 + index * 0.08})`,
+                glowColor: `hsla(${220 + index * 15}, 70%, 60%, 0.4)`,
+                data: item,
+                particles: []
+            }));
+            
+            // 初始化粒子
+            waves.forEach((wave, i) => {
+                for (let j = 0; j < 15; j++) {
+                    wave.particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * wave.baseHeight,
+                        size: Math.random() * 2 + 1,
+                        speed: Math.random() * 0.5 + 0.2,
+                        opacity: Math.random() * 0.5 + 0.3
+                    });
+                }
+            });
+            
+            let animationId;
+            let isVisible = true;
+            
+            // 使用IntersectionObserver暂停不可见时的动画
+            const observer = new IntersectionObserver((entries) => {
+                isVisible = entries[0].isIntersecting;
+            }, { threshold: 0.1 });
+            observer.observe(canvas);
+            
+            function drawWave(wave, index, total) {
+                const xStep = canvas.width / (total - 1);
+                const xOffset = index * xStep;
+                
+                ctx.beginPath();
+                ctx.moveTo(xOffset, canvas.height);
+                
+                // 绘制波浪曲线
+                for (let x = 0; x <= xStep; x += 2) {
+                    const globalX = xOffset + x;
+                    const y = canvas.height - wave.baseHeight 
+                        - Math.sin((globalX * 0.01) + wave.phase) * wave.amplitude
+                        - Math.sin((globalX * 0.02) + wave.phase * 1.5) * (wave.amplitude * 0.5);
+                    
+                    if (x === 0) {
+                        ctx.moveTo(globalX, y);
+                    } else {
+                        ctx.lineTo(globalX, y);
+                    }
+                }
+                
+                ctx.lineTo(xOffset + xStep, canvas.height);
+                ctx.closePath();
+                
+                // 填充渐变
+                const gradient = ctx.createLinearGradient(xOffset, canvas.height - wave.baseHeight - 50, xOffset, canvas.height);
+                gradient.addColorStop(0, wave.color);
+                gradient.addColorStop(1, wave.color.replace(/[\d.]+\)$/, '0.1)'));
+                ctx.fillStyle = gradient;
+                ctx.fill();
+                
+                // 发光效果
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = wave.glowColor;
+                ctx.strokeStyle = wave.color;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                ctx.shadowBlur = 0;
+            }
+            
+            function drawParticles(wave, index, total) {
+                const xStep = canvas.width / (total - 1);
+                const xOffset = index * xStep;
+                
+                wave.particles.forEach(p => {
+                    p.y -= p.speed;
+                    p.opacity -= 0.005;
+                    
+                    if (p.opacity <= 0 || p.y < 0) {
+                        p.y = wave.baseHeight;
+                        p.opacity = Math.random() * 0.5 + 0.3;
+                        p.x = Math.random() * xStep;
+                    }
+                    
+                    const globalX = xOffset + p.x;
+                    const waveY = canvas.height - wave.baseHeight 
+                        - Math.sin((globalX * 0.01) + wave.phase) * wave.amplitude;
+                    
+                    ctx.beginPath();
+                    ctx.arc(globalX, waveY - p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = wave.color.replace(/[\d.]+\)$/, `${p.opacity})`);
+                    ctx.fill();
+                });
+            }
+            
+            function animate() {
+                if (!isVisible) {
+                    animationId = requestAnimationFrame(animate);
+                    return;
+                }
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                waves.forEach((wave, i) => {
+                    wave.phase += wave.speed;
+                    drawWave(wave, i, waves.length);
+                    drawParticles(wave, i, waves.length);
+                });
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // 鼠标交互
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const xStep = canvas.width / (waves.length - 1);
+                const index = Math.floor(x / xStep);
+                
+                if (index >= 0 && index < waves.length) {
+                    const wave = waves[index];
+                    const waveTop = canvas.height - wave.baseHeight - wave.amplitude * 1.5;
+                    
+                    if (y > waveTop - 20 && y < canvas.height) {
+                        tooltip.innerHTML = `
+                            <div class="traffic-tooltip-name">${wave.data.name}</div>
+                            <div class="traffic-tooltip-visits">${(wave.data.visits / 1000).toFixed(1)}K /月</div>
+                            <div class="traffic-tooltip-domain">${wave.data.domain}</div>
+                        `;
+                        tooltip.style.left = `${x + 10}px`;
+                        tooltip.style.top = `${y - 60}px`;
+                        tooltip.classList.add('show');
+                        canvas.style.cursor = 'pointer';
+                    } else {
+                        tooltip.classList.remove('show');
+                        canvas.style.cursor = 'crosshair';
+                    }
+                }
+            });
+            
+            canvas.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('show');
+            });
+            
+            // 点击跳转
+            canvas.addEventListener('click', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const xStep = canvas.width / (waves.length - 1);
+                const index = Math.floor(x / xStep);
+                
+                if (index >= 0 && index < waves.length) {
+                    window.open(`https://${waves[index].data.domain}`, '_blank');
+                }
+            });
+            
+            animate();
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initWaveCanvas);
 
     </script>
 
