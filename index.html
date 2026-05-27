@@ -129,69 +129,37 @@
         /* ===== Animated Background ===== */
 
         .bg-grid {
-
             position: fixed;
-
             top: 0; left: 0; right: 0; bottom: 0;
-
             background-image:
-
-                linear-gradient(rgba(108,92,231,0.03) 1px, transparent 1px),
-
-                linear-gradient(90deg, rgba(108,92,231,0.03) 1px, transparent 1px);
-
+                linear-gradient(rgba(108,92,231,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(108,92,231,0.015) 1px, transparent 1px);
             background-size: 60px 60px;
-
             pointer-events: none;
-
             z-index: 0;
-
         }
-
-
 
         .bg-glow {
-
             position: fixed;
-
-            width: 600px;
-
-            height: 600px;
-
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-
-            filter: blur(150px);
-
-            opacity: 0.15;
-
+            filter: blur(120px);
+            opacity: 0.06;
             pointer-events: none;
-
             z-index: 0;
-
         }
-
-
 
         .bg-glow-1 {
-
             top: -200px;
-
             right: -100px;
-
             background: var(--accent);
-
         }
 
-
-
         .bg-glow-2 {
-
             bottom: -200px;
-
             left: -100px;
-
             background: var(--green);
-
         }
 
 
@@ -378,6 +346,32 @@
 
             text-align: center;
 
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        /* Aurora 极光背景 */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(108,92,231,0.04) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 60%, rgba(0,210,160,0.03) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(162,155,254,0.025) 0%, transparent 40%);
+            animation: aurora-shift 15s ease-in-out infinite;
+            background-size: 200% 200%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero > .container {
+            position: relative;
+            z-index: 1;
         }
 
 
@@ -405,6 +399,8 @@
             font-weight: 500;
 
             margin-bottom: 24px;
+
+            animation: blur-in 0.8s ease-out both;
 
         }
 
@@ -436,6 +432,39 @@
 
         }
 
+        /* ===== react-bits 灵感：ShinyText 光泽扫过动画 ===== */
+        @keyframes shiny-sweep {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* ===== react-bits 灵感：GradientText 渐变流动 ===== */
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== react-bits 灵感：BlurText 模糊入场 ===== */
+        @keyframes blur-in {
+            0% { opacity: 0; filter: blur(12px); transform: translateY(8px); }
+            100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
+
+        /* ===== react-bits 灵感：Aurora 极光背景 ===== */
+        @keyframes aurora-shift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 50% 0%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 100%; }
+        }
+
+        /* ===== 卡片发光边框 ===== */
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
 
 
         .hero h1 {
@@ -450,20 +479,32 @@
 
             margin-bottom: 20px;
 
+            position: relative;
+
+        }
+
+        /* ShinyText 光泽扫过效果（非 gradient-text 部分） */
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+            animation: shiny-sweep 4s ease-in-out infinite;
+            pointer-events: none;
         }
 
 
 
         .hero h1 .gradient-text {
 
-            background: var(--gradient-1);
-
+            background: linear-gradient(90deg, #6c5ce7, #a29bfe, #00d2a0, #a29bfe, #6c5ce7);
+            background-size: 300% 100%;
             -webkit-background-clip: text;
-
             -webkit-text-fill-color: transparent;
-
             background-clip: text;
-
+            animation: gradient-flow 6s ease infinite;
         }
 
 
@@ -479,6 +520,10 @@
             margin: 0 auto 40px;
 
             line-height: 1.7;
+
+            animation: blur-in 1s ease-out both;
+
+            animation-delay: 0.3s;
 
         }
 
@@ -516,7 +561,13 @@
 
             letter-spacing: -1px;
 
+            animation: blur-in 0.8s ease-out both;
+
         }
+
+        .hero-stat:nth-child(1) .number { animation-delay: 0.5s; }
+        .hero-stat:nth-child(2) .number { animation-delay: 0.65s; }
+        .hero-stat:nth-child(3) .number { animation-delay: 0.8s; }
 
 
 
@@ -774,6 +825,10 @@
 
             transform: translateY(-2px);
 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.06);
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
         }
 
 
@@ -791,6 +846,11 @@
         .rank-card.top-2::before { background: var(--gradient-2); }
 
         .rank-card.top-3::before { background: linear-gradient(135deg, #ffd43b, #f0932b); }
+
+        /* 前三名卡片 hover 发光 */
+        .rank-card.top-1:hover { box-shadow: 0 8px 24px rgba(108,92,231,0.08), 0 0 0 1px rgba(108,92,231,0.1); }
+        .rank-card.top-2:hover { box-shadow: 0 8px 24px rgba(0,210,160,0.08), 0 0 0 1px rgba(0,210,160,0.1); }
+        .rank-card.top-3:hover { box-shadow: 0 8px 24px rgba(255,212,59,0.06), 0 0 0 1px rgba(255,212,59,0.08); }
 
 
 
@@ -843,81 +903,37 @@
         
 
         .top-1 .rank-number {
-
-            background: linear-gradient(180deg, rgba(108,92,231,0.3), rgba(108,92,231,0.1));
-
+            background: linear-gradient(180deg, rgba(108,92,231,0.25), rgba(108,92,231,0.08));
             color: #fff;
-
-            box-shadow: 0 0 20px rgba(108,92,231,0.3);
-
         }
-
-        
 
         .top-2 .rank-number {
-
-            background: linear-gradient(180deg, rgba(46,213,115,0.3), rgba(46,213,115,0.1));
-
+            background: linear-gradient(180deg, rgba(46,213,115,0.25), rgba(46,213,115,0.08));
             color: #2ed573;
-
-            box-shadow: 0 0 20px rgba(46,213,115,0.3);
-
         }
-
-        
 
         .top-3 .rank-number {
-
-            background: linear-gradient(180deg, rgba(255,193,7,0.3), rgba(255,193,7,0.1));
-
+            background: linear-gradient(180deg, rgba(255,193,7,0.25), rgba(255,193,7,0.08));
             color: #ffc107;
-
-            box-shadow: 0 0 20px rgba(255,193,7,0.3);
-
         }
-
-        
 
         .top-4 .rank-number,
-
         .top-5 .rank-number {
-
-            background: linear-gradient(180deg, rgba(0,168,255,0.25), rgba(0,168,255,0.08));
-
+            background: linear-gradient(180deg, rgba(0,168,255,0.2), rgba(0,168,255,0.06));
             color: #00a8ff;
-
-            box-shadow: 0 0 15px rgba(0,168,255,0.2);
-
         }
-
-        
 
         .top-6 .rank-number,
-
         .top-7 .rank-number {
-
-            background: linear-gradient(180deg, rgba(255,107,107,0.25), rgba(255,107,107,0.08));
-
+            background: linear-gradient(180deg, rgba(255,107,107,0.2), rgba(255,107,107,0.06));
             color: #ff6b6b;
-
-            box-shadow: 0 0 15px rgba(255,107,107,0.2);
-
         }
 
-        
-
         .top-8 .rank-number,
-
         .top-9 .rank-number,
-
         .top-10 .rank-number {
-
-            background: linear-gradient(180deg, rgba(162,155,254,0.2), rgba(162,155,254,0.05));
-
+            background: linear-gradient(180deg, rgba(162,155,254,0.15), rgba(162,155,254,0.04));
             color: #a29bfe;
-
-            box-shadow: 0 0 10px rgba(162,155,254,0.15);
-
         }
 
         
@@ -4211,181 +4227,6 @@
 
         }
 
-        /* 流量排行榜 - 3D领奖台 */
-        #trafficRanking {
-            padding: 60px 0 40px;
-            margin-bottom: 20px;
-        }
-        .podium-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 20px;
-            padding: 40px 20px 0;
-            margin-bottom: 30px;
-        }
-        .podium-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        .podium-item:hover {
-            transform: translateY(-10px);
-        }
-        .podium-crown {
-            font-size: 32px;
-            margin-bottom: 10px;
-            animation: crown-float 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
-        }
-        @keyframes crown-float {
-            0%, 100% { transform: translateY(0) rotate(-5deg); }
-            50% { transform: translateY(-8px) rotate(5deg); }
-        }
-        .podium-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            width: 160px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-        .podium-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        .rank-1 .podium-card {
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15), inset 0 0 20px rgba(255, 215, 0, 0.05);
-        }
-        .rank-2 .podium-card {
-            border-color: rgba(192, 192, 192, 0.4);
-            box-shadow: 0 8px 32px rgba(192, 192, 192, 0.15), inset 0 0 20px rgba(192, 192, 192, 0.05);
-        }
-        .rank-3 .podium-card {
-            border-color: rgba(205, 127, 50, 0.4);
-            box-shadow: 0 8px 32px rgba(205, 127, 50, 0.15), inset 0 0 20px rgba(205, 127, 50, 0.05);
-        }
-        .podium-rank {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .rank-1 .podium-rank { color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-        .rank-2 .podium-rank { color: #c0c0c0; text-shadow: 0 0 10px rgba(192, 192, 192, 0.5); }
-        .rank-3 .podium-rank { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.5); }
-        .podium-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .podium-visits {
-            font-size: 13px;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .podium-btn {
-            display: inline-block;
-            padding: 6px 16px;
-            background: linear-gradient(135deg, var(--accent), #5a4bd4);
-            color: #fff;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .podium-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
-        }
-        .podium-pillar {
-            width: 100px;
-            margin-top: 10px;
-            border-radius: 4px 4px 0 0;
-            position: relative;
-        }
-        .rank-1 .podium-pillar {
-            height: 80px;
-            background: linear-gradient(180deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
-        }
-        .rank-2 .podium-pillar {
-            height: 50px;
-            background: linear-gradient(180deg, rgba(192, 192, 192, 0.3), rgba(192, 192, 192, 0.1));
-        }
-        .rank-3 .podium-pillar {
-            height: 35px;
-            background: linear-gradient(180deg, rgba(205, 127, 50, 0.3), rgba(205, 127, 50, 0.1));
-        }
-        .traffic-list {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .traffic-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            margin-bottom: 8px;
-            transition: all 0.3s;
-        }
-        .traffic-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(108, 92, 231, 0.3);
-            transform: translateX(5px);
-        }
-        .traffic-rank {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-secondary);
-            width: 30px;
-        }
-        .traffic-name {
-            flex: 1;
-            font-size: 14px;
-            color: var(--text-primary);
-        }
-        .traffic-visits {
-            font-size: 13px;
-            color: var(--accent);
-            font-weight: 600;
-            margin-right: 16px;
-        }
-        .traffic-item a {
-            font-size: 12px;
-            color: var(--accent);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        .traffic-item a:hover {
-            opacity: 1;
-        }
-
     </style>
 
 </head>
@@ -4983,117 +4824,23 @@
 
 
 
-    <!-- Traffic Ranking Section -->
-
-    <section class="section" id="trafficRanking">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <h2 class="section-title">流量排行榜 <span>SimilarWeb 2026年4月 · 月访问量估算</span></h2>
-
-            </div>
-
-            <div class="podium-container">
-
-                <div class="podium-item rank-2">
-
-                    <div class="podium-card">
-
-                        <div class="podium-rank">#2</div>
-
-                        <div class="podium-name">SNAKE GPT</div>
-
-                        <div class="podium-visits">15.6K/月</div>
-
-                        <a href="https://snakegpt.vip" target="_blank" class="podium-btn">访问</a>
-
-                    </div>
-
-                    <div class="podium-pillar"></div>
-
-                </div>
-
-                <div class="podium-item rank-1">
-
-                    <div class="podium-crown">👑</div>
-
-                    <div class="podium-card">
-
-                        <div class="podium-rank">#1</div>
-
-                        <div class="podium-name">禾维AI</div>
-
-                        <div class="podium-visits">126.5K/月</div>
-
-                        <a href="https://hvoy.ai" target="_blank" class="podium-btn">访问</a>
-
-                    </div>
-
-                    <div class="podium-pillar"></div>
-
-                </div>
-
-                <div class="podium-item rank-3">
-
-                    <div class="podium-card">
-
-                        <div class="podium-rank">#3</div>
-
-                        <div class="podium-name">API2D</div>
-
-                        <div class="podium-visits">9.1K/月</div>
-
-                        <a href="https://api2d.com" target="_blank" class="podium-btn">访问</a>
-
-                    </div>
-
-                    <div class="podium-pillar"></div>
-
-                </div>
-
-            </div>
-
-            <div class="traffic-list">
-
-                <div class="traffic-item">
-
-                    <span class="traffic-rank">#4</span>
-
-                    <span class="traffic-name">智增增API</span>
-
-                    <span class="traffic-visits">6.2K/月</span>
-
-                    <a href="https://api.zhizengzeng.com" target="_blank">访问 →</a>
-
-                </div>
-
-                <div class="traffic-item">
-
-                    <span class="traffic-rank">#5</span>
-
-                    <span class="traffic-name">诗云API</span>
-
-                    <span class="traffic-visits">4.8K/月</span>
-
-                    <a href="https://shiyunapi.com" target="_blank">访问 →</a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
     <!-- Ranking Section -->
 
     <section class="section" id="ranking">
 
         <div class="container">
+
+            <!-- 热门中转站流量排行榜 - 流体波浪版 -->
+            <div id="trafficRankWidget" style="margin:0 0 30px;padding:0;background:transparent;border:none;border-radius:16px;position:relative;overflow:hidden;height:280px;">
+                <canvas id="trafficCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;cursor:pointer;"></canvas>
+                <div style="position:absolute;top:15px;left:0;right:0;z-index:2;text-align:center;pointer-events:none;">
+                    <h3 style="font-size:16px;font-weight:600;color:#4ecdc4;margin:0 0 4px;display:inline-flex;align-items:center;gap:8px;">
+                        <span style="display:inline-block;width:8px;height:8px;background:#4ecdc4;border-radius:50%;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></span>
+                        热门中转站 · 流量排行
+                    </h3>
+                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb 2026年4月 · 月访问量估算 · 点击波浪访问站点</p>
+                </div>
+            </div>
 
             <div class="section-header">
 
@@ -5141,82 +4888,14 @@
 
 
 
-            <div class="last-update">最近更新：<span id="updateTime">2026-05-17 12:18</span></div>
-
-
+            <div class="last-update">最近更新：<span id="updateTime">2026-05-21 00:35</span></div>
 
             <div class="ranking-list" id="rankingList">
-                <!-- #1 PackyCode -->
-                <div class="rank-card top-1 fade-in" data-tags="claude,gpt,gemini,domestic,cheap">
+                <!-- #1 诗云API(ShiyunApi) -->
+
+
+                <div class="rank-card top-1 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
                     <div class="rank-number">#1</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">PackyCode</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-hot">🔥最热</span>
-                                <span class="tag tag-cheap">超低价</span>
-                                <span class="tag tag-stable">上游供应商</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">国内最早针对Claude Code优化的供应商，已是多家中转站上游。支持阿里百炼、MiniMax(5折)、GLM(9折)、豆包、DeepSeek、千问等国产模型。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">Claude Code优化</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">超低价</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">多站上游</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.15 <small>/10</small></div>
-                        <a href="https://www.packyapi.com/register?aff=zrXb" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #2 星链4SAPI -->
-                <div class="rank-card top-2 fade-in" data-tags="claude,gpt,gemini,enterprise">
-                    <div class="rank-number">#2</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">星链4SAPI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-hot">🏆2026榜首</span>
-                                <span class="tag tag-stable">企业级</span>
-                                <span class="tag tag-stable">高并发</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">2025-2026年全球优质API服务商榜首，政企级全栈方案，全生态整合。高并发场景表现优秀，综合评分99.9/100。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">0.63s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value accent">高并发</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">2026榜首</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.21 <small>/10</small></div>
-                        <a href="https://4sapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #3 诗云API(ShiyunApi) -->
-                <div class="rank-card top-3 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
-                    <div class="rank-number">#3</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">诗云API(ShiyunApi)</span>
@@ -5243,14 +4922,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.53 <small>/10</small></div>
+                        <div class="rank-score">9.89 <small>/10</small></div>
                         <a href="https://shiyunapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #4 RightCode -->
-                <div class="rank-card top-4 fade-in" data-tags="claude,gpt,gemini,cheap">
-                    <div class="rank-number">#4</div>
+                
+
+
+                <!-- #2 PackyCode -->
+
+
+                <div class="rank-card top-2 fade-in" data-tags="claude,gpt,gemini,domestic,cheap">
+                    <div class="rank-number">#2</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">PackyCode</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-hot">🔥最热</span>
+                                <span class="tag tag-cheap">超低价</span>
+                                <span class="tag tag-stable">上游供应商</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">国内最早针对Claude Code优化的供应商，已是多家中转站上游。支持阿里百炼、MiniMax(5折)、GLM(9折)、豆包、DeepSeek、千问等国产模型。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">Claude Code优化</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">超低价</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">多站上游</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">9.80 <small>/10</small></div>
+                        <a href="https://www.packyapi.com/register?aff=zrXb" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #3 RightCode -->
+
+
+                <div class="rank-card top-3 fade-in" data-tags="claude,gpt,gemini,cheap">
+                    <div class="rank-number">#3</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">RightCode</span>
@@ -5277,13 +5000,57 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.37 <small>/10</small></div>
+                        <div class="rank-score">9.60 <small>/10</small></div>
                         <a href="https://www.right.codes/register?aff=56503380" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
+                
+
+
+                <!-- #4 星链4SAPI -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,enterprise">
+                    <div class="rank-number">#4</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">星链4SAPI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-hot">🏆2026榜首</span>
+                                <span class="tag tag-stable">企业级</span>
+                                <span class="tag tag-stable">高并发</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">2025-2026年全球优质API服务商榜首，政企级全栈方案，全生态整合。高并发场景表现优秀，综合评分99.9/100。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">0.63s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value accent">高并发</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">2026榜首</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">9.50 <small>/10</small></div>
+                        <a href="https://4sapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
                 <!-- #5 API易 -->
-                <div class="rank-card top-5 fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic,enterprise">
                     <div class="rank-number">#5</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -5311,13 +5078,18 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.68 <small>/10</small></div>
+                        <div class="rank-score">9.30 <small>/10</small></div>
                         <a href="https://api.easyapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
+                
+
+
                 <!-- #6 ToAPIs -->
-                <div class="rank-card top-6 fade-in" data-tags="claude,gpt,gemini,cheap">
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,cheap">
                     <div class="rank-number">#6</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -5345,48 +5117,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.56 <small>/10</small></div>
+                        <div class="rank-score">9.10 <small>/10</small></div>
                         <a href="https://toapis.com/login?aff=yjH5" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #7 302.AI -->
-                <div class="rank-card top-7 fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#7</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">302.AI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">应用市场</span>
-                                <span class="tag tag-stable">分享码</span>
-                                <span class="tag tag-stable">数百模型</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">数百模型，多源底层(Azure/Bedrock/VertexAI)。分享码机制，知乎机构号运营，社区活跃。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">数百模型</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">多源比价</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value">应用市场</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.00 <small>/10</small></div>
-                        <a href="https://302.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
-                <!-- #8 硅基流动 -->
-                <div class="rank-card top-8 fade-in" data-tags="domestic">
-                    <div class="rank-number">#8</div>
+
+                <!-- #7 硅基流动 -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#7</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">硅基流动</span>
@@ -5413,48 +5156,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.51 <small>/10</small></div>
+                        <div class="rank-score">8.80 <small>/10</small></div>
                         <a href="https://cloud.siliconflow.cn/i/E5yUpjCP" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #9 Ofox.AI -->
-                <div class="rank-card top-9 fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#9</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Ofox.AI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">精品路线</span>
-                                <span class="tag tag-stable">上架快</span>
-                                <span class="tag tag-stable">81模型</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">81个精品模型，主打质量非数量。Opus 4.7/GPT-5.4/Gemini 3.1 Pro等最新模型快速上架。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value green">快速上架</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">精品定价</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">质量优先</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">9.99 <small>/10</small></div>
-                        <a href="https://ofox.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
-                <!-- #10 IKunCode -->
-                <div class="rank-card top-10 fade-in" data-tags="claude,gpt">
-                    <div class="rank-number">#10</div>
+
+                <!-- #8 IKunCode -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt">
+                    <div class="rank-number">#8</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">IKunCode</span>
@@ -5481,116 +5195,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.15 <small>/10</small></div>
+                        <div class="rank-score">8.00 <small>/10</small></div>
                         <a href="https://api.ikuncode.cc" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #11 OpenRouter -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#11</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">OpenRouter</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">海外原生</span>
-                                <span class="tag tag-stable">250k+应用</span>
-                                <span class="tag tag-stable">60+Provider</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">全球最知名LLM API聚合商，60+Provider。a16z/Stripe引用，生态成熟可靠。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value green">全球聚合</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">按量付费</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">a16z引用</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.90 <small>/10</small></div>
-                        <a href="https://openrouter.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
-                <!-- #12 SSSAICode -->
-                <div class="rank-card fade-in" data-tags="claude,gpt">
-                    <div class="rank-number">#12</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">SSSAICode</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">双节点</span>
-                                <span class="tag tag-stable">包月划算</span>
-                                <span class="tag tag-stable">文档完善</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">香港和美国双API节点，接口响应快。包月套餐性价比不错，文档完善。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">双节点部署</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value accent">$300额度/月</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">文档完善</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.26 <small>/10</small></div>
-                        <a href="https://www.sssaicode.com/register?ref=BO64DM" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
 
-                <!-- #13 147AI -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#13</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">147AI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">多源备份</span>
-                                <span class="tag tag-stable">上架快</span>
-                                <span class="tag tag-stable">故障切换</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">多源底层，故障切换能力强。Claude/GPT/Gemini全覆盖，新模型上架速度快。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">0.55s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">多源底层</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value">按量计费</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.15 <small>/10</small></div>
-                        <a href="https://147ai.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                <!-- #9 木瓜AI -->
 
-                <!-- #14 木瓜AI -->
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#14</div>
+                    <div class="rank-number">#9</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">木瓜AI</span>
@@ -5617,14 +5234,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.44 <small>/10</small></div>
+                        <div class="rank-score">7.87 <small>/10</small></div>
                         <a href="https://api.mooko.ai/register?aff=JiqY" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #15 DMXAPI -->
+                
+
+
+                <!-- #10 302.AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#15</div>
+                    <div class="rank-number">#10</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">302.AI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">应用市场</span>
+                                <span class="tag tag-stable">分享码</span>
+                                <span class="tag tag-stable">数百模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">数百模型，多源底层(Azure/Bedrock/VertexAI)。分享码机制，知乎机构号运营，社区活跃。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">数百模型</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">多源比价</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value">应用市场</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.80 <small>/10</small></div>
+                        <a href="https://302.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #11 DMXAPI -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#11</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">DMXAPI</span>
@@ -5651,14 +5312,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.51 <small>/10</small></div>
+                        <div class="rank-score">7.72 <small>/10</small></div>
                         <a href="https://dmxapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #16 向量引擎 -->
+                
+
+
+                <!-- #12 147AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#16</div>
+                    <div class="rank-number">#12</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">147AI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">多源备份</span>
+                                <span class="tag tag-stable">上架快</span>
+                                <span class="tag tag-stable">故障切换</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">多源底层，故障切换能力强。Claude/GPT/Gemini全覆盖，新模型上架速度快。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">0.55s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value accent">多源底层</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value">按量计费</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.70 <small>/10</small></div>
+                        <a href="https://147ai.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #13 向量引擎 -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#13</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">向量引擎</span>
@@ -5685,82 +5390,97 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.81 <small>/10</small></div>
+                        <div class="rank-score">7.63 <small>/10</small></div>
                         <a href="https://api.vectorengine.ai/register?aff=xIFd" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #17 aigocode -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#17</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">aigocode</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">无掺水</span>
-                                <span class="tag tag-stable">口碑好</span>
-                                <span class="tag tag-stable">包月划算</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">口碑极佳的API中转站，实测无掺水无降智。支持Claude 4.6/Codex 5.3/Gemini 3，模型响应质量与官方一致。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">实测无掺水</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value accent">1.40s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">口碑极佳</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.66 <small>/10</small></div>
-                        <a href="https://aigocode.com/invite/FY2CMDBZ" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
-                <!-- #18 灵芽API -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#18</div>
+
+                <!-- #14 OpenRouter -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#14</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
-                            <span class="rank-name">灵芽API</span>
+                            <span class="rank-name">OpenRouter</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">650+模型</span>
-                                <span class="tag tag-stable">国内直连</span>
-                                <span class="tag tag-stable">按量计费</span>
+                                                                <span class="tag tag-stable">海外原生</span>
+                                <span class="tag tag-stable">250k+应用</span>
+                                <span class="tag tag-stable">60+Provider</span>
                             </div>
                         </div>
-                        <div class="rank-desc">聚合650+主流AI模型，国内直连低延迟。支持支付宝/微信，按量计费透明。</div>
+                        <div class="rank-desc">全球最知名LLM API聚合商，60+Provider。a16z/Stripe引用，生态成熟可靠。</div>
                         <div class="rank-metrics">
                             <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value green">支付宝充值</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">650+模型</span>
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value green">全球聚合</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">价格</span>
-                                <span class="metric-value">按量透明</span>
+                                <span class="metric-value accent">按量付费</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">a16z引用</span>
                             </div>
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.60 <small>/10</small></div>
-                        <a href="https://api.lingyaai.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
+                        <div class="rank-score">7.60 <small>/10</small></div>
+                        <a href="https://openrouter.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #19 Fchat API (aioncode) -->
+                
+
+
+                <!-- #15 SSSAICode -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt">
+                    <div class="rank-number">#15</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">SSSAICode</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">双节点</span>
+                                <span class="tag tag-stable">包月划算</span>
+                                <span class="tag tag-stable">文档完善</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">香港和美国双API节点，接口响应快。包月套餐性价比不错，文档完善。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">双节点部署</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value accent">$300额度/月</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">文档完善</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.60 <small>/10</small></div>
+                        <a href="https://www.sssaicode.com/register?ref=BO64DM" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #16 Fchat API (aioncode) -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#19</div>
+                    <div class="rank-number">#16</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Fchat API (aioncode)</span>
@@ -5787,12 +5507,134 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.15 <small>/10</small></div>
+                        <div class="rank-score">7.59 <small>/10</small></div>
                         <a href="https://aioncode.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
+                
+
+
+                <!-- #17 SnakeGPT -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic">
+                    <div class="rank-number">#17</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">SnakeGPT</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">4年老牌</span>
+                                <span class="tag tag-stable">国内直连</span>
+                                <span class="tag tag-stable">多模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">4年老牌平台，国内直连无需翻墙。首发GPT-5.5/Claude 4全系模型，聚合GPT、Gemini、Claude、Grok、DeepSeek等多模型。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">福利</span>
+                                <span class="metric-value green">国内直连</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value accent">无需翻墙</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">首发模型</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.56 <small>/10</small></div>
+                        <a href="https://snakegpt.vip" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #18 aigocode -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#18</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">aigocode</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">无掺水</span>
+                                <span class="tag tag-stable">口碑好</span>
+                                <span class="tag tag-stable">包月划算</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">口碑极佳的API中转站，实测无掺水无降智。支持Claude 4.6/Codex 5.3/Gemini 3，模型响应质量与官方一致。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">实测无掺水</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value accent">1.40s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">口碑极佳</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.53 <small>/10</small></div>
+                        <a href="https://aigocode.com/invite/FY2CMDBZ" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #19 灵芽API -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic">
+                    <div class="rank-number">#19</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">灵芽API</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">650+模型</span>
+                                <span class="tag tag-stable">国内直连</span>
+                                <span class="tag tag-stable">按量计费</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">聚合650+主流AI模型，国内直连低延迟。支持支付宝/微信，按量计费透明。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value green">支付宝充值</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value accent">650+模型</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value">按量透明</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.51 <small>/10</small></div>
+                        <a href="https://api.lingyaai.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
                 <!-- #20 Save AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini,image">
                     <div class="rank-number">#20</div>
                     <div class="rank-info">
@@ -5821,12 +5663,17 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.11 <small>/10</small></div>
+                        <div class="rank-score">7.46 <small>/10</small></div>
                         <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
+                
+
+
                 <!-- #21 产灵API -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt">
                     <div class="rank-number">#21</div>
                     <div class="rank-info">
@@ -5855,14 +5702,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.72 <small>/10</small></div>
+                        <div class="rank-score">7.42 <small>/10</small></div>
                         <a href="https://xdhdancer.top" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #22 AIHubMix -->
+                
+
+
+                <!-- #22 Ofox.AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#22</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">Ofox.AI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">精品路线</span>
+                                <span class="tag tag-stable">上架快</span>
+                                <span class="tag tag-stable">81模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">81个精品模型，主打质量非数量。Opus 4.7/GPT-5.4/Gemini 3.1 Pro等最新模型快速上架。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value green">快速上架</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">精品定价</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">质量优先</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.40 <small>/10</small></div>
+                        <a href="https://ofox.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #23 AIHubMix -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#23</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AIHubMix</span>
@@ -5889,14 +5780,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.30 <small>/10</small></div>
+                        <div class="rank-score">7.37 <small>/10</small></div>
                         <a href="https://aihubmix.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #23 WildCard API -->
+                
+
+
+                <!-- #24 WildCard API -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt">
-                    <div class="rank-number">#23</div>
+                    <div class="rank-number">#24</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">WildCard API</span>
@@ -5923,46 +5819,17 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
+                        <div class="rank-score">7.37 <small>/10</small></div>
                         <a href="https://bewildcard.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #24 造图局 -->
-                <div class="rank-card fade-in" data-tags="image,gpt">
-                    <div class="rank-number">#24</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">造图局</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">AI生图</span>
-                                <span class="tag tag-stable">GPT生图</span>
-                                <span class="tag tag-stable">双渠道</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">专注AI生图，GPT Image等模型。支持性价比渠道和稳定渠道4K两种模式，可上传参考图（最多5张）。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value green">GPT生图</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">双渠道模式</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value">4K模式</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.05 <small>/10</small></div>
-                        <a href="https://zaotu.vip/?invite=yuyTxd3t" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
+
 
                 <!-- #25 API2D -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic">
                     <div class="rank-number">#25</div>
                     <div class="rank-info">
@@ -5991,14 +5858,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.00 <small>/10</small></div>
+                        <div class="rank-score">7.27 <small>/10</small></div>
                         <a href="https://api2d.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #26 GptsAPI -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                
+
+
+                <!-- #26 造图局 -->
+
+
+                <div class="rank-card fade-in" data-tags="image,gpt">
                     <div class="rank-number">#26</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">造图局</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">AI生图</span>
+                                <span class="tag tag-stable">GPT生图</span>
+                                <span class="tag tag-stable">双渠道</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">专注AI生图，GPT Image等模型。支持性价比渠道和稳定渠道4K两种模式，可上传参考图（最多5张）。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value green">GPT生图</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">双渠道模式</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value">4K模式</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.22 <small>/10</small></div>
+                        <a href="https://zaotu.vip/?invite=yuyTxd3t" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #27 GptsAPI -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#27</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">GptsAPI</span>
@@ -6025,14 +5936,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.81 <small>/10</small></div>
+                        <div class="rank-score">7.11 <small>/10</small></div>
                         <a href="https://gptsapi.net" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #27 接口AI (Jiekou AI) -->
+                
+
+
+                <!-- #28 接口AI (Jiekou AI) -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#27</div>
+                    <div class="rank-number">#28</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">接口AI (Jiekou AI)</span>
@@ -6059,14 +5975,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.99 <small>/10</small></div>
+                        <div class="rank-score">7.08 <small>/10</small></div>
                         <a href="https://jiekou.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #28 N1N.AI -->
+                
+
+
+                <!-- #29 GPTCat -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic,cheap">
+                    <div class="rank-number">#29</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">GPTCat</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">猫咪主题</span>
+                                <span class="tag tag-stable">高性价比</span>
+                                <span class="tag tag-stable">多模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">GPT中文引导站，提供GPT镜像服务，支持多种AI模型切换。多镜像站点保障可用性，有ICP备案。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">1.61s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value accent">ICP备案</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value">多镜像保障</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">7.02 <small>/10</small></div>
+                        <a href="https://gptcat.cc" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #30 N1N.AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#28</div>
+                    <div class="rank-number">#30</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">N1N.AI</span>
@@ -6093,14 +6053,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.21 <small>/10</small></div>
+                        <div class="rank-score">6.96 <small>/10</small></div>
                         <a href="https://n1n.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #29 AgentRouter -->
+                
+
+
+                <!-- #31 AgentRouter -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#29</div>
+                    <div class="rank-number">#31</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AgentRouter</span>
@@ -6127,80 +6092,17 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.97 <small>/10</small></div>
+                        <div class="rank-score">6.93 <small>/10</small></div>
                         <a href="https://agentrouter.org" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #30 Doro API -->
-                <div class="rank-card fade-in" data-tags="claude,gpt">
-                    <div class="rank-number">#30</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Doro API</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
-                                <span class="tag tag-stable">价格实惠</span>
-                                <span class="tag tag-stable">按量计费</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">社区推荐的新兴中转站，专注Claude和GPT系列，价格实惠，按量计费。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">1.35s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">价格实惠</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value">Claude+GPT</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://doro.lol" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
-                <!-- #31 BerryPi Pool -->
-                <div class="rank-card fade-in" data-tags="domestic,cheap,image">
-                    <div class="rank-number">#31</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">BerryPi Pool</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-cheap">限时特惠</span>
-                                <span class="tag tag-stable">负载均衡</span>
-                                <span class="tag tag-stable">多模型</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">人人用得上顶级大模型。支持自动切换、负载均衡，Token套餐制计费，支持图像生成和视频生成。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value green">图像+视频</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value accent">1.20s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value">Token套餐</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://www.berrypi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
 
                 <!-- #32 Jeniya AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#32</div>
                     <div class="rank-info">
@@ -6229,82 +6131,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.44 <small>/10</small></div>
+                        <div class="rank-score">6.89 <small>/10</small></div>
                         <a href="https://jeniya.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #33 SnakeGPT -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic">
+                
+
+
+                <!-- #33 Doro API -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt">
                     <div class="rank-number">#33</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
-                            <span class="rank-name">SnakeGPT</span>
+                            <span class="rank-name">Doro API</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">4年老牌</span>
-                                <span class="tag tag-stable">国内直连</span>
-                                <span class="tag tag-stable">多模型</span>
+                                                                <span class="tag tag-stable">新收录</span>
+                                <span class="tag tag-stable">价格实惠</span>
+                                <span class="tag tag-stable">按量计费</span>
                             </div>
                         </div>
-                        <div class="rank-desc">4年老牌平台，国内直连无需翻墙。首发GPT-5.5/Claude 4全系模型，聚合GPT、Gemini、Claude、Grok、DeepSeek等多模型。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">福利</span>
-                                <span class="metric-value green">国内直连</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value accent">无需翻墙</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">首发模型</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.59 <small>/10</small></div>
-                        <a href="https://snakegpt.vip" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #34 GPTCat -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic,cheap">
-                    <div class="rank-number">#34</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">GPTCat</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">猫咪主题</span>
-                                <span class="tag tag-stable">高性价比</span>
-                                <span class="tag tag-stable">多模型</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">GPT中文引导站，提供GPT镜像服务，支持多种AI模型切换。多镜像站点保障可用性，有ICP备案。</div>
+                        <div class="rank-desc">社区推荐的新兴中转站，专注Claude和GPT系列，价格实惠，按量计费。</div>
                         <div class="rank-metrics">
                             <div class="metric">
                                 <span class="metric-label">响应</span>
-                                <span class="metric-value green">1.61s</span>
+                                <span class="metric-value green">1.35s</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value accent">ICP备案</span>
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">价格实惠</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value">多镜像保障</span>
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value">Claude+GPT</span>
                             </div>
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.04 <small>/10</small></div>
-                        <a href="https://gptcat.cc" target="_blank" class="btn btn-primary">立即访问 →</a>
+                        <div class="rank-score">6.81 <small>/10</small></div>
+                        <a href="https://doro.lol" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #35 hongmaccAPI -->
+                
+
+
+                <!-- #34 hongmaccAPI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#35</div>
+                    <div class="rank-number">#34</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">hongmaccAPI</span>
@@ -6331,14 +6209,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.26 <small>/10</small></div>
+                        <div class="rank-score">6.77 <small>/10</small></div>
                         <a href="https://hongmacc.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #36 APIYI -->
+                
+
+
+                <!-- #35 APIYI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#36</div>
+                    <div class="rank-number">#35</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">APIYI</span>
@@ -6365,14 +6248,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.27 <small>/10</small></div>
+                        <div class="rank-score">6.66 <small>/10</small></div>
                         <a href="https://api.apiyi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #37 Weelinking -->
+                
+
+
+                <!-- #36 Weelinking -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#37</div>
+                    <div class="rank-number">#36</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Weelinking</span>
@@ -6399,14 +6287,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.17 <small>/10</small></div>
+                        <div class="rank-score">6.63 <small>/10</small></div>
                         <a href="https://api.weelinking.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #38 百度千帆 -->
+                
+
+
+                <!-- #37 百度千帆 -->
+
+
                 <div class="rank-card fade-in" data-tags="domestic,enterprise">
-                    <div class="rank-number">#38</div>
+                    <div class="rank-number">#37</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">百度千帆</span>
@@ -6433,14 +6326,97 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.80 <small>/10</small></div>
+                        <div class="rank-score">6.59 <small>/10</small></div>
                         <a href="https://qianfan.baidubce.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #39 FishXCode -->
-                <div class="rank-card fade-in" data-tags="claude,gpt">
+                
+
+
+                <!-- #38 禾维AI (hvoy.ai) -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,deepseek,cheap">
+                    <div class="rank-number">#38</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">禾维AI (hvoy.ai)</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">新收录</span>
+                                <span class="tag tag-stable">国内直连</span>
+                                <span class="tag tag-stable">多模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">新兴AI API中转站，支持Claude、GPT、Gemini等主流模型，国内直连，价格实惠。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value green">新收录</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">价格实惠</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value">国内直连</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">6.58 <small>/10</small></div>
+                        <a href="https://hvoy.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #39 BerryPi Pool -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic,cheap,image">
                     <div class="rank-number">#39</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">BerryPi Pool</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-cheap">限时特惠</span>
+                                <span class="tag tag-stable">负载均衡</span>
+                                <span class="tag tag-stable">多模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">人人用得上顶级大模型。支持自动切换、负载均衡，Token套餐制计费，支持图像生成和视频生成。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value green">图像+视频</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value accent">1.20s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value">Token套餐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">6.50 <small>/10</small></div>
+                        <a href="https://www.berrypi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #40 FishXCode -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt">
+                    <div class="rank-number">#40</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">FishXCode</span>
@@ -6467,46 +6443,17 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.73 <small>/10</small></div>
+                        <div class="rank-score">6.47 <small>/10</small></div>
                         <a href="https://fishxcode.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #40 智谱AI (BigModel) -->
-                <div class="rank-card fade-in" data-tags="domestic,enterprise">
-                    <div class="rank-number">#40</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">智谱AI (BigModel)</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">智谱官方</span>
-                                <span class="tag tag-stable">GLM原生</span>
-                                <span class="tag tag-stable">学术合作</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">智谱AI官方平台，GLM系列模型原生支持。学术合作广泛。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value green">GLM原生</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value accent">学术场景</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value">按量计费</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.80 <small>/10</small></div>
-                        <a href="https://bigmodel.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
+
 
                 <!-- #41 0011AI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
                     <div class="rank-number">#41</div>
                     <div class="rank-info">
@@ -6535,474 +6482,37 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.72 <small>/10</small></div>
+                        <div class="rank-score">6.39 <small>/10</small></div>
                         <a href="https://0011.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #42 API Mart -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                
+
+
+                <!-- #42 智谱AI (BigModel) -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic,enterprise">
                     <div class="rank-number">#42</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
-                            <span class="rank-name">API Mart</span>
+                            <span class="rank-name">智谱AI (BigModel)</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">API市场</span>
-                                <span class="tag tag-stable">企业级采购</span>
-                                <span class="tag tag-stable">多供应商</span>
+                                                                <span class="tag tag-stable">智谱官方</span>
+                                <span class="tag tag-stable">GLM原生</span>
+                                <span class="tag tag-stable">学术合作</span>
                             </div>
                         </div>
-                        <div class="rank-desc">API聚合市场平台，提供多种AI模型接口，适合企业级采购。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">API市场</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value accent">聚合平台</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">多供应商</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">9.99 <small>/10</small></div>
-                        <a href="https://apimart.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #43 豆包API(火山引擎) -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#43</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">豆包API(火山引擎)</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">字节官方</span>
-                                <span class="tag tag-stable">豆包原生</span>
-                                <span class="tag tag-stable">企业级</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">字节跳动官方API入口，豆包大模型原生支持。企业级合规稳定。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value green">企业级稳定</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">超低价</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">豆包原生</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.80 <small>/10</small></div>
-                        <a href="https://www.volcengine.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #44 月之暗面 (Kimi) -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#44</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">月之暗面 (Kimi)</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">Kimi官方</span>
-                                <span class="tag tag-stable">超长上下文</span>
-                                <span class="tag tag-stable">200万字</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">月之暗面官方API，Kimi模型原生支持。超长上下文能力突出，支持200万字。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">0.32s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">Kimi官方</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value">长文本</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.80 <small>/10</small></div>
-                        <a href="https://platform.moonshot.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #45 DeepSeek API -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#45</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">DeepSeek API</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">官方接口</span>
-                                <span class="tag tag-stable">性价比之王</span>
-                                <span class="tag tag-stable">开源模型</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">DeepSeek官方API，价格极低，开源模型。不支持Claude/GPT，仅提供自家模型。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">DeepSeek官方</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">福利</span>
-                                <span class="metric-value accent">开源免费</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value">超低价</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.80 <small>/10</small></div>
-                        <a href="https://platform.deepseek.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #46 零一万物 (Yi) -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#46</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">零一万物 (Yi)</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">Yi官方</span>
-                                <span class="tag tag-stable">开源模型</span>
-                                <span class="tag tag-stable">李开复团队</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">零一万物官方API，Yi系列开源模型。李开复团队出品。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value green">Yi系列</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value accent">开源模型</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value">1.56s</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://platform.lingyiwanwu.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #47 讯飞星火 -->
-                <div class="rank-card fade-in" data-tags="domestic,enterprise">
-                    <div class="rank-number">#47</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">讯飞星火</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">讯飞官方</span>
-                                <span class="tag tag-stable">语音强项</span>
-                                <span class="tag tag-stable">多模态</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">科大讯飞官方API，星火大模型。语音识别/合成能力行业领先。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value green">按量计费</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value accent">语音能力</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value">讯飞官方</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://xinghuo.xfyun.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #48 通义千问API(阿里百炼) -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#48</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">通义千问API(阿里百炼)</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">阿里官方</span>
-                                <span class="tag tag-stable">千问原生</span>
-                                <span class="tag tag-stable">企业级SLA</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">阿里云百炼平台，通义千问原生支持。企业级SLA保障。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">阿里官方</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value accent">0.16s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">企业级保障</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.80 <small>/10</small></div>
-                        <a href="https://bailian.console.aliyun.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #49 Mistral AI -->
-                <div class="rank-card fade-in" data-tags="gpt">
-                    <div class="rank-number">#49</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Mistral AI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">欧洲开源</span>
-                                <span class="tag tag-stable">混合专家</span>
-                                <span class="tag tag-stable">高性能</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">欧洲领先AI公司，Mistral系列开源模型。混合专家架构性能出色。</div>
+                        <div class="rank-desc">智谱AI官方平台，GLM系列模型原生支持。学术合作广泛。</div>
                         <div class="rank-metrics">
                             <div class="metric">
                                 <span class="metric-label">口碑</span>
-                                <span class="metric-value green">高性能</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">欧洲领先</span>
+                                <span class="metric-value green">GLM原生</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">应用</span>
-                                <span class="metric-value">混合专家</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://console.mistral.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #50 MiniMax API -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#50</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">MiniMax API</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">官方接口</span>
-                                <span class="tag tag-stable">海螺AI</span>
-                                <span class="tag tag-stable">多模态</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">MiniMax官方API，海螺AI底层模型。文本/语音多模态。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">0.33s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">按量计费</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value">海螺AI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://www.minimaxi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #51 Cohere -->
-                <div class="rank-card fade-in" data-tags="gpt">
-                    <div class="rank-number">#51</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Cohere</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">企业搜索</span>
-                                <span class="tag tag-stable">RAG专精</span>
-                                <span class="tag tag-stable">多语言</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">企业级搜索和RAG专精，Command系列模型。多语言能力强。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value green">Command系列</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">按量计费</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value">RAG专精</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://dashboard.cohere.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #52 百川智能 -->
-                <div class="rank-card fade-in" data-tags="domestic">
-                    <div class="rank-number">#52</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">百川智能</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">百川官方</span>
-                                <span class="tag tag-stable">中文优化</span>
-                                <span class="tag tag-stable">多场景</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">百川智能官方API，百川系列大模型。中文理解能力优秀。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value green">中文优化</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value accent">多场景</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value">0.33s</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://platform.baichuan-ai.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #53 Groq -->
-                <div class="rank-card fade-in" data-tags="claude,gpt">
-                    <div class="rank-number">#53</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Groq</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">极速推理</span>
-                                <span class="tag tag-stable">LPU芯片</span>
-                                <span class="tag tag-stable">超低延迟</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">自研LPU推理芯片，推理速度极快。支持开源模型，延迟超低。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">LPU芯片</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">按量计费</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value">开源模型</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://console.groq.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #54 Together AI -->
-                <div class="rank-card fade-in" data-tags="gpt">
-                    <div class="rank-number">#54</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Together AI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">开源推理</span>
-                                <span class="tag tag-stable">托管服务</span>
-                                <span class="tag tag-stable">按量付费</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">开源模型推理托管服务，支持Llama/Mixtral等。按量付费。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">0.72s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value accent">Llama/Mixtral</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">托管服务</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://api.together.xyz" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #55 Fireworks AI -->
-                <div class="rank-card fade-in" data-tags="claude">
-                    <div class="rank-number">#55</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">Fireworks AI</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">快速推理</span>
-                                <span class="tag tag-stable">微调服务</span>
-                                <span class="tag tag-stable">低延迟</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">快速开源模型推理+微调服务。延迟低，支持自定义模型。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value green">快速推理</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value accent">微调服务</span>
+                                <span class="metric-value accent">学术场景</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">价格</span>
@@ -7011,82 +6521,19 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://fireworks.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                        <div class="rank-score">6.37 <small>/10</small></div>
+                        <a href="https://bigmodel.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #56 DeepInfra -->
-                <div class="rank-card fade-in" data-tags="gpt">
-                    <div class="rank-number">#56</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">DeepInfra</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-cheap">超低价推理</span>
-                                <span class="tag tag-stable">开源模型</span>
-                                <span class="tag tag-stable">Llama/Mistral</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">号称最便宜的开源模型推理API。支持Llama/Mistral等，价格极低。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value green">开源推理</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value accent">0.35s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value">开源模型</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
-                        <a href="https://deepinfra.com" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
-                <!-- #57 禾维AI (hvoy.ai) -->
+
+                <!-- #43 智增增 -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini,deepseek,cheap">
-                    <div class="rank-number">#57</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">禾维AI (hvoy.ai)</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
-                                <span class="tag tag-stable">国内直连</span>
-                                <span class="tag tag-stable">多模型</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">新兴AI API中转站，支持Claude、GPT、Gemini等主流模型，国内直连，价格实惠。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value green">新收录</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value accent">价格实惠</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value">国内直连</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">8.34 <small>/10</small></div>
-                        <a href="https://hvoy.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                <!-- #58 智增增 -->
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,deepseek,cheap">
-                    <div class="rank-number">#58</div>
+                    <div class="rank-number">#43</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">智增增</span>
@@ -7113,14 +6560,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.08 <small>/10</small></div>
+                        <div class="rank-score">6.36 <small>/10</small></div>
                         <a href="https://api.zhizengzeng.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #59 AI中文版 -->
+                
+
+
+                <!-- #44 API Mart -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
+                    <div class="rank-number">#44</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">API Mart</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">API市场</span>
+                                <span class="tag tag-stable">企业级采购</span>
+                                <span class="tag tag-stable">多供应商</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">API聚合市场平台，提供多种AI模型接口，适合企业级采购。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">API市场</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value accent">聚合平台</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">多供应商</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">6.25 <small>/10</small></div>
+                        <a href="https://apimart.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #45 AI中文版 -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini,domestic,cheap">
-                    <div class="rank-number">#59</div>
+                    <div class="rank-number">#45</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AI中文版</span>
@@ -7147,14 +6638,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
+                        <div class="rank-score">6.22 <small>/10</small></div>
                         <a href="https://ai.huoyachat.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #60 OpenAI-SB -->
+                
+
+
+                <!-- #46 豆包API(火山引擎) -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#46</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">豆包API(火山引擎)</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">字节官方</span>
+                                <span class="tag tag-stable">豆包原生</span>
+                                <span class="tag tag-stable">企业级</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">字节跳动官方API入口，豆包大模型原生支持。企业级合规稳定。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value green">企业级稳定</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">超低价</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">豆包原生</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">6.06 <small>/10</small></div>
+                        <a href="https://www.volcengine.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #47 OpenAI-SB -->
+
+
                 <div class="rank-card fade-in" data-tags="gpt,claude,cheap">
-                    <div class="rank-number">#60</div>
+                    <div class="rank-number">#47</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">OpenAI-SB</span>
@@ -7181,14 +6716,58 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
+                        <div class="rank-score">6.02 <small>/10</small></div>
                         <a href="https://openai-sb.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
-                <!-- #61 CloseAI -->
+                
+
+
+                <!-- #48 月之暗面 (Kimi) -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#48</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">月之暗面 (Kimi)</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">Kimi官方</span>
+                                <span class="tag tag-stable">超长上下文</span>
+                                <span class="tag tag-stable">200万字</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">月之暗面官方API，Kimi模型原生支持。超长上下文能力突出，支持200万字。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">0.32s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value accent">Kimi官方</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value">长文本</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">6.01 <small>/10</small></div>
+                        <a href="https://platform.moonshot.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #49 CloseAI -->
+
+
                 <div class="rank-card fade-in" data-tags="claude,gpt,cheap">
-                    <div class="rank-number">#61</div>
+                    <div class="rank-number">#49</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">CloseAI</span>
@@ -7215,10 +6794,480 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">7.50 <small>/10</small></div>
+                        <div class="rank-score">5.91 <small>/10</small></div>
                         <a href="https://closeai-asia.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
+
+
+
+                <!-- #50 零一万物 (Yi) -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#50</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">零一万物 (Yi)</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">Yi官方</span>
+                                <span class="tag tag-stable">开源模型</span>
+                                <span class="tag tag-stable">李开复团队</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">零一万物官方API，Yi系列开源模型。李开复团队出品。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value green">Yi系列</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value accent">开源模型</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value">1.56s</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.88 <small>/10</small></div>
+                        <a href="https://platform.lingyiwanwu.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #51 DeepSeek API -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#51</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">DeepSeek API</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">官方接口</span>
+                                <span class="tag tag-stable">性价比之王</span>
+                                <span class="tag tag-stable">开源模型</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">DeepSeek官方API，价格极低，开源模型。不支持Claude/GPT，仅提供自家模型。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">DeepSeek官方</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">福利</span>
+                                <span class="metric-value accent">开源免费</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value">超低价</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.82 <small>/10</small></div>
+                        <a href="https://platform.deepseek.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #52 讯飞星火 -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic,enterprise">
+                    <div class="rank-number">#52</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">讯飞星火</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">讯飞官方</span>
+                                <span class="tag tag-stable">语音强项</span>
+                                <span class="tag tag-stable">多模态</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">科大讯飞官方API，星火大模型。语音识别/合成能力行业领先。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value green">按量计费</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value accent">语音能力</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value">讯飞官方</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.72 <small>/10</small></div>
+                        <a href="https://xinghuo.xfyun.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #53 通义千问API(阿里百炼) -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#53</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">通义千问API(阿里百炼)</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">阿里官方</span>
+                                <span class="tag tag-stable">千问原生</span>
+                                <span class="tag tag-stable">企业级SLA</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">阿里云百炼平台，通义千问原生支持。企业级SLA保障。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">阿里官方</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value accent">0.16s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">企业级保障</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.55 <small>/10</small></div>
+                        <a href="https://bailian.console.aliyun.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #54 Mistral AI -->
+
+
+                <div class="rank-card fade-in" data-tags="gpt">
+                    <div class="rank-number">#54</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">Mistral AI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">欧洲开源</span>
+                                <span class="tag tag-stable">混合专家</span>
+                                <span class="tag tag-stable">高性能</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">欧洲领先AI公司，Mistral系列开源模型。混合专家架构性能出色。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value green">高性能</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value accent">欧洲领先</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value">混合专家</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.53 <small>/10</small></div>
+                        <a href="https://console.mistral.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #55 MiniMax API -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#55</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">MiniMax API</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">官方接口</span>
+                                <span class="tag tag-stable">海螺AI</span>
+                                <span class="tag tag-stable">多模态</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">MiniMax官方API，海螺AI底层模型。文本/语音多模态。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">0.33s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">按量计费</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value">海螺AI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.38 <small>/10</small></div>
+                        <a href="https://www.minimaxi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #56 Cohere -->
+
+
+                <div class="rank-card fade-in" data-tags="gpt">
+                    <div class="rank-number">#56</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">Cohere</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">企业搜索</span>
+                                <span class="tag tag-stable">RAG专精</span>
+                                <span class="tag tag-stable">多语言</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">企业级搜索和RAG专精，Command系列模型。多语言能力强。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value green">Command系列</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">按量计费</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value">RAG专精</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.32 <small>/10</small></div>
+                        <a href="https://dashboard.cohere.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #57 百川智能 -->
+
+
+                <div class="rank-card fade-in" data-tags="domestic">
+                    <div class="rank-number">#57</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">百川智能</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">百川官方</span>
+                                <span class="tag tag-stable">中文优化</span>
+                                <span class="tag tag-stable">多场景</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">百川智能官方API，百川系列大模型。中文理解能力优秀。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value green">中文优化</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value accent">多场景</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value">0.33s</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.25 <small>/10</small></div>
+                        <a href="https://platform.baichuan-ai.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #58 Groq -->
+
+
+                <div class="rank-card fade-in" data-tags="claude,gpt">
+                    <div class="rank-number">#58</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">Groq</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">极速推理</span>
+                                <span class="tag tag-stable">LPU芯片</span>
+                                <span class="tag tag-stable">超低延迟</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">自研LPU推理芯片，推理速度极快。支持开源模型，延迟超低。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">LPU芯片</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value accent">按量计费</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value">开源模型</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">5.04 <small>/10</small></div>
+                        <a href="https://console.groq.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #59 Together AI -->
+
+
+                <div class="rank-card fade-in" data-tags="gpt">
+                    <div class="rank-number">#59</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">Together AI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">开源推理</span>
+                                <span class="tag tag-stable">托管服务</span>
+                                <span class="tag tag-stable">按量付费</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">开源模型推理托管服务，支持Llama/Mixtral等。按量付费。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">0.72s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value accent">Llama/Mixtral</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">托管服务</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">4.83 <small>/10</small></div>
+                        <a href="https://api.together.xyz" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #60 Fireworks AI -->
+
+
+                <div class="rank-card fade-in" data-tags="claude">
+                    <div class="rank-number">#60</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">Fireworks AI</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-stable">快速推理</span>
+                                <span class="tag tag-stable">微调服务</span>
+                                <span class="tag tag-stable">低延迟</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">快速开源模型推理+微调服务。延迟低，支持自定义模型。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value green">快速推理</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">优惠</span>
+                                <span class="metric-value accent">微调服务</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">价格</span>
+                                <span class="metric-value">按量计费</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">4.52 <small>/10</small></div>
+                        <a href="https://fireworks.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- #61 DeepInfra -->
+
+
+                <div class="rank-card fade-in" data-tags="gpt">
+                    <div class="rank-number">#61</div>
+                    <div class="rank-info">
+                        <div class="rank-info-top">
+                            <span class="rank-name">DeepInfra</span>
+                            <div class="rank-tags">
+                                                                <span class="tag tag-cheap">超低价推理</span>
+                                <span class="tag tag-stable">开源模型</span>
+                                <span class="tag tag-stable">Llama/Mistral</span>
+                            </div>
+                        </div>
+                        <div class="rank-desc">号称最便宜的开源模型推理API。支持Llama/Mistral等，价格极低。</div>
+                        <div class="rank-metrics">
+                            <div class="metric">
+                                <span class="metric-label">应用</span>
+                                <span class="metric-value green">开源推理</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value accent">0.35s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">专业</span>
+                                <span class="metric-value">开源模型</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-action">
+                        <div class="rank-score">4.33 <small>/10</small></div>
+                        <a href="https://deepinfra.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    </div>
+                </div>
+
+                
+
 
             </div>
 
@@ -9864,23 +9913,12 @@
             try {
                 // 只加载 approved_stations.json（admin审核通过的站点）
                 // pending_stations.json 中的待审核站点不会自动进入排行榜，必须经过审核
-                let approved = [];
-                try {
-                    const resp = await fetch('data/approved_stations.json');
-                    if (resp.ok) approved = await resp.json();
-                } catch(e) {}
+                const approved = await fetchOnce('data/approved_stations.json');
                 
                 if (!Array.isArray(approved) || approved.length === 0) return;
                 
-                // 获取已有硬编码卡片的URL集合，防止重复
-                const rankingList = document.getElementById('rankingList');
-                const existingUrls = new Set();
-                if (rankingList) {
-                    rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                        const href = btn.getAttribute('href');
-                        if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                    });
-                }
+                // 获取已有硬编码卡片的URL集合（使用缓存）
+                const existingUrls = getExistingUrls();
 
                 let addedCount = 0;
                 approved.forEach(site => {
@@ -9915,16 +9953,14 @@
         // 加载爬虫检测的失效站点
         async function loadDeadSitesFromCrawler() {
             try {
-                const resp = await fetch('data/dead_sites.json');
-                if (!resp.ok) return;
-                const deadSites = await resp.json();
+                const deadSites = await fetchOnce('data/dead_sites.json');
                 if (!Array.isArray(deadSites) || deadSites.length === 0) return;
 
-                // 交叉验证：从 daily_check_cache.json 获取最新状态
+                // 交叉验证：从 daily_check_cache.json 获取最新状态（使用缓存）
                 let cacheData = {};
                 try {
-                    const cacheResp = await fetch('data/daily_check_cache.json');
-                    if (cacheResp.ok) cacheData = await cacheResp.json();
+                    const cacheResp = await fetchOnce('data/daily_check_cache.json');
+                    if (cacheResp) cacheData = cacheResp;
                 } catch(e) {}
 
                 // 获取 admin 标记的恢复站点列表
@@ -10029,20 +10065,11 @@
         // 加载站点状态（恢复的站点自动移除.dead类并添加到排行榜）
         async function loadSiteStatus() {
             try {
-                const resp = await fetch('data/site_status.json');
-                if (!resp.ok) return;
-                const status = await resp.json();
-                if (!status) return;
+                const status = await fetchOnce('data/site_status.json');
+                if (!status || (Array.isArray(status) && status.length === 0)) return;
 
-                // 获取排行榜中已有的URL，避免重复添加
-                const rankingList = document.getElementById('rankingList');
-                const existingUrls = new Set();
-                if (rankingList) {
-                    rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                        const href = btn.getAttribute('href');
-                        if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                    });
-                }
+                // 获取排行榜中已有的URL（使用缓存）
+                const existingUrls = getExistingUrls();
 
                 // 恢复的站点：移除 .dead 类，如果不在排行榜中则添加
                 if (Array.isArray(status.recovered) && status.recovered.length > 0) {
@@ -10083,7 +10110,7 @@
                             console.log('添加恢复站点到排行榜:', site.name || domain);
                         }
                     });
-                    autoRank();
+                    scheduleAutoRank();
                     console.log('恢复了 ' + status.recovered.length + ' 个站点');
                 }
 
@@ -10105,7 +10132,7 @@
                             });
                         });
                     });
-                    autoRank();
+                    scheduleAutoRank();
                     console.log('新增 ' + status.new_dead.length + ' 个失效站点');
                 }
             } catch (e) {
@@ -10113,24 +10140,14 @@
             }
         }
 
-        // 加载 admin.html 标记的恢复站点（从 localStorage）
+        // 加载 admin.html 标记的恢复站点（从 localStorage，使用缓存）
         async function loadRecoveredFromAdmin() {
             try {
-                const recoveredSites = JSON.parse(localStorage.getItem('recoveredSites') || '[]');
+                const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
 
-                // 收集已存在的URL
-                const existingUrls = new Set();
-                document.querySelectorAll('#rankingList .rank-card').forEach(card => {
-                    const linkEl = card.querySelector('.btn-primary');
-                    if (linkEl) {
-                        const url = linkEl.getAttribute('href');
-                        if (url) {
-                            const key = url.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                            existingUrls.add(key);
-                        }
-                    }
-                });
+                // 收集已存在的URL（使用缓存）
+                const existingUrls = getExistingUrls();
 
                 let added = 0;
                 recoveredSites.forEach(site => {
@@ -10170,7 +10187,7 @@
 
         function loadPendingSites() {
 
-            let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            let queue = getCached('reviewQueue') || [];
 
             // 清理：移除爬虫自动抓取的数据（source 为 crawler 相关的），只保留用户手动提交的
             const cleanedQueue = queue.filter(function(site) {
@@ -10501,33 +10518,23 @@
         // 页面加载时恢复已通过的站点到排行榜
         // 改为 async：先从 stations_info.json 获取真实数据，覆盖 localStorage 中的脏数据
         async function loadApprovedSites() {
-            // 先尝试从 stations_info.json 获取真实站点数据，用于覆盖脏数据
+            // 先尝试从 stations_info.json 获取真实站点数据，用于覆盖脏数据（使用缓存，不会重复请求）
             let realDataMap = {};
             try {
-                const resp = await fetch('data/stations_info.json');
-                if (resp.ok) {
-                    const stations = await resp.json();
-                    if (Array.isArray(stations)) {
-                        stations.forEach(function(s) {
-                            const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                            if (key) realDataMap[key] = s;
-                        });
-                        console.log('loadApprovedSites: 从 stations_info.json 加载了 ' + Object.keys(realDataMap).length + ' 条真实数据');
-                    }
+                const stations = await fetchOnce('data/stations_info.json');
+                if (Array.isArray(stations)) {
+                    stations.forEach(function(s) {
+                        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        if (key) realDataMap[key] = s;
+                    });
+                    console.log('loadApprovedSites: 从缓存加载了 ' + Object.keys(realDataMap).length + ' 条真实数据');
                 }
             } catch(e) {
                 console.log('loadApprovedSites: 无法加载 stations_info.json', e);
             }
 
-            // 获取硬编码排行榜中已有的URL集合，避免动态重复添加
-            const rankingList = document.getElementById('rankingList');
-            const existingUrls = new Set();
-            if (rankingList) {
-                rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                    const href = btn.getAttribute('href');
-                    if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                });
-            }
+            // 获取硬编码排行榜中已有的URL集合（使用缓存）
+            const existingUrls = getExistingUrls();
 
             // 收集所有已添加的URL，防止approvedSites和reviewQueue重复
             const addedUrls = new Set();
@@ -10616,8 +10623,8 @@
             localStorage.setItem('approvedSites', JSON.stringify(cleanedApproved));
 
             console.log('loadApprovedSites: 渲染了 ' + addedUrls.size + ' 个审核站点');
-            // 重新排序
-            if (typeof autoRank === 'function') autoRank();
+            // 延迟排序（等所有数据加载完）
+            scheduleAutoRank();
         }
 
         
@@ -10646,31 +10653,7 @@
                 return; // 已在全局集合中，跳过
             }
 
-            // 检查是否已存在（按URL去重，防止重复收录）
-            const existing = rankingList.querySelectorAll('.rank-card');
-            for (const card of existing) {
-                const linkEl = card.querySelector('.btn-primary');
-                const cardUrl = linkEl ? linkEl.getAttribute('href') : '';
-                const cardUrlNorm = normalizeUrl(cardUrl);
-                const cardDomain = cardUrlNorm.split('.').slice(-2).join('.');
-                if (siteUrlNorm && cardUrlNorm && (siteUrlNorm === cardUrlNorm || siteDomain === cardDomain)) {
-                    const scoreEl = card.querySelector('.rank-score');
-                    const needUpdate = scoreEl && scoreEl.textContent.includes('?');
-                    if (needUpdate && site.score) {
-                        const scoreText = Number(site.score).toFixed(2) + ' /10';
-                        if (scoreEl) scoreEl.innerHTML = scoreText + ' <small>/10</small>';
-                        const descEl = card.querySelector('.rank-desc');
-                        if (descEl && site.description) descEl.textContent = site.description.substring(0, 120) + (site.description.length > 120 ? '...' : '');
-                        console.log('更新站点信息: ' + site.name);
-                    }
-                    return;
-                }
-                // 记录已有卡片的URL到全局集合
-                globalAddedUrls.add(cardUrlNorm);
-                globalAddedUrls.add(cardDomain);
-            }
-
-            // 新卡片：加入全局集合
+            // 预注册到全局集合（防止后续重复添加）
             globalAddedUrls.add(siteUrlNorm);
             globalAddedUrls.add(siteDomain);
 
@@ -11100,30 +11083,408 @@
 
         }
 
+        // ========== 全局数据缓存（避免重复 fetch 和 JSON.parse） ==========
+        const _dataCache = {
+            stationsInfo: null,   // data/stations_info.json
+            approvedStations: null, // data/approved_stations.json
+            deadSites: null,      // data/dead_sites.json
+            dailyCheckCache: null, // data/daily_check_cache.json
+            siteStatus: null,     // data/site_status.json
+            localStorage: {}      // localStorage 读取缓存
+        };
+
+        // 缓存版 localStorage.getItem（同一 key 只 JSON.parse 一次）
+        function getCached(key) {
+            if (_dataCache.localStorage[key] !== undefined) return _dataCache.localStorage[key];
+            try {
+                const raw = localStorage.getItem(key);
+                _dataCache.localStorage[key] = raw ? JSON.parse(raw) : null;
+            } catch(e) {
+                _dataCache.localStorage[key] = null;
+            }
+            return _dataCache.localStorage[key];
+        }
+
+        // 缓存版 fetch（同一 URL 只请求一次）
+        async function fetchOnce(url) {
+            const cacheKey = url.replace(/^data\//, '').replace(/\.json$/, '');
+            const camelKey = cacheKey.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
+            if (_dataCache[camelKey] !== null) return _dataCache[camelKey];
+            try {
+                const resp = await fetch(url);
+                if (!resp.ok) { _dataCache[camelKey] = []; return []; }
+                const data = await resp.json();
+                _dataCache[camelKey] = Array.isArray(data) ? data : (data || []);
+                return _dataCache[camelKey];
+            } catch(e) {
+                _dataCache[camelKey] = [];
+                return [];
+            }
+        }
+
+        // ========== 获取已有卡片URL集合（全局缓存，只计算一次） ==========
+        let _existingUrlsCache = null;
+        function getExistingUrls() {
+            if (_existingUrlsCache) return _existingUrlsCache;
+            const rankingList = document.getElementById('rankingList');
+            _existingUrlsCache = new Set();
+            if (rankingList) {
+                rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
+                    const href = btn.getAttribute('href');
+                    if (href) _existingUrlsCache.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
+                });
+            }
+            return _existingUrlsCache;
+        }
+        // 数据加载完成后失效缓存（因为动态添加了新卡片）
+        function invalidateExistingUrlsCache() { _existingUrlsCache = null; }
+
+        // ========== 全局 autoRank 控制 ==========
+        let _autoRankScheduled = false;
+        function scheduleAutoRank() {
+            if (_autoRankScheduled) return; // 防止重复调度
+            _autoRankScheduled = true;
+            requestAnimationFrame(() => {
+                _autoRankScheduled = false;
+                if (typeof autoRank === 'function') autoRank();
+            });
+        }
+
+        // ========== 热门中转站流量排行图（流体波浪版） ==========
+        function renderTrafficRank() {
+            // SimilarWeb 2026年4月数据（月访问量估算）
+            const trafficData = [
+                { name: '禾维AI', domain: 'hvoy.ai', visits: 126500 },
+                { name: 'SNAKE GPT', domain: 'snakegpt.vip', visits: 15600 },
+                { name: 'API2D', domain: 'api2d.com', visits: 9100 },
+                { name: '智增增API', domain: 'api.zhizengzeng.com', visits: 6200 },
+                { name: '诗云API', domain: 'shiyunapi.com', visits: 4800 },
+            ];
+
+            // 启动流体波浪 Canvas 动画
+            initWaveCanvas(trafficData);
+        }
+
+        // ========== 流体波浪 Canvas 动画 ==========
+        function initWaveCanvas(trafficData) {
+            const canvas = document.getElementById('trafficCanvas');
+            const widget = document.getElementById('trafficRankWidget');
+            if (!canvas || !widget) return;
+
+            const ctx = canvas.getContext('2d');
+            let w, h, animId;
+            let time = 0;
+
+            // 按流量排序并取前5
+            const sortedData = [...trafficData].sort((a, b) => b.visits - a.visits).slice(0, 5);
+            const maxVisits = sortedData[0].visits;
+
+            // 波浪配置 - 流量越大波浪越高
+            const waves = sortedData.map((item, index) => {
+                const heightRatio = item.visits / maxVisits;
+                return {
+                    name: item.name,
+                    domain: item.domain,
+                    visits: item.visits,
+                    rank: index + 1,
+                    // 基础高度 + 流量比例高度
+                    baseHeight: 40 + heightRatio * 120,
+                    // 波浪振幅（流量大的波动更大）
+                    amplitude: 8 + heightRatio * 15,
+                    // 波浪速度
+                    speed: 0.015 + (5 - index) * 0.003,
+                    // 相位偏移
+                    phase: index * 0.8,
+                    // 颜色配置
+                    color: getWaveColor(index),
+                    glowColor: getGlowColor(index),
+                    // 粒子
+                    particles: [],
+                    particleCount: 15 + Math.floor(heightRatio * 20)
+                };
+            });
+
+            function getWaveColor(index) {
+                const colors = [
+                    { r: 78, g: 205, b: 196 },   // #1 青绿
+                    { r: 108, g: 92, b: 231 },   // #2 紫
+                    { r: 69, g: 183, b: 209 },   // #3 蓝
+                    { r: 150, g: 206, b: 180 },  // #4 薄荷
+                    { r: 78, g: 205, b: 196 }    // #5 青绿
+                ];
+                return colors[index] || colors[4];
+            }
+
+            function getGlowColor(index) {
+                const glows = [
+                    'rgba(78,205,196,', 'rgba(108,92,231,', 'rgba(69,183,209,',
+                    'rgba(150,206,180,', 'rgba(78,205,196,'
+                ];
+                return glows[index] || glows[4];
+            }
+
+            function resize() {
+                const rect = widget.getBoundingClientRect();
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                w = rect.width;
+                h = rect.height;
+                canvas.width = w * dpr;
+                canvas.height = h * dpr;
+                canvas.style.width = w + 'px';
+                canvas.style.height = h + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                // 重新计算波浪位置
+                const waveWidth = w / waves.length;
+                waves.forEach((wave, i) => {
+                    wave.x = waveWidth * i + waveWidth / 2;
+                    wave.width = waveWidth * 0.9;
+                });
+            }
+
+            // 创建波浪粒子
+            function createParticle(wave) {
+                return {
+                    x: wave.x + (Math.random() - 0.5) * wave.width * 0.8,
+                    y: h - 20 - Math.random() * wave.baseHeight,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: -0.3 - Math.random() * 0.5,
+                    size: 1 + Math.random() * 2,
+                    life: 1,
+                    decay: 0.008 + Math.random() * 0.008,
+                    pulse: Math.random() * Math.PI * 2
+                };
+            }
+
+            // 初始化粒子
+            function initParticles() {
+                waves.forEach(wave => {
+                    wave.particles = [];
+                    for (let i = 0; i < wave.particleCount; i++) {
+                        const p = createParticle(wave);
+                        p.life = Math.random();
+                        p.y = h - 20 - Math.random() * wave.baseHeight;
+                        wave.particles.push(p);
+                    }
+                });
+            }
+
+            // 绘制单条波浪
+            function drawWave(wave, t) {
+                const centerX = wave.x;
+                const waveW = wave.width;
+                const baseY = h - 20;
+
+                // 计算波浪高度（正弦波动）
+                const waveHeight = wave.baseHeight + Math.sin(t * wave.speed + wave.phase) * wave.amplitude;
+
+                // 绘制波浪主体
+                ctx.beginPath();
+                ctx.moveTo(centerX - waveW / 2, baseY);
+
+                // 使用贝塞尔曲线绘制平滑波浪
+                const cp1x = centerX - waveW / 4;
+                const cp2x = centerX + waveW / 4;
+                const topY = baseY - waveHeight;
+
+                // 左半波浪
+                ctx.bezierCurveTo(
+                    cp1x, baseY,
+                    cp1x, topY + wave.amplitude * 0.3,
+                    centerX, topY
+                );
+                // 右半波浪
+                ctx.bezierCurveTo(
+                    cp2x, topY + wave.amplitude * 0.3,
+                    cp2x, baseY,
+                    centerX + waveW / 2, baseY
+                );
+
+                ctx.closePath();
+
+                // 填充渐变
+                const grad = ctx.createLinearGradient(centerX, topY, centerX, baseY);
+                const c = wave.color;
+                grad.addColorStop(0, `rgba(${c.r},${c.g},${c.b},0.6)`);
+                grad.addColorStop(0.5, `rgba(${c.r},${c.g},${c.b},0.3)`);
+                grad.addColorStop(1, `rgba(${c.r},${c.g},${c.b},0.05)`);
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                // 波浪顶部发光线
+                ctx.beginPath();
+                ctx.moveTo(centerX - waveW / 2, baseY);
+                ctx.bezierCurveTo(cp1x, baseY, cp1x, topY + wave.amplitude * 0.3, centerX, topY);
+                ctx.bezierCurveTo(cp2x, topY + wave.amplitude * 0.3, cp2x, baseY, centerX + waveW / 2, baseY);
+                ctx.strokeStyle = `rgba(${c.r},${c.g},${c.b},0.9)`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // 顶部高光点
+                ctx.beginPath();
+                ctx.arc(centerX, topY, 4, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${c.r},${c.g},${c.b},1)`;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = `rgba(${c.r},${c.g},${c.b},0.8)`;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                // 绘制排名标签背景
+                const labelY = topY - 25;
+                ctx.beginPath();
+                ctx.roundRect(centerX - 35, labelY - 12, 70, 24, 12);
+                ctx.fillStyle = 'rgba(0,0,0,0.4)';
+                ctx.fill();
+                ctx.strokeStyle = `rgba(${c.r},${c.g},${c.b},0.5)`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // 排名文字
+                ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#fff';
+                ctx.fillText(`第${wave.rank}名`, centerX, labelY + 4);
+
+                // 站点名称
+                ctx.font = '10px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = `rgba(${c.r},${c.g},${c.b},0.9)`;
+                ctx.fillText(wave.name, centerX, labelY - 18);
+
+                // 访问量
+                const visitsText = wave.visits >= 1000 ? (wave.visits / 1000).toFixed(1) + 'K' : wave.visits.toString();
+                ctx.font = '9px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = 'rgba(255,255,255,0.6)';
+                ctx.fillText(`${visitsText}/月`, centerX, baseY + 12);
+
+                // 更新并绘制粒子
+                wave.particles.forEach((p, i) => {
+                    p.life -= p.decay;
+                    p.pulse += 0.05;
+
+                    if (p.life <= 0) {
+                        wave.particles[i] = createParticle(wave);
+                        return;
+                    }
+
+                    p.y += p.vy;
+                    p.x += Math.sin(p.pulse) * 0.3;
+
+                    const alpha = p.life * 0.8;
+                    const size = p.size * (0.5 + Math.sin(p.pulse) * 0.5);
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+                    ctx.fillStyle = `${wave.glowColor}${alpha})`;
+                    ctx.fill();
+
+                    // 外发光
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, size * 2, 0, Math.PI * 2);
+                    ctx.fillStyle = `${wave.glowColor}${alpha * 0.3})`;
+                    ctx.fill();
+                });
+
+                // 保存当前波浪顶部位置用于点击检测
+                wave.currentTopY = topY;
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                time += 1;
+
+                // 绘制背景渐变
+                const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+                bgGrad.addColorStop(0, 'rgba(78,205,196,0.02)');
+                bgGrad.addColorStop(0.5, 'rgba(108,92,231,0.03)');
+                bgGrad.addColorStop(1, 'rgba(78,205,196,0.02)');
+                ctx.fillStyle = bgGrad;
+                ctx.fillRect(0, 0, w, h);
+
+                // 从后往前绘制波浪（流量小的在后面）
+                for (let i = waves.length - 1; i >= 0; i--) {
+                    drawWave(waves[i], time);
+                }
+
+                animId = requestAnimationFrame(animate);
+            }
+
+            // 点击检测
+            canvas.addEventListener('click', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX - rect.left) * (canvas.width / rect.width / (window.devicePixelRatio || 1));
+                const y = (e.clientY - rect.top) * (canvas.height / rect.height / (window.devicePixelRatio || 1));
+
+                // 检测点击了哪个波浪
+                for (const wave of waves) {
+                    const waveW = wave.width;
+                    if (x >= wave.x - waveW / 2 && x <= wave.x + waveW / 2) {
+                        if (y >= wave.currentTopY - 50 && y <= h - 10) {
+                            window.open(`https://${wave.domain}`, '_blank', 'noopener,noreferrer');
+                            break;
+                        }
+                    }
+                }
+            });
+
+            // 鼠标悬停效果
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX - rect.left) * (canvas.width / rect.width / (window.devicePixelRatio || 1));
+                const y = (e.clientY - rect.top) * (canvas.height / rect.height / (window.devicePixelRatio || 1));
+
+                let hovering = false;
+                for (const wave of waves) {
+                    const waveW = wave.width;
+                    if (x >= wave.x - waveW / 2 && x <= wave.x + waveW / 2) {
+                        if (y >= wave.currentTopY - 50 && y <= h - 10) {
+                            hovering = true;
+                            break;
+                        }
+                    }
+                }
+                canvas.style.cursor = hovering ? 'pointer' : 'default';
+            });
+
+            // 初始化
+            resize();
+            initParticles();
+            animate();
+
+            // 页面不可见时暂停
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!animId) animate();
+                    } else {
+                        if (animId) { cancelAnimationFrame(animId); animId = null; }
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(widget);
+
+            // 窗口大小变化时重新设置
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    resize();
+                    initParticles();
+                }, 200);
+            });
+        }
+
         // 页面加载完成后执行
         // 从文件加载所有站点并渲染
         async function renderAllStationsFromData() {
             try {
-                const resp = await fetch('data/stations_info.json');
-                if (!resp.ok) {
-                    console.log('无法加载站点数据文件');
-                    return;
-                }
-                const stations = await resp.json();
+                const stations = await fetchOnce('data/stations_info.json');
                 if (!Array.isArray(stations) || stations.length === 0) {
                     console.log('站点数据为空');
                     return;
                 }
 
                 // 获取已有硬编码卡片的URL集合，防止重复
-                const rankingList = document.getElementById('rankingList');
-                const existingUrls = new Set();
-                if (rankingList) {
-                    rankingList.querySelectorAll('.rank-card .btn-primary').forEach(function(btn) {
-                        const href = btn.getAttribute('href');
-                        if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
-                    });
-                }
+                const existingUrls = getExistingUrls();
 
                 // 按评分排序（高的在前）
                 stations.sort((a, b) => (b.score || 0) - (a.score || 0));
@@ -11152,7 +11513,7 @@
                 });
 
                 console.log('从文件渲染了 ' + count + ' 个站点');
-                autoRank();
+                scheduleAutoRank();
             } catch (e) {
                 console.log('加载站点数据失败:', e);
             }
@@ -11161,16 +11522,37 @@
 
 
         document.addEventListener('DOMContentLoaded', async function() {
+            // 渲染流量排行榜（纯静态数据，不依赖异步加载）
+            renderTrafficRank();
+
+            // 预填充全局URL集合（硬编码卡片的URL），避免 addSiteToRanking 重复添加
+            const initUrls = getExistingUrls();
+            initUrls.forEach(url => {
+                globalAddedUrls.add(url);
+                const parts = url.split('.');
+                if (parts.length > 2) globalAddedUrls.add(parts.slice(-2).join('.'));
+            });
+
+            // 并行加载所有数据（原来串行 await 需要等待每个完成才执行下一个）
+            // renderAllStationsFromData 必须先执行（加载主数据）
             await renderAllStationsFromData();
+
+            // 以下4个互不依赖，并行执行
             loadCrawlerResults();
-            await loadDeadSitesFromCrawler();
-            await loadSiteStatus();
-            await loadRecoveredFromAdmin();  // 加载 admin 标记的恢复站点
-            await loadApprovedFromData();
+            await Promise.all([
+                loadDeadSitesFromCrawler(),
+                loadSiteStatus(),
+                loadRecoveredFromAdmin(),
+                loadApprovedFromData(),
+            ]);
+
+            // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行
             await loadApprovedSites();
 
             loadPendingSites();
 
+            // 所有数据加载完成后，统一排序一次（替代之前每个函数内部的 autoRank）
+            invalidateExistingUrlsCache();
             autoRank();
 
             updateStats();
@@ -11274,7 +11656,6 @@
             });
         });
 
-        // ===== 流量排行榜 - 3D领奖台（静态展示，无需JS初始化） =====
 
     </script>
 
