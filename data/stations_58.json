@@ -91,63 +91,6 @@
     ]
   },
   {
-    "name": "DeepInfra",
-    "url": "https://deepinfra.com",
-    "score": 9.99,
-    "response_time": 0.35,
-    "description": "海外知名AI推理平台，提供Claude、GPT、Gemini等模型的高速推理服务，延迟极低。",
-    "tags": [
-      {
-        "text": "🔥极速",
-        "color": "hot"
-      },
-      {
-        "text": "海外直连",
-        "color": "stable"
-      },
-      {
-        "text": "低延迟",
-        "color": "stable"
-      }
-    ],
-    "models": [
-      "claude",
-      "gpt",
-      "gemini",
-      "deepseek",
-      "qwen",
-      "kimi",
-      "glm"
-    ]
-  },
-  {
-    "name": "月之暗面 (Kimi)",
-    "url": "https://platform.moonshot.cn",
-    "score": 9.93,
-    "response_time": 0.32,
-    "description": "月之暗面官方API平台，提供Kimi长文本模型，支持200万字超长上下文，国内直连。",
-    "tags": [
-      {
-        "text": "🔥官方",
-        "color": "hot"
-      },
-      {
-        "text": "超长上下文",
-        "color": "stable"
-      },
-      {
-        "text": "免费额度",
-        "color": "cheap"
-      }
-    ],
-    "models": [
-      "claude",
-      "gpt",
-      "gemini",
-      "kimi"
-    ]
-  },
-  {
     "name": "硅基流动",
     "url": "https://siliconflow.cn",
     "score": 9.88,
@@ -305,85 +248,6 @@
     "models": []
   },
   {
-    "name": "OpenRouter",
-    "url": "https://openrouter.ai",
-    "score": 8.83,
-    "response_time": 0.87,
-    "description": "海外知名AI模型路由平台，聚合100+模型，官方价格透明，无需翻墙即可使用。",
-    "tags": [
-      {
-        "text": "🔥海外",
-        "color": "hot"
-      },
-      {
-        "text": "100+模型",
-        "color": "stable"
-      },
-      {
-        "text": "官方价格",
-        "color": "cheap"
-      }
-    ],
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ]
-  },
-  {
-    "name": "DeepSeek API",
-    "url": "https://platform.deepseek.com",
-    "score": 8.81,
-    "response_time": 0.14,
-    "description": "DeepSeek官方API平台，提供DeepSeek-V3/R1系列模型，超低价格，国内直连。",
-    "tags": [
-      {
-        "text": "🔥官方",
-        "color": "hot"
-      },
-      {
-        "text": "超低价",
-        "color": "cheap"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
-      }
-    ],
-    "models": [
-      "deepseek"
-    ]
-  },
-  {
-    "name": "Fireworks AI",
-    "url": "https://fireworks.ai",
-    "score": 8.81,
-    "response_time": 1.24,
-    "description": "海外AI推理加速平台，支持GPT、DeepSeek等模型，提供高速低延迟推理服务。",
-    "tags": [
-      {
-        "text": "海外",
-        "color": "stable"
-      },
-      {
-        "text": "高速推理",
-        "color": "stable"
-      },
-      {
-        "text": "多模型",
-        "color": "stable"
-      }
-    ],
-    "models": [
-      "gpt",
-      "deepseek",
-      "qwen",
-      "kimi",
-      "glm",
-      "yi"
-    ]
-  },
-  {
     "name": "API易",
     "url": "https://api.easyapi.com",
     "score": 8.68,
@@ -404,74 +268,6 @@
       }
     ],
     "models": []
-  },
-  {
-    "name": "智谱AI (BigModel)",
-    "url": "https://bigmodel.cn",
-    "score": 8.66,
-    "response_time": 0.29,
-    "description": "智谱AI官方平台，提供GLM系列大模型API，支持ChatGLM、CodeGeeX等，国内直连。",
-    "tags": [
-      {
-        "text": "🔥官方",
-        "color": "hot"
-      },
-      {
-        "text": "GLM系列",
-        "color": "stable"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
-    "name": "通义千问API(阿里百炼)",
-    "url": "https://bailian.console.aliyun.com",
-    "score": 8.62,
-    "response_time": 0.16,
-    "description": "阿里云百炼平台，提供通义千问系列模型API，企业级稳定，国内直连。",
-    "tags": [
-      {
-        "text": "🔥官方",
-        "color": "hot"
-      },
-      {
-        "text": "企业级",
-        "color": "stable"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
-    "name": "百川智能",
-    "url": "https://platform.baichuan-ai.com",
-    "score": 8.63,
-    "response_time": 0.33,
-    "description": "百川智能官方API平台，提供Baichuan系列大模型，支持多场景应用。",
-    "tags": [
-      {
-        "text": "官方",
-        "color": "stable"
-      },
-      {
-        "text": "Baichuan",
-        "color": "stable"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
-      }
-    ],
-    "models": [
-      "baichuan"
-    ]
   },
   {
     "name": "RightCode",
@@ -542,72 +338,6 @@
       "gpt",
       "deepseek"
     ]
-  },
-  {
-    "name": "豆包API(火山引擎)",
-    "url": "https://www.volcengine.com",
-    "score": 8.42,
-    "response_time": 0.31,
-    "description": "字节跳动火山引擎平台，提供豆包系列大模型API，企业级服务，国内直连。",
-    "tags": [
-      {
-        "text": "🔥官方",
-        "color": "hot"
-      },
-      {
-        "text": "豆包全系",
-        "color": "stable"
-      },
-      {
-        "text": "企业级",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
-    "name": "讯飞星火",
-    "url": "https://xinghuo.xfyun.cn",
-    "score": 8.49,
-    "response_time": 0.22,
-    "description": "科大讯飞官方API平台，提供星火系列大模型，支持语音、文本多模态。",
-    "tags": [
-      {
-        "text": "🔥官方",
-        "color": "hot"
-      },
-      {
-        "text": "多模态",
-        "color": "stable"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
-    "name": "MiniMax API",
-    "url": "https://www.minimaxi.com",
-    "score": 8.5,
-    "response_time": 0.33,
-    "description": "MiniMax官方API平台，提供海螺AI等大模型服务，支持文本、语音多模态。",
-    "tags": [
-      {
-        "text": "官方",
-        "color": "stable"
-      },
-      {
-        "text": "多模态",
-        "color": "stable"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
-      }
-    ],
-    "models": []
   },
   {
     "name": "SSSAICode",
@@ -893,28 +623,6 @@
     ]
   },
   {
-    "name": "Together AI",
-    "url": "https://api.together.xyz",
-    "score": 8.01,
-    "response_time": 0.72,
-    "description": "海外AI推理平台，提供开源模型API服务，支持多种主流模型。",
-    "tags": [
-      {
-        "text": "海外",
-        "color": "stable"
-      },
-      {
-        "text": "开源模型",
-        "color": "stable"
-      },
-      {
-        "text": "多模型",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
     "name": "AgentRouter",
     "url": "https://agentrouter.org",
     "score": 7.97,
@@ -931,28 +639,6 @@
       },
       {
         "text": "负载均衡",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
-    "name": "Cohere",
-    "url": "https://dashboard.cohere.com",
-    "score": 7.96,
-    "response_time": 0.98,
-    "description": "海外NLP模型平台，提供Command系列模型API，专注文本理解和生成。",
-    "tags": [
-      {
-        "text": "海外",
-        "color": "stable"
-      },
-      {
-        "text": "NLP",
-        "color": "stable"
-      },
-      {
-        "text": "文本生成",
         "color": "stable"
       }
     ],
@@ -1027,28 +713,6 @@
     "models": []
   },
   {
-    "name": "WildCard API",
-    "url": "https://bewildcard.com",
-    "score": 7.76,
-    "response_time": 1.34,
-    "description": "虚拟信用卡+AI API服务，提供海外AI服务的支付和接入方案。",
-    "tags": [
-      {
-        "text": "海外",
-        "color": "stable"
-      },
-      {
-        "text": "支付",
-        "color": "stable"
-      },
-      {
-        "text": "虚拟卡",
-        "color": "stable"
-      }
-    ],
-    "models": []
-  },
-  {
     "name": "0011AI",
     "url": "https://0011.ai",
     "score": 7.72,
@@ -1088,28 +752,6 @@
       {
         "text": "低价",
         "color": "cheap"
-      }
-    ],
-    "models": []
-  },
-  {
-    "name": "零一万物 (Yi)",
-    "url": "https://platform.lingyiwanwu.com",
-    "score": 7.62,
-    "response_time": 1.56,
-    "description": "零一万物官方API平台，提供Yi系列大模型，支持多场景应用。",
-    "tags": [
-      {
-        "text": "官方",
-        "color": "stable"
-      },
-      {
-        "text": "Yi系列",
-        "color": "stable"
-      },
-      {
-        "text": "国内直连",
-        "color": "stable"
       }
     ],
     "models": []

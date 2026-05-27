@@ -4,8 +4,16 @@
     "domain": "api2d.com",
     "name": "API2D",
     "description": "国内AI API中转平台，支持OpenAI、Claude、StableDiffusion等主流模型，按Token计费",
-    "models": ["gpt", "claude", "deepseek", "domestic"],
-    "features": ["stable", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "deepseek",
+      "domestic"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 7.82,
@@ -19,8 +27,14 @@
     "domain": "shiyunapi.com",
     "name": "诗云API",
     "description": "AI API中转平台，支持GPT、Claude及国产模型，需登录查看详情",
-    "models": ["gpt", "claude", "domestic"],
-    "features": ["multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "domestic"
+    ],
+    "features": [
+      "multi"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 7.53,
@@ -34,8 +48,16 @@
     "domain": "snakegpt.vip",
     "name": "SNAKE GPT",
     "description": "国内直连GPT镜像站，聚合GPT/Gemini/Claude/Grok/DeepSeek，无需翻墙",
-    "models": ["gpt", "claude", "gemini", "deepseek"],
-    "features": ["stable", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 7.71,
@@ -49,8 +71,14 @@
     "domain": "hvoy.ai",
     "name": "禾维AI",
     "description": "API中转站鉴定评测平台，对比各站在线率、掺水率、延迟等指标",
-    "models": ["claude", "gpt", "gemini"],
-    "features": ["stable"],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 8.34,
@@ -64,8 +92,19 @@
     "domain": "api.zhizengzeng.com",
     "name": "智增增API",
     "description": "企业级API服务商，兼容OpenAI协议，支持众多国产大模型",
-    "models": ["gpt", "claude", "deepseek", "doubao", "qwen", "glm", "domestic"],
-    "features": ["stable", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "deepseek",
+      "doubao",
+      "qwen",
+      "glm",
+      "domestic"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 8.15,
@@ -75,27 +114,19 @@
     "check_count": 2
   },
   {
-    "url": "https://openrouter.ai",
-    "domain": "openrouter.ai",
-    "name": "OpenRouter",
-    "description": "统一LLM接口平台，400+模型，60+供应商，800万用户，月80万亿Token",
-    "models": ["claude", "gpt", "gemini"],
-    "features": ["multi"],
-    "price": "medium",
-    "free_amount": "",
-    "score": 8.83,
-    "response_time": 1.09,
-    "alive": true,
-    "last_check": "2026-05-20T11:51:35.075658",
-    "check_count": 2
-  },
-  {
     "url": "https://gptcat.cc",
     "domain": "gptcat.cc",
     "name": "GPTCAT",
     "description": "GPT中文镜像聊天平台，提供多模型AI对话服务",
-    "models": ["gpt", "claude", "domestic"],
-    "features": ["free", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "domestic"
+    ],
+    "features": [
+      "free",
+      "multi"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 7.24,
@@ -109,8 +140,14 @@
     "domain": "ai.huoyachat.com",
     "name": "火牙AI",
     "description": "AI对话平台，提供代码编写、文件处理和创意内容生成服务",
-    "models": ["gpt", "claude", "domestic"],
-    "features": ["free"],
+    "models": [
+      "gpt",
+      "claude",
+      "domestic"
+    ],
+    "features": [
+      "free"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 7.13,
@@ -124,8 +161,17 @@
     "domain": "api.whatai.cc",
     "name": "WhatAI API",
     "description": "统一LLM API网关，支持30+模型供应商，全类型API接口，低价稳定",
-    "models": ["gpt", "claude", "gemini", "deepseek", "domestic"],
-    "features": ["cheap", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "gemini",
+      "deepseek",
+      "domestic"
+    ],
+    "features": [
+      "cheap",
+      "multi"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 8.47,
@@ -139,8 +185,18 @@
     "domain": "siliconflow.cn",
     "name": "硅基流动 SiliconFlow",
     "description": "致力于成为全球领先的AI能力提供商，覆盖语言、语音、图像全场景API，推荐官计划邀请好友赢代金券",
-    "models": ["glm", "domestic"],
-    "features": ["cheap", "stable", "fast", "free", "multi", "referral"],
+    "models": [
+      "glm",
+      "domestic"
+    ],
+    "features": [
+      "cheap",
+      "stable",
+      "fast",
+      "free",
+      "multi",
+      "referral"
+    ],
     "price": "low",
     "free_amount": "推荐官计划，邀请好友赢代金券",
     "score": 9.51,
@@ -150,27 +206,25 @@
     "check_count": 2
   },
   {
-    "url": "https://volcengine.com",
-    "domain": "volcengine.com",
-    "name": "火山引擎",
-    "description": "字节跳动云服务平台，提供豆包大模型API和火山方舟企业级解决方案",
-    "models": ["doubao", "domestic"],
-    "features": ["stable", "multi"],
-    "price": "medium",
-    "free_amount": "",
-    "score": 8.26,
-    "response_time": 0.39,
-    "alive": true,
-    "last_check": "2026-05-20T11:51:47.201165",
-    "check_count": 2
-  },
-  {
     "url": "https://docs.whatai.cc",
     "domain": "docs.whatai.cc",
     "name": "神马中转API",
     "description": "一站式AI大模型API中转站，低价好用稳定，支持GPT-5、Claude、Gemini等主流模型",
-    "models": ["claude", "gpt", "gemini", "deepseek", "qwen", "kimi", "glm"],
-    "features": ["cheap", "stable", "fast", "multi"],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "kimi",
+      "glm"
+    ],
+    "features": [
+      "cheap",
+      "stable",
+      "fast",
+      "multi"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 8.92,
@@ -184,8 +238,18 @@
     "domain": "xyai2.top",
     "name": "XYAI2 API",
     "description": "统一LLM API网关，官方渠道折扣供应，国内直连低延迟",
-    "models": ["gpt", "claude", "gemini", "deepseek", "domestic"],
-    "features": ["cheap", "stable", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "gemini",
+      "deepseek",
+      "domestic"
+    ],
+    "features": [
+      "cheap",
+      "stable",
+      "multi"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 7.86,
@@ -195,27 +259,23 @@
     "check_count": 2
   },
   {
-    "url": "https://platform.deepseek.com",
-    "domain": "platform.deepseek.com",
-    "name": "DeepSeek开放平台",
-    "description": "DeepSeek官方平台，提供V4等最新模型API，价格低廉速度快",
-    "models": ["deepseek"],
-    "features": ["cheap", "fast", "free"],
-    "price": "low",
-    "free_amount": "",
-    "score": 8.73,
-    "response_time": 0.21,
-    "alive": true,
-    "last_check": "2026-05-20T11:51:54.159831",
-    "check_count": 2
-  },
-  {
     "url": "https://gpt.zhizengzeng.com",
     "domain": "gpt.zhizengzeng.com",
     "name": "智增增",
     "description": "大模型API接口服务商，兼容OpenAI协议，支持Claude/GPT/国产模型",
-    "models": ["gpt", "claude", "deepseek", "doubao", "qwen", "glm", "domestic"],
-    "features": ["stable", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "deepseek",
+      "doubao",
+      "qwen",
+      "glm",
+      "domestic"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 8.08,
@@ -229,8 +289,18 @@
     "domain": "code.silkapi.com",
     "name": "丝绸API (SilkAPI)",
     "description": "AI模型API中转聚合平台，一个API Key调用Claude、GPT、Gemini等多家主流模型，智能路由自动故障转移，按量付费",
-    "models": ["claude", "gpt", "gemini", "antigravity"],
-    "features": ["multi", "smart-route", "session", "pay-as-you-go"],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "antigravity"
+    ],
+    "features": [
+      "multi",
+      "smart-route",
+      "session",
+      "pay-as-you-go"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 7.85,
@@ -244,8 +314,21 @@
     "domain": "shop.pincc.ai",
     "name": "Pincc",
     "description": "专为开发者打造的稳定高速AI编程中转站，提供Claude全系列和GPT/Codex系列模型，全球节点加速，低延迟高可用",
-    "models": ["claude-opus-4", "claude-sonnet-4", "claude-haiku-4", "gpt-5.5", "gpt-5.4", "gpt-5.3-codex"],
-    "features": ["multi", "low-latency", "price-transparent", "claude-max", "global-nodes"],
+    "models": [
+      "claude-opus-4",
+      "claude-sonnet-4",
+      "claude-haiku-4",
+      "gpt-5.5",
+      "gpt-5.4",
+      "gpt-5.3-codex"
+    ],
+    "features": [
+      "multi",
+      "low-latency",
+      "price-transparent",
+      "claude-max",
+      "global-nodes"
+    ],
     "price": "low",
     "free_amount": "",
     "score": 8.35,
@@ -259,8 +342,15 @@
     "domain": "api.pptoken.org",
     "name": "PPToken",
     "description": "AI API订阅制中转平台，提供大模型API的统一转换与分发服务，支持订阅制模式",
-    "models": ["gpt", "claude", "multi"],
-    "features": ["subscription", "multi"],
+    "models": [
+      "gpt",
+      "claude",
+      "multi"
+    ],
+    "features": [
+      "subscription",
+      "multi"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 7.45,
@@ -274,12 +364,25 @@
     "domain": "yunwu.ai",
     "name": "云雾API",
     "description": "基于New API的AI中转平台，收录479个模型，支持GPT-5.5、Claude Opus 4.7、Gemini 3.1、DeepSeek V4等主流模型，按量/阶梯计费",
-    "models": ["gpt-5.5", "claude-opus-4", "gemini-3", "deepseek-v4", "doubao", "qwen", "domestic"],
-    "features": ["multi", "price-transparent", "proxy", "479-models"],
+    "models": [
+      "gpt-5.5",
+      "claude-opus-4",
+      "gemini-3",
+      "deepseek-v4",
+      "doubao",
+      "qwen",
+      "domestic"
+    ],
+    "features": [
+      "multi",
+      "price-transparent",
+      "proxy",
+      "479-models"
+    ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.20,
-    "response_time": 0.30,
+    "score": 8.2,
+    "response_time": 0.3,
     "alive": true,
     "last_check": "2026-05-20",
     "check_count": 1
@@ -289,11 +392,20 @@
     "domain": "free.yunwu.ai",
     "name": "云雾API免费站",
     "description": "完全免费的AI API服务，GitHub账号即可注册，提供GPT-4O、GPT-4O-Mini和DeepSeek系列模型，每日免费额度",
-    "models": ["gpt-4o", "gpt-4o-mini", "deepseek-r1", "deepseek-v3"],
-    "features": ["free", "github-login", "streaming"],
+    "models": [
+      "gpt-4o",
+      "gpt-4o-mini",
+      "deepseek-r1",
+      "deepseek-v3"
+    ],
+    "features": [
+      "free",
+      "github-login",
+      "streaming"
+    ],
     "price": "free",
     "free_amount": "GPT-4O 30次/天, Mini 200次/天, DeepSeek 30次/天",
-    "score": 8.60,
+    "score": 8.6,
     "response_time": 0.35,
     "alive": true,
     "last_check": "2026-05-20",
@@ -304,8 +416,22 @@
     "domain": "pateway.ai",
     "name": "PatewayAI",
     "description": "专注高品质Claude和OpenAI Codex系列正品直连API中转，透明定价，支付宝支付，注册赠$3",
-    "models": ["claude-opus-4.7", "claude-sonnet-4.6", "claude-haiku-4.5", "gpt-5.5", "gpt-5.3-codex", "o3", "o4-mini"],
-    "features": ["multi", "authentic", "alipay", "dual-protocol", "claude-code"],
+    "models": [
+      "claude-opus-4.7",
+      "claude-sonnet-4.6",
+      "claude-haiku-4.5",
+      "gpt-5.5",
+      "gpt-5.3-codex",
+      "o3",
+      "o4-mini"
+    ],
+    "features": [
+      "multi",
+      "authentic",
+      "alipay",
+      "dual-protocol",
+      "claude-code"
+    ],
     "price": "medium",
     "free_amount": "注册赠$3",
     "score": 8.45,
@@ -319,11 +445,20 @@
     "domain": "aicodemirror.com",
     "name": "AICodeMirror",
     "description": "面向企业和开发者的AI编程工具中转平台，支持Claude Code、Codex、Gemini CLI一键接入，280+天稳定运行",
-    "models": ["claude-code", "gpt-codex", "gemini-cli"],
-    "features": ["enterprise", "ide-integration", "invoice", "stable"],
+    "models": [
+      "claude-code",
+      "gpt-codex",
+      "gemini-cli"
+    ],
+    "features": [
+      "enterprise",
+      "ide-integration",
+      "invoice",
+      "stable"
+    ],
     "price": "medium",
     "free_amount": "注册送8元永久额度",
-    "score": 8.10,
+    "score": 8.1,
     "response_time": 0.32,
     "alive": true,
     "last_check": "2026-05-20",
@@ -334,12 +469,19 @@
     "domain": "web.apiplus.org",
     "name": "APIPlus",
     "description": "基于New API的轻量级AI聊天和绘图工具，支持GPT-3.5和AI Drawing，提供免费额度",
-    "models": ["gpt-3.5-turbo", "ai-drawing"],
-    "features": ["free", "chat", "drawing"],
+    "models": [
+      "gpt-3.5-turbo",
+      "ai-drawing"
+    ],
+    "features": [
+      "free",
+      "chat",
+      "drawing"
+    ],
     "price": "free",
     "free_amount": "4k免费额度",
-    "score": 6.80,
-    "response_time": 0.50,
+    "score": 6.8,
+    "response_time": 0.5,
     "alive": true,
     "last_check": "2026-05-20",
     "check_count": 1
@@ -349,11 +491,26 @@
     "domain": "b.ai",
     "name": "B.AI (波场)",
     "description": "波场旗下AI大模型API聚合中转平台，一个API Key打通Claude+GPT+Gemini+国产大模型全系列，支持USDT支付，新用户注册送50万积分",
-    "models": ["gpt-4o", "gpt-5.4", "claude-3.5-sonnet", "claude-opus-4", "gemini-2.5-pro", "deepseek", "qwen", "glm", "kimi"],
-    "features": ["multi", "usdt-payment", "free-credits", "high-subsidy"],
+    "models": [
+      "gpt-4o",
+      "gpt-5.4",
+      "claude-3.5-sonnet",
+      "claude-opus-4",
+      "gemini-2.5-pro",
+      "deepseek",
+      "qwen",
+      "glm",
+      "kimi"
+    ],
+    "features": [
+      "multi",
+      "usdt-payment",
+      "free-credits",
+      "high-subsidy"
+    ],
     "price": "low",
     "free_amount": "注册送50万积分",
-    "score": 7.90,
+    "score": 7.9,
     "response_time": 0.38,
     "alive": true,
     "last_check": "2026-05-20",
@@ -364,8 +521,29 @@
     "domain": "poloapi.com",
     "name": "PoloAPI",
     "description": "SVIP企业级AI API服务平台，20+品牌全生态覆盖含Midjourney，99.9% SLA保障，日处理百万美元级API调用，1000+企业案例",
-    "models": ["gpt-4o", "gpt-4.1", "o1-mini", "claude-3.5-sonnet", "claude-sonnet-4", "claude-3.7-sonnet", "gemini-2.0-flash", "gemini-2.5-pro", "deepseek-v3", "qwen-max", "doubao", "kimi", "midjourney"],
-    "features": ["enterprise", "sla-99.9", "multi", "midjourney", "audit", "invoice"],
+    "models": [
+      "gpt-4o",
+      "gpt-4.1",
+      "o1-mini",
+      "claude-3.5-sonnet",
+      "claude-sonnet-4",
+      "claude-3.7-sonnet",
+      "gemini-2.0-flash",
+      "gemini-2.5-pro",
+      "deepseek-v3",
+      "qwen-max",
+      "doubao",
+      "kimi",
+      "midjourney"
+    ],
+    "features": [
+      "enterprise",
+      "sla-99.9",
+      "multi",
+      "midjourney",
+      "audit",
+      "invoice"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 8.55,
@@ -379,12 +557,27 @@
     "domain": "toapis.com",
     "name": "豆腐 ToAPIs",
     "description": "兼容OpenAI的AI API网关，统一接入GPT-5、Claude、Gemini、Sora等50+模型，智能路由自动故障转移，99.9% SLA",
-    "models": ["gpt-5", "claude", "gemini", "sora", "deepseek", "veo"],
-    "features": ["multi", "smart-route", "failover", "sla-99.9", "video", "image", "referral"],
+    "models": [
+      "gpt-5",
+      "claude",
+      "gemini",
+      "sora",
+      "deepseek",
+      "veo"
+    ],
+    "features": [
+      "multi",
+      "smart-route",
+      "failover",
+      "sla-99.9",
+      "video",
+      "image",
+      "referral"
+    ],
     "price": "medium",
     "free_amount": "",
     "score": 8.65,
-    "response_time": 0.10,
+    "response_time": 0.1,
     "alive": true,
     "last_check": "2026-05-20",
     "check_count": 1
