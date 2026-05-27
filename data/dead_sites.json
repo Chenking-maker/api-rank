@@ -3,88 +3,66 @@
     "url": "https://feixian-api.com",
     "name": "非线智能Api",
     "domain": "feixian-api.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://suchuangapi.com",
     "name": "速创API",
     "domain": "suchuangapi.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://api.anyrouter.com",
     "name": "Anyrouter",
     "domain": "api.anyrouter.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://b4uapi.com",
     "name": "B4U API",
     "domain": "b4uapi.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://91codeapi.com",
     "name": "91Code API",
     "domain": "91codeapi.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://jayapi.com",
     "name": "JAY中转API",
     "domain": "jayapi.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://chaofanapi.com",
     "name": "超凡API中转站",
     "domain": "chaofanapi.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://token5u.com",
     "name": "词元无忧API (Token5u)",
     "domain": "token5u.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://yingapi.com",
     "name": "莹的API",
     "domain": "yingapi.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
     "url": "https://closeai-asia.com",
     "name": "CloseAI",
     "domain": "closeai-asia.com",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "status": "dead"
   },
   {
-    "url": "https://0011.ai",
-    "name": "0011AI",
-    "domain": "0011.ai",
-    "reason": "无法访问",
-    "status": "dead",
-    "checked_at": "2026-05-19"
+    "url": "https://openai-sb.com",
+    "name": "OpenAI-SB",
+    "domain": "",
+    "status": "dead"
   }
 ]

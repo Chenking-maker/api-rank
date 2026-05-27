@@ -1,0 +1,18 @@
+{
+  "updated_at": "2026-05-26T17:53:31.280536",
+  "recovered": [],
+  "new_dead": [
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB",
+      "domain": "openai-sb.com",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c"
+    },
+    {
+      "url": "https://closeai-asia.com",
+      "name": "CloseAI",
+      "domain": "closeai-asia.com",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
+    }
+  ]
+}

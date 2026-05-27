@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-05-26T17:53:31.281208",
+  "elapsed_seconds": 299.7,
+  "summary": {
+    "total_existing": 61,
+    "total_existing_with_url": 61,
+    "total_pending": 18,
+    "total_dead": 11,
+    "new_discovered": 0,
+    "new_dead": 2,
+    "new_recovered": 0,
+    "scrapling_available": true
+  },
+  "new_discovered": [],
+  "new_dead": [
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c"
+    },
+    {
+      "url": "https://closeai-asia.com",
+      "name": "CloseAI",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
+    }
+  ],
+  "new_recovered": []
+}
