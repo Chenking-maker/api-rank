@@ -1,28 +1,17 @@
 {
-  "timestamp": "2026-05-27T17:49:28.854807",
-  "elapsed_seconds": 305.3,
+  "timestamp": "2026-05-28T17:58:16.217892",
+  "elapsed_seconds": 297.4,
   "summary": {
     "total_existing": 61,
     "total_existing_with_url": 61,
     "total_pending": 20,
     "total_dead": 11,
-    "new_discovered": 2,
+    "new_discovered": 0,
     "new_dead": 2,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://api.coderplan.ai",
-      "name": "和包月一样便宜，按 API 用量付费",
-      "source": "github:API中转站 推_extract"
-    },
-    {
-      "url": "https://coderplan.ai",
-      "name": "和包月一样便宜，按 API 用量付费",
-      "source": "github:API中转站 推_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [
     {
       "url": "https://openai-sb.com",
@@ -35,14 +24,5 @@
       "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
     }
   ],
-  "new_recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    }
-  ]
+  "new_recovered": []
 }
