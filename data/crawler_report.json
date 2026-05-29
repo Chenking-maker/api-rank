@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-05-28T17:58:16.217892",
-  "elapsed_seconds": 297.4,
+  "timestamp": "2026-05-29T18:03:17.436774",
+  "elapsed_seconds": 308.2,
   "summary": {
     "total_existing": 61,
     "total_existing_with_url": 61,
@@ -8,7 +8,7 @@
     "total_dead": 11,
     "new_discovered": 0,
     "new_dead": 2,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
   "new_discovered": [],
@@ -24,5 +24,14 @@
       "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
     }
   ],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
