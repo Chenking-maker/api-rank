@@ -1236,7 +1236,7 @@
 
             letter-spacing: -0.3px;
 
-            flex: 1;
+            flex: 0 1 auto;
 
         }
 
@@ -1477,6 +1477,7 @@
     vertical-align: middle;
     user-select: none;
     opacity: 0.6;
+    flex-shrink: 0;
 }
 .rank-card:hover .like-btn,
 .like-btn.liked {
@@ -4531,7 +4532,7 @@
 
                 <div class="hero-stat">
 
-                    <div class="number yellow">6</div>
+                    <div class="number yellow">7</div>
 
                     <div class="label">评测维度</div>
 
@@ -5076,6 +5077,15 @@
                 </div>
                 <span class="dim-weight">5%</span>
             </div>
+
+            <div class="score-dimension">
+                <span class="dim-icon">🧩</span>
+                <div class="dim-info">
+                    <div class="dim-name">模型丰富度</div>
+                    <div class="dim-desc">支持的模型数量和种类覆盖度，包括主流/小众/多模态模型</div>
+                </div>
+                <span class="dim-weight">额外参考</span>
+            </div>
             
             <div class="score-formula">
                 <strong>计算公式：</strong><br>
@@ -5085,7 +5095,7 @@
             </div>
             
             <div class="score-note">
-                ⚠️ 投票数据每月1日自动清零，确保评分反映近期真实口碑。点击每个站点旁的 ▲ 按钮即可投票。
+                ⚠️ 投票数据每月1日自动清零，确保评分反映近期真实口碑。点击每个站点旁的 👍 按钮即可投票。
             </div>
         </div>
     </div>
