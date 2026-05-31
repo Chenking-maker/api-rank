@@ -4979,24 +4979,24 @@
         <button class="section-modal-close" onclick="closeSectionModal('scoreInfoModal')">✕</button>
         <div class="score-info-content">
             <h3>📊 评分维度与权重</h3>
-            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">综合评分由以下4个维度加权计算，每日自动检测更新</p>
+            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">综合评分由以下7个维度加权计算，每日自动检测更新</p>
             
             <div class="score-dimension">
                 <span class="dim-icon">🛡️</span>
                 <div class="dim-info">
                     <div class="dim-name">可用性检测</div>
-                    <div class="dim-desc">网站响应速度、在线状态、超时检测。离线扣3分，超时扣1.5分</div>
+                    <div class="dim-desc">网站在线状态、超时检测。离线扣3分，超时扣1.5分</div>
                 </div>
-                <span class="dim-weight">35%</span>
+                <span class="dim-weight">30%</span>
             </div>
             
             <div class="score-dimension">
                 <span class="dim-icon">✅</span>
                 <div class="dim-info">
                     <div class="dim-name">模型真实性</div>
-                    <div class="dim-desc">基于用户评价的情感分析、模型是否掺假/降智、评价数量</div>
+                    <div class="dim-desc">基于用户评价的情感分析、模型是否掺假/降智</div>
                 </div>
-                <span class="dim-weight">25%</span>
+                <span class="dim-weight">20%</span>
             </div>
             
             <div class="score-dimension">
@@ -5005,7 +5005,25 @@
                     <div class="dim-name">性价比</div>
                     <div class="dim-desc">价格与官方价格的比率，越便宜分越高。自动抓取更新</div>
                 </div>
-                <span class="dim-weight">25%</span>
+                <span class="dim-weight">20%</span>
+            </div>
+            
+            <div class="score-dimension">
+                <span class="dim-icon">⚡</span>
+                <div class="dim-info">
+                    <div class="dim-name">响应速度</div>
+                    <div class="dim-desc">API响应延迟，8档细粒度评分（300ms~3000ms+）</div>
+                </div>
+                <span class="dim-weight">15%</span>
+            </div>
+            
+            <div class="score-dimension">
+                <span class="dim-icon">📈</span>
+                <div class="dim-info">
+                    <div class="dim-name">稳定性</div>
+                    <div class="dim-desc">基于历史检测的在线率和故障恢复速度</div>
+                </div>
+                <span class="dim-weight">10%</span>
             </div>
             
             <div class="score-dimension">
@@ -5014,18 +5032,18 @@
                     <div class="dim-name">用户投票</div>
                     <div class="dim-desc">用户对站点的真实评价投票，每月1号自动清零重算</div>
                 </div>
-                <span class="dim-weight">15%</span>
+                <span class="dim-weight">5%</span>
             </div>
             
             <div class="score-formula">
                 <strong>计算公式：</strong><br>
                 <code>综合评分 = 基础分 + (检测因子 - 0.9) × 15</code><br>
-                <code>检测因子 = 可用性×0.35 + 真实性×0.25 + 性价比×0.25 + 投票×0.15</code><br>
-                调整范围：<code>±1.5分</code>（原±0.5分，已加大可用性权重）
+                <code>检测因子 = 可用性×0.30 + 真实性×0.20 + 性价比×0.20 + 速度×0.15 + 稳定性×0.10 + 投票×0.05</code><br>
+                调整范围：<code>±1.5分</code>
             </div>
             
             <div class="score-note">
-                ⚠️ 投票数据每月1日自动清零，确保评分反映近期真实口碑。每个站点每人每天限投1次。
+                ⚠️ 投票数据每月1日自动清零，确保评分反映近期真实口碑。点击每个站点旁的 ▲ 按钮即可投票。
             </div>
         </div>
     </div>
@@ -6538,7 +6556,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">6.59 <small>/10</small></div>
+                        <div class="rank-score">7.80 <small>/10</small></div>
                         <a href="https://qianfan.baidubce.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -6733,7 +6751,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">6.37 <small>/10</small></div>
+                        <div class="rank-score">7.60 <small>/10</small></div>
                         <a href="https://bigmodel.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -6889,7 +6907,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">6.06 <small>/10</small></div>
+                        <div class="rank-score">7.50 <small>/10</small></div>
                         <a href="https://www.volcengine.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -6967,7 +6985,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">6.01 <small>/10</small></div>
+                        <div class="rank-score">7.70 <small>/10</small></div>
                         <a href="https://platform.moonshot.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7044,7 +7062,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.88 <small>/10</small></div>
+                        <div class="rank-score">7.30 <small>/10</small></div>
                         <a href="https://platform.lingyiwanwu.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7083,7 +7101,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.82 <small>/10</small></div>
+                        <div class="rank-score">8.20 <small>/10</small></div>
                         <a href="https://platform.deepseek.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7122,7 +7140,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.72 <small>/10</small></div>
+                        <div class="rank-score">7.40 <small>/10</small></div>
                         <a href="https://xinghuo.xfyun.cn" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7161,7 +7179,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.55 <small>/10</small></div>
+                        <div class="rank-score">7.60 <small>/10</small></div>
                         <a href="https://bailian.console.aliyun.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7200,7 +7218,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.53 <small>/10</small></div>
+                        <div class="rank-score">7.20 <small>/10</small></div>
                         <a href="https://console.mistral.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7239,7 +7257,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.38 <small>/10</small></div>
+                        <div class="rank-score">7.10 <small>/10</small></div>
                         <a href="https://www.minimaxi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7278,7 +7296,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.32 <small>/10</small></div>
+                        <div class="rank-score">7.00 <small>/10</small></div>
                         <a href="https://dashboard.cohere.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7317,7 +7335,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.25 <small>/10</small></div>
+                        <div class="rank-score">7.00 <small>/10</small></div>
                         <a href="https://platform.baichuan-ai.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7356,7 +7374,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">5.04 <small>/10</small></div>
+                        <div class="rank-score">7.50 <small>/10</small></div>
                         <a href="https://console.groq.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7395,7 +7413,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">4.83 <small>/10</small></div>
+                        <div class="rank-score">7.20 <small>/10</small></div>
                         <a href="https://api.together.xyz" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7434,7 +7452,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">4.52 <small>/10</small></div>
+                        <div class="rank-score">7.10 <small>/10</small></div>
                         <a href="https://fireworks.ai" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -7473,7 +7491,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">4.33 <small>/10</small></div>
+                        <div class="rank-score">7.00 <small>/10</small></div>
                         <a href="https://deepinfra.com" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
