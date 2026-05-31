@@ -742,10 +742,57 @@ class SmartCrawler:
             found_domain = m.group(1).lower().replace('www.', '')
             found_url = normalize_url(m.group(0))
             if self.is_valid_station(found_url):
-                results.append({'url': found_url, 'name': found_domain, 'domain': found_domain,
+                # 尝试从网站提取真实名称
+                real_name = self._extract_site_name(found_url)
+                results.append({'url': found_url, 'name': real_name or found_domain, 'domain': found_domain,
                                 'description': '从文本提取', 'features': self._extract_features(text),
                                 'source': f'{source_tag}_extract'})
         return results
+
+    def _extract_site_name(self, url: str) -> str:
+        """从网站 <title> 或 <meta> 标签提取真实名称"""
+        try:
+            ok, html = self.http_get(url, timeout=8)
+            if not ok:
+                return ''
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            # 方法1: 从 <title> 提取
+            title_tag = soup.find('title')
+            if title_tag:
+                title = title_tag.get_text(strip=True)
+                # 清理常见后缀
+                for suffix in [' - 首页', ' - Home', ' | ', ' - ', '—', ' – ']:
+                    parts = title.split(suffix)
+                    if len(parts) > 1:
+                        title = parts[0].strip()
+                        break
+                # 如果标题看起来像真实名称（不是纯域名），返回
+                if title and len(title) >= 2 and not re.match(r'^https?://', title):
+                    # 排除纯域名的情况
+                    clean = title.replace('www.', '').replace('http://', '').replace('https://', '')
+                    if '.' not in clean or re.search(r'[\u4e00-\u9fff]', title):
+                        return title
+            
+            # 方法2: 从 <meta name="description"> 提取
+            meta_desc = soup.find('meta', attrs={'name': 'description'})
+            if meta_desc:
+                desc = meta_desc.get('content', '')
+                # 取第一句话作为描述
+                first_sentence = desc.split('。')[0].split('.')[0].split('！')[0].strip()
+                if first_sentence and len(first_sentence) >= 4:
+                    return first_sentence[:50]
+            
+            # 方法3: 从 <meta property="og:title"> 或 <meta property="og:site_name">
+            og_title = soup.find('meta', attrs={'property': 'og:title'}) or soup.find('meta', attrs={'property': 'og:site_name'})
+            if og_title:
+                name = og_title.get('content', '').strip()
+                if name and len(name) >= 2:
+                    return name
+            
+            return ''
+        except:
+            return ''
 
     def _extract_features(self, text: str) -> List[str]:
         mapping = {'免费': 'free', '低价': 'cheap', '稳定': 'stable', 'claude': 'claude',
@@ -777,7 +824,9 @@ class SmartCrawler:
                 if self.is_valid_station(clean_url):
                     domain = get_domain(clean_url)
                     if not any(r.get('domain') == domain for r in results):
-                        results.append({'url': clean_url, 'name': domain, 'domain': domain,
+                        # 尝试从网站提取真实名称
+                        real_name = self._extract_site_name(clean_url)
+                        results.append({'url': clean_url, 'name': real_name or domain, 'domain': domain,
                                         'description': '从页面链接提取', 'features': self._extract_features(text[:500]),
                                         'source': f'{source_tag}_link'})
         except Exception as e:

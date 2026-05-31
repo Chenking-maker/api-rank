@@ -10300,6 +10300,46 @@
             }
         }
 
+        // 从 localStorage approvedSites 加载（admin.html 审核通过的站点）
+        function loadApprovedFromAdmin() {
+            try {
+                const approved = JSON.parse(localStorage.getItem('approvedSites') || '[]');
+                if (!approved.length) return;
+                
+                const existingUrls = new Set();
+                document.querySelectorAll('#rankingList .rank-card .btn-primary').forEach(btn => {
+                    const href = btn.getAttribute('href');
+                    if (href) existingUrls.add(href.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase());
+                });
+                
+                let added = 0;
+                approved.forEach(site => {
+                    if (!site || !site.url) return;
+                    const urlKey = site.url.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                    if (existingUrls.has(urlKey)) return;
+                    
+                    // 补充必要字段
+                    if (!site.models) site.models = ['multi'];
+                    if (!site.features) site.features = [];
+                    if (!site.description) site.description = site.name + ' - AI API中转服务';
+                    if (!site.score) site.score = 7.0;
+                    
+                    if (isValidStation(site)) {
+                        addSiteToRanking(site);
+                        existingUrls.add(urlKey);
+                        added++;
+                    }
+                });
+                
+                if (added > 0) {
+                    autoRank();
+                    console.log('从admin审核加载了 ' + added + ' 个站点');
+                }
+            } catch(e) {
+                console.log('loadApprovedFromAdmin error:', e);
+            }
+        }
+
         // 加载爬虫检测的失效站点
         async function loadDeadSitesFromCrawler() {
             try {
@@ -11054,6 +11094,19 @@
             if (isNew) allTags.push({text: '🆕新收录', cls: 'tag-new'});
             modelTags.forEach(t => allTags.push({text: t, cls: 'tag-stable'}));
             featureTags.forEach(t => allTags.push({text: t, cls: 'tag-hot'}));
+            
+            // 补齐标签：如果去掉新收录后不足3个，自动补充
+            if (!isNew && allTags.length < 3) {
+                const extraLabels = ['按量计费', '国内直连', '多模型', '稳定运营', 'OpenAI兼容', 'API中转', '低价优惠'];
+                // 根据站点信息智能选择补充标签
+                const desc = (site.description || '').toLowerCase();
+                if (desc.includes('按量') || desc.includes('payg')) allTags.push({text: '按量计费', cls: 'tag-stable'});
+                else if (desc.includes('直连') || desc.includes('国内')) allTags.push({text: '国内直连', cls: 'tag-stable'});
+                else if (desc.includes('稳定') || desc.includes('可靠')) allTags.push({text: '稳定运营', cls: 'tag-stable'});
+                else if (desc.includes('兼容') || desc.includes('openai')) allTags.push({text: 'OpenAI兼容', cls: 'tag-stable'});
+                else if (desc.includes('低价') || desc.includes('便宜') || desc.includes('实惠')) allTags.push({text: '低价优惠', cls: 'tag-hot'});
+                else allTags.push({text: 'API中转', cls: 'tag-stable'});
+            }
             const displayTags = allTags.slice(0, 3);
 
             const tags = (site.models || ['multi']).join(',');
@@ -11394,6 +11447,73 @@ function updateStationScoreWithVotes(name) {
     // 重新排序
     if (typeof autoRank === 'function') autoRank();
 }
+
+// ===== localStorage 定期清理 =====
+function cleanupLocalStorage() {
+    const now = Date.now();
+    const MAX_AGE = 30 * 24 * 60 * 60 * 1000; // 30天过期
+    
+    // 清理 reviewQueue 中超过30天的 pending 站点
+    try {
+        let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+        const before = queue.length;
+        queue = queue.filter(item => {
+            if (item.status === 'pending') {
+                const timeStr = item.submitTime || item.checked_at;
+                if (timeStr) {
+                    const age = now - new Date(timeStr).getTime();
+                    return age < MAX_AGE;
+                }
+            }
+            return true; // 保留非pending的
+        });
+        if (queue.length < before) {
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+            console.log('localStorage清理: reviewQueue ' + before + ' -> ' + queue.length);
+        }
+    } catch(e) {}
+    
+    // 清理 filteredStations 中超过30天的记录
+    try {
+        let filtered = JSON.parse(localStorage.getItem('filteredStations') || '[]');
+        const before = filtered.length;
+        filtered = filtered.filter(item => {
+            const timeStr = item.filteredAt;
+            if (timeStr) {
+                const age = now - new Date(timeStr).getTime();
+                return age < MAX_AGE;
+            }
+            return true;
+        });
+        if (filtered.length < before) {
+            localStorage.setItem('filteredStations', JSON.stringify(filtered));
+            console.log('localStorage清理: filteredStations ' + before + ' -> ' + filtered.length);
+        }
+    } catch(e) {}
+    
+    // 清理 rejectedSites 中超过30天的记录
+    try {
+        let rejected = JSON.parse(localStorage.getItem('rejectedSites') || '[]');
+        const before = rejected.length;
+        rejected = rejected.filter(item => {
+            const timeStr = item.rejectedAt;
+            if (timeStr) {
+                const age = now - new Date(timeStr).getTime();
+                return age < MAX_AGE;
+            }
+            return true;
+        });
+        if (rejected.length < before) {
+            localStorage.setItem('rejectedSites', JSON.stringify(rejected));
+            console.log('localStorage清理: rejectedSites ' + before + ' -> ' + rejected.length);
+        }
+    } catch(e) {}
+}
+
+// 页面加载时执行清理
+document.addEventListener('DOMContentLoaded', function() {
+    cleanupLocalStorage();
+});
 
 // 页面加载时初始化投票系统
 document.addEventListener('DOMContentLoaded', function() {
@@ -12034,6 +12154,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadRecoveredFromAdmin(),
                 loadApprovedFromData(),
             ]);
+            loadApprovedFromAdmin();
 
             // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行
             await loadApprovedSites();

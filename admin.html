@@ -1403,7 +1403,7 @@ function exportApprovedSites() {
     a.click();
     URL.revokeObjectURL(url);
     
-    showToast(`已导出 ${approved.length} 个站点，请提交到 GitHub`, 'success');
+    showToast(`已导出 ${approved.length} 个站点。请将 new_stations.json 的内容追加到 data/ai_sites_info.json 并提交到 GitHub`, 'success');
 }
 </script>
 </body>
