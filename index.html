@@ -10227,14 +10227,41 @@
         function isValidStation(site) {
             if (!site || !site.url) return false;
             // 检查黑名单
-            if (isBlacklisted(site.url)) return false;
+            if (isBlacklisted(site.url)) {
+                recordFilteredStation(site, '黑名单站点（官方平台/非中转站）');
+                return false;
+            }
             // 检查脏数据
-            if (isDirtySite(site)) return false;
+            if (isDirtySite(site)) {
+                recordFilteredStation(site, '数据不完整（名称/描述缺失）');
+                return false;
+            }
             // 检查名称乱码
-            if (isGarbledText(site.name)) return false;
+            if (isGarbledText(site.name)) {
+                recordFilteredStation(site, '名称乱码');
+                return false;
+            }
             // 检查描述乱码
-            if (isGarbledText(site.description)) return false;
+            if (isGarbledText(site.description)) {
+                recordFilteredStation(site, '描述乱码');
+                return false;
+            }
             return true;
+        }
+
+        // 记录被过滤的站点到 localStorage，供 dead-sites.html 展示
+        function recordFilteredStation(site, reason) {
+            try {
+                const filtered = JSON.parse(localStorage.getItem('filteredStations') || '[]');
+                const name = site.name || site.domain || site.url || '未知';
+                const url = site.url || '';
+                // 去重
+                if (filtered.some(s => s.url === url || s.name === name)) return;
+                filtered.push({ name, url, filterReason: reason, filteredAt: new Date().toISOString() });
+                // 最多保留50条
+                if (filtered.length > 50) filtered.splice(0, filtered.length - 50);
+                localStorage.setItem('filteredStations', JSON.stringify(filtered));
+            } catch(e) {}
         }
 
         // 从data文件直接加载爬虫验证通过的站点（不依赖localStorage）
