@@ -379,6 +379,55 @@ class SmartCrawler:
             time.sleep(0.3)
         print(f"\n  检测完成: {alive_count} 正常, {dead_count} 失效")
 
+        # 自动更新 index.html 中的失效站点标记
+        self._update_html_dead_sites()
+
+    def _update_html_dead_sites(self):
+        """将失效站点在 index.html 中标记为失效状态"""
+        import re, os
+        dead_path = os.path.join(DATA_DIR, 'dead_sites.json')
+        html_path = os.path.join('.', 'index.html')
+        
+        if not os.path.exists(dead_path) or not os.path.exists(html_path):
+            return
+        
+        try:
+            with open(dead_path, 'r', encoding='utf-8') as f:
+                dead_sites = json.load(f)
+            
+            if not isinstance(dead_sites, list) or len(dead_sites) == 0:
+                return
+            
+            dead_domains = set()
+            for site in dead_sites:
+                url = site.get('url', '')
+                domain = url.replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0].lower()
+                if domain:
+                    dead_domains.add(domain)
+            
+            with open(html_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            modified = False
+            for domain in dead_domains:
+                # 在 rank-card 中查找包含该域名的卡片，添加 dead 标记
+                pattern = rf'(class="rank-card[^"]*"[^>]*>.*?href="https?://[^"]*{re.escape(domain)}[^"]*")'
+                matches = list(re.finditer(pattern, content, re.DOTALL))
+                for match in matches:
+                    card_html = match.group(1)
+                    if 'data-dead="true"' not in card_html:
+                        # 在 class 中添加 dead 标记
+                        new_card = card_html.replace('class="rank-card', 'data-dead="true" class="rank-card')
+                        content = content.replace(card_html, new_card)
+                        modified = True
+            
+            if modified:
+                with open(html_path, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                print(f"[失效标记] 已在 index.html 中标记 {len(dead_domains)} 个失效站点")
+        except Exception as e:
+            print(f"[失效标记] 更新失败: {e}")
+
     def check_dead_recovery(self):
         """检查失效站点是否恢复"""
         # 已知失效站点的URL映射（硬编码，避免每次都搜索）
@@ -961,6 +1010,67 @@ class SmartCrawler:
             self.pending_stations.append(item)
             self.pending_domains.add(site.get('domain', ''))
             self.new_discovered.append(item)
+
+        # 自动审核：评分>7.5且存活检测通过的站点自动添加到approved
+        self._auto_approve_pending()
+
+    def _auto_approve_pending(self):
+        """自动审核 pending 站点：评分>7.5且存活则自动通过"""
+        import json, os
+        pending_path = os.path.join(DATA_DIR, 'pending_stations.json')
+        approved_path = os.path.join(DATA_DIR, 'approved_stations.json')
+        
+        if not os.path.exists(pending_path):
+            return
+        
+        try:
+            with open(pending_path, 'r', encoding='utf-8') as f:
+                pending = json.load(f)
+            
+            if not isinstance(pending, list) or len(pending) == 0:
+                return
+            
+            approved = []
+            still_pending = []
+            auto_approved = []
+            
+            for site in pending:
+                # 自动审核规则：评分>7.5 且存活检测通过
+                score = site.get('score', 0)
+                alive = site.get('alive', False)
+                url = site.get('url', '')
+                
+                if score > 7.5 and alive and url:
+                    site['status'] = 'approved'
+                    site['approved_at'] = datetime.now().isoformat()
+                    site['approval_method'] = 'auto'
+                    approved.append(site)
+                    auto_approved.append(site.get('name', url))
+                else:
+                    still_pending.append(site)
+            
+            # 保存更新后的 pending
+            with open(pending_path, 'w', encoding='utf-8') as f:
+                json.dump(still_pending, f, ensure_ascii=False, indent=2)
+            
+            # 追加到 approved
+            if approved:
+                existing = []
+                if os.path.exists(approved_path):
+                    with open(approved_path, 'r', encoding='utf-8') as f:
+                        existing = json.load(f)
+                
+                existing_urls = {s.get('url', '') for s in existing}
+                for site in approved:
+                    if site.get('url', '') not in existing_urls:
+                        existing.append(site)
+                
+                with open(approved_path, 'w', encoding='utf-8') as f:
+                    json.dump(existing, f, ensure_ascii=False, indent=2)
+                
+                print(f"[自动审核] {len(auto_approved)} 个站点自动通过: {', '.join(auto_approved)}")
+        except Exception as e:
+            print(f"[自动审核] 失败: {e}")
 
     # ---- 报告 ----
 

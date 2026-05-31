@@ -128,8 +128,8 @@ jobs:
       if: steps.check_changes.outputs.changed == 'true'
       uses: cloudflare/pages-action@v1
       with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        apiToken: ${{ secrets.CF_TOKEN }}
+        accountId: ${{ secrets.CF_ACCOUNT_ID }}
         projectName: api-rank
         directory: .
         gitHubToken: ${{ secrets.GITHUB_TOKEN }}

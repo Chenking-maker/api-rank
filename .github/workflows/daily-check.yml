@@ -6,9 +6,16 @@ on:
     - cron: '0 4 * * *'
   workflow_dispatch:  # 允许手动触发
 
+concurrency:
+  group: daily-check
+  cancel-in-progress: false
+
+permissions: contents: write
+
 jobs:
   daily-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     
     steps:
     - name: Checkout repository
@@ -41,13 +48,14 @@ jobs:
     - name: Commit and push changes
       if: steps.check_changes.outputs.changed == 'true'
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add index.html check_results.json
+        git add index.html data/check_results.json
         git commit -m "🤖 自动更新: API中转站每日检测 $(date +'%Y-%m-%d %H:%M')"
         git push
     
     - name: Deploy to Cloudflare Pages
+      if: steps.check_changes.outputs.changed == 'true'
       uses: cloudflare/pages-action@v1
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

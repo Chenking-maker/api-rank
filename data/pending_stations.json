@@ -337,51 +337,5 @@
     "freeAmount": "",
     "checked_at": "2026-05-25T16:12:53.428843",
     "check_count": 1
-  },
-  {
-    "name": "和包月一样便宜，按 API 用量付费",
-    "url": "https://api.coderplan.ai",
-    "submitTime": "2026-05-27T17:49:28.852716",
-    "status": "pending",
-    "source": "github:API中转站 推_extract",
-    "description": "CoderPlan - 开发者首选 Claude Code/Codex 中转、Gemini CLI 中转站 限时注册送体验余额 和包月一样便宜， 按 API 用量付费 CoderPlan 让您用包月价格调用模型 API，不需要预付月费免费开始试用 查看价格与缓存说明 包月价格，按量扣费；模型、tokens、费用、缓存节省和余额变化都能查",
-    "features": [
-      "cheap",
-      "stable",
-      "fast",
-      "free"
-    ],
-    "models": [
-      "claude",
-      "gemini"
-    ],
-    "score": 9.3,
-    "responseTime": null,
-    "freeAmount": "注册送体验余额 和包月一样便宜， 按 API 用量付费 Co",
-    "checked_at": "2026-05-27T17:49:28.852739",
-    "check_count": 1
-  },
-  {
-    "name": "和包月一样便宜，按 API 用量付费",
-    "url": "https://coderplan.ai",
-    "submitTime": "2026-05-27T17:49:28.852755",
-    "status": "pending",
-    "source": "github:API中转站 推_extract",
-    "description": "CoderPlan - 开发者首选 Claude Code/Codex 中转、Gemini CLI 中转站 限时注册送体验余额 和包月一样便宜， 按 API 用量付费 CoderPlan 让您用包月价格调用模型 API，不需要预付月费免费开始试用 查看价格与缓存说明 包月价格，按量扣费；模型、tokens、费用、缓存节省和余额变化都能查",
-    "features": [
-      "cheap",
-      "stable",
-      "fast",
-      "free"
-    ],
-    "models": [
-      "claude",
-      "gemini"
-    ],
-    "score": 9.3,
-    "responseTime": null,
-    "freeAmount": "注册送体验余额 和包月一样便宜， 按 API 用量付费 Co",
-    "checked_at": "2026-05-27T17:49:28.852757",
-    "check_count": 1
   }
 ]

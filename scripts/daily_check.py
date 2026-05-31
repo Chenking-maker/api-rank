@@ -32,6 +32,26 @@ SITES = [
     {"name": "BerryPi Pool", "url": "http://www.android-doc.com/", "aff_link": "http://www.android-doc.com/", "base_score": 6.8},
 ]
 
+def load_sites_from_html(html_path='../index.html'):
+    """从 index.html 中动态提取所有站点URL"""
+    import re
+    try:
+        with open(html_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        # 匹配 rank-card 中的 href
+        urls = re.findall(r'class="rank-card[^"]*".*?href="(https?://[^"]+)"', content, re.DOTALL)
+        # 去重并返回
+        seen = set()
+        result = []
+        for url in urls:
+            if url not in seen:
+                seen.add(url)
+                result.append(url)
+        return result
+    except Exception as e:
+        print(f"无法从HTML加载站点: {e}")
+        return []
+
 # 评价数据库
 REVIEWS_DB = {
     "PackyCode": {
@@ -411,5 +431,14 @@ class DailyChecker:
         print("="*60)
 
 if __name__ == "__main__":
+    # 从 index.html 动态加载站点列表，与硬编码列表合并去重
+    html_sites = load_sites_from_html()
+    existing_urls = {s["url"] for s in SITES}
+    for url in html_sites:
+        if url not in existing_urls:
+            SITES.append({"name": url, "url": url, "aff_link": url, "base_score": 7.0})
+            existing_urls.add(url)
+    print(f"共 {len(SITES)} 个站点待检测 (硬编码 {len(SITES) - len(html_sites)} + HTML提取 {len(html_sites)}，去重后新增 {len(html_sites) - sum(1 for u in html_sites if u in existing_urls - {u for u in html_sites})})")
+
     checker = DailyChecker()
     checker.run_check()
