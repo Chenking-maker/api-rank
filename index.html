@@ -1460,6 +1460,49 @@
     line-height: 1;
 }
 
+/* ===== 站名旁点赞按钮 ===== */
+.like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-secondary);
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 6px;
+    vertical-align: middle;
+    user-select: none;
+    opacity: 0.6;
+}
+.rank-card:hover .like-btn,
+.like-btn.liked {
+    opacity: 1;
+}
+.like-btn:hover {
+    border-color: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.08);
+}
+.like-btn.liked {
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.3);
+    background: rgba(255, 107, 107, 0.12);
+}
+.like-btn .like-icon {
+    font-size: 12px;
+    line-height: 1;
+}
+.like-btn .like-count {
+    font-weight: 600;
+    font-size: 11px;
+    min-width: 8px;
+    text-align: center;
+}
+
 /* ===== 评分说明按钮 ===== */
 .score-info-btn {
     display: inline-block;
@@ -5074,7 +5117,7 @@
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span>2026年5月</span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
+                <h2 class="section-title">综合排行榜 <span>2026年6月</span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
 
                 <div class="filter-tabs">
 
@@ -6379,6 +6422,7 @@
                             <div class="rank-tags">
                                 <span class="tag tag-stable">价格实惠</span>
                                 <span class="tag tag-stable">按量计费</span>
+                                <span class="tag tag-stable">社区推荐</span>
                             </div>
                         </div>
                         <div class="rank-desc">社区推荐的新兴中转站，专注Claude和GPT系列，价格实惠，按量计费。</div>
@@ -6573,6 +6617,7 @@
                             <div class="rank-tags">
                                 <span class="tag tag-stable">国内直连</span>
                                 <span class="tag tag-stable">多模型</span>
+                                <span class="tag tag-hot">价格实惠</span>
                             </div>
                         </div>
                         <div class="rank-desc">新兴AI API中转站，支持Claude、GPT、Gemini等主流模型，国内直连，价格实惠。</div>
@@ -6767,6 +6812,7 @@
                             <div class="rank-tags">
                                 <span class="tag tag-stable">国内直连</span>
                                 <span class="tag tag-stable">多模型</span>
+                                <span class="tag tag-stable">价格实惠</span>
                             </div>
                         </div>
                         <div class="rank-desc">AI API中转服务，支持Claude、GPT等多种主流模型，国内直连。</div>
@@ -6844,6 +6890,7 @@
                             <div class="rank-tags">
                                 <span class="tag tag-stable">中文优化</span>
                                 <span class="tag tag-stable">多模型</span>
+                                <span class="tag tag-stable">中文优化</span>
                             </div>
                         </div>
                         <div class="rank-desc">AI API中转服务，专注中文场景优化，支持Claude、GPT等模型。</div>
@@ -6921,6 +6968,7 @@
                             <div class="rank-tags">
                                 <span class="tag tag-stable">GPT专精</span>
                                 <span class="tag tag-stable">国内直连</span>
+                                <span class="tag tag-stable">低价</span>
                             </div>
                         </div>
                         <div class="rank-desc">GPT系列API中转服务，专注OpenAI模型接入，国内直连。</div>
@@ -6998,6 +7046,7 @@
                             <div class="rank-tags">
                                 <span class="tag tag-stable">亚洲节点</span>
                                 <span class="tag tag-stable">低延迟</span>
+                                <span class="tag tag-stable">Claude/GPT</span>
                             </div>
                         </div>
                         <div class="rank-desc">AI API中转服务，亚洲节点部署，低延迟接入Claude、GPT等模型。</div>
@@ -7987,7 +8036,7 @@
 
                 infoEl.style.display = 'none';
 
-                document.querySelector('#ranking .section-title span').textContent = '2026年5月';
+                document.querySelector('#ranking .section-title span').textContent = '2026年6月';
 
                 return;
 
@@ -8093,7 +8142,7 @@
 
                 const labels = {
 
-                    all: '2026年5月',
+                    all: '2026年6月',
 
                     claude: 'Claude 专区',
 
@@ -8205,9 +8254,9 @@
 
             { name: 'CloseAI', url: 'closeai-asia.com', models: ['claude','gpt'], price: 'medium', scene: ['coding','api'], special: ['direct','fast'], concurrency: 'medium', payment: 'payg', score: 8.0, stability: 8.0, speed: 9.0, support: 7.5, features: ['亚洲节点','低延迟','国内直连'], freeAmount: '无免费额度' },
 
-            { name: 'DeepSeek官方', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
+            { name: 'DeepSeek API', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
 
-            { name: '火山引擎(豆包)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
+            { name: '豆包API(火山引擎)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' }
 
         ];
 
@@ -11307,126 +11356,76 @@
 
         function autoRank() {
 
-// ===== 用户投票系统 =====
-const VOTE_STORAGE_KEY = 'api_rank_votes';
-const VOTE_MONTH_KEY = 'api_rank_vote_month';
+// ===== 站名旁点赞按钮 =====
+const LIKE_STORAGE_KEY = 'api_rank_likes';
 
-function getVoteMonth() {
-    return new Date().toISOString().slice(0, 7); // "2026-06"
+function getLikes() {
+    try { return JSON.parse(localStorage.getItem(LIKE_STORAGE_KEY) || '{}'); }
+    catch { return {}; }
 }
-
-function initVoteSystem() {
-    // 每月清零检查
-    const storedMonth = localStorage.getItem(VOTE_MONTH_KEY);
-    const currentMonth = getVoteMonth();
-    if (storedMonth !== currentMonth) {
-        localStorage.setItem(VOTE_MONTH_KEY, currentMonth);
-        localStorage.setItem(VOTE_STORAGE_KEY, JSON.stringify({}));
-        console.log('投票数据已月度清零:', currentMonth);
-    }
-    
-    // 渲染投票按钮
-    renderAllVoteButtons();
+function saveLikes(likes) {
+    localStorage.setItem(LIKE_STORAGE_KEY, JSON.stringify(likes));
 }
-
-function getVotes() {
-    try {
-        return JSON.parse(localStorage.getItem(VOTE_STORAGE_KEY) || '{}');
-    } catch { return {}; }
-}
-
-function saveVotes(votes) {
-    localStorage.setItem(VOTE_STORAGE_KEY, JSON.stringify(votes));
-}
-
-function getStationVoteKey(name) {
+function getLikeKey(name) {
     return name.replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g, '_');
 }
 
-function voteStation(name, direction) {
-    // direction: 'up' or 'down'
-    const votes = getVotes();
-    const key = getStationVoteKey(name);
+function toggleLike(name, event) {
+    if (event) event.stopPropagation();
+    const likes = getLikes();
+    const key = getLikeKey(name);
+    if (!likes[key]) likes[key] = { count: 0, liked: false };
     
-    if (!votes[key]) votes[key] = { up: 0, down: 0, userVote: null };
-    
-    // 如果已投同方向，取消投票
-    if (votes[key].userVote === direction) {
-        votes[key][direction]--;
-        votes[key].userVote = null;
+    if (likes[key].liked) {
+        likes[key].count = Math.max(0, likes[key].count - 1);
+        likes[key].liked = false;
     } else {
-        // 如果之前投了反方向，先取消
-        if (votes[key].userVote) {
-            votes[key][votes[key].userVote]--;
-        }
-        votes[key][direction]++;
-        votes[key].userVote = direction;
+        likes[key].count++;
+        likes[key].liked = true;
     }
-    
-    saveVotes(votes);
-    updateVoteButton(name, votes[key]);
-    updateStationScoreWithVotes(name);
+    saveLikes(likes);
+    updateLikeButton(name, likes[key]);
+    updateScoreFromLikes(name);
 }
 
-function renderAllVoteButtons() {
-    const votes = getVotes();
+function renderAllLikeButtons() {
+    const likes = getLikes();
     const cards = document.querySelectorAll('#rankingList .rank-card');
-    
     cards.forEach(card => {
         const nameEl = card.querySelector('.rank-name');
         if (!nameEl) return;
         const name = nameEl.textContent.trim();
-        const key = getStationVoteKey(name);
-        const actionEl = card.querySelector('.rank-action');
-        if (!actionEl) return;
+        if (nameEl.parentElement.querySelector('.like-btn')) return;
         
-        // 检查是否已有投票按钮
-        if (actionEl.querySelector('.vote-btn')) return;
-        
-        const scoreEl = actionEl.querySelector('.rank-score');
-        const voteData = votes[key] || { up: 0, down: 0, userVote: null };
-        const netVotes = voteData.up - voteData.down;
-        
-        const voteHtml = `
-            <div class="vote-group" style="display:flex;gap:4px;align-items:center;">
-                <button class="vote-btn ${voteData.userVote === 'up' ? 'voted-up' : ''}" onclick="voteStation('${name.replace(/'/g, "\\'")}', 'up')" title="好评">
-                    <span class="vote-arrow">▲</span>
-                    <span class="vote-count">${netVotes > 0 ? '+' + netVotes : netVotes}</span>
-                </button>
-            </div>
-        `;
-        
-        if (scoreEl) {
-            scoreEl.insertAdjacentHTML('afterend', voteHtml);
-        }
+        const key = getLikeKey(name);
+        const likeData = likes[key] || { count: 0, liked: false };
+        const btn = document.createElement('button');
+        btn.className = 'like-btn' + (likeData.liked ? ' liked' : '');
+        btn.setAttribute('data-like-name', name);
+        btn.onclick = function(e) { toggleLike(name, e); };
+        btn.innerHTML = '<span class="like-icon">♥</span><span class="like-count">' + likeData.count + '</span>';
+        nameEl.parentElement.appendChild(btn);
     });
 }
 
-function updateVoteButton(name, voteData) {
+function updateLikeButton(name, likeData) {
     const cards = document.querySelectorAll('#rankingList .rank-card');
     cards.forEach(card => {
-        const nameEl = card.querySelector('.rank-name');
-        if (!nameEl || nameEl.textContent.trim() !== name) return;
-        
-        const btn = card.querySelector('.vote-btn');
+        const btn = card.querySelector('.like-btn[data-like-name="' + name + '"]');
         if (!btn) return;
-        
-        const netVotes = voteData.up - voteData.down;
-        btn.querySelector('.vote-count').textContent = netVotes > 0 ? '+' + netVotes : netVotes;
-        btn.className = 'vote-btn' + (voteData.userVote === 'up' ? ' voted-up' : voteData.userVote === 'down' ? ' voted-down' : '');
+        btn.querySelector('.like-count').textContent = likeData.count;
+        btn.className = 'like-btn' + (likeData.liked ? ' liked' : '');
     });
 }
 
-function updateStationScoreWithVotes(name) {
-    // 投票影响评分显示（前端微调展示，后端每日检测时正式计算）
-    const votes = getVotes();
-    const key = getStationVoteKey(name);
-    const voteData = votes[key];
-    if (!voteData || (voteData.up + voteData.down) < 3) return; // 至少3票才影响
+function updateScoreFromLikes(name) {
+    const likes = getLikes();
+    const key = getLikeKey(name);
+    const likeData = likes[key];
+    if (!likeData || likeData.count < 5) return; // 至少5个赞才影响评分
     
-    const approvalRate = voteData.up / (voteData.up + voteData.down);
-    // 投票调整：好评率>70%加分，<30%减分，范围±0.3
-    const voteAdjustment = (approvalRate - 0.5) * 0.6; // -0.3 ~ +0.3
+    // 点赞影响评分：每10个赞加0.1分，最多+0.5分
+    const scoreBoost = Math.min(likeData.count / 10 * 0.1, 0.5);
     
     const cards = document.querySelectorAll('#rankingList .rank-card');
     cards.forEach(card => {
@@ -11436,17 +11435,26 @@ function updateStationScoreWithVotes(name) {
         const scoreEl = card.querySelector('.rank-score');
         if (!scoreEl) return;
         
-        // 读取当前分数
-        const currentScore = parseFloat(card.getAttribute('data-score') || scoreEl.textContent.match(/([\d.]+)/)?.[1] || '0');
-        const displayScore = Math.min(10, Math.max(1, currentScore + voteAdjustment)).toFixed(2);
+        const baseScore = parseFloat(card.getAttribute('data-score') || 
+            scoreEl.textContent.match(/([\d.]+)/)?.[1] || '0');
+        // 使用原始基础分（不带之前投票调整的）
+        const originalBase = parseFloat(card.getAttribute('data-original-score') || baseScore);
+        if (!card.getAttribute('data-original-score')) {
+            card.setAttribute('data-original-score', baseScore);
+        }
         
+        const displayScore = Math.min(10, originalBase + scoreBoost).toFixed(2);
         card.setAttribute('data-score', displayScore);
         scoreEl.innerHTML = displayScore + ' <small>/10</small>';
     });
     
-    // 重新排序
     if (typeof autoRank === 'function') autoRank();
 }
+
+// 初始化点赞按钮
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(renderAllLikeButtons, 1500);
+});
 
 // ===== localStorage 定期清理 =====
 function cleanupLocalStorage() {
@@ -11513,11 +11521,6 @@ function cleanupLocalStorage() {
 // 页面加载时执行清理
 document.addEventListener('DOMContentLoaded', function() {
     cleanupLocalStorage();
-});
-
-// 页面加载时初始化投票系统
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(initVoteSystem, 1000); // 延迟1秒，等待动态卡片加载
 });
 
             requestAnimationFrame(() => {
@@ -11763,11 +11766,11 @@ document.addEventListener('DOMContentLoaded', function() {
         function renderTrafficRank() {
             // SimilarWeb 2026年4月数据（月访问量估算）
             const trafficData = [
-                { name: '禾维AI', domain: 'hvoy.ai', visits: 126500 },
-                { name: 'SNAKE GPT', domain: 'snakegpt.vip', visits: 15600 },
+                { name: '禾维AI (hvoy.ai)', domain: 'hvoy.ai', visits: 126500 },
+                { name: '蛇GPT (SnakeGPT)', domain: 'snakegpt.vip', visits: 15600 },
                 { name: 'API2D', domain: 'api2d.com', visits: 9100 },
-                { name: '智增增API', domain: 'api.zhizengzeng.com', visits: 6200 },
-                { name: '诗云API', domain: 'shiyunapi.com', visits: 4800 },
+                { name: '智增增', domain: 'api.zhizengzeng.com', visits: 6200 },
+                { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', visits: 4800 },
             ];
 
             // 启动流体波浪 Canvas 动画
