@@ -1,15 +1,15 @@
 {
-  "check_time": "2026-05-22T12:36:48.440866",
+  "check_time": "2026-06-01T00:56:20.765428",
   "total_sites": 13,
   "results": [
     {
       "name": "PackyCode",
       "url": "https://www.packyapi.com",
       "aff_link": "https://www.packyapi.com/register?aff=zrXb",
-      "timestamp": "2026-05-22T12:36:33.652338",
+      "timestamp": "2026-06-01T00:55:48.866586",
       "availability": {
         "status": "online",
-        "response_time": 160.9,
+        "response_time": 1281.42,
         "status_code": 200
       },
       "authenticity": {
@@ -23,17 +23,17 @@
         "price_ratio": 0.9
       },
       "old_score": 10.0,
-      "new_score": 9.1,
-      "score_change": -0.9
+      "new_score": 9.69,
+      "score_change": -0.31
     },
     {
       "name": "RightCode",
       "url": "https://www.right.codes",
       "aff_link": "https://www.right.codes/register?aff=56503380",
-      "timestamp": "2026-05-22T12:36:34.568509",
+      "timestamp": "2026-06-01T00:55:49.736986",
       "availability": {
         "status": "online",
-        "response_time": 415.92,
+        "response_time": 366.93,
         "status_code": 200
       },
       "authenticity": {
@@ -47,17 +47,17 @@
         "price_ratio": 0.85
       },
       "old_score": 9.7,
-      "new_score": 9.6,
-      "score_change": -0.1
+      "new_score": 9.64,
+      "score_change": -0.06
     },
     {
       "name": "ToAPIs",
       "url": "https://toapis.com",
       "aff_link": "https://toapis.com/login?aff=yjH5",
-      "timestamp": "2026-05-22T12:36:35.360864",
+      "timestamp": "2026-06-01T00:55:51.163781",
       "availability": {
         "status": "online",
-        "response_time": 292.12,
+        "response_time": 924.52,
         "status_code": 200
       },
       "authenticity": {
@@ -71,17 +71,17 @@
         "price_ratio": 0.88
       },
       "old_score": 9.3,
-      "new_score": 8.9,
-      "score_change": -0.4
+      "new_score": 9.09,
+      "score_change": -0.21
     },
     {
       "name": "API易",
       "url": "https://api.easyapi.com",
       "aff_link": "https://api.easyapi.com",
-      "timestamp": "2026-05-22T12:36:36.902278",
+      "timestamp": "2026-06-01T00:55:51.890183",
       "availability": {
         "status": "online",
-        "response_time": 1041.17,
+        "response_time": 219.52,
         "status_code": 200
       },
       "authenticity": {
@@ -95,18 +95,18 @@
         "price_ratio": 0.9
       },
       "old_score": 9.4,
-      "new_score": 8.4,
-      "score_change": -1.0
+      "new_score": 9.3,
+      "score_change": -0.1
     },
     {
       "name": "302.AI",
       "url": "https://302.ai",
       "aff_link": "https://302.ai",
-      "timestamp": "2026-05-22T12:36:38.167878",
+      "timestamp": "2026-06-01T00:56:02.419302",
       "availability": {
-        "status": "online",
-        "response_time": 765.36,
-        "status_code": 200
+        "status": "timeout",
+        "response_time": 10000,
+        "status_code": 0
       },
       "authenticity": {
         "score": 0.65,
@@ -119,18 +119,18 @@
         "price_ratio": 0.89
       },
       "old_score": 8.8,
-      "new_score": 7.80,
+      "new_score": 7.800000000000001,
       "score_change": -1.0
     },
     {
       "name": "Ofox.AI",
       "url": "https://ofox.ai",
       "aff_link": "https://ofox.ai",
-      "timestamp": "2026-05-22T12:36:38.833375",
+      "timestamp": "2026-06-01T00:56:12.943175",
       "availability": {
-        "status": "online",
-        "response_time": 165.22,
-        "status_code": 200
+        "status": "timeout",
+        "response_time": 10000,
+        "status_code": 0
       },
       "authenticity": {
         "score": 0.71,
@@ -143,17 +143,17 @@
         "price_ratio": 0.92
       },
       "old_score": 8.4,
-      "new_score": 8.5,
-      "score_change": 0.1
+      "new_score": 7.4,
+      "score_change": -1.0
     },
     {
       "name": "星链4SAPI",
       "url": "https://4sapi.com",
       "aff_link": "https://4sapi.com",
-      "timestamp": "2026-05-22T12:36:39.953794",
+      "timestamp": "2026-06-01T00:56:14.133633",
       "availability": {
         "status": "online",
-        "response_time": 620.17,
+        "response_time": 677.33,
         "status_code": 200
       },
       "authenticity": {
@@ -167,17 +167,17 @@
         "price_ratio": 0.95
       },
       "old_score": 9.9,
-      "new_score": 9.5,
-      "score_change": -0.4
+      "new_score": 9.54,
+      "score_change": -0.36
     },
     {
       "name": "IKunCode",
       "url": "https://api.ikuncode.cc",
       "aff_link": "https://api.ikuncode.cc",
-      "timestamp": "2026-05-22T12:36:40.887176",
+      "timestamp": "2026-06-01T00:56:15.318469",
       "availability": {
         "status": "online",
-        "response_time": 433.11,
+        "response_time": 677.11,
         "status_code": 200
       },
       "authenticity": {
@@ -191,17 +191,17 @@
         "price_ratio": 0.87
       },
       "old_score": 8.3,
-      "new_score": 8.6,
-      "score_change": 0.3
+      "new_score": 8.07,
+      "score_change": -0.23
     },
     {
       "name": "硅基流动",
-      "url": "https://siliconflow.cn",
-      "aff_link": "https://siliconflow.cn",
-      "timestamp": "2026-05-22T12:36:42.712643",
+      "url": "https://cloud.siliconflow.cn",
+      "aff_link": "https://cloud.siliconflow.cn/i/E5yUpjCP",
+      "timestamp": "2026-06-01T00:56:16.306883",
       "availability": {
         "status": "online",
-        "response_time": 1325.21,
+        "response_time": 475.7,
         "status_code": 200
       },
       "authenticity": {
@@ -215,17 +215,17 @@
         "price_ratio": 0.8
       },
       "old_score": 8.8,
-      "new_score": 8.5,
-      "score_change": -0.3
+      "new_score": 8.87,
+      "score_change": 0.07
     },
     {
       "name": "OpenRouter",
       "url": "https://openrouter.ai",
       "aff_link": "https://openrouter.ai",
-      "timestamp": "2026-05-22T12:36:43.307866",
+      "timestamp": "2026-06-01T00:56:17.629125",
       "availability": {
         "status": "online",
-        "response_time": 94.98,
+        "response_time": 819.84,
         "status_code": 200
       },
       "authenticity": {
@@ -239,17 +239,17 @@
         "price_ratio": 1.0
       },
       "old_score": 8.0,
-      "new_score": 8.4,
-      "score_change": 0.4
+      "new_score": 7.67,
+      "score_change": -0.33
     },
     {
       "name": "SSSAICode",
       "url": "https://www.sssaicode.com",
       "aff_link": "https://www.sssaicode.com/register?ref=BO64DM",
-      "timestamp": "2026-05-22T12:36:44.010238",
+      "timestamp": "2026-06-01T00:56:18.686317",
       "availability": {
         "status": "online",
-        "response_time": 202.13,
+        "response_time": 551.44,
         "status_code": 200
       },
       "authenticity": {
@@ -263,17 +263,17 @@
         "price_ratio": 0.86
       },
       "old_score": 7.8,
-      "new_score": 8.5,
-      "score_change": 0.7
+      "new_score": 7.58,
+      "score_change": -0.22
     },
     {
       "name": "147AI",
       "url": "https://147ai.com",
       "aff_link": "https://147ai.com",
-      "timestamp": "2026-05-22T12:36:45.169445",
+      "timestamp": "2026-06-01T00:56:19.539297",
       "availability": {
         "status": "online",
-        "response_time": 658.99,
+        "response_time": 349.02,
         "status_code": 200
       },
       "authenticity": {
@@ -287,17 +287,17 @@
         "price_ratio": 0.88
       },
       "old_score": 7.8,
-      "new_score": 8.2,
-      "score_change": 0.4
+      "new_score": 7.68,
+      "score_change": -0.12
     },
     {
       "name": "BerryPi Pool",
       "url": "http://www.android-doc.com/",
       "aff_link": "http://www.android-doc.com/",
-      "timestamp": "2026-05-22T12:36:47.940720",
+      "timestamp": "2026-06-01T00:56:20.250771",
       "availability": {
         "status": "online",
-        "response_time": 2271.08,
+        "response_time": 205.01,
         "status_code": 200
       },
       "authenticity": {
@@ -311,8 +311,8 @@
         "price_ratio": 0.9
       },
       "old_score": 6.8,
-      "new_score": 7.1,
-      "score_change": 0.3
+      "new_score": 6.53,
+      "score_change": -0.27
     }
   ]
 }
