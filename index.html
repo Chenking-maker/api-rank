@@ -4113,6 +4113,26 @@
 
 
 
+        .clear-search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 16px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            line-height: 1;
+        }
+        .clear-search-btn:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+
         .search-input::placeholder {
 
             color: var(--text-muted);
@@ -4867,8 +4887,8 @@
                 </div>
 
                 <div class="search-box">
-
-                    <input type="text" id="searchInput" class="search-input" placeholder="搜索中转站名称..." oninput="searchCards(this.value)" />
+                    <input type="text" id="searchInput" class="search-input" placeholder="搜索中转站名称..." oninput="searchCards(this.value)" onfocus="showClearBtn()" onblur="hideClearBtn()" />
+                    <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" style="display:none;" title="清除搜索">✕</button>
 
                     <div class="search-result-info" id="searchResultInfo" style="display:none;"></div>
 
@@ -7704,6 +7724,35 @@
         document.getElementById('updateTime').textContent = timeStr;
 
 
+
+        // ===== Search Clear Button =====
+        function showClearBtn() {
+            const input = document.getElementById('searchInput');
+            const btn = document.getElementById('clearSearchBtn');
+            if (input.value.trim().length > 0) {
+                btn.style.display = 'block';
+            }
+        }
+
+        function hideClearBtn() {
+            // 延迟隐藏，确保点击清除按钮时不会立即消失
+            setTimeout(() => {
+                const btn = document.getElementById('clearSearchBtn');
+                const input = document.getElementById('searchInput');
+                if (document.activeElement !== input) {
+                    btn.style.display = 'none';
+                }
+            }, 150);
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            const btn = document.getElementById('clearSearchBtn');
+            input.value = '';
+            btn.style.display = 'none';
+            input.focus();
+            searchCards('');
+        }
 
         // ===== Search =====
 
