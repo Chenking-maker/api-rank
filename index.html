@@ -6183,7 +6183,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">接口AI (Jiekou AI)</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">多模型</span>
                                 <span class="tag tag-stable">OpenAI兼容</span>
                             </div>
@@ -6378,7 +6377,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">Doro API</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">价格实惠</span>
                                 <span class="tag tag-stable">按量计费</span>
                             </div>
@@ -6573,7 +6571,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">禾维AI (hvoy.ai)</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">国内直连</span>
                                 <span class="tag tag-stable">多模型</span>
                             </div>
@@ -6582,7 +6579,7 @@
                         <div class="rank-metrics">
                             <div class="metric">
                                 <span class="metric-label">口碑</span>
-                                <span class="metric-value green">新收录</span>
+                                <span class="metric-value green">待评价</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">价格</span>
@@ -6768,7 +6765,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">智增增</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">国内直连</span>
                                 <span class="tag tag-stable">多模型</span>
                             </div>
@@ -6846,7 +6842,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">AI中文版</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">中文优化</span>
                                 <span class="tag tag-stable">多模型</span>
                             </div>
@@ -6863,7 +6858,7 @@
                             </div>
                             <div class="metric">
                                 <span class="metric-label">口碑</span>
-                                <span class="metric-value">新收录</span>
+                                <span class="metric-value">待评价</span>
                             </div>
                         </div>
                     </div>
@@ -6924,7 +6919,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">OpenAI-SB</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">GPT专精</span>
                                 <span class="tag tag-stable">国内直连</span>
                             </div>
@@ -6937,7 +6931,7 @@
                             </div>
                             <div class="metric">
                                 <span class="metric-label">口碑</span>
-                                <span class="metric-value accent">新收录</span>
+                                <span class="metric-value accent">待评价</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">响应</span>
@@ -7002,7 +6996,6 @@
                         <div class="rank-info-top">
                             <span class="rank-name">CloseAI</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-stable">新收录</span>
                                 <span class="tag tag-stable">亚洲节点</span>
                                 <span class="tag tag-stable">低延迟</span>
                             </div>
@@ -10124,6 +10117,8 @@
         function isDirtySite(site) {
             const desc = (site.description || '').trim();
             const name = (site.name || '').trim();
+            const url = (site.url || '').trim();
+            
             // 检查描述是否是脏数据
             for (const pat of DIRTY_DESC_PATTERNS) {
                 if (new RegExp(pat, 'i').test(desc)) return true;
@@ -10132,6 +10127,17 @@
             for (const pat of DIRTY_NAME_PATTERNS) {
                 if (new RegExp(pat, 'i').test(name)) return true;
             }
+            
+            // 检查名称是否就是域名（如 "demo.sub2api.org"、"yunwu.apifox.cn"）
+            // 规则：名称包含"."且全是小写字母、数字、连字符，没有中文字符
+            if (name && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(name) && !/[\u4e00-\u9fff]/.test(name)) {
+                // 名称看起来像域名，检查是否与URL域名一致
+                const urlDomain = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '').toLowerCase();
+                if (name.toLowerCase() === urlDomain || urlDomain.includes(name.toLowerCase())) {
+                    return true; // 名称就是域名，视为脏数据
+                }
+            }
+            
             // 描述为空且名称也无意义
             if (!desc && (!name || name.length < 2)) return true;
             return false;
@@ -11003,9 +11009,22 @@
 
             const featureTags = (site.features || []).slice(0, 1);
 
+            // 判断是否为新收录（7天内）
+            function isNewlyAdded(site) {
+                const timeStr = site.submitTime || site.checked_at || site.last_check || site.recovered_at;
+                if (!timeStr) return false;
+                try {
+                    const submitDate = new Date(timeStr);
+                    const now = new Date();
+                    const daysDiff = (now - submitDate) / (1000 * 60 * 60 * 24);
+                    return daysDiff <= 7; // 7天内算新收录
+                } catch { return false; }
+            }
+            const isNew = isNewlyAdded(site);
+
             // 生成最多3个有意义的标签
             const allTags = [];
-            allTags.push({text: '🆕新收录', cls: 'tag-new'});
+            if (isNew) allTags.push({text: '🆕新收录', cls: 'tag-new'});
             modelTags.forEach(t => allTags.push({text: t, cls: 'tag-stable'}));
             featureTags.forEach(t => allTags.push({text: t, cls: 'tag-hot'}));
             const displayTags = allTags.slice(0, 3);
@@ -11054,7 +11073,7 @@
                         </div>
                         <div class="metric">
                             <span class="metric-label">口碑</span>
-                            <span class="metric-value">${site.freeAmount ? site.freeAmount : '新收录'}</span>
+                            <span class="metric-value">${site.freeAmount ? site.freeAmount : (isNew ? '新收录' : '待评价')}</span>
                         </div>
                     </div>
 
