@@ -31,10 +31,7 @@
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
@@ -5120,7 +5117,7 @@
                         <span style="display:inline-block;width:8px;height:8px;background:#4ecdc4;border-radius:50%;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></span>
                         热门中转站 · 流量排行
                     </h3>
-                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb 2026年4月 · 月访问量估算 · 点击波浪访问站点</p>
+                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb 2026年6月 · 月访问量估算 · 点击波浪访问站点</p>
                 </div>
             </div>
 
@@ -5940,7 +5937,7 @@
                             </div>
                             <div class="metric">
                                 <span class="metric-label">福利</span>
-                                <span class="metric-value">余额1年有效</span>
+                                <span class="metric-value">注册送额度</span>
                             </div>
                         </div>
                     </div>
@@ -5949,9 +5946,6 @@
                         <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
-
-                
-
 
                 <!-- #21 产灵API -->
 
@@ -6897,9 +6891,8 @@
                         <div class="rank-info-top">
                             <span class="rank-name">AI中文版</span>
                             <div class="rank-tags">
-                                <span class="tag tag-stable">中文优化</span>
+                                <span class="tag tag-stable">高性价比</span>
                                 <span class="tag tag-stable">多模型</span>
-                                <span class="tag tag-stable">中文优化</span>
                             </div>
                         </div>
                         <div class="rank-desc">AI API中转服务，专注中文场景优化，支持Claude、GPT等模型。</div>
@@ -11374,13 +11367,9 @@
 
         
 
-                // ===== 自动排名系统 =====
-
         // ===== 自动排名系统 =====
 
         // 页面加载时自动按评分排序，失效站点自动排到底部
-
-
 
         // 显示失效站点列表弹窗
 
@@ -11395,10 +11384,6 @@
             }
 
         }
-
-
-
-        function autoRank() {
 
 // ===== 站名旁点赞按钮 =====
 const LIKE_STORAGE_KEY = 'api_rank_likes';
@@ -11501,72 +11486,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(renderAllLikeButtons, 1500);
 });
 
-// ===== localStorage 定期清理 =====
-function cleanupLocalStorage() {
-    const now = Date.now();
-    const MAX_AGE = 30 * 24 * 60 * 60 * 1000; // 30天过期
-    
-    // 清理 reviewQueue 中超过30天的 pending 站点
-    try {
-        let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
-        const before = queue.length;
-        queue = queue.filter(item => {
-            if (item.status === 'pending') {
-                const timeStr = item.submitTime || item.checked_at;
-                if (timeStr) {
-                    const age = now - new Date(timeStr).getTime();
-                    return age < MAX_AGE;
-                }
-            }
-            return true; // 保留非pending的
-        });
-        if (queue.length < before) {
-            localStorage.setItem('reviewQueue', JSON.stringify(queue));
-            console.log('localStorage清理: reviewQueue ' + before + ' -> ' + queue.length);
-        }
-    } catch(e) {}
-    
-    // 清理 filteredStations 中超过30天的记录
-    try {
-        let filtered = JSON.parse(localStorage.getItem('filteredStations') || '[]');
-        const before = filtered.length;
-        filtered = filtered.filter(item => {
-            const timeStr = item.filteredAt;
-            if (timeStr) {
-                const age = now - new Date(timeStr).getTime();
-                return age < MAX_AGE;
-            }
-            return true;
-        });
-        if (filtered.length < before) {
-            localStorage.setItem('filteredStations', JSON.stringify(filtered));
-            console.log('localStorage清理: filteredStations ' + before + ' -> ' + filtered.length);
-        }
-    } catch(e) {}
-    
-    // 清理 rejectedSites 中超过30天的记录
-    try {
-        let rejected = JSON.parse(localStorage.getItem('rejectedSites') || '[]');
-        const before = rejected.length;
-        rejected = rejected.filter(item => {
-            const timeStr = item.rejectedAt;
-            if (timeStr) {
-                const age = now - new Date(timeStr).getTime();
-                return age < MAX_AGE;
-            }
-            return true;
-        });
-        if (rejected.length < before) {
-            localStorage.setItem('rejectedSites', JSON.stringify(rejected));
-            console.log('localStorage清理: rejectedSites ' + before + ' -> ' + rejected.length);
-        }
-    } catch(e) {}
-}
-
-// 页面加载时执行清理
-document.addEventListener('DOMContentLoaded', function() {
-    cleanupLocalStorage();
-});
+        function autoRank() {
 
             requestAnimationFrame(() => {
 
@@ -11678,6 +11598,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
 
+// ===== localStorage 定期清理 =====
+function cleanupLocalStorage() {
+    const now = Date.now();
+    const MAX_AGE = 30 * 24 * 60 * 60 * 1000; // 30天过期
+    
+    // 清理 reviewQueue 中超过30天的 pending 站点
+    try {
+        let queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+        const before = queue.length;
+        queue = queue.filter(item => {
+            if (item.status === 'pending') {
+                const timeStr = item.submitTime || item.checked_at;
+                if (timeStr) {
+                    const age = now - new Date(timeStr).getTime();
+                    return age < MAX_AGE;
+                }
+            }
+            return true; // 保留非pending的
+        });
+        if (queue.length < before) {
+            localStorage.setItem('reviewQueue', JSON.stringify(queue));
+            console.log('localStorage清理: reviewQueue ' + before + ' -> ' + queue.length);
+        }
+    } catch(e) {}
+    
+    // 清理 filteredStations 中超过30天的记录
+    try {
+        let filtered = JSON.parse(localStorage.getItem('filteredStations') || '[]');
+        const before = filtered.length;
+        filtered = filtered.filter(item => {
+            const timeStr = item.filteredAt;
+            if (timeStr) {
+                const age = now - new Date(timeStr).getTime();
+                return age < MAX_AGE;
+            }
+            return true;
+        });
+        if (filtered.length < before) {
+            localStorage.setItem('filteredStations', JSON.stringify(filtered));
+            console.log('localStorage清理: filteredStations ' + before + ' -> ' + filtered.length);
+        }
+    } catch(e) {}
+    
+    // 清理 rejectedSites 中超过30天的记录
+    try {
+        let rejected = JSON.parse(localStorage.getItem('rejectedSites') || '[]');
+        const before = rejected.length;
+        rejected = rejected.filter(item => {
+            const timeStr = item.rejectedAt;
+            if (timeStr) {
+                const age = now - new Date(timeStr).getTime();
+                return age < MAX_AGE;
+            }
+            return true;
+        });
+        if (rejected.length < before) {
+            localStorage.setItem('rejectedSites', JSON.stringify(rejected));
+            console.log('localStorage清理: rejectedSites ' + before + ' -> ' + rejected.length);
+        }
+    } catch(e) {}
+}
+
+// 页面加载时执行清理
+document.addEventListener('DOMContentLoaded', function() {
+    cleanupLocalStorage();
+});
 
 
 
@@ -11809,7 +11795,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // ========== 热门中转站流量排行图（流体波浪版） ==========
         function renderTrafficRank() {
-            // SimilarWeb 2026年4月数据（月访问量估算）
+            // SimilarWeb 2026年6月数据（月访问量估算）
             // 热门中转站流量排行（2026年6月数据，基于行业评测热度+用户关注度综合估算）
             const trafficData = [
                 { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', visits: 185000 },
