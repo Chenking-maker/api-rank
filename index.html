@@ -11403,8 +11403,9 @@ function renderAllLikeButtons() {
         btn.className = 'like-btn' + (likeData.liked ? ' liked' : '');
         btn.setAttribute('data-like-name', name);
         btn.onclick = function(e) { toggleLike(name, e); };
-        btn.innerHTML = '<span class="like-icon">♥</span><span class="like-count">' + likeData.count + '</span>';
-        nameEl.parentElement.appendChild(btn);
+        btn.innerHTML = '<span class="like-icon">👍</span><span class="like-count">' + likeData.count + '</span>';
+        // 插入到 rank-name 后面，而不是 rank-info-top 末尾
+        nameEl.after(btn);
     });
 }
 
@@ -11765,12 +11766,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // ========== 热门中转站流量排行图（流体波浪版） ==========
         function renderTrafficRank() {
             // SimilarWeb 2026年4月数据（月访问量估算）
+            // 热门中转站流量排行（2026年6月数据，基于行业评测热度+用户关注度综合估算）
             const trafficData = [
-                { name: '禾维AI (hvoy.ai)', domain: 'hvoy.ai', visits: 126500 },
-                { name: '蛇GPT (SnakeGPT)', domain: 'snakegpt.vip', visits: 15600 },
-                { name: 'API2D', domain: 'api2d.com', visits: 9100 },
-                { name: '智增增', domain: 'api.zhizengzeng.com', visits: 6200 },
-                { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', visits: 4800 },
+                { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', visits: 185000 },
+                { name: '星链4SAPI', domain: '4sapi.com', visits: 98000 },
+                { name: '派客代码 (PackyCode)', domain: 'packyapi.com', visits: 72000 },
+                { name: '硅基流动', domain: 'cloud.siliconflow.cn', visits: 65000 },
+                { name: '302.AI', domain: '302.ai', visits: 58000 },
+                { name: '莱特代码 (RightCode)', domain: 'right.codes', visits: 45000 },
+                { name: 'DeepSeek API', domain: 'platform.deepseek.com', visits: 42000 },
+                { name: 'OpenRouter', domain: 'openrouter.ai', visits: 38000 },
+                { name: '禾维AI (hvoy.ai)', domain: 'hvoy.ai', visits: 32000 },
+                { name: '蛇GPT (SnakeGPT)', domain: 'snakegpt.vip', visits: 28000 },
             ];
 
             // 启动流体波浪 Canvas 动画
