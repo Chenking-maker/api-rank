@@ -267,35 +267,66 @@ class DailyChecker:
         }
     
     def calculate_final_score(self, base_score, availability, authenticity, cost_performance):
-        """计算最终综合评分"""
+        """计算最终综合评分
+        
+        评分维度与权重（公开透明）:
+        - 基础分 (base_score): 人工设定初始分，满分10分
+        - 可用性检测 (availability): 权重35%，直接影响排名
+          - online: 根据响应速度打分
+          - timeout: 扣1.5分
+          - offline: 扣3分
+        - 模型真实性 (authenticity): 权重25%
+          - 基于评价关键词情感分析
+          - 评价数量因子
+        - 性价比 (cost_performance): 权重25%
+          - 基于价格比率分档
+        - 用户投票 (user_vote): 权重15%
+          - 来自前端投票数据，每月清零重算
+          - 暂未接入时使用默认值0.85
+        """
+        # === 可用性惩罚（加大权重）===
         if availability["status"] == "offline":
-            return max(base_score - 2.0, 1.0)
+            return max(base_score - 3.0, 1.0)  # 离线扣3分（原2分）
         
         if availability["status"] == "timeout":
-            return max(base_score - 1.0, 1.0)
+            return max(base_score - 1.5, 1.0)  # 超时扣1.5分（原1分）
         
+        # === 速度评分（更细粒度）===
         response_time = availability.get("response_time", 1000)
-        if response_time < 500:
+        if response_time < 300:
             speed_score = 1.0
+        elif response_time < 500:
+            speed_score = 0.97
+        elif response_time < 800:
+            speed_score = 0.93
         elif response_time < 1000:
-            speed_score = 0.95
+            speed_score = 0.88
+        elif response_time < 1500:
+            speed_score = 0.82
         elif response_time < 2000:
-            speed_score = 0.9
+            speed_score = 0.75
+        elif response_time < 3000:
+            speed_score = 0.65
         else:
-            speed_score = 0.8
+            speed_score = 0.5
         
-        # 综合检测因子（0.85~1.0之间）
+        # === 用户投票因子（默认0.85，待前端接入）===
+        user_vote_score = 0.85  # TODO: 从 data/user_votes.json 读取
+        
+        # === 综合检测因子 ===
+        # 权重: 可用性35% + 真实性25% + 性价比25% + 用户投票15%
         check_factor = (
-            speed_score * 0.4 +
-            authenticity["score"] * 0.3 +
-            cost_performance["score"] * 0.3
+            speed_score * 0.35 +
+            authenticity["score"] * 0.25 +
+            cost_performance["score"] * 0.25 +
+            user_vote_score * 0.15
         )
         
-        # 检测因子映射到 ±0.5 的浮动范围
+        # 检测因子映射到 ±1.5 的浮动范围（原±0.5，扩大3倍）
         # check_factor ≈ 0.9 → 调整 ≈ 0 (不变)
-        # check_factor ≈ 1.0 → 调整 ≈ +0.5
-        # check_factor ≈ 0.8 → 调整 ≈ -0.5
-        adjustment = (check_factor - 0.9) * 5.0  # -0.5 ~ +0.5
+        # check_factor ≈ 1.0 → 调整 ≈ +1.5
+        # check_factor ≈ 0.8 → 调整 ≈ -1.5
+        adjustment = (check_factor - 0.9) * 15.0  # -1.5 ~ +1.5
         final_score = base_score + adjustment
         
         return round(min(max(final_score, 1.0), 10.0), 2)

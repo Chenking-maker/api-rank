@@ -1420,6 +1420,135 @@
             border: none !important;
         }
 
+/* ===== 投票按钮 ===== */
+.vote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-secondary);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+.vote-btn:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text-primary);
+}
+.vote-btn.voted-up {
+    background: rgba(46, 213, 115, 0.15);
+    border-color: rgba(46, 213, 115, 0.3);
+    color: #2ed573;
+}
+.vote-btn.voted-down {
+    background: rgba(255, 107, 107, 0.15);
+    border-color: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+.vote-btn .vote-count {
+    font-weight: 600;
+    min-width: 12px;
+    text-align: center;
+}
+.vote-btn .vote-arrow {
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* ===== 评分说明按钮 ===== */
+.score-info-btn {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.15);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #667eea;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.score-info-btn:hover {
+    background: rgba(102, 126, 234, 0.25);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+/* ===== 评分说明弹窗 ===== */
+.score-info-content {
+    padding: 20px;
+}
+.score-info-content h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+.score-dimension {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.score-dimension:last-child {
+    border-bottom: none;
+}
+.score-dimension .dim-icon {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.score-dimension .dim-info {
+    flex: 1;
+    margin-left: 12px;
+}
+.score-dimension .dim-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+.score-dimension .dim-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+.score-dimension .dim-weight {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    flex-shrink: 0;
+    min-width: 50px;
+    text-align: right;
+}
+.score-formula {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+.score-formula code {
+    background: rgba(102, 126, 234, 0.15);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: #667eea;
+    font-size: 12px;
+}
+.score-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
         .rank-score {
 
             display: flex;
@@ -4844,6 +4973,63 @@
 
     </div>
 
+<!-- Score Info Modal - 评分维度说明 -->
+<div class="section-modal-overlay" id="scoreInfoModal">
+    <div class="section-modal" style="max-width: 560px;">
+        <button class="section-modal-close" onclick="closeSectionModal('scoreInfoModal')">✕</button>
+        <div class="score-info-content">
+            <h3>📊 评分维度与权重</h3>
+            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">综合评分由以下4个维度加权计算，每日自动检测更新</p>
+            
+            <div class="score-dimension">
+                <span class="dim-icon">🛡️</span>
+                <div class="dim-info">
+                    <div class="dim-name">可用性检测</div>
+                    <div class="dim-desc">网站响应速度、在线状态、超时检测。离线扣3分，超时扣1.5分</div>
+                </div>
+                <span class="dim-weight">35%</span>
+            </div>
+            
+            <div class="score-dimension">
+                <span class="dim-icon">✅</span>
+                <div class="dim-info">
+                    <div class="dim-name">模型真实性</div>
+                    <div class="dim-desc">基于用户评价的情感分析、模型是否掺假/降智、评价数量</div>
+                </div>
+                <span class="dim-weight">25%</span>
+            </div>
+            
+            <div class="score-dimension">
+                <span class="dim-icon">💰</span>
+                <div class="dim-info">
+                    <div class="dim-name">性价比</div>
+                    <div class="dim-desc">价格与官方价格的比率，越便宜分越高。自动抓取更新</div>
+                </div>
+                <span class="dim-weight">25%</span>
+            </div>
+            
+            <div class="score-dimension">
+                <span class="dim-icon">👍</span>
+                <div class="dim-info">
+                    <div class="dim-name">用户投票</div>
+                    <div class="dim-desc">用户对站点的真实评价投票，每月1号自动清零重算</div>
+                </div>
+                <span class="dim-weight">15%</span>
+            </div>
+            
+            <div class="score-formula">
+                <strong>计算公式：</strong><br>
+                <code>综合评分 = 基础分 + (检测因子 - 0.9) × 15</code><br>
+                <code>检测因子 = 可用性×0.35 + 真实性×0.25 + 性价比×0.25 + 投票×0.15</code><br>
+                调整范围：<code>±1.5分</code>（原±0.5分，已加大可用性权重）
+            </div>
+            
+            <div class="score-note">
+                ⚠️ 投票数据每月1日自动清零，确保评分反映近期真实口碑。每个站点每人每天限投1次。
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <div class="toast-container" id="toastContainer"></div>
@@ -4870,7 +5056,7 @@
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span>2026年5月</span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span></h2>
+                <h2 class="section-title">综合排行榜 <span>2026年5月</span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
 
                 <div class="filter-tabs">
 
@@ -11003,6 +11189,152 @@
 
 
         function autoRank() {
+
+// ===== 用户投票系统 =====
+const VOTE_STORAGE_KEY = 'api_rank_votes';
+const VOTE_MONTH_KEY = 'api_rank_vote_month';
+
+function getVoteMonth() {
+    return new Date().toISOString().slice(0, 7); // "2026-06"
+}
+
+function initVoteSystem() {
+    // 每月清零检查
+    const storedMonth = localStorage.getItem(VOTE_MONTH_KEY);
+    const currentMonth = getVoteMonth();
+    if (storedMonth !== currentMonth) {
+        localStorage.setItem(VOTE_MONTH_KEY, currentMonth);
+        localStorage.setItem(VOTE_STORAGE_KEY, JSON.stringify({}));
+        console.log('投票数据已月度清零:', currentMonth);
+    }
+    
+    // 渲染投票按钮
+    renderAllVoteButtons();
+}
+
+function getVotes() {
+    try {
+        return JSON.parse(localStorage.getItem(VOTE_STORAGE_KEY) || '{}');
+    } catch { return {}; }
+}
+
+function saveVotes(votes) {
+    localStorage.setItem(VOTE_STORAGE_KEY, JSON.stringify(votes));
+}
+
+function getStationVoteKey(name) {
+    return name.replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g, '_');
+}
+
+function voteStation(name, direction) {
+    // direction: 'up' or 'down'
+    const votes = getVotes();
+    const key = getStationVoteKey(name);
+    
+    if (!votes[key]) votes[key] = { up: 0, down: 0, userVote: null };
+    
+    // 如果已投同方向，取消投票
+    if (votes[key].userVote === direction) {
+        votes[key][direction]--;
+        votes[key].userVote = null;
+    } else {
+        // 如果之前投了反方向，先取消
+        if (votes[key].userVote) {
+            votes[key][votes[key].userVote]--;
+        }
+        votes[key][direction]++;
+        votes[key].userVote = direction;
+    }
+    
+    saveVotes(votes);
+    updateVoteButton(name, votes[key]);
+    updateStationScoreWithVotes(name);
+}
+
+function renderAllVoteButtons() {
+    const votes = getVotes();
+    const cards = document.querySelectorAll('#rankingList .rank-card');
+    
+    cards.forEach(card => {
+        const nameEl = card.querySelector('.rank-name');
+        if (!nameEl) return;
+        const name = nameEl.textContent.trim();
+        const key = getStationVoteKey(name);
+        const actionEl = card.querySelector('.rank-action');
+        if (!actionEl) return;
+        
+        // 检查是否已有投票按钮
+        if (actionEl.querySelector('.vote-btn')) return;
+        
+        const scoreEl = actionEl.querySelector('.rank-score');
+        const voteData = votes[key] || { up: 0, down: 0, userVote: null };
+        const netVotes = voteData.up - voteData.down;
+        
+        const voteHtml = `
+            <div class="vote-group" style="display:flex;gap:4px;align-items:center;">
+                <button class="vote-btn ${voteData.userVote === 'up' ? 'voted-up' : ''}" onclick="voteStation('${name.replace(/'/g, "\\'")}', 'up')" title="好评">
+                    <span class="vote-arrow">▲</span>
+                    <span class="vote-count">${netVotes > 0 ? '+' + netVotes : netVotes}</span>
+                </button>
+            </div>
+        `;
+        
+        if (scoreEl) {
+            scoreEl.insertAdjacentHTML('afterend', voteHtml);
+        }
+    });
+}
+
+function updateVoteButton(name, voteData) {
+    const cards = document.querySelectorAll('#rankingList .rank-card');
+    cards.forEach(card => {
+        const nameEl = card.querySelector('.rank-name');
+        if (!nameEl || nameEl.textContent.trim() !== name) return;
+        
+        const btn = card.querySelector('.vote-btn');
+        if (!btn) return;
+        
+        const netVotes = voteData.up - voteData.down;
+        btn.querySelector('.vote-count').textContent = netVotes > 0 ? '+' + netVotes : netVotes;
+        btn.className = 'vote-btn' + (voteData.userVote === 'up' ? ' voted-up' : voteData.userVote === 'down' ? ' voted-down' : '');
+    });
+}
+
+function updateStationScoreWithVotes(name) {
+    // 投票影响评分显示（前端微调展示，后端每日检测时正式计算）
+    const votes = getVotes();
+    const key = getStationVoteKey(name);
+    const voteData = votes[key];
+    if (!voteData || (voteData.up + voteData.down) < 3) return; // 至少3票才影响
+    
+    const approvalRate = voteData.up / (voteData.up + voteData.down);
+    // 投票调整：好评率>70%加分，<30%减分，范围±0.3
+    const voteAdjustment = (approvalRate - 0.5) * 0.6; // -0.3 ~ +0.3
+    
+    const cards = document.querySelectorAll('#rankingList .rank-card');
+    cards.forEach(card => {
+        const nameEl = card.querySelector('.rank-name');
+        if (!nameEl || nameEl.textContent.trim() !== name) return;
+        
+        const scoreEl = card.querySelector('.rank-score');
+        if (!scoreEl) return;
+        
+        // 读取当前分数
+        const currentScore = parseFloat(card.getAttribute('data-score') || scoreEl.textContent.match(/([\d.]+)/)?.[1] || '0');
+        const displayScore = Math.min(10, Math.max(1, currentScore + voteAdjustment)).toFixed(2);
+        
+        card.setAttribute('data-score', displayScore);
+        scoreEl.innerHTML = displayScore + ' <small>/10</small>';
+    });
+    
+    // 重新排序
+    if (typeof autoRank === 'function') autoRank();
+}
+
+// 页面加载时初始化投票系统
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initVoteSystem, 1000); // 延迟1秒，等待动态卡片加载
+});
 
             requestAnimationFrame(() => {
 
