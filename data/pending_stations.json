@@ -5,7 +5,11 @@
     "domain": "aifast.club",
     "description": "AI快站 - Claude、OpenAI、Gemini 与国产大模型 API 中转平台",
     "features": [],
-    "models": ["claude", "gemini", "domestic"],
+    "models": [
+      "claude",
+      "gemini",
+      "domestic"
+    ],
     "score": 8.2,
     "responseTime": null,
     "freeAmount": "",
@@ -20,8 +24,13 @@
     "url": "https://ctok.ai",
     "domain": "ctok.ai",
     "description": "CTok - Claude Code 教程与资源，提供API中转服务",
-    "features": ["cheap"],
-    "models": ["claude", "gemini"],
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gemini"
+    ],
     "score": 8.2,
     "responseTime": null,
     "freeAmount": "",
@@ -37,7 +46,9 @@
     "domain": "apikey.fun",
     "description": "FUN - AI中转，一个Api Key就够了",
     "features": [],
-    "models": ["multi"],
+    "models": [
+      "multi"
+    ],
     "score": 7.3,
     "responseTime": null,
     "freeAmount": "",
@@ -52,8 +63,14 @@
     "url": "https://runapi.co",
     "domain": "runapi.co",
     "description": "RunAPI - 高质量AI模型API中转平台，一个API Key即可访问OpenAI、Claude、Gemini、DeepSeek、Grok等150+主流模型，低至70%折扣",
-    "features": ["stable"],
-    "models": ["claude", "gemini", "deepseek"],
+    "features": [
+      "stable"
+    ],
+    "models": [
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
     "score": 8.7,
     "responseTime": null,
     "freeAmount": "",
@@ -68,8 +85,12 @@
     "url": "https://all-api-hub.qixing1217.top",
     "domain": "all-api-hub.qixing1217.top",
     "description": "All API Hub - 全能AI资产管家，多站点集中管理面板，余额用量健康状态一目了然",
-    "features": ["fast"],
-    "models": ["claude"],
+    "features": [
+      "fast"
+    ],
+    "models": [
+      "claude"
+    ],
     "score": 7.9,
     "responseTime": null,
     "freeAmount": "",
@@ -85,7 +106,9 @@
     "domain": "unity2.ai",
     "description": "Unity2.Ai - 企业级AI中转方案",
     "features": [],
-    "models": ["multi"],
+    "models": [
+      "multi"
+    ],
     "score": 7.3,
     "responseTime": null,
     "freeAmount": "",
@@ -100,8 +123,13 @@
     "url": "https://api.coderplan.ai",
     "domain": "api.coderplan.ai",
     "description": "CoderPlan - Developer-first Claude Code/Codex and Gemini CLI API gateway，新用户限时试用余额",
-    "features": ["cheap"],
-    "models": ["claude", "gemini"],
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gemini"
+    ],
     "score": 8.2,
     "responseTime": null,
     "freeAmount": "",
@@ -109,6 +137,159 @@
     "status": "pending",
     "submitTime": "2026-05-31T11:58:08.742506",
     "checked_at": "2026-05-31T11:58:08.742526",
+    "check_count": 1
+  },
+  {
+    "name": "coderplan.ai",
+    "url": "https://coderplan.ai",
+    "submitTime": "2026-06-01T21:10:39.154775",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154793",
+    "check_count": 1
+  },
+  {
+    "name": "demo.sub2api.org",
+    "url": "https://demo.sub2api.org",
+    "submitTime": "2026-06-01T21:10:39.154802",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154805",
+    "check_count": 1
+  },
+  {
+    "name": "bestproxy.com",
+    "url": "https://bestproxy.com",
+    "submitTime": "2026-06-01T21:10:39.154808",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154811",
+    "check_count": 1
+  },
+  {
+    "name": "tailwindcss.com",
+    "url": "https://tailwindcss.com",
+    "submitTime": "2026-06-01T21:10:39.154813",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154815",
+    "check_count": 1
+  },
+  {
+    "name": "studio-api.suno.ai",
+    "url": "https://studio-api.suno.ai",
+    "submitTime": "2026-06-01T21:10:39.154817",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154819",
+    "check_count": 1
+  },
+  {
+    "name": "chaxun.wlai.vip",
+    "url": "https://chaxun.wlai.vip",
+    "submitTime": "2026-06-01T21:10:39.154822",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154824",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.apifox.cn",
+    "url": "https://yunwu.apifox.cn",
+    "submitTime": "2026-06-01T21:10:39.154826",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154828",
+    "check_count": 1
+  },
+  {
+    "name": "fastapi.tiangolo.com",
+    "url": "https://fastapi.tiangolo.com",
+    "submitTime": "2026-06-01T21:10:39.154831",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154833",
+    "check_count": 1
+  },
+  {
+    "name": "claude.com",
+    "url": "https://claude.com",
+    "submitTime": "2026-06-01T21:10:39.154835",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-01T21:10:39.154837",
     "check_count": 1
   }
 ]
