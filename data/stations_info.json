@@ -3,11 +3,11 @@
     "url": "https://api2d.com",
     "domain": "api2d.com",
     "name": "API2D",
-    "description": "国内AI API中转平台，支持OpenAI、Claude、StableDiffusion等主流模型，按Token计费",
+    "description": "国内老牌API中转服务，支持多种模型。支付宝充值，文档完善，运营时间长。",
     "models": [
-      "gpt",
       "claude",
-      "deepseek",
+      "gpt",
+      "gemini",
       "domestic"
     ],
     "features": [
@@ -16,11 +16,33 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.82,
+    "score": 7.27,
     "response_time": 0.83,
     "alive": true,
     "last_check": "2026-05-20T11:51:22.146944",
-    "check_count": 2
+    "check_count": 2,
+    "display_tags": [
+      "老牌中转",
+      "国内直连",
+      "支付宝充值"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "老牌中转",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "0.83s",
+        "cls": "accent"
+      },
+      {
+        "label": "优惠",
+        "value": "支付宝充值",
+        "cls": ""
+      }
+    ]
   },
   {
     "url": "https://shiyunapi.com",
@@ -69,92 +91,184 @@
   {
     "url": "https://hvoy.ai",
     "domain": "hvoy.ai",
-    "name": "禾维AI",
-    "description": "API中转站鉴定评测平台，对比各站在线率、掺水率、延迟等指标",
+    "name": "禾维AI (hvoy.ai)",
+    "description": "新兴AI API中转站，支持Claude、GPT、Gemini等主流模型，国内直连，价格实惠。",
     "models": [
       "claude",
       "gpt",
-      "gemini"
+      "gemini",
+      "deepseek",
+      "cheap"
     ],
     "features": [
-      "stable"
+      "cheap",
+      "multi"
     ],
     "price": "low",
     "free_amount": "",
-    "score": 8.34,
+    "score": 6.58,
     "response_time": 0.78,
     "alive": true,
     "last_check": "2026-05-20T11:51:31.272605",
-    "check_count": 2
+    "check_count": 2,
+    "display_tags": [
+      "国内直连",
+      "多模型",
+      "价格实惠"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "待评价",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "价格实惠",
+        "cls": "accent"
+      },
+      {
+        "label": "优惠",
+        "value": "国内直连",
+        "cls": ""
+      }
+    ]
   },
   {
     "url": "https://api.zhizengzeng.com",
     "domain": "api.zhizengzeng.com",
-    "name": "智增增API",
-    "description": "企业级API服务商，兼容OpenAI协议，支持众多国产大模型",
+    "name": "智增增",
+    "description": "AI API中转服务，支持Claude、GPT等多种主流模型，国内直连。",
     "models": [
-      "gpt",
       "claude",
+      "gpt",
+      "gemini",
       "deepseek",
-      "doubao",
-      "qwen",
-      "glm",
-      "domestic"
+      "cheap"
     ],
     "features": [
-      "stable",
-      "multi"
+      "multi",
+      "cheap"
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.15,
+    "score": 6.36,
     "response_time": 0.29,
     "alive": true,
     "last_check": "2026-05-20T11:51:33.497535",
-    "check_count": 2
+    "check_count": 2,
+    "display_tags": [
+      "国内直连",
+      "多模型",
+      "价格实惠"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "1.50s",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "多模型",
+        "cls": "accent"
+      },
+      {
+        "label": "福利",
+        "value": "国内直连",
+        "cls": ""
+      }
+    ]
   },
   {
     "url": "https://gptcat.cc",
     "domain": "gptcat.cc",
-    "name": "GPTCAT",
-    "description": "GPT中文镜像聊天平台，提供多模型AI对话服务",
+    "name": "GPT猫 (GPTCat)",
+    "description": "GPT中文引导站，提供GPT镜像服务，支持多种AI模型切换。多镜像站点保障可用性，有ICP备案。",
     "models": [
-      "gpt",
       "claude",
-      "domestic"
+      "gpt",
+      "gemini",
+      "domestic",
+      "cheap"
     ],
     "features": [
-      "free",
       "multi"
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.24,
+    "score": 7.02,
     "response_time": 1.36,
     "alive": true,
     "last_check": "2026-05-20T11:51:38.001029",
-    "check_count": 2
+    "check_count": 2,
+    "display_tags": [
+      "猫咪主题",
+      "高性价比",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "1.61s",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "ICP备案",
+        "cls": "accent"
+      },
+      {
+        "label": "优惠",
+        "value": "多镜像保障",
+        "cls": ""
+      }
+    ]
   },
   {
     "url": "https://ai.huoyachat.com",
     "domain": "ai.huoyachat.com",
-    "name": "火牙AI",
-    "description": "AI对话平台，提供代码编写、文件处理和创意内容生成服务",
+    "name": "AI中文版",
+    "description": "AI API中转服务，专注中文场景优化，支持Claude、GPT等模型。",
     "models": [
-      "gpt",
       "claude",
-      "domestic"
+      "gpt",
+      "gemini",
+      "domestic",
+      "cheap"
     ],
     "features": [
-      "free"
+      "cheap",
+      "multi"
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.13,
+    "score": 6.22,
     "response_time": 0.19,
     "alive": true,
     "last_check": "2026-05-20T11:51:40.656522",
-    "check_count": 2
+    "check_count": 2,
+    "display_tags": [
+      "高性价比",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "green"
+      },
+      {
+        "label": "应用",
+        "value": "中文优化",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "待评价",
+        "cls": ""
+      }
+    ]
   },
   {
     "url": "https://api.whatai.cc",
@@ -365,27 +479,45 @@
     "name": "云雾API",
     "description": "基于New API的AI中转平台，收录479个模型，支持GPT-5.5、Claude Opus 4.7、Gemini 3.1、DeepSeek V4等主流模型，按量/阶梯计费",
     "models": [
-      "gpt-5.5",
-      "claude-opus-4",
-      "gemini-3",
-      "deepseek-v4",
-      "doubao",
-      "qwen",
-      "domestic"
+      "claude",
+      "gpt",
+      "gemini",
+      "domestic",
+      "enterprise"
     ],
     "features": [
       "multi",
-      "price-transparent",
-      "proxy",
-      "479-models"
+      "price-transparent"
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.2,
+    "score": 7.5,
     "response_time": 0.3,
     "alive": true,
     "last_check": "2026-05-20",
-    "check_count": 1
+    "check_count": 1,
+    "display_tags": [
+      "479模型",
+      "阶梯计费",
+      "New API"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "479模型",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "阶梯计费",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "OpenAI兼容",
+        "cls": ""
+      }
+    ]
   },
   {
     "url": "https://free.yunwu.ai",
@@ -588,23 +720,1570 @@
     "name": "清沐API",
     "description": "致力于质量与价格的优质中转站，一键接入所有AI模型，智能调度多上游账号，自动切换和负载均衡，支持团队用量管理和配额上限设置",
     "models": [
-      "gpt-4o",
-      "claude-sonnet-4",
-      "gemini-2.5",
-      "deepseek-v3",
-      "deepseek-r1"
+      "claude",
+      "gpt",
+      "gemini",
+      "domestic",
+      "cheap"
     ],
     "features": [
       "multi",
-      "smart-route",
-      "team",
-      "quota",
-      "failover"
+      "smart-route"
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.0,
+    "score": 8,
     "response_time": 0.45,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "智能调度",
+      "团队配额",
+      "质量优选"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "智能调度",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "团队管理",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://xdhdancer.top",
+    "domain": "xdhdancer.top",
+    "name": "产灵API",
+    "description": "国内直连方案，无需科学上网。账号池技术，稳定性不错，响应极快。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable"
+    ],
+    "display_tags": [
+      "国内直连",
+      "极速响应",
+      "账号池"
+    ],
+    "display_metrics": [
+      {
+        "label": "价格",
+        "value": "极速低价",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "0.19s",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "极速响应",
+        "cls": ""
+      }
+    ],
+    "score": 7.42,
+    "price": "low",
+    "response_time": 0.19,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://ofox.ai",
+    "domain": "ofox.ai",
+    "name": "Ofox.AI",
+    "description": "81个精品模型，主打质量非数量。Opus 4.7/GPT-5.4/Gemini 3.1 Pro等最新模型快速上架。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "精品路线",
+      "上架快",
+      "81模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "优惠",
+        "value": "快速上架",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "精品定价",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "质量优先",
+        "cls": ""
+      }
+    ],
+    "score": 7.4,
+    "price": "medium",
+    "response_time": 0.8,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://aihubmix.com",
+    "domain": "aihubmix.com",
+    "name": "AI枢纽 (AIHubMix)",
+    "description": "面向开发者的快速接入方案，适合研发早期验证。接口简洁，上手快。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "快速接入",
+      "开发者友好",
+      "研发首选"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "开发者友好",
+        "cls": "green"
+      },
+      {
+        "label": "应用",
+        "value": "接口简洁",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "score": 7.37,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://bewildcard.com",
+    "domain": "bewildcard.com",
+    "name": "万卡API (WildCard)",
+    "description": "提供海外虚拟信用卡+API中转一站式服务。适合需要海外支付的开发者。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "海外虚拟卡",
+      "API一站式",
+      "支付方案"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "1.34s",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "一站式服务",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "虚拟信用卡",
+        "cls": ""
+      }
+    ],
+    "score": 7.37,
+    "price": "medium",
+    "response_time": 1.34,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://zaotu.vip/?invite=yuyTxd3t",
+    "domain": "zaotu.vip",
+    "name": "造图局",
+    "description": "专注AI生图，GPT Image等模型。支持性价比渠道和稳定渠道4K两种模式，可上传参考图（最多5张）。",
+    "models": [
+      "image",
+      "gpt"
+    ],
+    "features": [
+      "image"
+    ],
+    "display_tags": [
+      "AI生图",
+      "GPT生图",
+      "双渠道"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "GPT生图",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "双渠道模式",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "4K模式",
+        "cls": ""
+      }
+    ],
+    "score": 7.22,
+    "price": "medium",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://gptsapi.net",
+    "domain": "gptsapi.net",
+    "name": "GptsAPI",
+    "description": "老牌GPT API中转站，支持GPT全系列和Claude，运营时间长，口碑稳定。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "display_tags": [
+      "老牌中转",
+      "GPT全系列",
+      "口碑稳定"
+    ],
+    "display_metrics": [
+      {
+        "label": "应用",
+        "value": "Claude支持",
+        "cls": "green"
+      },
+      {
+        "label": "福利",
+        "value": "老牌稳定",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑稳定",
+        "cls": ""
+      }
+    ],
+    "score": 7.11,
+    "price": "medium",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://jiekou.ai",
+    "domain": "jiekou.ai",
+    "name": "接口AI (Jiekou AI)",
+    "description": "新兴API中转平台，支持Claude/GPT/Gemini等主流模型，接口兼容OpenAI格式，文档清晰。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "domestic"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "多模型",
+      "OpenAI兼容"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "0.63s",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "OpenAI兼容",
+        "cls": ""
+      }
+    ],
+    "score": 7.08,
+    "price": "medium",
+    "response_time": 0.63,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://n1n.ai",
+    "domain": "n1n.ai",
+    "name": "N1N.AI",
+    "description": "个人开发者运营的多模型中转站，支持主流模型。社区口碑不错。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "多模型",
+      "个人开发",
+      "社区口碑"
+    ],
+    "display_metrics": [
+      {
+        "label": "优惠",
+        "value": "个人开发",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "主流模型",
+        "cls": ""
+      }
+    ],
+    "score": 7.1,
+    "price": "low",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://agentrouter.org",
+    "domain": "agentrouter.org",
+    "name": "智能路由 (AgentRouter)",
+    "description": "专为AI Agent场景优化的API路由平台，智能分配最优模型通道，降低延迟。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "Agent优化",
+      "智能路由",
+      "低延迟"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "Agent优化",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "低延迟",
+        "cls": "accent"
+      },
+      {
+        "label": "福利",
+        "value": "智能路由",
+        "cls": ""
+      }
+    ],
+    "score": 6.93,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://jeniya.cn",
+    "domain": "jeniya.cn",
+    "name": "Jeniya AI",
+    "description": "掘金实战文章推荐的中转站，支持多种AI模型，适合开发者在项目中使用。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "实战推荐",
+      "掘金推荐",
+      "IDE集成"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "掘金推荐",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "实战验证",
+        "cls": ""
+      }
+    ],
+    "score": 6.89,
+    "price": "medium",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://doro.lol",
+    "domain": "doro.lol",
+    "name": "Doro API",
+    "description": "社区推荐的新兴中转站，专注Claude和GPT系列，价格实惠，按量计费。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "cheap"
+    ],
+    "display_tags": [
+      "价格实惠",
+      "按量计费",
+      "社区推荐"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "1.35s",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "价格实惠",
+        "cls": "accent"
+      },
+      {
+        "label": "专业",
+        "value": "Claude+GPT",
+        "cls": ""
+      }
+    ],
+    "score": 6.81,
+    "price": "low",
+    "response_time": 1.35,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://hongmacc.com",
+    "domain": "hongmacc.com",
+    "name": "红麦API (hongmacc)",
+    "description": "社区口碑不错的中转站，支持主流AI模型，稳定性经过用户验证。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "社区口碑",
+      "稳定运行",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "福利",
+        "value": "社区验证",
+        "cls": ""
+      }
+    ],
+    "score": 6.77,
+    "price": "medium",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://api.apiyi.com",
+    "domain": "api.apiyi.com",
+    "name": "API易站 (APIYI)",
+    "description": "掘金OpenCode指南推荐的API中转平台，接口规范，适合IDE集成使用。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "OpenCode推荐",
+      "接口规范",
+      "IDE集成"
+    ],
+    "display_metrics": [
+      {
+        "label": "应用",
+        "value": "IDE集成",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "接口规范",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "规范标准",
+        "cls": ""
+      }
+    ],
+    "score": 6.66,
+    "price": "medium",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://api.weelinking.com",
+    "domain": "api.weelinking.com",
+    "name": "微链API (Weelinking)",
+    "description": "多平台推荐的API中转服务，支持Claude/GPT/Gemini，接口稳定。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "多源推荐",
+      "接口稳定",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "7.59s",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "接口稳定",
+        "cls": ""
+      }
+    ],
+    "score": 6.63,
+    "price": "medium",
+    "response_time": 7.59,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://qianfan.baidubce.com",
+    "domain": "qianfan.baidubce.com",
+    "name": "百度千帆",
+    "description": "百度智能云千帆大模型平台，文心一言官方API。企业级合规稳定。",
+    "models": [
+      "domestic",
+      "enterprise"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "文心一言",
+      "企业级"
+    ],
+    "display_metrics": [
+      {
+        "label": "优惠",
+        "value": "企业级合规",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "百度官方",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "文心一言",
+        "cls": ""
+      }
+    ],
+    "score": 7.8,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://www.berrypi.com",
+    "domain": "berrypi.com",
+    "name": "BerryPi Pool",
+    "description": "人人用得上顶级大模型。支持自动切换、负载均衡，Token套餐制计费，支持图像生成和视频生成。",
+    "models": [
+      "domestic",
+      "cheap",
+      "image"
+    ],
+    "features": [
+      "cheap",
+      "multi",
+      "image"
+    ],
+    "display_tags": [
+      "限时特惠",
+      "负载均衡",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "应用",
+        "value": "图像+视频",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "1.20s",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "Token套餐",
+        "cls": ""
+      }
+    ],
+    "score": 6.53,
+    "price": "low",
+    "response_time": 1.2,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://fishxcode.com",
+    "domain": "fishxcode.com",
+    "name": "鱼代码 (FishXCode)",
+    "description": "专为编程场景优化的API中转站，支持Claude Code和Codex。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "编程优化",
+      "Claude Code",
+      "Codex"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "编程优化",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "1.26s",
+        "cls": "accent"
+      },
+      {
+        "label": "福利",
+        "value": "Claude Code",
+        "cls": ""
+      }
+    ],
+    "score": 6.47,
+    "price": "medium",
+    "response_time": 1.26,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://0011.ai",
+    "domain": "0011.ai",
+    "name": "0011AI",
+    "description": "支持多模态AI模型的中转平台，Claude/GPT/Gemini全覆盖。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "多模态",
+      "Claude/GPT/Gemini",
+      "全覆盖"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "1.40s",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "全模型覆盖",
+        "cls": "accent"
+      },
+      {
+        "label": "专业",
+        "value": "多模态",
+        "cls": ""
+      }
+    ],
+    "score": 6.39,
+    "price": "medium",
+    "response_time": 1.4,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://bigmodel.cn",
+    "domain": "bigmodel.cn",
+    "name": "智谱AI (BigModel)",
+    "description": "智谱AI官方平台，GLM系列模型原生支持。学术合作广泛。",
+    "models": [
+      "domestic",
+      "enterprise"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "GLM原生",
+      "学术合作"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "GLM原生",
+        "cls": "green"
+      },
+      {
+        "label": "应用",
+        "value": "学术场景",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "score": 7.6,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://apimart.ai",
+    "domain": "apimart.ai",
+    "name": "API集市 (API Mart)",
+    "description": "API聚合市场平台，提供多种AI模型接口，适合企业级采购。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "API市场",
+      "企业级采购",
+      "多供应商"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "API市场",
+        "cls": "green"
+      },
+      {
+        "label": "应用",
+        "value": "聚合平台",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "多供应商",
+        "cls": ""
+      }
+    ],
+    "score": 6.25,
+    "price": "medium",
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://www.volcengine.com",
+    "domain": "volcengine.com",
+    "name": "豆包API(火山引擎)",
+    "description": "字节跳动官方API入口，豆包大模型原生支持。企业级合规稳定。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "豆包原生",
+      "企业级"
+    ],
+    "display_metrics": [
+      {
+        "label": "优惠",
+        "value": "企业级稳定",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "超低价",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "豆包原生",
+        "cls": ""
+      }
+    ],
+    "score": 7.5,
+    "price": "low",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://openai-sb.com",
+    "domain": "openai-sb.com",
+    "name": "OpenAI-SB",
+    "description": "GPT系列API中转服务，专注OpenAI模型接入，国内直连。",
+    "models": [
+      "gpt",
+      "claude",
+      "cheap"
+    ],
+    "features": [
+      "cheap"
+    ],
+    "display_tags": [
+      "GPT专精",
+      "国内直连",
+      "低价"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "GPT专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "待评价",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "1.10s",
+        "cls": ""
+      }
+    ],
+    "score": 6.02,
+    "price": "low",
+    "response_time": 1.1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://platform.moonshot.cn",
+    "domain": "platform.moonshot.cn",
+    "name": "月之暗面 (Kimi)",
+    "description": "月之暗面官方API，Kimi模型原生支持。超长上下文能力突出，支持200万字。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "超长上下文",
+      "200万字"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "0.32s",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "Kimi官方",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "长文本",
+        "cls": ""
+      }
+    ],
+    "score": 7.7,
+    "price": "medium",
+    "response_time": 0.32,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://closeai-asia.com",
+    "domain": "closeai-asia.com",
+    "name": "CloseAI",
+    "description": "AI API中转服务，亚洲节点部署，低延迟接入Claude、GPT等模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "cheap"
+    ],
+    "features": [
+      "cheap"
+    ],
+    "display_tags": [
+      "亚洲节点",
+      "低延迟",
+      "Claude/GPT"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "低延迟",
+        "cls": ""
+      }
+    ],
+    "score": 7.05,
+    "price": "low",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://platform.lingyiwanwu.com",
+    "domain": "platform.lingyiwanwu.com",
+    "name": "零一万物 (Yi)",
+    "description": "零一万物官方API，Yi系列开源模型。李开复团队出品。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "开源模型",
+      "李开复团队"
+    ],
+    "display_metrics": [
+      {
+        "label": "应用",
+        "value": "Yi系列",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "开源模型",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "1.56s",
+        "cls": ""
+      }
+    ],
+    "score": 7.3,
+    "price": "medium",
+    "response_time": 1.56,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://platform.deepseek.com",
+    "domain": "platform.deepseek.com",
+    "name": "DeepSeek API",
+    "description": "DeepSeek官方API，价格极低，开源模型。不支持Claude/GPT，仅提供自家模型。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "性价比之王",
+      "开源模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "DeepSeek官方",
+        "cls": "green"
+      },
+      {
+        "label": "福利",
+        "value": "开源免费",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "超低价",
+        "cls": ""
+      }
+    ],
+    "score": 8.2,
+    "price": "low",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://xinghuo.xfyun.cn",
+    "domain": "xinghuo.xfyun.cn",
+    "name": "讯飞星火",
+    "description": "科大讯飞官方API，星火大模型。语音识别/合成能力行业领先。",
+    "models": [
+      "domestic",
+      "enterprise"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "语音强项",
+      "多模态"
+    ],
+    "display_metrics": [
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "语音能力",
+        "cls": "accent"
+      },
+      {
+        "label": "专业",
+        "value": "讯飞官方",
+        "cls": ""
+      }
+    ],
+    "score": 7.4,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://bailian.console.aliyun.com",
+    "domain": "bailian.console.aliyun.com",
+    "name": "通义千问API(阿里百炼)",
+    "description": "阿里云百炼平台，通义千问原生支持。企业级SLA保障。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "千问原生",
+      "企业级SLA"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "阿里官方",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "0.16s",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "企业级保障",
+        "cls": ""
+      }
+    ],
+    "score": 7.6,
+    "price": "medium",
+    "response_time": 0.16,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://console.mistral.ai",
+    "domain": "console.mistral.ai",
+    "name": "Mistral AI",
+    "description": "欧洲领先AI公司，Mistral系列开源模型。混合专家架构性能出色。",
+    "models": [
+      "gpt"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "官方平台",
+      "混合专家",
+      "高性能"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "高性能",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "欧洲领先",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "混合专家",
+        "cls": ""
+      }
+    ],
+    "score": 7.2,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://www.minimaxi.com",
+    "domain": "minimaxi.com",
+    "name": "MiniMax API",
+    "description": "MiniMax官方API，海螺AI底层模型。文本/语音多模态。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "海螺AI",
+      "多模态"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "0.33s",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "优惠",
+        "value": "海螺AI",
+        "cls": ""
+      }
+    ],
+    "score": 7.1,
+    "price": "medium",
+    "response_time": 0.33,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://dashboard.cohere.com",
+    "domain": "dashboard.cohere.com",
+    "name": "Cohere",
+    "description": "企业级搜索和RAG专精，Command系列模型。多语言能力强。",
+    "models": [
+      "gpt"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "RAG专精",
+      "多语言"
+    ],
+    "display_metrics": [
+      {
+        "label": "应用",
+        "value": "Command系列",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "专业",
+        "value": "RAG专精",
+        "cls": ""
+      }
+    ],
+    "score": 7,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://platform.baichuan-ai.com",
+    "domain": "platform.baichuan-ai.com",
+    "name": "百川智能",
+    "description": "百川智能官方API，百川系列大模型。中文理解能力优秀。",
+    "models": [
+      "domestic"
+    ],
+    "features": [
+      "enterprise"
+    ],
+    "display_tags": [
+      "官方平台",
+      "中文优化",
+      "多场景"
+    ],
+    "display_metrics": [
+      {
+        "label": "优惠",
+        "value": "中文优化",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "多场景",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "0.33s",
+        "cls": ""
+      }
+    ],
+    "score": 7,
+    "price": "medium",
+    "response_time": 0.33,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://console.groq.com",
+    "domain": "console.groq.com",
+    "name": "Groq",
+    "description": "自研LPU推理芯片，推理速度极快。支持开源模型，延迟超低。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "官方平台",
+      "LPU芯片",
+      "超低延迟"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "LPU芯片",
+        "cls": "green"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "开源模型",
+        "cls": ""
+      }
+    ],
+    "score": 7.5,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://api.together.xyz",
+    "domain": "api.together.xyz",
+    "name": "Together AI",
+    "description": "开源模型推理托管服务，支持Llama/Mixtral等。按量付费。",
+    "models": [
+      "gpt"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "官方平台",
+      "托管服务",
+      "按量付费"
+    ],
+    "display_metrics": [
+      {
+        "label": "响应",
+        "value": "0.72s",
+        "cls": "green"
+      },
+      {
+        "label": "应用",
+        "value": "Llama/Mixtral",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "托管服务",
+        "cls": ""
+      }
+    ],
+    "score": 7.2,
+    "price": "medium",
+    "response_time": 0.72,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://fireworks.ai",
+    "domain": "fireworks.ai",
+    "name": "Fireworks AI",
+    "description": "快速开源模型推理+微调服务。延迟低，支持自定义模型。",
+    "models": [
+      "claude"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "官方平台",
+      "微调服务",
+      "低延迟"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "快速推理",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "微调服务",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "score": 7.1,
+    "price": "medium",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://deepinfra.com",
+    "domain": "deepinfra.com",
+    "name": "DeepInfra",
+    "description": "号称最便宜的开源模型推理API。支持Llama/Mistral等，价格极低。",
+    "models": [
+      "gpt"
+    ],
+    "features": [
+      "multi"
+    ],
+    "display_tags": [
+      "官方平台",
+      "开源模型",
+      "Llama/Mistral"
+    ],
+    "display_metrics": [
+      {
+        "label": "应用",
+        "value": "开源推理",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "0.35s",
+        "cls": "accent"
+      },
+      {
+        "label": "专业",
+        "value": "开源模型",
+        "cls": ""
+      }
+    ],
+    "score": 7,
+    "price": "low",
+    "response_time": 0.35,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
+  },
+  {
+    "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
+    "domain": "infistar.ai",
+    "name": "无限星河AI",
+    "description": "覆盖92个主流模型，提供模型验真检测、透明计费、自建号池与多线路冗余，支持通用标准/企业/国产精选/品牌分组",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "domestic",
+      "enterprise"
+    ],
+    "features": [
+      "multi",
+      "enterprise"
+    ],
+    "display_tags": [
+      "92模型",
+      "验真检测",
+      "透明计费"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "92模型",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "官方5折",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多线路冗余",
+        "cls": ""
+      }
+    ],
+    "score": 8.2,
+    "price": "medium",
+    "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1
