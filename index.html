@@ -10225,16 +10225,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // SimilarWeb 2026年6月数据（月访问量估算）
             // 热门中转站流量排行（2026年6月数据，基于行业评测热度+用户关注度综合估算）
             const trafficData = [
-                { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', visits: 185000 },
-                { name: '星链4SAPI', domain: '4sapi.com', visits: 98000 },
-                { name: '派客代码 (PackyCode)', domain: 'packyapi.com', visits: 72000 },
-                { name: '硅基流动', domain: 'cloud.siliconflow.cn', visits: 65000 },
-                { name: '302.AI', domain: '302.ai', visits: 58000 },
-                { name: '莱特代码 (RightCode)', domain: 'right.codes', visits: 45000 },
-                { name: 'DeepSeek API', domain: 'platform.deepseek.com', visits: 42000 },
-                { name: 'OpenRouter', domain: 'openrouter.ai', visits: 38000 },
-                { name: '禾维AI (hvoy.ai)', domain: 'hvoy.ai', visits: 32000 },
-                { name: '蛇GPT (SnakeGPT)', domain: 'snakegpt.vip', visits: 28000 },
+                { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', url: 'https://shiyunapi.com/register?aff=mR1T', visits: 185000 },
+                { name: '星链4SAPI', domain: '4sapi.com', url: 'https://4sapi.com', visits: 98000 },
+                { name: '派客代码 (PackyCode)', domain: 'packyapi.com', url: 'https://www.packyapi.com/register?aff=zrXb', visits: 72000 },
+                { name: '硅基流动', domain: 'cloud.siliconflow.cn', url: 'https://cloud.siliconflow.cn/i/E5yUpjCP', visits: 65000 },
+                { name: '302.AI', domain: '302.ai', url: 'https://302.ai', visits: 58000 },
+                { name: '莱特代码 (RightCode)', domain: 'right.codes', url: 'https://www.right.codes/register?aff=56503380', visits: 45000 },
+                { name: 'DeepSeek API', domain: 'platform.deepseek.com', url: 'https://platform.deepseek.com', visits: 42000 },
+                { name: 'OpenRouter', domain: 'openrouter.ai', url: 'https://openrouter.ai', visits: 38000 },
+                { name: '禾维AI (hvoy.ai)', domain: 'hvoy.ai', url: 'https://hvoy.ai', visits: 32000 },
+                { name: '蛇GPT (SnakeGPT)', domain: 'snakegpt.vip', url: 'https://snakegpt.vip', visits: 28000 },
             ];
 
             // 启动流体波浪 Canvas 动画
@@ -10261,6 +10261,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return {
                     name: item.name,
                     domain: item.domain,
+                    url: item.url,
                     visits: item.visits,
                     rank: index + 1,
                     // 基础高度 + 流量比例高度
@@ -10495,7 +10496,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const waveW = wave.width;
                     if (x >= wave.x - waveW / 2 && x <= wave.x + waveW / 2) {
                         if (y >= wave.currentTopY - 50 && y <= h - 10) {
-                            window.open(`https://${wave.domain}`, '_blank', 'noopener,noreferrer');
+                            // 优先使用 url 字段（带邀请链接），否则使用 domain
+                            const linkUrl = wave.url || `https://${wave.domain}`;
+                            window.open(linkUrl, '_blank', 'noopener,noreferrer');
                             break;
                         }
                     }
