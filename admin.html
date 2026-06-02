@@ -50,6 +50,12 @@
         .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
         .panel-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+        .quick-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .quick-tag { padding: 6px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 20px; color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all 0.2s; user-select: none; }
+        .quick-tag:hover { border-color: var(--accent); color: var(--accent); }
+        .quick-tag.active { background: rgba(108,92,231,0.15); border-color: var(--accent); color: var(--accent); font-weight: 500; }
+        .quick-tag-clear { padding: 6px 14px; background: transparent; border: 1px dashed var(--border); border-radius: 20px; color: var(--text-muted); font-size: 13px; cursor: pointer; transition: all 0.2s; }
+        .quick-tag-clear:hover { border-color: var(--danger); color: var(--danger); }
         .customer-textarea { width: 100%; min-height: 180px; padding: 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; resize: vertical; }
         .parse-actions { display: flex; gap: 12px; margin-top: 16px; }
         .btn-primary { flex: 1; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
@@ -68,6 +74,12 @@
         .card-score { font-size: 18px; font-weight: 700; color: var(--green); }
         .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
         .meta-item { font-size: 11px; padding: 2px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--text-secondary); }
+        .scene-tag { background: rgba(108,92,231,0.12); color: var(--accent); }
+        .card-reasons { margin: 8px 0; padding: 8px 10px; background: rgba(0,210,160,0.06); border-left: 3px solid var(--green); border-radius: 0 6px 6px 0; }
+        .card-reason-item { font-size: 12px; color: var(--text-secondary); line-height: 1.8; }
+        .card-reason-item::before { content: '✓ '; color: var(--green); font-weight: 600; }
+        .card-scenes { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+        .card-scenes-label { font-size: 12px; color: var(--text-muted); }
         .card-actions { display: flex; gap: 8px; margin-top: 12px; }
         .btn-report { flex: 1; padding: 8px 16px; background: rgba(0,210,160,0.1); border: 1px solid rgba(0,210,160,0.3); border-radius: 6px; color: var(--green); font-size: 12px; cursor: pointer; }
         .btn-compare { padding: 8px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); font-size: 12px; cursor: pointer; }
@@ -199,7 +211,18 @@
                 <div class="workspace">
                     <div class="panel">
                         <div class="panel-title">客户需求输入</div>
-                        <textarea class="customer-textarea" id="customerText" placeholder="粘贴客户发来的文字，例如：我要用Claude写代码，预算100块，希望稳定一点"></textarea>
+                        <div class="quick-tags" id="quickTags">
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '编程开发')">编程开发</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '学术写作')">学术写作</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '图像生成')">图像生成</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '低价优先')">低价优先</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '稳定优先')">稳定优先</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '模型丰富')">模型丰富</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '企业级')">企业级</span>
+                            <span class="quick-tag" onclick="toggleQuickTag(this, '国产模型')">国产模型</span>
+                            <span class="quick-tag-clear" onclick="clearQuickTags()">清空</span>
+                        </div>
+                        <textarea class="customer-textarea" id="customerText" placeholder="粘贴客户发来的文字，或点击上方标签快速选择需求，例如：我要用Claude写代码，预算100块，希望稳定一点"></textarea>
                         <div class="parse-actions">
                             <button class="btn-primary" onclick="handleParse()">智能解析</button>
                             <button class="btn-secondary" onclick="clearAll()">清空</button>
@@ -417,15 +440,23 @@ function parseNeeds(text) {
         else if (amount <= 200) budget = 'medium';
         else budget = 'high';
     }
-    if (/便宜|低价|性价比/i.test(text)) budget = 'low';
+    if (/便宜|低价|性价比|低价优先/i.test(text)) budget = 'low';
     
     const specials = [];
     if (/国内|直连|翻墙/i.test(text)) specials.push('direct');
-    if (/稳定|可靠|不掉线/i.test(text)) specials.push('stable');
-    if (/便宜|低价|省钱/i.test(text)) specials.push('cheap');
+    if (/稳定|可靠|不掉线|稳定优先/i.test(text)) specials.push('stable');
+    if (/便宜|低价|省钱|低价优先/i.test(text)) specials.push('cheap');
     if (/快|速度|延迟/i.test(text)) specials.push('fast');
     
-    return { models, budget, specials, text };
+    // 识别场景标签
+    const scenes = [];
+    if (/编程|代码|开发|写代码/i.test(text)) scenes.push('编程开发');
+    if (/学术|论文|写作|文章|文档/i.test(text)) scenes.push('学术写作');
+    if (/图像|画图|绘图|图片|dall|midjourney/i.test(text)) scenes.push('图像生成');
+    if (/企业|团队|商用|公司|企业级/i.test(text)) scenes.push('企业级');
+    if (/模型丰富|多模型|全模型/i.test(text)) scenes.push('模型丰富');
+    
+    return { models, budget, specials, scenes, text };
 }
 
 function rankStations(needs) {
@@ -436,7 +467,67 @@ function rankStations(needs) {
         const specialMatch = needs.specials.filter(s => station.special.includes(s)).length;
         score += specialMatch * 1.2;
         if (station.freeAmount.includes('免费')) score += 0.5;
-        return { ...station, matchedScore: Math.round(score * 10) / 10 };
+        
+        // 生成推荐理由
+        const reasons = [];
+        if (modelMatch > 0) {
+            const matchedModels = needs.models.filter(m => station.models.includes(m)).map(m => modelLabels[m]);
+            reasons.push('支持' + matchedModels.join('、') + '模型');
+        }
+        if (station.special.includes('stable') && needs.specials.includes('stable')) {
+            reasons.push('稳定性高达' + station.stability + '分，满足稳定需求');
+        }
+        if (station.special.includes('cheap') && needs.specials.includes('cheap')) {
+            reasons.push('低价策略，性价比突出');
+        }
+        if (station.special.includes('fast') && needs.specials.includes('fast')) {
+            reasons.push('响应速度' + station.speed + '分，速度快');
+        }
+        if (station.freeAmount.includes('免费')) {
+            reasons.push('提供' + station.freeAmount);
+        }
+        if (station.features.includes('企业级') || station.features.includes('企业级SLA')) {
+            reasons.push('企业级服务保障');
+        }
+        if (station.features.includes('对公开票') || station.features.includes('增值税发票')) {
+            reasons.push('支持开票');
+        }
+        if (station.special.includes('direct')) {
+            reasons.push('国内直连，无需翻墙');
+        }
+        if (reasons.length === 0) {
+            reasons.push('综合评分' + station.score + '分，整体表现优秀');
+        }
+        
+        // 生成适合场景
+        const fitScenes = [];
+        if (station.models.includes('claude') || station.models.includes('gpt')) {
+            fitScenes.push('编程开发');
+        }
+        if (station.models.includes('claude') || station.models.includes('gpt') || station.models.includes('gemini')) {
+            fitScenes.push('学术写作');
+        }
+        if (station.models.includes('gpt') || station.models.includes('gemini')) {
+            fitScenes.push('图像生成');
+        }
+        if (station.features.includes('企业级') || station.features.includes('企业级SLA') || station.price === 'high') {
+            fitScenes.push('企业级');
+        }
+        if (station.models.includes('domestic')) {
+            fitScenes.push('国产模型');
+        }
+        if (station.models.length >= 3) {
+            fitScenes.push('模型丰富');
+        }
+        // 去重
+        const uniqueScenes = [...new Set(fitScenes)];
+        
+        return { 
+            ...station, 
+            matchedScore: Math.round(score * 10) / 10,
+            reasons: reasons.slice(0, 3),
+            fitScenes: uniqueScenes.slice(0, 4)
+        };
     }).sort((a, b) => b.matchedScore - a.matchedScore).slice(0, 5);
 }
 
@@ -449,6 +540,12 @@ function displayResults(results) {
         const isSelected = selectedForCompare.some(s => s.name === station.name);
         const modelTags = station.models.map(m => `<span class="meta-item">${modelLabels[m]}</span>`).join('');
         const featureTags = station.features.slice(0, 3).map(f => `<span class="meta-item">${f}</span>`).join('');
+        const reasonHtml = station.reasons && station.reasons.length > 0 
+            ? `<div class="card-reasons">${station.reasons.map(r => '<div class="card-reason-item">' + r + '</div>').join('')}</div>` 
+            : '';
+        const sceneHtml = station.fitScenes && station.fitScenes.length > 0
+            ? `<div class="card-scenes"><span class="card-scenes-label">适合场景:</span> ${station.fitScenes.map(s => '<span class="meta-item scene-tag">' + s + '</span>').join('')}</div>`
+            : '';
         
         container.innerHTML += `
             <div class="station-card ${isSelected ? 'selected' : ''}" data-idx="${idx}">
@@ -458,6 +555,8 @@ function displayResults(results) {
                     <span class="card-score">${station.matchedScore}</span>
                 </div>
                 <div class="card-meta">${modelTags}${featureTags}</div>
+                ${reasonHtml}
+                ${sceneHtml}
                 <div class="card-actions">
                     <button class="btn-report" onclick="openReport(${idx})">查看分析报告</button>
                     <button class="btn-compare ${isSelected ? 'active' : ''}" onclick="toggleCompare(${idx})">${isSelected ? '已选择' : '加入对比'}</button>
@@ -487,6 +586,20 @@ function openReport(idx) {
                     <div class="score-num">${station.matchedScore}</div>
                     <div class="score-label">综合评分</div>
                 </div>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <div class="report-section-title">推荐理由</div>
+            <div style="padding:8px 12px;background:rgba(0,210,160,0.06);border-left:3px solid var(--green);border-radius:0 8px 8px 0;">
+                ${(station.reasons || []).map(r => '<div style="font-size:13px;color:var(--text-secondary);line-height:2;">✓ ' + r + '</div>').join('')}
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <div class="report-section-title">适合场景</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                ${(station.fitScenes || []).map(s => '<span style="padding:6px 14px;background:rgba(108,92,231,0.15);border:1px solid rgba(108,92,231,0.3);border-radius:20px;color:var(--accent);font-size:13px;">' + s + '</span>').join('')}
             </div>
         </div>
         
@@ -626,7 +739,47 @@ function clearAll() {
     document.getElementById('resultsList').innerHTML = '';
     document.getElementById('resultsPlaceholder').style.display = 'block';
     selectedForCompare = [];
+    clearQuickTagStates();
     updateCompareBar();
+}
+
+// 快速标签功能
+function toggleQuickTag(el, tagText) {
+    const textarea = document.getElementById('customerText');
+    const currentVal = textarea.value.trim();
+    
+    if (el.classList.contains('active')) {
+        // 取消选中：从输入框中移除该标签文本
+        el.classList.remove('active');
+        // 移除匹配的标签文本（支持多种分隔情况）
+        const regex = new RegExp('[，,\\s]*' + tagText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[，,\\s]*', 'g');
+        textarea.value = currentVal.replace(regex, (match) => {
+            // 如果前后有分隔符，保留一个
+            if (match.startsWith('，') || match.startsWith(',')) return match.slice(1);
+            if (match.endsWith('，') || match.endsWith(',')) return match.slice(0, -1);
+            return '';
+        }).trim();
+    } else {
+        // 选中：追加到输入框
+        el.classList.add('active');
+        if (currentVal === '') {
+            textarea.value = tagText;
+        } else {
+            textarea.value = currentVal + '，' + tagText;
+        }
+    }
+}
+
+function clearQuickTags() {
+    const textarea = document.getElementById('customerText');
+    textarea.value = '';
+    clearQuickTagStates();
+}
+
+function clearQuickTagStates() {
+    document.querySelectorAll('#quickTags .quick-tag').forEach(tag => {
+        tag.classList.remove('active');
+    });
 }
 
 // Review Management
