@@ -5778,29 +5778,11 @@
                     }
                 });
 
-                // 搜索清空时重新应用50个限制
-                let resetIndex = 0;
-                cards.forEach(c => {
-                    if (c.style.display !== 'none' && !c.classList.contains('dead')) {
-                        resetIndex++;
-                        if (resetIndex > 50) {
-                            c.style.display = 'none';
-                            c.setAttribute('data-hidden-by-limit', 'true');
-                        } else {
-                            c.removeAttribute('data-hidden-by-limit');
-                        }
-                    }
-                });
-
                 emptyEl.style.display = 'none';
 
                 infoEl.style.display = 'none';
 
                 document.getElementById('sectionDate').textContent = '2026年6月';
-
-                // 显示"查看更多"按钮
-                const loadMoreBtnReset = document.getElementById('loadMoreBtn');
-                if (loadMoreBtnReset) loadMoreBtnReset.style.display = '';
 
                 updateStats();
 
@@ -5840,10 +5822,6 @@
 
                 document.getElementById('sectionDate').textContent = `搜索"${keyword.trim()}"`;
                 document.getElementById('sectionCount').textContent = `· ${count}个`;
-
-                // 搜索时隐藏"查看更多"按钮（搜索结果不受限制）
-                const loadMoreBtnSearch = document.getElementById('loadMoreBtn');
-                if (loadMoreBtnSearch) loadMoreBtnSearch.style.display = 'none';
 
             } else {
 
@@ -5909,20 +5887,6 @@
 
             });
 
-            // 分类筛选也限制前50个
-            let visibleIndex = 0;
-            cards.forEach(card => {
-                if (card.style.display !== 'none' && !card.classList.contains('dead')) {
-                    visibleIndex++;
-                    if (visibleIndex > 50) {
-                        card.style.display = 'none';
-                        card.setAttribute('data-hidden-by-limit', 'true');
-                    } else {
-                        card.removeAttribute('data-hidden-by-limit');
-                    }
-                }
-            });
-
             // Update section title to show count
 
             const sectionDateEl = document.getElementById('sectionDate');
@@ -5953,13 +5917,9 @@
 
                 sectionDateEl.textContent = labels[type] || type;
 
-                sectionCountEl.textContent = '· ' + (visibleCount > 50 ? '50+ / 共' + visibleCount + '个' : visibleCount + '个');
+                sectionCountEl.textContent = '· ' + visibleCount + '个';
 
             }
-
-            // 显示/隐藏"查看更多"按钮
-            const loadMoreBtn = document.getElementById('loadMoreBtn');
-            if (loadMoreBtn) loadMoreBtn.style.display = visibleCount > 50 ? '' : 'none';
 
         }
 
