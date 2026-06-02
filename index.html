@@ -5123,7 +5123,7 @@
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span>2026年6月</span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
+                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
 
                 <div class="filter-tabs">
 
@@ -6444,7 +6444,8 @@
 
                 infoEl.style.display = 'none';
 
-                document.querySelector('#ranking .section-title span').textContent = '2026年6月';
+                document.getElementById('sectionDate').textContent = '2026年6月';
+                updateStats();
 
                 return;
 
@@ -6480,7 +6481,8 @@
 
                 infoEl.textContent = `找到 ${count} 个匹配结果`;
 
-                document.querySelector('#ranking .section-title span').textContent = `搜索"${keyword.trim()}" · ${count}个`;
+                document.getElementById('sectionDate').textContent = `搜索"${keyword.trim()}"`;
+                document.getElementById('sectionCount').textContent = `· ${count}个`;
 
             } else {
 
@@ -6488,7 +6490,8 @@
 
                 infoEl.style.display = 'none';
 
-                document.querySelector('#ranking .section-title span').textContent = `搜索"${keyword.trim()}" · 无结果`;
+                document.getElementById('sectionDate').textContent = `搜索"${keyword.trim()}"`;
+                document.getElementById('sectionCount').textContent = '· 无结果';
 
             }
 
@@ -10672,11 +10675,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const totalCountEl = document.getElementById('totalCount');
 
+            const sectionCountEl = document.getElementById('sectionCount');
+
             
 
             if (validCountEl) validCountEl.textContent = validCount;
 
             if (totalCountEl) totalCountEl.textContent = validCount;
+
+            if (sectionCountEl) sectionCountEl.textContent = '· ' + validCount + '个';
 
             
 
