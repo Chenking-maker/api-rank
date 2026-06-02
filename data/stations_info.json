@@ -202,8 +202,8 @@
     "free_amount": "",
     "score": 9.3,
     "response_time": 0.5,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "文档齐全",

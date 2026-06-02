@@ -5,7 +5,11 @@
     "domain": "aifast.club",
     "description": "AI快站 - Claude、OpenAI、Gemini 与国产大模型 API 中转平台",
     "features": [],
-    "models": ["claude", "gemini", "domestic"],
+    "models": [
+      "claude",
+      "gemini",
+      "domestic"
+    ],
     "score": 8.2,
     "responseTime": null,
     "freeAmount": "",
@@ -20,8 +24,13 @@
     "url": "https://ctok.ai",
     "domain": "ctok.ai",
     "description": "CTok - Claude Code 教程与资源，提供API中转服务",
-    "features": ["cheap"],
-    "models": ["claude", "gemini"],
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gemini"
+    ],
     "score": 8.2,
     "responseTime": null,
     "freeAmount": "",
@@ -36,8 +45,14 @@
     "url": "https://apikey.fun",
     "domain": "apikey.fun",
     "description": "FUN - AI中转平台，一个API Key即可调用GPT/Claude/Gemini等多家模型，智能路由自动故障转移，按量付费透明。",
-    "features": ["一个Key", "智能路由", "按量付费"],
-    "models": ["multi"],
+    "features": [
+      "一个Key",
+      "智能路由",
+      "按量付费"
+    ],
+    "models": [
+      "multi"
+    ],
     "score": 7.8,
     "responseTime": null,
     "freeAmount": "",
@@ -49,11 +64,17 @@
   },
   {
     "name": "RunAPI 中转平台",
-    "url": "https://runapi.co",
+    "url": "https://runapi.co/register?aff=mS0w",
     "domain": "runapi.co",
     "description": "高质量AI模型API中转平台，一个API Key即可访问OpenAI、Claude、Gemini、DeepSeek、Grok等150+主流模型，低至70%折扣，按量计费透明。",
-    "features": ["stable"],
-    "models": ["claude", "gemini", "deepseek"],
+    "features": [
+      "stable"
+    ],
+    "models": [
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
     "score": 8.5,
     "responseTime": null,
     "freeAmount": "",
@@ -68,8 +89,12 @@
     "url": "https://all-api-hub.qixing1217.top",
     "domain": "all-api-hub.qixing1217.top",
     "description": "All API Hub - 全能AI资产管家，多站点集中管理面板，余额用量健康状态一目了然",
-    "features": ["fast"],
-    "models": ["claude"],
+    "features": [
+      "fast"
+    ],
+    "models": [
+      "claude"
+    ],
     "score": 7.9,
     "responseTime": null,
     "freeAmount": "",
