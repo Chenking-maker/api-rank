@@ -18,15 +18,15 @@
 
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
-    <title>API排行榜 - AI中转站性价比实时排行 | 找到最适合你的API中转站</title>
+    <title>全部中转站排行榜 - API中转站排行</title>
 
     <meta name="description" content="AI API中转站实时排行榜，自动测试延迟、价格、稳定性，帮你找到性价比最高的Claude/GPT/Gemini API中转服务。">
 
     <meta name="keywords" content="AI API中转站, Claude API, GPT API, 中转站排行, API性价比, Claude Code, API检测">
 
-    <meta property="og:title" content="API排行榜 - AI中转站性价比实时排行">
+    <meta property="og:title" content="全部中转站排行榜 - API中转站排行">
 
-    <meta property="og:description" content="自动测试+实时排行，帮你找到性价比最高的AI API中转站">
+    <meta property="og:description" content="全部AI API中转站完整排行榜，无数量限制">
 
     <meta property="og:type" content="website">
 
@@ -4461,17 +4461,15 @@
 
             <ul class="nav-links" id="navLinks">
 
-                <li><a href="#ranking">排行榜</a></li>
+                <li><a href="index.html">首页</a></li>
+
+                <li><a href="#ranking" style="color: var(--accent-light); font-weight: 600;">全部排行</a></li>
 
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
 
                 <li><a href="javascript:void(0)" onclick="openSectionModal('submitModal')">提交收录</a></li>
 
-                <li><a href="#guide">选站指南</a></li>
-
                 <li><a href="dead-sites.html" style="color: #ff6b6b;">&#9888; 失效站点</a></li>
-
-
 
                 <li><span class="nav-badge">实时更新</span></li>
 
@@ -4480,305 +4478,6 @@
         </div>
 
     </nav>
-
-
-
-    <!-- Hero -->
-
-    <section class="hero">
-
-        <div class="container">
-
-            <div class="hero-badge" id="heroBadge">已收录 <span id="totalCount">-</span>+ 中转站（全部有效） · <span id="updateDate">加载中</span></div>
-
-            <h1>找到最适合你的<br><span class="gradient-text">AI API 中转站</span></h1>
-
-            <p>基于延迟、价格、稳定性、模型真实性等多维度自动测试，帮你快速筛选性价比最高的 API 中转服务</p>
-
-            <div class="hero-stats">
-
-                <div class="hero-stat">
-
-                    <div class="number green" id="validCount">-</div>
-
-                    <div class="label">有效中转站</div>
-
-                </div>
-
-                <div class="hero-stat" style="cursor: pointer;" onclick="window.location.href='dead-sites.html'">
-
-                    <a href="dead-sites.html" style="text-decoration: none;">
-
-                        <div class="number" id="heroDeadCount" style="color: var(--red);">-</div>
-
-                        <div class="label" style="color: var(--red);">已失效</div>
-
-                    </a>
-
-                </div>
-
-                <div class="hero-stat">
-
-                    <div class="number purple">24h</div>
-
-                    <div class="label">测试周期</div>
-
-                </div>
-
-                <div class="hero-stat">
-
-                    <div class="number yellow">7</div>
-
-                    <div class="label">评测维度</div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Finder Modal - 找适合自己的中转站 -->
-
-    <div class="section-modal-overlay" id="finderModal">
-
-        <div class="section-modal">
-
-            <button class="section-modal-close" onclick="closeSectionModal('finderModal')">✕</button>
-
-            <div class="finder-header">
-
-                <h2>🎯 找适合自己的中转站</h2>
-
-                <p>填写您的需求，系统将智能匹配最适合的5个API中转站</p>
-
-                <div class="free-usage-info" id="freeUsageInfo" style="margin-top: 12px; padding: 10px 16px; background: rgba(46, 213, 115, 0.1); border: 1px solid rgba(46, 213, 115, 0.3); border-radius: 8px; font-size: 14px; color: #2ed573;">
-
-                    <span id="usageStatus">本月剩余免费次数：1次</span>
-
-                </div>
-
-            </div>
-
-                
-
-                <div class="finder-form">
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-
-                            <label class="form-label">使用模型 *</label>
-
-                            <select id="finderModel" class="form-select">
-
-                                <option value="all">不限</option>
-
-                                <option value="claude">Claude</option>
-
-                                <option value="gpt">GPT</option>
-
-                                <option value="gemini">Gemini</option>
-
-                                <option value="domestic">国产模型（DeepSeek/通义/豆包等）</option>
-
-                                <option value="multi">多模型都需要</option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label class="form-label">月预算 *</label>
-
-                            <select id="finderBudget" class="form-select">
-
-                                <option value="low">低预算（50元以内）</option>
-
-                                <option value="medium">中等预算（50-200元）</option>
-
-                                <option value="high">高预算（200元以上）</option>
-
-                                <option value="enterprise">企业级（预算充足）</option>
-
-                            </select>
-
-                        </div>
-
-
-                    
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-
-                            <label class="form-label">使用场景 *</label>
-
-                            <select id="finderScene" class="form-select">
-
-                                <option value="coding">编程开发（Claude Code/Cursor等）</option>
-
-                                <option value="chat">日常对话/写作</option>
-
-                                <option value="api">API调用/应用开发</option>
-
-                                <option value="enterprise">企业生产环境</option>
-
-                                <option value="learning">学习测试</option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label class="form-label">特殊需求</label>
-
-                            <select id="finderSpecial" class="form-select">
-
-                                <option value="none">无特殊需求</option>
-
-                                <option value="direct">国内直连（无需翻墙）</option>
-
-                                <option value="stable">高稳定性（企业级SLA）</option>
-
-                                <option value="cheap">最低价格优先</option>
-
-                                <option value="fast">响应速度优先</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-
-                            <label class="form-label">并发需求</label>
-
-                            <select id="finderConcurrency" class="form-select">
-
-                                <option value="low">低并发（个人使用）</option>
-
-                                <option value="medium">中等并发（小团队）</option>
-
-                                <option value="high">高并发（企业/大流量）</option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label class="form-label">付费方式偏好</label>
-
-                            <select id="finderPayment" class="form-select">
-
-                                <option value="both">都可以</option>
-
-                                <option value="payg">按量计费（用多少付多少）</option>
-
-                                <option value="monthly">包月套餐（固定费用）</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <button class="submit-btn finder-btn" onclick="startFinder()">
-
-                        <span>🔍</span>
-
-                        <span>开始智能匹配</span>
-
-                    </button>
-
-                </div>
-
-
-
-                <!-- Finder Results -->
-
-                <div class="finder-results" id="finderResults" style="display:none;">
-
-                    <div class="finder-results-header">
-
-                        <h3>📊 为您推荐以下 5 个中转站</h3>
-
-                        <div class="finder-paywall" id="finderPaywall">
-
-                            <div class="paywall-content">
-
-                                <div class="paywall-icon">🔒</div>
-
-                                <div class="paywall-title">查看完整推荐结果</div>
-
-                                <div class="paywall-desc">购买《API中转站选择指南》解锁完整分析报告</div>
-
-                                <div class="paywall-price">¥9.9</div>
-
-                                <button class="btn btn-primary" onclick="showPaymentInfo()">立即购买</button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    
-
-                    <!-- 商家内部入口 -->
-
-                    <div class="admin-entry">
-
-                        <input type="password" id="adminPassword" class="form-input" placeholder="商家内部入口（输入密码）" style="max-width: 300px;" />
-
-                        <button class="btn btn-primary btn-sm" onclick="verifyAdmin()">验证</button>
-
-                    </div>
-
-
-
-                    <div class="finder-cards" id="finderCards">
-
-                        <!-- 结果卡片将通过JS动态生成 -->
-
-                    </div>
-
-
-
-                    <!-- 对比报告 -->
-
-                    <div class="finder-report" id="finderReport" style="display:none;">
-
-                        <h3>📋 详细对比分析报告</h3>
-
-                        <div class="report-content" id="reportContent">
-
-                            <!-- 报告内容将通过JS动态生成 -->
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
 
 
 
@@ -4982,35 +4681,6 @@
 
     <!-- Dead Sites List Modal -->
 
-    <div class="dead-list-modal" id="deadListModal" onclick="if(event.target===this)this.classList.remove('active')">
-
-        <div class="dead-list-box">
-
-            <button class="dead-list-close" onclick="document.getElementById('deadListModal').classList.remove('active')">✕</button>
-
-            <div class="dead-list-header">
-                <div class="dead-list-header-row">
-                    <h3><span class="icon">⚠️</span> 已失效站点</h3>
-                    <span class="dead-count-badge" id="deadCountBadge">0 个站点</span>
-                </div>
-                <p class="dead-list-subtitle">以下站点无法访问或已停止服务，已从排行榜中隐藏</p>
-            </div>
-
-            <div class="dead-list-body">
-                <ul id="deadListContent">
-                    <li style="color:#666;">加载中...</li>
-                </ul>
-            </div>
-
-            <div class="dead-list-footer">
-                <a href="dead-sites.html">查看完整失效站点列表 →</a>
-                <span class="update-time">每日自动检测更新</span>
-            </div>
-
-        </div>
-
-    </div>
-
 <!-- Score Info Modal - 评分维度说明 -->
 <div class="section-modal-overlay" id="scoreInfoModal">
     <div class="section-modal" style="max-width: 560px;">
@@ -5107,21 +4777,15 @@
 
         <div class="container">
 
-            <!-- 热门中转站流量排行榜 - 流体波浪版 -->
-            <div id="trafficRankWidget" style="margin:0 0 30px;padding:0;background:transparent;border:none;border-radius:16px;position:relative;overflow:hidden;height:280px;">
-                <canvas id="trafficCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;cursor:pointer;"></canvas>
-                <div style="position:absolute;top:15px;left:0;right:0;z-index:2;text-align:center;pointer-events:none;">
-                    <h3 style="font-size:16px;font-weight:600;color:#4ecdc4;margin:0 0 4px;display:inline-flex;align-items:center;gap:8px;">
-                        <span style="display:inline-block;width:8px;height:8px;background:#4ecdc4;border-radius:50%;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></span>
-                        热门中转站 · 流量排行
-                    </h3>
-                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb 2026年6月 · 月访问量估算 · 点击波浪访问站点</p>
-                </div>
+            <div style="margin-bottom: 20px;">
+                <a href="index.html" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;padding:10px 24px;border-radius:10px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent-light)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-secondary)'">
+                    ← 返回首页
+                </a>
             </div>
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
+                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
 
                 <div class="filter-tabs">
 
@@ -5944,107 +5608,9 @@
                         <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
-
+
+
                 
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-    <!-- Guide Section -->
-
-    <section class="section" id="guide">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <h2 class="section-title">选站指南</h2>
-
-            </div>
-
-            <div class="features-grid">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon purple">🛡️</div>
-
-                    <h3>警惕异常低价</h3>
-
-                    <p>价格异常便宜的大概率是用低价国产模型代替高价国外模型，不要只图便宜。</p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <div class="feature-icon green">💡</div>
-
-                    <h3>小额充值试用</h3>
-
-                    <p>先小额充值测试，确认服务质量满意后再大额充值。推荐 RightCode 1元起充。</p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <div class="feature-icon yellow">⚡</div>
-
-                    <h3>关注响应速度</h3>
-
-                    <p>编程场景对延迟敏感，选择有香港/美国双节点的中转站效果更好。</p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <div class="feature-icon green">🏠</div>
-
-                    <h3>国产模型厂商非中转站</h3>
-
-                    <p>豆包(火山引擎)、DeepSeek、通义千问(阿里百炼)、MiniMax 等是模型厂商官方API入口，并非中转站。它们仅提供自家模型，不支持Claude/GPT等海外模型，但价格极低且合规稳定。如只需国产模型，可直接使用官方接口。</p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="tips" style="margin-top: 24px;">
-
-                <h3>⚠️ 重要提醒</h3>
-
-                <ul class="tips-list">
-
-                    <li>
-
-                        <span class="icon icon-warn">!</span>
-
-                        <span>API中转站行业不稳定，<strong>不要大额充值</strong>，用多少充多少，避免跑路损失。</span>
-
-                    </li>
-
-                    <li>
-
-                        <span class="icon icon-ok">✓</span>
-
-                        <span>优先选择有社区活跃度、客服响应快、经营时间较长的中转站。</span>
-
-                    </li>
-
-                    <li>
-
-                        <span class="icon icon-info">i</span>
-
-                        <span>本站排名基于公开信息综合评估，仅供参考。建议自行测试后再做决定。</span>
-
-                    </li>
-
-                </ul>
 
             </div>
 
@@ -6066,9 +5632,9 @@
 
                 <div class="footer-links">
 
-                    <a href="#ranking">排行榜</a>
+                    <a href="index.html">首页</a>
 
-                    <a href="#guide">选站指南</a>
+                    <a href="#ranking">全部排行</a>
 
                 </div>
 
@@ -8739,18 +8305,6 @@
                         deadListContent.appendChild(li);
                     });
                 }
-
-                // 更新徽章
-                const deadBadge = document.getElementById('deadBadge');
-                if (deadBadge) {
-                    deadBadge.textContent = verifiedDead.length + ' 已失效';
-                    deadBadge.style.display = 'inline-flex';
-                }
-                // 更新弹窗内计数
-                const deadCountBadge = document.getElementById('deadCountBadge');
-                if (deadCountBadge) {
-                    deadCountBadge.textContent = verifiedDead.length + ' 个站点';
-                }
                 // 更新 hero 区域失效数字
                 const heroDeadCount = document.getElementById('heroDeadCount');
                 if (heroDeadCount) {
@@ -9621,18 +9175,6 @@
 
         // 页面加载时自动按评分排序，失效站点自动排到底部
 
-        // 显示失效站点列表弹窗
-
-        function showDeadList() {
-
-            var modal = document.getElementById('deadListModal');
-
-            if (modal) {
-
-                modal.classList.add('active');
-
-            }
-
         }
 
 // ===== 站名旁点赞按钮 =====
@@ -10043,36 +9585,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // ========== 热门中转站流量排行图（流体波浪版） ==========
-        function renderTrafficRank() {
-            // SimilarWeb 2026年6月数据（月访问量估算）
-            // 热门中转站流量排行（2026年6月数据，基于行业评测热度+用户关注度综合估算）
-            const trafficData = [
-                { name: '诗云API(ShiyunApi)', domain: 'shiyunapi.com', url: 'https://shiyunapi.com/register?aff=mR1T', visits: 185000 },
-                { name: '星链4SAPI', domain: '4sapi.com', url: 'https://4sapi.com', visits: 98000 },
-                { name: '派客代码 (PackyCode)', domain: 'packyapi.com', url: 'https://www.packyapi.com/register?aff=zrXb', visits: 72000 },
-                { name: '硅基流动', domain: 'cloud.siliconflow.cn', url: 'https://cloud.siliconflow.cn/i/E5yUpjCP', visits: 65000 },
-                { name: '302.AI', domain: '302.ai', url: 'https://302.ai', visits: 58000 },
-                { name: '莱特代码 (RightCode)', domain: 'right.codes', url: 'https://www.right.codes/register?aff=56503380', visits: 45000 },
-                { name: 'DeepSeek API', domain: 'platform.deepseek.com', url: 'https://platform.deepseek.com', visits: 42000 },
-                { name: 'OpenRouter', domain: 'openrouter.ai', url: 'https://openrouter.ai', visits: 38000 },
-                { name: '禾维AI (hvoy.ai)', domain: 'hvoy.ai', url: 'https://hvoy.ai', visits: 32000 },
-                { name: '蛇GPT (SnakeGPT)', domain: 'snakegpt.vip', url: 'https://snakegpt.vip', visits: 28000 },
-            ];
-
-            // 启动流体波浪 Canvas 动画
-            initWaveCanvas(trafficData);
-        }
-
         // ========== 流体波浪 Canvas 动画 ==========
         function initWaveCanvas(trafficData) {
-            const canvas = document.getElementById('trafficCanvas');
-            const widget = document.getElementById('trafficRankWidget');
-            if (!canvas || !widget) return;
-
-            const ctx = canvas.getContext('2d');
-            let w, h, animId;
-            let time = 0;
 
             // 按流量排序并取前5
             const sortedData = [...trafficData].sort((a, b) => b.visits - a.visits).slice(0, 5);
@@ -10506,7 +10020,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 只在"全部"标签下更新 sectionCount，避免覆盖筛选结果
             const activeTab = document.querySelector('.filter-tab.active');
             const isAllTab = activeTab && activeTab.textContent.trim() === '全部';
-            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· 前50个 / 共' + validCount + '个';
+            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· 共' + validCount + '个';
 
             
 
@@ -10520,26 +10034,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (updateDateEl) updateDateEl.textContent = dateStr;
 
-            // 首页只显示前50个
-            const allCards = rankingList.querySelectorAll('.rank-card:not(.dead)');
-            const LOAD_MORE_LIMIT = 50;
-            allCards.forEach((card, index) => {
-                if (index >= LOAD_MORE_LIMIT) {
-                    card.style.display = 'none';
-                    card.setAttribute('data-hidden-by-limit', 'true');
-                }
-            });
-
-            // 添加/更新"查看更多"按钮
-            let loadMoreBtn = document.getElementById('loadMoreBtn');
-            if (!loadMoreBtn) {
-                loadMoreBtn = document.createElement('div');
-                loadMoreBtn.id = 'loadMoreBtn';
-                loadMoreBtn.style.cssText = 'text-align:center;padding:30px 0 20px;';
-                loadMoreBtn.innerHTML = '<a href="all-stations.html" class="btn btn-primary" style="font-size:16px;padding:14px 40px;">查看全部 ' + validCount + '+ 个中转站 →</a>';
-                rankingList.appendChild(loadMoreBtn);
-            }
-            if (loadMoreBtn) loadMoreBtn.style.display = '';
+            // all-stations.html: 显示所有站点，不限制数量
+            // (no limit applied)
 
         }
 
