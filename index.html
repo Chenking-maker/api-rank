@@ -965,6 +965,34 @@
 
         }
 
+        /* 查看更多横幅按钮 */
+        .load-more-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 18px 24px;
+            margin: 24px 0 16px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #C4B5FD 100%);
+            color: #FFFFFF;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+            cursor: pointer;
+        }
+        .load-more-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(124, 58, 237, 0.5);
+            background: linear-gradient(135deg, #6D28D9 0%, #8B5CF6 50%, #A78BFA 100%);
+        }
+        .load-more-banner:active {
+            transform: translateY(0);
+        }
+
         .rank-card.dead .tag {
 
             opacity: 0.4;
@@ -10535,11 +10563,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!loadMoreBtn) {
                 loadMoreBtn = document.createElement('div');
                 loadMoreBtn.id = 'loadMoreBtn';
-                loadMoreBtn.style.cssText = 'text-align:center;padding:30px 0 20px;';
-                loadMoreBtn.innerHTML = '<a href="all-stations.html" class="btn btn-primary" style="font-size:16px;padding:14px 40px;">查看全部 ' + validCount + '+ 个中转站 →</a>';
+                loadMoreBtn.innerHTML = '<a href="all-stations.html" class="load-more-banner">查看全部 ' + validCount + '+ 个中转站 →</a>';
                 rankingList.appendChild(loadMoreBtn);
             }
-            if (loadMoreBtn) loadMoreBtn.style.display = '';
+            loadMoreBtn.style.display = '';
 
         }
 
