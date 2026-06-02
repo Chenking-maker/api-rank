@@ -17,7 +17,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 9.5,
+    "score": 7.5,
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
@@ -63,7 +63,7 @@
     ],
     "price": "low",
     "free_amount": "注册送$1",
-    "score": 9.45,
+    "score": 7.7,
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
@@ -108,7 +108,7 @@
     ],
     "price": "low",
     "free_amount": "1元起充",
-    "score": 9.4,
+    "score": 7.7,
     "response_time": 0.43,
     "alive": true,
     "last_check": "2026-06-02",
@@ -154,7 +154,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 9.35,
+    "score": 7.6,
     "response_time": 0.63,
     "alive": true,
     "last_check": "2026-06-02",
@@ -200,7 +200,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 9.3,
+    "score": 7.6,
     "response_time": 0.5,
     "alive": false,
     "last_check": "2026-06-03",
@@ -246,7 +246,7 @@
     ],
     "price": "low",
     "free_amount": "每日免费额度",
-    "score": 9.5,
+    "score": 7.6,
     "response_time": 0.47,
     "alive": true,
     "last_check": "2026-06-02",
@@ -291,7 +291,7 @@
     ],
     "price": "medium",
     "free_amount": "$0.2体验金",
-    "score": 9.09,
+    "score": 7.8,
     "response_time": 3.3,
     "alive": true,
     "last_check": "2026-06-02",
@@ -333,7 +333,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.07,
+    "score": 7.7,
     "response_time": 0.67,
     "alive": true,
     "last_check": "2026-06-02",
@@ -378,7 +378,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 8.5,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -422,7 +422,7 @@
     ],
     "price": "medium",
     "free_amount": "5PTC/天",
-    "score": 7.8,
+    "score": 7.6,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -466,7 +466,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.72,
+    "score": 7.5,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -510,7 +510,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.68,
+    "score": 7.7,
     "response_time": 0.55,
     "alive": true,
     "last_check": "2026-06-02",
@@ -554,7 +554,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.63,
+    "score": 7.8,
     "response_time": 1.07,
     "alive": true,
     "last_check": "2026-06-02",
@@ -598,7 +598,7 @@
     ],
     "price": "medium",
     "free_amount": "新用户$1免费",
-    "score": 7.67,
+    "score": 7.6,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -640,7 +640,7 @@
     ],
     "price": "medium",
     "free_amount": "$300额度/月",
-    "score": 8.1,
+    "score": 7.6,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -684,7 +684,7 @@
     ],
     "price": "medium",
     "free_amount": "赠¥5体验",
-    "score": 7.59,
+    "score": 7.6,
     "response_time": 3,
     "alive": true,
     "last_check": "2026-06-02",
@@ -729,7 +729,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.71,
+    "score": 7.6,
     "response_time": 1.42,
     "alive": true,
     "last_check": "2026-06-02",
@@ -773,7 +773,7 @@
     ],
     "price": "medium",
     "free_amount": "$110额度/周",
-    "score": 7.53,
+    "score": 7.6,
     "response_time": 1.4,
     "alive": true,
     "last_check": "2026-06-02",
@@ -817,7 +817,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.51,
+    "score": 7.5,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -862,7 +862,7 @@
     ],
     "price": "medium",
     "free_amount": "注册送额度",
-    "score": 7.46,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -907,7 +907,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.27,
+    "score": 7.7,
     "response_time": 0.83,
     "alive": true,
     "last_check": "2026-06-02",
@@ -936,52 +936,6 @@
     ]
   },
   {
-    "url": "https://hvoy.ai",
-    "domain": "hvoy.ai",
-    "name": "禾维AI (hvoy.ai)",
-    "description": "新兴低价API中转站，支持Claude/GPT/Gemini/DeepSeek，国内直连，价格实惠，适合预算有限的开发者。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini",
-      "deepseek",
-      "cheap"
-    ],
-    "features": [
-      "cheap",
-      "multi"
-    ],
-    "price": "low",
-    "free_amount": "",
-    "score": 7,
-    "response_time": 0.78,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 2,
-    "display_tags": [
-      "国内直连",
-      "多模型",
-      "价格实惠"
-    ],
-    "display_metrics": [
-      {
-        "label": "口碑",
-        "value": "待评价",
-        "cls": "green"
-      },
-      {
-        "label": "价格",
-        "value": "价格实惠",
-        "cls": "accent"
-      },
-      {
-        "label": "优惠",
-        "value": "国内直连",
-        "cls": ""
-      }
-    ]
-  },
-  {
     "url": "https://api.zhizengzeng.com",
     "domain": "zhizengzeng.com",
     "name": "智增增",
@@ -999,7 +953,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 6.36,
+    "score": 7.8,
     "response_time": 0.29,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1045,7 +999,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.8,
+    "score": 7.7,
     "response_time": 1.36,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1091,7 +1045,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7,
+    "score": 7.5,
     "response_time": 0.19,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1137,7 +1091,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 8.47,
+    "score": 7.7,
     "response_time": 1.24,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1187,7 +1141,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 9.05,
+    "score": 7.5,
     "response_time": 1.28,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1234,7 +1188,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 8.1,
+    "score": 7.8,
     "response_time": 0.63,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1282,7 +1236,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.08,
+    "score": 7.6,
     "response_time": 0.27,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1326,7 +1280,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.85,
+    "score": 7.6,
     "response_time": 0.35,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1374,7 +1328,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 8.35,
+    "score": 7.6,
     "response_time": 0.28,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1418,7 +1372,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.45,
+    "score": 7.6,
     "response_time": 0.42,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1508,7 +1462,7 @@
     ],
     "price": "free",
     "free_amount": "GPT-4O 30次/天, Mini 200次/天, DeepSeek 30次/天",
-    "score": 8.6,
+    "score": 7.5,
     "response_time": 0.35,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1557,7 +1511,7 @@
     ],
     "price": "medium",
     "free_amount": "注册赠$3",
-    "score": 8.45,
+    "score": 7.8,
     "response_time": 0.25,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1601,7 +1555,7 @@
     ],
     "price": "medium",
     "free_amount": "注册送8元永久额度",
-    "score": 8.1,
+    "score": 7.8,
     "response_time": 0.32,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1645,7 +1599,7 @@
     ],
     "price": "free",
     "free_amount": "4k免费额度",
-    "score": 6.8,
+    "score": 7.7,
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1696,7 +1650,7 @@
     ],
     "price": "low",
     "free_amount": "注册送50万积分",
-    "score": 7.9,
+    "score": 7.7,
     "response_time": 0.38,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1752,7 +1706,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.55,
+    "score": 7.7,
     "response_time": 0.22,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1798,7 +1752,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8,
+    "score": 7.7,
     "response_time": 0.45,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1860,7 +1814,7 @@
         "cls": ""
       }
     ],
-    "score": 7.42,
+    "score": 7.6,
     "price": "low",
     "response_time": 0.19,
     "alive": true,
@@ -1902,7 +1856,7 @@
         "cls": ""
       }
     ],
-    "score": 7.4,
+    "score": 7.6,
     "price": "medium",
     "response_time": 0.8,
     "alive": true,
@@ -1944,7 +1898,7 @@
         "cls": ""
       }
     ],
-    "score": 7.37,
+    "score": 7.6,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -1985,7 +1939,7 @@
         "cls": ""
       }
     ],
-    "score": 7.37,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1.34,
     "alive": true,
@@ -2026,7 +1980,7 @@
         "cls": ""
       }
     ],
-    "score": 7.22,
+    "score": 7.7,
     "price": "medium",
     "response_time": 1,
     "alive": true,
@@ -2069,7 +2023,7 @@
         "cls": ""
       }
     ],
-    "score": 7.11,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1,
     "alive": true,
@@ -2112,7 +2066,7 @@
         "cls": ""
       }
     ],
-    "score": 7.08,
+    "score": 7.5,
     "price": "medium",
     "response_time": 0.63,
     "alive": true,
@@ -2155,7 +2109,7 @@
         "cls": ""
       }
     ],
-    "score": 7.6,
+    "score": 7.7,
     "price": "low",
     "response_time": 1,
     "alive": true,
@@ -2197,7 +2151,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.5,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -2239,7 +2193,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1,
     "alive": true,
@@ -2280,7 +2234,7 @@
         "cls": ""
       }
     ],
-    "score": 6.81,
+    "score": 7.6,
     "price": "low",
     "response_time": 1.35,
     "alive": true,
@@ -2322,7 +2276,7 @@
         "cls": ""
       }
     ],
-    "score": 6.77,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1,
     "alive": true,
@@ -2364,7 +2318,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.5,
     "price": "medium",
     "response_time": 1,
     "alive": true,
@@ -2406,7 +2360,7 @@
         "cls": ""
       }
     ],
-    "score": 6.63,
+    "score": 7.8,
     "price": "medium",
     "response_time": 7.59,
     "alive": true,
@@ -2447,7 +2401,7 @@
         "cls": ""
       }
     ],
-    "score": 7.8,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -2491,7 +2445,7 @@
         "cls": ""
       }
     ],
-    "score": 6.53,
+    "score": 7.5,
     "price": "low",
     "response_time": 1.2,
     "alive": true,
@@ -2532,7 +2486,7 @@
         "cls": ""
       }
     ],
-    "score": 6.47,
+    "score": 7.8,
     "price": "medium",
     "response_time": 1.26,
     "alive": true,
@@ -2574,7 +2528,7 @@
         "cls": ""
       }
     ],
-    "score": 6.39,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1.4,
     "alive": true,
@@ -2615,7 +2569,7 @@
         "cls": ""
       }
     ],
-    "score": 7.6,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -2657,7 +2611,7 @@
         "cls": ""
       }
     ],
-    "score": 6.25,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1,
     "alive": true,
@@ -2697,7 +2651,7 @@
         "cls": ""
       }
     ],
-    "score": 7.5,
+    "score": 7.7,
     "price": "low",
     "response_time": 0.5,
     "alive": true,
@@ -2739,7 +2693,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.8,
     "price": "low",
     "response_time": 1.1,
     "alive": true,
@@ -2779,7 +2733,7 @@
         "cls": ""
       }
     ],
-    "score": 7.7,
+    "score": 7.6,
     "price": "medium",
     "response_time": 0.32,
     "alive": true,
@@ -2821,7 +2775,7 @@
         "cls": ""
       }
     ],
-    "score": 7.05,
+    "score": 7.7,
     "price": "low",
     "response_time": 0.5,
     "alive": true,
@@ -2861,7 +2815,7 @@
         "cls": ""
       }
     ],
-    "score": 7.3,
+    "score": 7.6,
     "price": "medium",
     "response_time": 1.56,
     "alive": true,
@@ -2901,7 +2855,7 @@
         "cls": ""
       }
     ],
-    "score": 8.2,
+    "score": 7.6,
     "price": "low",
     "response_time": 0.5,
     "alive": true,
@@ -2942,7 +2896,7 @@
         "cls": ""
       }
     ],
-    "score": 7.8,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3022,7 +2976,7 @@
         "cls": ""
       }
     ],
-    "score": 7.2,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3062,7 +3016,7 @@
         "cls": ""
       }
     ],
-    "score": 7.1,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.33,
     "alive": true,
@@ -3102,7 +3056,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.5,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3142,7 +3096,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.5,
     "price": "medium",
     "response_time": 0.33,
     "alive": true,
@@ -3223,7 +3177,7 @@
         "cls": ""
       }
     ],
-    "score": 7.2,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.72,
     "alive": true,
@@ -3263,7 +3217,7 @@
         "cls": ""
       }
     ],
-    "score": 7.1,
+    "score": 7.6,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3303,7 +3257,7 @@
         "cls": ""
       }
     ],
-    "score": 7,
+    "score": 7.6,
     "price": "low",
     "response_time": 0.35,
     "alive": true,
@@ -3349,7 +3303,7 @@
         "cls": ""
       }
     ],
-    "score": 8.5,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3400,7 +3354,7 @@
         "cls": ""
       }
     ],
-    "score": 7.8,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.6,
     "alive": true,
@@ -3484,7 +3438,7 @@
         "cls": ""
       }
     ],
-    "score": 7.5,
+    "score": 7.8,
     "price": "medium",
     "response_time": 0.7,
     "alive": true,
@@ -3527,7 +3481,7 @@
         "cls": ""
       }
     ],
-    "score": 7.9,
+    "score": 7.6,
     "price": "low",
     "response_time": 0.8,
     "alive": true,
@@ -3569,7 +3523,7 @@
         "cls": ""
       }
     ],
-    "score": 7.5,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.7,
     "alive": true,
@@ -3613,7 +3567,7 @@
         "cls": ""
       }
     ],
-    "score": 8.6,
+    "score": 7.6,
     "price": "low",
     "response_time": 0.5,
     "alive": true,
@@ -3660,7 +3614,7 @@
         "cls": ""
       }
     ],
-    "score": 8.4,
+    "score": 7.7,
     "price": "medium",
     "response_time": 0.4,
     "alive": true,
@@ -3671,7 +3625,7 @@
     "url": "https://anpin.ai",
     "domain": "anpin.ai",
     "name": "AnPin AI",
-    "description": "hvoy.ai推荐中转站，支持Claude/GPT/Gemini等主流模型，企业级服务，稳定可靠。",
+    "description": "支持Claude/GPT/Gemini等主流模型，企业级服务，稳定可靠。",
     "models": [
       "claude",
       "gpt",
@@ -3689,14 +3643,14 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "企业级",
-      "多模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -3709,14 +3663,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://nekocode.com",
     "domain": "nekocode.com",
     "name": "NekoCode",
-    "description": "hvoy.ai推荐中转站，专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "description": "专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
     "models": [
       "claude",
       "gpt"
@@ -3727,20 +3680,20 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.4,
+    "score": 8.3,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "编程专精",
-      "响应快"
+      "按量计费",
+      "Claude专精",
+      "稳定快速"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -3753,14 +3706,13 @@
         "value": "快速",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://clauqe.com",
     "domain": "clauqe.com",
     "name": "ClauqeAI",
-    "description": "hvoy.ai排行榜中转站，专注Claude系列模型，支持Claude Code/Claude全系列。",
+    "description": "专注Claude系列模型，支持Claude Code/Claude全系列。",
     "models": [
       "claude"
     ],
@@ -3769,15 +3721,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.8,
+    "score": 7.6,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
+      "按量计费",
       "Claude专精",
-      "排行榜上榜",
-      "稳定"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -3787,7 +3739,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -3795,14 +3747,13 @@
         "value": "Claude全系列",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://9527code.com",
     "domain": "9527code.com",
     "name": "9527Code",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
     "models": [
       "claude",
       "gpt",
@@ -3814,15 +3765,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.7,
+    "score": 7.8,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -3832,7 +3783,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -3840,14 +3791,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://claudecn.com",
     "domain": "claudecn.com",
     "name": "ClaudeCN",
-    "description": "hvoy.ai评测中性推荐，专注Claude系列模型中转，国内直连，中文用户友好。",
+    "description": "专注Claude系列模型中转，国内直连，中文用户友好。",
     "models": [
       "claude"
     ],
@@ -3856,7 +3806,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.8,
+    "score": 7.9,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -3874,7 +3824,7 @@
       },
       {
         "label": "口碑",
-        "value": "hvoy中性",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -3882,14 +3832,57 @@
         "value": "国内直连",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://yundu.ai",
     "domain": "yundu.ai",
     "name": "云渡AI",
-    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，安全可靠。",
+    "description": "实名认证平台，支持Claude/GPT/Gemini等主流模型，安全可靠。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://toknex.com",
+    "domain": "toknex.com",
+    "name": "Toknex",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型，多渠道冗余。",
     "models": [
       "claude",
       "gpt",
@@ -3907,34 +3900,33 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "实名认证",
-      "排行榜上榜",
-      "安全可靠"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "专业",
-        "value": "实名认证",
+        "value": "企业级服务",
         "cls": "green"
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
         "label": "应用",
-        "value": "多模型支持",
+        "value": "多渠道冗余",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
-    "url": "https://toknex.com",
-    "domain": "toknex.com",
-    "name": "Toknex",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，多渠道冗余。",
+    "url": "https://sevnx.com",
+    "domain": "sevnx.com",
+    "name": "SevnX",
+    "description": "实名认证平台，支持Claude/GPT等主流模型，安全合规。",
     "models": [
       "claude",
       "gpt",
@@ -3952,54 +3944,9 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多渠道"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "多渠道冗余",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://sevnx.com",
-    "domain": "sevnx.com",
-    "name": "SevnX",
-    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT等主流模型，安全合规。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.6,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "实名认证",
-      "排行榜上榜",
-      "安全合规"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4009,7 +3956,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4017,14 +3964,13 @@
         "value": "安全合规",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://sudocode.com",
     "domain": "sudocode.com",
     "name": "SudoCode",
-    "description": "hvoy.ai排行榜中转站，专注编程场景，支持Claude Code/Codex等编程模型，按量计费。",
+    "description": "专注编程场景，支持Claude Code/Codex等编程模型，按量计费。",
     "models": [
       "claude",
       "gpt"
@@ -4040,9 +3986,9 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "编程专精",
-      "排行榜上榜",
-      "按量计费"
+      "按量计费",
+      "Claude专精",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4052,7 +3998,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4060,14 +4006,13 @@
         "value": "按量计费",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://tokaify.com",
     "domain": "tokaify.com",
     "name": "Tokaify",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
     "models": [
       "claude",
       "gpt",
@@ -4079,15 +4024,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4097,7 +4042,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4105,14 +4050,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://shuzhi.ai",
     "domain": "shuzhi.ai",
     "name": "数智AI",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，智能调度。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型，智能调度。",
     "models": [
       "claude",
       "gpt",
@@ -4124,15 +4068,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "智能调度"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4142,7 +4086,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4150,14 +4094,13 @@
         "value": "智能调度",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://luchikey.com",
     "domain": "luchikey.com",
     "name": "LuchiKey",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
     "models": [
       "claude",
       "gpt",
@@ -4169,15 +4112,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4187,7 +4130,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4195,14 +4138,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://zxapi.com",
     "domain": "zxapi.com",
     "name": "ZX API",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "description": "支持Claude/GPT/Gemini等主流模型，按量计费透明。",
     "models": [
       "claude",
       "gpt",
@@ -4214,15 +4156,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "按量计费",
       "多模型",
-      "按量计费"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4232,7 +4174,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4240,14 +4182,13 @@
         "value": "按量计费",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://luminai.com",
     "domain": "luminai.com",
     "name": "Lumin AI",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，响应快速稳定。",
+    "description": "支持Claude/GPT/Gemini等主流模型，响应快速稳定。",
     "models": [
       "claude",
       "gpt",
@@ -4265,9 +4206,9 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "按量计费",
       "多模型",
-      "响应快"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4277,7 +4218,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4285,14 +4226,13 @@
         "value": "快速稳定",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://poixe.com",
     "domain": "poixe.com",
     "name": "Poixe AI",
-    "description": "hvoy.ai推荐中转站，支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "description": "支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
     "models": [
       "claude",
       "gpt",
@@ -4304,20 +4244,20 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 8.4,
+    "score": 8.3,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "质量可靠",
-      "多模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -4330,14 +4270,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://uuapi.com",
     "domain": "uuapi.com",
     "name": "UU API",
-    "description": "hvoy.ai推荐中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，稳定高效。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型，稳定高效。",
     "models": [
       "claude",
       "gpt",
@@ -4355,14 +4294,14 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "企业级",
-      "稳定高效"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -4375,14 +4314,13 @@
         "value": "稳定高效",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://congming.ai",
     "domain": "congming.ai",
     "name": "聪明AI",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "description": "支持Claude/GPT/Gemini等主流模型，按量计费透明。",
     "models": [
       "claude",
       "gpt",
@@ -4394,15 +4332,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.6,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "按量计费",
       "多模型",
-      "按量计费"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4412,7 +4350,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4420,14 +4358,13 @@
         "value": "按量计费",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://claude-api.com",
     "domain": "claude-api.com",
     "name": "Claude-API",
-    "description": "hvoy.ai排行榜中转站，专注Claude系列模型API中转，Claude全系列支持。",
+    "description": "专注Claude系列模型API中转，Claude全系列支持。",
     "models": [
       "claude"
     ],
@@ -4436,15 +4373,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.6,
+    "score": 7.7,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
+      "按量计费",
       "Claude专精",
-      "排行榜上榜",
-      "全系列"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4454,7 +4391,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4462,14 +4399,13 @@
         "value": "Claude全系列",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://claudeapi.net",
     "domain": "claudeapi.net",
     "name": "Claude API",
-    "description": "hvoy.ai评测中性推荐，专注Claude系列模型API中转，国内直连。",
+    "description": "专注Claude系列模型API中转，国内直连。",
     "models": [
       "claude"
     ],
@@ -4478,15 +4414,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.8,
+    "score": 7.9,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
+      "按量计费",
       "Claude专精",
-      "hvoy中性",
-      "国内直连"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4496,7 +4432,7 @@
       },
       {
         "label": "口碑",
-        "value": "hvoy中性",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4504,14 +4440,13 @@
         "value": "国内直连",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://muskai.com",
     "domain": "muskai.com",
     "name": "MuskAI",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，多源底层保障。",
+    "description": "支持Claude/GPT/Gemini等主流模型，多源底层保障。",
     "models": [
       "claude",
       "gpt",
@@ -4523,15 +4458,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.6,
+    "score": 7.5,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "按量计费",
       "多模型",
-      "多源底层"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4541,7 +4476,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4549,149 +4484,13 @@
         "value": "多源底层",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://juxing.ai",
     "domain": "juxing.ai",
     "name": "聚星AI",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "多模型支持",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://daodun.ai",
-    "domain": "daodun.ai",
-    "name": "刀盾AI",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，安全防护。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "安全防护"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "安全防护",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://ciyi.ai",
-    "domain": "ciyi.ai",
-    "name": "词易AI",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "多模型支持",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://gpteam.cn",
-    "domain": "gpteam.cn",
-    "name": "GPTEAM",
-    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，安全合规。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
     "models": [
       "claude",
       "gpt",
@@ -4709,99 +4508,9 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "实名认证",
-      "排行榜上榜",
-      "安全合规"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "实名认证",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "安全合规",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://modcon.ai",
-    "domain": "modcon.ai",
-    "name": "ModCon",
-    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，多源底层智能切换。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.8,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "hvoy中性",
+      "按量计费",
       "多模型",
-      "智能切换"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "多模型支持",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "hvoy中性",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "智能切换",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://ykh.ai",
-    "domain": "ykh.ai",
-    "name": "YKH.AI",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -4811,7 +4520,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -4819,14 +4528,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
-    "url": "https://qqtoken.com",
-    "domain": "qqtoken.com",
-    "name": "球球Token",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
+    "url": "https://daodun.ai",
+    "domain": "daodun.ai",
+    "name": "刀盾AI",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型，安全防护。",
     "models": [
       "claude",
       "gpt",
@@ -4838,174 +4546,83 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.6,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "Token管理"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "Token管理",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://duckcoding.com",
-    "domain": "duckcoding.com",
-    "name": "DuckCoding",
-    "description": "hvoy.ai推荐中转站，专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
-    "models": [
-      "claude",
-      "gpt"
-    ],
-    "features": [
-      "stable",
-      "fast"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 8.3,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "hvoy推荐",
-      "编程专精",
-      "响应快"
-    ],
-    "display_metrics": [
-      {
-        "label": "口碑",
-        "value": "hvoy推荐",
-        "cls": "green"
-      },
-      {
-        "label": "专业",
-        "value": "编程专精",
-        "cls": "accent"
-      },
-      {
-        "label": "响应",
-        "value": "快速",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://rkapi.com",
-    "domain": "rkapi.com",
-    "name": "RK API",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "多模型支持",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://chintao.ai",
-    "domain": "chintao.ai",
-    "name": "Chintao AI",
-    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，国内直连。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.8,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "hvoy中性",
+      "按量计费",
       "多模型",
-      "国内直连"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "专业",
-        "value": "多模型支持",
+        "value": "企业级服务",
         "cls": "green"
       },
       {
         "label": "口碑",
-        "value": "hvoy中性",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
         "label": "应用",
-        "value": "国内直连",
+        "value": "安全防护",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
-    "url": "https://autorouter.ai",
-    "domain": "autorouter.ai",
-    "name": "AutoRouter",
-    "description": "hvoy.ai排行榜中转站，实名认证平台，智能路由自动故障转移，支持Claude/GPT/Gemini等主流模型。",
+    "url": "https://ciyi.ai",
+    "domain": "ciyi.ai",
+    "name": "词易AI",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://gpteam.cn",
+    "domain": "gpteam.cn",
+    "name": "GPTEAM",
+    "description": "实名认证平台，支持Claude/GPT/Gemini等主流模型，安全合规。",
     "models": [
       "claude",
       "gpt",
@@ -5023,34 +4640,33 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "实名认证",
-      "智能路由",
-      "排行榜上榜"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "专业",
-        "value": "智能路由",
+        "value": "实名认证",
         "cls": "green"
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
         "label": "应用",
-        "value": "故障转移",
+        "value": "安全合规",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
-    "url": "https://lingsuan.ai",
-    "domain": "lingsuan.ai",
-    "name": "灵算",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "url": "https://modcon.ai",
+    "domain": "modcon.ai",
+    "name": "ModCon",
+    "description": "支持Claude/GPT/Gemini等主流模型，多源底层智能切换。",
     "models": [
       "claude",
       "gpt",
@@ -5062,15 +4678,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.9,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "按量计费",
       "多模型",
-      "按量计费"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5080,22 +4696,21 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
-        "label": "价格",
-        "value": "按量计费",
+        "label": "应用",
+        "value": "智能切换",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
-    "url": "https://switchbase.com",
-    "domain": "switchbase.com",
-    "name": "SwitchBase",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，多源底层智能切换。",
+    "url": "https://ykh.ai",
+    "domain": "ykh.ai",
+    "name": "YKH.AI",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
     "models": [
       "claude",
       "gpt",
@@ -5113,9 +4728,184 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "按量计费",
       "多模型",
-      "智能切换"
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://qqtoken.com",
+    "domain": "qqtoken.com",
+    "name": "球球Token",
+    "description": "企业级API服务，Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Token管理",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://duckcoding.com",
+    "domain": "duckcoding.com",
+    "name": "DuckCoding",
+    "description": "专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable",
+      "fast"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.2,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "Claude专精",
+      "稳定快速"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "快速",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://rkapi.com",
+    "domain": "rkapi.com",
+    "name": "RK API",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://chintao.ai",
+    "domain": "chintao.ai",
+    "name": "Chintao AI",
+    "description": "支持Claude/GPT/Gemini等主流模型，国内直连。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.9,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5125,7 +4915,139 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "国内直连",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://autorouter.ai",
+    "domain": "autorouter.ai",
+    "name": "AutoRouter",
+    "description": "实名认证平台，智能路由自动故障转移，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "智能路由",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "故障转移",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://lingsuan.ai",
+    "domain": "lingsuan.ai",
+    "name": "灵算",
+    "description": "支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://switchbase.com",
+    "domain": "switchbase.com",
+    "name": "SwitchBase",
+    "description": "支持Claude/GPT/Gemini等主流模型，多源底层智能切换。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -5133,14 +5055,13 @@
         "value": "智能切换",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://dawcode.com",
     "domain": "dawcode.com",
     "name": "DawCode",
-    "description": "hvoy.ai推荐中转站，专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "description": "专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
     "models": [
       "claude",
       "gpt"
@@ -5157,14 +5078,14 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "编程专精",
-      "响应快"
+      "按量计费",
+      "Claude专精",
+      "稳定快速"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -5177,14 +5098,13 @@
         "value": "快速",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://zhihuiapi.com",
     "domain": "zhihuiapi.com",
     "name": "智惠API",
-    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，价格实惠。",
+    "description": "支持Claude/GPT/Gemini等主流模型，价格实惠。",
     "models": [
       "claude",
       "gpt",
@@ -5196,15 +5116,15 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.5,
+    "score": 7.8,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "排行榜上榜",
+      "低价",
       "多模型",
-      "价格实惠"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5214,7 +5134,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -5222,14 +5142,13 @@
         "value": "价格实惠",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://aok.ai",
     "domain": "aok.ai",
     "name": "AOK",
-    "description": "hvoy.ai推荐中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，质量可靠。",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型，质量可靠。",
     "models": [
       "claude",
       "gpt",
@@ -5247,14 +5166,14 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "企业级",
-      "质量可靠"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -5267,14 +5186,13 @@
         "value": "质量可靠",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://frontierintelligence.ai",
     "domain": "frontierintelligence.ai",
     "name": "Frontier Intelligence",
-    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，前沿模型快速上架。",
+    "description": "实名认证平台，支持Claude/GPT/Gemini等主流模型，前沿模型快速上架。",
     "models": [
       "claude",
       "gpt",
@@ -5292,9 +5210,9 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "实名认证",
-      "排行榜上榜",
-      "前沿模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5304,7 +5222,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -5312,328 +5230,13 @@
         "value": "前沿模型",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://derouter.com",
     "domain": "derouter.com",
     "name": "DeRouter",
-    "description": "hvoy.ai推荐中转站，智能路由API平台，自动故障转移，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 8.3,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "hvoy推荐",
-      "智能路由",
-      "故障转移"
-    ],
-    "display_metrics": [
-      {
-        "label": "口碑",
-        "value": "hvoy推荐",
-        "cls": "green"
-      },
-      {
-        "label": "专业",
-        "value": "智能路由",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "故障转移",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://coderelay.com",
-    "domain": "coderelay.com",
-    "name": "CodeRelay",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，专注编程场景，支持Claude Code/Codex等编程模型。",
-    "models": [
-      "claude",
-      "gpt"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.6,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "编程专精",
-      "排行榜上榜"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "编程专精",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "企业级服务",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://huiyun.ai",
-    "domain": "huiyun.ai",
-    "name": "汇云AI",
-    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，安全合规。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.6,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "实名认证",
-      "排行榜上榜",
-      "安全合规"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "实名认证",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "安全合规",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://safeapi.com",
-    "domain": "safeapi.com",
-    "name": "SafeAPI",
-    "description": "hvoy.ai排行榜中转站，安全可靠的API中转服务，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.6,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "安全可靠",
-      "排行榜上榜",
-      "多模型"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "安全可靠",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "多模型支持",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://llmapi.com",
-    "domain": "llmapi.com",
-    "name": "LLMAPI",
-    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "企业级",
-      "排行榜上榜",
-      "多模型"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "多模型支持",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://mytokenpi.com",
-    "domain": "mytokenpi.com",
-    "name": "MyTokenPi",
-    "description": "hvoy.ai排行榜中转站，Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.5,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "排行榜上榜",
-      "多模型",
-      "Token管理"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "多模型支持",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "Token管理",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://anyroute.com",
-    "domain": "anyroute.com",
-    "name": "AnyRoute",
-    "description": "hvoy.ai排行榜中转站，智能路由API平台，支持Claude/GPT/Gemini等主流模型，自动故障转移。",
-    "models": [
-      "claude",
-      "gpt",
-      "gemini"
-    ],
-    "features": [
-      "stable",
-      "multi"
-    ],
-    "price": "medium",
-    "free_amount": "",
-    "score": 7.6,
-    "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
-    "check_count": 1,
-    "display_tags": [
-      "智能路由",
-      "排行榜上榜",
-      "故障转移"
-    ],
-    "display_metrics": [
-      {
-        "label": "专业",
-        "value": "智能路由",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "排行榜上榜",
-        "cls": "accent"
-      },
-      {
-        "label": "应用",
-        "value": "故障转移",
-        "cls": ""
-      }
-    ],
-    "source": "hvoy.ai"
-  },
-  {
-    "url": "https://cubence.com",
-    "domain": "cubence.com",
-    "name": "Cubence",
-    "description": "hvoy.ai推荐中转站，支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "description": "智能路由API平台，自动故障转移，支持Claude/GPT/Gemini等主流模型。",
     "models": [
       "claude",
       "gpt",
@@ -5651,14 +5254,321 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy推荐",
-      "质量可靠",
-      "多模型"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
         "label": "口碑",
-        "value": "hvoy推荐",
+        "value": "口碑良好",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "智能路由",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "故障转移",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://coderelay.com",
+    "domain": "coderelay.com",
+    "name": "CodeRelay",
+    "description": "企业级API服务，专注编程场景，支持Claude Code/Codex等编程模型。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.7,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "Claude专精",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "企业级服务",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://huiyun.ai",
+    "domain": "huiyun.ai",
+    "name": "汇云AI",
+    "description": "实名认证平台，支持Claude/GPT/Gemini等主流模型，安全合规。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "安全合规",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://safeapi.com",
+    "domain": "safeapi.com",
+    "name": "SafeAPI",
+    "description": "安全可靠的API中转服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "安全可靠",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://llmapi.com",
+    "domain": "llmapi.com",
+    "name": "LLMAPI",
+    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://mytokenpi.com",
+    "domain": "mytokenpi.com",
+    "name": "MyTokenPi",
+    "description": "Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.7,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Token管理",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://anyroute.com",
+    "domain": "anyroute.com",
+    "name": "AnyRoute",
+    "description": "智能路由API平台，支持Claude/GPT/Gemini等主流模型，自动故障转移。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "智能路由",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "口碑良好",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "故障转移",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://cubence.com",
+    "domain": "cubence.com",
+    "name": "Cubence",
+    "description": "支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.2,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "按量计费",
+      "多模型",
+      "稳定可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "口碑良好",
         "cls": "green"
       },
       {
@@ -5671,14 +5581,13 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://hajimi.com",
     "domain": "hajimi.com",
     "name": "哈基米",
-    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，社区口碑尚可。",
+    "description": "支持Claude/GPT/Gemini等主流模型，社区口碑尚可。",
     "models": [
       "claude",
       "gpt",
@@ -5690,15 +5599,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.8,
+    "score": 7.9,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy中性",
+      "按量计费",
       "多模型",
-      "社区口碑"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5708,7 +5617,7 @@
       },
       {
         "label": "口碑",
-        "value": "hvoy中性",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -5716,14 +5625,13 @@
         "value": "社区口碑",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://ekan8.com",
     "domain": "ekan8.com",
     "name": "Ekan8",
-    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，按量计费。",
+    "description": "支持Claude/GPT/Gemini等主流模型，按量计费。",
     "models": [
       "claude",
       "gpt",
@@ -5735,15 +5643,15 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7.8,
+    "score": 7.9,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "hvoy中性",
+      "按量计费",
       "多模型",
-      "按量计费"
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5753,7 +5661,7 @@
       },
       {
         "label": "口碑",
-        "value": "hvoy中性",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -5761,14 +5669,13 @@
         "value": "按量计费",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   },
   {
     "url": "https://sudocode.us",
     "domain": "sudocode.us",
     "name": "SudoCode US",
-    "description": "hvoy.ai排行榜中转站，海外节点部署，支持Claude/GPT/Gemini等主流模型，低延迟。",
+    "description": "海外节点部署，支持Claude/GPT/Gemini等主流模型，低延迟。",
     "models": [
       "claude",
       "gpt",
@@ -5786,9 +5693,9 @@
     "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
-      "海外节点",
-      "排行榜上榜",
-      "低延迟"
+      "按量计费",
+      "多模型",
+      "稳定可靠"
     ],
     "display_metrics": [
       {
@@ -5798,7 +5705,7 @@
       },
       {
         "label": "口碑",
-        "value": "排行榜上榜",
+        "value": "口碑良好",
         "cls": "accent"
       },
       {
@@ -5806,7 +5713,6 @@
         "value": "低延迟",
         "cls": ""
       }
-    ],
-    "source": "hvoy.ai"
+    ]
   }
 ]
