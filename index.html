@@ -8622,30 +8622,9 @@
         const globalAddedUrls = new Set();
 
         // 黑名单：非中转站域名，不应出现在排行榜中
+        // 注意：官方渠道（百度千帆、智谱AI、DeepSeek等）已加入排行榜，不要加入黑名单
         const BLACKLIST_DOMAINS = [
             'qixing1217.top',  // All API Hub - 浏览器插件/管理工具，非中转站
-            // 国内官方平台（非中转站）
-            'qianfan.baidubce.com',  // 百度千帆
-            'bigmodel.cn',  // 智谱AI
-            'volcengine.com',  // 火山引擎/豆包
-            'platform.moonshot.cn',  // 月之暗面/Kimi
-            'platform.lingyiwanwu.com',  // 零一万物
-            'platform.deepseek.com',  // DeepSeek官方
-            'xinghuo.xfyun.cn',  // 讯飞星火
-            'bailian.console.aliyun.com',  // 阿里百炼
-            'platform.baichuan-ai.com',  // 百川智能
-            'platform.minimaxi.com',  // MiniMax
-            'minimaxi.com',  // MiniMax
-            // 海外官方平台（非中转站）
-            'openrouter.ai',  // OpenRouter
-            'console.mistral.ai',  // Mistral
-            'dashboard.cohere.com',  // Cohere
-            'console.groq.com',  // Groq
-            'api.together.xyz',  // Together AI
-            'fireworks.ai',  // Fireworks AI
-            'deepinfra.com',  // DeepInfra
-            'api.anthropic.com',  // Anthropic官方
-            'api.openai.com',  // OpenAI官方
             // 非API服务
             'bewildcard.com',  // WildCard虚拟卡
         ];
