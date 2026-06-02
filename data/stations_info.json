@@ -378,7 +378,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.87,
+    "score": 8.5,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -630,7 +630,7 @@
     "url": "https://www.sssaicode.com/register?ref=BO64DM",
     "domain": "sssaicode.com",
     "name": "SSSAICode",
-    "description": "香港和美国双API节点，接口响应快。包月套餐性价比高，$300额度/月，文档完善。",
+    "description": "香港和美国双API节点部署，接口响应快速稳定。包月套餐性价比突出，$300额度/月满足高频调用需求，API文档完善便于快速接入。",
     "models": [
       "claude",
       "gpt"
@@ -640,7 +640,7 @@
     ],
     "price": "medium",
     "free_amount": "$300额度/月",
-    "score": 7.58,
+    "score": 8.1,
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1031,28 +1031,29 @@
     "url": "https://gptcat.cc",
     "domain": "gptcat.cc",
     "name": "GPT猫 (GPTCat)",
-    "description": "GPT中文引导站，提供GPT镜像服务，多镜像站点保障可用性，有ICP备案，高性价比。",
+    "description": "专注AI绘画与图像生成的中转站，支持Midjourney、DALL-E、Stable Diffusion等主流绘画模型，适合设计师和AI绘画创作者使用。",
     "models": [
       "claude",
       "gpt",
       "gemini",
       "domestic",
-      "cheap"
+      "cheap",
+      "image"
     ],
     "features": [
       "multi"
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.02,
+    "score": 7.8,
     "response_time": 1.36,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 2,
     "display_tags": [
-      "猫咪主题",
-      "高性价比",
-      "多模型"
+      "绘画专精",
+      "图像生成",
+      "Midjourney"
     ],
     "display_metrics": [
       {
@@ -1186,7 +1187,7 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 8.92,
+    "score": 9.05,
     "response_time": 1.28,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1218,7 +1219,7 @@
     "url": "https://xyai2.top",
     "domain": "xyai2.top",
     "name": "XYAI2 API",
-    "description": "统一LLM API网关，官方渠道折扣供应。国内直连低延迟(0.63s)，适合对延迟敏感的开发者。",
+    "description": "统一LLM API网关，官方渠道折扣供应，支持30+模型。国内直连无需翻墙，注册即送测试额度，首充额外赠送奖励，适合长期项目开发。",
     "models": [
       "gpt",
       "claude",
@@ -1233,15 +1234,15 @@
     ],
     "price": "low",
     "free_amount": "",
-    "score": 7.86,
+    "score": 8.1,
     "response_time": 0.63,
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 2,
     "display_tags": [
-      "官方折扣",
+      "官方渠道",
       "国内直连",
-      "低延迟"
+      "注册送额度"
     ],
     "display_metrics": [
       {
@@ -2122,18 +2123,19 @@
     "url": "https://n1n.ai",
     "domain": "n1n.ai",
     "name": "N1N.AI",
-    "description": "个人开发者运营的多模型中转站，支持Claude/GPT/Gemini，社区口碑不错，按量计费价格实惠。",
+    "description": "专注AI绘画与图像生成的中转站，支持Midjourney/DALL-E/SD等多款绘画模型，社区口碑良好，适合设计师和创作者使用。",
     "models": [
       "claude",
       "gpt",
-      "gemini"
+      "gemini",
+      "image"
     ],
     "features": [
       "multi"
     ],
     "display_tags": [
-      "多模型",
-      "个人开发",
+      "绘画专精",
+      "图像生成",
       "社区口碑"
     ],
     "display_metrics": [
@@ -2153,7 +2155,7 @@
         "cls": ""
       }
     ],
-    "score": 7.1,
+    "score": 7.6,
     "price": "low",
     "response_time": 1,
     "alive": true,
@@ -2910,7 +2912,7 @@
     "url": "https://xinghuo.xfyun.cn",
     "domain": "xinghuo.xfyun.cn",
     "name": "讯飞星火",
-    "description": "科大讯飞官方API，星火大模型。语音识别/合成能力行业领先，适合语音和多模态场景。",
+    "description": "科大讯飞官方API平台，星火大模型系列。语音识别与合成能力行业领先，支持文本/语音/图像多模态，适合语音交互、智能客服等场景。",
     "models": [
       "domestic",
       "enterprise"
@@ -2920,8 +2922,8 @@
     ],
     "display_tags": [
       "官方平台",
-      "语音强项",
-      "多模态"
+      "语音领先",
+      "多模态AI"
     ],
     "display_metrics": [
       {
@@ -2940,7 +2942,7 @@
         "cls": ""
       }
     ],
-    "score": 7.4,
+    "score": 7.8,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3347,7 +3349,7 @@
         "cls": ""
       }
     ],
-    "score": 8.2,
+    "score": 8.5,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
@@ -3451,7 +3453,7 @@
     "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
     "domain": "suirenai.com",
     "name": "随人AI",
-    "description": "支持GPT/Claude/DeepSeek等主流模型，邀请注册有礼，稳定中转适合日常开发使用。",
+    "description": "AI大模型API中转平台，支持GPT/Claude/DeepSeek等主流模型按量计费，邀请注册享优惠，稳定可靠适合日常开发与测试。",
     "models": [
       "gpt",
       "claude",
@@ -3463,7 +3465,7 @@
     "display_tags": [
       "邀请注册",
       "稳定中转",
-      "多模型"
+      "按量计费"
     ],
     "display_metrics": [
       {
@@ -3482,7 +3484,7 @@
         "cls": ""
       }
     ],
-    "score": 7.4,
+    "score": 7.5,
     "price": "medium",
     "response_time": 0.7,
     "alive": true,
@@ -3525,7 +3527,7 @@
         "cls": ""
       }
     ],
-    "score": 7.6,
+    "score": 7.9,
     "price": "low",
     "response_time": 0.8,
     "alive": true,
@@ -3570,6 +3572,97 @@
     "score": 7.5,
     "price": "medium",
     "response_time": 0.7,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
+  },
+  {
+    "url": "https://coderplan.ai/register",
+    "domain": "coderplan.ai",
+    "name": "CoderPlan",
+    "description": "包月级价格按量付费的AI编程API中转站，支持Claude Code/Cursor/Codex CLI/Gemini CLI等工具。高缓存命中率节省成本，每次调用可查看模型、tokens和费用明细。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "cheap",
+      "multi",
+      "stable"
+    ],
+    "display_tags": [
+      "按量付费",
+      "缓存优化",
+      "编程专精"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "编程工具",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "0.7折起",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Claude Code",
+        "cls": ""
+      }
+    ],
+    "score": 8.6,
+    "price": "low",
+    "response_time": 0.5,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
+  },
+  {
+    "url": "https://unity2.ai",
+    "domain": "unity2.ai",
+    "name": "Unity2.AI",
+    "description": "面向个人开发者、团队与企业的AI基础设施平台，自研集群架构支持高并发与多上游智能调度。兼容OpenAI API，100+模型统一入口，零改写模型原始输出。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "domestic",
+      "enterprise"
+    ],
+    "features": [
+      "multi",
+      "enterprise",
+      "stable"
+    ],
+    "display_tags": [
+      "企业级",
+      "100+模型",
+      "零改写"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "自研集群",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "按量计费",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "团队管理",
+        "cls": ""
+      }
+    ],
+    "score": 8.4,
+    "price": "medium",
+    "response_time": 0.4,
     "alive": true,
     "last_check": "2026-06-03",
     "check_count": 1
