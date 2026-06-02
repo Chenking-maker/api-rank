@@ -1578,5 +1578,105 @@
     "alive": true,
     "last_check": "2026-06-02",
     "check_count": 1
+  },
+  {
+    "url": "https://ai.mfate.cn/",
+    "domain": "ai.mfate.cn",
+    "name": "MFate AI",
+    "description": "支持DeepSeek、Qwen、Doubao、MiniMax、Kimi、Hunyuan、Ernie、Stepfun、Xunfei等主流国产模型，以及GLM、Yibaichuan、Kling、Hailuo、Vidup、Pixverse等",
+    "models": ["deepseek", "qwen", "doubao", "minimax", "kimi", "hunyuan", "ernie", "stepfun", "xunfei", "glm", "yibaichuan"],
+    "features": ["multi", "domestic"],
+    "display_tags": ["国产模型", "多模型支持"],
+    "display_metrics": [
+      {"label": "专业", "value": "国产全覆盖", "cls": "green"},
+      {"label": "优惠", "value": "新用户福利", "cls": "accent"},
+      {"label": "应用", "value": "OpenAI兼容", "cls": ""}
+    ],
+    "score": 7.8,
+    "price": "medium",
+    "response_time": 0.6,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
+  },
+  {
+    "url": "https://freemodel.dev/invite/FRE-1647af47",
+    "domain": "freemodel.dev",
+    "name": "FreeModel",
+    "description": "AI模型API中转服务，支持多种主流大模型调用",
+    "models": ["gpt", "claude", "gemini"],
+    "features": ["multi"],
+    "display_tags": ["邀请返利", "稳定服务"],
+    "display_metrics": [
+      {"label": "专业", "value": "多模型", "cls": "green"},
+      {"label": "优惠", "value": "邀请返利", "cls": "accent"},
+      {"label": "应用", "value": "API中转", "cls": ""}
+    ],
+    "score": 7.5,
+    "price": "medium",
+    "response_time": 0.7,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
+  },
+  {
+    "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
+    "domain": "suirenai.com",
+    "name": "随人AI",
+    "description": "AI大模型API中转平台，支持多种主流模型",
+    "models": ["gpt", "claude", "deepseek"],
+    "features": ["multi"],
+    "display_tags": ["邀请注册", "稳定中转"],
+    "display_metrics": [
+      {"label": "专业", "value": "多模型支持", "cls": "green"},
+      {"label": "优惠", "value": "注册有礼", "cls": "accent"},
+      {"label": "应用", "value": "API服务", "cls": ""}
+    ],
+    "score": 7.4,
+    "price": "medium",
+    "response_time": 0.7,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
+  },
+  {
+    "url": "https://shop.xuedingtoken.com/?invite=2DPLSD7Z",
+    "domain": "shop.xuedingtoken.com",
+    "name": "XueDingToken (雪顶Token)",
+    "description": "卖token+可赚钱伙伴模式，新人$5体验券，支持余额模式和兑换码模式",
+    "models": ["gpt", "claude", "gemini"],
+    "features": ["multi", "cheap"],
+    "display_tags": ["卖Token", "赚钱伙伴", "$5体验券"],
+    "display_metrics": [
+      {"label": "专业", "value": "Token销售", "cls": "green"},
+      {"label": "优惠", "value": "新人$5体验", "cls": "accent"},
+      {"label": "应用", "value": "可赚钱伙伴", "cls": ""}
+    ],
+    "score": 7.6,
+    "price": "low",
+    "response_time": 0.8,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
+  },
+  {
+    "url": "https://kirby.cc.cd/register?aff=PNHL6Y3ABHKQ",
+    "domain": "kirby.cc.cd",
+    "name": "Kirby API",
+    "description": "AI模型API中转服务，简洁注册流程，支持多种主流模型",
+    "models": ["gpt", "claude", "deepseek"],
+    "features": ["multi"],
+    "display_tags": ["简洁易用", "邀请注册"],
+    "display_metrics": [
+      {"label": "专业", "value": "API中转", "cls": "green"},
+      {"label": "优惠", "value": "注册优惠", "cls": "accent"},
+      {"label": "应用", "value": "多模型支持", "cls": ""}
+    ],
+    "score": 7.5,
+    "price": "medium",
+    "response_time": 0.7,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1
   }
 ]
