@@ -6547,9 +6547,11 @@
 
             // Update section title to show count
 
-            const titleEl = document.querySelector('#ranking .section-title span');
+            const sectionDateEl = document.getElementById('sectionDate');
 
-            if (titleEl) {
+            const sectionCountEl = document.getElementById('sectionCount');
+
+            if (sectionDateEl && sectionCountEl) {
 
                 const labels = {
 
@@ -6571,7 +6573,9 @@
 
                 };
 
-                titleEl.textContent = (labels[type] || type) + ' · ' + visibleCount + '个';
+                sectionDateEl.textContent = labels[type] || type;
+
+                sectionCountEl.textContent = '· ' + visibleCount + '个';
 
             }
 
@@ -10683,7 +10687,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (totalCountEl) totalCountEl.textContent = validCount;
 
-            if (sectionCountEl) sectionCountEl.textContent = '· ' + validCount + '个';
+            // 只在"全部"标签下更新 sectionCount，避免覆盖筛选结果
+            const activeTab = document.querySelector('.filter-tab.active');
+            const isAllTab = activeTab && activeTab.textContent.trim() === '全部';
+            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· ' + validCount + '个';
 
             
 
