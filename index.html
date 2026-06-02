@@ -966,9 +966,6 @@
         }
 
         /* 查看更多横幅按钮 */
-        #loadMoreBtn {
-            grid-column: 1 / -1;
-        }
         .load-more-banner {
             display: flex;
             align-items: center;
@@ -4564,13 +4561,13 @@
 
                 </div>
 
+                
+
             </div>
 
         </div>
 
     </section>
-
-
 
     <!-- Finder Modal - 找适合自己的中转站 -->
 
@@ -5975,10 +5972,12 @@
                         <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
-
+
                 
 
             </div>
+
+            <div id="loadMoreBtn" style="display:none;"></div>
 
         </div>
 
@@ -10562,14 +10561,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // 添加/更新"查看更多"按钮
-            let loadMoreBtn = document.getElementById('loadMoreBtn');
-            if (!loadMoreBtn) {
-                loadMoreBtn = document.createElement('div');
-                loadMoreBtn.id = 'loadMoreBtn';
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
                 loadMoreBtn.innerHTML = '<a href="all-stations.html" class="load-more-banner">查看全部 ' + validCount + '+ 个中转站 →</a>';
-                rankingList.appendChild(loadMoreBtn);
+                loadMoreBtn.style.display = '';
             }
-            loadMoreBtn.style.display = '';
 
         }
 
