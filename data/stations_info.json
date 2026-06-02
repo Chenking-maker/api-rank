@@ -3666,5 +3666,2147 @@
     "alive": true,
     "last_check": "2026-06-03",
     "check_count": 1
+  },
+  {
+    "url": "https://anpin.ai",
+    "domain": "anpin.ai",
+    "name": "AnPin AI",
+    "description": "hvoy.ai推荐中转站，支持Claude/GPT/Gemini等主流模型，企业级服务，稳定可靠。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "企业级",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://nekocode.com",
+    "domain": "nekocode.com",
+    "name": "NekoCode",
+    "description": "hvoy.ai推荐中转站，专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable",
+      "fast"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.4,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "编程专精",
+      "响应快"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "快速",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://clauqe.com",
+    "domain": "clauqe.com",
+    "name": "ClauqeAI",
+    "description": "hvoy.ai排行榜中转站，专注Claude系列模型，支持Claude Code/Claude全系列。",
+    "models": [
+      "claude"
+    ],
+    "features": [
+      "stable"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "Claude专精",
+      "排行榜上榜",
+      "稳定"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "Claude专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Claude全系列",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://9527code.com",
+    "domain": "9527code.com",
+    "name": "9527Code",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.7,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://claudecn.com",
+    "domain": "claudecn.com",
+    "name": "ClaudeCN",
+    "description": "hvoy.ai评测中性推荐，专注Claude系列模型中转，国内直连，中文用户友好。",
+    "models": [
+      "claude"
+    ],
+    "features": [
+      "stable"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "Claude专精",
+      "国内直连",
+      "中文友好"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "Claude专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "hvoy中性",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "国内直连",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://yundu.ai",
+    "domain": "yundu.ai",
+    "name": "云渡AI",
+    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，安全可靠。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "实名认证",
+      "排行榜上榜",
+      "安全可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://toknex.com",
+    "domain": "toknex.com",
+    "name": "Toknex",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，多渠道冗余。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.7,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多渠道"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多渠道冗余",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://sevnx.com",
+    "domain": "sevnx.com",
+    "name": "SevnX",
+    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT等主流模型，安全合规。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "实名认证",
+      "排行榜上榜",
+      "安全合规"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "安全合规",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://sudocode.com",
+    "domain": "sudocode.com",
+    "name": "SudoCode",
+    "description": "hvoy.ai排行榜中转站，专注编程场景，支持Claude Code/Codex等编程模型，按量计费。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "编程专精",
+      "排行榜上榜",
+      "按量计费"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://tokaify.com",
+    "domain": "tokaify.com",
+    "name": "Tokaify",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://shuzhi.ai",
+    "domain": "shuzhi.ai",
+    "name": "数智AI",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，智能调度。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "智能调度"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "智能调度",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://luchikey.com",
+    "domain": "luchikey.com",
+    "name": "LuchiKey",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://zxapi.com",
+    "domain": "zxapi.com",
+    "name": "ZX API",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "按量计费"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://luminai.com",
+    "domain": "luminai.com",
+    "name": "Lumin AI",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，响应快速稳定。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "响应快"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "快速稳定",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://poixe.com",
+    "domain": "poixe.com",
+    "name": "Poixe AI",
+    "description": "hvoy.ai推荐中转站，支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.4,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "质量可靠",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "质量可靠",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://uuapi.com",
+    "domain": "uuapi.com",
+    "name": "UU API",
+    "description": "hvoy.ai推荐中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，稳定高效。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.3,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "企业级",
+      "稳定高效"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "稳定高效",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://congming.ai",
+    "domain": "congming.ai",
+    "name": "聪明AI",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "按量计费"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://claude-api.com",
+    "domain": "claude-api.com",
+    "name": "Claude-API",
+    "description": "hvoy.ai排行榜中转站，专注Claude系列模型API中转，Claude全系列支持。",
+    "models": [
+      "claude"
+    ],
+    "features": [
+      "stable"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "Claude专精",
+      "排行榜上榜",
+      "全系列"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "Claude专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Claude全系列",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://claudeapi.net",
+    "domain": "claudeapi.net",
+    "name": "Claude API",
+    "description": "hvoy.ai评测中性推荐，专注Claude系列模型API中转，国内直连。",
+    "models": [
+      "claude"
+    ],
+    "features": [
+      "stable"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "Claude专精",
+      "hvoy中性",
+      "国内直连"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "Claude专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "hvoy中性",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "国内直连",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://muskai.com",
+    "domain": "muskai.com",
+    "name": "MuskAI",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，多源底层保障。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "多源底层"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多源底层",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://juxing.ai",
+    "domain": "juxing.ai",
+    "name": "聚星AI",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://daodun.ai",
+    "domain": "daodun.ai",
+    "name": "刀盾AI",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，安全防护。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "安全防护"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "安全防护",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://ciyi.ai",
+    "domain": "ciyi.ai",
+    "name": "词易AI",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://gpteam.cn",
+    "domain": "gpteam.cn",
+    "name": "GPTEAM",
+    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，安全合规。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "实名认证",
+      "排行榜上榜",
+      "安全合规"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "安全合规",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://modcon.ai",
+    "domain": "modcon.ai",
+    "name": "ModCon",
+    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，多源底层智能切换。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy中性",
+      "多模型",
+      "智能切换"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "hvoy中性",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "智能切换",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://ykh.ai",
+    "domain": "ykh.ai",
+    "name": "YKH.AI",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://qqtoken.com",
+    "domain": "qqtoken.com",
+    "name": "球球Token",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "Token管理"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Token管理",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://duckcoding.com",
+    "domain": "duckcoding.com",
+    "name": "DuckCoding",
+    "description": "hvoy.ai推荐中转站，专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable",
+      "fast"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.3,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "编程专精",
+      "响应快"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "快速",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://rkapi.com",
+    "domain": "rkapi.com",
+    "name": "RK API",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://chintao.ai",
+    "domain": "chintao.ai",
+    "name": "Chintao AI",
+    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，国内直连。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy中性",
+      "多模型",
+      "国内直连"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "hvoy中性",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "国内直连",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://autorouter.ai",
+    "domain": "autorouter.ai",
+    "name": "AutoRouter",
+    "description": "hvoy.ai排行榜中转站，实名认证平台，智能路由自动故障转移，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.7,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "实名认证",
+      "智能路由",
+      "排行榜上榜"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "智能路由",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "故障转移",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://lingsuan.ai",
+    "domain": "lingsuan.ai",
+    "name": "灵算",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，按量计费透明。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "按量计费"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://switchbase.com",
+    "domain": "switchbase.com",
+    "name": "SwitchBase",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，多源底层智能切换。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "智能切换"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "智能切换",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://dawcode.com",
+    "domain": "dawcode.com",
+    "name": "DawCode",
+    "description": "hvoy.ai推荐中转站，专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable",
+      "fast"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.4,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "编程专精",
+      "响应快"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "快速",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://zhihuiapi.com",
+    "domain": "zhihuiapi.com",
+    "name": "智惠API",
+    "description": "hvoy.ai排行榜中转站，支持Claude/GPT/Gemini等主流模型，价格实惠。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "low",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "价格实惠"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "价格实惠",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://aok.ai",
+    "domain": "aok.ai",
+    "name": "AOK",
+    "description": "hvoy.ai推荐中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型，质量可靠。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.2,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "企业级",
+      "质量可靠"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "质量可靠",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://frontierintelligence.ai",
+    "domain": "frontierintelligence.ai",
+    "name": "Frontier Intelligence",
+    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，前沿模型快速上架。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "实名认证",
+      "排行榜上榜",
+      "前沿模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "前沿模型",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://derouter.com",
+    "domain": "derouter.com",
+    "name": "DeRouter",
+    "description": "hvoy.ai推荐中转站，智能路由API平台，自动故障转移，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.3,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "智能路由",
+      "故障转移"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "智能路由",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "故障转移",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://coderelay.com",
+    "domain": "coderelay.com",
+    "name": "CodeRelay",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，专注编程场景，支持Claude Code/Codex等编程模型。",
+    "models": [
+      "claude",
+      "gpt"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "编程专精",
+      "排行榜上榜"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "编程专精",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "企业级服务",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://huiyun.ai",
+    "domain": "huiyun.ai",
+    "name": "汇云AI",
+    "description": "hvoy.ai排行榜中转站，实名认证平台，支持Claude/GPT/Gemini等主流模型，安全合规。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "实名认证",
+      "排行榜上榜",
+      "安全合规"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "实名认证",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "安全合规",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://safeapi.com",
+    "domain": "safeapi.com",
+    "name": "SafeAPI",
+    "description": "hvoy.ai排行榜中转站，安全可靠的API中转服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "安全可靠",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "安全可靠",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://llmapi.com",
+    "domain": "llmapi.com",
+    "name": "LLMAPI",
+    "description": "hvoy.ai排行榜中转站，企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "企业级",
+      "排行榜上榜",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "企业级服务",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://mytokenpi.com",
+    "domain": "mytokenpi.com",
+    "name": "MyTokenPi",
+    "description": "hvoy.ai排行榜中转站，Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.5,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "排行榜上榜",
+      "多模型",
+      "Token管理"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "Token管理",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://anyroute.com",
+    "domain": "anyroute.com",
+    "name": "AnyRoute",
+    "description": "hvoy.ai排行榜中转站，智能路由API平台，支持Claude/GPT/Gemini等主流模型，自动故障转移。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "智能路由",
+      "排行榜上榜",
+      "故障转移"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "智能路由",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "故障转移",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://cubence.com",
+    "domain": "cubence.com",
+    "name": "Cubence",
+    "description": "hvoy.ai推荐中转站，支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.4,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy推荐",
+      "质量可靠",
+      "多模型"
+    ],
+    "display_metrics": [
+      {
+        "label": "口碑",
+        "value": "hvoy推荐",
+        "cls": "green"
+      },
+      {
+        "label": "专业",
+        "value": "质量可靠",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "多模型支持",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://hajimi.com",
+    "domain": "hajimi.com",
+    "name": "哈基米",
+    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，社区口碑尚可。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy中性",
+      "多模型",
+      "社区口碑"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "hvoy中性",
+        "cls": "accent"
+      },
+      {
+        "label": "应用",
+        "value": "社区口碑",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://ekan8.com",
+    "domain": "ekan8.com",
+    "name": "Ekan8",
+    "description": "hvoy.ai评测中性推荐，支持Claude/GPT/Gemini等主流模型，按量计费。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.8,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1,
+    "display_tags": [
+      "hvoy中性",
+      "多模型",
+      "按量计费"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "多模型支持",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "hvoy中性",
+        "cls": "accent"
+      },
+      {
+        "label": "价格",
+        "value": "按量计费",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
+  },
+  {
+    "url": "https://sudocode.us",
+    "domain": "sudocode.us",
+    "name": "SudoCode US",
+    "description": "hvoy.ai排行榜中转站，海外节点部署，支持Claude/GPT/Gemini等主流模型，低延迟。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 7.6,
+    "response_time": 1,
+    "alive": true,
+    "last_check": "2026-06-03",
+    "check_count": 1,
+    "display_tags": [
+      "海外节点",
+      "排行榜上榜",
+      "低延迟"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "海外节点",
+        "cls": "green"
+      },
+      {
+        "label": "口碑",
+        "value": "排行榜上榜",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "低延迟",
+        "cls": ""
+      }
+    ],
+    "source": "hvoy.ai"
   }
 ]
