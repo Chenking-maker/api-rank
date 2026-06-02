@@ -7849,16 +7849,66 @@
 
         
 
-        // 提交站点（只需网址）
+        // 检查站点是否已存在（去重）
+        async function checkSiteDuplicate(url) {
+            let testUrl = url;
+            if (!testUrl.startsWith('http')) testUrl = 'https://' + testUrl;
+            const urlNorm = testUrl.replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            const domain = urlNorm.split('/')[0];
+            
+            // 1. 检查是否已在审核队列中
+            const queue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
+            for (const item of queue) {
+                const itemUrl = (item.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                if (itemUrl === urlNorm || itemUrl.includes(domain) || domain.includes(itemUrl.split('/')[0])) {
+                    return { exists: true, reason: '该站点已在审核队列中，请勿重复提交。' };
+                }
+            }
+            
+            // 2. 检查是否已被拒绝过
+            const rejected = JSON.parse(localStorage.getItem('rejectedSites') || '[]');
+            for (const item of rejected) {
+                const itemUrl = (item.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                if (itemUrl === urlNorm || itemUrl.includes(domain) || domain.includes(itemUrl.split('/')[0])) {
+                    return { exists: true, reason: '该站点此前已被拒绝收录，请勿重复提交。' };
+                }
+            }
+            
+            // 3. 检查是否已在 stations_info.json 中（已收录）
+            try {
+                const stations = await fetchOnce('data/stations_info.json');
+                if (Array.isArray(stations)) {
+                    for (const s of stations) {
+                        const sUrl = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        const sDomain = (s.domain || '').replace(/^www\./, '').toLowerCase();
+                        if (sUrl === urlNorm || sUrl.includes(domain) || domain.includes(sDomain) || sDomain === domain.split('/')[0]) {
+                            return { exists: true, reason: '该站点已被收录在排行榜中，请勿重复提交。' };
+                        }
+                    }
+                }
+            } catch(e) {}
+            
+            return { exists: false };
+        }
 
+        // 提交站点（只需网址）
         function submitSite() {
 
             const url = document.getElementById('siteUrl').value.trim();
 
             if (!url) { alert('请填写中转站网址'); return; }
 
-            
-
+            // 去重检查
+            checkSiteDuplicate(url).then(function(dup) {
+                if (dup.exists) {
+                    alert(dup.reason);
+                    return;
+                }
+                proceedSubmitSite(url);
+            });
+        }
+        
+        function proceedSubmitSite(url) {
             document.getElementById('pendingSection').style.display = 'block';
 
             const itemId = 'pending_' + Date.now();

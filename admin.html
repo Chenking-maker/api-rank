@@ -241,6 +241,19 @@
                     <div id="manualList"></div>
                 </div>
 
+                <!-- 已拒绝站点管理 -->
+                <div style="margin-top:24px;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;cursor:pointer;" onclick="toggleRejectedSection()">
+                        <h3 style="font-size:15px;font-weight:600;color:var(--text-secondary);">🚫 已拒绝站点 <span id="rejectedToggleIcon" style="font-size:12px;margin-left:4px;">▼</span></h3>
+                        <span id="statRejected" style="font-size:12px;color:var(--danger);background:rgba(239,68,68,0.1);padding:2px 10px;border-radius:10px;">0 个已拒绝</span>
+                    </div>
+                    <div id="rejectedSection" style="display:block;">
+                        <div id="rejectedList" style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+                            <div style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">暂无已拒绝站点</div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 失效站点管理 -->
                 <div style="margin-top:24px;">
                     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
@@ -275,12 +288,12 @@
                 <div style="padding:16px;">
                     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
                         <div>
-                            <h3 style="font-size:15px;font-weight:600;color:var(--text-secondary);">📊 每日检测记录</h3>
-                            <p style="font-size:12px;color:var(--text-muted);margin:4px 0 0;">数据来源：daily_check.py 自动检测结果</p>
+                            <h3 style="font-size:15px;font-weight:600;color:var(--text-secondary);">📊 每周检测记录</h3>
+                            <p style="font-size:12px;color:var(--text-muted);margin:4px 0 0;">数据来源：weekly_check.py 自动检测结果</p>
                         </div>
                         <div id="checkLogTime" style="font-size:12px;color:var(--accent);background:rgba(108,92,231,0.1);padding:4px 12px;border-radius:8px;">--</div>
                     </div>
-                    <div id="checkLogSummary" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;"></div>
+                    <div id="checkLogSummary" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;"></div>
                     <div id="checkLogList" style="display:flex;flex-direction:column;gap:8px;">
                         <div style="text-align:center;color:var(--text-muted);padding:30px;font-size:13px;">正在加载检测记录...</div>
                     </div>
@@ -625,26 +638,78 @@ function getApprovedSites() { return JSON.parse(localStorage.getItem('approvedSi
 function getRejectedSites() { return JSON.parse(localStorage.getItem('rejectedSites') || '[]'); }
 function saveRejectedSites(q) { localStorage.setItem('rejectedSites', JSON.stringify(q)); }
 
+// 统一提取域名key，用于去重
+function getDomainKey(url) {
+    if (!url) return '';
+    return url.replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '').toLowerCase();
+}
+
+// 检查域名是否与已存在的站点相似
+function findSimilarDomain(domainKey, sites) {
+    if (!domainKey) return null;
+    // 提取主域名（去掉子域名）
+    const mainDomain = domainKey.split('.').slice(-2).join('.');
+    for (const s of sites) {
+        const key = getDomainKey(s.url || s.domain || '');
+        const otherMain = key.split('.').slice(-2).join('.');
+        // 完全匹配 或 主域名相同
+        if (key === domainKey || (mainDomain && otherMain === mainDomain)) {
+            return s;
+        }
+    }
+    return null;
+}
+
 // 同步前端提交收录的 reviewQueue 到 admin 的 manualQueue
-function syncReviewQueue() {
+async function syncReviewQueue() {
     const reviewQueue = JSON.parse(localStorage.getItem('reviewQueue') || '[]');
     if (reviewQueue.length === 0) return;
 
     const manualQueue = getManualQueue();
     const approved = getApprovedSites();
     const crawler = getCrawlerQueue();
+    const rejected = getRejectedSites();
+
+    // 加载 stations_info.json 中已收录的站点
+    let publishedSites = [];
+    try {
+        const resp = await fetch('data/stations_info.json');
+        if (resp.ok) {
+            const data = await resp.json();
+            if (Array.isArray(data)) publishedSites = data;
+        }
+    } catch(e) {}
 
     // 收集所有已存在的URL（去重用）
     const existingUrls = new Set();
-    [...manualQueue, ...approved, ...crawler].forEach(s => {
-        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+    [...manualQueue, ...approved, ...crawler, ...rejected, ...publishedSites].forEach(s => {
+        const key = getDomainKey(s.url || s.domain || '');
         if (key) existingUrls.add(key);
     });
 
     let added = 0;
+    let skippedRejected = 0;
+    let skippedPublished = 0;
+
     reviewQueue.forEach(item => {
-        const key = (item.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-        if (!key || existingUrls.has(key)) return;
+        const key = getDomainKey(item.url || item.domain || '');
+        if (!key) return;
+
+        // 检查是否已拒绝
+        if (rejected.some(s => getDomainKey(s.url || s.domain || '') === key)) {
+            skippedRejected++;
+            console.log(`[syncReviewQueue] 跳过已拒绝站点: ${key}`);
+            return;
+        }
+
+        // 检查是否已收录（stations_info.json）
+        if (publishedSites.some(s => getDomainKey(s.url || s.domain || '') === key)) {
+            skippedPublished++;
+            console.log(`[syncReviewQueue] 跳过已收录站点: ${key}`);
+            return;
+        }
+
+        if (existingUrls.has(key)) return;
 
         manualQueue.push({
             name: item.name || item.domain || key,
@@ -667,10 +732,15 @@ function syncReviewQueue() {
 
     if (added > 0) {
         saveManualQueue(manualQueue);
-        // 清空前端 reviewQueue 中已同步的
-        localStorage.setItem('reviewQueue', '[]');
-        showToast(`同步了 ${added} 个来自提交收录的站点`);
     }
+    // 清空前端 reviewQueue 中已同步的
+    localStorage.setItem('reviewQueue', '[]');
+
+    let msg = '';
+    if (added > 0) msg += `同步了 ${added} 个来自提交收录的站点`;
+    if (skippedRejected > 0) msg += (msg ? '，' : '') + `跳过 ${skippedRejected} 个已拒绝站点`;
+    if (skippedPublished > 0) msg += (msg ? '，' : '') + `跳过 ${skippedPublished} 个已收录站点`;
+    if (msg) showToast(msg);
 
     renderReviewLists();
 }
@@ -691,7 +761,7 @@ async function loadCrawlerData() {
                 const stations = await resp2.json();
                 if (Array.isArray(stations)) {
                     stations.forEach(s => {
-                        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        const key = getDomainKey(s.url || '');
                         if (key) realDataMap[key] = s;
                     });
                 }
@@ -706,7 +776,7 @@ async function loadCrawlerData() {
                 const approved = await resp3.json();
                 if (Array.isArray(approved)) {
                     approved.forEach(s => {
-                        const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                        const key = getDomainKey(s.url || '');
                         if (key) approvedUrls.add(key);
                     });
                 }
@@ -716,7 +786,7 @@ async function loadCrawlerData() {
         // 获取 approvedSites（已审核通过的站点）用于去重
         const approvedSites = getApprovedSites();
         approvedSites.forEach(s => {
-            const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            const key = getDomainKey(s.url || '');
             if (key) approvedUrls.add(key);
         });
 
@@ -724,15 +794,23 @@ async function loadCrawlerData() {
         const rejectedSites = getRejectedSites();
         const rejectedUrls = new Set();
         rejectedSites.forEach(s => {
-            const key = (s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            const key = getDomainKey(s.url || '');
             if (key) rejectedUrls.add(key);
         });
 
-        // 清理 crawlerQueue：移除已在排行榜中、已批准或已拒绝的站点
+        // 获取 manualQueue 中的站点用于去重（避免爬虫和手动提交重复）
+        const manualQueue = getManualQueue();
+        const manualUrls = new Set();
+        manualQueue.forEach(s => {
+            const key = getDomainKey(s.url || '');
+            if (key) manualUrls.add(key);
+        });
+
+        // 清理 crawlerQueue：移除已在排行榜中、已批准、已拒绝或已在 manualQueue 中的站点
         const beforeCount = existing.length;
         existing = existing.filter(site => {
-            const siteKey = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-            return !approvedUrls.has(siteKey) && !rejectedUrls.has(siteKey);
+            const siteKey = getDomainKey(site.url || '');
+            return !approvedUrls.has(siteKey) && !rejectedUrls.has(siteKey) && !manualUrls.has(siteKey);
         });
         if (existing.length < beforeCount) {
             saveCrawlerQueue(existing);
@@ -740,16 +818,15 @@ async function loadCrawlerData() {
         }
 
         pending.forEach(site => {
-            const siteKey = (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+            const siteKey = getDomainKey(site.url || '');
             // 跳过已在 crawlerQueue 中的（用域名key去重，避免URL格式不一致导致重复）
-            if (existing.some(e => {
-                const eKey = (e.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                return eKey === siteKey;
-            })) return;
+            if (existing.some(e => getDomainKey(e.url || '') === siteKey)) return;
             // 跳过已在排行榜中的（stations_info.json）
             if (approvedUrls.has(siteKey)) return;
             // 跳过已拒绝的站点
             if (rejectedUrls.has(siteKey)) return;
+            // 跳过已在 manualQueue 中的
+            if (manualUrls.has(siteKey)) return;
             // 跳过无效 URL
             if (!site.url || site.url.includes('beian') || site.url.includes('.css')) return;
 
@@ -758,7 +835,7 @@ async function loadCrawlerData() {
             const enriched = {
                 name: real ? (real.name || site.name || site.domain) : (site.name || site.domain),
                 url: site.url,
-                domain: site.domain || (site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, ''),
+                domain: site.domain || getDomainKey(site.url || ''),
                 description: real ? (real.description || site.description || '') : (site.description || ''),
                 models: real ? (real.models || site.models || []) : (site.models || []),
                 features: real ? (real.features || site.features || []) : (site.features || []),
@@ -782,7 +859,7 @@ async function loadCrawlerData() {
     } catch(e) { console.log('加载爬虫数据失败'); }
 }
 
-// ========== 每日检测记录 ==========
+// ========== 每周检测记录 ==========
 async function loadCheckResults() {
     const summaryEl = document.getElementById('checkLogSummary');
     const listEl = document.getElementById('checkLogList');
@@ -792,12 +869,13 @@ async function loadCheckResults() {
     try {
         const res = await fetch('data/check_results.json');
         if (!res.ok) {
-            listEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:30px;font-size:13px;">暂无检测记录，等待 daily_check.py 运行...</div>';
+            listEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:30px;font-size:13px;">暂无检测记录，等待 weekly_check.py 运行...</div>';
             return;
         }
         const data = await res.json();
         const results = data.results || [];
         const checkTime = data.check_time || '--';
+        const totalSites = data.total_sites || results.length;
 
         // 格式化时间
         if (checkTime !== '--') {
@@ -814,6 +892,10 @@ async function loadCheckResults() {
             : '--';
 
         summaryEl.innerHTML = `
+            <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+                <div style="font-size:22px;font-weight:700;color:var(--accent);">${totalSites}</div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">检测站点总数</div>
+            </div>
             <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
                 <div style="font-size:22px;font-weight:700;color:#4ecdc4;">${online}</div>
                 <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">在线</div>
@@ -1251,11 +1333,13 @@ function renderReviewLists() {
     const crawler = getCrawlerQueue();
     const manual = getManualQueue();
     const approved = getApprovedSites();
-    
+    const rejected = getRejectedSites();
+
     document.getElementById('statCrawler').textContent = crawler.length;
     document.getElementById('statManual').textContent = manual.length;
     document.getElementById('statApproved').textContent = approved.length;
     document.getElementById('totalBadge').textContent = crawler.length + manual.length;
+    document.getElementById('statRejected').textContent = rejected.length + ' 个已拒绝';
     
     const crawlerContainer = document.getElementById('crawlerList');
     if (crawler.length === 0) {
@@ -1309,11 +1393,110 @@ function renderReviewLists() {
             </div>
         `).join('');
     }
+
+    // 渲染已拒绝站点列表
+    const rejectedContainer = document.getElementById('rejectedList');
+    if (rejected.length === 0) {
+        rejectedContainer.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:20px;font-size:13px;">暂无已拒绝站点</div>';
+    } else {
+        rejectedContainer.innerHTML = rejected.map((site, idx) => {
+            const rejectTime = site.rejectedAt ? new Date(site.rejectedAt).toLocaleString() : '';
+            const reason = site.rejectReason ? `<span style="font-size:11px;color:var(--danger);background:rgba(239,68,68,0.1);padding:2px 8px;border-radius:6px;margin-left:6px;">${site.rejectReason}</span>` : '';
+            return `
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg-primary);border-radius:10px;border:1px solid rgba(239,68,68,0.15);">
+                <div style="flex:1;min-width:0;">
+                    <div style="display:flex;align-items:center;gap:6px;">
+                        <span style="font-size:14px;font-weight:500;color:var(--text-primary);">${site.name || site.domain || site.url}</span>
+                        ${reason}
+                    </div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${site.url || ''}</div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">拒绝时间: ${rejectTime}</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:12px;">
+                    <button onclick="undoReject(${idx})" style="padding:4px 10px;background:rgba(0,210,160,0.1);border:1px solid rgba(0,210,160,0.3);border-radius:6px;color:var(--green);font-size:11px;cursor:pointer;" title="撤销拒绝，重新加入审核队列">撤销拒绝</button>
+                    <button onclick="deleteRejected(${idx})" style="padding:4px 10px;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);border-radius:6px;color:#ff6b6b;font-size:11px;cursor:pointer;" title="彻底删除">删除</button>
+                </div>
+            </div>`;
+        }).join('');
+    }
+}
+
+// 折叠/展开已拒绝站点区域
+function toggleRejectedSection() {
+    const section = document.getElementById('rejectedSection');
+    const icon = document.getElementById('rejectedToggleIcon');
+    if (section.style.display === 'none') {
+        section.style.display = 'block';
+        icon.textContent = '▼';
+    } else {
+        section.style.display = 'none';
+        icon.textContent = '▶';
+    }
+}
+
+// 撤销拒绝，将站点重新加入审核队列
+function undoReject(idx) {
+    const rejected = getRejectedSites();
+    const site = rejected[idx];
+    if (!site) return;
+
+    // 确定来源并加入对应队列
+    const source = site.source || '';
+    if (source === '用户提交收录' || source === '手动提交') {
+        const manualQueue = getManualQueue();
+        // 去重检查
+        const siteKey = getDomainKey(site.url || '');
+        if (manualQueue.some(s => getDomainKey(s.url || '') === siteKey)) {
+            showToast('该站点已在手动提交队列中');
+            return;
+        }
+        manualQueue.push({...site, submitTime: Date.now()});
+        saveManualQueue(manualQueue);
+        showToast('已重新加入手动审核队列: ' + (site.name || site.url), 'success');
+    } else {
+        const crawlerQueue = getCrawlerQueue();
+        const siteKey = getDomainKey(site.url || '');
+        if (crawlerQueue.some(s => getDomainKey(s.url || '') === siteKey)) {
+            showToast('该站点已在爬虫队列中');
+            return;
+        }
+        crawlerQueue.push({...site, submitTime: Date.now()});
+        saveCrawlerQueue(crawlerQueue);
+        showToast('已重新加入爬虫审核队列: ' + (site.name || site.url), 'success');
+    }
+
+    // 从已拒绝列表中移除
+    rejected.splice(idx, 1);
+    saveRejectedSites(rejected);
+    renderReviewLists();
+}
+
+// 彻底删除已拒绝站点
+function deleteRejected(idx) {
+    const rejected = getRejectedSites();
+    const site = rejected[idx];
+    if (!site) return;
+    if (!confirm('确定要彻底删除已拒绝站点 "' + (site.name || site.url) + '" 吗？此操作不可恢复。')) return;
+
+    rejected.splice(idx, 1);
+    saveRejectedSites(rejected);
+    renderReviewLists();
+    showToast('已删除: ' + (site.name || site.url));
 }
 
 function approveCrawler(idx) {
     const queue = getCrawlerQueue();
     const site = queue[idx];
+    if (!site) return;
+
+    // 检查是否与已存在的站点相似
+    const siteKey = getDomainKey(site.url || '');
+    const allExisting = [...getApprovedSites(), ...stationDatabase];
+    const similar = findSimilarDomain(siteKey, allExisting);
+    if (similar && !confirm(`警告：该站点域名与已存在的 "${similar.name}" (${similar.url}) 相似，确定要通过吗？`)) {
+        return;
+    }
+
     const approved = getApprovedSites();
     approved.push({...site, approvedAt: Date.now()});
     localStorage.setItem('approvedSites', JSON.stringify(approved));
@@ -1326,19 +1509,34 @@ function approveCrawler(idx) {
 function rejectCrawler(idx) {
     const queue = getCrawlerQueue();
     const site = queue[idx];
+    if (!site) return;
+
+    // 弹出输入框记录拒绝原因（可选）
+    const reason = prompt(`拒绝站点: ${site.name || site.url}\n请输入拒绝原因（可选，例如：重复站点、无法访问、内容不符等）：`);
+
     // 记录到已拒绝列表
     const rejected = getRejectedSites();
-    rejected.push({...site, rejectedAt: Date.now()});
+    rejected.push({...site, rejectedAt: Date.now(), rejectReason: reason || ''});
     saveRejectedSites(rejected);
     queue.splice(idx, 1);
     saveCrawlerQueue(queue);
-    showToast('已拒绝');
+    showToast('已拒绝' + (reason ? ': ' + reason : ''));
     renderReviewLists();
 }
 
 function approveManual(idx) {
     const queue = getManualQueue();
     const site = queue[idx];
+    if (!site) return;
+
+    // 检查是否与已存在的站点相似
+    const siteKey = getDomainKey(site.url || '');
+    const allExisting = [...getApprovedSites(), ...stationDatabase];
+    const similar = findSimilarDomain(siteKey, allExisting);
+    if (similar && !confirm(`警告：该站点域名与已存在的 "${similar.name}" (${similar.url}) 相似，确定要通过吗？`)) {
+        return;
+    }
+
     const approved = getApprovedSites();
     approved.push({...site, approvedAt: Date.now()});
     localStorage.setItem('approvedSites', JSON.stringify(approved));
@@ -1351,13 +1549,18 @@ function approveManual(idx) {
 function rejectManual(idx) {
     const queue = getManualQueue();
     const site = queue[idx];
+    if (!site) return;
+
+    // 弹出输入框记录拒绝原因（可选）
+    const reason = prompt(`拒绝站点: ${site.name || site.url}\n请输入拒绝原因（可选，例如：重复站点、无法访问、内容不符等）：`);
+
     // 记录到已拒绝列表
     const rejected = getRejectedSites();
-    rejected.push({...site, rejectedAt: Date.now()});
+    rejected.push({...site, rejectedAt: Date.now(), rejectReason: reason || ''});
     saveRejectedSites(rejected);
     queue.splice(idx, 1);
     saveManualQueue(queue);
-    showToast('已拒绝');
+    showToast('已拒绝' + (reason ? ': ' + reason : ''));
     renderReviewLists();
 }
 
