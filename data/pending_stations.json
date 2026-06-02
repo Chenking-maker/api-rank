@@ -103,5 +103,141 @@
     "submitTime": "2026-05-23T09:48:51.511997",
     "checked_at": "2026-05-23T09:48:51.511999",
     "check_count": 1
+  },
+  {
+    "name": "demo.sub2api.org",
+    "url": "https://demo.sub2api.org",
+    "submitTime": "2026-06-02T19:07:56.505039",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505058",
+    "check_count": 1
+  },
+  {
+    "name": "bestproxy.com",
+    "url": "https://bestproxy.com",
+    "submitTime": "2026-06-02T19:07:56.505068",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505070",
+    "check_count": 1
+  },
+  {
+    "name": "tailwindcss.com",
+    "url": "https://tailwindcss.com",
+    "submitTime": "2026-06-02T19:07:56.505074",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505076",
+    "check_count": 1
+  },
+  {
+    "name": "studio-api.suno.ai",
+    "url": "https://studio-api.suno.ai",
+    "submitTime": "2026-06-02T19:07:56.505078",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505081",
+    "check_count": 1
+  },
+  {
+    "name": "chaxun.wlai.vip",
+    "url": "https://chaxun.wlai.vip",
+    "submitTime": "2026-06-02T19:07:56.505083",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505085",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.apifox.cn",
+    "url": "https://yunwu.apifox.cn",
+    "submitTime": "2026-06-02T19:07:56.505088",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505090",
+    "check_count": 1
+  },
+  {
+    "name": "fastapi.tiangolo.com",
+    "url": "https://fastapi.tiangolo.com",
+    "submitTime": "2026-06-02T19:07:56.505093",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505095",
+    "check_count": 1
+  },
+  {
+    "name": "claude.com",
+    "url": "https://claude.com",
+    "submitTime": "2026-06-02T19:07:56.505097",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-02T19:07:56.505099",
+    "check_count": 1
   }
 ]
