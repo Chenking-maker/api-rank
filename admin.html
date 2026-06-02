@@ -1734,7 +1734,27 @@ function exportApprovedSites() {
         return;
     }
     
-    const stationsData = approved.map(s => ({
+    // 读取当前 stations_info.json 的所有站点
+    const existingSites = stationDatabase || [];
+    const existingDomains = new Set(existingSites.map(s => {
+        const d = (s.domain || '').replace(/^www\./, '').toLowerCase();
+        return d.split('.').slice(-2).join('.');
+    }));
+    
+    // 过滤掉已存在的站点
+    const newSites = approved.filter(s => {
+        const d = (s.domain || s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+        const domain = d.split('/')[0].split('.').slice(-2).join('.');
+        return !existingDomains.has(domain);
+    });
+    
+    if (newSites.length === 0) {
+        showToast('所有已审核站点已在 stations_info.json 中，无需导出');
+        return;
+    }
+    
+    // 转换为 stations_info.json 格式（包含完整字段）
+    const stationsData = newSites.map(s => ({
         url: s.url,
         domain: s.domain || s.url.replace(/^https?:\/\//, '').replace(/\/$/, ''),
         name: s.name,
@@ -1743,11 +1763,17 @@ function exportApprovedSites() {
         features: s.features || [],
         price: s.price || 'medium',
         free_amount: s.free_amount || '',
-        score: s.score || 7.0,
-        response_time: s.response_time || null,
+        score: Math.min(Math.max(s.score || 7.0, 7.0), 9.5),
+        response_time: s.response_time || 0.5,
         alive: true,
-        last_check: new Date().toISOString(),
-        check_count: 1
+        last_check: new Date().toISOString().split('T')[0],
+        check_count: 1,
+        display_tags: s.display_tags || generateTags(s),
+        display_metrics: s.display_metrics || [
+            {"label": "专业", "value": "多模型", "cls": "green"},
+            {"label": "优惠", "value": s.price === 'low' ? '低价实惠' : '按量计费', "cls": "accent"},
+            {"label": "应用", "value": "API中转", "cls": ""}
+        ]
     }));
     
     const jsonStr = JSON.stringify(stationsData, null, 2);
@@ -1759,7 +1785,40 @@ function exportApprovedSites() {
     a.click();
     URL.revokeObjectURL(url);
     
-    showToast(`已导出 ${approved.length} 个站点。请将 new_stations.json 的内容追加到 data/ai_sites_info.json 并提交到 GitHub`, 'success');
+    // 清除已导出的站点
+    const remaining = approved.filter(s => {
+        const d = (s.domain || s.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+        const domain = d.split('/')[0].split('.').slice(-2).join('.');
+        return existingDomains.has(domain);
+    });
+    localStorage.setItem('approvedSites', JSON.stringify(remaining));
+    
+    showToast(`已导出 ${newSites.length} 个新站点（已自动过滤重复）。下载 new_stations.json 后，将其内容追加到 data/stations_info.json 末尾的数组中，然后提交 GitHub 即可。`, 'success');
+    renderReviewLists();
+}
+
+// 自动生成标签（根据站点信息）
+function generateTags(site) {
+    const tags = [];
+    const models = site.models || [];
+    const features = site.features || [];
+    const price = site.price || 'medium';
+    
+    if (models.length >= 3) tags.push('多模型');
+    else if (models.includes('claude')) tags.push('Claude');
+    else if (models.includes('gpt')) tags.push('GPT');
+    else tags.push('API中转');
+    
+    if (price === 'low') tags.push('低价');
+    else if (features.includes('stable')) tags.push('稳定');
+    else if (features.includes('enterprise')) tags.push('企业级');
+    else tags.push('按量计费');
+    
+    if (features.includes('fast')) tags.push('快速');
+    else if (features.includes('multi')) tags.push('多线路');
+    else tags.push('OpenAI兼容');
+    
+    return tags.slice(0, 3);
 }
 </script>
 </body>
