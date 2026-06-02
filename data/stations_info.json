@@ -581,5 +581,32 @@
     "alive": true,
     "last_check": "2026-05-20",
     "check_count": 1
+  },
+  {
+    "url": "https://openqi.sbs/register?aff=ENKWT9RMZV97",
+    "domain": "openqi.sbs",
+    "name": "清沐API",
+    "description": "致力于质量与价格的优质中转站，一键接入所有AI模型，智能调度多上游账号，自动切换和负载均衡，支持团队用量管理和配额上限设置",
+    "models": [
+      "gpt-4o",
+      "claude-sonnet-4",
+      "gemini-2.5",
+      "deepseek-v3",
+      "deepseek-r1"
+    ],
+    "features": [
+      "multi",
+      "smart-route",
+      "team",
+      "quota",
+      "failover"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.0,
+    "response_time": 0.45,
+    "alive": true,
+    "last_check": "2026-06-02",
+    "check_count": 1
   }
 ]
