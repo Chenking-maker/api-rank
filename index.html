@@ -10536,7 +10536,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 只在"全部"标签下更新 sectionCount，避免覆盖筛选结果
             const activeTab = document.querySelector('.filter-tab.active');
             const isAllTab = activeTab && activeTab.textContent.trim() === '全部';
-            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· 前50个 / 共' + validCount + '个';
+            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· 50+';
 
             
 
