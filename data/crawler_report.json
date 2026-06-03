@@ -1,67 +1,52 @@
 {
-  "timestamp": "2026-06-02T19:07:56.507074",
-  "elapsed_seconds": 337.6,
+  "timestamp": "2026-06-03T20:08:12.680054",
+  "elapsed_seconds": 499.7,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 13,
-    "total_dead": 11,
-    "new_discovered": 8,
+    "total_pending": 14,
+    "total_dead": 24,
+    "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 7,
     "scrapling_available": true
   },
   "new_discovered": [
     {
-      "url": "https://demo.sub2api.org",
-      "name": "demo.sub2api.org",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://bestproxy.com",
-      "name": "bestproxy.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://tailwindcss.com",
-      "name": "tailwindcss.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://studio-api.suno.ai",
-      "name": "studio-api.suno.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://chaxun.wlai.vip",
-      "name": "chaxun.wlai.vip",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://yunwu.apifox.cn",
-      "name": "yunwu.apifox.cn",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://fastapi.tiangolo.com",
-      "name": "fastapi.tiangolo.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://claude.com",
-      "name": "claude.com",
-      "source": "github:OpenAI A_extract"
+      "url": "https://hvoy.ai",
+      "name": "hvoy.ai",
+      "source": "github:API中转站 推_extract"
     }
   ],
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
+      "url": "https://anyroute.com",
+      "name": "AnyRoute"
     },
     {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
+      "url": "https://qianfan.baidubce.com",
+      "name": "百度千帆"
+    },
+    {
+      "url": "https://sudocode.us",
+      "name": "SudoCode US"
+    },
+    {
+      "url": "https://jiekou.ai",
+      "name": "接口AI"
+    },
+    {
+      "url": "https://n1n.ai",
+      "name": "N1N.AI"
+    },
+    {
+      "url": "https://ofox.ai",
+      "name": "Ofox.AI"
+    },
+    {
+      "url": "https://zhihuiapi.com",
+      "name": "智惠API"
     }
   ]
 }

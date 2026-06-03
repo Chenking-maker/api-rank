@@ -239,5 +239,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-02T19:07:56.505099",
     "check_count": 1
+  },
+  {
+    "name": "hvoy.ai",
+    "url": "https://hvoy.ai",
+    "submitTime": "2026-06-03T20:08:12.677833",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-03T20:08:12.677856",
+    "check_count": 1
   }
 ]
