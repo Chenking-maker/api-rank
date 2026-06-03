@@ -1859,8 +1859,8 @@
     "score": 7.6,
     "price": "medium",
     "response_time": 0.8,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1
   },
   {
@@ -2069,8 +2069,8 @@
     "score": 7.5,
     "price": "medium",
     "response_time": 0.63,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1
   },
   {
@@ -2112,8 +2112,8 @@
     "score": 7.7,
     "price": "low",
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1
   },
   {
@@ -2404,8 +2404,8 @@
     "score": 7.7,
     "price": "medium",
     "response_time": 0.5,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1
   },
   {
@@ -2696,8 +2696,8 @@
     "score": 7.8,
     "price": "low",
     "response_time": 1.1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1
   },
   {
@@ -2778,8 +2778,8 @@
     "score": 7.7,
     "price": "low",
     "response_time": 0.5,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1
   },
   {
@@ -3852,8 +3852,8 @@
     "free_amount": "",
     "score": 7.8,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4290,8 +4290,8 @@
     "free_amount": "",
     "score": 8.3,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4334,8 +4334,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4375,8 +4375,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4548,8 +4548,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4592,8 +4592,8 @@
     "free_amount": "",
     "score": 7.5,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4636,8 +4636,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4899,8 +4899,8 @@
     "free_amount": "",
     "score": 7.9,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4943,8 +4943,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4987,8 +4987,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5118,8 +5118,8 @@
     "free_amount": "",
     "score": 7.8,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "低价",
@@ -5162,8 +5162,8 @@
     "free_amount": "",
     "score": 8.2,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5337,8 +5337,8 @@
     "free_amount": "",
     "score": 7.5,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5381,8 +5381,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5513,8 +5513,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5689,7 +5689,7 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
+    "alive": false,
     "last_check": "2026-06-03",
     "check_count": 1,
     "display_tags": [
