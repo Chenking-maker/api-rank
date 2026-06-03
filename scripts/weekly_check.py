@@ -180,6 +180,8 @@ class WeeklyChecker:
         
         self.save_results()
         self.update_site_status()
+        self.sync_dead_sites()
+        self.update_stations_info()
         self.print_summary()
     
     def save_results(self):
@@ -233,6 +235,101 @@ class WeeklyChecker:
             json.dump(status, f, ensure_ascii=False, indent=2)
         
         print(f"💾 站点状态已更新 ({len(new_dead)} 个失效, {len(recovered)} 个在线)")
+    
+    def sync_dead_sites(self):
+        """同步失效站点到 dead_sites.json"""
+        dead_sites_path = os.path.join(DATA_DIR, "dead_sites.json")
+        
+        # 加载现有 dead_sites.json
+        existing_dead = []
+        try:
+            with open(dead_sites_path, 'r', encoding='utf-8') as f:
+                existing_dead = json.load(f)
+            if not isinstance(existing_dead, list):
+                existing_dead = []
+        except (FileNotFoundError, json.JSONDecodeError):
+            existing_dead = []
+        
+        # 提取已有域名的集合
+        existing_domains = {s.get('domain', '') for s in existing_dead if s.get('domain')}
+        
+        # 从检测结果中提取失效站点
+        new_dead_sites = []
+        for result in self.results:
+            if result["availability"]["status"] in ["offline", "timeout", "error"]:
+                domain = result.get("domain", "")
+                url = result["url"]
+                # 从URL提取域名
+                if not domain and url:
+                    domain = re.sub(r'^https?://', '', url).split('/')[0].replace('www.', '')
+                
+                # 去重：基于域名
+                if domain and domain not in existing_domains:
+                    new_dead_sites.append({
+                        "url": url,
+                        "name": result["name"],
+                        "domain": domain,
+                        "status": "dead",
+                        "detected_at": datetime.now().isoformat(),
+                        "reason": f"{result['availability']['status']} - 响应时间: {result['availability'].get('response_time', 0)}ms"
+                    })
+                    existing_domains.add(domain)
+        
+        # 合并并保存
+        combined = existing_dead + new_dead_sites
+        with open(dead_sites_path, "w", encoding="utf-8") as f:
+            json.dump(combined, f, ensure_ascii=False, indent=2)
+        
+        print(f"💾 已同步 {len(new_dead_sites)} 个新失效站点到 dead_sites.json (总计: {len(combined)})")
+    
+    def update_stations_info(self):
+        """更新 stations_info.json 中的 alive 状态"""
+        stations_path = os.path.join(DATA_DIR, "stations_info.json")
+        
+        try:
+            with open(stations_path, 'r', encoding='utf-8') as f:
+                stations = json.load(f)
+            if not isinstance(stations, list):
+                return
+        except (FileNotFoundError, json.JSONDecodeError):
+            return
+        
+        # 创建检测结果映射
+        result_map = {}
+        for r in self.results:
+            url = r.get("url", "")
+            domain = r.get("domain", "")
+            if url:
+                result_map[url] = r
+            if domain:
+                result_map[domain] = r
+        
+        updated_count = 0
+        for station in stations:
+            url = station.get("url", "")
+            domain = station.get("domain", "")
+            
+            # 匹配检测结果
+            matched = None
+            if url and url in result_map:
+                matched = result_map[url]
+            elif domain and domain in result_map:
+                matched = result_map[domain]
+            
+            if matched:
+                old_alive = station.get("alive", True)
+                new_alive = matched["availability"]["status"] == "online"
+                
+                if old_alive != new_alive:
+                    station["alive"] = new_alive
+                    station["last_check"] = datetime.now().strftime("%Y-%m-%d")
+                    station["score"] = matched["new_score"]
+                    updated_count += 1
+        
+        with open(stations_path, "w", encoding="utf-8") as f:
+            json.dump(stations, f, ensure_ascii=False, indent=2)
+        
+        print(f"💾 已更新 stations_info.json ({updated_count} 个站点状态变更)")
     
     def print_summary(self):
         """打印摘要"""
