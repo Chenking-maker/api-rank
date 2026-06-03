@@ -9900,8 +9900,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         document.addEventListener('DOMContentLoaded', async function() {
-            // 渲染流量排行榜（纯静态数据，不依赖异步加载）
-            renderTrafficRank();
+            // all-stations.html 没有流量排行榜，直接加载数据
 
             // 预填充全局URL集合（硬编码卡片的URL），避免 addSiteToRanking 重复添加
             const initUrls = getExistingUrls();
@@ -9980,7 +9979,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 只在"全部"标签下更新 sectionCount，避免覆盖筛选结果
             const activeTab = document.querySelector('.filter-tab.active');
             const isAllTab = activeTab && activeTab.textContent.trim() === '全部';
-            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· 共' + validCount + '个';
+            if (sectionCountEl && isAllTab) sectionCountEl.textContent = '· ' + validCount + '个';
 
             
 
