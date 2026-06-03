@@ -64,5 +64,125 @@
     "name": "OpenAI-SB",
     "domain": "",
     "status": "dead"
+  },
+  {
+    "url": "https://anyroute.com",
+    "name": "AnyRoute",
+    "domain": "anyroute.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://qianfan.baidubce.com",
+    "name": "百度千帆",
+    "domain": "qianfan.baidubce.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://sudocode.us",
+    "name": "SudoCode US",
+    "domain": "sudocode.us",
+    "status": "dead"
+  },
+  {
+    "url": "https://aok.ai",
+    "name": "AOK",
+    "domain": "aok.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://autorouter.ai",
+    "name": "AutoRouter",
+    "domain": "autorouter.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://chintao.ai",
+    "name": "Chintao AI",
+    "domain": "chintao.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://claude-api.com",
+    "name": "Claude-API",
+    "domain": "claude-api.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://ciyi.ai",
+    "name": "词易AI",
+    "domain": "ciyi.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://congming.ai",
+    "name": "聪明AI",
+    "domain": "congming.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://daodun.ai",
+    "name": "刀盾AI",
+    "domain": "daodun.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://gpteam.cn",
+    "name": "GPTEAM",
+    "domain": "gpteam.cn",
+    "status": "dead"
+  },
+  {
+    "url": "https://huiyun.ai",
+    "name": "汇云AI",
+    "domain": "huiyun.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://jiekou.ai",
+    "name": "接口AI",
+    "domain": "jiekou.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://lingsuan.ai",
+    "name": "灵算",
+    "domain": "lingsuan.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://n1n.ai",
+    "name": "N1N.AI",
+    "domain": "n1n.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://ofox.ai",
+    "name": "Ofox.AI",
+    "domain": "ofox.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://safeapi.com",
+    "name": "SafeAPI",
+    "domain": "safeapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://uuapi.com",
+    "name": "UU API",
+    "domain": "uuapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://yundu.ai",
+    "name": "云渡AI",
+    "domain": "yundu.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://zhihuiapi.com",
+    "name": "智惠API",
+    "domain": "zhihuiapi.com",
+    "status": "dead"
   }
 ]
