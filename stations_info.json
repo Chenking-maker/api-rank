@@ -3591,7 +3591,7 @@
     "likes": 0
   },
   {
-    "url": "https://coderplan.ai/register",
+    "url": "https://coderplan.ai/register?aff=mS0w",
     "domain": "coderplan.ai",
     "name": "CoderPlan",
     "description": "包月级价格按量付费的AI编程API中转站，支持Claude Code/Cursor/Codex CLI/Gemini CLI等工具。高缓存命中率节省成本，每次调用可查看模型、tokens和费用明细。",
@@ -5594,7 +5594,7 @@
     "url": "https://runapi.co/register?aff=mS0w",
     "domain": "runapi.co",
     "name": "RunAPI",
-    "description": "新兴AI API中转平台，提供Claude/GPT/Gemini等主流模型接入，新用户注册送体验额度。主打稳定直连，支持支付宝/微信支付。",
+    "description": "新兴AI API中转平台，支持Claude/GPT/Gemini等主流模型，国内直连低延迟。新用户注册送体验额度，支持支付宝/微信充值。",
     "models": [
       "claude",
       "gpt",
@@ -5607,16 +5607,16 @@
     ],
     "price": "low",
     "free_amount": "注册送体验额度",
-    "score": 7.1,
+    "score": 9.1,
     "likes": 0,
     "response_time": 1.5,
-    "alive": false,
+    "alive": true,
     "last_check": "2026-06-05",
     "check_count": 1,
     "display_tags": [
       "多模型",
       "新用户福利",
-      "稳定直连"
+      "国内直连"
     ],
     "display_metrics": [
       {
@@ -5630,8 +5630,8 @@
         "cls": "accent"
       },
       {
-        "label": "支付",
-        "value": "支付宝/微信",
+        "label": "网络",
+        "value": "国内直连",
         "cls": ""
       }
     ],
