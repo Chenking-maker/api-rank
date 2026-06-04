@@ -6713,7 +6713,7 @@
 
 
 
-                return { ...station, matchScore: Math.max(score, 5).toFixed(1) };
+                return { ...station, matchScore: Math.max(score, 5).toFixed(2) };
 
             }).sort((a, b) => b.matchScore - a.matchScore).slice(0, 5);
 
@@ -7353,7 +7353,7 @@
 
             // Final score
 
-            score = Math.min(score, 10).toFixed(1);
+            score = Math.min(score, 10).toFixed(2);
 
             const isAccepted = parseFloat(score) >= 5.0;
 
