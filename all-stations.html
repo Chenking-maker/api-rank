@@ -8290,6 +8290,19 @@
 
                 // 恢复的站点：移除 .dead 类，如果不在排行榜中则添加
                 if (Array.isArray(status.recovered) && status.recovered.length > 0) {
+                    // 过滤掉 dead_sites.json 中的站点
+                    try {
+                        const deadSitesData = await fetchOnce('data/dead_sites.json');
+                        if (Array.isArray(deadSitesData) && deadSitesData.length > 0) {
+                            const deadDomains = new Set(deadSitesData.map(s => (s.domain || '').toLowerCase()));
+                            status.recovered = status.recovered.filter(site => {
+                                const d = (site.domain || '').toLowerCase();
+                                return d && !deadDomains.has(d);
+                            });
+                        }
+                    } catch(e) {}
+                    if (status.recovered.length === 0) return;
+
                     status.recovered.forEach(site => {
                         const domain = (site.domain || '').toLowerCase();
                         const url = (site.url || '').toLowerCase();
@@ -9249,6 +9262,29 @@ function updateScoreFromLikes(name) {
 
 // 初始化点赞按钮
 document.addEventListener('DOMContentLoaded', function() {
+    // 一次性清理：清除 localStorage 中残留的已失效恢复站点
+    try {
+        const deadFilter = async () => {
+            try {
+                const resp = await fetch('data/dead_sites.json');
+                if (!resp.ok) return;
+                const deadSites = await resp.json();
+                if (!Array.isArray(deadSites)) return;
+                const deadDomains = new Set(deadSites.map(s => (s.domain || '').toLowerCase()));
+                const recovered = JSON.parse(localStorage.getItem('recoveredSites') || '[]');
+                if (!Array.isArray(recovered) || recovered.length === 0) return;
+                const filtered = recovered.filter(site => {
+                    const d = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                    return d && !deadDomains.has(d);
+                });
+                if (filtered.length !== recovered.length) {
+                    localStorage.setItem('recoveredSites', JSON.stringify(filtered));
+                    console.log('清理了 ' + (recovered.length - filtered.length) + ' 个失效恢复站点');
+                }
+            } catch(e) {}
+        };
+        deadFilter();
+    } catch(e) {}
     setTimeout(renderAllLikeButtons, 1500);
 });
 
