@@ -1,25 +1,27 @@
 {
-  "timestamp": "2026-06-03T20:08:12.680054",
-  "elapsed_seconds": 499.7,
+  "timestamp": "2026-06-04T16:50:01.446390",
+  "elapsed_seconds": 569.1,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 14,
-    "total_dead": 24,
-    "new_discovered": 1,
+    "total_dead": 26,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 7,
+    "new_recovered": 29,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://hvoy.ai",
-      "name": "hvoy.ai",
-      "source": "github:API中转站 推_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
   "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    },
     {
       "url": "https://anyroute.com",
       "name": "AnyRoute"
@@ -47,6 +49,86 @@
     {
       "url": "https://zhihuiapi.com",
       "name": "智惠API"
+    },
+    {
+      "url": "https://juxing.ai",
+      "name": "聚星AI"
+    },
+    {
+      "url": "https://luchikey.com",
+      "name": "LuchiKey"
+    },
+    {
+      "url": "https://llmapi.com",
+      "name": "LLMAPI"
+    },
+    {
+      "url": "https://zxapi.com",
+      "name": "ZX API"
+    },
+    {
+      "url": "https://modcon.ai",
+      "name": "ModCon"
+    },
+    {
+      "url": "https://switchbase.com",
+      "name": "SwitchBase"
+    },
+    {
+      "url": "https://anpin.ai",
+      "name": "AnPin AI"
+    },
+    {
+      "url": "https://claudecn.com",
+      "name": "ClaudeCN"
+    },
+    {
+      "url": "https://toknex.com",
+      "name": "Toknex"
+    },
+    {
+      "url": "https://sevnx.com",
+      "name": "SevnX"
+    },
+    {
+      "url": "https://shuzhi.ai",
+      "name": "数智AI"
+    },
+    {
+      "url": "https://luminai.com",
+      "name": "Lumin AI"
+    },
+    {
+      "url": "https://claudeapi.net",
+      "name": "Claude API"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI"
+    },
+    {
+      "url": "https://qqtoken.com",
+      "name": "球球Token"
+    },
+    {
+      "url": "https://frontierintelligence.ai",
+      "name": "Frontier Intelligence"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay"
+    },
+    {
+      "url": "https://hajimi.com",
+      "name": "哈基米"
+    },
+    {
+      "url": "https://ekan8.com",
+      "name": "Ekan8"
     }
   ]
 }
