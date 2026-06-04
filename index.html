@@ -8806,19 +8806,6 @@
 
                 // 恢复的站点：移除 .dead 类，如果不在排行榜中则添加
                 if (Array.isArray(status.recovered) && status.recovered.length > 0) {
-                    // 过滤掉 dead_sites.json 中的站点
-                    try {
-                        const deadSitesData = await fetchOnce('data/dead_sites.json');
-                        if (Array.isArray(deadSitesData) && deadSitesData.length > 0) {
-                            const deadDomains = new Set(deadSitesData.map(s => (s.domain || '').toLowerCase()));
-                            status.recovered = status.recovered.filter(site => {
-                                const d = (site.domain || '').toLowerCase();
-                                return d && !deadDomains.has(d);
-                            });
-                        }
-                    } catch(e) {}
-                    if (status.recovered.length === 0) return;
-
                     status.recovered.forEach(site => {
                         const domain = (site.domain || '').toLowerCase();
                         const url = (site.url || '').toLowerCase();
@@ -8841,7 +8828,31 @@
 
                         // 如果不在排行榜中，动态添加（带过滤）
                         if (!found && domain && !existingUrls.has(domain)) {
-                            var recoverSite = {
+                            // 尝试从 stations_info.json 获取完整信息（含邀请链接）
+                            var stationInfo = null;
+                            try {
+                                var allStations = await fetchOnce('data/stations_info.json');
+                                if (Array.isArray(allStations)) {
+                                    stationInfo = allStations.find(function(s) {
+                                        var d = (s.domain || '').toLowerCase();
+                                        return d === domain;
+                                    });
+                                }
+                            } catch(e) {}
+
+                            var recoverSite = stationInfo ? {
+                                name: stationInfo.name || site.name || domain,
+                                url: stationInfo.url || site.url || ('https://' + domain),
+                                description: stationInfo.description || (site.name || domain) + ' - AI API中转服务（已恢复）',
+                                score: stationInfo.score || 7.5,
+                                models: stationInfo.models || ['multi'],
+                                features: stationInfo.features || ['stable'],
+                                responseTime: stationInfo.response_time ? stationInfo.response_time.toFixed(2) + 's' : '?',
+                                source: 'recovered',
+                                freeAmount: stationInfo.free_amount || '',
+                                display_tags: stationInfo.display_tags || null,
+                                display_metrics: stationInfo.display_metrics || null,
+                            } : {
                                 name: site.name || domain,
                                 url: site.url || ('https://' + domain),
                                 description: (site.name || domain) + ' - AI API中转服务（已恢复）',
@@ -8897,36 +8908,46 @@
                 const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
 
-                // 过滤掉已失效的站点（从 dead_sites.json）
-                try {
-                    const deadSitesData = await fetchOnce('data/dead_sites.json');
-                    if (Array.isArray(deadSitesData) && deadSitesData.length > 0) {
-                        const deadDomains = new Set(deadSitesData.map(s => (s.domain || '').toLowerCase()));
-                        // 同时过滤 recoveredSites
-                        const filtered = recoveredSites.filter(site => {
-                            const d = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                            return d && !deadDomains.has(d);
-                        });
-                        recoveredSites.length = 0;
-                        recoveredSites.push(...filtered);
-                        // 同步清理 localStorage
-                        saveCached('recoveredSites', recoveredSites);
-                    }
-                } catch(e) {}
-
                 // 收集已存在的URL（使用缓存）
                 const existingUrls = getExistingUrls();
 
                 let added = 0;
+                // 预加载 stations_info.json 用于恢复站点信息
+                var allStationsInfo = null;
+                try {
+                    allStationsInfo = await fetchOnce('data/stations_info.json');
+                } catch(e) {}
+
                 recoveredSites.forEach(site => {
                     if (!site || !site.url) return;
                     if (!isValidStation(site)) return;
                     const domain = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
                     if (!domain || existingUrls.has(domain)) return;
 
+                    // 尝试从 stations_info.json 获取完整信息（含邀请链接）
+                    var stationInfo = null;
+                    if (Array.isArray(allStationsInfo)) {
+                        stationInfo = allStationsInfo.find(function(s) {
+                            var d = (s.domain || '').toLowerCase();
+                            return d === domain;
+                        });
+                    }
+
                     // 添加到排行榜
                     try {
-                        addSiteToRanking({
+                        var siteData = stationInfo ? {
+                            name: stationInfo.name || site.name || domain,
+                            url: stationInfo.url || site.url,
+                            description: stationInfo.description || site.description || (site.name || domain) + ' - AI API中转服务（已恢复）',
+                            score: stationInfo.score || site.score || 7.5,
+                            models: stationInfo.models || ['multi'],
+                            features: stationInfo.features || ['stable'],
+                            responseTime: stationInfo.response_time ? stationInfo.response_time.toFixed(2) + 's' : '?',
+                            source: 'recovered',
+                            freeAmount: stationInfo.free_amount || '',
+                            display_tags: stationInfo.display_tags || null,
+                            display_metrics: stationInfo.display_metrics || null,
+                        } : {
                             name: site.name || domain,
                             url: site.url,
                             description: site.description || (site.name || domain) + ' - AI API中转服务（已恢复）',
@@ -8936,7 +8957,8 @@
                             responseTime: '?',
                             source: 'recovered',
                             freeAmount: ''
-                        });
+                        };
+                        addSiteToRanking(siteData);
                         existingUrls.add(domain);
                         added++;
                     } catch (err) {
@@ -9793,29 +9815,6 @@ function updateScoreFromLikes(name) {
 
 // 初始化点赞按钮
 document.addEventListener('DOMContentLoaded', function() {
-    // 一次性清理：清除 localStorage 中残留的已失效恢复站点
-    try {
-        const deadFilter = async () => {
-            try {
-                const resp = await fetch('data/dead_sites.json');
-                if (!resp.ok) return;
-                const deadSites = await resp.json();
-                if (!Array.isArray(deadSites)) return;
-                const deadDomains = new Set(deadSites.map(s => (s.domain || '').toLowerCase()));
-                const recovered = JSON.parse(localStorage.getItem('recoveredSites') || '[]');
-                if (!Array.isArray(recovered) || recovered.length === 0) return;
-                const filtered = recovered.filter(site => {
-                    const d = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                    return d && !deadDomains.has(d);
-                });
-                if (filtered.length !== recovered.length) {
-                    localStorage.setItem('recoveredSites', JSON.stringify(filtered));
-                    console.log('清理了 ' + (recovered.length - filtered.length) + ' 个失效恢复站点');
-                }
-            } catch(e) {}
-        };
-        deadFilter();
-    } catch(e) {}
     setTimeout(renderAllLikeButtons, 1500);
 });
 
