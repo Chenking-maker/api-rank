@@ -464,7 +464,7 @@
     "likes": 0
   },
   {
-    "url": "https://dmxapi.com",
+    "url": "https://www.dmxapi.com/register?aff=Az9t",
     "domain": "dmxapi.com",
     "name": "大模型API (DMXAPI)",
     "description": "文本/图像/语音多模态能力全面整合，Claude/GPT/Gemini全覆盖，适合企业项目集成与多模态应用开发。",
@@ -509,7 +509,7 @@
     "likes": 0
   },
   {
-    "url": "https://147ai.com",
+    "url": "https://147ai.com/register?aff=vGwq",
     "domain": "147ai.com",
     "name": "147AI",
     "description": "多源底层智能切换，故障自动转移。Claude/GPT/Gemini全覆盖，新模型上架速度快，响应仅0.55s。",
@@ -687,7 +687,7 @@
     "likes": 0
   },
   {
-    "url": "https://aioncode.com",
+    "url": "https://api.aioncode.com/register?aff=q4qH",
     "domain": "aioncode.com",
     "name": "Fchat API (aioncode)",
     "description": "专为Claude Code/Codex优化，实测不掺假。高并发不卡顿，流式输出完整，赠5元体验。",
@@ -823,7 +823,7 @@
     "likes": 0
   },
   {
-    "url": "https://api.lingyaai.cn",
+    "url": "https://api.lingyaai.cn/register?aff=k8I8",
     "domain": "lingyaai.cn",
     "name": "灵芽API",
     "description": "运营2年+的老牌API中转平台，服务2万+开发者。聚合100+主流AI模型，全球多节点部署，支持支付宝/微信充值，国内直连低延迟。",
@@ -831,7 +831,8 @@
       "claude",
       "gpt",
       "gemini",
-      "domestic"
+      "domestic",
+      "drawing"
     ],
     "features": [
       "stable",
@@ -916,7 +917,7 @@
     "likes": 0
   },
   {
-    "url": "https://api2d.com",
+    "url": "https://api2d.com/r/241389",
     "domain": "api2d.com",
     "name": "API2D",
     "description": "国内老牌API中转服务，支持Claude/GPT/Gemini及国产模型，支付宝充值，运营时间长口碑稳定。",
@@ -1298,7 +1299,7 @@
     "likes": 0
   },
   {
-    "url": "https://code.silkapi.com",
+    "url": "https://code.silkapi.com/register?aff=DJ8WANFCS3HP",
     "domain": "silkapi.com",
     "name": "丝绸API (SilkAPI)",
     "description": "一个API Key调用Claude/GPT/Gemini等多家模型，智能路由自动故障转移，按量付费透明。",
@@ -1392,7 +1393,7 @@
     "likes": 0
   },
   {
-    "url": "https://api.pptoken.org",
+    "url": "https://www.pptoken.org/?promo=PP3OV",
     "domain": "pptoken.org",
     "name": "PPToken",
     "description": "API订阅制中转平台，提供大模型API统一转换与分发服务，适合固定用量预算的企业用户。",
@@ -1529,7 +1530,7 @@
     "likes": 0
   },
   {
-    "url": "https://pateway.ai",
+    "url": "https://pateway.ai/?aff=Y9YEC4QR",
     "domain": "pateway.ai",
     "name": "PatewayAI",
     "description": "专注Claude和Codex系列正品直连，透明定价，支付宝支付，注册赠$3，响应仅0.25s极速。",
@@ -1910,7 +1911,7 @@
     "likes": 0
   },
   {
-    "url": "https://aihubmix.com",
+    "url": "https://aihubmix.com/?aff=U9CV",
     "domain": "aihubmix.com",
     "name": "AI枢纽 (AIHubMix)",
     "description": "面向开发者的快速接入方案，Claude/GPT/Gemini一键调用。接口简洁上手快，适合研发早期验证。",
@@ -2255,7 +2256,7 @@
     "likes": 0
   },
   {
-    "url": "https://doro.lol",
+    "url": "https://doro.lol/register?aff=0LSF",
     "domain": "doro.lol",
     "name": "Doro API",
     "description": "社区推荐的新兴中转站，专注Claude和GPT系列，价格实惠按量计费，适合个人开发者。",
@@ -2509,10 +2510,11 @@
     "score": 5.9,
     "price": "low",
     "response_time": 1.2,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
-    "likes": 0
+    "likes": 0,
+    "reason": "域名正在出售"
   },
   {
     "url": "https://fishxcode.com",
@@ -3184,6 +3186,7 @@
   {
     "url": "https://console.groq.com",
     "domain": "console.groq.com",
+    "reason": "网站打开乱码",
     "name": "Groq",
     "description": "自研LPU推理芯片，推理速度极快。支持开源模型，延迟超低，适合对速度要求极高的场景。",
     "models": [
@@ -3218,8 +3221,8 @@
     "score": 5.2,
     "price": "medium",
     "response_time": 0.5,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "likes": 0
   },
@@ -3664,7 +3667,7 @@
     "likes": 0
   },
   {
-    "url": "https://unity2.ai",
+    "url": "https://unity2.ai/register?ref=bayLaABG",
     "domain": "unity2.ai",
     "name": "Unity2.AI",
     "description": "面向个人开发者、团队与企业的AI基础设施平台，自研集群架构支持高并发与多上游智能调度。兼容OpenAI API，100+模型统一入口，零改写模型原始输出。",
@@ -3846,7 +3849,7 @@
     "likes": 0
   },
   {
-    "url": "https://9527code.com",
+    "url": "https://9527code.com/register?aff=ONz5",
     "domain": "9527code.com",
     "name": "9527Code",
     "description": "开发者友好的AI API网关，统一Base URL接入Claude Code、Codex、Gemini CLI等工具。支持团队共享Token、智能路由故障转移、用量观测。",
@@ -4072,7 +4075,7 @@
     "likes": 0
   },
   {
-    "url": "https://sudocode.com",
+    "url": "https://sudocode.run/register?aff=G7iU",
     "domain": "sudocode.com",
     "name": "SudoCode",
     "description": "专注编程场景，支持Claude Code/Codex等编程模型，按量计费。",
@@ -4115,7 +4118,7 @@
     "likes": 0
   },
   {
-    "url": "https://tokaify.com",
+    "url": "https://www.tokaify.com/register?aff=2wsgmE",
     "domain": "tokaify.com",
     "name": "Tokaify",
     "description": "简洁高效的AI API中转服务，新用户¥1即可获得$5额度。支持主流大模型调用，低门槛快速接入。",
@@ -4930,7 +4933,7 @@
     "likes": 0
   },
   {
-    "url": "https://duckcoding.com",
+    "url": "https://duckcoding.com/sign-up?aff=VwCK",
     "domain": "duckcoding.com",
     "name": "DuckCoding",
     "description": "功能完善的AI API中转平台，提供Console控制台、模型广场、排行榜和完整文档。支持多种主流模型，开发者友好。",
@@ -4975,7 +4978,7 @@
     "likes": 0
   },
   {
-    "url": "https://rkapi.com",
+    "url": "https://rkapi.com/register?aff=zCFG",
     "domain": "rkapi.com",
     "name": "RK API",
     "description": "统一大模型接口网关，聚合30+主流供应商，支持/v1/chat/completions、embeddings、images、audio等全系列API。一次接入，调用全球模型。",
@@ -5610,14 +5613,15 @@
     "likes": 0
   },
   {
-    "url": "https://mytokenpi.com",
+    "url": "https://mytokenpi.com/register?aff=Cxfn",
     "domain": "mytokenpi.com",
     "name": "MyTokenPi",
     "description": "高性价比API中转平台，聚合30+供应商智能比价，最低0.035x价格倍率。Claude Code开箱即用，Token管理便捷，适合成本敏感型开发者。",
     "models": [
       "claude",
       "gpt",
-      "gemini"
+      "gemini",
+      "drawing"
     ],
     "features": [
       "cheap",
@@ -5971,6 +5975,52 @@
       {
         "label": "支付",
         "value": "支付宝/微信",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
+    "domain": "apikey.fun",
+    "name": "ApiKey.fun",
+    "description": "AI API中转平台，提供Claude/GPT/Gemini等主流模型接入，支持按量付费，新用户注册送体验额度。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi",
+      "cheap"
+    ],
+    "price": "low",
+    "free_amount": "注册送体验额度",
+    "score": 6.8,
+    "likes": 0,
+    "response_time": 1.5,
+    "alive": true,
+    "last_check": "2026-06-04",
+    "check_count": 1,
+    "display_tags": [
+      "多模型",
+      "新用户福利",
+      "按量付费"
+    ],
+    "display_metrics": [
+      {
+        "label": "定位",
+        "value": "API中转",
+        "cls": "green"
+      },
+      {
+        "label": "福利",
+        "value": "体验额度",
+        "cls": "accent"
+      },
+      {
+        "label": "支付",
+        "value": "按量付费",
         "cls": ""
       }
     ]
