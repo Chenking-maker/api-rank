@@ -66,6 +66,24 @@
     "status": "dead"
   },
   {
+    "url": "https://anyroute.com",
+    "name": "AnyRoute",
+    "domain": "anyroute.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://qianfan.baidubce.com",
+    "name": "百度千帆",
+    "domain": "qianfan.baidubce.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://sudocode.us",
+    "name": "SudoCode US",
+    "domain": "sudocode.us",
+    "status": "dead"
+  },
+  {
     "url": "https://aok.ai",
     "name": "AOK",
     "domain": "aok.ai",
@@ -120,9 +138,27 @@
     "status": "dead"
   },
   {
+    "url": "https://jiekou.ai",
+    "name": "接口AI",
+    "domain": "jiekou.ai",
+    "status": "dead"
+  },
+  {
     "url": "https://lingsuan.ai",
     "name": "灵算",
     "domain": "lingsuan.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://n1n.ai",
+    "name": "N1N.AI",
+    "domain": "n1n.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://ofox.ai",
+    "name": "Ofox.AI",
+    "domain": "ofox.ai",
     "status": "dead"
   },
   {
@@ -142,5 +178,60 @@
     "name": "云渡AI",
     "domain": "yundu.ai",
     "status": "dead"
+  },
+  {
+    "url": "https://zhihuiapi.com",
+    "name": "智惠API",
+    "domain": "zhihuiapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://juxing.ai",
+    "name": "聚星AI",
+    "domain": "juxing.ai",
+    "status": "dead",
+    "reason": "域名出售"
+  },
+  {
+    "url": "https://luchikey.com",
+    "name": "LuchiKey",
+    "domain": "luchikey.com",
+    "status": "dead",
+    "reason": "Google Pixel账号处理平台，非AI中转站"
+  },
+  {
+    "url": "https://llmapi.com",
+    "name": "LLMAPI",
+    "domain": "llmapi.com",
+    "status": "dead",
+    "reason": "域名出售"
+  },
+  {
+    "url": "https://zxapi.com",
+    "name": "ZX API",
+    "domain": "zxapi.com",
+    "status": "dead",
+    "reason": "通用后端服务平台，非AI中转站"
+  },
+  {
+    "url": "https://modcon.ai",
+    "name": "ModCon",
+    "domain": "modcon.ai",
+    "status": "dead",
+    "reason": "工业AI解决方案公司，非API中转站"
+  },
+  {
+    "url": "https://switchbase.com",
+    "name": "SwitchBase",
+    "domain": "switchbase.com",
+    "status": "dead",
+    "reason": "场馆运营管理平台，非AI中转站"
+  },
+  {
+    "url": "https://nekocode.com",
+    "name": "NekoCode",
+    "domain": "nekocode.com",
+    "status": "dead",
+    "reason": "无法访问"
   }
 ]

@@ -3682,8 +3682,8 @@
     "free_amount": "",
     "score": 8.3,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -3706,7 +3706,8 @@
         "value": "快速",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "无法访问"
   },
   {
     "url": "https://clauqe.com",
@@ -3753,7 +3754,7 @@
     "url": "https://9527code.com",
     "domain": "9527code.com",
     "name": "9527Code",
-    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "开发者友好的AI API网关，统一Base URL接入Claude Code、Codex、Gemini CLI等工具。支持团队共享Token、智能路由故障转移、用量观测。",
     "models": [
       "claude",
       "gpt",
@@ -3761,7 +3762,8 @@
     ],
     "features": [
       "stable",
-      "multi"
+      "multi",
+      "team"
     ],
     "price": "medium",
     "free_amount": "",
@@ -3771,24 +3773,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "多模型",
-      "稳定可靠"
+      "开发者工具",
+      "团队版",
+      "智能路由"
     ],
     "display_metrics": [
       {
         "label": "专业",
-        "value": "企业级服务",
+        "value": "API网关",
         "cls": "green"
       },
       {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "特色",
+        "value": "团队共享",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "多模型支持",
+        "label": "路由",
+        "value": "智能故障转移",
         "cls": ""
       }
     ]
@@ -4012,15 +4014,15 @@
     "url": "https://tokaify.com",
     "domain": "tokaify.com",
     "name": "Tokaify",
-    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "简洁高效的AI API中转服务，新用户¥1即可获得$5额度。支持主流大模型调用，低门槛快速接入。",
     "models": [
       "claude",
       "gpt",
       "gemini"
     ],
     "features": [
-      "stable",
-      "multi"
+      "cheap",
+      "stable"
     ],
     "price": "medium",
     "free_amount": "",
@@ -4030,24 +4032,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "多模型",
-      "稳定可靠"
+      "低门槛",
+      "新用户优惠",
+      "简洁"
     ],
     "display_metrics": [
       {
-        "label": "专业",
-        "value": "企业级服务",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "优惠",
+        "value": "¥1=$5",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "多模型支持",
+        "label": "特色",
+        "value": "极简接入",
+        "cls": "green"
+      },
+      {
+        "label": "响应",
+        "value": "快速",
         "cls": ""
       }
     ]
@@ -4114,8 +4116,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4138,7 +4140,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "Google Pixel账号处理平台，非AI中转站"
   },
   {
     "url": "https://zxapi.com",
@@ -4158,8 +4161,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4182,7 +4185,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "通用后端服务平台，非AI中转站"
   },
   {
     "url": "https://luminai.com",
@@ -4232,13 +4236,14 @@
     "url": "https://poixe.com",
     "domain": "poixe.com",
     "name": "Poixe AI",
-    "description": "支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "description": "创新型LLM API供需平台，用户可消费API也可成为供应商赚取收益。提供免费模型（:free结尾）、美东/日本多节点部署、12/24*7客服支持。",
     "models": [
       "claude",
       "gpt",
       "gemini"
     ],
     "features": [
+      "cheap",
       "stable",
       "multi"
     ],
@@ -4250,24 +4255,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "多模型",
-      "稳定可靠"
+      "供需平台",
+      "免费模型",
+      "多节点"
     ],
     "display_metrics": [
       {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "模式",
+        "value": "供需双边",
         "cls": "green"
       },
       {
-        "label": "专业",
-        "value": "质量可靠",
+        "label": "免费",
+        "value": "免费模型",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "多模型支持",
+        "label": "节点",
+        "value": "美东+日本",
         "cls": ""
       }
     ]
@@ -4504,8 +4509,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4528,7 +4533,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "域名出售"
   },
   {
     "url": "https://daodun.ai",
@@ -4680,8 +4686,8 @@
     "free_amount": "",
     "score": 7.9,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4704,13 +4710,14 @@
         "value": "智能切换",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "工业AI解决方案公司，非API中转站"
   },
   {
     "url": "https://ykh.ai",
     "domain": "ykh.ai",
     "name": "YKH.AI",
-    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "不只是API中转，更是AI思维工具。YKH.ai帮助开发者将模糊问题转化为清晰行动路径，同时提供稳定的大模型API接入服务。",
     "models": [
       "claude",
       "gpt",
@@ -4718,7 +4725,8 @@
     ],
     "features": [
       "stable",
-      "multi"
+      "multi",
+      "cheap"
     ],
     "price": "medium",
     "free_amount": "",
@@ -4728,24 +4736,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
+      "思维工具",
       "多模型",
-      "稳定可靠"
+      "开发者"
     ],
     "display_metrics": [
       {
-        "label": "专业",
-        "value": "企业级服务",
+        "label": "定位",
+        "value": "AI思维+API",
         "cls": "green"
       },
       {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "兼容",
+        "value": "OpenAI格式",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "多模型支持",
+        "label": "特色",
+        "value": "问题结构化",
         "cls": ""
       }
     ]
@@ -4798,14 +4806,15 @@
     "url": "https://duckcoding.com",
     "domain": "duckcoding.com",
     "name": "DuckCoding",
-    "description": "专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "description": "功能完善的AI API中转平台，提供Console控制台、模型广场、排行榜和完整文档。支持多种主流模型，开发者友好。",
     "models": [
       "claude",
       "gpt"
     ],
     "features": [
       "stable",
-      "fast"
+      "multi",
+      "docs"
     ],
     "price": "medium",
     "free_amount": "",
@@ -4815,24 +4824,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "Claude专精",
-      "稳定快速"
+      "控制台",
+      "模型广场",
+      "文档完善"
     ],
     "display_metrics": [
       {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "功能",
+        "value": "Console+广场",
         "cls": "green"
       },
       {
-        "label": "专业",
-        "value": "编程专精",
+        "label": "文档",
+        "value": "完善",
         "cls": "accent"
       },
       {
-        "label": "响应",
-        "value": "快速",
+        "label": "特色",
+        "value": "排行榜",
         "cls": ""
       }
     ]
@@ -4841,7 +4850,7 @@
     "url": "https://rkapi.com",
     "domain": "rkapi.com",
     "name": "RK API",
-    "description": "企业级API服务，支持Claude/GPT/Gemini等主流模型。",
+    "description": "统一大模型接口网关，聚合30+主流供应商，支持/v1/chat/completions、embeddings、images、audio等全系列API。一次接入，调用全球模型。",
     "models": [
       "claude",
       "gpt",
@@ -4849,7 +4858,8 @@
     ],
     "features": [
       "stable",
-      "multi"
+      "multi",
+      "enterprise"
     ],
     "price": "medium",
     "free_amount": "",
@@ -4859,24 +4869,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "多模型",
-      "稳定可靠"
+      "接口网关",
+      "30+供应商",
+      "全协议"
     ],
     "display_metrics": [
       {
-        "label": "专业",
-        "value": "企业级服务",
+        "label": "规模",
+        "value": "30+供应商",
         "cls": "green"
       },
       {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "协议",
+        "value": "全系列API",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "多模型支持",
+        "label": "定位",
+        "value": "统一网关",
         "cls": ""
       }
     ]
@@ -5031,8 +5041,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5055,20 +5065,22 @@
         "value": "智能切换",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "场馆运营管理平台，非AI中转站"
   },
   {
     "url": "https://dawcode.com",
     "domain": "dawcode.com",
     "name": "DawCode",
-    "description": "专注编程场景，支持Claude Code/Codex等编程模型，响应快速。",
+    "description": "专注编程智能代理的API中转服务，极致优化Claude Code、Codex、Gemini CLI体验。特惠系列低至0.26元/刀，纯净IP动态隔离，高并发低延迟。",
     "models": [
       "claude",
       "gpt"
     ],
     "features": [
+      "cheap",
       "stable",
-      "fast"
+      "code"
     ],
     "price": "medium",
     "free_amount": "",
@@ -5078,24 +5090,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "Claude专精",
-      "稳定快速"
+      "编程代理",
+      "超低费率",
+      "IP隔离"
     ],
     "display_metrics": [
       {
-        "label": "口碑",
-        "value": "口碑良好",
-        "cls": "green"
-      },
-      {
-        "label": "专业",
-        "value": "编程专精",
+        "label": "费率",
+        "value": "0.26元/刀",
         "cls": "accent"
       },
       {
-        "label": "响应",
-        "value": "快速",
+        "label": "技术",
+        "value": "纯净IP隔离",
+        "cls": "green"
+      },
+      {
+        "label": "场景",
+        "value": "编程专用",
         "cls": ""
       }
     ]
@@ -5425,8 +5437,8 @@
     "free_amount": "",
     "score": 7.5,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5449,7 +5461,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "域名出售"
   },
   {
     "url": "https://mytokenpi.com",
@@ -5543,7 +5556,7 @@
     "url": "https://cubence.com",
     "domain": "cubence.com",
     "name": "Cubence",
-    "description": "支持Claude/GPT/Gemini等主流模型，质量可靠，口碑良好。",
+    "description": "企业级Claude Code与Codex API网关，提供稳定可扩展的AI模型接入基础设施。支持高级监控、用量分析和灵活定价方案。",
     "models": [
       "claude",
       "gpt",
@@ -5551,7 +5564,8 @@
     ],
     "features": [
       "stable",
-      "multi"
+      "enterprise",
+      "code"
     ],
     "price": "medium",
     "free_amount": "",
@@ -5561,24 +5575,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "多模型",
-      "稳定可靠"
+      "企业级",
+      "Claude Code",
+      "Codex"
     ],
     "display_metrics": [
       {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "定位",
+        "value": "企业网关",
         "cls": "green"
       },
       {
-        "label": "专业",
-        "value": "质量可靠",
+        "label": "监控",
+        "value": "高级分析",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "多模型支持",
+        "label": "场景",
+        "value": "编程专用",
         "cls": ""
       }
     ]
