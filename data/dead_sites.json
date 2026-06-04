@@ -66,6 +66,24 @@
     "status": "dead"
   },
   {
+    "url": "https://anyroute.com",
+    "name": "AnyRoute",
+    "domain": "anyroute.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://qianfan.baidubce.com",
+    "name": "百度千帆",
+    "domain": "qianfan.baidubce.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://sudocode.us",
+    "name": "SudoCode US",
+    "domain": "sudocode.us",
+    "status": "dead"
+  },
+  {
     "url": "https://aok.ai",
     "name": "AOK",
     "domain": "aok.ai",
@@ -120,9 +138,27 @@
     "status": "dead"
   },
   {
+    "url": "https://jiekou.ai",
+    "name": "接口AI",
+    "domain": "jiekou.ai",
+    "status": "dead"
+  },
+  {
     "url": "https://lingsuan.ai",
     "name": "灵算",
     "domain": "lingsuan.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://n1n.ai",
+    "name": "N1N.AI",
+    "domain": "n1n.ai",
+    "status": "dead"
+  },
+  {
+    "url": "https://ofox.ai",
+    "name": "Ofox.AI",
+    "domain": "ofox.ai",
     "status": "dead"
   },
   {
@@ -144,6 +180,54 @@
     "status": "dead"
   },
   {
+    "url": "https://zhihuiapi.com",
+    "name": "智惠API",
+    "domain": "zhihuiapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://juxing.ai",
+    "name": "聚星AI",
+    "domain": "juxing.ai",
+    "status": "dead",
+    "reason": "域名出售"
+  },
+  {
+    "url": "https://luchikey.com",
+    "name": "LuchiKey",
+    "domain": "luchikey.com",
+    "status": "dead",
+    "reason": "Google Pixel账号处理平台，非AI中转站"
+  },
+  {
+    "url": "https://llmapi.com",
+    "name": "LLMAPI",
+    "domain": "llmapi.com",
+    "status": "dead",
+    "reason": "域名出售"
+  },
+  {
+    "url": "https://zxapi.com",
+    "name": "ZX API",
+    "domain": "zxapi.com",
+    "status": "dead",
+    "reason": "通用后端服务平台，非AI中转站"
+  },
+  {
+    "url": "https://modcon.ai",
+    "name": "ModCon",
+    "domain": "modcon.ai",
+    "status": "dead",
+    "reason": "工业AI解决方案公司，非API中转站"
+  },
+  {
+    "url": "https://switchbase.com",
+    "name": "SwitchBase",
+    "domain": "switchbase.com",
+    "status": "dead",
+    "reason": "场馆运营管理平台，非AI中转站"
+  },
+  {
     "url": "https://nekocode.com",
     "name": "NekoCode",
     "domain": "nekocode.com",
@@ -151,10 +235,255 @@
     "reason": "无法访问"
   },
   {
+    "url": "https://anpin.ai",
+    "name": "AnPin AI",
+    "domain": "anpin.ai",
+    "status": "dead",
+    "reason": "访问超时/失败"
+  },
+  {
     "url": "https://clauqe.com",
     "name": "ClauqeAI",
     "domain": "clauqe.com",
     "status": "dead",
     "reason": "访问失败"
+  },
+  {
+    "url": "https://claudecn.com",
+    "name": "ClaudeCN",
+    "domain": "claudecn.com",
+    "status": "dead",
+    "reason": "安全验证页面阻挡"
+  },
+  {
+    "url": "https://toknex.com",
+    "name": "Toknex",
+    "domain": "toknex.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://sevnx.com",
+    "name": "SevnX",
+    "domain": "sevnx.com",
+    "status": "dead",
+    "reason": "网络安全公司，提供渗透测试服务"
+  },
+  {
+    "url": "https://shuzhi.ai",
+    "name": "数智AI",
+    "domain": "shuzhi.ai",
+    "status": "dead",
+    "reason": "域名正在出售（$200,000）"
+  },
+  {
+    "url": "https://luminai.com",
+    "name": "Lumin AI",
+    "domain": "luminai.com",
+    "status": "dead",
+    "reason": "医疗系统运营AI平台"
+  },
+  {
+    "url": "https://claudeapi.net",
+    "name": "Claude API",
+    "domain": "claudeapi.net",
+    "status": "dead",
+    "reason": "访问超时"
+  },
+  {
+    "url": "https://muskai.com",
+    "name": "MuskAI",
+    "domain": "muskai.com",
+    "status": "dead",
+    "reason": "简单搜索引擎导航页"
+  },
+  {
+    "url": "https://qqtoken.com",
+    "name": "球球Token",
+    "domain": "qqtoken.com",
+    "status": "dead",
+    "reason": "域名正在出售"
+  },
+  {
+    "url": "https://frontierintelligence.ai",
+    "name": "Frontier Intelligence",
+    "domain": "frontierintelligence.ai",
+    "status": "dead",
+    "reason": "私有站点，需登录"
+  },
+  {
+    "url": "https://derouter.com",
+    "name": "DeRouter",
+    "domain": "derouter.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://coderelay.com",
+    "name": "CodeRelay",
+    "domain": "coderelay.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://hajimi.com",
+    "name": "哈基米",
+    "domain": "hajimi.com",
+    "status": "dead",
+    "reason": "安全验证页面阻挡"
+  },
+  {
+    "url": "https://ekan8.com",
+    "name": "Ekan8",
+    "domain": "ekan8.com",
+    "status": "dead",
+    "reason": "站点已停止运行"
+  },
+  {
+    "url": "https://4sapi.com",
+    "name": "星链4SAPI",
+    "domain": "4sapi.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://api.easyapi.com",
+    "name": "API易",
+    "domain": "easyapi.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://api.ikuncode.cc",
+    "name": "爱坤代码 (IKunCode)",
+    "domain": "ikuncode.cc",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://302.ai",
+    "name": "302.AI",
+    "domain": "302.ai",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://www.sssaicode.com/register?ref=SRVFVP",
+    "name": "SSSAICode",
+    "domain": "sssaicode.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://snakegpt.vip",
+    "name": "蛇GPT (SnakeGPT)",
+    "domain": "snakegpt.vip",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://gptcat.cc",
+    "name": "GPT猫 (GPTCat)",
+    "domain": "gptcat.cc",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://ai.huoyachat.com",
+    "name": "AI中文版",
+    "domain": "ai.huoyachat.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://web.apiplus.org",
+    "name": "APIPlus",
+    "domain": "apiplus.org",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://b.ai",
+    "name": "B.AI (波场)",
+    "domain": "b.ai",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://bewildcard.com",
+    "name": "万卡API (WildCard)",
+    "domain": "bewildcard.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://doro.lol/register?aff=0LSF",
+    "name": "Doro API",
+    "domain": "doro.lol",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://fishxcode.com",
+    "name": "鱼代码 (FishXCode)",
+    "domain": "fishxcode.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://apimart.ai",
+    "name": "API集市 (API Mart)",
+    "domain": "apimart.ai",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://openai-sb.com",
+    "name": "OpenAI-SB",
+    "domain": "openai-sb.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://console.mistral.ai",
+    "name": "Mistral AI",
+    "domain": "console.mistral.ai",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://console.groq.com",
+    "name": "Groq",
+    "domain": "console.groq.com",
+    "status": "dead",
+    "reason": "网站打开乱码"
+  },
+  {
+    "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
+    "name": "随人AI",
+    "domain": "suirenai.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://unity2.ai/register?ref=bayLaABG",
+    "name": "Unity2.AI",
+    "domain": "unity2.ai",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://sudocode.run/register?aff=G7iU",
+    "name": "SudoCode",
+    "domain": "sudocode.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
+    "name": "ApiKey.fun",
+    "domain": "apikey.fun",
+    "status": "dead",
+    "reason": "无法访问"
   }
 ]
