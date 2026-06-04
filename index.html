@@ -8884,22 +8884,46 @@
                 const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
 
-                // 过滤掉已失效的站点（从 dead_sites.json）
+                // 过滤掉已失效的站点（双重检查：dead_sites.json + stations_info.json）
                 try {
                     const deadSitesData = await fetchOnce('data/dead_sites.json');
-                    if (Array.isArray(deadSitesData) && deadSitesData.length > 0) {
-                        const deadDomains = new Set(deadSitesData.map(s => (s.domain || '').toLowerCase()));
-                        // 同时过滤 recoveredSites
-                        const filtered = recoveredSites.filter(site => {
-                            const d = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
-                            return d && !deadDomains.has(d);
+                    const stationsData = await fetchOnce('data/stations_info.json');
+                    const deadDomains = new Set();
+                    if (Array.isArray(deadSitesData)) {
+                        deadSitesData.forEach(s => {
+                            const d = (s.domain || '').toLowerCase();
+                            if (d) deadDomains.add(d);
                         });
-                        recoveredSites.length = 0;
-                        recoveredSites.push(...filtered);
-                        // 同步清理 localStorage
-                        saveCached('recoveredSites', recoveredSites);
                     }
-                } catch(e) {}
+                    if (Array.isArray(stationsData)) {
+                        stationsData.forEach(s => {
+                            if (s.alive === false) {
+                                const d = (s.domain || '').toLowerCase();
+                                if (d) deadDomains.add(d);
+                            }
+                        });
+                    }
+                    if (deadDomains.size > 0) {
+                        const filtered = recoveredSites.filter(site => {
+                            const raw = (site.domain || site.url || '').toLowerCase();
+                            const d = raw.replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '');
+                            // 也尝试匹配域名的一部分
+                            let isDead = deadDomains.has(d);
+                            if (!isDead) {
+                                deadDomains.forEach(dd => {
+                                    if (d.includes(dd) || dd.includes(d)) isDead = true;
+                                });
+                            }
+                            return d && !isDead;
+                        });
+                        if (filtered.length !== recoveredSites.length) {
+                            console.log('过滤了 ' + (recoveredSites.length - filtered.length) + ' 个失效恢复站点');
+                            recoveredSites.length = 0;
+                            recoveredSites.push(...filtered);
+                            saveCached('recoveredSites', recoveredSites);
+                        }
+                    }
+                } catch(e) { console.log('dead过滤出错:', e); }
 
                 // 收集已存在的URL（使用缓存）
                 const existingUrls = getExistingUrls();
