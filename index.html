@@ -8884,6 +8884,23 @@
                 const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
 
+                // 过滤掉已失效的站点（从 dead_sites.json）
+                try {
+                    const deadSitesData = await fetchOnce('data/dead_sites.json');
+                    if (Array.isArray(deadSitesData) && deadSitesData.length > 0) {
+                        const deadDomains = new Set(deadSitesData.map(s => (s.domain || '').toLowerCase()));
+                        // 同时过滤 recoveredSites
+                        const filtered = recoveredSites.filter(site => {
+                            const d = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                            return d && !deadDomains.has(d);
+                        });
+                        recoveredSites.length = 0;
+                        recoveredSites.push(...filtered);
+                        // 同步清理 localStorage
+                        saveCached('recoveredSites', recoveredSites);
+                    }
+                } catch(e) {}
+
                 // 收集已存在的URL（使用缓存）
                 const existingUrls = getExistingUrls();
 
