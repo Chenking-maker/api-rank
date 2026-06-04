@@ -5714,5 +5714,50 @@
         "cls": ""
       }
     ]
+  },
+  {
+    "url": "https://coderplan.ai/register",
+    "domain": "coderplan.ai",
+    "name": "CoderPlan",
+    "description": "面向开发者的AI API中转平台，支持Claude全系列、GPT-4o/Codex CLI、Gemini 3等主流模型，按量付费约官方0.7折，¥10起充，新用户注册送体验余额。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "cheap",
+      "stable",
+      "multi"
+    ],
+    "price": "low",
+    "free_amount": "注册送体验余额",
+    "score": 7.8,
+    "response_time": 1.2,
+    "alive": true,
+    "last_check": "2026-06-04",
+    "check_count": 1,
+    "display_tags": [
+      "开发者",
+      "多模型",
+      "低折扣"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "开发者首选",
+        "cls": "green"
+      },
+      {
+        "label": "优惠",
+        "value": "官方0.7折",
+        "cls": "accent"
+      },
+      {
+        "label": "门槛",
+        "value": "¥10起充",
+        "cls": ""
+      }
+    ]
   }
 ]
