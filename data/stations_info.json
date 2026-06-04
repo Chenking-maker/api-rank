@@ -43,7 +43,8 @@
         "value": "OpenAI兼容",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://www.packyapi.com/register?aff=zrXb",
@@ -89,7 +90,8 @@
         "value": "多站上游",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://www.right.codes/register?aff=56503380",
@@ -134,7 +136,8 @@
         "value": "文档清晰",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://4sapi.com",
@@ -180,7 +183,8 @@
         "value": "2026榜首",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.easyapi.com",
@@ -226,7 +230,8 @@
         "value": "双语文档",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://cloud.siliconflow.cn/i/E5yUpjCP",
@@ -272,7 +277,8 @@
         "value": "600万用户",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://toapis.com/login?aff=yjH5",
@@ -292,7 +298,7 @@
     ],
     "price": "medium",
     "free_amount": "$0.2体验金",
-    "score": 8,
+    "score": 8.0,
     "response_time": 3.3,
     "alive": true,
     "last_check": "2026-06-02",
@@ -318,7 +324,8 @@
         "value": "零成本",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.ikuncode.cc",
@@ -336,7 +343,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7,
+    "score": 7.0,
     "response_time": 0.67,
     "alive": true,
     "last_check": "2026-06-02",
@@ -362,7 +369,8 @@
         "value": "详细完善",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.mooko.ai/register?aff=JiqY",
@@ -407,7 +415,8 @@
         "value": "高性价比",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://302.ai",
@@ -451,7 +460,8 @@
         "value": "应用市场",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://dmxapi.com",
@@ -495,7 +505,8 @@
         "value": "全栈能力",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://147ai.com",
@@ -513,7 +524,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7,
+    "score": 7.0,
     "response_time": 0.55,
     "alive": true,
     "last_check": "2026-06-02",
@@ -539,7 +550,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.vectorengine.ai/register?aff=xIFd",
@@ -557,7 +569,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7,
+    "score": 7.0,
     "response_time": 1.07,
     "alive": true,
     "last_check": "2026-06-02",
@@ -583,7 +595,8 @@
         "value": "智能负载均衡",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://openrouter.ai",
@@ -627,10 +640,11 @@
         "value": "a16z引用",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
-    "url": "https://www.sssaicode.com/register?ref=BO64DM",
+    "url": "https://www.sssaicode.com/register?ref=SRVFVP",
     "domain": "sssaicode.com",
     "name": "SSSAICode",
     "description": "香港和美国双API节点部署，接口响应快速稳定。包月套餐性价比突出，$300额度/月满足高频调用需求，API文档完善便于快速接入。",
@@ -669,7 +683,8 @@
         "value": "文档完善",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://aioncode.com",
@@ -687,7 +702,7 @@
     ],
     "price": "medium",
     "free_amount": "赠¥5体验",
-    "score": 7,
+    "score": 7.0,
     "response_time": 3,
     "alive": true,
     "last_check": "2026-06-02",
@@ -713,7 +728,8 @@
         "value": "不掺假",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://snakegpt.vip",
@@ -758,7 +774,8 @@
         "value": "首发模型",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://aigocode.com/invite/FY2CMDBZ",
@@ -802,7 +819,8 @@
         "value": "口碑极佳",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.lingyaai.cn",
@@ -848,7 +866,8 @@
         "value": "2万+",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://savebill.store/chat?ref=611",
@@ -893,7 +912,8 @@
         "value": "注册送额度",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api2d.com",
@@ -938,7 +958,8 @@
         "value": "支付宝充值",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.zhizengzeng.com",
@@ -984,7 +1005,8 @@
         "value": "国内直连",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://gptcat.cc",
@@ -1030,7 +1052,8 @@
         "value": "多镜像保障",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://ai.huoyachat.com",
@@ -1076,7 +1099,8 @@
         "value": "待评价",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.whatai.cc",
@@ -1122,7 +1146,8 @@
         "value": "全类型API",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://docs.whatai.cc",
@@ -1172,7 +1197,8 @@
         "value": "稳定",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://xyai2.top",
@@ -1219,7 +1245,8 @@
         "value": "低延迟",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://gpt.zhizengzeng.com",
@@ -1241,7 +1268,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7,
+    "score": 7.0,
     "response_time": 0.27,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1267,7 +1294,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://code.silkapi.com",
@@ -1311,7 +1339,8 @@
         "value": "故障转移",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://shop.pincc.ai",
@@ -1359,7 +1388,8 @@
         "value": "Claude全系列",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://api.pptoken.org",
@@ -1403,7 +1433,8 @@
         "value": "统一分发",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://yunwu.ai/register?aff=cQlp",
@@ -1422,7 +1453,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 6,
+    "score": 6.0,
     "response_time": 0.3,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1448,7 +1479,8 @@
         "value": "OpenAI兼容",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://free.yunwu.ai",
@@ -1493,7 +1525,8 @@
         "value": "每日额度",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://pateway.ai",
@@ -1542,7 +1575,8 @@
         "value": "注册赠$3",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://aicodemirror.com",
@@ -1586,7 +1620,8 @@
         "value": "280+天稳定",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://web.apiplus.org",
@@ -1604,7 +1639,7 @@
     ],
     "price": "free",
     "free_amount": "4k免费额度",
-    "score": 6,
+    "score": 6.0,
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1630,7 +1665,8 @@
         "value": "轻量级",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://b.ai",
@@ -1681,7 +1717,8 @@
         "value": "50万积分",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://poloapi.com",
@@ -1711,7 +1748,7 @@
     ],
     "price": "medium",
     "free_amount": "",
-    "score": 7,
+    "score": 7.0,
     "response_time": 0.22,
     "alive": true,
     "last_check": "2026-06-02",
@@ -1737,7 +1774,8 @@
         "value": "1000+企业",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://openqi.sbs/register?aff=ENKWT9RMZV97",
@@ -1783,7 +1821,8 @@
         "value": "团队管理",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://xdhdancer.top",
@@ -1824,7 +1863,8 @@
     "response_time": 0.19,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://ofox.ai",
@@ -1866,7 +1906,8 @@
     "response_time": 0.8,
     "alive": false,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://aihubmix.com",
@@ -1908,7 +1949,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://bewildcard.com",
@@ -1949,7 +1991,8 @@
     "response_time": 1.34,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://zaotu.vip/?invite=yuyTxd3t",
@@ -1990,7 +2033,8 @@
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://gptsapi.net",
@@ -2033,7 +2077,8 @@
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://jiekou.ai",
@@ -2076,7 +2121,8 @@
     "response_time": 0.63,
     "alive": false,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://n1n.ai",
@@ -2119,7 +2165,8 @@
     "response_time": 1,
     "alive": false,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://agentrouter.org",
@@ -2161,7 +2208,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://jeniya.cn",
@@ -2203,7 +2251,8 @@
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://doro.lol",
@@ -2244,10 +2293,11 @@
     "response_time": 1.35,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
-    "url": "https://hongmacc.com",
+    "url": "https://hongmacc.com/?ref=HONGMACC-3BC31A16",
     "domain": "hongmacc.com",
     "name": "红麦API (hongmacc)",
     "description": "企业级API网关，20+全球节点部署，延迟<50ms。支持Claude Code、Codex CLI等编程工具接入，高并发稳定，适合团队和企业使用。",
@@ -2283,12 +2333,13 @@
         "cls": ""
       }
     ],
-    "score": 8,
+    "score": 8.0,
     "price": "medium",
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://api.apiyi.com",
@@ -2330,10 +2381,11 @@
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
-    "url": "https://api.weelinking.com",
+    "url": "https://api.weelinking.com/register?aff=L2RUsXgB",
     "domain": "weelinking.com",
     "name": "微链API (Weelinking)",
     "description": "多平台推荐的API中转服务，支持Claude/GPT/Gemini，接口稳定，适合需要多源保障的用户。",
@@ -2372,7 +2424,8 @@
     "response_time": 7.59,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://qianfan.baidubce.com",
@@ -2413,7 +2466,8 @@
     "response_time": 0.5,
     "alive": false,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://www.berrypi.com",
@@ -2457,7 +2511,8 @@
     "response_time": 1.2,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://fishxcode.com",
@@ -2498,7 +2553,8 @@
     "response_time": 1.26,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://0011.ai",
@@ -2540,7 +2596,8 @@
     "response_time": 1.4,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://bigmodel.cn",
@@ -2581,7 +2638,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://apimart.ai",
@@ -2623,7 +2681,8 @@
     "response_time": 1,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://www.volcengine.com",
@@ -2663,7 +2722,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://openai-sb.com",
@@ -2705,7 +2765,8 @@
     "response_time": 1.1,
     "alive": false,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://platform.moonshot.cn",
@@ -2745,7 +2806,8 @@
     "response_time": 0.32,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://closeai-asia.com",
@@ -2787,7 +2849,8 @@
     "response_time": 0.5,
     "alive": false,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://platform.lingyiwanwu.com",
@@ -2827,7 +2890,8 @@
     "response_time": 1.56,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://platform.deepseek.com",
@@ -2867,7 +2931,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://xinghuo.xfyun.cn",
@@ -2908,7 +2973,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://bailian.console.aliyun.com",
@@ -2948,7 +3014,8 @@
     "response_time": 0.16,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://console.mistral.ai",
@@ -2988,7 +3055,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://www.minimaxi.com",
@@ -3023,12 +3091,13 @@
         "cls": ""
       }
     ],
-    "score": 5,
+    "score": 5.0,
     "price": "medium",
     "response_time": 0.33,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://dashboard.cohere.com",
@@ -3063,12 +3132,13 @@
         "cls": ""
       }
     ],
-    "score": 5,
+    "score": 5.0,
     "price": "medium",
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://platform.baichuan-ai.com",
@@ -3103,12 +3173,13 @@
         "cls": ""
       }
     ],
-    "score": 5,
+    "score": 5.0,
     "price": "medium",
     "response_time": 0.33,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://console.groq.com",
@@ -3149,7 +3220,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://api.together.xyz",
@@ -3189,7 +3261,8 @@
     "response_time": 0.72,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://fireworks.ai",
@@ -3229,7 +3302,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://deepinfra.com",
@@ -3269,7 +3343,8 @@
     "response_time": 0.35,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
@@ -3315,7 +3390,8 @@
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-02",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://ai.mfate.cn/",
@@ -3361,12 +3437,13 @@
         "cls": ""
       }
     ],
-    "score": 5,
+    "score": 5.0,
     "price": "medium",
     "response_time": 0.6,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://freemodel.dev/invite/FRE-1647af47",
@@ -3408,7 +3485,8 @@
     "response_time": 0.7,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
@@ -3445,12 +3523,13 @@
         "cls": ""
       }
     ],
-    "score": 5,
+    "score": 5.0,
     "price": "medium",
     "response_time": 0.7,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://shop.xuedingtoken.com/?invite=2DPLSD7Z",
@@ -3493,7 +3572,8 @@
     "response_time": 0.8,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://kirby.cc.cd/register?aff=PNHL6Y3ABHKQ",
@@ -3535,7 +3615,8 @@
     "response_time": 0.7,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://coderplan.ai/register",
@@ -3574,12 +3655,13 @@
         "cls": ""
       }
     ],
-    "score": 8,
+    "score": 8.0,
     "price": "low",
     "response_time": 0.5,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://unity2.ai",
@@ -3621,12 +3703,13 @@
         "cls": ""
       }
     ],
-    "score": 8,
+    "score": 8.0,
     "price": "medium",
     "response_time": 0.4,
     "alive": true,
     "last_check": "2026-06-03",
-    "check_count": 1
+    "check_count": 1,
+    "likes": 0
   },
   {
     "url": "https://anpin.ai",
@@ -3671,7 +3754,8 @@
         "cls": ""
       }
     ],
-    "reason": "访问超时/失败"
+    "reason": "访问超时/失败",
+    "likes": 0
   },
   {
     "url": "https://nekocode.com",
@@ -3715,7 +3799,8 @@
         "cls": ""
       }
     ],
-    "reason": "无法访问"
+    "reason": "无法访问",
+    "likes": 0
   },
   {
     "url": "https://clauqe.com",
@@ -3757,7 +3842,8 @@
         "cls": ""
       }
     ],
-    "reason": "访问失败"
+    "reason": "访问失败",
+    "likes": 0
   },
   {
     "url": "https://9527code.com",
@@ -3802,7 +3888,8 @@
         "value": "智能故障转移",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://claudecn.com",
@@ -3844,7 +3931,8 @@
         "cls": ""
       }
     ],
-    "reason": "安全验证页面阻挡"
+    "reason": "安全验证页面阻挡",
+    "likes": 0
   },
   {
     "url": "https://yundu.ai",
@@ -3888,7 +3976,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://toknex.com",
@@ -3933,7 +4022,8 @@
         "cls": ""
       }
     ],
-    "reason": "访问失败"
+    "reason": "访问失败",
+    "likes": 0
   },
   {
     "url": "https://sevnx.com",
@@ -3978,7 +4068,8 @@
         "cls": ""
       }
     ],
-    "reason": "网络安全公司，提供渗透测试服务"
+    "reason": "网络安全公司，提供渗透测试服务",
+    "likes": 0
   },
   {
     "url": "https://sudocode.com",
@@ -4020,7 +4111,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://tokaify.com",
@@ -4064,7 +4156,8 @@
         "value": "快速",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://shuzhi.ai",
@@ -4109,7 +4202,8 @@
         "cls": ""
       }
     ],
-    "reason": "域名正在出售（$200,000）"
+    "reason": "域名正在出售（$200,000）",
+    "likes": 0
   },
   {
     "url": "https://luchikey.com",
@@ -4154,7 +4248,8 @@
         "cls": ""
       }
     ],
-    "reason": "Google Pixel账号处理平台，非AI中转站"
+    "reason": "Google Pixel账号处理平台，非AI中转站",
+    "likes": 0
   },
   {
     "url": "https://zxapi.com",
@@ -4199,7 +4294,8 @@
         "cls": ""
       }
     ],
-    "reason": "通用后端服务平台，非AI中转站"
+    "reason": "通用后端服务平台，非AI中转站",
+    "likes": 0
   },
   {
     "url": "https://luminai.com",
@@ -4244,10 +4340,11 @@
         "cls": ""
       }
     ],
-    "reason": "医疗系统运营AI平台"
+    "reason": "医疗系统运营AI平台",
+    "likes": 0
   },
   {
-    "url": "https://poixe.com",
+    "url": "https://poixe.com/i/vmmv5t",
     "domain": "poixe.com",
     "name": "Poixe AI",
     "description": "创新型LLM API供需平台，用户可消费API也可成为供应商赚取收益。提供免费模型（:free结尾）、美东/日本多节点部署、12/24*7客服支持。",
@@ -4289,7 +4386,8 @@
         "value": "美东+日本",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://uuapi.com",
@@ -4333,7 +4431,8 @@
         "value": "稳定高效",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://congming.ai",
@@ -4377,7 +4476,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://claude-api.com",
@@ -4418,7 +4518,8 @@
         "value": "Claude全系列",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://claudeapi.net",
@@ -4460,7 +4561,8 @@
         "cls": ""
       }
     ],
-    "reason": "访问超时"
+    "reason": "访问超时",
+    "likes": 0
   },
   {
     "url": "https://muskai.com",
@@ -4505,7 +4607,8 @@
         "cls": ""
       }
     ],
-    "reason": "简单搜索引擎导航页"
+    "reason": "简单搜索引擎导航页",
+    "likes": 0
   },
   {
     "url": "https://juxing.ai",
@@ -4550,7 +4653,8 @@
         "cls": ""
       }
     ],
-    "reason": "域名出售"
+    "reason": "域名出售",
+    "likes": 0
   },
   {
     "url": "https://daodun.ai",
@@ -4594,7 +4698,8 @@
         "value": "安全防护",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://ciyi.ai",
@@ -4638,7 +4743,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://gpteam.cn",
@@ -4682,7 +4788,8 @@
         "value": "安全合规",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://modcon.ai",
@@ -4727,7 +4834,8 @@
         "cls": ""
       }
     ],
-    "reason": "工业AI解决方案公司，非API中转站"
+    "reason": "工业AI解决方案公司，非API中转站",
+    "likes": 0
   },
   {
     "url": "https://ykh.ai",
@@ -4772,7 +4880,8 @@
         "value": "问题结构化",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://qqtoken.com",
@@ -4817,7 +4926,8 @@
         "cls": ""
       }
     ],
-    "reason": "域名正在出售"
+    "reason": "域名正在出售",
+    "likes": 0
   },
   {
     "url": "https://duckcoding.com",
@@ -4861,7 +4971,8 @@
         "value": "排行榜",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://rkapi.com",
@@ -4906,7 +5017,8 @@
         "value": "统一网关",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://chintao.ai",
@@ -4950,7 +5062,8 @@
         "value": "国内直连",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://autorouter.ai",
@@ -4994,7 +5107,8 @@
         "value": "故障转移",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://lingsuan.ai",
@@ -5038,7 +5152,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://switchbase.com",
@@ -5083,10 +5198,11 @@
         "cls": ""
       }
     ],
-    "reason": "场馆运营管理平台，非AI中转站"
+    "reason": "场馆运营管理平台，非AI中转站",
+    "likes": 0
   },
   {
-    "url": "https://dawcode.com",
+    "url": "https://dawcode.com/register?aff=FzKj",
     "domain": "dawcode.com",
     "name": "DawCode",
     "description": "专注编程智能代理的API中转服务，极致优化Claude Code、Codex、Gemini CLI体验。特惠系列低至0.26元/刀，纯净IP动态隔离，高并发低延迟。",
@@ -5127,7 +5243,8 @@
         "value": "编程专用",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://zhihuiapi.com",
@@ -5171,7 +5288,8 @@
         "value": "价格实惠",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://aok.ai",
@@ -5215,7 +5333,8 @@
         "value": "质量可靠",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://frontierintelligence.ai",
@@ -5260,7 +5379,8 @@
         "cls": ""
       }
     ],
-    "reason": "私有站点，需登录"
+    "reason": "私有站点，需登录",
+    "likes": 0
   },
   {
     "url": "https://derouter.com",
@@ -5305,7 +5425,8 @@
         "cls": ""
       }
     ],
-    "reason": "访问失败"
+    "reason": "访问失败",
+    "likes": 0
   },
   {
     "url": "https://coderelay.com",
@@ -5349,7 +5470,8 @@
         "cls": ""
       }
     ],
-    "reason": "访问失败"
+    "reason": "访问失败",
+    "likes": 0
   },
   {
     "url": "https://huiyun.ai",
@@ -5393,7 +5515,8 @@
         "value": "安全合规",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://safeapi.com",
@@ -5437,7 +5560,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://llmapi.com",
@@ -5482,7 +5606,8 @@
         "cls": ""
       }
     ],
-    "reason": "域名出售"
+    "reason": "域名出售",
+    "likes": 0
   },
   {
     "url": "https://mytokenpi.com",
@@ -5527,7 +5652,8 @@
         "value": "开箱即用",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://anyroute.com",
@@ -5571,7 +5697,8 @@
         "value": "故障转移",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://cubence.com",
@@ -5616,7 +5743,8 @@
         "value": "编程专用",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://hajimi.com",
@@ -5661,7 +5789,8 @@
         "cls": ""
       }
     ],
-    "reason": "安全验证页面阻挡"
+    "reason": "安全验证页面阻挡",
+    "likes": 0
   },
   {
     "url": "https://ekan8.com",
@@ -5706,7 +5835,8 @@
         "cls": ""
       }
     ],
-    "reason": "站点已停止运行"
+    "reason": "站点已停止运行",
+    "likes": 0
   },
   {
     "url": "https://sudocode.us",
@@ -5750,7 +5880,8 @@
         "value": "低延迟",
         "cls": ""
       }
-    ]
+    ],
+    "likes": 0
   },
   {
     "url": "https://coderplan.ai/register",
@@ -5793,6 +5924,53 @@
       {
         "label": "门槛",
         "value": "¥10起充",
+        "cls": ""
+      }
+    ],
+    "likes": 0
+  },
+  {
+    "url": "https://runapi.co/register?aff=mS0w",
+    "domain": "runapi.co",
+    "name": "RunAPI",
+    "description": "新兴AI API中转平台，提供Claude/GPT/Gemini等主流模型接入，新用户注册送体验额度。主打稳定直连，支持支付宝/微信支付。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "features": [
+      "stable",
+      "multi",
+      "cheap"
+    ],
+    "price": "low",
+    "free_amount": "注册送体验额度",
+    "score": 7.1,
+    "likes": 0,
+    "response_time": 1.5,
+    "alive": true,
+    "last_check": "2026-06-04",
+    "check_count": 1,
+    "display_tags": [
+      "多模型",
+      "新用户福利",
+      "稳定直连"
+    ],
+    "display_metrics": [
+      {
+        "label": "定位",
+        "value": "新兴平台",
+        "cls": "green"
+      },
+      {
+        "label": "福利",
+        "value": "体验额度",
+        "cls": "accent"
+      },
+      {
+        "label": "支付",
+        "value": "支付宝/微信",
         "cls": ""
       }
     ]
