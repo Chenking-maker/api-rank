@@ -8828,31 +8828,7 @@
 
                         // 如果不在排行榜中，动态添加（带过滤）
                         if (!found && domain && !existingUrls.has(domain)) {
-                            // 尝试从 stations_info.json 获取完整信息（含邀请链接）
-                            var stationInfo = null;
-                            try {
-                                var allStations = await fetchOnce('data/stations_info.json');
-                                if (Array.isArray(allStations)) {
-                                    stationInfo = allStations.find(function(s) {
-                                        var d = (s.domain || '').toLowerCase();
-                                        return d === domain;
-                                    });
-                                }
-                            } catch(e) {}
-
-                            var recoverSite = stationInfo ? {
-                                name: stationInfo.name || site.name || domain,
-                                url: stationInfo.url || site.url || ('https://' + domain),
-                                description: stationInfo.description || (site.name || domain) + ' - AI API中转服务（已恢复）',
-                                score: stationInfo.score || 7.5,
-                                models: stationInfo.models || ['multi'],
-                                features: stationInfo.features || ['stable'],
-                                responseTime: stationInfo.response_time ? stationInfo.response_time.toFixed(2) + 's' : '?',
-                                source: 'recovered',
-                                freeAmount: stationInfo.free_amount || '',
-                                display_tags: stationInfo.display_tags || null,
-                                display_metrics: stationInfo.display_metrics || null,
-                            } : {
+                            var recoverSite = {
                                 name: site.name || domain,
                                 url: site.url || ('https://' + domain),
                                 description: (site.name || domain) + ' - AI API中转服务（已恢复）',
@@ -8908,46 +8884,36 @@
                 const recoveredSites = getCached('recoveredSites');
                 if (!Array.isArray(recoveredSites) || recoveredSites.length === 0) return;
 
+                // 过滤掉已失效的站点（从 dead_sites.json）
+                try {
+                    const deadSitesData = await fetchOnce('data/dead_sites.json');
+                    if (Array.isArray(deadSitesData) && deadSitesData.length > 0) {
+                        const deadDomains = new Set(deadSitesData.map(s => (s.domain || '').toLowerCase()));
+                        // 同时过滤 recoveredSites
+                        const filtered = recoveredSites.filter(site => {
+                            const d = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
+                            return d && !deadDomains.has(d);
+                        });
+                        recoveredSites.length = 0;
+                        recoveredSites.push(...filtered);
+                        // 同步清理 localStorage
+                        saveCached('recoveredSites', recoveredSites);
+                    }
+                } catch(e) {}
+
                 // 收集已存在的URL（使用缓存）
                 const existingUrls = getExistingUrls();
 
                 let added = 0;
-                // 预加载 stations_info.json 用于恢复站点信息
-                var allStationsInfo = null;
-                try {
-                    allStationsInfo = await fetchOnce('data/stations_info.json');
-                } catch(e) {}
-
                 recoveredSites.forEach(site => {
                     if (!site || !site.url) return;
                     if (!isValidStation(site)) return;
                     const domain = (site.domain || site.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '').toLowerCase();
                     if (!domain || existingUrls.has(domain)) return;
 
-                    // 尝试从 stations_info.json 获取完整信息（含邀请链接）
-                    var stationInfo = null;
-                    if (Array.isArray(allStationsInfo)) {
-                        stationInfo = allStationsInfo.find(function(s) {
-                            var d = (s.domain || '').toLowerCase();
-                            return d === domain;
-                        });
-                    }
-
                     // 添加到排行榜
                     try {
-                        var siteData = stationInfo ? {
-                            name: stationInfo.name || site.name || domain,
-                            url: stationInfo.url || site.url,
-                            description: stationInfo.description || site.description || (site.name || domain) + ' - AI API中转服务（已恢复）',
-                            score: stationInfo.score || site.score || 7.5,
-                            models: stationInfo.models || ['multi'],
-                            features: stationInfo.features || ['stable'],
-                            responseTime: stationInfo.response_time ? stationInfo.response_time.toFixed(2) + 's' : '?',
-                            source: 'recovered',
-                            freeAmount: stationInfo.free_amount || '',
-                            display_tags: stationInfo.display_tags || null,
-                            display_metrics: stationInfo.display_metrics || null,
-                        } : {
+                        addSiteToRanking({
                             name: site.name || domain,
                             url: site.url,
                             description: site.description || (site.name || domain) + ' - AI API中转服务（已恢复）',
@@ -8957,8 +8923,7 @@
                             responseTime: '?',
                             source: 'recovered',
                             freeAmount: ''
-                        };
-                        addSiteToRanking(siteData);
+                        });
                         existingUrls.add(domain);
                         added++;
                     } catch (err) {
