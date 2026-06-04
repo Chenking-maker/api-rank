@@ -278,7 +278,7 @@
     "url": "https://toapis.com/login?aff=yjH5",
     "domain": "toapis.com",
     "name": "豆腐 (ToAPIs)",
-    "description": "注册即领$0.2体验金，零成本试用。支持Claude/GPT/Gemini等主流模型，接口稳定可靠。",
+    "description": "智能API网关控制台，简洁高效的开发者入口。支持主流大模型调用，新用户注册即领$0.2体验金，零成本试用。",
     "models": [
       "claude",
       "gpt",
@@ -286,8 +286,9 @@
       "cheap"
     ],
     "features": [
-      "cheap",
-      "stable"
+      "stable",
+      "multi",
+      "cheap"
     ],
     "price": "medium",
     "free_amount": "$0.2体验金",
@@ -297,24 +298,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "$0.2体验金",
-      "0成本试用",
-      "稳定接口"
+      "新用户福利",
+      "零成本试用",
+      "控制台"
     ],
     "display_metrics": [
       {
-        "label": "响应",
-        "value": "3.30s",
-        "cls": "green"
-      },
-      {
-        "label": "优惠",
+        "label": "福利",
         "value": "$0.2体验金",
         "cls": "accent"
       },
       {
-        "label": "口碑",
-        "value": "接口稳定",
+        "label": "特色",
+        "value": "智能网关",
+        "cls": "green"
+      },
+      {
+        "label": "门槛",
+        "value": "零成本",
         "cls": ""
       }
     ]
@@ -323,13 +324,15 @@
     "url": "https://api.ikuncode.cc",
     "domain": "ikuncode.cc",
     "name": "爱坤代码 (IKunCode)",
-    "description": "专注编程的API站点，独立状态监控页面，按量计费透明。QQ群活跃问题响应快，Claude/GPT专精。",
+    "description": "开发者友好的API中转平台，提供功能完善的控制台、模型广场和详细文档。专注编程场景，Claude/GPT专精，QQ群活跃响应快。",
     "models": [
       "claude",
       "gpt"
     ],
     "features": [
-      "stable"
+      "stable",
+      "code",
+      "docs"
     ],
     "price": "medium",
     "free_amount": "",
@@ -339,24 +342,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "有监控页",
-      "QQ群活跃",
-      "编程专精"
+      "编程专精",
+      "文档完善",
+      "活跃社区"
     ],
     "display_metrics": [
       {
-        "label": "专业",
-        "value": "编程专精",
+        "label": "场景",
+        "value": "编程专用",
         "cls": "green"
       },
       {
-        "label": "响应",
-        "value": "0.67s",
+        "label": "支持",
+        "value": "QQ群活跃",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "状态监控",
+        "label": "文档",
+        "value": "详细完善",
         "cls": ""
       }
     ]
@@ -805,7 +808,7 @@
     "url": "https://api.lingyaai.cn",
     "domain": "lingyaai.cn",
     "name": "灵芽API",
-    "description": "聚合650+主流AI模型，国内直连低延迟，支持支付宝/微信充值，按量计费透明。",
+    "description": "运营2年+的老牌API中转平台，服务2万+开发者。聚合100+主流AI模型，全球多节点部署，支持支付宝/微信充值，国内直连低延迟。",
     "models": [
       "claude",
       "gpt",
@@ -813,7 +816,9 @@
       "domestic"
     ],
     "features": [
-      "multi"
+      "stable",
+      "multi",
+      "enterprise"
     ],
     "price": "medium",
     "free_amount": "",
@@ -823,24 +828,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "650+模型",
-      "国内直连",
-      "按量计费"
+      "2年老牌",
+      "100+模型",
+      "2万+用户"
     ],
     "display_metrics": [
       {
-        "label": "优惠",
-        "value": "支付宝充值",
+        "label": "资历",
+        "value": "2年+运营",
         "cls": "green"
       },
       {
-        "label": "专业",
-        "value": "650+模型",
+        "label": "规模",
+        "value": "100+模型",
         "cls": "accent"
       },
       {
-        "label": "价格",
-        "value": "按量透明",
+        "label": "用户",
+        "value": "2万+",
         "cls": ""
       }
     ]
@@ -2245,34 +2250,36 @@
     "url": "https://hongmacc.com",
     "domain": "hongmacc.com",
     "name": "红麦API (hongmacc)",
-    "description": "社区口碑不错的中转站，支持Claude/GPT/Gemini主流模型，稳定性经过用户验证。",
+    "description": "企业级API网关，20+全球节点部署，延迟<50ms。支持Claude Code、Codex CLI等编程工具接入，高并发稳定，适合团队和企业使用。",
     "models": [
       "claude",
       "gpt",
       "gemini"
     ],
     "features": [
-      "multi"
+      "enterprise",
+      "code",
+      "stable"
     ],
     "display_tags": [
-      "社区口碑",
-      "稳定运行",
-      "多模型"
+      "企业网关",
+      "20+节点",
+      "<50ms延迟"
     ],
     "display_metrics": [
       {
-        "label": "专业",
-        "value": "多模型",
-        "cls": "green"
-      },
-      {
-        "label": "价格",
-        "value": "按量计费",
+        "label": "性能",
+        "value": "<50ms延迟",
         "cls": "accent"
       },
       {
-        "label": "福利",
-        "value": "社区验证",
+        "label": "节点",
+        "value": "20+全球",
+        "cls": "green"
+      },
+      {
+        "label": "场景",
+        "value": "Claude Code",
         "cls": ""
       }
     ],
@@ -3639,8 +3646,8 @@
     "free_amount": "",
     "score": 8.5,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -3663,7 +3670,8 @@
         "value": "多模型支持",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "访问超时/失败"
   },
   {
     "url": "https://nekocode.com",
@@ -3724,8 +3732,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -3748,7 +3756,8 @@
         "value": "Claude全系列",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "访问失败"
   },
   {
     "url": "https://9527code.com",
@@ -3810,8 +3819,8 @@
     "free_amount": "",
     "score": 7.9,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "Claude专精",
@@ -3834,7 +3843,8 @@
         "value": "国内直连",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "安全验证页面阻挡"
   },
   {
     "url": "https://yundu.ai",
@@ -3898,8 +3908,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -3922,7 +3932,8 @@
         "value": "多渠道冗余",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "访问失败"
   },
   {
     "url": "https://sevnx.com",
@@ -3942,8 +3953,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -3966,7 +3977,8 @@
         "value": "安全合规",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "网络安全公司，提供渗透测试服务"
   },
   {
     "url": "https://sudocode.com",
@@ -4072,8 +4084,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4096,7 +4108,8 @@
         "value": "智能调度",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "域名正在出售（$200,000）"
   },
   {
     "url": "https://luchikey.com",
@@ -4206,8 +4219,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4230,7 +4243,8 @@
         "value": "快速稳定",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "医疗系统运营AI平台"
   },
   {
     "url": "https://poixe.com",
@@ -4421,8 +4435,8 @@
     "free_amount": "",
     "score": 7.9,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4445,7 +4459,8 @@
         "value": "国内直连",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "访问超时"
   },
   {
     "url": "https://muskai.com",
@@ -4465,8 +4480,8 @@
     "free_amount": "",
     "score": 7.5,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4489,7 +4504,8 @@
         "value": "多源底层",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "简单搜索引擎导航页"
   },
   {
     "url": "https://juxing.ai",
@@ -4776,8 +4792,8 @@
     "free_amount": "",
     "score": 7.8,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -4800,7 +4816,8 @@
         "value": "Token管理",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "域名正在出售"
   },
   {
     "url": "https://duckcoding.com",
@@ -5218,8 +5235,8 @@
     "free_amount": "",
     "score": 7.6,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5242,7 +5259,8 @@
         "value": "前沿模型",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "私有站点，需登录"
   },
   {
     "url": "https://derouter.com",
@@ -5262,8 +5280,8 @@
     "free_amount": "",
     "score": 8.4,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5286,7 +5304,8 @@
         "value": "故障转移",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "访问失败"
   },
   {
     "url": "https://coderelay.com",
@@ -5305,8 +5324,8 @@
     "free_amount": "",
     "score": 7.7,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5329,7 +5348,8 @@
         "value": "企业级服务",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "访问失败"
   },
   {
     "url": "https://huiyun.ai",
@@ -5468,13 +5488,14 @@
     "url": "https://mytokenpi.com",
     "domain": "mytokenpi.com",
     "name": "MyTokenPi",
-    "description": "Token管理便捷，支持Claude/GPT/Gemini等主流模型。",
+    "description": "高性价比API中转平台，聚合30+供应商智能比价，最低0.035x价格倍率。Claude Code开箱即用，Token管理便捷，适合成本敏感型开发者。",
     "models": [
       "claude",
       "gpt",
       "gemini"
     ],
     "features": [
+      "cheap",
       "stable",
       "multi"
     ],
@@ -5486,24 +5507,24 @@
     "last_check": "2026-06-02",
     "check_count": 1,
     "display_tags": [
-      "按量计费",
-      "多模型",
-      "稳定可靠"
+      "智能比价",
+      "0.035x倍率",
+      "Claude Code"
     ],
     "display_metrics": [
       {
-        "label": "专业",
-        "value": "多模型支持",
-        "cls": "green"
-      },
-      {
-        "label": "口碑",
-        "value": "口碑良好",
+        "label": "价格",
+        "value": "0.035x倍率",
         "cls": "accent"
       },
       {
-        "label": "应用",
-        "value": "Token管理",
+        "label": "供应商",
+        "value": "30+",
+        "cls": "green"
+      },
+      {
+        "label": "特色",
+        "value": "开箱即用",
         "cls": ""
       }
     ]
@@ -5615,8 +5636,8 @@
     "free_amount": "",
     "score": 7.9,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5639,7 +5660,8 @@
         "value": "社区口碑",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "安全验证页面阻挡"
   },
   {
     "url": "https://ekan8.com",
@@ -5659,8 +5681,8 @@
     "free_amount": "",
     "score": 7.9,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-02",
+    "alive": false,
+    "last_check": "2026-06-04",
     "check_count": 1,
     "display_tags": [
       "按量计费",
@@ -5683,7 +5705,8 @@
         "value": "按量计费",
         "cls": ""
       }
-    ]
+    ],
+    "reason": "站点已停止运行"
   },
   {
     "url": "https://sudocode.us",

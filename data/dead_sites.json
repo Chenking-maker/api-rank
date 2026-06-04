@@ -233,5 +233,110 @@
     "domain": "nekocode.com",
     "status": "dead",
     "reason": "无法访问"
+  },
+  {
+    "url": "https://anpin.ai",
+    "name": "AnPin AI",
+    "domain": "anpin.ai",
+    "status": "dead",
+    "reason": "访问超时/失败"
+  },
+  {
+    "url": "https://clauqe.com",
+    "name": "ClauqeAI",
+    "domain": "clauqe.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://claudecn.com",
+    "name": "ClaudeCN",
+    "domain": "claudecn.com",
+    "status": "dead",
+    "reason": "安全验证页面阻挡"
+  },
+  {
+    "url": "https://toknex.com",
+    "name": "Toknex",
+    "domain": "toknex.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://sevnx.com",
+    "name": "SevnX",
+    "domain": "sevnx.com",
+    "status": "dead",
+    "reason": "网络安全公司，提供渗透测试服务"
+  },
+  {
+    "url": "https://shuzhi.ai",
+    "name": "数智AI",
+    "domain": "shuzhi.ai",
+    "status": "dead",
+    "reason": "域名正在出售（$200,000）"
+  },
+  {
+    "url": "https://luminai.com",
+    "name": "Lumin AI",
+    "domain": "luminai.com",
+    "status": "dead",
+    "reason": "医疗系统运营AI平台"
+  },
+  {
+    "url": "https://claudeapi.net",
+    "name": "Claude API",
+    "domain": "claudeapi.net",
+    "status": "dead",
+    "reason": "访问超时"
+  },
+  {
+    "url": "https://muskai.com",
+    "name": "MuskAI",
+    "domain": "muskai.com",
+    "status": "dead",
+    "reason": "简单搜索引擎导航页"
+  },
+  {
+    "url": "https://qqtoken.com",
+    "name": "球球Token",
+    "domain": "qqtoken.com",
+    "status": "dead",
+    "reason": "域名正在出售"
+  },
+  {
+    "url": "https://frontierintelligence.ai",
+    "name": "Frontier Intelligence",
+    "domain": "frontierintelligence.ai",
+    "status": "dead",
+    "reason": "私有站点，需登录"
+  },
+  {
+    "url": "https://derouter.com",
+    "name": "DeRouter",
+    "domain": "derouter.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://coderelay.com",
+    "name": "CodeRelay",
+    "domain": "coderelay.com",
+    "status": "dead",
+    "reason": "访问失败"
+  },
+  {
+    "url": "https://hajimi.com",
+    "name": "哈基米",
+    "domain": "hajimi.com",
+    "status": "dead",
+    "reason": "安全验证页面阻挡"
+  },
+  {
+    "url": "https://ekan8.com",
+    "name": "Ekan8",
+    "domain": "ekan8.com",
+    "status": "dead",
+    "reason": "站点已停止运行"
   }
 ]
