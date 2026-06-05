@@ -1,0 +1,847 @@
+[
+  {
+    "name": "Ofox.AI",
+    "url": "https://ofox.ai",
+    "score": 9.99,
+    "response_time": 1.04,
+    "description": "多模型聚合中转平台，支持Claude、GPT、Gemini等主流模型，提供稳定低价的API接入服务。",
+    "tags": [
+      {
+        "text": "🔥多模型",
+        "color": "hot"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      },
+      {
+        "text": "稳定",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "doubao",
+      "qwen",
+      "kimi",
+      "glm"
+    ]
+  },
+  {
+    "name": "接口AI (Jiekou AI)",
+    "url": "https://jiekou.ai",
+    "score": 9.99,
+    "response_time": 0.63,
+    "description": "一站式AI接口聚合平台，支持Claude、GPT、Gemini等7+主流模型，价格透明，国内直连。",
+    "tags": [
+      {
+        "text": "🔥推荐",
+        "color": "hot"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "kimi",
+      "glm",
+      "yi"
+    ]
+  },
+  {
+    "name": "API Mart",
+    "url": "https://apimart.ai",
+    "score": 9.99,
+    "response_time": 1.63,
+    "description": "AI模型API市场，聚合多家供应商，支持Claude、GPT、Gemini等，按需选择最优价格。",
+    "tags": [
+      {
+        "text": "🔥聚合",
+        "color": "hot"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "按需计费",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "kimi",
+      "glm"
+    ]
+  },
+  {
+    "name": "硅基流动",
+    "url": "https://siliconflow.cn",
+    "score": 9.88,
+    "response_time": 0.33,
+    "description": "国产模型推理平台，DeepSeek全系当天同步，600万用户选择，支持GLM、通义等国产模型。",
+    "tags": [
+      {
+        "text": "🔥国产首选",
+        "color": "hot"
+      },
+      {
+        "text": "DeepSeek",
+        "color": "stable"
+      },
+      {
+        "text": "免费额度",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "glm",
+      "domestic"
+    ]
+  },
+  {
+    "name": "灵芽API",
+    "url": "https://api.lingyaai.cn",
+    "score": 9.6,
+    "response_time": 0.61,
+    "description": "多模型API中转服务，支持Claude、GPT、Gemini、DeepSeek等主流模型，价格实惠。",
+    "tags": [
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek"
+    ]
+  },
+  {
+    "name": "DMXAPI",
+    "url": "https://dmxapi.com",
+    "score": 9.51,
+    "response_time": 0.52,
+    "description": "AI模型API聚合平台，支持7+主流模型，提供Claude、GPT、DeepSeek等一站式接入。",
+    "tags": [
+      {
+        "text": "🔥聚合",
+        "color": "hot"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "deepseek",
+      "qwen",
+      "kimi",
+      "glm",
+      "yi"
+    ]
+  },
+  {
+    "name": "N1N.AI",
+    "url": "https://n1n.ai",
+    "score": 9.21,
+    "response_time": 0.92,
+    "description": "AI API中转服务，支持Claude、GPT、Gemini、DeepSeek等主流模型，稳定可靠。",
+    "tags": [
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "稳定",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek"
+    ]
+  },
+  {
+    "name": "FishXCode",
+    "url": "https://fishxcode.com",
+    "score": 8.73,
+    "response_time": 1.26,
+    "description": "AI编程辅助API中转，支持Claude、GPT、Gemini等模型，专注开发者体验。",
+    "tags": [
+      {
+        "text": "编程专用",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "开发者友好",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ]
+  },
+  {
+    "name": "产灵API",
+    "url": "https://xdhdancer.top",
+    "score": 8.72,
+    "response_time": 0.19,
+    "description": "AI模型API中转服务，响应速度极快，提供多种主流模型的便捷接入。",
+    "tags": [
+      {
+        "text": "⚡极速",
+        "color": "hot"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "API易",
+    "url": "https://api.easyapi.com",
+    "score": 8.68,
+    "response_time": 0.22,
+    "description": "简洁易用的AI API中转平台，响应速度极快，提供多种主流模型接入服务。",
+    "tags": [
+      {
+        "text": "⚡极速",
+        "color": "hot"
+      },
+      {
+        "text": "简洁易用",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "RightCode",
+    "url": "https://www.right.codes/register?aff=56503380",
+    "score": 8.37,
+    "response_time": 0.43,
+    "description": "AI编程辅助API服务，支持多种主流模型，专注代码生成场景。",
+    "tags": [
+      {
+        "text": "编程专用",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "木瓜AI",
+    "url": "https://api.mooko.ai/register?aff=JiqY",
+    "score": 8.44,
+    "response_time": 0.41,
+    "description": "AI模型API中转服务，支持多种主流模型，价格实惠，国内直连。",
+    "tags": [
+      {
+        "text": "低价",
+        "color": "cheap"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "Jeniya AI",
+    "url": "https://jeniya.cn",
+    "score": 8.44,
+    "response_time": 1.15,
+    "description": "AI API中转平台，支持Claude、GPT、DeepSeek等模型，国内直连。",
+    "tags": [
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "稳定",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "deepseek"
+    ]
+  },
+  {
+    "name": "SSSAICode",
+    "url": "https://www.sssaicode.com/register?ref=BO64DM",
+    "score": 8.26,
+    "response_time": 0.79,
+    "description": "AI编程辅助API，支持Claude、Gemini等模型，专注开发者体验。",
+    "tags": [
+      {
+        "text": "编程专用",
+        "color": "stable"
+      },
+      {
+        "text": "Claude",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gemini"
+    ]
+  },
+  {
+    "name": "APIYI",
+    "url": "https://api.apiyi.com",
+    "score": 8.27,
+    "response_time": 0.61,
+    "description": "AI API中转服务，支持零一万物等国产模型，国内直连。",
+    "tags": [
+      {
+        "text": "国产模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "yi"
+    ]
+  },
+  {
+    "name": "hongmaccAPI",
+    "url": "https://hongmacc.com",
+    "score": 8.26,
+    "response_time": 0.72,
+    "description": "AI API中转服务，支持Claude、Gemini等模型，国内直连。",
+    "tags": [
+      {
+        "text": "Claude",
+        "color": "stable"
+      },
+      {
+        "text": "Gemini",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gemini"
+    ]
+  },
+  {
+    "name": "AIHubMix",
+    "url": "https://aihubmix.com",
+    "score": 8.3,
+    "response_time": 0.46,
+    "description": "AI模型聚合平台，提供多种主流模型的API接入服务，国内直连。",
+    "tags": [
+      {
+        "text": "聚合",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "星链4SAPI",
+    "url": "https://4sapi.com",
+    "score": 8.21,
+    "response_time": 0.63,
+    "description": "企业级AI API中转服务，支持Claude、GPT、Gemini等模型，高并发稳定。",
+    "tags": [
+      {
+        "text": "企业级",
+        "color": "stable"
+      },
+      {
+        "text": "高并发",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "PackyCode",
+    "url": "https://www.packyapi.com/register?aff=zrXb",
+    "score": 8.15,
+    "response_time": 0.66,
+    "description": "国内最早针对Claude Code优化的供应商，多家中转站上游，支持国产模型。",
+    "tags": [
+      {
+        "text": "🔥上游",
+        "color": "hot"
+      },
+      {
+        "text": "Claude专精",
+        "color": "stable"
+      },
+      {
+        "text": "国产模型",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "IKunCode",
+    "url": "https://api.ikuncode.cc",
+    "score": 8.15,
+    "response_time": 0.67,
+    "description": "AI编程辅助API服务，支持多种主流模型，专注开发者体验。",
+    "tags": [
+      {
+        "text": "编程专用",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "147AI",
+    "url": "https://147ai.com",
+    "score": 8.15,
+    "response_time": 0.55,
+    "description": "AI API中转服务，提供多种主流模型的便捷接入，国内直连。",
+    "tags": [
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "Fchat API (aioncode)",
+    "url": "https://aioncode.com",
+    "score": 8.15,
+    "response_time": 3.0,
+    "description": "AI API中转服务，支持Claude、GPT、Gemini、DeepSeek等主流模型。",
+    "tags": [
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek"
+    ]
+  },
+  {
+    "name": "Save AI",
+    "url": "https://savebill.store/chat?ref=611",
+    "score": 8.11,
+    "response_time": 4.44,
+    "description": "AI多模型聚合平台，支持Claude、GPT、Gemini等一手原厂模型。",
+    "tags": [
+      {
+        "text": "聚合",
+        "color": "stable"
+      },
+      {
+        "text": "原厂模型",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      }
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ]
+  },
+  {
+    "name": "造图局",
+    "url": "https://zaotu.vip/?invite=yuyTxd3t",
+    "score": 8.05,
+    "response_time": 0.81,
+    "description": "AI图像生成API平台，支持多种AI绘图模型，专注图像创作场景。",
+    "tags": [
+      {
+        "text": "🎨绘图",
+        "color": "hot"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "GPTCat",
+    "url": "https://gptcat.cc",
+    "score": 8.04,
+    "response_time": 1.61,
+    "description": "AI API中转服务，支持GPT等主流模型，国内直连。",
+    "tags": [
+      {
+        "text": "GPT",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "gpt"
+    ]
+  },
+  {
+    "name": "AgentRouter",
+    "url": "https://agentrouter.org",
+    "score": 7.97,
+    "response_time": 0.88,
+    "description": "AI Agent路由平台，支持多种AI模型的智能调度和负载均衡。",
+    "tags": [
+      {
+        "text": "Agent",
+        "color": "stable"
+      },
+      {
+        "text": "路由",
+        "color": "stable"
+      },
+      {
+        "text": "负载均衡",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "API2D",
+    "url": "https://api2d.com",
+    "score": 8.0,
+    "response_time": 0.83,
+    "description": "AI API中转服务，支持Claude、GPT、Gemini等模型，稳定运营。",
+    "tags": [
+      {
+        "text": "稳定",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "GptsAPI",
+    "url": "https://gptsapi.net",
+    "score": 7.81,
+    "response_time": 1.15,
+    "description": "GPT系列API中转服务，专注OpenAI模型，国内直连。",
+    "tags": [
+      {
+        "text": "GPT",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": [
+      "gpt"
+    ]
+  },
+  {
+    "name": "向量引擎",
+    "url": "https://api.vectorengine.ai/register?aff=xIFd",
+    "score": 7.81,
+    "response_time": 1.07,
+    "description": "AI向量引擎API平台，专注向量计算和嵌入模型服务。",
+    "tags": [
+      {
+        "text": "向量",
+        "color": "stable"
+      },
+      {
+        "text": "嵌入",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "0011AI",
+    "url": "https://0011.ai",
+    "score": 7.72,
+    "response_time": 1.4,
+    "description": "AI API中转服务，提供多种主流模型的便捷接入。",
+    "tags": [
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "aigocode",
+    "url": "https://aigocode.com/invite/FY2CMDBZ",
+    "score": 7.66,
+    "response_time": 1.4,
+    "description": "AI编程辅助API服务，支持多种主流模型，专注代码生成场景。",
+    "tags": [
+      {
+        "text": "编程专用",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "ToAPIs",
+    "url": "https://toapis.com/login?aff=yjH5",
+    "score": 7.56,
+    "response_time": 3.3,
+    "description": "AI API中转服务，提供多种主流模型的便捷接入。",
+    "tags": [
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "SnakeGPT",
+    "url": "https://snakegpt.vip",
+    "score": 7.59,
+    "response_time": 1.33,
+    "description": "AI API中转服务，提供GPT等主流模型的便捷接入。",
+    "tags": [
+      {
+        "text": "GPT",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "诗云API(ShiyunApi)",
+    "url": "https://shiyunapi.com",
+    "score": 7.32,
+    "response_time": 3.26,
+    "description": "AI API中转服务，支持多模态、成本减半、无套路智能路由。",
+    "tags": [
+      {
+        "text": "多模态",
+        "color": "stable"
+      },
+      {
+        "text": "智能路由",
+        "color": "stable"
+      },
+      {
+        "text": "国内直连",
+        "color": "stable"
+      }
+    ],
+    "models": []
+  },
+  {
+    "name": "Weelinking",
+    "url": "https://api.weelinking.com",
+    "score": 7.17,
+    "response_time": 7.59,
+    "description": "AI API中转服务，提供多种主流模型的便捷接入。",
+    "tags": [
+      {
+        "text": "国内直连",
+        "color": "stable"
+      },
+      {
+        "text": "多模型",
+        "color": "stable"
+      },
+      {
+        "text": "低价",
+        "color": "cheap"
+      }
+    ],
+    "models": []
+  }
+]

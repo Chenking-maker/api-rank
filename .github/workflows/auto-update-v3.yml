@@ -1,0 +1,143 @@
+name: Auto Update API Stations v3
+
+on:
+  schedule:
+    # 每天北京时间14:00运行 (UTC 06:00)，比daily-check晚2小时避免冲突
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+# 防止多个运行同时执行
+concurrency:
+  group: auto-update-v3
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-stations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30  # 最长运行30分钟，防止卡死
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        # 不启用pip缓存，因为仓库没有requirements.txt
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          libnss3 \
+          libnspr4 \
+          libatk1.0-0 \
+          libatk-bridge2.0-0 \
+          libcups2 \
+          libdrm2 \
+          libxkbcommon0 \
+          libxcomposite1 \
+          libxdamage1 \
+          libxfixes3 \
+          libxrandr2 \
+          libgbm1 \
+          libasound2t64 \
+          libpango-1.0-0 \
+          libcairo2 \
+          libatspi2.0-0 \
+          libxshmfence1 \
+          fonts-liberation \
+          libcurl4-openssl-dev \
+          libssl-dev || true
+
+    - name: Install Python dependencies
+      run: |
+        pip install --upgrade pip
+        # 按照Scrapling官方要求安装：scrapling[fetchers] 包含所有爬虫依赖
+        pip install 'scrapling[fetchers]'
+        # 安装playwright浏览器
+        playwright install chromium
+        # 安装其他依赖
+        pip install requests beautifulsoup4
+
+    - name: Verify all packages
+      run: |
+        echo "=== 验证安装 ==="
+        set +e  # 允许错误继续执行
+
+        echo "1. 检查 playwright..."
+        python -c "import playwright; print('playwright OK')" || echo "[ERROR] playwright 导入失败"
+
+        echo "2. 检查 curl_cffi..."
+        python -c "import curl_cffi; print('curl_cffi OK')" || echo "[ERROR] curl_cffi 导入失败"
+
+        echo "3. 检查 scrapling..."
+        python -c "import scrapling; print('scrapling:', scrapling.__version__)" || echo "[ERROR] scrapling 导入失败"
+
+        echo "4. 检查 StealthyFetcher..."
+        python -c "from scrapling.fetchers import StealthyFetcher; print('StealthyFetcher OK')" || echo "[ERROR] StealthyFetcher 导入失败"
+
+        echo "5. 检查 requests..."
+        python -c "import requests; print('requests OK')" || echo "[ERROR] requests 导入失败"
+
+        echo "6. 检查 beautifulsoup4..."
+        python -c "from bs4 import BeautifulSoup; print('beautifulsoup4 OK')" || echo "[ERROR] beautifulsoup4 导入失败"
+
+        echo "7. 检查已安装的包列表..."
+        pip list | grep -E "(scrapling|playwright|curl|requests|beautiful)"
+
+        set -e  # 恢复错误退出
+
+    - name: Run Smart Crawler v3
+      run: |
+        python scripts/crawler_v3.py
+      env:
+        PYTHONUNBUFFERED: 1
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if git diff --quiet data/ dead-sites.html; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "=== Changed files ==="
+          git diff --stat data/ dead-sites.html
+        fi
+
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add data/ dead-sites.html
+        git commit -m "Auto update: $(date +'%Y-%m-%d %H:%M')"
+        git push
+
+    - name: No changes
+      if: steps.check_changes.outputs.changed == 'false'
+      run: echo "No changes detected, skipping commit."
+
+    - name: Deploy to Cloudflare Pages
+      if: steps.check_changes.outputs.changed == 'true'
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CF_TOKEN }}
+        accountId: ${{ secrets.CF_ACCOUNT_ID }}
+        projectName: api-rank
+        directory: .
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: crawler-results
+        path: data/
+        retention-days: 30

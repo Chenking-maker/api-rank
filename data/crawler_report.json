@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-05-31T11:58:08.745106",
+  "elapsed_seconds": 339.6,
+  "summary": {
+    "total_existing": 61,
+    "total_existing_with_url": 61,
+    "total_pending": 20,
+    "total_dead": 11,
+    "new_discovered": 2,
+    "new_dead": 2,
+    "new_recovered": 2,
+    "scrapling_available": true
+  },
+  "new_discovered": [
+    {
+      "url": "https://api.coderplan.ai",
+      "name": "CoderPlan",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://coderplan.ai",
+      "name": "CoderPlan",
+      "source": "github:API中转站 推_extract"
+    }
+  ],
+  "new_dead": [
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c"
+    },
+    {
+      "url": "https://closeai-asia.com",
+      "name": "CloseAI",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
+    }
+  ],
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
+}
