@@ -1,79 +1,162 @@
 {
-  "updated_at": "2026-05-31T11:58:08.744392",
+  "updated_at": "2026-06-05T16:21:16.693482",
   "recovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI",
-      "domain": "poloapi.com",
-      "recovered_at": "2026-05-31T11:54:36.793469"
+      "url": "https://anyroute.com",
+      "name": "AnyRoute",
+      "domain": "anyroute.com",
+      "recovered_at": "2026-06-05T16:17:37.403532"
     },
     {
-      "name": "B.AI (波场)",
-      "domain": "b.ai",
-      "url": "https://b.ai",
-      "recovered_at": "2026-06-05"
+      "url": "https://qianfan.baidubce.com",
+      "name": "百度千帆",
+      "domain": "qianfan.baidubce.com",
+      "recovered_at": "2026-06-05T16:17:41.864492"
     },
     {
-      "name": "GPT猫 (GPTCat)",
-      "domain": "gptcat.cc",
-      "url": "https://gptcat.cc",
-      "recovered_at": "2026-06-05"
+      "url": "https://zhihuiapi.com",
+      "name": "智惠API",
+      "domain": "zhihuiapi.com",
+      "recovered_at": "2026-06-05T16:17:47.521620"
     },
     {
-      "name": "蛇GPT (SnakeGPT)",
-      "domain": "snakegpt.vip",
-      "url": "https://snakegpt.vip",
-      "recovered_at": "2026-06-05"
+      "url": "https://modcon.ai",
+      "name": "ModCon",
+      "domain": "modcon.ai",
+      "recovered_at": "2026-06-05T16:17:48.142154"
     },
     {
-      "name": "SSSAICode",
-      "domain": "sssaicode.com",
-      "url": "https://www.sssaicode.com/register?ref=SRVFVP",
-      "recovered_at": "2026-06-05"
+      "url": "https://switchbase.com",
+      "name": "SwitchBase",
+      "domain": "switchbase.com",
+      "recovered_at": "2026-06-05T16:17:48.747470"
     },
     {
-      "name": "Doro API",
-      "domain": "doro.lol",
-      "url": "https://doro.lol/register?aff=0LSF",
-      "recovered_at": "2026-06-05"
+      "url": "https://anpin.ai",
+      "name": "AnPin AI",
+      "domain": "anpin.ai",
+      "recovered_at": "2026-06-05T16:18:35.522080"
     },
     {
-      "name": "随人AI",
-      "domain": "suirenai.com",
-      "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
-      "recovered_at": "2026-06-05"
+      "url": "https://claudecn.com",
+      "name": "ClaudeCN",
+      "domain": "claudecn.com",
+      "recovered_at": "2026-06-05T16:18:40.817709"
     },
     {
-      "name": "Unity2.AI",
-      "domain": "unity2.ai",
-      "url": "https://unity2.ai/register?ref=bayLaABG",
-      "recovered_at": "2026-06-05"
+      "url": "https://toknex.com",
+      "name": "Toknex",
+      "domain": "toknex.com",
+      "recovered_at": "2026-06-05T16:18:41.306638"
     },
     {
-      "name": "SudoCode",
-      "domain": "sudocode.com",
-      "url": "https://sudocode.run/register?aff=G7iU",
-      "recovered_at": "2026-06-05"
+      "url": "https://sevnx.com",
+      "name": "SevnX",
+      "domain": "sevnx.com",
+      "recovered_at": "2026-06-05T16:18:41.804682"
     },
     {
-      "name": "ApiKey.fun",
-      "domain": "apikey.fun",
-      "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
-      "recovered_at": "2026-06-05"
+      "url": "https://luminai.com",
+      "name": "Lumin AI",
+      "domain": "luminai.com",
+      "recovered_at": "2026-06-05T16:18:42.441009"
+    },
+    {
+      "url": "https://claudeapi.net",
+      "name": "Claude API",
+      "domain": "claudeapi.net",
+      "recovered_at": "2026-06-05T16:18:43.273444"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI",
+      "domain": "muskai.com",
+      "recovered_at": "2026-06-05T16:18:43.775418"
+    },
+    {
+      "url": "https://frontierintelligence.ai",
+      "name": "Frontier Intelligence",
+      "domain": "frontierintelligence.ai",
+      "recovered_at": "2026-06-05T16:18:46.219008"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter",
+      "domain": "derouter.com",
+      "recovered_at": "2026-06-05T16:18:46.741315"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay",
+      "domain": "coderelay.com",
+      "recovered_at": "2026-06-05T16:18:47.252562"
+    },
+    {
+      "url": "https://4sapi.com",
+      "name": "星链4SAPI",
+      "domain": "4sapi.com",
+      "recovered_at": "2026-06-05T16:18:47.552792"
+    },
+    {
+      "url": "https://api.easyapi.com",
+      "name": "API易",
+      "domain": "api.easyapi.com",
+      "recovered_at": "2026-06-05T16:18:47.853029"
+    },
+    {
+      "url": "https://api.ikuncode.cc",
+      "name": "爱坤代码 (IKunCode)",
+      "domain": "api.ikuncode.cc",
+      "recovered_at": "2026-06-05T16:18:48.153284"
+    },
+    {
+      "url": "https://302.ai",
+      "name": "302.AI",
+      "domain": "302.ai",
+      "recovered_at": "2026-06-05T16:18:48.453537"
+    },
+    {
+      "url": "https://ai.huoyachat.com",
+      "name": "AI中文版",
+      "domain": "ai.huoyachat.com",
+      "recovered_at": "2026-06-05T16:18:50.040894"
+    },
+    {
+      "url": "https://web.apiplus.org",
+      "name": "APIPlus",
+      "domain": "web.apiplus.org",
+      "recovered_at": "2026-06-05T16:18:50.519680"
+    },
+    {
+      "url": "https://bewildcard.com",
+      "name": "万卡API (WildCard)",
+      "domain": "bewildcard.com",
+      "recovered_at": "2026-06-05T16:18:51.141584"
+    },
+    {
+      "url": "https://fishxcode.com",
+      "name": "鱼代码 (FishXCode)",
+      "domain": "fishxcode.com",
+      "recovered_at": "2026-06-05T16:18:51.599035"
+    },
+    {
+      "url": "https://apimart.ai",
+      "name": "API集市 (API Mart)",
+      "domain": "apimart.ai",
+      "recovered_at": "2026-06-05T16:18:52.401510"
+    },
+    {
+      "url": "https://console.mistral.ai",
+      "name": "Mistral AI",
+      "domain": "console.mistral.ai",
+      "recovered_at": "2026-06-05T16:18:54.053422"
+    },
+    {
+      "url": "https://console.groq.com",
+      "name": "Groq",
+      "domain": "console.groq.com",
+      "recovered_at": "2026-06-05T16:18:54.781028"
     }
   ],
-  "new_dead": [
-    {
-      "url": "https://openai-sb.com",
-      "name": "OpenAI-SB",
-      "domain": "openai-sb.com",
-      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c"
-    },
-    {
-      "url": "https://closeai-asia.com",
-      "name": "CloseAI",
-      "domain": "closeai-asia.com",
-      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
-    }
-  ]
+  "new_dead": []
 }
