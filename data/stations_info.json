@@ -253,7 +253,7 @@
     ],
     "price": "low",
     "free_amount": "每日免费额度",
-    "score": 9.83,
+    "score": 9.15,
     "response_time": 0.47,
     "alive": true,
     "last_check": "2026-06-05",
@@ -1588,7 +1588,7 @@
     "likes": 0
   },
   {
-    "url": "https://aicodemirror.com",
+    "url": "https://www.aicodemirror.com/register?invitecode=LAU7RO",
     "domain": "aicodemirror.com",
     "name": "AICodeMirror",
     "description": "面向企业和开发者，支持Claude Code/Codex/Gemini CLI一键接入，280+天稳定运行，注册送8元永久额度。",
@@ -1872,10 +1872,11 @@
     "score": 9,
     "price": "low",
     "response_time": 0.19,
-    "alive": true,
+    "alive": false,
     "last_check": "2026-06-05",
     "check_count": 3,
-    "likes": 0
+    "likes": 0,
+    "reason": "无法访问"
   },
   {
     "url": "https://aihubmix.com/?aff=U9CV",
@@ -4655,7 +4656,7 @@
     "likes": 0
   },
   {
-    "url": "https://cubence.com",
+    "url": "https://cubence.com/signup?code=SCV0RYQK",
     "domain": "cubence.com",
     "name": "Cubence",
     "description": "企业级Claude Code与Codex API网关，提供稳定可扩展的AI模型接入基础设施。支持高级监控、用量分析和灵活定价方案。",
