@@ -1,0 +1,27 @@
+# Scoring Criteria
+
+## Dimensions
+
+| Dimension | Weight | Description |
+|-----------|--------|-------------|
+| Stability | 30% | Uptime, failure frequency, recovery speed |
+| Speed | 25% | API response time, first-token latency |
+| Price | 20% | Cost-effectiveness, free tier, billing transparency |
+| Support | 15% | Customer service, documentation quality |
+| Features | 10% | Model variety, unique features |
+
+## Rating Levels
+
+| Score | Rating | Description |
+|-------|--------|-------------|
+| 9.0-10.0 | Excellent | Top tier |
+| 8.0-8.9 | Good | Recommended |
+| 7.0-7.9 | Average | Acceptable |
+| 6.0-6.9 | Below Average | Use with caution |
+| < 6.0 | Poor | Not recommended |
+
+## Updates
+
+- Scores updated weekly
+- Major changes updated immediately
+- User feedback incorporated into scoring
