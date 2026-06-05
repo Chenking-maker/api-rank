@@ -2621,6 +2621,7 @@
 
             .rank-card.dead {
 
+                display: block !important;
                 opacity: 0.35;
 
                 padding: 12px;
@@ -5805,16 +5806,14 @@
             cards.forEach(card => {
 
                 const name = card.querySelector('.rank-name');
-
                 const desc = card.querySelector('.rank-desc');
-
                 const text = (name ? name.textContent : '') + (desc ? desc.textContent : '');
-
                 const match = text.toLowerCase().includes(trimmed);
+                const isDead = card.classList.contains('dead');
 
-                card.style.display = match ? '' : 'none';
+                card.style.display = (match && !isDead) ? '' : 'none';
 
-                if (match) count++;
+                if (match && !isDead) count++;
 
             });
 
@@ -5873,19 +5872,19 @@
 
                 } else if (type === 'cheap') {
 
-                    show = tags.includes('cheap');
+                    show = tags.includes('cheap') && !isDead;
 
                 } else if (type === 'enterprise') {
 
-                    show = tags.includes('enterprise');
+                    show = tags.includes('enterprise') && !isDead;
 
                 } else if (type === 'image') {
 
-                    show = tags.includes('image');
+                    show = tags.includes('image') && !isDead;
 
                 } else {
 
-                    show = tags.includes(type);
+                    show = tags.includes(type) && !isDead;
 
                 }
 
@@ -5937,9 +5936,11 @@
 
         function openSectionModal(id) {
 
-            document.getElementById(id).classList.add('active');
-
-            document.body.style.overflow = 'hidden';
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
         }
 
@@ -5947,9 +5948,11 @@
 
         function closeSectionModal(id) {
 
-            document.getElementById(id).classList.remove('active');
-
-            document.body.style.overflow = '';
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('active');
+                document.body.style.overflow = '';
+            }
 
         }
 

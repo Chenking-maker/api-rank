@@ -1,5 +1,19 @@
 [
   {
+    "url": "https://shiyunapi.com",
+    "name": "诗云API",
+    "domain": "shiyunapi.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://xdhdancer.top",
+    "name": "产灵API",
+    "domain": "xdhdancer.top",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
     "url": "https://anyroute.com",
     "name": "AnyRoute",
     "domain": "anyroute.com",
@@ -197,5 +211,19 @@
     "domain": "console.groq.com",
     "status": "dead",
     "reason": "网站打开乱码"
+  },
+  {
+    "url": "https://openai-sb.com",
+    "name": "OpenAI-SB",
+    "domain": "openai-sb.com",
+    "status": "dead",
+    "reason": "域名无法解析"
+  },
+  {
+    "url": "https://closeai-asia.com",
+    "name": "CloseAI",
+    "domain": "closeai-asia.com",
+    "status": "dead",
+    "reason": "域名无法解析"
   }
 ]
