@@ -19,7 +19,7 @@
     "free_amount": "",
     "score": 8.95,
     "response_time": 0.5,
-    "alive": true,
+    "alive": false,
     "last_check": "2026-06-05",
     "check_count": 3,
     "display_tags": [
@@ -44,7 +44,8 @@
         "cls": ""
       }
     ],
-    "likes": 0
+    "likes": 0,
+    "reason": "无法访问"
   },
   {
     "url": "https://www.packyapi.com/register?aff=zrXb",
@@ -4792,5 +4793,53 @@
       }
     ],
     "dead_reason": "地区限制，暂不提供服务"
+  },
+  {
+    "url": "https://www.openmodel.ai?ref=MpYA6Pl5",
+    "domain": "openmodel.ai",
+    "name": "OpenModel AI",
+    "description": "多模型 LLM 网关和运维控制台，统一提供商接入、请求可见性、用量分析与计费。支持Claude/GPT/Gemini等主流模型，按Token计费，无月度最低消费。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek"
+    ],
+    "features": [
+      "stable",
+      "multi",
+      "docs",
+      "code"
+    ],
+    "price": "low",
+    "free_amount": "",
+    "score": 8.5,
+    "likes": 0,
+    "response_time": 1.0,
+    "alive": true,
+    "last_check": "2026-06-05",
+    "check_count": 1,
+    "display_tags": [
+      "多模型网关",
+      "按Token计费",
+      "无最低消费"
+    ],
+    "display_metrics": [
+      {
+        "label": "定位",
+        "value": "LLM网关",
+        "cls": "green"
+      },
+      {
+        "label": "计费",
+        "value": "按Token",
+        "cls": "accent"
+      },
+      {
+        "label": "特色",
+        "value": "运维控制台",
+        "cls": ""
+      }
+    ]
   }
 ]
