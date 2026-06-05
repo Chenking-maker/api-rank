@@ -6,6 +6,60 @@
       "name": "PoloAPI",
       "domain": "poloapi.com",
       "recovered_at": "2026-05-31T11:54:36.793469"
+    },
+    {
+      "name": "B.AI (波场)",
+      "domain": "b.ai",
+      "url": "https://b.ai",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "GPT猫 (GPTCat)",
+      "domain": "gptcat.cc",
+      "url": "https://gptcat.cc",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "蛇GPT (SnakeGPT)",
+      "domain": "snakegpt.vip",
+      "url": "https://snakegpt.vip",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "SSSAICode",
+      "domain": "sssaicode.com",
+      "url": "https://www.sssaicode.com/register?ref=SRVFVP",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "Doro API",
+      "domain": "doro.lol",
+      "url": "https://doro.lol/register?aff=0LSF",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "随人AI",
+      "domain": "suirenai.com",
+      "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "Unity2.AI",
+      "domain": "unity2.ai",
+      "url": "https://unity2.ai/register?ref=bayLaABG",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "SudoCode",
+      "domain": "sudocode.com",
+      "url": "https://sudocode.run/register?aff=G7iU",
+      "recovered_at": "2026-06-05"
+    },
+    {
+      "name": "ApiKey.fun",
+      "domain": "apikey.fun",
+      "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
+      "recovered_at": "2026-06-05"
     }
   ],
   "new_dead": [

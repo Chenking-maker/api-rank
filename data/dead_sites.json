@@ -150,27 +150,6 @@
     "reason": "无法访问"
   },
   {
-    "url": "https://www.sssaicode.com/register?ref=SRVFVP",
-    "name": "SSSAICode",
-    "domain": "sssaicode.com",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
-    "url": "https://snakegpt.vip",
-    "name": "蛇GPT (SnakeGPT)",
-    "domain": "snakegpt.vip",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
-    "url": "https://gptcat.cc",
-    "name": "GPT猫 (GPTCat)",
-    "domain": "gptcat.cc",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
     "url": "https://ai.huoyachat.com",
     "name": "AI中文版",
     "domain": "ai.huoyachat.com",
@@ -185,23 +164,9 @@
     "reason": "无法访问"
   },
   {
-    "url": "https://b.ai",
-    "name": "B.AI (波场)",
-    "domain": "b.ai",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
     "url": "https://bewildcard.com",
     "name": "万卡API (WildCard)",
     "domain": "bewildcard.com",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
-    "url": "https://doro.lol/register?aff=0LSF",
-    "name": "Doro API",
-    "domain": "doro.lol",
     "status": "dead",
     "reason": "无法访问"
   },
@@ -232,33 +197,5 @@
     "domain": "console.groq.com",
     "status": "dead",
     "reason": "网站打开乱码"
-  },
-  {
-    "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
-    "name": "随人AI",
-    "domain": "suirenai.com",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
-    "url": "https://unity2.ai/register?ref=bayLaABG",
-    "name": "Unity2.AI",
-    "domain": "unity2.ai",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
-    "url": "https://sudocode.run/register?aff=G7iU",
-    "name": "SudoCode",
-    "domain": "sudocode.com",
-    "status": "dead",
-    "reason": "无法访问"
-  },
-  {
-    "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
-    "name": "ApiKey.fun",
-    "domain": "apikey.fun",
-    "status": "dead",
-    "reason": "无法访问"
   }
 ]
