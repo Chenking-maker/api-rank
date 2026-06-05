@@ -4887,5 +4887,34 @@
         "cls": ""
       }
     ]
+  },
+  {
+    "url": "https://coderplan.ai",
+    "domain": "coderplan.ai",
+    "name": "CoderPlan",
+    "description": "OpenAI兼容API中转平台，支持Claude/GPT/Gemini/DeepSeek/Grok全系列模型。按量付费，新用户注册送体验余额。微信/支付宝支付，一行配置接入Claude Code/Codex CLI等开发工具。",
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "domestic"
+    ],
+    "features": [
+      "stable",
+      "multi",
+      "coding"
+    ],
+    "price": "medium",
+    "free_amount": "注册送体验余额",
+    "score": 0,
+    "response_time": null,
+    "alive": true,
+    "last_check": "2026-06-06",
+    "check_count": 0,
+    "display_tags": [
+      "新站",
+      "OpenAI兼容",
+      "开发工具友好"
+    ]
   }
 ]
