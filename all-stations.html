@@ -8290,6 +8290,45 @@
 
                 // 恢复的站点：移除 .dead 类，如果不在排行榜中则添加
                 if (Array.isArray(status.recovered) && status.recovered.length > 0) {
+                    // 先过滤掉已失效的站点
+                    try {
+                        const deadSitesData = await fetchOnce('data/dead_sites.json');
+                        const stationsData = await fetchOnce('data/stations_info.json');
+                        const deadDomains = new Set();
+                        if (Array.isArray(deadSitesData)) {
+                            deadSitesData.forEach(s => {
+                                const d = (s.domain || '').toLowerCase();
+                                if (d) deadDomains.add(d);
+                            });
+                        }
+                        if (Array.isArray(stationsData)) {
+                            stationsData.forEach(s => {
+                                if (s.alive === false) {
+                                    const d = (s.domain || '').toLowerCase();
+                                    if (d) deadDomains.add(d);
+                                }
+                            });
+                        }
+                        if (deadDomains.size > 0) {
+                            const before = status.recovered.length;
+                            status.recovered = status.recovered.filter(site => {
+                                const raw = (site.domain || site.url || '').toLowerCase();
+                                const d = raw.replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '');
+                                let isDead = deadDomains.has(d);
+                                if (!isDead) {
+                                    deadDomains.forEach(dd => {
+                                        if (d.includes(dd) || dd.includes(d)) isDead = true;
+                                    });
+                                }
+                                return d && !isDead;
+                            });
+                            if (status.recovered.length !== before) {
+                                console.log('loadSiteStatus 过滤了 ' + (before - status.recovered.length) + ' 个失效恢复站点');
+                            }
+                        }
+                    } catch(e) { console.log('loadSiteStatus dead过滤出错:', e); }
+                    if (status.recovered.length === 0) return;
+
                     status.recovered.forEach(site => {
                         const domain = (site.domain || '').toLowerCase();
                         const url = (site.url || '').toLowerCase();
