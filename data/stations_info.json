@@ -4842,5 +4842,50 @@
         "cls": ""
       }
     ]
+  },
+  {
+    "url": "https://teaai.cc/register?ref=58KKJDQP",
+    "domain": "teaai.cc",
+    "name": "TeaAI",
+    "description": "AI绘画API中转平台，支持Midjourney/Stable Diffusion/DALL-E等主流绘画模型，快速生成高质量图像。",
+    "models": [
+      "image",
+      "drawing"
+    ],
+    "features": [
+      "stable",
+      "multi",
+      "docs"
+    ],
+    "price": "medium",
+    "free_amount": "",
+    "score": 8.2,
+    "likes": 0,
+    "response_time": 1.5,
+    "alive": true,
+    "last_check": "2026-06-05",
+    "check_count": 1,
+    "display_tags": [
+      "AI绘画",
+      "Midjourney",
+      "图像生成"
+    ],
+    "display_metrics": [
+      {
+        "label": "定位",
+        "value": "绘画API",
+        "cls": "green"
+      },
+      {
+        "label": "特色",
+        "value": "多绘画模型",
+        "cls": "accent"
+      },
+      {
+        "label": "响应",
+        "value": "1.5s",
+        "cls": ""
+      }
+    ]
   }
 ]
