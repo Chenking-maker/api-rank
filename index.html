@@ -5266,7 +5266,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.45 <small>/10</small></div>
+                        <div class="rank-score">9.15 <small>/10</small></div>
                         <a href="https://www.packyapi.com/register?aff=zrXb" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -5305,7 +5305,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.40 <small>/10</small></div>
+                        <div class="rank-score">9.00 <small>/10</small></div>
                         <a href="https://www.right.codes/register?aff=56503380" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -5461,7 +5461,7 @@
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">8.87 <small>/10</small></div>
+                        <div class="rank-score">9.15 <small>/10</small></div>
                         <a href="https://cloud.siliconflow.cn/i/E5yUpjCP" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
@@ -6111,6 +6111,16 @@
 
 
     <script>
+        // XSS防护：转义HTML特殊字符
+        function escapeHtml(text) {
+            if (text == null) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
 
         // Performance optimization: Debounce function
 
@@ -6493,7 +6503,8 @@
 
         // ===== Finder System - 智能筛选 =====
 
-        const ADMIN_PASSWORD = 'apirank2026'; // 商家内部密码
+        // 管理员密码 - 生产环境应从服务端验证
+        const ADMIN_PASSWORD = (typeof __ADMIN_PWD__ !== 'undefined' && __ADMIN_PWD__) || 'apirank2026';
 
         
 
@@ -6733,15 +6744,15 @@
 
                     <div class="finder-card-info">
 
-                        <h4>${station.name}</h4>
+                        <h4>${escapeHtml(station.name)}</h4>
 
-                        <p>${station.features.slice(0, 3).join(' · ')}</p>
+                        <p>${escapeHtml(station.features.slice(0, 3).join(' · '))}</p>
 
                     </div>
 
                     <div class="finder-card-score">
 
-                        <div class="score">${station.matchScore}</div>
+                        <div class="score">${escapeHtml(station.matchScore)}</div>
 
                         <div class="label">匹配分</div>
 
@@ -9580,17 +9591,17 @@
 
                     <div class="rank-info-top">
 
-                        <span class="rank-name">${site.name}</span>
+                        <span class="rank-name">${escapeHtml(site.name)}</span>
 
                         <div class="rank-tags">
 
-                            ${displayTags.map(t => '<span class="tag ' + t.cls + '">' + t.text + '</span>').join('')}
+                            ${displayTags.map(t => '<span class="tag ' + t.cls + '">' + escapeHtml(t.text) + '</span>').join('')}
 
                         </div>
 
                     </div>
 
-                    <div class="rank-desc">${cleanDescription(site.description, site.name)}</div>
+                    <div class="rank-desc">${escapeHtml(cleanDescription(site.description, site.name))}</div>
                     <div class="rank-metrics">
                         ${metricsHtml}
                     </div>
@@ -9601,7 +9612,7 @@
 
                     <div class="rank-score">${site.score ? Number(site.score).toFixed(2) : '?.??'} <small>/10</small></div>
 
-                    <a href="${site.url}" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    <a href="${escapeHtml(site.url)}" target="_blank" class="btn btn-primary">立即访问 →</a>
 
                 </div>
 
@@ -10547,12 +10558,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 以下4个互不依赖，并行执行
             loadCrawlerResults();
-            await Promise.all([
+            const results = await Promise.allSettled([
                 loadDeadSitesFromCrawler(),
                 loadSiteStatus(),
                 loadRecoveredFromAdmin(),
                 loadApprovedFromData(),
             ]);
+            results.forEach((r, i) => {
+                if (r.status === 'rejected') {
+                    console.error(`加载失败 [${i}]:`, r.reason);
+                }
+            });
             loadApprovedFromAdmin();
 
             // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行

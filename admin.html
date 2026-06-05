@@ -371,7 +371,9 @@ let lastParseResults = [];
 
 function handleLogin() {
     const pwd = document.getElementById('passwordInput').value;
-    if (pwd === 'apirank2026') {
+    // 注意：生产环境应使用服务端验证
+    const ADMIN_PWD = (typeof __ADMIN_PWD__ !== 'undefined' && __ADMIN_PWD__) || 'apirank2026';
+    if (pwd === ADMIN_PWD) {
         localStorage.setItem('adminLoggedIn', 'true');
         localStorage.setItem('adminLoginTime', Date.now().toString());
         showDashboard();

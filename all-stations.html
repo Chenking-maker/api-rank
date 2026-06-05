@@ -5645,6 +5645,16 @@
 
 
     <script>
+        // XSS防护：转义HTML特殊字符
+        function escapeHtml(text) {
+            if (text == null) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
 
         // Performance optimization: Debounce function
 
@@ -5987,7 +5997,8 @@
 
         // ===== Finder System - 智能筛选 =====
 
-        const ADMIN_PASSWORD = 'apirank2026'; // 商家内部密码
+        // 管理员密码 - 生产环境应从服务端验证
+        const ADMIN_PASSWORD = (typeof __ADMIN_PWD__ !== 'undefined' && __ADMIN_PWD__) || 'apirank2026';
 
         
 
