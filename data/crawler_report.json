@@ -1,122 +1,32 @@
 {
-  "timestamp": "2026-06-05T16:21:16.694091",
-  "elapsed_seconds": 371.6,
+  "timestamp": "2026-06-06T11:17:20.633801",
+  "elapsed_seconds": 315.2,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 14,
+    "total_pending": 15,
     "total_dead": 14,
-    "new_discovered": 0,
+    "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 26,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [],
+  "new_discovered": [
+    {
+      "url": "https://etok.ai",
+      "name": "etok.ai",
+      "source": "github:OpenAI A_extract"
+    }
+  ],
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://anyroute.com",
-      "name": "AnyRoute"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
     },
     {
-      "url": "https://qianfan.baidubce.com",
-      "name": "百度千帆"
-    },
-    {
-      "url": "https://zhihuiapi.com",
-      "name": "智惠API"
-    },
-    {
-      "url": "https://modcon.ai",
-      "name": "ModCon"
-    },
-    {
-      "url": "https://switchbase.com",
-      "name": "SwitchBase"
-    },
-    {
-      "url": "https://anpin.ai",
-      "name": "AnPin AI"
-    },
-    {
-      "url": "https://claudecn.com",
-      "name": "ClaudeCN"
-    },
-    {
-      "url": "https://toknex.com",
-      "name": "Toknex"
-    },
-    {
-      "url": "https://sevnx.com",
-      "name": "SevnX"
-    },
-    {
-      "url": "https://luminai.com",
-      "name": "Lumin AI"
-    },
-    {
-      "url": "https://claudeapi.net",
-      "name": "Claude API"
-    },
-    {
-      "url": "https://muskai.com",
-      "name": "MuskAI"
-    },
-    {
-      "url": "https://frontierintelligence.ai",
-      "name": "Frontier Intelligence"
-    },
-    {
-      "url": "https://derouter.com",
-      "name": "DeRouter"
-    },
-    {
-      "url": "https://coderelay.com",
-      "name": "CodeRelay"
-    },
-    {
-      "url": "https://4sapi.com",
-      "name": "星链4SAPI"
-    },
-    {
-      "url": "https://api.easyapi.com",
-      "name": "API易"
-    },
-    {
-      "url": "https://api.ikuncode.cc",
-      "name": "爱坤代码 (IKunCode)"
-    },
-    {
-      "url": "https://302.ai",
-      "name": "302.AI"
-    },
-    {
-      "url": "https://ai.huoyachat.com",
-      "name": "AI中文版"
-    },
-    {
-      "url": "https://web.apiplus.org",
-      "name": "APIPlus"
-    },
-    {
-      "url": "https://bewildcard.com",
-      "name": "万卡API (WildCard)"
-    },
-    {
-      "url": "https://fishxcode.com",
-      "name": "鱼代码 (FishXCode)"
-    },
-    {
-      "url": "https://apimart.ai",
-      "name": "API集市 (API Mart)"
-    },
-    {
-      "url": "https://console.mistral.ai",
-      "name": "Mistral AI"
-    },
-    {
-      "url": "https://console.groq.com",
-      "name": "Groq"
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
     }
   ]
 }

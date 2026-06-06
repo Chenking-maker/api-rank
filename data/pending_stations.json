@@ -256,5 +256,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-03T20:08:12.677856",
     "check_count": 1
+  },
+  {
+    "name": "etok.ai",
+    "url": "https://etok.ai",
+    "submitTime": "2026-06-06T11:17:20.631849",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-06T11:17:20.631857",
+    "check_count": 1
   }
 ]
