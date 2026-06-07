@@ -1,32 +1,23 @@
 {
-  "timestamp": "2026-06-06T11:17:20.633801",
-  "elapsed_seconds": 315.2,
+  "timestamp": "2026-06-07T12:13:14.549986",
+  "elapsed_seconds": 312.8,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 15,
+    "total_pending": 16,
     "total_dead": 14,
     "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": true
   },
   "new_discovered": [
     {
-      "url": "https://etok.ai",
-      "name": "etok.ai",
-      "source": "github:OpenAI A_extract"
+      "url": "https://api.catrouter.net",
+      "name": "api.catrouter.net",
+      "source": "github:API中转站 推_extract"
     }
   ],
   "new_dead": [],
-  "new_recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    }
-  ]
+  "new_recovered": []
 }

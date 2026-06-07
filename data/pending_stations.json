@@ -273,5 +273,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-06T11:17:20.631857",
     "check_count": 1
+  },
+  {
+    "name": "api.catrouter.net",
+    "url": "https://api.catrouter.net",
+    "submitTime": "2026-06-07T12:13:14.547781",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-07T12:13:14.547805",
+    "check_count": 1
   }
 ]
