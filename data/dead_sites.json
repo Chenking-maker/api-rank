@@ -84,5 +84,13 @@
     "domain": "clauqe.com",
     "status": "dead",
     "reason": "访问失败"
+  },
+  {
+    "url": "https://api.lingyaai.cn",
+    "name": "灵芽API",
+    "domain": "api.lingyaai.cn",
+    "died_at": "2026-06-10T17:45:30.940833",
+    "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin",
+    "status": "dead"
   }
 ]

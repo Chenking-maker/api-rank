@@ -1,5 +1,25 @@
 {
-  "updated_at": "2026-06-09T16:24:26.097443",
-  "recovered": [],
-  "new_dead": []
+  "updated_at": "2026-06-10T17:51:00.981001",
+  "recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI",
+      "domain": "poloapi.com",
+      "recovered_at": "2026-06-10T17:45:40.107966"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)",
+      "domain": "b.ai",
+      "recovered_at": "2026-06-10T17:46:56.968913"
+    }
+  ],
+  "new_dead": [
+    {
+      "url": "https://api.lingyaai.cn",
+      "name": "灵芽API",
+      "domain": "api.lingyaai.cn",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    }
+  ]
 }

@@ -1,17 +1,32 @@
 {
-  "timestamp": "2026-06-09T16:24:26.097981",
-  "elapsed_seconds": 273.0,
+  "timestamp": "2026-06-10T17:51:00.981640",
+  "elapsed_seconds": 391.0,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 16,
-    "total_dead": 14,
+    "total_dead": 15,
     "new_discovered": 0,
-    "new_dead": 0,
-    "new_recovered": 0,
+    "new_dead": 1,
+    "new_recovered": 2,
     "scrapling_available": true
   },
   "new_discovered": [],
-  "new_dead": [],
-  "new_recovered": []
+  "new_dead": [
+    {
+      "url": "https://api.lingyaai.cn",
+      "name": "灵芽API",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    }
+  ],
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
