@@ -1,182 +1,177 @@
 {
   "shiyunapi.com": {
-    "alive": true,
-    "date": "2026-06-10",
-    "msg": "HTTP 200"
+    "alive": false,
+    "date": "2026-06-11",
+    "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://shiyunapi.c"
   },
   "packyapi.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "right.codes": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "4sapi.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "api.easyapi.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "toapis.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "cloud.siliconflow.cn": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "api.ikuncode.cc": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "api.mooko.ai": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "302.ai": {
     "alive": true,
-    "date": "2026-06-10",
-    "msg": "HTTP 200"
+    "date": "2026-06-11",
+    "msg": "Enterprise AI Resource Hub - 302.AI | Pay-as-you-g"
   },
   "dmxapi.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "147ai.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "api.vectorengine.ai": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "openrouter.ai": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "sssaicode.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "api.aioncode.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "snakegpt.vip": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "aigocode.com": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "HTTP 200"
   },
   "api.lingyaai.cn": {
-    "alive": false,
-    "date": "2026-06-10",
-    "msg": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    "alive": true,
+    "date": "2026-06-11",
+    "msg": "HTTP 200"
   },
   "savebill.store": {
     "alive": true,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Save AI · 多模型 AI 服务"
   },
   "feixian-api.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://feixian-api"
-  },
-  "poloapi.com": {
-    "alive": true,
-    "date": "2026-06-10",
-    "msg": "HTTP 200"
   },
   "suchuangapi.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://suchuangapi"
   },
   "api.anyrouter.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://api.anyrout"
   },
   "b4uapi.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://b4uapi.com/"
   },
   "91codeapi.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://91codeapi.c"
   },
   "jayapi.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://jayapi.com/"
   },
   "chaofanapi.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://chaofanapi."
   },
   "token5u.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
-  },
-  "b.ai": {
-    "alive": true,
-    "date": "2026-06-10",
-    "msg": "HTTP 200"
   },
   "yingapi.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://yingapi.com"
   },
   "closeai-asia.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
   },
   "openai-sb.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c"
   },
   "aok.ai": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_CONNECTION_REFUSED at https://aok.ai/\nCa"
   },
   "nekocode.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
   },
   "clauqe.com": {
     "alive": false,
-    "date": "2026-06-10",
+    "date": "2026-06-11",
     "msg": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://clauqe.com/"
+  },
+  "ai.centos.hk": {
+    "alive": true,
+    "date": "2026-06-11",
+    "msg": "HTTP 200"
   }
 }

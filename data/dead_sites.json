@@ -86,11 +86,11 @@
     "reason": "访问失败"
   },
   {
-    "url": "https://api.lingyaai.cn",
-    "name": "灵芽API",
-    "domain": "api.lingyaai.cn",
-    "died_at": "2026-06-10T17:45:30.940833",
-    "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin",
+    "url": "https://shiyunapi.com",
+    "name": "诗云API(ShiyunApi)",
+    "domain": "shiyunapi.com",
+    "died_at": "2026-06-11T17:58:29.590219",
+    "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://shiyunapi.c",
     "status": "dead"
   }
 ]

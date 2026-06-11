@@ -1,25 +1,19 @@
 {
-  "updated_at": "2026-06-10T17:51:00.981001",
+  "updated_at": "2026-06-11T18:03:34.328820",
   "recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI",
-      "domain": "poloapi.com",
-      "recovered_at": "2026-06-10T17:45:40.107966"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)",
-      "domain": "b.ai",
-      "recovered_at": "2026-06-10T17:46:56.968913"
-    }
-  ],
-  "new_dead": [
     {
       "url": "https://api.lingyaai.cn",
       "name": "灵芽API",
       "domain": "api.lingyaai.cn",
-      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+      "recovered_at": "2026-06-11T18:01:10.924620"
+    }
+  ],
+  "new_dead": [
+    {
+      "url": "https://shiyunapi.com",
+      "name": "诗云API(ShiyunApi)",
+      "domain": "shiyunapi.com",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://shiyunapi.c"
     }
   ]
 }

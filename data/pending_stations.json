@@ -290,5 +290,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-07T12:13:14.547805",
     "check_count": 1
+  },
+  {
+    "name": "ai.centos.hk",
+    "url": "https://ai.centos.hk",
+    "submitTime": "2026-06-11T18:03:34.327236",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-11T18:03:34.327254",
+    "check_count": 1
   }
 ]
