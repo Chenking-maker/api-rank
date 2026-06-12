@@ -1,34 +1,30 @@
 {
-  "timestamp": "2026-06-11T18:03:34.329320",
-  "elapsed_seconds": 309.3,
+  "timestamp": "2026-06-12T16:38:55.554523",
+  "elapsed_seconds": 309.7,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 17,
-    "total_dead": 15,
-    "new_discovered": 1,
-    "new_dead": 1,
-    "new_recovered": 1,
+    "total_dead": 14,
+    "new_discovered": 0,
+    "new_dead": 0,
+    "new_recovered": 3,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://ai.centos.hk",
-      "name": "ai.centos.hk",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
-  "new_dead": [
-    {
-      "url": "https://shiyunapi.com",
-      "name": "诗云API(ShiyunApi)",
-      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://shiyunapi.c"
-    }
-  ],
+  "new_discovered": [],
+  "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://api.lingyaai.cn",
-      "name": "灵芽API"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    },
+    {
+      "url": "https://shiyunapi.com",
+      "name": "诗云API(ShiyunApi)"
     }
   ]
 }
