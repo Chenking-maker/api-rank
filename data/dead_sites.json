@@ -84,5 +84,13 @@
     "domain": "clauqe.com",
     "status": "dead",
     "reason": "访问失败"
+  },
+  {
+    "url": "https://www.dmxapi.com",
+    "name": "大模型API (DMXAPI)",
+    "domain": "dmxapi.com",
+    "died_at": "2026-06-14T09:20:02.925835",
+    "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin",
+    "status": "dead"
   }
 ]

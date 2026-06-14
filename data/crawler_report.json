@@ -1,17 +1,32 @@
 {
-  "timestamp": "2026-06-13T12:14:37.072880",
-  "elapsed_seconds": 298.5,
+  "timestamp": "2026-06-14T09:25:51.304532",
+  "elapsed_seconds": 409.0,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 17,
-    "total_dead": 14,
+    "total_dead": 15,
     "new_discovered": 0,
-    "new_dead": 0,
-    "new_recovered": 0,
+    "new_dead": 1,
+    "new_recovered": 2,
     "scrapling_available": true
   },
   "new_discovered": [],
-  "new_dead": [],
-  "new_recovered": []
+  "new_dead": [
+    {
+      "url": "https://www.dmxapi.com",
+      "name": "大模型API (DMXAPI)",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    }
+  ],
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
