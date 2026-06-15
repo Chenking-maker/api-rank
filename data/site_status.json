@@ -1,25 +1,12 @@
 {
-  "updated_at": "2026-06-14T09:25:51.304055",
+  "updated_at": "2026-06-15T11:50:24.888703",
   "recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI",
-      "domain": "poloapi.com",
-      "recovered_at": "2026-06-14T09:20:21.083607"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)",
-      "domain": "b.ai",
-      "recovered_at": "2026-06-14T09:21:43.949268"
-    }
-  ],
-  "new_dead": [
     {
       "url": "https://www.dmxapi.com",
       "name": "大模型API (DMXAPI)",
       "domain": "dmxapi.com",
-      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+      "recovered_at": "2026-06-15T11:48:02.469834"
     }
-  ]
+  ],
+  "new_dead": []
 }
