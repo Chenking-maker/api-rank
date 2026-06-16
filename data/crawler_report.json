@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-15T11:50:24.889001",
-  "elapsed_seconds": 305.5,
+  "timestamp": "2026-06-16T10:58:44.144545",
+  "elapsed_seconds": 306.8,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
@@ -8,15 +8,19 @@
     "total_dead": 14,
     "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 1,
+    "new_recovered": 2,
     "scrapling_available": true
   },
   "new_discovered": [],
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://www.dmxapi.com",
-      "name": "大模型API (DMXAPI)"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
     }
   ]
 }
