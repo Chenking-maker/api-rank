@@ -964,10 +964,26 @@
                         </div>
                     </div>
 
-                    <!-- Base URL（自定义时显示） -->
-                    <div id="customUrlBox" class="gen-field" style="display:none;">
-                        <label>Base URL</label>
-                        <input type="text" id="customUrl" placeholder="https://api.xxx.com/v1">
+                    <!-- Base URL -->
+                    <div class="gen-field">
+                        <div class="field-header">
+                            <label>Base URL</label>
+                            <span class="field-hint" onclick="toggleUrlHelp()">如何选择？</span>
+                        </div>
+                        <select id="baseUrlSelect" onchange="handleBaseUrlChange()">
+                            <option value="">-- 请选择平台 --</option>
+                            <option value="https://api.savebill.store">省钱AI (savebill.store)</option>
+                            <option value="https://api.teaai.cc">TeaAI (teaai.cc)</option>
+                            <option value="https://api.zaotu.vip">造图局 (zaotu.vip)</option>
+                            <option value="https://api.poloapi.com">PoloAPI (poloapi.com)</option>
+                            <option value="https://api.dmxapi.com">大模型API (dmxapi.com)</option>
+                            <option value="https://api.gptcat.cc">GPT猫 (gptcat.cc)</option>
+                            <option value="custom">自定义 URL...</option>
+                        </select>
+                        <input type="text" id="customUrl" placeholder="https://api.xxx.com/v1" style="display:none;margin-top:8px;">
+                        <div id="urlHelp" class="key-help" style="display:none;">
+                            选择你拥有 API Key 的平台。如果不确定，请查看你注册平台的「API文档」页面获取 Base URL。
+                        </div>
                     </div>
 
                     <!-- Prompt -->
@@ -1364,6 +1380,22 @@
             el.style.display = el.style.display === 'block' ? 'none' : 'block';
         }
 
+        function toggleUrlHelp() {
+            const el = document.getElementById('urlHelp');
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function handleBaseUrlChange() {
+            const select = document.getElementById('baseUrlSelect');
+            const customInput = document.getElementById('customUrl');
+            if (select.value === 'custom') {
+                customInput.style.display = '';
+                customInput.focus();
+            } else {
+                customInput.style.display = 'none';
+            }
+        }
+
         // ===== 模式切换 =====
         function switchMode(mode) {
             currentMode = mode;
@@ -1434,21 +1466,54 @@
             const img = document.getElementById('resultImage');
             const video = document.getElementById('resultVideo');
             const videoSrc = document.getElementById('videoSource');
+            const downloadLink = document.getElementById('downloadLink');
 
             if (currentMode === 'image') {
-                img.src = `data:image/png;base64,${base64Data}`;
+                const dataUrl = `data:image/png;base64,${base64Data}`;
+                img.src = dataUrl;
                 img.style.display = '';
                 video.style.display = 'none';
-                document.getElementById('downloadLink').download = 'generated.png';
-                document.getElementById('downloadLink').href = img.src;
+                // 设置下载属性
+                downloadLink.download = `generated_${Date.now()}.png`;
+                downloadLink.href = dataUrl;
+                downloadLink.textContent = '💾 下载图片';
+                downloadLink.onclick = function(e) {
+                    // 使用 Blob 方式下载，更可靠
+                    e.preventDefault();
+                    downloadBase64File(dataUrl, downloadLink.download);
+                };
             } else {
                 // 视频 - 某些API可能返回base64视频
-                videoSrc.src = `data:video/mp4;base64,${base64Data}`;
+                const dataUrl = `data:video/mp4;base64,${base64Data}`;
+                videoSrc.src = dataUrl;
                 video.style.display = '';
                 img.style.display = 'none';
-                document.getElementById('downloadLink').download = 'generated.mp4';
-                document.getElementById('downloadLink').href = videoSrc.src;
+                downloadLink.download = `generated_${Date.now()}.mp4`;
+                downloadLink.href = dataUrl;
+                downloadLink.textContent = '💾 下载视频';
+                downloadLink.onclick = function(e) {
+                    e.preventDefault();
+                    downloadBase64File(dataUrl, downloadLink.download);
+                };
                 video.load();
+            }
+        }
+
+        // 可靠的 Base64 文件下载函数
+        function downloadBase64File(dataUrl, filename) {
+            try {
+                const link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = filename;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(() => {
+                    document.body.removeChild(link);
+                }, 100);
+            } catch (err) {
+                console.error('下载失败:', err);
+                alert('下载失败，请右键点击图片/视频选择"另存为"');
             }
         }
 
@@ -1466,28 +1531,20 @@
             const prompt = document.getElementById('promptInput').value.trim();
             const size = document.getElementById('sizeSelect').value;
             const generateBtn = document.getElementById('generateBtn');
+            const baseUrlSelect = document.getElementById('baseUrlSelect');
 
             if (!apiKey) { alert('请输入 API Key'); return; }
+            if (!baseUrlSelect.value) { alert('请选择 Base URL 平台'); baseUrlSelect.focus(); return; }
             if (!modelName) { alert('请选择模型'); return; }
             if (!prompt) { alert('请输入描述内容'); return; }
 
-            // 从 Key 的前缀推断 base URL（用户可通过 customUrl 覆盖）
+            // 获取 base URL
             let baseUrl = '';
-            if (apiKey.startsWith('sk-savebill')) baseUrl = 'https://api.savebill.store';
-            else if (apiKey.startsWith('sk-teaai')) baseUrl = 'https://api.teaai.cc';
-            else if (apiKey.startsWith('sk-zaotu')) baseUrl = 'https://api.zaotu.vip';
-            else if (apiKey.startsWith('sk-polo')) baseUrl = 'https://api.poloapi.com';
-            else if (apiKey.startsWith('sk-dmx')) baseUrl = 'https://api.dmxapi.com';
-            else if (apiKey.startsWith('sk-gptcat')) baseUrl = 'https://api.gptcat.cc';
-            else {
-                // 无法推断，使用自定义URL或默认
-                const custom = document.getElementById('customUrl').value.trim();
-                if (custom) {
-                    baseUrl = custom;
-                } else {
-                    // 尝试通用格式
-                    baseUrl = 'https://api.openai.com/v1';
-                }
+            if (baseUrlSelect.value === 'custom') {
+                baseUrl = document.getElementById('customUrl').value.trim();
+                if (!baseUrl) { alert('请输入自定义 Base URL'); return; }
+            } else {
+                baseUrl = baseUrlSelect.value;
             }
 
             showLoading();
