@@ -2621,6 +2621,7 @@
 
             .rank-card.dead {
 
+                display: block !important;
                 opacity: 0.35;
 
                 padding: 12px;
@@ -4465,6 +4466,8 @@
 
                 <li><a href="#ranking" style="color: var(--accent-light); font-weight: 600;">全部排行</a></li>
 
+                <li><a href="creative-tools.html" style="color: #fd79a8; font-weight: 600;">🎨 绘图/视频</a></li>
+
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
 
                 <li><a href="javascript:void(0)" onclick="openSectionModal('submitModal')">提交收录</a></li>
@@ -5645,6 +5648,16 @@
 
 
     <script>
+        // XSS防护：转义HTML特殊字符
+        function escapeHtml(text) {
+            if (text == null) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
 
         // Performance optimization: Debounce function
 
@@ -5795,16 +5808,14 @@
             cards.forEach(card => {
 
                 const name = card.querySelector('.rank-name');
-
                 const desc = card.querySelector('.rank-desc');
-
                 const text = (name ? name.textContent : '') + (desc ? desc.textContent : '');
-
                 const match = text.toLowerCase().includes(trimmed);
+                const isDead = card.classList.contains('dead');
 
-                card.style.display = match ? '' : 'none';
+                card.style.display = (match && !isDead) ? '' : 'none';
 
-                if (match) count++;
+                if (match && !isDead) count++;
 
             });
 
@@ -5863,19 +5874,19 @@
 
                 } else if (type === 'cheap') {
 
-                    show = tags.includes('cheap');
+                    show = tags.includes('cheap') && !isDead;
 
                 } else if (type === 'enterprise') {
 
-                    show = tags.includes('enterprise');
+                    show = tags.includes('enterprise') && !isDead;
 
                 } else if (type === 'image') {
 
-                    show = tags.includes('image');
+                    show = tags.includes('image') && !isDead;
 
                 } else {
 
-                    show = tags.includes(type);
+                    show = tags.includes(type) && !isDead;
 
                 }
 
@@ -5927,9 +5938,11 @@
 
         function openSectionModal(id) {
 
-            document.getElementById(id).classList.add('active');
-
-            document.body.style.overflow = 'hidden';
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
         }
 
@@ -5937,9 +5950,11 @@
 
         function closeSectionModal(id) {
 
-            document.getElementById(id).classList.remove('active');
-
-            document.body.style.overflow = '';
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('active');
+                document.body.style.overflow = '';
+            }
 
         }
 
@@ -5987,7 +6002,8 @@
 
         // ===== Finder System - 智能筛选 =====
 
-        const ADMIN_PASSWORD = 'apirank2026'; // 商家内部密码
+        // 管理员密码 - 生产环境应从服务端验证
+        const ADMIN_PASSWORD = (typeof __ADMIN_PWD__ !== 'undefined' && __ADMIN_PWD__) || 'apirank2026';
 
         
 
