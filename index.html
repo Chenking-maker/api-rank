@@ -5196,46 +5196,46 @@
             <div class="last-update">最近更新：<span id="updateTime">2026-06-01 00:56</span></div>
 
             <div class="ranking-list" id="rankingList">
-                <!-- #1 诗云API(ShiyunApi) - DEAD -->
+                <!-- #1 硅基流动 -->
 
 
-                <div class="rank-card top-1 fade-in dead" data-tags="claude,gpt,gemini,domestic,enterprise">
+                <div class="rank-card top-1 fade-in" data-tags="domestic">
                     <div class="rank-number">#1</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
-                            <span class="rank-name">诗云API(ShiyunApi)</span>
+                            <span class="rank-name">硅基流动</span>
                             <div class="rank-tags">
-                                                                <span class="tag tag-hot">🏆2026推荐</span>
-                                <span class="tag tag-stable">成本减半</span>
-                                <span class="tag tag-stable">无套路</span>
+                                                                <span class="tag tag-stable">高并发</span>
+                                <span class="tag tag-stable">600万用户</span>
+                                <span class="tag tag-stable">低延迟</span>
                             </div>
                         </div>
-                        <div class="rank-desc">AI大模型接口中转平台，支持GPT/Claude/Gemini等主流模型，价格透明，响应稳定</div>
+                        <div class="rank-desc">国内领先的AI推理云平台，提供SiliconCloud一站式API服务，支持多种开源模型和商业模型</div>
                         <div class="rank-metrics">
                             <div class="metric">
+                                <span class="metric-label">响应</span>
+                                <span class="metric-value green">0.33s</span>
+                            </div>
+                            <div class="metric">
                                 <span class="metric-label">专业</span>
-                                <span class="metric-value green">多模态覆盖</span>
+                                <span class="metric-value accent">高并发设计</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value accent">按量无套路</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">应用</span>
-                                <span class="metric-value">OpenAI兼容</span>
+                                <span class="metric-label">口碑</span>
+                                <span class="metric-value">600万用户</span>
                             </div>
                         </div>
                     </div>
                     <div class="rank-action">
-                        <div class="rank-score">9.50 <small>/10</small></div>
-                        <a href="https://shiyunapi.com/register?aff=mR1T" target="_blank" class="btn btn-primary">立即访问 →</a>
+                        <div class="rank-score">9.15 <small>/10</small></div>
+                        <a href="https://cloud.siliconflow.cn/i/E5yUpjCP" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
                 
 
 
-                <!-- #2 PackyCode -->
+                <!-- #2 派客代码 -->
 
 
                 <div class="rank-card top-2 fade-in" data-tags="claude,gpt,gemini,domestic,cheap">
@@ -5313,7 +5313,7 @@
                 
 
 
-                <!-- #4 星链4SAPI -->
+                <!-- #4 星链4SAPI (DEAD) -->
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,enterprise">
@@ -5352,7 +5352,7 @@
                 
 
 
-                <!-- #5 API易 -->
+                <!-- #5 API易 (DEAD) -->
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,domestic,enterprise">
@@ -5424,45 +5424,6 @@
                     <div class="rank-action">
                         <div class="rank-score">9.09 <small>/10</small></div>
                         <a href="https://toapis.com/login?aff=yjH5" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
-
-                
-
-
-                <!-- #1 硅基流动 -->
-
-
-                <div class="rank-card top-1 fade-in" data-tags="domestic">
-                    <div class="rank-number">#1</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">硅基流动</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">高并发</span>
-                                <span class="tag tag-stable">600万用户</span>
-                                <span class="tag tag-stable">低延迟</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">国内领先的AI推理云平台，提供SiliconCloud一站式API服务，支持多种开源模型和商业模型</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">响应</span>
-                                <span class="metric-value green">0.33s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">高并发设计</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">口碑</span>
-                                <span class="metric-value">600万用户</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">9.15 <small>/10</small></div>
-                        <a href="https://cloud.siliconflow.cn/i/E5yUpjCP" target="_blank" class="btn btn-primary">立即访问 →</a>
                     </div>
                 </div>
 
@@ -6908,7 +6869,12 @@
 
             const icons = { success: '✓', error: '✕', info: 'ℹ' };
 
-            toast.innerHTML = `<span>${icons[type] || 'ℹ'}</span><span>${message}</span>`;
+            const iconSpan = document.createElement('span');
+            iconSpan.textContent = icons[type] || 'ℹ';
+            const msgSpan = document.createElement('span');
+            msgSpan.textContent = message;
+            toast.appendChild(iconSpan);
+            toast.appendChild(msgSpan);
 
             container.appendChild(toast);
 

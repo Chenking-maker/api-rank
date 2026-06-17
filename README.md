@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/在线访问-api--rank--lake.vercel.app-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
-  <img src="https://img.shields.io/badge/收录平台-107+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-110+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -75,7 +75,7 @@ api-rank/
 ├── admin.html              # 商家后台管理
 ├── dead-sites.html         # 失效站点列表
 ├── data/
-│   ├── stations_info.json  # 主站点数据（107个）
+│   ├── stations_info.json  # 主站点数据（110个）
 │   ├── dead_sites.json     # 失效站点列表
 │   ├── site_status.json    # 站点状态（恢复/新失效）
 │   ├── daily_check_cache.json  # 每日检测缓存
