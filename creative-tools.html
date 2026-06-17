@@ -206,6 +206,359 @@
             color: #fff;
         }
 
+        /* Generator Section */
+        .generator-section {
+            max-width: 1100px;
+            margin: -10px auto 0;
+            padding: 0 24px 32px;
+        }
+
+        .generator-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+        }
+
+        .mode-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mode-tab {
+            flex: 1;
+            padding: 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        .mode-tab:hover {
+            color: var(--text-secondary);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .mode-tab.active {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .mode-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: var(--gradient-purple);
+            border-radius: 2px 2px 0 0;
+        }
+
+        .generator-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 480px;
+        }
+
+        .gen-inputs {
+            padding: 24px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .gen-field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .field-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .field-header label {
+            margin-bottom: 0;
+        }
+
+        .field-hint {
+            font-size: 11px;
+            color: var(--accent-light);
+            cursor: pointer;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 500;
+        }
+
+        .field-hint:hover {
+            text-decoration: underline;
+        }
+
+        .gen-field input[type="text"],
+        .gen-field input[type="password"],
+        .gen-field select,
+        .gen-field textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 13px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+
+        .gen-field input:focus,
+        .gen-field select:focus,
+        .gen-field textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .gen-field textarea {
+            resize: vertical;
+            min-height: 72px;
+        }
+
+        .key-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .key-row input {
+            flex: 1;
+        }
+
+        .btn-key-toggle {
+            padding: 10px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .btn-key-toggle:hover {
+            border-color: var(--accent);
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            accent-color: var(--accent);
+        }
+
+        .key-status {
+            font-size: 11px;
+            color: var(--green);
+        }
+
+        .key-help {
+            background: rgba(108,92,231,0.08);
+            border: 1px solid rgba(108,92,231,0.2);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 6px;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .gen-row-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .gen-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--gradient-purple);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .gen-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(108,92,231,0.3);
+        }
+
+        .gen-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Result Panel */
+        .gen-result {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(0,0,0,0.15);
+            min-height: 480px;
+        }
+
+        .result-placeholder {
+            text-align: center;
+        }
+
+        .placeholder-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            animation: pulse-ring 2s ease-in-out infinite;
+        }
+
+        .placeholder-text {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .result-loading {
+            text-align: center;
+        }
+
+        .loading-ring {
+            width: 44px;
+            height: 44px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        .result-loading p {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .loading-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .result-error {
+            text-align: center;
+        }
+
+        .error-icon {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .result-error p {
+            font-size: 14px;
+            color: var(--red);
+            margin-bottom: 12px;
+        }
+
+        .error-retry {
+            font-size: 13px;
+            color: var(--accent-light);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .error-retry:hover {
+            text-decoration: underline;
+        }
+
+        .result-success {
+            width: 100%;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .btn-result {
+            flex: 1;
+            padding: 8px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .btn-result:hover {
+            border-color: var(--accent);
+        }
+
+        .result-media {
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .result-media img,
+        .result-media video {
+            width: 100%;
+            display: block;
+            max-height: 420px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 900px) {
+            .generator-body {
+                grid-template-columns: 1fr;
+            }
+            .gen-inputs {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+
         /* Cards Grid */
         .cards-container {
             padding: 24px;
@@ -532,19 +885,134 @@
             <span>AI创作工具专区</span>
         </div>
         <h1>绘图 / 视频生成</h1>
-        <p>精选支持AI绘图、视频生成的API中转站，一站式找到最适合你的创作工具。支持GPT-Image-2、Midjourney V7、Flux 2、Seedance 2.0、可灵等2026最新模型。</p>
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="number">8</div>
-                <div class="label">支持平台</div>
+        <p>精选支持AI绘图、视频生成的API中转站。输入你的 API Key 即可在线生成，Key 仅保存在本地浏览器。</p>
+    </section>
+
+    <!-- 在线生成器 -->
+    <section class="generator-section">
+        <div class="generator-card">
+            <!-- 模式切换 -->
+            <div class="mode-tabs">
+                <button class="mode-tab active" data-mode="image" onclick="switchMode('image', this)">
+                    <span>🎨</span>
+                    <span>图片生成</span>
+                </button>
+                <button class="mode-tab" data-mode="video" onclick="switchMode('video', this)">
+                    <span>🎬</span>
+                    <span>视频生成</span>
+                </button>
             </div>
-            <div class="hero-stat">
-                <div class="number">6</div>
-                <div class="label">在线可用</div>
-            </div>
-            <div class="hero-stat">
-                <div class="number">15+</div>
-                <div class="label">支持模型</div>
+
+            <div class="generator-body">
+                <!-- 左栏：输入 -->
+                <div class="gen-inputs">
+                    <!-- API Key -->
+                    <div class="gen-field">
+                        <div class="field-header">
+                            <label>API Key</label>
+                            <span class="field-hint" onclick="toggleKeyHelp()">如何获取？</span>
+                        </div>
+                        <div class="key-row">
+                            <input type="password" id="apiKey" placeholder="sk-xxxxxxxxxxxxxxxx" oninput="saveApiKey()">
+                            <button class="btn-key-toggle" onclick="toggleKeyVisibility()" title="显示/隐藏">👁️</button>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;margin-top:6px;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="saveKey" checked onchange="toggleSaveKey()">
+                                <span>记住 Key</span>
+                            </label>
+                            <span id="keyStatus" class="key-status"></span>
+                        </div>
+                        <div id="keyHelp" class="key-help" style="display:none;">
+                            用邀请链接注册平台 → 个人中心 → 复制 API Key 粘贴此处
+                        </div>
+                    </div>
+
+                    <!-- 平台 + 尺寸（横向排列） -->
+                    <div class="gen-row-two">
+                        <div class="gen-field">
+                            <label>平台</label>
+                            <select id="platformSelect" onchange="onPlatformChange()">
+                                <option value="">— 选择平台 —</option>
+                                <option value="savebill" data-base="https://api.savebill.store" data-img="gpt-image-2" data-vid="">省钱AI</option>
+                                <option value="teaai" data-base="https://api.teaai.cc" data-img="gpt-image-2" data-vid="">TeaAI</option>
+                                <option value="zaotu" data-base="https://api.zaotu.vip" data-img="gpt-image-2" data-vid="">造图局</option>
+                                <option value="poloapi" data-base="https://api.poloapi.com" data-img="gpt-image-2" data-vid="">PoloAPI</option>
+                                <option value="dmxapi" data-base="https://api.dmxapi.com" data-img="gpt-image-2" data-vid="">大模型API</option>
+                                <option value="gptcat" data-base="https://api.gptcat.cc" data-img="gpt-image-2" data-vid="">GPT猫</option>
+                                <option value="custom" data-base="" data-img="" data-vid="">自定义</option>
+                            </select>
+                        </div>
+                        <div class="gen-field">
+                            <label id="sizeLabel">尺寸</label>
+                            <select id="sizeSelect">
+                                <option value="1024x1024" data-type="image">1024 × 1024（方形）</option>
+                                <option value="1024x1792" data-type="image">1024 × 1792（竖屏）</option>
+                                <option value="1792x1024" data-type="image">1792 × 1024（横屏）</option>
+                                <option value="1920x1080" data-type="video" style="display:none;">1920 × 1080（横屏）</option>
+                                <option value="1080x1920" data-type="video" style="display:none;">1080 × 1920（竖屏）</option>
+                                <option value="720x1280" data-type="video" style="display:none;">720 × 1280（竖屏）</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 自定义 URL -->
+                    <div id="customUrlBox" class="gen-field" style="display:none;">
+                        <label>Base URL</label>
+                        <input type="text" id="customUrl" placeholder="https://api.xxx.com/v1">
+                    </div>
+
+                    <!-- Prompt -->
+                    <div class="gen-field">
+                        <label id="promptLabel">描述（Prompt）</label>
+                        <textarea id="promptInput" rows="3" placeholder="描述你想要的画面，例如：一只橘猫在窗台上晒太阳，吉卜力风格"></textarea>
+                    </div>
+
+                    <!-- 负面提示词 -->
+                    <div class="gen-field" id="negativeField">
+                        <label>负面提示（Negative Prompt）<span class="field-hint">可选</span></label>
+                        <input type="text" id="negativeInput" placeholder="不想出现的内容，如：模糊、变形">
+                    </div>
+
+                    <!-- 生成按钮 -->
+                    <button class="gen-btn" id="generateBtn" onclick="generateImage()">
+                        <span id="genIcon">🎨</span>
+                        <span id="genText">生成图片</span>
+                    </button>
+                </div>
+
+                <!-- 右栏：结果 -->
+                <div class="gen-result">
+                    <div class="result-placeholder" id="resultPlaceholder">
+                        <div class="placeholder-icon">✨</div>
+                        <p class="placeholder-text">填写左侧参数，点击生成</p>
+                    </div>
+
+                    <div class="result-loading" id="resultLoading" style="display:none;">
+                        <div class="loading-ring"></div>
+                        <p>正在生成，请稍候...</p>
+                        <span class="loading-sub">生成耗时取决于模型和网络</span>
+                    </div>
+
+                    <div class="result-error" id="resultError" style="display:none;">
+                        <div class="error-icon">⚠️</div>
+                        <p id="errorMessage">出错了</p>
+                        <span class="error-retry" onclick="retryGenerate()">重试</span>
+                    </div>
+
+                    <div class="result-success" id="resultSuccess" style="display:none;">
+                        <div class="result-actions">
+                            <a id="downloadLink" href="#" download="generated.png" class="btn-result">💾 下载</a>
+                            <button class="btn-result" onclick="resetResult()">🔄 重新生成</button>
+                        </div>
+                        <div class="result-media">
+                            <img id="resultImage" src="" alt="生成的图片" style="display:none;">
+                            <video id="resultVideo" controls style="display:none;">
+                                <source id="videoSource" src="">
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -809,96 +1277,18 @@
         </div>
     </section>
 
-    <!-- 在线图片生成器 -->
-    <section class="info-section" style="max-width: 800px;">
-        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px;">
-            <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
-                <span>🎨</span>
-                <span>在线图片生成器</span>
-                <span style="font-size: 12px; font-weight: 500; padding: 4px 10px; background: rgba(0,210,160,0.15); color: var(--green); border-radius: 20px;">Beta</span>
-            </h2>
-            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">
-                输入你自己的 API Key，即可在浏览器内直接生成图片。Key 仅保存在你的浏览器中，不会上传到任何服务器。
-                <a href="#" onclick="document.getElementById('apiKeyHelp').style.display='block'; return false;" style="color: var(--accent-light);">如何获取 Key？</a>
-            </p>
-
-            <div id="apiKeyHelp" style="display: none; background: rgba(108,92,231,0.08); border: 1px solid rgba(108,92,231,0.2); border-radius: 10px; padding: 16px; margin-bottom: 20px; font-size: 13px; color: var(--text-secondary); line-height: 1.8;">
-                <strong style="color: var(--text-primary);">获取 API Key 步骤：</strong><br>
-                1. 点击上方任意平台的「立即查看」按钮，用邀请链接注册账号<br>
-                2. 登录后在个人中心找到「API Key」或「令牌」<br>
-                3. 复制 Key 粘贴到下方输入框<br>
-                4. 部分平台需要充值后才能使用生图功能
-            </div>
-
-            <div style="display: grid; gap: 16px;">
-                <!-- API Key 输入 -->
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">API Key</label>
-                    <input type="password" id="apiKey" placeholder="sk-xxxxxxxxxxxxxxxx" style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px; font-family: monospace;" oninput="saveApiKey()">
-                    <div style="display: flex; gap: 12px; margin-top: 6px;">
-                        <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); cursor: pointer;">
-                            <input type="checkbox" id="saveKey" checked onchange="toggleSaveKey()" style="accent-color: var(--accent);">
-                            记住 Key（保存在本地）
-                        </label>
-                        <span id="keyStatus" style="font-size: 12px; color: var(--green);"></span>
-                    </div>
-                </div>
-
-                <!-- 选择平台 -->
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">选择平台</label>
-                    <select id="platformSelect" style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px; cursor: pointer;">
-                        <option value="">-- 请选择 --</option>
-                        <option value="savebill" data-url="https://api.savebill.store" data-model="gpt-image-2">省钱AI (Save AI) - GPT-Image-2</option>
-                        <option value="teaai" data-url="https://api.teaai.cc" data-model="gpt-image-2">TeaAI - GPT-Image-2</option>
-                        <option value="zaotu" data-url="https://api.zaotu.vip" data-model="flux-2">造图局 - Flux 2</option>
-                        <option value="poloapi" data-url="https://api.poloapi.com" data-model="gpt-image-2">PoloAPI - GPT-Image-2</option>
-                        <option value="dmxapi" data-url="https://api.dmxapi.com" data-model="gpt-image-2">大模型API - GPT-Image-2</option>
-                        <option value="gptcat" data-url="https://api.gptcat.cc" data-model="gpt-image-2">GPT猫 - GPT-Image-2</option>
-                        <option value="custom" data-url="" data-model="">自定义（手动输入Base URL）</option>
-                    </select>
-                </div>
-
-                <!-- 自定义 URL -->
-                <div id="customUrlBox" style="display: none;">
-                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">Base URL</label>
-                    <input type="text" id="customUrl" placeholder="https://api.xxx.com/v1" style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px;">
-                </div>
-
-                <!-- Prompt 输入 -->
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">描述你的图片（Prompt）</label>
-                    <textarea id="promptInput" rows="4" placeholder="例如：一只可爱的橘猫坐在窗台上，阳光洒在身上，宫崎骏风格..." style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px; resize: vertical; font-family: inherit;"></textarea>
-                </div>
-
-                <!-- 生成按钮 -->
-                <button id="generateBtn" onclick="generateImage()" style="width: 100%; padding: 14px; background: var(--gradient-purple); border: none; border-radius: 10px; color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <span>🎨</span>
-                    <span>生成图片</span>
-                </button>
-
-                <!-- 状态/结果 -->
-                <div id="resultArea" style="display: none;">
-                    <div id="loadingState" style="display: none; text-align: center; padding: 40px;">
-                        <div style="width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
-                        <p style="font-size: 14px; color: var(--text-secondary);">正在生成中，请稍候...</p>
-                    </div>
-                    <div id="errorState" style="display: none; padding: 16px; background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.3); border-radius: 10px; color: var(--red); font-size: 14px;"></div>
-                    <div id="successState" style="display: none;">
-                        <img id="resultImage" style="width: 100%; border-radius: 12px; border: 1px solid var(--border);" alt="生成的图片">
-                        <div style="display: flex; gap: 10px; margin-top: 12px;">
-                            <a id="downloadLink" href="#" download="generated.png" style="flex: 1; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-align: center; text-decoration: none; font-size: 14px; font-weight: 500;">💾 下载图片</a>
-                            <button onclick="document.getElementById('resultArea').style.display='none'; document.getElementById('promptInput').value='';" style="flex: 1; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); cursor: pointer; font-size: 14px;">重新生成</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <style>
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
         }
     </style>
 
@@ -908,23 +1298,19 @@
     </footer>
 
     <script>
+        // ===== 筛选 =====
         function filterTools(type, btn) {
             document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
             btn.classList.add('active');
-
-            const cards = document.querySelectorAll('.tool-card');
-            cards.forEach(card => {
-                if (type === 'all' || card.dataset.type === type) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+            document.querySelectorAll('.tool-card').forEach(c => {
+                c.style.display = (type === 'all' || c.dataset.type === type) ? '' : 'none';
             });
         }
 
-        // API Key 管理
+        // ===== API Key 管理 =====
         const STORAGE_KEY = 'creative_api_key';
         const STORAGE_SAVE_FLAG = 'creative_save_key_flag';
+        let currentMode = 'image';
 
         function loadApiKey() {
             const shouldSave = localStorage.getItem(STORAGE_SAVE_FLAG) === 'true';
@@ -933,7 +1319,7 @@
                 const saved = localStorage.getItem(STORAGE_KEY);
                 if (saved) {
                     document.getElementById('apiKey').value = saved;
-                    document.getElementById('keyStatus').textContent = '✓ 已加载保存的 Key';
+                    document.getElementById('keyStatus').textContent = '✓ 已加载';
                 }
             }
         }
@@ -944,7 +1330,7 @@
             if (shouldSave && key) {
                 localStorage.setItem(STORAGE_KEY, key);
                 localStorage.setItem(STORAGE_SAVE_FLAG, 'true');
-                document.getElementById('keyStatus').textContent = '✓ 已自动保存';
+                document.getElementById('keyStatus').textContent = '✓ 已保存';
             } else {
                 localStorage.removeItem(STORAGE_KEY);
                 localStorage.setItem(STORAGE_SAVE_FLAG, 'false');
@@ -953,119 +1339,193 @@
         }
 
         function toggleSaveKey() {
-            const shouldSave = document.getElementById('saveKey').checked;
-            localStorage.setItem(STORAGE_SAVE_FLAG, shouldSave);
-            if (shouldSave) {
-                saveApiKey();
+            const s = document.getElementById('saveKey').checked;
+            localStorage.setItem(STORAGE_SAVE_FLAG, s);
+            s ? saveApiKey() : (localStorage.removeItem(STORAGE_KEY), document.getElementById('keyStatus').textContent = '');
+        }
+
+        function toggleKeyVisibility() {
+            const inp = document.getElementById('apiKey');
+            inp.type = inp.type === 'password' ? 'text' : 'password';
+        }
+
+        function toggleKeyHelp() {
+            const el = document.getElementById('keyHelp');
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // ===== 模式切换 =====
+        function switchMode(mode, btn) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 更新尺寸选项
+            document.querySelectorAll('#sizeSelect option').forEach(opt => {
+                opt.style.display = (opt.dataset.type === mode) ? '' : 'none';
+            });
+            // 选中第一个匹配的
+            const first = document.querySelector(`#sizeSelect option[data-type="${mode}"]`);
+            if (first) { first.selected = true; }
+
+            // 更新标签和按钮
+            if (mode === 'image') {
+                document.getElementById('promptLabel').textContent = '描述画面（Prompt）';
+                document.getElementById('genIcon').textContent = '🎨';
+                document.getElementById('genText').textContent = '生成图片';
+                document.getElementById('negativeField').style.display = '';
             } else {
-                localStorage.removeItem(STORAGE_KEY);
-                document.getElementById('keyStatus').textContent = '';
+                document.getElementById('promptLabel').textContent = '描述视频内容（Prompt）';
+                document.getElementById('genIcon').textContent = '🎬';
+                document.getElementById('genText').textContent = '生成视频';
+                document.getElementById('negativeField').style.display = 'none';
+            }
+
+            resetResult();
+        }
+
+        // ===== 平台选择 =====
+        function onPlatformChange() {
+            const sel = document.getElementById('platformSelect');
+            document.getElementById('customUrlBox').style.display = sel.value === 'custom' ? 'block' : 'none';
+        }
+
+        // ===== 结果操作 =====
+        function resetResult() {
+            document.getElementById('resultPlaceholder').style.display = '';
+            document.getElementById('resultLoading').style.display = 'none';
+            document.getElementById('resultError').style.display = 'none';
+            document.getElementById('resultSuccess').style.display = 'none';
+        }
+
+        function showLoading() {
+            document.getElementById('resultPlaceholder').style.display = 'none';
+            document.getElementById('resultLoading').style.display = '';
+            document.getElementById('resultError').style.display = 'none';
+            document.getElementById('resultSuccess').style.display = 'none';
+        }
+
+        function showError(msg) {
+            document.getElementById('resultPlaceholder').style.display = 'none';
+            document.getElementById('resultLoading').style.display = 'none';
+            document.getElementById('resultSuccess').style.display = 'none';
+            document.getElementById('resultError').style.display = '';
+            document.getElementById('errorMessage').textContent = msg;
+        }
+
+        function showSuccess(base64Data) {
+            document.getElementById('resultPlaceholder').style.display = 'none';
+            document.getElementById('resultLoading').style.display = 'none';
+            document.getElementById('resultError').style.display = 'none';
+            document.getElementById('resultSuccess').style.display = '';
+
+            const img = document.getElementById('resultImage');
+            const video = document.getElementById('resultVideo');
+            const videoSrc = document.getElementById('videoSource');
+
+            if (currentMode === 'image') {
+                img.src = `data:image/png;base64,${base64Data}`;
+                img.style.display = '';
+                video.style.display = 'none';
+                document.getElementById('downloadLink').download = 'generated.png';
+                document.getElementById('downloadLink').href = img.src;
+            } else {
+                // 视频 - 某些API可能返回base64视频
+                videoSrc.src = `data:video/mp4;base64,${base64Data}`;
+                video.style.display = '';
+                img.style.display = 'none';
+                document.getElementById('downloadLink').download = 'generated.mp4';
+                document.getElementById('downloadLink').href = videoSrc.src;
+                video.load();
             }
         }
 
-        // 平台选择
-        document.getElementById('platformSelect').addEventListener('change', function() {
-            const isCustom = this.value === 'custom';
-            document.getElementById('customUrlBox').style.display = isCustom ? 'block' : 'none';
-        });
+        let lastPayload = null;
 
-        // 图片生成
+        function retryGenerate() {
+            if (lastPayload) generateImage();
+        }
+
+        // ===== 生成 =====
         async function generateImage() {
             const apiKey = document.getElementById('apiKey').value.trim();
             const platform = document.getElementById('platformSelect');
             const prompt = document.getElementById('promptInput').value.trim();
-            const resultArea = document.getElementById('resultArea');
-            const loadingState = document.getElementById('loadingState');
-            const errorState = document.getElementById('errorState');
-            const successState = document.getElementById('successState');
+            const size = document.getElementById('sizeSelect').value;
             const generateBtn = document.getElementById('generateBtn');
 
-            // 验证
-            if (!apiKey) {
-                alert('请输入 API Key');
-                return;
-            }
-            if (!platform.value) {
-                alert('请选择平台');
-                return;
-            }
-            if (!prompt) {
-                alert('请输入图片描述');
-                return;
-            }
+            if (!apiKey) { alert('请输入 API Key'); return; }
+            if (!platform.value) { alert('请选择平台'); return; }
+            if (!prompt) { alert('请输入描述内容'); return; }
 
-            // 获取 URL 和模型
-            let baseUrl, model;
+            let baseUrl, modelName;
             if (platform.value === 'custom') {
                 baseUrl = document.getElementById('customUrl').value.trim();
-                model = 'gpt-image-2';
+                modelName = currentMode === 'image' ? 'gpt-image-2' : 'video-model';
             } else {
-                const option = platform.options[platform.selectedIndex];
-                baseUrl = option.dataset.url;
-                model = option.dataset.model;
+                const opt = platform.options[platform.selectedIndex];
+                baseUrl = opt.dataset.base;
+                modelName = currentMode === 'image' ? opt.dataset.img : opt.dataset.vid;
+                if (!modelName && currentMode === 'video') {
+                    showError('该平台暂不支持视频生成');
+                    return;
+                }
             }
 
-            if (!baseUrl) {
-                alert('请输入 Base URL');
-                return;
-            }
+            if (!baseUrl) { alert('请输入 Base URL'); return; }
 
-            // 显示加载
-            resultArea.style.display = 'block';
-            loadingState.style.display = 'block';
-            errorState.style.display = 'none';
-            successState.style.display = 'none';
+            showLoading();
             generateBtn.disabled = true;
             generateBtn.style.opacity = '0.6';
 
             try {
-                const response = await fetch(`${baseUrl}/images/generations`, {
+                // 构建请求体 - 兼容 OpenAI 图像 API 格式
+                const body = currentMode === 'image' ? {
+                    model: modelName || 'gpt-image-2',
+                    prompt: prompt,
+                    n: 1,
+                    size: size,
+                    response_format: 'b64_json'
+                } : {
+                    model: modelName || 'video-model',
+                    prompt: prompt,
+                    size: size,
+                    response_format: 'b64_json'
+                };
+
+                const url = currentMode === 'image'
+                    ? `${baseUrl.replace(/\/+$/, '')}/images/generations`
+                    : `${baseUrl.replace(/\/+$/, '')}/videos/generations`;
+
+                const response = await fetch(url, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${apiKey}`
-                    },
-                    body: JSON.stringify({
-                        model: model,
-                        prompt: prompt,
-                        n: 1,
-                        size: '1024x1024',
-                        response_format: 'b64_json'
-                    })
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+                    body: JSON.stringify(body)
                 });
 
                 if (!response.ok) {
-                    const errorData = await response.json().catch(() => ({}));
-                    throw new Error(errorData.error?.message || `HTTP ${response.status}: ${response.statusText}`);
+                    const errData = await response.json().catch(() => ({}));
+                    throw new Error(errData.error?.message || `HTTP ${response.status}`);
                 }
 
                 const data = await response.json();
-                const imageData = data.data?.[0]?.b64_json;
+                const resultData = data.data?.[0];
+                const b64 = resultData?.b64_json || resultData?.image_data || resultData?.video_data;
 
-                if (!imageData) {
-                    throw new Error('返回数据中没有图片');
-                }
+                if (!b64) throw new Error('返回数据中没有图片/视频');
 
-                // 显示图片
-                const img = document.getElementById('resultImage');
-                img.src = `data:image/png;base64,${imageData}`;
-                document.getElementById('downloadLink').href = img.src;
-
-                loadingState.style.display = 'none';
-                successState.style.display = 'block';
+                showSuccess(b64);
 
             } catch (err) {
-                loadingState.style.display = 'none';
-                errorState.style.display = 'block';
-                errorState.textContent = `❌ 生成失败：${err.message}`;
-                console.error('生成错误:', err);
+                showError(`生成失败：${err.message}`);
+                console.error(err);
             } finally {
                 generateBtn.disabled = false;
                 generateBtn.style.opacity = '1';
             }
         }
 
-        // 页面加载时恢复 Key
+        // 页面加载
         loadApiKey();
     </script>
 </body>
