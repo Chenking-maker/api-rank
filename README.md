@@ -1,204 +1,209 @@
-# API中转站排行榜
+<p align="center">
+  <img src="https://img.shields.io/badge/在线访问-api--rank--lake.vercel.app-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
+  <img src="https://img.shields.io/badge/收录平台-110+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
+  <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
+</p>
 
-一个自动化的API中转站综合评测与排名网站，每周自动检测各站点的可用性、响应速度和性价比。
+<h1 align="center">🏆 AI API中转站排行榜</h1>
 
-## 🌐 在线访问
+<p align="center">
+  <b>2026年最全面的AI大模型API平台评测与排行</b><br/>
+  实时可用性检测 · 多维度评分 · 邀请链接优惠 · 完全开源
+</p>
 
-- **主站**: https://api-rank.pages.dev
-- **备用**: https://api-rank.370542303.workers.dev
+<p align="center">
+  🔗 <a href="https://api-rank-lake.vercel.app">在线访问</a> · 
+  📖 <a href="https://github.com/Chenking-maker/api-rank/wiki">使用文档</a> · 
+  💬 <a href="https://github.com/Chenking-maker/api-rank/discussions">讨论区</a>
+</p>
 
-## ✨ 功能特点
+---
 
-- 📊 **七维评分体系**: 稳定性、速度、价格、模型真实性、功能丰富度、文档质量、模型丰富度
-- 🤖 **每周自动检测**: 每周一北京时间12:00自动检测所有站点
-- 🔄 **实时更新**: 检测结果自动更新到网站
-- 🔍 **智能匹配**: 根据用户需求推荐最适合的中转站
-- 📱 **响应式设计**: 支持PC和移动端访问
-- 🎯 **审核去重**: 自动过滤已收录/已拒绝的重复提交
-- 📈 **流量排行**: 可视化展示热门中转站访问量
+## ✨ 项目亮点
 
-## 🏆 当前排名 TOP 10
+| 功能 | 说明 |
+|------|------|
+| 📊 **实时检测** | 自动检测各平台可用性，失效站点自动标记 |
+| 🏅 **综合评分** | 稳定性、速度、价格、支持等多维度评分 |
+| 🔍 **智能筛选** | 按模型类型（Claude/GPT/Gemini/国产）、价格、用途筛选 |
+| 💰 **邀请优惠** | 整理各平台邀请链接，注册享额外优惠 |
+| 🛡️ **商家后台** | 站长可提交站点、管理信息 |
+| 📱 **响应式** | 完美适配PC和移动端 |
+| 🔓 **开源** | 代码完全开源，数据透明 |
 
-| 排名 | 名称 | 评分 | 特点 |
-|------|------|------|------|
-| 1 | 诗云API | 9.50 | Claude Code优化，国产模型支持全 |
-| 2 | 派客代码 (PackyCode) | 9.45 | Claude Code优化，上游供应商 |
-| 3 | 莱特代码 (RightCode) | 9.40 | Opus价格最低，编程场景优化 |
-| 4 | 星链4SAPI | 9.35 | 企业级服务，SLA保障 |
-| 5 | 云雾API | 9.30 | 模型验真，透明计费 |
-| 6 | 豆腐 (ToAPIs) | 9.20 | 新人体验金，0成本试用 |
-| 7 | 木瓜AI | 9.15 | 多模型支持，稳定服务 |
-| 8 | 硅基流动 | 9.10 | 国产模型全覆盖 |
-| 9 | 302.AI | 9.05 | 功能丰富，企业友好 |
-| 10 | 大模型API (DMXAPI) | 9.00 | 多协议兼容 |
+---
 
-> 完整排名请访问 [在线网站](https://api-rank.pages.dev)
+## 🏆 热门推荐（2026年6月）
 
-## 📊 统计数据
+| 排名 | 平台 | 评分 | 特色 | 邀请链接 |
+|:----:|------|:----:|------|----------|
+| 🥇 | **硅基流动** | 9.15 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
+| 🥈 | **DeepSeek API** | 9.0 | 官方API，超低价，月免费额度 | [访问](https://platform.deepseek.com) |
+| 🥉 | **OpenRouter** | 8.5 | 多模型聚合，新用户$1免费 | [访问](https://openrouter.ai) |
+| 4 | **派客代码** | 8.5 | 多模型支持，稳定运营 | [访问](https://www.packyapi.com/register?aff=zrXb) |
+| 5 | **豆包API** | 8.5 | 字节官方，企业支持 | [访问](https://www.volcengine.com) |
+| 6 | **API2D** | 8.2 | 多模型，稳定运营，国内直连 | [访问](https://api2d.com) |
+| 7 | **无限星河AI** | 8.2 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai) |
+| 8 | **灵芽API** | 8.0 | Claude/GPT专精，稳定低价 | [访问](https://api.lingyaai.cn/register?aff=k8I8) |
+| 9 | **清沐API** | 8.0 | 智能调度，团队配额，负载均衡 | [访问](https://openqi.sbs) |
+| 10 | **OpenModel AI** | 8.5 | 多模型LLM网关，按Token计费，无最低消费 | [访问](https://www.openmodel.ai?ref=MpYA6Pl5) |
 
-- **收录站点**: 82+ 个中转站
-- **有效站点**: ~79 个
-- **失效站点**: ~3 个
-- **检测周期**: 每周一 12:00 (北京时间)
-- **评测维度**: 7 个维度综合评分
+> 完整排名请访问 [在线网站](https://api-rank-lake.vercel.app) 查看
 
-## 🛠️ 技术栈
+---
 
-- **前端**: HTML5 + CSS3 + Vanilla JavaScript
-- **部署**: Cloudflare Pages
-- **自动化**: GitHub Actions
-- **检测**: Python + Requests
+## 🎯 支持的模型
 
-## 🤖 自动化检测
+| 类型 | 模型 |
+|------|------|
+| 🔵 **Claude** | Claude 3.5 Sonnet, Claude 3 Opus, Claude 4 |
+| 🟢 **GPT** | GPT-4o, GPT-5, o1, o3 |
+| 🟡 **Gemini** | Gemini 2.5 Pro, Gemini 2.5 Flash |
+| 🔴 **DeepSeek** | DeepSeek V3, DeepSeek R1, DeepSeek Coder |
+| 🟣 **国产** | Qwen, Kimi, GLM, 豆包, 讯飞星火, 百川 |
+| 🟠 **绘画** | Midjourney, Stable Diffusion, DALL-E |
 
-### 检测维度
-
-1. **网站可用性**: HTTP响应状态、响应时间
-2. **响应速度**: 分级评分（<300ms优秀，>3000ms较差）
-3. **评分调整**: 根据可用性自动调整站点评分
-4. **失效标记**: 自动标记离线/超时站点
-5. **恢复检测**: 检测恢复的站点自动重新展示
-
-### 运行方式
-
-- **自动运行**: 每周一北京时间12:00 (UTC 04:00)
-- **手动触发**: 在 GitHub Actions 页面点击 "Run workflow"
-
-### 本地运行
-
-```bash
-# 安装依赖
-pip install requests
-
-# 运行检测
-python scripts/weekly_check.py
-```
+---
 
 ## 📁 项目结构
 
 ```
-.
-├── .github/
-│   └── workflows/
-│       ├── deploy.yml           # 部署工作流
-│       └── weekly-check.yml     # 每周检测工作流
-├── scripts/
-│   ├── weekly_check.py          # 每周检测脚本
-│   └── daily_check.py           # 每日检测脚本（已弃用）
+api-rank/
+├── index.html              # 首页（Top 20 + 动态加载）
+├── all-stations.html       # 全部站点页面
+├── admin.html              # 商家后台管理
+├── dead-sites.html         # 失效站点列表
 ├── data/
-│   ├── stations_info.json       # 站点数据（82个站点）
-│   ├── check_results.json       # 检测结果
-│   └── site_status.json         # 站点状态（失效/恢复）
-├── index.html                   # 主页面
-├── admin.html                   # 管理后台
-├── dead-sites.html              # 失效站点列表
-└── README.md                    # 项目说明
+│   ├── stations_info.json  # 主站点数据（110个）
+│   ├── dead_sites.json     # 失效站点列表
+│   ├── site_status.json    # 站点状态（恢复/新失效）
+│   ├── daily_check_cache.json  # 每日检测缓存
+│   └── approved_stations.json   # 审核通过的站点
+├── scripts/
+│   └── weekly_check.py     # 自动检测脚本
+├── .github/
+│   └── workflows/          # GitHub Actions
+├── articles/               # 推广文章
+│   ├── v2ex-promotion.md
+│   ├── zhihu-article.md
+│   └── twitter-thread.md
+├── README.md
+├── MAINTENANCE.md          # 维护指南
+└── PROMOTION.md            # 推广方案
 ```
 
-## 🔐 管理后台
+---
 
-访问 `/admin.html` 进入管理后台，功能包括：
+## 🚀 快速开始
 
-- **收录审核**: 审核用户提交的中转站
-- **爬虫数据**: 查看自动爬取的潜在站点
-- **检测记录**: 查看每周检测结果
-- **已拒绝列表**: 管理已拒绝的站点，支持撤销
+### 在线使用
+直接访问 [https://api-rank-lake.vercel.app](https://api-rank-lake.vercel.app)
 
-### 审核去重机制
+### 本地部署
+```bash
+# 克隆仓库
+git clone https://github.com/Chenking-maker/api-rank.git
+cd api-rank
 
-- 自动过滤已收录的站点
-- 自动过滤已拒绝的站点
-- 自动过滤审核队列中的重复提交
-- 域名级去重（避免 www. 或路径差异）
+# 使用任意HTTP服务器
+npx serve .
+# 或
+python -m http.server 8080
+```
 
-## 🔧 配置 Secrets
+### Vercel部署
+```bash
+# 安装Vercel CLI
+npm i -g vercel
 
-在 GitHub 仓库设置中添加以下 Secrets:
+# 部署
+vercel
+```
 
-| Secret Name | 说明 | 获取方式 |
-|------------|------|---------|
-| `CF_TOKEN` | Cloudflare API Token | Cloudflare Dashboard → My Profile → API Tokens |
-| `CF_ACCOUNT_ID` | Cloudflare Account ID | Cloudflare Dashboard 右侧栏 |
+---
 
-### 创建 Cloudflare API Token
+## 🛠️ 技术栈
 
-1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com)
-2. 点击右上角头像 → My Profile
-3. 选择 "API Tokens" 标签
-4. 点击 "Create Token"
-5. 选择 "Cloudflare Pages" 模板
-6. 选择你的账户和项目
-7. 创建并复制 Token
+| 技术 | 用途 |
+|------|------|
+| HTML5 + CSS3 | 页面结构与样式 |
+| Vanilla JavaScript | 交互逻辑 |
+| JSON | 数据存储 |
+| GitHub Actions | 自动检测 |
+| Vercel | 部署托管 |
+
+---
+
+## 📊 数据统计
+
+| 指标 | 数值 |
+|------|------|
+| 收录平台 | 107+ |
+| 有效站点 | 77 |
+| 失效站点 | 30 |
+| 支持模型类型 | 6+ |
+| 更新频率 | 每日 |
+
+---
+
+## 🤝 贡献指南
+
+欢迎各种形式的贡献！
+
+### 提交新站点
+1. Fork 本仓库
+2. 编辑 `data/stations_info.json`，添加新站点
+3. 提交 PR
+
+### 报告失效站点
+- 在 [Issues](https://github.com/Chenking-maker/api-rank/issues) 中提交
+- 标题格式：`[失效报告] 站点名称 - 域名`
+
+### 功能建议
+- 在 [Discussions](https://github.com/Chenking-maker/api-rank/discussions) 中讨论
+
+---
 
 ## 📝 更新日志
 
-### 2026-06-03
-- ✅ 检测频率改为每周一次（更合理）
-- ✅ 新增5个中转站（MFate AI、FreeModel、随人AI、XueDingToken、Kirby API）
-- ✅ 完善审核去重机制（已拒绝/已收录自动过滤）
-- ✅ 修复站点数量统计显示不一致问题
-- ✅ 热门流量排行榜支持邀请链接跳转
+### v1.0.0 (2026-06-05)
+- 🎉 首次正式发布
+- ✅ 收录107个API中转站
+- ✅ 实时可用性检测
+- ✅ 综合评分排名系统
+- ✅ XSS安全防护
+- ✅ 响应式设计
+- ✅ 商家后台管理
+- ✅ GitHub Actions自动检测
 
-### 2026-06-02
-- ✅ 新增无限星河AI (infistar.ai)
-- ✅ 修复官方渠道被黑名单拦截问题
-- ✅ 修复评分超出范围问题（统一7.0-9.5）
-- ✅ 新增审核管理后台
-- ✅ 新增检测记录展示
+---
 
-### 2026-05-20
-- ✅ 重构为动态加载（#1-#20硬编码，#21+从JSON加载）
-- ✅ 新增云雾API、诗云API、清沐API
-- ✅ 修复点赞按钮显示问题
-- ✅ 修复评测维度数量（6→7）
+## 📱 相关链接
 
-### 2026-05-17
-- ✅ 添加 GitHub Actions 自动化工作流
-- ✅ 实现每日自动检测和部署
+- 🌐 **在线网站**: [https://api-rank-lake.vercel.app](https://api-rank-lake.vercel.app)
+- 📖 **Wiki文档**: [https://github.com/Chenking-maker/api-rank/wiki](https://github.com/Chenking-maker/api-rank/wiki)
+- 💬 **讨论区**: [https://github.com/Chenking-maker/api-rank/discussions](https://github.com/Chenking-maker/api-rank/discussions)
+- 🐛 **问题反馈**: [https://github.com/Chenking-maker/api-rank/issues](https://github.com/Chenking-maker/api-rank/issues)
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 PR 来改进这个项目！
-
-### 提交新站点
-
-1. 在网站首页点击"提交收录"
-2. 填写中转站网址
-3. 等待管理员审核
-
-### 数据更新
-
-站点数据存储在 `data/stations_info.json`，包含以下字段：
-
-```json
-{
-  "url": "站点URL（含邀请链接）",
-  "domain": "域名",
-  "name": "站点名称",
-  "description": "描述",
-  "models": ["支持的模型类型"],
-  "features": ["功能特点"],
-  "display_tags": ["展示标签"],
-  "display_metrics": [{"label": "标签", "value": "值", "cls": "样式类"}],
-  "score": "评分（7.0-9.5）",
-  "price": "价格等级（low/medium/high）",
-  "response_time": "响应时间",
-  "alive": "是否有效"
-}
-```
+---
 
 ## 📄 许可证
 
 MIT License
 
-## 📧 联系
+---
 
-如有问题或建议，欢迎通过以下方式联系：
-- 在 GitHub 提交 Issue
-- 邮件联系
+## 📝 免责声明
+
+本项目仅提供信息汇总和评测，不构成任何投资建议。使用各API平台前请仔细阅读其服务条款。
 
 ---
 
-**最后更新**: 2026-06-03
+<div align="center">
 
-**检测状态**: ✅ 正常运行 | **收录站点**: 82个 | **有效站点**: ~79个
+**如果这个项目对你有帮助，请给个 ⭐ Star！**
+
+Made with ❤️ for AI Developers
+
+</div>
