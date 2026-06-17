@@ -221,47 +221,50 @@
             box-shadow: 0 8px 40px rgba(0,0,0,0.2);
         }
 
-        .mode-tabs {
+        .mode-toggle-bar {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px 24px 16px;
             border-bottom: 1px solid var(--border);
         }
 
-        .mode-tab {
-            flex: 1;
-            padding: 16px;
-            background: transparent;
-            border: none;
+        .mode-toggle-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             color: var(--text-muted);
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.25s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
+            transition: all 0.3s;
         }
 
-        .mode-tab:hover {
+        .mode-toggle-btn:hover {
+            border-color: var(--accent);
             color: var(--text-secondary);
-            background: rgba(255,255,255,0.02);
         }
 
-        .mode-tab.active {
-            color: var(--text-primary);
-            background: rgba(255,255,255,0.03);
-        }
-
-        .mode-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 25%;
-            right: 25%;
-            height: 2px;
+        .mode-toggle-btn.active {
             background: var(--gradient-purple);
-            border-radius: 2px 2px 0 0;
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(108,92,231,0.3);
+        }
+
+        .mode-toggle-btn .toggle-icon {
+            font-size: 20px;
+        }
+
+        .toggle-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--border);
         }
 
         .generator-body {
@@ -891,15 +894,16 @@
     <!-- 在线生成器 -->
     <section class="generator-section">
         <div class="generator-card">
-            <!-- 模式切换 -->
-            <div class="mode-tabs">
-                <button class="mode-tab active" data-mode="image" onclick="switchMode('image', this)">
-                    <span>🎨</span>
-                    <span>图片生成</span>
+            <!-- 顶部模式切换 -->
+            <div class="mode-toggle-bar">
+                <button class="mode-toggle-btn active" id="btnImage" onclick="switchMode('image')">
+                    <span class="toggle-icon">🎨</span>
+                    <span class="toggle-label">图片生成</span>
                 </button>
-                <button class="mode-tab" data-mode="video" onclick="switchMode('video', this)">
-                    <span>🎬</span>
-                    <span>视频生成</span>
+                <div class="toggle-divider"></div>
+                <button class="mode-toggle-btn" id="btnVideo" onclick="switchMode('video')">
+                    <span class="toggle-icon">🎬</span>
+                    <span class="toggle-label">视频生成</span>
                 </button>
             </div>
 
@@ -928,19 +932,23 @@
                         </div>
                     </div>
 
-                    <!-- 平台 + 尺寸（横向排列） -->
+                    <!-- 模型选择 + 尺寸 -->
                     <div class="gen-row-two">
                         <div class="gen-field">
-                            <label>平台</label>
-                            <select id="platformSelect" onchange="onPlatformChange()">
-                                <option value="">— 选择平台 —</option>
-                                <option value="savebill" data-base="https://api.savebill.store" data-img="gpt-image-2" data-vid="">省钱AI</option>
-                                <option value="teaai" data-base="https://api.teaai.cc" data-img="gpt-image-2" data-vid="">TeaAI</option>
-                                <option value="zaotu" data-base="https://api.zaotu.vip" data-img="gpt-image-2" data-vid="">造图局</option>
-                                <option value="poloapi" data-base="https://api.poloapi.com" data-img="gpt-image-2" data-vid="">PoloAPI</option>
-                                <option value="dmxapi" data-base="https://api.dmxapi.com" data-img="gpt-image-2" data-vid="">大模型API</option>
-                                <option value="gptcat" data-base="https://api.gptcat.cc" data-img="gpt-image-2" data-vid="">GPT猫</option>
-                                <option value="custom" data-base="" data-img="" data-vid="">自定义</option>
+                            <label id="modelLabel">图片模型</label>
+                            <select id="modelSelect">
+                                <option value="gpt-image-2" data-type="image">GPT-Image-2</option>
+                                <option value="nano-banana-2" data-type="image">Nano Banana 2</option>
+                                <option value="midjourney-v7" data-type="image">Midjourney V7</option>
+                                <option value="flux-2" data-type="image">Flux 2 Max</option>
+                                <option value="stable-diffusion-4" data-type="image">Stable Diffusion 4</option>
+                                <option value="dall-e-3" data-type="image">DALL-E 3</option>
+                                <option value="veo-3" data-type="video" style="display:none;">Veo 3</option>
+                                <option value="seedance-2" data-type="video" style="display:none;">Seedance 2.0</option>
+                                <option value="kling-3" data-type="video" style="display:none;">可灵 3.0 (Kling)</option>
+                                <option value="sora-2" data-type="video" style="display:none;">Sora 2</option>
+                                <option value="runway-gen4" data-type="video" style="display:none;">Runway Gen-4</option>
+                                <option value="pika-2" data-type="video" style="display:none;">Pika 2.0</option>
                             </select>
                         </div>
                         <div class="gen-field">
@@ -956,7 +964,7 @@
                         </div>
                     </div>
 
-                    <!-- 自定义 URL -->
+                    <!-- Base URL（自定义时显示） -->
                     <div id="customUrlBox" class="gen-field" style="display:none;">
                         <label>Base URL</label>
                         <input type="text" id="customUrl" placeholder="https://api.xxx.com/v1">
@@ -964,7 +972,7 @@
 
                     <!-- Prompt -->
                     <div class="gen-field">
-                        <label id="promptLabel">描述（Prompt）</label>
+                        <label id="promptLabel">描述画面（Prompt）</label>
                         <textarea id="promptInput" rows="3" placeholder="描述你想要的画面，例如：一只橘猫在窗台上晒太阳，吉卜力风格"></textarea>
                     </div>
 
@@ -1253,21 +1261,23 @@
             <div class="info-card">
                 <h3><span>🎨</span> 2026最新AI绘图模型</h3>
                 <ul>
-                    <li><strong>GPT-Image-2</strong> - OpenAI 2026.4发布，Arena评分1512断层第一，DALL-E继任者</li>
-                    <li><strong>Midjourney V7</strong> - 美学依旧无敌，支持角色一致性</li>
-                    <li><strong>Flux 2 Max</strong> - Black Forest Lab出品，高质量开源模型</li>
-                    <li><strong>Stable Diffusion 4</strong> - 开源可定制，社区生态丰富</li>
-                    <li><strong>通义万相</strong> - 阿里出品，中文理解优秀</li>
+                    <li><strong>GPT-Image-2</strong> - OpenAI 2026.4发布，Arena评分断层第一</li>
+                    <li><strong>Nano Banana 2</strong> - 轻量高效，移动端友好</li>
+                    <li><strong>Midjourney V7</strong> - 美学无敌，角色一致性</li>
+                    <li><strong>Flux 2 Max</strong> - Black Forest Lab，开源高质量</li>
+                    <li><strong>Stable Diffusion 4</strong> - 开源可定制</li>
+                    <li><strong>DALL-E 3</strong> - OpenAI官方，理解力强</li>
                 </ul>
             </div>
             <div class="info-card">
                 <h3><span>🎬</span> 2026最新AI视频模型</h3>
                 <ul>
-                    <li><strong>Seedance 2.0</strong> - 字节跳动2026.2发布，1080p电影级多镜头叙事，8K分辨率</li>
-                    <li><strong>可灵 2.0 (Kling)</strong> - 快手出品，高质量视频生成</li>
-                    <li><strong>Runway Gen-3</strong> - 专业级视频创作工具</li>
-                    <li><strong>Pika 2.0</strong> - 快速生成，创意场景丰富</li>
-                    <li><strong>海螺AI (MiniMax)</strong> - 国产新秀，豆包已接入</li>
+                    <li><strong>Veo 3</strong> - Google 2026.5发布，物理模拟增强</li>
+                    <li><strong>Seedance 2.0</strong> - 字节跳动，1080p电影级叙事</li>
+                    <li><strong>可灵 3.0 (Kling)</strong> - 快手，高质量视频生成</li>
+                    <li><strong>Sora 2</strong> - OpenAI，长视频一致性</li>
+                    <li><strong>Runway Gen-4</strong> - 专业级视频创作</li>
+                    <li><strong>Pika 2.0</strong> - 快速生成，创意丰富</li>
                 </ul>
             </div>
             <div class="info-card">
@@ -1355,18 +1365,26 @@
         }
 
         // ===== 模式切换 =====
-        function switchMode(mode, btn) {
+        function switchMode(mode) {
             currentMode = mode;
-            document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
-            btn.classList.add('active');
+            document.getElementById('btnImage').classList.toggle('active', mode === 'image');
+            document.getElementById('btnVideo').classList.toggle('active', mode === 'video');
+
+            // 更新模型选择
+            const modelSelect = document.getElementById('modelSelect');
+            document.querySelectorAll('#modelSelect option').forEach(opt => {
+                opt.style.display = (opt.dataset.type === mode) ? '' : 'none';
+            });
+            const firstModel = document.querySelector(`#modelSelect option[data-type="${mode}"]`);
+            if (firstModel) { firstModel.selected = true; }
+            document.getElementById('modelLabel').textContent = mode === 'image' ? '图片模型' : '视频模型';
 
             // 更新尺寸选项
             document.querySelectorAll('#sizeSelect option').forEach(opt => {
                 opt.style.display = (opt.dataset.type === mode) ? '' : 'none';
             });
-            // 选中第一个匹配的
-            const first = document.querySelector(`#sizeSelect option[data-type="${mode}"]`);
-            if (first) { first.selected = true; }
+            const firstSize = document.querySelector(`#sizeSelect option[data-type="${mode}"]`);
+            if (firstSize) { firstSize.selected = true; }
 
             // 更新标签和按钮
             if (mode === 'image') {
@@ -1382,12 +1400,6 @@
             }
 
             resetResult();
-        }
-
-        // ===== 平台选择 =====
-        function onPlatformChange() {
-            const sel = document.getElementById('platformSelect');
-            document.getElementById('customUrlBox').style.display = sel.value === 'custom' ? 'block' : 'none';
         }
 
         // ===== 结果操作 =====
@@ -1449,45 +1461,48 @@
         // ===== 生成 =====
         async function generateImage() {
             const apiKey = document.getElementById('apiKey').value.trim();
-            const platform = document.getElementById('platformSelect');
+            const modelSelect = document.getElementById('modelSelect');
+            const modelName = modelSelect.value;
             const prompt = document.getElementById('promptInput').value.trim();
             const size = document.getElementById('sizeSelect').value;
             const generateBtn = document.getElementById('generateBtn');
 
             if (!apiKey) { alert('请输入 API Key'); return; }
-            if (!platform.value) { alert('请选择平台'); return; }
+            if (!modelName) { alert('请选择模型'); return; }
             if (!prompt) { alert('请输入描述内容'); return; }
 
-            let baseUrl, modelName;
-            if (platform.value === 'custom') {
-                baseUrl = document.getElementById('customUrl').value.trim();
-                modelName = currentMode === 'image' ? 'gpt-image-2' : 'video-model';
-            } else {
-                const opt = platform.options[platform.selectedIndex];
-                baseUrl = opt.dataset.base;
-                modelName = currentMode === 'image' ? opt.dataset.img : opt.dataset.vid;
-                if (!modelName && currentMode === 'video') {
-                    showError('该平台暂不支持视频生成');
-                    return;
+            // 从 Key 的前缀推断 base URL（用户可通过 customUrl 覆盖）
+            let baseUrl = '';
+            if (apiKey.startsWith('sk-savebill')) baseUrl = 'https://api.savebill.store';
+            else if (apiKey.startsWith('sk-teaai')) baseUrl = 'https://api.teaai.cc';
+            else if (apiKey.startsWith('sk-zaotu')) baseUrl = 'https://api.zaotu.vip';
+            else if (apiKey.startsWith('sk-polo')) baseUrl = 'https://api.poloapi.com';
+            else if (apiKey.startsWith('sk-dmx')) baseUrl = 'https://api.dmxapi.com';
+            else if (apiKey.startsWith('sk-gptcat')) baseUrl = 'https://api.gptcat.cc';
+            else {
+                // 无法推断，使用自定义URL或默认
+                const custom = document.getElementById('customUrl').value.trim();
+                if (custom) {
+                    baseUrl = custom;
+                } else {
+                    // 尝试通用格式
+                    baseUrl = 'https://api.openai.com/v1';
                 }
             }
-
-            if (!baseUrl) { alert('请输入 Base URL'); return; }
 
             showLoading();
             generateBtn.disabled = true;
             generateBtn.style.opacity = '0.6';
 
             try {
-                // 构建请求体 - 兼容 OpenAI 图像 API 格式
                 const body = currentMode === 'image' ? {
-                    model: modelName || 'gpt-image-2',
+                    model: modelName,
                     prompt: prompt,
                     n: 1,
                     size: size,
                     response_format: 'b64_json'
                 } : {
-                    model: modelName || 'video-model',
+                    model: modelName,
                     prompt: prompt,
                     size: size,
                     response_format: 'b64_json'
