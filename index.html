@@ -1548,6 +1548,29 @@
     border-color: rgba(102, 126, 234, 0.5);
 }
 
+/* ===== 绘图/视频专区按钮（与评分说明统一风格） ===== */
+.creative-tools-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(102, 126, 234, 0.15);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #667eea;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+.creative-tools-btn:hover {
+    background: rgba(102, 126, 234, 0.25);
+    border-color: rgba(102, 126, 234, 0.5);
+    color: #667eea;
+}
+
 /* ===== 评分说明弹窗 ===== */
 .score-info-content {
     padding: 20px;
@@ -4491,7 +4514,7 @@
 
                 <li><a href="#ranking">排行榜</a></li>
 
-                <li><a href="creative-tools.html" style="color: #fd79a8; font-weight: 600;">🎨 绘图/视频</a></li>
+                <li><a href="creative-tools.html" style="color: #667eea; font-weight: 600;">🎨 在线绘图/视频专区</a></li>
 
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
 
@@ -5151,7 +5174,7 @@
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span> <a href="creative-tools.html" class="creative-tools-btn" style="display:inline-flex;align-items:center;gap:4px;padding:4px 12px;background:linear-gradient(135deg,#fd79a8,#e84393);border-radius:6px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;margin-left:8px;transition:all 0.2s;">🎨 绘图/视频专区 →</a></h2>
+                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span> <a href="creative-tools.html" class="creative-tools-btn" title="在线绘图/视频专区">🎨 在线绘图/视频专区</a></h2>
 
                 <div class="filter-tabs">
 
@@ -6749,73 +6772,65 @@
 
             const topStation = results[0];
 
-            const reportHtml = `
+            const reportContent = document.getElementById('reportContent');
+            reportContent.innerHTML = '';
 
-                <div class="report-section">
+            const section1 = document.createElement('div');
+            section1.className = 'report-section';
+            section1.innerHTML = `<h4>🏆 最佳推荐：${escapeHtml(topStation.name)}</h4><p>根据您的需求，<strong>${escapeHtml(topStation.name)}</strong>是最匹配的选择，综合匹配度 ${escapeHtml(topStation.matchScore)} 分。</p><p>核心优势：${escapeHtml(topStation.features.join('、'))}</p>`;
+            reportContent.appendChild(section1);
 
-                    <h4>🏆 最佳推荐：${topStation.name}</h4>
+            const section2 = document.createElement('div');
+            section2.className = 'report-section';
+            const speedUl = document.createElement('ul');
+            results.forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.name}：${s.speed >= 9 ? '极快' : s.speed >= 8 ? '较快' : '一般'} (${s.speed}/10)`;
+                speedUl.appendChild(li);
+            });
+            section2.innerHTML = '<h4>⚡ 响应速度对比</h4>';
+            section2.appendChild(speedUl);
+            reportContent.appendChild(section2);
 
-                    <p>根据您的需求，<strong>${topStation.name}</strong>是最匹配的选择，综合匹配度 ${topStation.matchScore} 分。</p>
+            const section3 = document.createElement('div');
+            section3.className = 'report-section';
+            const priceUl = document.createElement('ul');
+            results.forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.name}：${s.price === 'low' ? '低价实惠' : s.price === 'medium' ? '中等价位' : '高端定位'}`;
+                priceUl.appendChild(li);
+            });
+            section3.innerHTML = '<h4>💰 价格定位</h4>';
+            section3.appendChild(priceUl);
+            reportContent.appendChild(section3);
 
-                    <p>核心优势：${topStation.features.join('、')}</p>
+            const section4 = document.createElement('div');
+            section4.className = 'report-section';
+            const stabUl = document.createElement('ul');
+            results.forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.name}：稳定性 ${s.stability}/10 · 售后评分 ${s.support}/10`;
+                stabUl.appendChild(li);
+            });
+            section4.innerHTML = '<h4>🛡️ 稳定性与口碑</h4>';
+            section4.appendChild(stabUl);
+            reportContent.appendChild(section4);
 
-                </div>
-
-                <div class="report-section">
-
-                    <h4>⚡ 响应速度对比</h4>
-
-                    <ul>
-
-                        ${results.map(s => `<li>${s.name}：${s.speed >= 9 ? '极快' : s.speed >= 8 ? '较快' : '一般'} (${s.speed}/10)</li>`).join('')}
-
-                    </ul>
-
-                </div>
-
-                <div class="report-section">
-
-                    <h4>💰 价格定位</h4>
-
-                    <ul>
-
-                        ${results.map(s => `<li>${s.name}：${s.price === 'low' ? '低价实惠' : s.price === 'medium' ? '中等价位' : '高端定位'}</li>`).join('')}
-
-                    </ul>
-
-                </div>
-
-                <div class="report-section">
-
-                    <h4>🛡️ 稳定性与口碑</h4>
-
-                    <ul>
-
-                        ${results.map(s => `<li>${s.name}：稳定性 ${s.stability}/10 · 售后评分 ${s.support}/10</li>`).join('')}
-
-                    </ul>
-
-                </div>
-
-                <div class="report-section">
-
-                    <h4>🎁 免费额度/新用户优惠</h4>
-
-                    <ul>
-
-                        ${results.map(s => `<li>${s.name}：${s.freeAmount}</li>`).join('')}
-
-                    </ul>
-
-                    <p style="margin-top: 12px; color: var(--green);"><strong>推荐白嫖党：</strong>硅基流动（每日免费）、DeepSeek官方（每月免费）、OpenRouter（新用户$1）</p>
-
-                </div>
-
-            `;
-
-
-
-            document.getElementById('reportContent').innerHTML = reportHtml;
+            const section5 = document.createElement('div');
+            section5.className = 'report-section';
+            const freeUl = document.createElement('ul');
+            results.forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.name}：${s.freeAmount}`;
+                freeUl.appendChild(li);
+            });
+            const freeP = document.createElement('p');
+            freeP.style.cssText = 'margin-top: 12px; color: var(--green);';
+            freeP.innerHTML = '<strong>推荐白嫖党：</strong>硅基流动（每日免费）、DeepSeek官方（每月免费）、OpenRouter（新用户$1）';
+            section5.innerHTML = '<h4>🎁 免费额度/新用户优惠</h4>';
+            section5.appendChild(freeUl);
+            section5.appendChild(freeP);
+            reportContent.appendChild(section5);
 
         }
 
@@ -6916,23 +6931,13 @@
 
             count.textContent = `${pendingQueue.length} 个待检测`;
 
-            list.innerHTML = pendingQueue.map(item => `
-
-                <div class="pending-item">
-
-                    <div>
-
-                        <span class="name">${item.name}</span>
-
-                        <span class="url">${item.url}</span>
-
-                    </div>
-
-                    <span class="status-badge ${item.status}">${item.statusText}</span>
-
-                </div>
-
-            `).join('');
+            list.innerHTML = '';
+            pendingQueue.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'pending-item';
+                div.innerHTML = `<div><span class="name">${escapeHtml(item.name)}</span><span class="url">${escapeHtml(item.url)}</span></div><span class="status-badge ${escapeHtml(item.status)}">${escapeHtml(item.statusText)}</span>`;
+                list.appendChild(div);
+            });
 
         }
 
@@ -7506,13 +7511,13 @@
 
                     <div class="rank-info-top">
 
-                        <span class="rank-name">${data.name}</span>
+                        <span class="rank-name">${escapeHtml(data.name)}</span>
 
                         <div class="rank-tags">
 
                             <span class="tag tag-new">用户提交</span>
 
-                            <span class="tag tag-stable">${modelLabels[data.model] || data.model}</span>
+                            <span class="tag tag-stable">${escapeHtml(modelLabels[data.model] || data.model)}</span>
 
                             <span class="tag tag-hot">${latency < 800 ? '响应快' : '稳定'}</span>
 
@@ -7520,12 +7525,12 @@
 
                     </div>
 
-                    <div class="rank-desc">由用户提交并通过自动检测收录。支持 ${modelLabels[data.model] || data.model} 模型接口。</div>
+                    <div class="rank-desc">由用户提交并通过自动检测收录。支持 ${escapeHtml(modelLabels[data.model] || data.model)} 模型接口。</div>
 
                     <div class="rank-metrics">
                         <div class="metric">
                             <span class="metric-label">专业</span>
-                            <span class="metric-value green">${modelLabels[data.model] || data.model}</span>
+                            <span class="metric-value green">${escapeHtml(modelLabels[data.model] || data.model)}</span>
                         </div>
                         <div class="metric">
                             <span class="metric-label">应用</span>
@@ -7543,7 +7548,7 @@
 
                     <div class="rank-score">${score} <small>/10</small></div>
 
-                    <a href="${siteHref}" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    <a href="${escapeHtml(siteHref)}" target="_blank" class="btn btn-primary">立即注册 →</a>
 
                 </div>
 
