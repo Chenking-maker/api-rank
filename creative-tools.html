@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绘图/视频专区 - AI创作工具推荐 | API排行榜</title>
+    <meta name="description" content="精选支持AI绘图、视频生成的API中转站，一站式找到最适合你的创作工具。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --bg-card-hover: #1c1c28;
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --text-primary: #f0f0f5;
+            --text-secondary: #8888a0;
+            --text-muted: #555570;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --accent-glow: rgba(108,92,231,0.3);
+            --green: #00d2a0;
+            --green-glow: rgba(0,210,160,0.2);
+            --yellow: #ffd43b;
+            --red: #ff6b6b;
+            --orange: #ff9f43;
+            --gradient-purple: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --gradient-green: linear-gradient(135deg, #00d2a0, #00b894);
+            --gradient-orange: linear-gradient(135deg, #ff9f43, #ee5a24);
+            --gradient-pink: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-purple);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+        }
+
+        .nav-link.active {
+            background: rgba(108,92,231,0.15);
+            color: var(--accent-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 24px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(108,92,231,0.08) 0%, transparent 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(108,92,231,0.15);
+            border: 1px solid rgba(108,92,231,0.3);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f0f0f5, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .hero-stat .label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            padding: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-tab {
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background: var(--gradient-purple);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        /* Cards Grid */
+        .cards-container {
+            padding: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-purple);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+        }
+
+        .tool-card.image-tool::before {
+            background: var(--gradient-pink);
+        }
+
+        .tool-card.video-tool::before {
+            background: var(--gradient-orange);
+        }
+
+        .tool-card.both-tool::before {
+            background: linear-gradient(90deg, #fd79a8, #ff9f43);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .card-icon.image { background: rgba(253,121,168,0.15); }
+        .card-icon.video { background: rgba(255,159,67,0.15); }
+        .card-icon.both { background: linear-gradient(135deg, rgba(253,121,168,0.15), rgba(255,159,67,0.15)); }
+
+        .card-name {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .card-domain {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .card-score {
+            text-align: right;
+        }
+
+        .score-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--green);
+        }
+
+        .score-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .feature-tag {
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .feature-tag.highlight {
+            background: rgba(108,92,231,0.15);
+            color: var(--accent-light);
+        }
+
+        .feature-tag.image-tag {
+            background: rgba(253,121,168,0.15);
+            color: #fd79a8;
+        }
+
+        .feature-tag.video-tag {
+            background: rgba(255,159,67,0.15);
+            color: #ff9f43;
+        }
+
+        .card-models {
+            margin-bottom: 16px;
+        }
+
+        .models-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .models-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .model-badge {
+            padding: 3px 8px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .card-footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-purple);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(108,92,231,0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 40px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .info-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .info-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero-stats { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">API</div>
+                <span class="logo-text">排行榜</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="all-stations.html" class="nav-link">全部中转站</a>
+                <a href="creative-tools.html" class="nav-link active">🎨 绘图/视频</a>
+                <a href="dead-sites.html" class="nav-link">失效站点</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span>🎨</span>
+            <span>AI创作工具专区</span>
+        </div>
+        <h1>绘图 / 视频生成</h1>
+        <p>精选支持AI绘图、视频生成的API中转站，一站式找到最适合你的创作工具。支持Midjourney、Stable Diffusion、DALL-E、可灵等热门模型。</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="number">8</div>
+                <div class="label">支持平台</div>
+            </div>
+            <div class="hero-stat">
+                <div class="number">6</div>
+                <div class="label">在线可用</div>
+            </div>
+            <div class="hero-stat">
+                <div class="number">15+</div>
+                <div class="label">支持模型</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="filter-section">
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterTools('all', this)">全部</button>
+            <button class="filter-tab" onclick="filterTools('image', this)">🎨 AI绘图</button>
+            <button class="filter-tab" onclick="filterTools('video', this)">🎬 AI视频</button>
+            <button class="filter-tab" onclick="filterTools('both', this)">绘图+视频</button>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="cards-container">
+        <h2 class="section-title">
+            <span>🔥</span>
+            <span>推荐平台</span>
+        </h2>
+        <div class="cards-grid" id="toolsGrid">
+
+            <!-- 省钱AI -->
+            <div class="tool-card both-tool" data-type="both">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="card-icon both">🎨</div>
+                        <div>
+                            <div class="card-name">省钱AI (Save AI)</div>
+                            <div class="card-domain">savebill.store</div>
+                        </div>
+                    </div>
+                    <div class="card-score">
+                        <div class="score-value">8.88</div>
+                        <div class="score-label">综合评分</div>
+                    </div>
+                </div>
+                <div class="card-desc">6个对话+3个生图模型一站解锁。Claude Opus 4.7/GPT-5.5/Gemini 3/Grok 4。按真实token消耗扣费，余额有效期1年。</div>
+                <div class="card-features">
+                    <span class="feature-tag image-tag">🎨 AI绘图</span>
+                    <span class="feature-tag highlight">对话+生图</span>
+                    <span class="feature-tag">余额1年有效</span>
+                    <span class="feature-tag">按token计费</span>
+                </div>
+                <div class="card-models">
+                    <div class="models-label">支持模型</div>
+                    <div class="models-list">
+                        <span class="model-badge">Claude</span>
+                        <span class="model-badge">GPT</span>
+                        <span class="model-badge">Gemini</span>
+                        <span class="model-badge">生图模型</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    <a href="https://savebill.store" target="_blank" class="btn btn-secondary">访问官网</a>
+                </div>
+            </div>
+
+            <!-- TeaAI -->
+            <div class="tool-card image-tool" data-type="image">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="card-icon image">🍵</div>
+                        <div>
+                            <div class="card-name">TeaAI</div>
+                            <div class="card-domain">teaai.cc</div>
+                        </div>
+                    </div>
+                    <div class="card-score">
+                        <div class="score-value">8.20</div>
+                        <div class="score-label">综合评分</div>
+                    </div>
+                </div>
+                <div class="card-desc">专注AI绘画的API中转平台，支持多种绘画模型，界面简洁易用，适合设计师和创作者快速生成图片。</div>
+                <div class="card-features">
+                    <span class="feature-tag image-tag">🎨 AI绘图</span>
+                    <span class="feature-tag highlight">绘画专精</span>
+                    <span class="feature-tag">界面简洁</span>
+                </div>
+                <div class="card-models">
+                    <div class="models-label">支持模型</div>
+                    <div class="models-list">
+                        <span class="model-badge">Stable Diffusion</span>
+                        <span class="model-badge">DALL-E</span>
+                        <span class="model-badge">Midjourney</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://teaai.cc/register?ref=58KKJDQP" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    <a href="https://teaai.cc" target="_blank" class="btn btn-secondary">访问官网</a>
+                </div>
+            </div>
+
+            <!-- 造图局 -->
+            <div class="tool-card image-tool" data-type="image">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="card-icon image">🖼️</div>
+                        <div>
+                            <div class="card-name">造图局</div>
+                            <div class="card-domain">zaotu.vip</div>
+                        </div>
+                    </div>
+                    <div class="card-score">
+                        <div class="score-value">7.93</div>
+                        <div class="score-label">综合评分</div>
+                    </div>
+                </div>
+                <div class="card-desc">专业的AI绘图平台，支持多种绘画风格和模型，提供高质量的图像生成服务，适合各种创作场景。</div>
+                <div class="card-features">
+                    <span class="feature-tag image-tag">🎨 AI绘图</span>
+                    <span class="feature-tag highlight">专业绘图</span>
+                    <span class="feature-tag">多种风格</span>
+                </div>
+                <div class="card-models">
+                    <div class="models-label">支持模型</div>
+                    <div class="models-list">
+                        <span class="model-badge">GPT</span>
+                        <span class="model-badge">图像生成</span>
+                        <span class="model-badge">风格迁移</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://zaotu.vip/?invite=yuyTxd3t" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    <a href="https://zaotu.vip" target="_blank" class="btn btn-secondary">访问官网</a>
+                </div>
+            </div>
+
+            <!-- PoloAPI -->
+            <div class="tool-card both-tool" data-type="both">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="card-icon both">🚀</div>
+                        <div>
+                            <div class="card-name">PoloAPI</div>
+                            <div class="card-domain">poloapi.com</div>
+                        </div>
+                    </div>
+                    <div class="card-score">
+                        <div class="score-value">8.83</div>
+                        <div class="score-label">综合评分</div>
+                    </div>
+                </div>
+                <div class="card-desc">多模型支持的API中转站，涵盖GPT-4o、Claude等主流模型，同时支持图像生成，适合多种AI应用场景。</div>
+                <div class="card-features">
+                    <span class="feature-tag image-tag">🎨 AI绘图</span>
+                    <span class="feature-tag highlight">多模型</span>
+                    <span class="feature-tag">高稳定性</span>
+                </div>
+                <div class="card-models">
+                    <div class="models-label">支持模型</div>
+                    <div class="models-list">
+                        <span class="model-badge">GPT-4o</span>
+                        <span class="model-badge">Claude</span>
+                        <span class="model-badge">图像生成</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://poloapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                </div>
+            </div>
+
+            <!-- DMXAPI -->
+            <div class="tool-card both-tool" data-type="both">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="card-icon both">⚡</div>
+                        <div>
+                            <div class="card-name">大模型API (DMXAPI)</div>
+                            <div class="card-domain">dmxapi.com</div>
+                        </div>
+                    </div>
+                    <div class="card-score">
+                        <div class="score-value">8.55</div>
+                        <div class="score-label">综合评分</div>
+                    </div>
+                </div>
+                <div class="card-desc">文本/图像/语音多模态能力整合全面，适合企业项目集成。支持多种创作场景，API文档完善。</div>
+                <div class="card-features">
+                    <span class="feature-tag image-tag">🎨 AI绘图</span>
+                    <span class="feature-tag video-tag">🎬 AI视频</span>
+                    <span class="feature-tag highlight">多模态</span>
+                    <span class="feature-tag">企业友好</span>
+                </div>
+                <div class="card-models">
+                    <div class="models-label">支持模型</div>
+                    <div class="models-list">
+                        <span class="model-badge">Claude</span>
+                        <span class="model-badge">GPT</span>
+                        <span class="model-badge">Gemini</span>
+                        <span class="model-badge">图像/语音</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.dmxapi.com/register?aff=Az9t" target="_blank" class="btn btn-primary">立即注册 →</a>
+                    <a href="https://www.dmxapi.com" target="_blank" class="btn btn-secondary">访问官网</a>
+                </div>
+            </div>
+
+            <!-- GPT猫 -->
+            <div class="tool-card image-tool" data-type="image">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="card-icon image">🐱</div>
+                        <div>
+                            <div class="card-name">GPT猫 (GPTCat)</div>
+                            <div class="card-domain">gptcat.cc</div>
+                        </div>
+                    </div>
+                    <div class="card-score">
+                        <div class="score-value">6.30</div>
+                        <div class="score-label">综合评分</div>
+                    </div>
+                </div>
+                <div class="card-desc">支持多种模型的API中转站，包含图像生成功能，价格亲民，适合个人用户和小型项目。</div>
+                <div class="card-features">
+                    <span class="feature-tag image-tag">🎨 AI绘图</span>
+                    <span class="feature-tag">价格亲民</span>
+                    <span class="feature-tag">个人友好</span>
+                </div>
+                <div class="card-models">
+                    <div class="models-label">支持模型</div>
+                    <div class="models-list">
+                        <span class="model-badge">Claude</span>
+                        <span class="model-badge">GPT</span>
+                        <span class="model-badge">Gemini</span>
+                        <span class="model-badge">图像生成</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://gptcat.cc" target="_blank" class="btn btn-primary">立即访问 →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><span>🎨</span> AI绘图模型</h3>
+                <ul>
+                    <li>Midjourney - 高质量艺术风格图像</li>
+                    <li>Stable Diffusion - 开源可定制</li>
+                    <li>DALL-E 3 - OpenAI官方，理解力强</li>
+                    <li>可灵 (Kling) - 国产优质模型</li>
+                    <li>通义万相 - 阿里出品</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3><span>🎬</span> AI视频模型</h3>
+                <ul>
+                    <li>可灵AI (Kling) - 高质量视频生成</li>
+                    <li>Runway Gen-3 - 专业级视频</li>
+                    <li>Pika Labs - 快速生成</li>
+                    <li>Stable Video - 开源方案</li>
+                    <li>海螺AI (MiniMax) - 国产新秀</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3><span>💡</span> 使用建议</h3>
+                <p>选择API中转站时，建议先使用免费额度测试图像/视频质量。关注模型的响应速度、生成质量和价格。对于商业项目，优先选择支持企业级服务的平台。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 API排行榜 | <a href="index.html">返回首页</a> | 数据仅供参考，请以各平台实际服务为准</p>
+    </footer>
+
+    <script>
+        function filterTools(type, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                if (type === 'all' || card.dataset.type === type) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
