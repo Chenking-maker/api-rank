@@ -599,8 +599,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即注册 →</a>
-                    <a href="https://savebill.store" target="_blank" class="btn btn-secondary">访问官网</a>
+                    <a href="https://savebill.store/chat?ref=611" target="_blank" class="btn btn-primary">立即查看 →</a>
                 </div>
             </div>
 
@@ -634,8 +633,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="https://teaai.cc/register?ref=58KKJDQP" target="_blank" class="btn btn-primary">立即注册 →</a>
-                    <a href="https://teaai.cc" target="_blank" class="btn btn-secondary">访问官网</a>
+                    <a href="https://teaai.cc/register?ref=58KKJDQP" target="_blank" class="btn btn-primary">立即查看 →</a>
                 </div>
             </div>
 
@@ -669,8 +667,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="https://zaotu.vip/?invite=yuyTxd3t" target="_blank" class="btn btn-primary">立即注册 →</a>
-                    <a href="https://zaotu.vip" target="_blank" class="btn btn-secondary">访问官网</a>
+                    <a href="https://zaotu.vip/?invite=yuyTxd3t" target="_blank" class="btn btn-primary">立即查看 →</a>
                 </div>
             </div>
 
@@ -705,7 +702,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="https://poloapi.com" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    <a href="https://poloapi.com" target="_blank" class="btn btn-primary">立即查看 →</a>
                 </div>
             </div>
 
@@ -741,8 +738,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="https://www.dmxapi.com/register?aff=Az9t" target="_blank" class="btn btn-primary">立即注册 →</a>
-                    <a href="https://www.dmxapi.com" target="_blank" class="btn btn-secondary">访问官网</a>
+                    <a href="https://www.dmxapi.com/register?aff=Az9t" target="_blank" class="btn btn-primary">立即查看 →</a>
                 </div>
             </div>
 
@@ -776,7 +772,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="https://gptcat.cc" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    <a href="https://gptcat.cc" target="_blank" class="btn btn-primary">立即查看 →</a>
                 </div>
             </div>
 
@@ -813,6 +809,99 @@
         </div>
     </section>
 
+    <!-- 在线图片生成器 -->
+    <section class="info-section" style="max-width: 800px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px;">
+            <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+                <span>🎨</span>
+                <span>在线图片生成器</span>
+                <span style="font-size: 12px; font-weight: 500; padding: 4px 10px; background: rgba(0,210,160,0.15); color: var(--green); border-radius: 20px;">Beta</span>
+            </h2>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">
+                输入你自己的 API Key，即可在浏览器内直接生成图片。Key 仅保存在你的浏览器中，不会上传到任何服务器。
+                <a href="#" onclick="document.getElementById('apiKeyHelp').style.display='block'; return false;" style="color: var(--accent-light);">如何获取 Key？</a>
+            </p>
+
+            <div id="apiKeyHelp" style="display: none; background: rgba(108,92,231,0.08); border: 1px solid rgba(108,92,231,0.2); border-radius: 10px; padding: 16px; margin-bottom: 20px; font-size: 13px; color: var(--text-secondary); line-height: 1.8;">
+                <strong style="color: var(--text-primary);">获取 API Key 步骤：</strong><br>
+                1. 点击上方任意平台的「立即查看」按钮，用邀请链接注册账号<br>
+                2. 登录后在个人中心找到「API Key」或「令牌」<br>
+                3. 复制 Key 粘贴到下方输入框<br>
+                4. 部分平台需要充值后才能使用生图功能
+            </div>
+
+            <div style="display: grid; gap: 16px;">
+                <!-- API Key 输入 -->
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">API Key</label>
+                    <input type="password" id="apiKey" placeholder="sk-xxxxxxxxxxxxxxxx" style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px; font-family: monospace;" oninput="saveApiKey()">
+                    <div style="display: flex; gap: 12px; margin-top: 6px;">
+                        <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); cursor: pointer;">
+                            <input type="checkbox" id="saveKey" checked onchange="toggleSaveKey()" style="accent-color: var(--accent);">
+                            记住 Key（保存在本地）
+                        </label>
+                        <span id="keyStatus" style="font-size: 12px; color: var(--green);"></span>
+                    </div>
+                </div>
+
+                <!-- 选择平台 -->
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">选择平台</label>
+                    <select id="platformSelect" style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px; cursor: pointer;">
+                        <option value="">-- 请选择 --</option>
+                        <option value="savebill" data-url="https://api.savebill.store" data-model="gpt-image-2">省钱AI (Save AI) - GPT-Image-2</option>
+                        <option value="teaai" data-url="https://api.teaai.cc" data-model="gpt-image-2">TeaAI - GPT-Image-2</option>
+                        <option value="zaotu" data-url="https://api.zaotu.vip" data-model="flux-2">造图局 - Flux 2</option>
+                        <option value="poloapi" data-url="https://api.poloapi.com" data-model="gpt-image-2">PoloAPI - GPT-Image-2</option>
+                        <option value="dmxapi" data-url="https://api.dmxapi.com" data-model="gpt-image-2">大模型API - GPT-Image-2</option>
+                        <option value="gptcat" data-url="https://api.gptcat.cc" data-model="gpt-image-2">GPT猫 - GPT-Image-2</option>
+                        <option value="custom" data-url="" data-model="">自定义（手动输入Base URL）</option>
+                    </select>
+                </div>
+
+                <!-- 自定义 URL -->
+                <div id="customUrlBox" style="display: none;">
+                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">Base URL</label>
+                    <input type="text" id="customUrl" placeholder="https://api.xxx.com/v1" style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px;">
+                </div>
+
+                <!-- Prompt 输入 -->
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px;">描述你的图片（Prompt）</label>
+                    <textarea id="promptInput" rows="4" placeholder="例如：一只可爱的橘猫坐在窗台上，阳光洒在身上，宫崎骏风格..." style="width: 100%; padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-size: 14px; resize: vertical; font-family: inherit;"></textarea>
+                </div>
+
+                <!-- 生成按钮 -->
+                <button id="generateBtn" onclick="generateImage()" style="width: 100%; padding: 14px; background: var(--gradient-purple); border: none; border-radius: 10px; color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>🎨</span>
+                    <span>生成图片</span>
+                </button>
+
+                <!-- 状态/结果 -->
+                <div id="resultArea" style="display: none;">
+                    <div id="loadingState" style="display: none; text-align: center; padding: 40px;">
+                        <div style="width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+                        <p style="font-size: 14px; color: var(--text-secondary);">正在生成中，请稍候...</p>
+                    </div>
+                    <div id="errorState" style="display: none; padding: 16px; background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.3); border-radius: 10px; color: var(--red); font-size: 14px;"></div>
+                    <div id="successState" style="display: none;">
+                        <img id="resultImage" style="width: 100%; border-radius: 12px; border: 1px solid var(--border);" alt="生成的图片">
+                        <div style="display: flex; gap: 10px; margin-top: 12px;">
+                            <a id="downloadLink" href="#" download="generated.png" style="flex: 1; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-align: center; text-decoration: none; font-size: 14px; font-weight: 500;">💾 下载图片</a>
+                            <button onclick="document.getElementById('resultArea').style.display='none'; document.getElementById('promptInput').value='';" style="flex: 1; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); cursor: pointer; font-size: 14px;">重新生成</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
     <!-- Footer -->
     <footer class="footer">
         <p>© 2026 API排行榜 | <a href="index.html">返回首页</a> | 数据仅供参考，请以各平台实际服务为准</p>
@@ -832,6 +921,152 @@
                 }
             });
         }
+
+        // API Key 管理
+        const STORAGE_KEY = 'creative_api_key';
+        const STORAGE_SAVE_FLAG = 'creative_save_key_flag';
+
+        function loadApiKey() {
+            const shouldSave = localStorage.getItem(STORAGE_SAVE_FLAG) === 'true';
+            document.getElementById('saveKey').checked = shouldSave;
+            if (shouldSave) {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    document.getElementById('apiKey').value = saved;
+                    document.getElementById('keyStatus').textContent = '✓ 已加载保存的 Key';
+                }
+            }
+        }
+
+        function saveApiKey() {
+            const key = document.getElementById('apiKey').value.trim();
+            const shouldSave = document.getElementById('saveKey').checked;
+            if (shouldSave && key) {
+                localStorage.setItem(STORAGE_KEY, key);
+                localStorage.setItem(STORAGE_SAVE_FLAG, 'true');
+                document.getElementById('keyStatus').textContent = '✓ 已自动保存';
+            } else {
+                localStorage.removeItem(STORAGE_KEY);
+                localStorage.setItem(STORAGE_SAVE_FLAG, 'false');
+                document.getElementById('keyStatus').textContent = '';
+            }
+        }
+
+        function toggleSaveKey() {
+            const shouldSave = document.getElementById('saveKey').checked;
+            localStorage.setItem(STORAGE_SAVE_FLAG, shouldSave);
+            if (shouldSave) {
+                saveApiKey();
+            } else {
+                localStorage.removeItem(STORAGE_KEY);
+                document.getElementById('keyStatus').textContent = '';
+            }
+        }
+
+        // 平台选择
+        document.getElementById('platformSelect').addEventListener('change', function() {
+            const isCustom = this.value === 'custom';
+            document.getElementById('customUrlBox').style.display = isCustom ? 'block' : 'none';
+        });
+
+        // 图片生成
+        async function generateImage() {
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const platform = document.getElementById('platformSelect');
+            const prompt = document.getElementById('promptInput').value.trim();
+            const resultArea = document.getElementById('resultArea');
+            const loadingState = document.getElementById('loadingState');
+            const errorState = document.getElementById('errorState');
+            const successState = document.getElementById('successState');
+            const generateBtn = document.getElementById('generateBtn');
+
+            // 验证
+            if (!apiKey) {
+                alert('请输入 API Key');
+                return;
+            }
+            if (!platform.value) {
+                alert('请选择平台');
+                return;
+            }
+            if (!prompt) {
+                alert('请输入图片描述');
+                return;
+            }
+
+            // 获取 URL 和模型
+            let baseUrl, model;
+            if (platform.value === 'custom') {
+                baseUrl = document.getElementById('customUrl').value.trim();
+                model = 'gpt-image-2';
+            } else {
+                const option = platform.options[platform.selectedIndex];
+                baseUrl = option.dataset.url;
+                model = option.dataset.model;
+            }
+
+            if (!baseUrl) {
+                alert('请输入 Base URL');
+                return;
+            }
+
+            // 显示加载
+            resultArea.style.display = 'block';
+            loadingState.style.display = 'block';
+            errorState.style.display = 'none';
+            successState.style.display = 'none';
+            generateBtn.disabled = true;
+            generateBtn.style.opacity = '0.6';
+
+            try {
+                const response = await fetch(`${baseUrl}/images/generations`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: model,
+                        prompt: prompt,
+                        n: 1,
+                        size: '1024x1024',
+                        response_format: 'b64_json'
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.error?.message || `HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const imageData = data.data?.[0]?.b64_json;
+
+                if (!imageData) {
+                    throw new Error('返回数据中没有图片');
+                }
+
+                // 显示图片
+                const img = document.getElementById('resultImage');
+                img.src = `data:image/png;base64,${imageData}`;
+                document.getElementById('downloadLink').href = img.src;
+
+                loadingState.style.display = 'none';
+                successState.style.display = 'block';
+
+            } catch (err) {
+                loadingState.style.display = 'none';
+                errorState.style.display = 'block';
+                errorState.textContent = `❌ 生成失败：${err.message}`;
+                console.error('生成错误:', err);
+            } finally {
+                generateBtn.disabled = false;
+                generateBtn.style.opacity = '1';
+            }
+        }
+
+        // 页面加载时恢复 Key
+        loadApiKey();
     </script>
 </body>
 </html>
