@@ -307,5 +307,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-11T18:03:34.327254",
     "check_count": 1
+  },
+  {
+    "name": "atlascloud.ai",
+    "url": "https://www.atlascloud.ai",
+    "submitTime": "2026-06-18T10:10:00.111713",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-18T10:10:00.111729",
+    "check_count": 1
   }
 ]
