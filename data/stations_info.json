@@ -4925,5 +4925,48 @@
     "display_metrics": [],
     "likes": 0,
     "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+  },
+  {
+    "url": "https://www.hurrai.cn/login?redirect=%2Fcredits&invite=LX-U_528FC1ADF4B9",
+    "domain": "hurrai.cn",
+    "name": "灵犀万相 (Hurrai)",
+    "description": "AI设计工作台，专注电商场景AI绘图。支持一键生成电商主图与多屏详情页套图、参考图风格复刻、SKU替换、产品精修等功能。提示词、参考图、画板排版一体化，让灵感更快落地。",
+    "models": [
+      "image"
+    ],
+    "features": [
+      "image",
+      "creative"
+    ],
+    "price": "medium",
+    "free_amount": "新用户免费试用",
+    "score": 8.45,
+    "response_time": 0.8,
+    "alive": true,
+    "last_check": "2026-06-18",
+    "check_count": 1,
+    "display_tags": [
+      "电商套图",
+      "AI绘图",
+      "风格复刻"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "电商设计",
+        "cls": "green"
+      },
+      {
+        "label": "功能",
+        "value": "套图+精修+SKU替换",
+        "cls": "accent"
+      },
+      {
+        "label": "场景",
+        "value": "电商主图/详情页",
+        "cls": ""
+      }
+    ],
+    "likes": 0
   }
 ]
