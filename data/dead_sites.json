@@ -60,12 +60,6 @@
     "status": "dead"
   },
   {
-    "url": "https://openai-sb.com",
-    "name": "OpenAI-SB",
-    "domain": "",
-    "status": "dead"
-  },
-  {
     "url": "https://aok.ai",
     "name": "AOK",
     "domain": "aok.ai",

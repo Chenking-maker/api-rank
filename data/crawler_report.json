@@ -1,32 +1,22 @@
 {
-  "timestamp": "2026-06-18T10:10:00.113735",
-  "elapsed_seconds": 314.6,
+  "timestamp": "2026-06-19T10:17:06.406559",
+  "elapsed_seconds": 300.1,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 18,
-    "total_dead": 14,
-    "new_discovered": 1,
+    "total_dead": 13,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 1,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://www.atlascloud.ai",
-      "name": "atlascloud.ai",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB"
     }
   ]
 }
