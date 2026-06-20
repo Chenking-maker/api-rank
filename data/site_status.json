@@ -1,11 +1,17 @@
 {
-  "updated_at": "2026-06-19T10:17:06.406063",
+  "updated_at": "2026-06-20T08:45:38.892047",
   "recovered": [
     {
-      "url": "https://openai-sb.com",
-      "name": "OpenAI-SB",
-      "domain": "openai-sb.com",
-      "recovered_at": "2026-06-19T10:14:13.872760"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI",
+      "domain": "poloapi.com",
+      "recovered_at": "2026-06-20T08:40:52.651939"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)",
+      "domain": "b.ai",
+      "recovered_at": "2026-06-20T08:42:31.763990"
     }
   ],
   "new_dead": []
