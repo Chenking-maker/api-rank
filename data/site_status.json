@@ -1,18 +1,5 @@
 {
-  "updated_at": "2026-06-20T08:45:38.892047",
-  "recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI",
-      "domain": "poloapi.com",
-      "recovered_at": "2026-06-20T08:40:52.651939"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)",
-      "domain": "b.ai",
-      "recovered_at": "2026-06-20T08:42:31.763990"
-    }
-  ],
+  "updated_at": "2026-06-21T09:40:15.914609",
+  "recovered": [],
   "new_dead": []
 }
