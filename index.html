@@ -30,6 +30,22 @@
 
     <meta property="og:type" content="website">
 
+    <meta property="og:url" content="https://api-rank-lake.vercel.app/">
+
+    <meta property="og:site_name" content="AI API中转站排行榜">
+
+    <meta property="og:image" content="https://api-rank-lake.vercel.app/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="AI API中转站排行榜 - 2026年最全面的AI API平台评测">
+
+    <meta name="twitter:description" content="实时可用性检测、多维度评分、邀请链接优惠，收录113+平台">
+
+    <link rel="canonical" href="https://api-rank-lake.vercel.app/">
+
+    <meta name="robots" content="index, follow">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -50,6 +66,8 @@
             --bg-card: #16161f;
 
             --bg-card-hover: #1c1c28;
+
+            --bg-hover: rgba(255, 255, 255, 0.05);
 
             --border: rgba(255,255,255,0.06);
 
@@ -9937,19 +9955,19 @@
 
                     <div class="admin-info">
 
-                        <div class="admin-name">${site.name}</div>
+                        <div class="admin-name">${escapeHtml(site.name)}</div>
 
-                        <div class="admin-url"><a href="${site.url}" target="_blank">${site.url}</a></div>
+                        <div class="admin-url"><a href="${escapeHtml(site.url).replace(/^javascript:/i, '')}" target="_blank" rel="noopener noreferrer">${escapeHtml(site.url)}</a></div>
 
-                        <div class="admin-desc">${site.description || ''}</div>
+                        <div class="admin-desc">${escapeHtml(site.description || '')}</div>
 
-                        <div class="admin-models">模型: ${(site.models || []).join(', ') || '未知'}</div>
+                        <div class="admin-models">模型: ${escapeHtml((site.models || []).join(', ') || '未知')}</div>
 
-                        <div class="admin-features">特点: ${(site.features || []).join(', ') || '未知'}</div>
+                        <div class="admin-features">特点: ${escapeHtml((site.features || []).join(', ') || '未知')}</div>
 
                         ${scoresHtml}
 
-                        <div class="admin-meta">响应: ${site.responseTime || '?'}s | 总分: ${site.score ? Number(site.score).toFixed(2) : '?.??'}/10</div>
+                        <div class="admin-meta">响应: ${escapeHtml(String(site.responseTime || '?'))}s | 总分: ${site.score ? Number(site.score).toFixed(2) : '?.??'}/10</div>
 
                     </div>
 
@@ -10213,7 +10231,7 @@
             if (site.display_metrics && Array.isArray(site.display_metrics) && site.display_metrics.length > 0) {
                 metricsHtml = site.display_metrics.map(m => {
                     const cls = m.cls ? (' ' + m.cls) : '';
-                    return '<div class="metric"><span class="metric-label">' + m.label + '</span><span class="metric-value' + cls + '">' + m.value + '</span></div>';
+                    return '<div class="metric"><span class="metric-label">' + escapeHtml(m.label) + '</span><span class="metric-value' + cls + '">' + escapeHtml(m.value) + '</span></div>';
                 }).join('\n                        ');
             } else {
                 metricsHtml = `
@@ -10769,6 +10787,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 _dataCache.localStorage[key] = null;
             }
             return _dataCache.localStorage[key];
+        }
+
+        // 缓存版 localStorage.setItem
+        function saveCached(key, value) {
+            try {
+                _dataCache.localStorage[key] = value;
+                localStorage.setItem(key, JSON.stringify(value));
+            } catch(e) {
+                console.log('saveCached出错:', e);
+            }
         }
 
         // 缓存版 fetch（同一 URL 只请求一次）

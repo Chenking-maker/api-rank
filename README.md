@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/在线访问-api--rank--lake.vercel.app-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
-  <img src="https://img.shields.io/badge/收录平台-110+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-113+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -9,13 +9,14 @@
 
 <p align="center">
   <b>2026年最全面的AI大模型API平台评测与排行</b><br/>
-  实时可用性检测 · 多维度评分 · 邀请链接优惠 · 完全开源
+  实时可用性检测 · 多维度评分 · 邀请链接优惠 · 分享赚次数 · 完全开源
 </p>
 
 <p align="center">
-  🔗 <a href="https://api-rank-lake.vercel.app">在线访问</a> · 
-  📖 <a href="https://github.com/Chenking-maker/api-rank/wiki">使用文档</a> · 
-  💬 <a href="https://github.com/Chenking-maker/api-rank/discussions">讨论区</a>
+  🔗 <a href="https://api-rank-lake.vercel.app">在线访问</a> ·
+  📖 <a href="https://github.com/Chenking-maker/api-rank/wiki">使用文档</a> ·
+  💬 <a href="https://github.com/Chenking-maker/api-rank/discussions">讨论区</a> ·
+  🎨 <a href="https://api-rank-lake.vercel.app/creative-tools.html">AI绘图/视频专区</a>
 </p>
 
 ---
@@ -25,9 +26,11 @@
 | 功能 | 说明 |
 |------|------|
 | 📊 **实时检测** | 自动检测各平台可用性，失效站点自动标记 |
-| 🏅 **综合评分** | 稳定性、速度、价格、支持等多维度评分 |
-| 🔍 **智能筛选** | 按模型类型（Claude/GPT/Gemini/国产）、价格、用途筛选 |
+| 🏅 **综合评分** | 稳定性、速度、价格、支持等多维度评分（8.00-9.95分） |
+| 🔍 **智能筛选** | 按模型类型（Claude/GPT/Gemini/国产/绘画/视频）、价格、用途筛选 |
 | 💰 **邀请优惠** | 整理各平台邀请链接，注册享额外优惠 |
+| 🔗 **分享赚次数** | 分享专属链接，好友注册即可获得额外查找次数 |
+| 📱 **手机号绑定** | 国际化手机号绑定，换设备可恢复身份 |
 | 🛡️ **商家后台** | 站长可提交站点、管理信息 |
 | 📱 **响应式** | 完美适配PC和移动端 |
 | 🔓 **开源** | 代码完全开源，数据透明 |
@@ -38,16 +41,16 @@
 
 | 排名 | 平台 | 评分 | 特色 | 邀请链接 |
 |:----:|------|:----:|------|----------|
-| 🥇 | **硅基流动** | 9.15 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
-| 🥈 | **DeepSeek API** | 9.0 | 官方API，超低价，月免费额度 | [访问](https://platform.deepseek.com) |
-| 🥉 | **OpenRouter** | 8.5 | 多模型聚合，新用户$1免费 | [访问](https://openrouter.ai) |
-| 4 | **派客代码** | 8.5 | 多模型支持，稳定运营 | [访问](https://www.packyapi.com/register?aff=zrXb) |
-| 5 | **豆包API** | 8.5 | 字节官方，企业支持 | [访问](https://www.volcengine.com) |
-| 6 | **API2D** | 8.2 | 多模型，稳定运营，国内直连 | [访问](https://api2d.com) |
-| 7 | **无限星河AI** | 8.2 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai) |
-| 8 | **灵芽API** | 8.0 | Claude/GPT专精，稳定低价 | [访问](https://api.lingyaai.cn/register?aff=k8I8) |
-| 9 | **清沐API** | 8.0 | 智能调度，团队配额，负载均衡 | [访问](https://openqi.sbs) |
-| 10 | **OpenModel AI** | 8.5 | 多模型LLM网关，按Token计费，无最低消费 | [访问](https://www.openmodel.ai?ref=MpYA6Pl5) |
+| 🥇 | **豆腐 (ToAPIs)** | 9.95 | 6大厂商官方授权，50+模型，视频模型 | [访问](https://toapis.com/login?aff=yjH5) |
+| 🥈 | **派客代码** | 9.88 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
+| 🥉 | **OpenRouter** | 9.85 | 400+模型，10M+用户，100T月Token | [访问](https://openrouter.ai) |
+| 4 | **灵芽API** | 9.78 | 2年+老牌，100+模型，旗舰专线0.69折 | [访问](https://api.lingyaai.cn/register?aff=k8I8) |
+| 5 | **莱特代码** | 9.72 | 企业级Agent分发，99.5%可用率 | [访问](https://right.codes/register?aff=56503380) |
+| 6 | **CoderPlan** | 9.68 | 多模型聚合，开发者友好 | [访问](https://coderplan.ai) |
+| 7 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
+| 8 | **红麦API** | 9.58 | 稳定运营，多模型支持 | [访问](https://hongmacc.com) |
+| 9 | **RK API** | 9.55 | 高性价比，多渠道可选 | [访问](https://rkapi.com) |
+| 10 | **无限星河AI** | 9.52 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai) |
 
 > 完整排名请访问 [在线网站](https://api-rank-lake.vercel.app) 查看
 
@@ -57,12 +60,13 @@
 
 | 类型 | 模型 |
 |------|------|
-| 🔵 **Claude** | Claude 3.5 Sonnet, Claude 3 Opus, Claude 4 |
-| 🟢 **GPT** | GPT-4o, GPT-5, o1, o3 |
-| 🟡 **Gemini** | Gemini 2.5 Pro, Gemini 2.5 Flash |
-| 🔴 **DeepSeek** | DeepSeek V3, DeepSeek R1, DeepSeek Coder |
-| 🟣 **国产** | Qwen, Kimi, GLM, 豆包, 讯飞星火, 百川 |
-| 🟠 **绘画** | Midjourney, Stable Diffusion, DALL-E |
+| 🔵 **Claude** | Claude 4 Opus, Claude 4 Sonnet, Claude 3.5 |
+| 🟢 **GPT** | GPT-5.5, GPT-5, GPT-4o, o3, o1 |
+| 🟡 **Gemini** | Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.5 Flash |
+| 🔴 **DeepSeek** | DeepSeek V4, DeepSeek V3.2, DeepSeek R1 |
+| 🟣 **国产** | GLM-5.2, Kimi K2.7, Qwen, 豆包, MiniMax M3 |
+| 🟠 **绘画** | Midjourney, GPT-image-2, DALL-E, Stable Diffusion |
+| 🎬 **视频** | Kling V3 Turbo, Veo, Sora2 |
 
 ---
 
@@ -70,27 +74,22 @@
 
 ```
 api-rank/
-├── index.html              # 首页（Top 20 + 动态加载）
+├── index.html              # 首页（Top 20 + 动态加载 + 分享系统）
 ├── all-stations.html       # 全部站点页面
-├── admin.html              # 商家后台管理
-├── dead-sites.html         # 失效站点列表
+├── creative-tools.html      # AI绘图/视频专区
+├── dead-sites.html          # 失效站点列表
 ├── data/
-│   ├── stations_info.json  # 主站点数据（110个）
-│   ├── dead_sites.json     # 失效站点列表
-│   ├── site_status.json    # 站点状态（恢复/新失效）
-│   ├── daily_check_cache.json  # 每日检测缓存
-│   └── approved_stations.json   # 审核通过的站点
+│   └── stations_info.json   # 主站点数据（113个）
+├── api/                     # Cloudflare Workers 后端
+│   ├── wrangler.toml        # Workers 配置
+│   ├── schema.sql           # D1 数据库建表
+│   └── src/
+│       ├── index.js         # API 入口（注册/分享/次数管理）
+│       └── utils.js         # JWT/工具函数
 ├── scripts/
-│   └── weekly_check.py     # 自动检测脚本
-├── .github/
-│   └── workflows/          # GitHub Actions
-├── articles/               # 推广文章
-│   ├── v2ex-promotion.md
-│   ├── zhihu-article.md
-│   └── twitter-thread.md
-├── README.md
-├── MAINTENANCE.md          # 维护指南
-└── PROMOTION.md            # 推广方案
+│   └── weekly_check.py      # 自动检测脚本
+├── .github/workflows/       # GitHub Actions
+└── README.md
 ```
 
 ---
@@ -102,23 +101,26 @@ api-rank/
 
 ### 本地部署
 ```bash
-# 克隆仓库
 git clone https://github.com/Chenking-maker/api-rank.git
 cd api-rank
-
-# 使用任意HTTP服务器
 npx serve .
-# 或
-python -m http.server 8080
 ```
 
 ### Vercel部署
 ```bash
-# 安装Vercel CLI
 npm i -g vercel
-
-# 部署
 vercel
+```
+
+### 分享系统后端部署（可选）
+```bash
+cd api
+npm install -g wrangler
+wrangler login
+wrangler d1 create api-rank-db  # 创建数据库
+wrangler d1 execute api-rank-db --file=schema.sql  # 初始化表
+wrangler secret put JWT_SECRET  # 设置JWT密钥
+wrangler deploy  # 部署Workers
 ```
 
 ---
@@ -127,11 +129,13 @@ vercel
 
 | 技术 | 用途 |
 |------|------|
-| HTML5 + CSS3 | 页面结构与样式 |
+| HTML5 + CSS3 | 页面结构与样式（暗色主题） |
 | Vanilla JavaScript | 交互逻辑 |
 | JSON | 数据存储 |
+| Cloudflare Workers + D1 | 分享系统后端 |
+| Web Crypto API | JWT 签发/验证 |
 | GitHub Actions | 自动检测 |
-| Vercel | 部署托管 |
+| Vercel | 前端部署托管 |
 
 ---
 
@@ -139,10 +143,11 @@ vercel
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 107+ |
-| 有效站点 | 77 |
-| 失效站点 | 30 |
-| 支持模型类型 | 6+ |
+| 收录平台 | 113+ |
+| 有效站点 | 79 |
+| 失效站点 | 34 |
+| 支持模型类型 | 7+（含绘画/视频） |
+| 评分范围 | 8.00 - 9.95 |
 | 更新频率 | 每日 |
 
 ---
@@ -166,6 +171,16 @@ vercel
 ---
 
 ## 📝 更新日志
+
+### v1.1.0 (2026-06-22)
+- ✅ 新增分享赚次数系统（Cloudflare Workers后端）
+- ✅ 新增API用户号自动注册（类似菩提苑）
+- ✅ 新增国际化手机号绑定（20+国家/地区）
+- ✅ 新增AI绘图/视频专区（creative-tools.html）
+- ✅ 收录Seede AI、叮当次元袋、灵犀万相
+- ✅ 全面重新评分（8.00-9.95分，拉开差距）
+- ✅ 更新豆腐、派客代码、OpenRouter等站点描述
+- ✅ 修复SSSAICode等失效站点数据
 
 ### v1.0.0 (2026-06-05)
 - 🎉 首次正式发布
@@ -205,5 +220,4 @@ MIT License
 **如果这个项目对你有帮助，请给个 ⭐ Star！**
 
 Made with ❤️ for AI Developers
-
 </div>
