@@ -286,44 +286,47 @@
         "url":  "https://toapis.com/login?aff=yjH5",
         "domain":  "toapis.com",
         "name":  "豆腐 (ToAPIs)",
-        "description":  "全功能AI API网关，50+模型统一接入，已获OpenAI/Anthropic/Google/字节/阿里/DeepSeek官方授权合作伙伴。新增Kling V3 Turbo/Veo/Sora2视频模型支持。新用户注册即领$0.2体验金，零成本试用。",
+        "description":  "AI API网关排行榜冠军平台，OpenAI/Anthropic/Google/字节/阿里/DeepSeek官方授权合作伙伴。50+模型统一接入（文本/图像/视频），支持Kling V3 Turbo/Veo/Sora2视频模型。企业级SLA保障，全球多节点部署，新用户注册即领$0.2体验金。",
         "models":  [
                        "claude",
                        "gpt",
                        "gemini",
+                       "image",
+                       "video",
                        "cheap"
                    ],
         "features":  [
                          "stable",
                          "multi",
-                         "cheap"
+                         "cheap",
+                         "enterprise"
                      ],
         "price":  "medium",
         "free_amount":  "$0.2体验金",
         "score":  9.95,
         "response_time":  3.3,
         "alive":  true,
-        "last_check":  "2026-06-05",
-        "check_count":  3,
+        "last_check":  "2026-06-22",
+        "check_count":  4,
         "display_tags":  [
-                             "新用户福利",
-                             "零成本试用",
-                             "控制台"
+                             "官方授权合作",
+                             "50+模型",
+                             "视频模型"
                          ],
         "display_metrics":  [
                                 {
-                                    "label":  "福利",
-                                    "value":  "$0.2体验金",
-                                    "cls":  "accent"
-                                },
-                                {
-                                    "label":  "特色",
-                                    "value":  "智能网关",
+                                    "label":  "权威",
+                                    "value":  "6大厂商官方授权",
                                     "cls":  "green"
                                 },
                                 {
-                                    "label":  "门槛",
-                                    "value":  "零成本",
+                                    "label":  "模型",
+                                    "value":  "50+文本/图像/视频",
+                                    "cls":  "accent"
+                                },
+                                {
+                                    "label":  "福利",
+                                    "value":  "$0.2体验金",
                                     "cls":  ""
                                 }
                             ],
