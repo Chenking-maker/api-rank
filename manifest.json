@@ -1,0 +1,19 @@
+{
+    "name": "AI API中转站排行榜",
+    "short_name": "API排行榜",
+    "description": "2026年最全面的AI大模型API平台评测与排行",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a0f",
+    "theme_color": "#0a0a0f",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "favicon.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["utilities", "developer tools"]
+}

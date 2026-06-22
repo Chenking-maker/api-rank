@@ -48,6 +48,7 @@
 
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="apple-touch-icon" href="favicon.jpg">
+    <link rel="manifest" href="manifest.json">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -4991,6 +4992,21 @@
         }
 
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI API中转站排行榜",
+        "url": "https://api-rank-lake.vercel.app/",
+        "description": "2026年最全面的AI大模型API平台评测与排行，实时可用性检测、多维度评分、邀请链接优惠",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://api-rank-lake.vercel.app/all-stations.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 
 </head>
 

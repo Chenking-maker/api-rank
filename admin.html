@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APIRank 商家后台 - 智能中转站推荐</title>
+    <meta name="description" content="API中转站商家后台管理，提交站点、管理信息。">
+    <meta name="keywords" content="AI API中转站,API排行榜,商家后台,站点管理">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="robots" content="noindex, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="商家后台 - API排行榜">
+    <meta property="og:description" content="API中转站商家后台管理，提交站点、管理信息。">
+    <meta property="og:url" content="https://api-rank-lake.vercel.app/admin.html">
+    <meta property="og:site_name" content="AI API中转站排行榜">
+    <meta property="og:image" content="https://api-rank-lake.vercel.app/favicon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="商家后台 - API排行榜">
+    <meta name="twitter:description" content="API中转站商家后台管理，提交站点、管理信息。">
+    <link rel="canonical" href="https://api-rank-lake.vercel.app/admin.html">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+    <link rel="manifest" href="manifest.json">
     <style>
         :root {
             --bg-primary: #0a0a0f;
             --bg-secondary: #12121a;
             --bg-card: #16161f;
+            --bg-card-hover: #1c1c28;
+            --bg-hover: rgba(255, 255, 255, 0.05);
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --text-primary: #f0f0f5;
+            --text-secondary: #8888a0;
+            --text-muted: #555570;
             --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --accent-glow: rgba(108,92,231,0.3);
             --green: #00d2a0;
-            --text-primary: #e4e4e7;
-            --text-secondary: #a1a1aa;
-            --border: #27272a;
+            --green-glow: rgba(0,210,160,0.2);
+            --yellow: #ffd43b;
+            --red: #ff6b6b;
+            --orange: #ff9f43;
             --danger: #ef4444;
             --warning: #f59e0b;
             --radius: 12px;
@@ -189,7 +216,7 @@
     <div class="dashboard" id="dashboard">
         <div class="topbar">
             <div class="topbar-left">
-                <div class="topbar-logo">AR</div>
+                <a href="index.html" class="topbar-logo" style="text-decoration:none;color:#fff;">AR</a>
                 <div class="topbar-title">工作台 <span>智能推荐引擎</span></div>
             </div>
             <div class="topbar-right">
