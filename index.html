@@ -4467,11 +4467,276 @@
 
 
         .last-update span {
-
             font-family: 'JetBrains Mono', monospace;
-
             color: var(--text-secondary);
+        }
 
+        /* ===== Share Commission System - 分享佣金系统 ===== */
+        .share-btn {
+            color: var(--green) !important;
+            font-weight: 600 !important;
+            position: relative;
+        }
+        .share-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-2);
+            border-radius: 1px;
+        }
+
+        .share-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .share-modal-overlay.active {
+            display: flex;
+        }
+
+        .share-modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 32px;
+            animation: modalIn 0.3s ease;
+            position: relative;
+        }
+
+        .share-modal h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .share-modal h2 .icon {
+            font-size: 24px;
+        }
+
+        .share-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .share-modal-close:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        .share-link-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .share-link-box input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            outline: none;
+        }
+        .share-link-box button {
+            background: var(--gradient-2);
+            border: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .share-link-box button:hover {
+            opacity: 0.85;
+        }
+
+        .share-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .share-stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .share-stat-card .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--green);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .share-stat-card .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .share-rules {
+            background: rgba(0, 210, 160, 0.05);
+            border: 1px solid rgba(0, 210, 160, 0.15);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .share-rules h4 {
+            font-size: 14px;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+        .share-rules ul {
+            list-style: none;
+            padding: 0;
+        }
+        .share-rules ul li {
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+        .share-rules ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .reward-list {
+            margin-top: 16px;
+        }
+        .reward-list h4 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        .reward-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .reward-item .reward-info {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .reward-item .reward-bonus {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--green);
+        }
+        .reward-empty {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .referral-toast {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(0, 210, 160, 0.15), rgba(0, 184, 148, 0.15));
+            border: 1px solid rgba(0, 210, 160, 0.3);
+            border-radius: 12px;
+            padding: 12px 24px;
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 9999;
+            animation: toastIn 0.4s ease, toastOut 0.4s ease 4s forwards;
+            backdrop-filter: blur(10px);
+            white-space: nowrap;
+        }
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        @keyframes toastOut {
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+        }
+
+        .share-modal-loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+        .share-modal-loading .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--border);
+            border-top-color: var(--green);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 12px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .share-stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            .share-stat-card {
+                padding: 12px 8px;
+            }
+            .share-stat-card .stat-value {
+                font-size: 22px;
+            }
+            .share-modal {
+                padding: 20px;
+            }
         }
 
     </style>
@@ -4517,6 +4782,8 @@
                 <li><a href="creative-tools.html" style="color: #667eea; font-weight: 600;">🎨 在线绘图/视频专区</a></li>
 
                 <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
+
+                <li><a href="javascript:void(0)" class="share-btn" onclick="openSharePanel()">🔗 分享赚次数</a></li>
 
                 <li><a href="javascript:void(0)" onclick="openSectionModal('submitModal')">提交收录</a></li>
 
@@ -5148,6 +5415,64 @@
         </div>
     </div>
 </div>
+
+
+    <!-- Share Commission Modal - 分享赚次数面板 -->
+    <div class="share-modal-overlay" id="shareModal" onclick="if(event.target===this)closeSharePanel()">
+        <div class="share-modal">
+            <button class="share-modal-close" onclick="closeSharePanel()">✕</button>
+
+            <h2><span class="icon">🔗</span> 分享赚查找次数</h2>
+
+            <div id="shareModalLoading" class="share-modal-loading">
+                <div class="spinner"></div>
+                <p>加载中...</p>
+            </div>
+
+            <div id="shareModalContent" style="display:none;">
+                <!-- 分享链接区域 -->
+                <div class="share-link-box">
+                    <input type="text" id="shareLinkInput" readonly value="生成中..." />
+                    <button onclick="copyShareLink()">复制链接</button>
+                </div>
+
+                <!-- 统计数据 -->
+                <div class="share-stats-grid">
+                    <div class="share-stat-card">
+                        <div class="stat-value" id="shareStatReferrals">0</div>
+                        <div class="stat-label">累计推荐</div>
+                    </div>
+                    <div class="share-stat-card">
+                        <div class="stat-value" id="shareStatBonus">0</div>
+                        <div class="stat-label">累计奖励</div>
+                    </div>
+                    <div class="share-stat-card">
+                        <div class="stat-value" id="shareStatRemaining">-</div>
+                        <div class="stat-label">今日剩余</div>
+                    </div>
+                </div>
+
+                <!-- 规则说明 -->
+                <div class="share-rules">
+                    <h4>规则说明</h4>
+                    <ul>
+                        <li>分享专属链接给朋友，朋友首次访问即算推荐成功</li>
+                        <li>每成功推荐 1 人，奖励 1 次查找次数</li>
+                        <li>每日基础免费 3 次查找，分享可额外获得更多</li>
+                        <li>奖励次数当天有效，次日清零</li>
+                    </ul>
+                </div>
+
+                <!-- 最近推荐记录 -->
+                <div class="reward-list">
+                    <h4>最近推荐记录</h4>
+                    <div id="rewardListContent">
+                        <div class="reward-empty">暂无推荐记录</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="toast-container" id="toastContainer"></div>
@@ -10719,6 +11044,365 @@ document.addEventListener('DOMContentLoaded', function() {
                     closeMobileMenu();
                 }
             });
+        });
+
+
+        // ============================================
+        // Share Commission System - 分享佣金系统
+        // ============================================
+
+        // --- 配置 ---
+        const SHARE_API_BASE = 'https://api-rank-backend.370542303.workers.dev';
+        const SHARE_USER_KEY = 'apirank_user_id';
+        const SHARE_TOKEN_KEY = 'apirank_jwt_token';
+
+        // --- 全局状态 ---
+        let shareUserId = null;
+        let shareToken = null;
+        let shareProfile = null;
+        let shareApiAvailable = false; // 标记服务端是否可用
+
+        // --- 匿名用户初始化 ---
+        function initShareUser() {
+            // 从 localStorage 读取或生成新用户 ID
+            shareUserId = localStorage.getItem(SHARE_USER_KEY);
+            shareToken = localStorage.getItem(SHARE_TOKEN_KEY);
+
+            if (!shareUserId) {
+                try {
+                    shareUserId = crypto.randomUUID();
+                    localStorage.setItem(SHARE_USER_KEY, shareUserId);
+                } catch (e) {
+                    // 降级：使用时间戳 + 随机数
+                    shareUserId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                    localStorage.setItem(SHARE_USER_KEY, shareUserId);
+                }
+            }
+
+            // 处理 URL 中的推荐参数
+            processReferralParam();
+
+            // 尝试注册/登录服务端
+            registerWithServer();
+        }
+
+        // --- 处理 URL 推荐参数 ?ref= ---
+        function processReferralParam() {
+            const params = new URLSearchParams(window.location.search);
+            const refCode = params.get('ref');
+
+            if (refCode && refCode.length >= 6) {
+                // 保存推荐码，注册时发送
+                localStorage.setItem('apirank_ref_code', refCode);
+                // 清除 URL 参数（保持 URL 整洁）
+                const cleanUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        }
+
+        // --- API 调用封装 ---
+
+        // 注册/登录
+        async function registerWithServer() {
+            try {
+                const ref = localStorage.getItem('apirank_ref_code') || null;
+                const resp = await fetch(SHARE_API_BASE + '/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_id: shareUserId, ref: ref })
+                });
+
+                if (!resp.ok) throw new Error('Register failed');
+
+                const data = await resp.json();
+                shareToken = data.token;
+                shareApiAvailable = true;
+                localStorage.setItem(SHARE_TOKEN_KEY, shareToken);
+
+                // 如果是新用户且有推荐码，显示提示
+                if (data.is_new && ref) {
+                    showReferralToast();
+                }
+
+                // 清除已使用的推荐码
+                localStorage.removeItem('apirank_ref_code');
+
+                // 更新 Finder 次数显示
+                updateUsageDisplay();
+
+            } catch (e) {
+                console.log('[Share] Server unavailable, using local fallback');
+                shareApiAvailable = false;
+            }
+        }
+
+        // 获取用户信息
+        async function fetchShareProfile() {
+            if (!shareToken) return null;
+            try {
+                const resp = await fetch(SHARE_API_BASE + '/api/user/profile', {
+                    headers: { 'Authorization': 'Bearer ' + shareToken }
+                });
+                if (!resp.ok) throw new Error('Profile fetch failed');
+                return await resp.json();
+            } catch (e) {
+                console.log('[Share] Failed to fetch profile');
+                return null;
+            }
+        }
+
+        // 生成分享链接
+        async function generateShareLink() {
+            if (!shareToken) return null;
+            try {
+                const resp = await fetch(SHARE_API_BASE + '/api/share/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + shareToken
+                    }
+                });
+                if (!resp.ok) throw new Error('Generate failed');
+                return await resp.json();
+            } catch (e) {
+                console.log('[Share] Failed to generate share link');
+                return null;
+            }
+        }
+
+        // 获取剩余次数
+        async function fetchRemaining() {
+            if (!shareToken) return null;
+            try {
+                const resp = await fetch(SHARE_API_BASE + '/api/finder/remaining', {
+                    headers: { 'Authorization': 'Bearer ' + shareToken }
+                });
+                if (!resp.ok) throw new Error('Remaining fetch failed');
+                return await resp.json();
+            } catch (e) {
+                console.log('[Share] Failed to fetch remaining');
+                return null;
+            }
+        }
+
+        // 消耗查找次数
+        async function useFinderOnServer() {
+            if (!shareToken) return null;
+            try {
+                const resp = await fetch(SHARE_API_BASE + '/api/finder/use', {
+                    method: 'POST',
+                    headers: { 'Authorization': 'Bearer ' + shareToken }
+                });
+                if (!resp.ok) {
+                    const err = await resp.json().catch(() => ({}));
+                    throw new Error(err.error || 'Use finder failed');
+                }
+                return await resp.json();
+            } catch (e) {
+                console.log('[Share] Failed to use finder on server:', e.message);
+                return null;
+            }
+        }
+
+        // --- 分享面板交互逻辑 ---
+
+        function openSharePanel() {
+            document.getElementById('shareModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            loadSharePanelData();
+        }
+
+        function closeSharePanel() {
+            document.getElementById('shareModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        async function loadSharePanelData() {
+            const loadingEl = document.getElementById('shareModalLoading');
+            const contentEl = document.getElementById('shareModalContent');
+            loadingEl.style.display = 'block';
+            contentEl.style.display = 'none';
+
+            try {
+                // 获取用户信息
+                const profile = await fetchShareProfile();
+
+                if (profile) {
+                    shareProfile = profile;
+
+                    // 更新统计数据
+                    document.getElementById('shareStatReferrals').textContent = profile.stats.total_referrals || 0;
+                    document.getElementById('shareStatBonus').textContent = profile.stats.total_bonus_uses || 0;
+                    document.getElementById('shareStatRemaining').textContent = profile.today.remaining_total || 0;
+
+                    // 更新分享链接
+                    if (profile.share_code) {
+                        const shareUrl = window.location.origin + window.location.pathname + '?ref=' + profile.share_code;
+                        document.getElementById('shareLinkInput').value = shareUrl;
+                    } else {
+                        // 没有分享码，生成一个
+                        const genResult = await generateShareLink();
+                        if (genResult) {
+                            document.getElementById('shareLinkInput').value = genResult.share_url;
+                        } else {
+                            document.getElementById('shareLinkInput').value = window.location.origin + window.location.pathname;
+                        }
+                    }
+
+                    // 更新推荐记录
+                    renderRewardList(profile.recent_referrals || []);
+
+                    contentEl.style.display = 'block';
+                    loadingEl.style.display = 'none';
+                } else {
+                    // 服务端不可用，显示降级内容
+                    showSharePanelFallback();
+                }
+            } catch (e) {
+                showSharePanelFallback();
+            }
+        }
+
+        function showSharePanelFallback() {
+            const loadingEl = document.getElementById('shareModalLoading');
+            const contentEl = document.getElementById('shareModalContent');
+
+            // 降级：使用本地数据
+            document.getElementById('shareStatReferrals').textContent = '-';
+            document.getElementById('shareStatBonus').textContent = '-';
+            const localUsage = checkFreeUsage();
+            document.getElementById('shareStatRemaining').textContent = localUsage.remaining;
+
+            const shareUrl = window.location.origin + window.location.pathname;
+            document.getElementById('shareLinkInput').value = shareUrl;
+
+            document.getElementById('rewardListContent').innerHTML =
+                '<div class="reward-empty">服务端暂不可用，请稍后再试</div>';
+
+            contentEl.style.display = 'block';
+            loadingEl.style.display = 'none';
+        }
+
+        function renderRewardList(referrals) {
+            const container = document.getElementById('rewardListContent');
+            if (!referrals || referrals.length === 0) {
+                container.innerHTML = '<div class="reward-empty">暂无推荐记录，分享链接给朋友即可获得奖励</div>';
+                return;
+            }
+
+            container.innerHTML = referrals.map(function(r) {
+                const date = r.created_at ? r.created_at.split('T')[0] : '未知';
+                return '<div class="reward-item">' +
+                    '<span class="reward-info">新用户通过你的链接注册</span>' +
+                    '<span class="reward-bonus">+' + (r.bonus_uses || 1) + '次</span>' +
+                    '<span class="reward-info" style="font-size:11px;margin-left:8px;">' + date + '</span>' +
+                    '</div>';
+            }).join('');
+        }
+
+        function copyShareLink() {
+            const input = document.getElementById('shareLinkInput');
+            if (!input) return;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(input.value).then(function() {
+                    showCopySuccess();
+                }).catch(function() {
+                    fallbackCopy(input);
+                });
+            } else {
+                fallbackCopy(input);
+            }
+        }
+
+        function fallbackCopy(input) {
+            input.select();
+            input.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showCopySuccess();
+            } catch (e) {
+                alert('复制失败，请手动复制链接');
+            }
+        }
+
+        function showCopySuccess() {
+            const btn = document.querySelector('.share-link-box button');
+            const originalText = btn.textContent;
+            btn.textContent = '已复制!';
+            btn.style.background = 'var(--green)';
+            setTimeout(function() {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 2000);
+        }
+
+        // --- 推荐提示条 ---
+        function showReferralToast() {
+            // 检查是否已经显示过
+            if (sessionStorage.getItem('apirank_referral_shown')) return;
+            sessionStorage.setItem('apirank_referral_shown', '1');
+
+            const toast = document.createElement('div');
+            toast.className = 'referral-toast';
+            toast.textContent = '欢迎! 你已通过好友分享链接到达，好友获得了 +1 查找次数奖励';
+            document.body.appendChild(toast);
+
+            // 4.5 秒后移除
+            setTimeout(function() {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 4500);
+        }
+
+        // --- Finder 次数逻辑改造 ---
+        // 覆盖原有的 checkFreeUsage 函数，优先使用服务端数据
+        const _originalCheckFreeUsage = checkFreeUsage;
+
+        checkFreeUsage = function() {
+            // 如果服务端可用，使用服务端数据
+            if (shareApiAvailable && shareProfile && shareProfile.today) {
+                return {
+                    remaining: shareProfile.today.remaining_total,
+                    used: shareProfile.today.used,
+                    canUse: shareProfile.today.remaining_total > 0
+                };
+            }
+            // 降级到原有逻辑
+            return _originalCheckFreeUsage();
+        };
+
+        // 覆盖原有的 recordUsage 函数
+        const _originalRecordUsage = recordUsage;
+
+        recordUsage = function() {
+            // 尝试在服务端记录
+            if (shareApiAvailable && shareToken) {
+                useFinderOnServer().then(function(result) {
+                    if (result) {
+                        // 更新本地缓存的 profile
+                        shareProfile.today.used++;
+                        shareProfile.today.remaining_total = result.remaining_total;
+                        updateUsageDisplay();
+                    } else {
+                        // 服务端失败，降级到本地
+                        _originalRecordUsage();
+                    }
+                });
+            } else {
+                // 服务端不可用，使用本地逻辑
+                _originalRecordUsage();
+            }
+        };
+
+        // --- 初始化 ---
+        // 页面加载时初始化分享系统
+        initShareUser();
+
+        // ESC 关闭分享面板
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSharePanel();
+            }
         });
 
 

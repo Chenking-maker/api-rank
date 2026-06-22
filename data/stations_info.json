@@ -51,7 +51,7 @@
     "url": "https://www.packyapi.com/register?aff=zrXb",
     "domain": "packyapi.com",
     "name": "派客代码 (PackyCode)",
-    "description": "国内最早针对Claude Code优化的供应商，已是多家中转站上游。支持阿里百炼/MiniMax/GLM/豆包/DeepSeek/千问等国产模型，注册送$1。",
+    "description": "企业级AI控制台平台，统一LLM API网关。支持30+模型、7个全球区域PoP、99.9% SLA。国内最早针对Claude Code优化，已是多家中转站上游。支持阿里百炼/MiniMax/GLM/豆包/DeepSeek/千问等国产模型，注册送$1。",
     "models": [
       "claude",
       "gpt",
@@ -286,7 +286,7 @@
     "url": "https://toapis.com/login?aff=yjH5",
     "domain": "toapis.com",
     "name": "豆腐 (ToAPIs)",
-    "description": "智能API网关控制台，简洁高效的开发者入口。支持主流大模型调用，新用户注册即领$0.2体验金，零成本试用。",
+    "description": "全功能AI API网关，50+模型统一接入，已获OpenAI/Anthropic/Google/字节/阿里/DeepSeek官方授权合作伙伴。新增Kling V3 Turbo/Veo/Sora2视频模型支持。新用户注册即领$0.2体验金，零成本试用。",
     "models": [
       "claude",
       "gpt",
@@ -379,7 +379,7 @@
     "url": "https://api.mooko.ai/register?aff=JiqY",
     "domain": "mooko.ai",
     "name": "木瓜AI",
-    "description": "GPT-5.2~GPT-5.5特价中，倍率0.15等于1毛5=1美元。多分组渠道可选，支持Claude/GPT/Gemini全系列。",
+    "description": "GPT-5.2~GPT-5.5特价中，倍率0.1等于1毛=1美元。新增GPT-image-2在线生图、Banana2、Veo视频模型。多分组渠道可选，支持Claude/GPT/Gemini全系列。",
     "models": [
       "claude",
       "gpt",
@@ -606,7 +606,7 @@
     "url": "https://openrouter.ai",
     "domain": "openrouter.ai",
     "name": "OpenRouter",
-    "description": "全球最知名LLM API聚合商，60+Provider、250k+应用引用。a16z/Stripe背书，生态成熟可靠。",
+    "description": "全球最知名LLM API聚合商，70+供应商、400+模型、10M+用户、100T月Token。a16z/Stripe背书，新增Claude Fable 5、GPT-5.5、Gemini 3.1 Pro Preview。生态成熟可靠。",
     "models": [
       "claude",
       "gpt",
@@ -663,9 +663,9 @@
     "free_amount": "$300额度/月",
     "score": 6.3,
     "response_time": 1,
-    "alive": true,
-    "last_check": "2026-06-05",
-    "check_count": 1,
+    "alive": false,
+    "last_check": "2026-06-22",
+    "check_count": 2,
     "display_tags": [
       "双节点",
       "包月划算",
@@ -832,7 +832,7 @@
     "url": "https://api.lingyaai.cn/register?aff=k8I8",
     "domain": "lingyaai.cn",
     "name": "灵芽API",
-    "description": "运营2年+的老牌API中转平台，服务2万+开发者。聚合100+主流AI模型，全球多节点部署，支持支付宝/微信充值，国内直连低延迟。",
+    "description": "运营2年+的老牌API中转平台，服务2万+开发者。聚合100+主流AI模型，全球多节点部署。新增GLM-5.2、Kimi-K2.7-Code、MiniMax M3等旗舰模型专线(低至0.69折)。支持支付宝/微信充值，国内直连低延迟。",
     "models": [
       "claude",
       "gpt",
@@ -4964,6 +4964,92 @@
       {
         "label": "场景",
         "value": "电商主图/详情页",
+        "cls": ""
+      }
+    ],
+    "likes": 0
+  },
+  {
+    "url": "https://seede.ai/invite/JZIIR7",
+    "domain": "seede.ai",
+    "name": "Seede AI",
+    "description": "内容优先的AI设计工作台，不是文生图，而是生成完全可编辑的设计。粘贴内容即可自动生成海报、PPT、社媒图文、电商详情页等，所有元素分层可编辑。支持15+种AI风格转换、背景移除、高清放大。客户包括清华、北大、中国移动、腾讯、阿里等。",
+    "models": [
+      "image"
+    ],
+    "features": [
+      "image",
+      "creative"
+    ],
+    "price": "medium",
+    "free_amount": "可免费使用",
+    "score": 8.60,
+    "response_time": 0.6,
+    "alive": true,
+    "last_check": "2026-06-22",
+    "check_count": 1,
+    "display_tags": [
+      "AI设计",
+      "可编辑",
+      "15+模板"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "内容优先设计",
+        "cls": "green"
+      },
+      {
+        "label": "功能",
+        "value": "分层可编辑+多格式导出",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "清华/腾讯/阿里客户",
+        "cls": ""
+      }
+    ],
+    "likes": 0
+  },
+  {
+    "url": "https://dingdang.ding-ai.com/register?invite_code=IDrGXOLHq",
+    "domain": "ding-ai.com",
+    "name": "叮当次元袋",
+    "description": "专注电商场景的AI绘图平台，智能生成电商主图和详情页。支持多种商品类目，输入商品信息即可快速生成专业级电商视觉素材，适合电商卖家批量出图。",
+    "models": [
+      "image"
+    ],
+    "features": [
+      "image",
+      "creative"
+    ],
+    "price": "low",
+    "free_amount": "新用户免费试用",
+    "score": 8.10,
+    "response_time": 0.7,
+    "alive": true,
+    "last_check": "2026-06-22",
+    "check_count": 1,
+    "display_tags": [
+      "电商主图",
+      "详情页生成",
+      "批量出图"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "电商视觉",
+        "cls": "green"
+      },
+      {
+        "label": "功能",
+        "value": "主图+详情页",
+        "cls": "accent"
+      },
+      {
+        "label": "场景",
+        "value": "电商卖家",
         "cls": ""
       }
     ],

@@ -1,0 +1,14 @@
+name = "api-rank-backend"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "api-rank-db"
+database_id = "f9d58a67-1675-4236-86d1-60fe8fa03760"
+
+[vars]
+JWT_SECRET = "change-me-to-a-strong-random-string-at-least-32-chars"
+MAX_DAILY_FINDER_USES = "3"
+REFERRAL_BONUS_USES = "1"
+BASE_URL = "https://api-rank-backend.370542303.workers.dev"

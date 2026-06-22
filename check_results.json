@@ -1,15 +1,15 @@
 {
-  "check_time": "2026-06-05T04:05:32.889729",
+  "check_time": "2026-06-19T04:04:07.419294",
   "total_sites": 12,
   "results": [
     {
       "name": "PackyCode",
       "url": "https://www.packyapi.com",
       "aff_link": "https://www.packyapi.com/register?aff=zrXb",
-      "timestamp": "2026-06-05T04:04:47.688990",
+      "timestamp": "2026-06-19T04:03:23.510369",
       "availability": {
         "status": "online",
-        "response_time": 1088.12,
+        "response_time": 2640.74,
         "status_code": 200
       },
       "authenticity": {
@@ -23,17 +23,17 @@
         "price_ratio": 0.9
       },
       "old_score": 10.0,
-      "new_score": 8.6,
-      "score_change": -1.4
+      "new_score": 8.3,
+      "score_change": -1.7
     },
     {
       "name": "RightCode",
       "url": "https://www.right.codes",
       "aff_link": "https://www.right.codes/register?aff=56503380",
-      "timestamp": "2026-06-05T04:04:49.044084",
+      "timestamp": "2026-06-19T04:03:24.910430",
       "availability": {
         "status": "online",
-        "response_time": 854.0,
+        "response_time": 898.39,
         "status_code": 200
       },
       "authenticity": {
@@ -54,10 +54,10 @@
       "name": "ToAPIs",
       "url": "https://toapis.com",
       "aff_link": "https://toapis.com/login?aff=yjH5",
-      "timestamp": "2026-06-05T04:04:51.305379",
+      "timestamp": "2026-06-19T04:03:26.778531",
       "availability": {
         "status": "online",
-        "response_time": 1760.83,
+        "response_time": 1367.55,
         "status_code": 200
       },
       "authenticity": {
@@ -78,10 +78,10 @@
       "name": "API易",
       "url": "https://api.easyapi.com",
       "aff_link": "https://api.easyapi.com",
-      "timestamp": "2026-06-05T04:04:52.560052",
+      "timestamp": "2026-06-19T04:03:27.967054",
       "availability": {
         "status": "online",
-        "response_time": 753.58,
+        "response_time": 688.04,
         "status_code": 200
       },
       "authenticity": {
@@ -102,7 +102,7 @@
       "name": "302.AI",
       "url": "https://302.ai",
       "aff_link": "https://302.ai",
-      "timestamp": "2026-06-05T04:05:03.075326",
+      "timestamp": "2026-06-19T04:03:38.481595",
       "availability": {
         "status": "timeout",
         "response_time": 10000,
@@ -126,7 +126,7 @@
       "name": "Ofox.AI",
       "url": "https://ofox.ai",
       "aff_link": "https://ofox.ai",
-      "timestamp": "2026-06-05T04:05:13.595477",
+      "timestamp": "2026-06-19T04:03:48.996536",
       "availability": {
         "status": "timeout",
         "response_time": 10000,
@@ -150,10 +150,10 @@
       "name": "星链4SAPI",
       "url": "https://4sapi.com",
       "aff_link": "https://4sapi.com",
-      "timestamp": "2026-06-05T04:05:15.231933",
+      "timestamp": "2026-06-19T04:03:50.677572",
       "availability": {
         "status": "online",
-        "response_time": 1135.83,
+        "response_time": 1180.36,
         "status_code": 200
       },
       "authenticity": {
@@ -174,11 +174,11 @@
       "name": "IKunCode",
       "url": "https://api.ikuncode.cc",
       "aff_link": "https://api.ikuncode.cc",
-      "timestamp": "2026-06-05T04:05:17.195291",
+      "timestamp": "2026-06-19T04:03:52.274297",
       "availability": {
-        "status": "online",
-        "response_time": 1462.5,
-        "status_code": 200
+        "status": "error",
+        "response_time": 1096.02,
+        "status_code": 403
       },
       "authenticity": {
         "score": 0.68,
@@ -198,10 +198,10 @@
       "name": "硅基流动",
       "url": "https://siliconflow.cn",
       "aff_link": "https://siliconflow.cn",
-      "timestamp": "2026-06-05T04:05:18.570893",
+      "timestamp": "2026-06-19T04:03:53.461434",
       "availability": {
         "status": "online",
-        "response_time": 875.05,
+        "response_time": 686.74,
         "status_code": 200
       },
       "authenticity": {
@@ -222,10 +222,10 @@
       "name": "OpenRouter",
       "url": "https://openrouter.ai",
       "aff_link": "https://openrouter.ai",
-      "timestamp": "2026-06-05T04:05:20.186268",
+      "timestamp": "2026-06-19T04:03:55.005969",
       "availability": {
         "status": "online",
-        "response_time": 1114.19,
+        "response_time": 1044.06,
         "status_code": 200
       },
       "authenticity": {
@@ -246,7 +246,7 @@
       "name": "SSSAICode",
       "url": "https://www.sssaicode.com",
       "aff_link": "https://www.sssaicode.com/register?ref=BO64DM",
-      "timestamp": "2026-06-05T04:05:30.741538",
+      "timestamp": "2026-06-19T04:04:05.550565",
       "availability": {
         "status": "timeout",
         "response_time": 10000,
@@ -270,10 +270,10 @@
       "name": "147AI",
       "url": "https://147ai.com",
       "aff_link": "https://147ai.com",
-      "timestamp": "2026-06-05T04:05:32.388932",
+      "timestamp": "2026-06-19T04:04:06.918868",
       "availability": {
         "status": "online",
-        "response_time": 1146.94,
+        "response_time": 867.29,
         "status_code": 200
       },
       "authenticity": {
@@ -287,8 +287,8 @@
         "price_ratio": 0.88
       },
       "old_score": 7.8,
-      "new_score": 7.9,
-      "score_change": 0.1
+      "new_score": 8.2,
+      "score_change": 0.4
     }
   ]
 }
