@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-21T09:40:15.915129",
-  "elapsed_seconds": 291.0,
+  "timestamp": "2026-06-22T11:39:29.847815",
+  "elapsed_seconds": 301.3,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
@@ -8,10 +8,19 @@
     "total_dead": 13,
     "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
   "new_discovered": [],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
