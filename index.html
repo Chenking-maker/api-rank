@@ -46,6 +46,9 @@
 
     <meta name="robots" content="index, follow">
 
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -2544,11 +2547,6 @@
                 opacity: 1 !important;
             }
             
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
             .nav-links.mobile-open li {
                 list-style: none !important;
                 width: 100% !important;
@@ -2687,26 +2685,6 @@
             }
 
 
-
-            .rank-card.dead {
-
-                opacity: 0.35;
-
-                padding: 12px;
-
-            }
-
-            .rank-card.dead .rank-desc {
-
-                display: none;
-
-            }
-
-            .rank-card.dead .rank-metrics {
-
-                display: none;
-
-            }
 
             .dead-badge {
 
@@ -4074,7 +4052,7 @@
 
             gap: 10px;
 
-            animation: toastIn 0.3s ease, toastOut 0.3s ease 3.7s forwards;
+            animation: toastSlideIn 0.3s ease, toastSlideOut 0.3s ease 3.7s forwards;
 
             max-width: 360px;
 
@@ -4118,7 +4096,7 @@
 
 
 
-        @keyframes toastIn {
+        @keyframes toastSlideIn {
 
             from { opacity: 0; transform: translateX(40px); }
 
@@ -4128,7 +4106,7 @@
 
 
 
-        @keyframes toastOut {
+        @keyframes toastSlideOut {
 
             from { opacity: 1; transform: translateX(0); }
 
@@ -4988,9 +4966,6 @@
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
             margin: 0 auto 12px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
 
         @media (max-width: 600px) {
@@ -10706,66 +10681,6 @@ document.addEventListener('DOMContentLoaded', function() {
     cleanupLocalStorage();
 });
 
-
-
-
-        function freeCheck() {
-
-            const url = document.getElementById('freeCheckUrl').value.trim();
-
-            if (!url) {
-
-                alert('请填写中转站网址');
-
-                return;
-
-            }
-
-            
-
-            // 检查本月是否已用
-
-            const thisMonth = new Date().toISOString().slice(0, 7);
-
-            const lastCheck = localStorage.getItem('lastFreeCheck');
-
-            if (lastCheck && lastCheck.slice(0, 7) === thisMonth) {
-
-                alert('您本月已使用免费检测，请下月再试或选择付费套餐。');
-
-                return;
-
-            }
-
-            
-
-            // 显示检测中
-
-            document.getElementById('freeCheckResult').innerHTML = '<div style="text-align:center;padding:20px;color:#a29bfe;">🔍 检测中...</div>';
-
-            
-
-            // 模拟检测（实际可以调用已有的检测逻辑）
-
-            setTimeout(function() {
-
-                localStorage.setItem('lastFreeCheck', new Date().toISOString());
-
-                document.getElementById('freeCheckResult').innerHTML = 
-
-                    '<div style="background:rgba(46,213,115,0.1);border-radius:8px;padding:16px;">' +
-
-                    '<div style="color:#2ed573;font-weight:600;margin-bottom:8px;">✅ 检测完成</div>' +
-
-                    '<div style="font-size:13px;color:rgba(255,255,255,0.7);">网站可正常访问，基础评分已更新。</div>' +
-
-                    '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;">下次免费检测时间：下月1日</div>' +
-
-                    '</div>';
-
-            }, 2000);
-
-        }
 
         // ========== 全局数据缓存（避免重复 fetch 和 JSON.parse） ==========
         const _dataCache = {
