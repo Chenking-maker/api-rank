@@ -4968,5 +4968,91 @@
       }
     ],
     "likes": 0
+  },
+  {
+    "url": "https://seede.ai/invite/JZIIR7",
+    "domain": "seede.ai",
+    "name": "Seede AI",
+    "description": "内容优先的AI设计工作台，不是文生图，而是生成完全可编辑的设计。粘贴内容即可自动生成海报、PPT、社媒图文、电商详情页等，所有元素分层可编辑。支持15+种AI风格转换、背景移除、高清放大。客户包括清华、北大、中国移动、腾讯、阿里等。",
+    "models": [
+      "image"
+    ],
+    "features": [
+      "image",
+      "creative"
+    ],
+    "price": "medium",
+    "free_amount": "可免费使用",
+    "score": 8.60,
+    "response_time": 0.6,
+    "alive": true,
+    "last_check": "2026-06-22",
+    "check_count": 1,
+    "display_tags": [
+      "AI设计",
+      "可编辑",
+      "15+模板"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "内容优先设计",
+        "cls": "green"
+      },
+      {
+        "label": "功能",
+        "value": "分层可编辑+多格式导出",
+        "cls": "accent"
+      },
+      {
+        "label": "口碑",
+        "value": "清华/腾讯/阿里客户",
+        "cls": ""
+      }
+    ],
+    "likes": 0
+  },
+  {
+    "url": "https://dingdang.ding-ai.com/register?invite_code=IDrGXOLHq",
+    "domain": "ding-ai.com",
+    "name": "叮当次元袋",
+    "description": "专注电商场景的AI绘图平台，智能生成电商主图和详情页。支持多种商品类目，输入商品信息即可快速生成专业级电商视觉素材，适合电商卖家批量出图。",
+    "models": [
+      "image"
+    ],
+    "features": [
+      "image",
+      "creative"
+    ],
+    "price": "low",
+    "free_amount": "新用户免费试用",
+    "score": 8.10,
+    "response_time": 0.7,
+    "alive": true,
+    "last_check": "2026-06-22",
+    "check_count": 1,
+    "display_tags": [
+      "电商主图",
+      "详情页生成",
+      "批量出图"
+    ],
+    "display_metrics": [
+      {
+        "label": "专业",
+        "value": "电商视觉",
+        "cls": "green"
+      },
+      {
+        "label": "功能",
+        "value": "主图+详情页",
+        "cls": "accent"
+      },
+      {
+        "label": "场景",
+        "value": "电商卖家",
+        "cls": ""
+      }
+    ],
+    "likes": 0
   }
 ]
