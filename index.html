@@ -4510,7 +4510,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            max-width: 520px;
+            max-width: 560px;
             width: 100%;
             max-height: 85vh;
             overflow-y: auto;
@@ -4552,6 +4552,149 @@
         .share-modal-close:hover {
             background: var(--bg-card-hover);
             color: var(--text-primary);
+        }
+
+        /* --- 用户信息卡片（菩提苑风格） --- */
+        .share-user-card {
+            background: linear-gradient(135deg, rgba(0, 210, 160, 0.06), rgba(108, 92, 231, 0.06));
+            border: 1px solid rgba(0, 210, 160, 0.2);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .share-user-card-header {
+            margin-bottom: 16px;
+        }
+        .share-user-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green), var(--accent-light));
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+        .share-user-id-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .share-user-id-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .share-user-id-value {
+            font-size: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            word-break: break-all;
+        }
+        .share-auspicious-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .share-auspicious-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .share-auspicious-value {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green), #00e5ff, var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+        .share-copy-auspicious-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 16px;
+            cursor: pointer;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .share-copy-auspicious-btn:hover {
+            background: var(--bg-card-hover);
+            color: var(--green);
+            border-color: var(--green);
+        }
+        .share-user-time-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .share-user-time-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .share-user-time-value {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .share-user-tip {
+            font-size: 12px;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 10px 14px;
+            line-height: 1.5;
+            border: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+        .share-restore-row {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+        }
+        .share-restore-input {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: var(--text-primary);
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .share-restore-input:focus {
+            border-color: var(--green);
+        }
+        .share-restore-btn {
+            background: var(--gradient-2);
+            border: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .share-restore-btn:hover {
+            opacity: 0.85;
         }
 
         .share-link-box {
@@ -4736,6 +4879,12 @@
             }
             .share-modal {
                 padding: 20px;
+            }
+            .share-auspicious-value {
+                font-size: 22px;
+            }
+            .share-user-card {
+                padding: 18px;
             }
         }
 
@@ -5417,19 +5566,48 @@
 </div>
 
 
-    <!-- Share Commission Modal - 分享赚次数面板 -->
+    <!-- Share Commission Modal - 分享赚次数面板（菩提苑风格） -->
     <div class="share-modal-overlay" id="shareModal" onclick="if(event.target===this)closeSharePanel()">
         <div class="share-modal">
-            <button class="share-modal-close" onclick="closeSharePanel()">✕</button>
+            <button class="share-modal-close" onclick="closeSharePanel()">&#10005;</button>
 
-            <h2><span class="icon">🔗</span> 分享赚查找次数</h2>
+            <h2><span class="icon">&#128279;</span> 分享赚查找次数</h2>
 
             <div id="shareModalLoading" class="share-modal-loading">
                 <div class="spinner"></div>
-                <p>加载中...</p>
+                <p>正在初始化，请稍候...</p>
             </div>
 
             <div id="shareModalContent" style="display:none;">
+
+                <!-- 用户信息区域 - 最醒目 -->
+                <div class="share-user-card">
+                    <div class="share-user-card-header">
+                        <span class="share-user-badge">我的身份</span>
+                    </div>
+                    <div class="share-user-id-row">
+                        <span class="share-user-id-label">用户ID</span>
+                        <span class="share-user-id-value" id="shareUserIdDisplay">--</span>
+                    </div>
+                    <div class="share-auspicious-row">
+                        <span class="share-auspicious-label">吉祥号</span>
+                        <span class="share-auspicious-value" id="shareAuspiciousDisplay">--</span>
+                        <button class="share-copy-auspicious-btn" onclick="copyAuspiciousCode()" title="复制吉祥号">&#128203;</button>
+                    </div>
+                    <div class="share-user-time-row">
+                        <span class="share-user-time-label">注册时间</span>
+                        <span class="share-user-time-value" id="shareUserTimeDisplay">--</span>
+                    </div>
+                    <div class="share-user-tip">
+                        &#128161; 请记下这串号码，换浏览器时输入即可恢复
+                    </div>
+                    <!-- 恢复吉祥号输入区 -->
+                    <div class="share-restore-row" id="shareRestoreRow" style="display:none;">
+                        <input type="text" id="shareRestoreInput" placeholder="输入旧吉祥号恢复身份..." class="share-restore-input" />
+                        <button class="share-restore-btn" onclick="restoreByAuspiciousCode()">恢复</button>
+                    </div>
+                </div>
+
                 <!-- 分享链接区域 -->
                 <div class="share-link-box">
                     <input type="text" id="shareLinkInput" readonly value="生成中..." />
@@ -11048,42 +11226,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         // ============================================
-        // Share Commission System - 分享佣金系统
+        // Share Commission System - 分享佣金系统（菩提苑风格）
         // ============================================
 
         // --- 配置 ---
         const SHARE_API_BASE = 'https://api-rank-backend.370542303.workers.dev';
         const SHARE_USER_KEY = 'apirank_user_id';
         const SHARE_TOKEN_KEY = 'apirank_jwt_token';
+        const SHARE_AUSPICIOUS_KEY = 'apirank_auspicious_code';
+        const SHARE_REG_TIME_KEY = 'apirank_reg_time';
+
+        // --- 吉祥号词库 ---
+        const AUSPICIOUS_PREFIXES = ['探索者', '寻路人', '发现者', '领航员', '先行者', '追光者', '破晓者', '观星人', '织梦者', '远航者'];
 
         // --- 全局状态 ---
         let shareUserId = null;
         let shareToken = null;
+        let shareAuspiciousCode = null;
         let shareProfile = null;
-        let shareApiAvailable = false; // 标记服务端是否可用
+        let shareApiAvailable = false;
+        let sharePanelInitialized = false; // 标记面板是否已初始化过
 
-        // --- 匿名用户初始化 ---
-        function initShareUser() {
-            // 从 localStorage 读取或生成新用户 ID
-            shareUserId = localStorage.getItem(SHARE_USER_KEY);
-            shareToken = localStorage.getItem(SHARE_TOKEN_KEY);
-
-            if (!shareUserId) {
-                try {
-                    shareUserId = crypto.randomUUID();
-                    localStorage.setItem(SHARE_USER_KEY, shareUserId);
-                } catch (e) {
-                    // 降级：使用时间戳 + 随机数
-                    shareUserId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                    localStorage.setItem(SHARE_USER_KEY, shareUserId);
-                }
-            }
-
-            // 处理 URL 中的推荐参数
-            processReferralParam();
-
-            // 尝试注册/登录服务端
-            registerWithServer();
+        // --- 生成吉祥号 ---
+        function generateAuspiciousCode() {
+            const prefix = AUSPICIOUS_PREFIXES[Math.floor(Math.random() * AUSPICIOUS_PREFIXES.length)];
+            const num = String(Math.floor(Math.random() * 1000)).padStart(3, '0');
+            return prefix + num;
         }
 
         // --- 处理 URL 推荐参数 ?ref= ---
@@ -11092,13 +11260,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const refCode = params.get('ref');
 
             if (refCode && refCode.length >= 6) {
-                // 保存推荐码，注册时发送
                 localStorage.setItem('apirank_ref_code', refCode);
-                // 清除 URL 参数（保持 URL 整洁）
                 const cleanUrl = window.location.pathname + window.location.hash;
                 window.history.replaceState({}, document.title, cleanUrl);
             }
         }
+
+        // --- 页面加载时：仅处理推荐参数 ---
+        processReferralParam();
 
         // --- API 调用封装 ---
 
@@ -11194,7 +11363,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers: { 'Authorization': 'Bearer ' + shareToken }
                 });
                 if (!resp.ok) {
-                    const err = await resp.json().catch(() => ({}));
+                    const err = await resp.json().catch(function() { return {}; });
                     throw new Error(err.error || 'Use finder failed');
                 }
                 return await resp.json();
@@ -11202,6 +11371,128 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('[Share] Failed to use finder on server:', e.message);
                 return null;
             }
+        }
+
+        // --- 初始化用户（打开面板时调用） ---
+        async function initShareUser() {
+            // 从 localStorage 读取已有信息
+            shareUserId = localStorage.getItem(SHARE_USER_KEY);
+            shareToken = localStorage.getItem(SHARE_TOKEN_KEY);
+            shareAuspiciousCode = localStorage.getItem(SHARE_AUSPICIOUS_KEY);
+
+            if (!shareUserId) {
+                // 首次使用：生成新用户 ID
+                try {
+                    shareUserId = crypto.randomUUID();
+                } catch (e) {
+                    shareUserId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                }
+                localStorage.setItem(SHARE_USER_KEY, shareUserId);
+            }
+
+            if (!shareAuspiciousCode) {
+                // 首次使用：生成吉祥号
+                shareAuspiciousCode = generateAuspiciousCode();
+                localStorage.setItem(SHARE_AUSPICIOUS_KEY, shareAuspiciousCode);
+                // 记录注册时间
+                localStorage.setItem(SHARE_REG_TIME_KEY, new Date().toISOString());
+            }
+
+            // 尝试注册/登录服务端（如果还没有 token）
+            if (!shareToken) {
+                await registerWithServer();
+            }
+
+            sharePanelInitialized = true;
+        }
+
+        // --- 显示用户信息到面板 ---
+        function displayUserInfo() {
+            var userIdEl = document.getElementById('shareUserIdDisplay');
+            var auspiciousEl = document.getElementById('shareAuspiciousDisplay');
+            var timeEl = document.getElementById('shareUserTimeDisplay');
+            var restoreRow = document.getElementById('shareRestoreRow');
+
+            if (userIdEl) {
+                userIdEl.textContent = escapeHtml(shareUserId || '--');
+            }
+            if (auspiciousEl) {
+                auspiciousEl.textContent = escapeHtml(shareAuspiciousCode || '--');
+            }
+            if (timeEl) {
+                var regTime = localStorage.getItem(SHARE_REG_TIME_KEY);
+                if (regTime) {
+                    var d = new Date(regTime);
+                    timeEl.textContent = d.getFullYear() + '-' +
+                        String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                        String(d.getDate()).padStart(2, '0') + ' ' +
+                        String(d.getHours()).padStart(2, '0') + ':' +
+                        String(d.getMinutes()).padStart(2, '0');
+                } else {
+                    timeEl.textContent = '未知';
+                }
+            }
+            // 始终显示恢复行（方便用户换浏览器时使用）
+            if (restoreRow) {
+                restoreRow.style.display = 'flex';
+            }
+        }
+
+        // --- 复制吉祥号 ---
+        function copyAuspiciousCode() {
+            if (!shareAuspiciousCode) return;
+            var code = shareAuspiciousCode;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(function() {
+                    showAuspiciousCopySuccess();
+                }).catch(function() {
+                    fallbackCopyText(code);
+                    showAuspiciousCopySuccess();
+                });
+            } else {
+                fallbackCopyText(code);
+                showAuspiciousCopySuccess();
+            }
+        }
+
+        function fallbackCopyText(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+        }
+
+        function showAuspiciousCopySuccess() {
+            var btn = document.querySelector('.share-copy-auspicious-btn');
+            if (!btn) return;
+            var originalHtml = btn.innerHTML;
+            btn.innerHTML = '&#10004;';
+            btn.style.color = 'var(--green)';
+            btn.style.borderColor = 'var(--green)';
+            setTimeout(function() {
+                btn.innerHTML = originalHtml;
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }, 2000);
+        }
+
+        // --- 通过吉祥号恢复身份 ---
+        async function restoreByAuspiciousCode() {
+            var input = document.getElementById('shareRestoreInput');
+            if (!input) return;
+            var code = input.value.trim();
+            if (!code || code.length < 4) {
+                alert('请输入有效的吉祥号');
+                return;
+            }
+
+            // 吉祥号恢复需要后端支持，这里做前端本地恢复提示
+            // 实际场景中需要后端提供通过吉祥号查询 user_id 的接口
+            alert('吉祥号恢复功能需要后端支持。请暂时手动在新浏览器中输入用户ID：' + (shareUserId || '(未注册)'));
         }
 
         // --- 分享面板交互逻辑 ---
@@ -11218,14 +11509,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         async function loadSharePanelData() {
-            const loadingEl = document.getElementById('shareModalLoading');
-            const contentEl = document.getElementById('shareModalContent');
+            var loadingEl = document.getElementById('shareModalLoading');
+            var contentEl = document.getElementById('shareModalContent');
             loadingEl.style.display = 'block';
             contentEl.style.display = 'none';
 
+            // 如果尚未初始化，先初始化用户
+            if (!sharePanelInitialized) {
+                await initShareUser();
+            }
+
+            // 显示用户信息
+            displayUserInfo();
+
             try {
                 // 获取用户信息
-                const profile = await fetchShareProfile();
+                var profile = await fetchShareProfile();
 
                 if (profile) {
                     shareProfile = profile;
@@ -11237,11 +11536,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // 更新分享链接
                     if (profile.share_code) {
-                        const shareUrl = window.location.origin + window.location.pathname + '?ref=' + profile.share_code;
+                        var shareUrl = window.location.origin + window.location.pathname + '?ref=' + profile.share_code;
                         document.getElementById('shareLinkInput').value = shareUrl;
                     } else {
                         // 没有分享码，生成一个
-                        const genResult = await generateShareLink();
+                        var genResult = await generateShareLink();
                         if (genResult) {
                             document.getElementById('shareLinkInput').value = genResult.share_url;
                         } else {
@@ -11264,16 +11563,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function showSharePanelFallback() {
-            const loadingEl = document.getElementById('shareModalLoading');
-            const contentEl = document.getElementById('shareModalContent');
+            var loadingEl = document.getElementById('shareModalLoading');
+            var contentEl = document.getElementById('shareModalContent');
 
             // 降级：使用本地数据
             document.getElementById('shareStatReferrals').textContent = '-';
             document.getElementById('shareStatBonus').textContent = '-';
-            const localUsage = checkFreeUsage();
+            var localUsage = checkFreeUsage();
             document.getElementById('shareStatRemaining').textContent = localUsage.remaining;
 
-            const shareUrl = window.location.origin + window.location.pathname;
+            var shareUrl = window.location.origin + window.location.pathname;
             document.getElementById('shareLinkInput').value = shareUrl;
 
             document.getElementById('rewardListContent').innerHTML =
@@ -11284,24 +11583,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function renderRewardList(referrals) {
-            const container = document.getElementById('rewardListContent');
+            var container = document.getElementById('rewardListContent');
             if (!referrals || referrals.length === 0) {
                 container.innerHTML = '<div class="reward-empty">暂无推荐记录，分享链接给朋友即可获得奖励</div>';
                 return;
             }
 
             container.innerHTML = referrals.map(function(r) {
-                const date = r.created_at ? r.created_at.split('T')[0] : '未知';
+                var date = r.created_at ? r.created_at.split('T')[0] : '未知';
                 return '<div class="reward-item">' +
                     '<span class="reward-info">新用户通过你的链接注册</span>' +
-                    '<span class="reward-bonus">+' + (r.bonus_uses || 1) + '次</span>' +
-                    '<span class="reward-info" style="font-size:11px;margin-left:8px;">' + date + '</span>' +
+                    '<span class="reward-bonus">+' + escapeHtml(String(r.bonus_uses || 1)) + '次</span>' +
+                    '<span class="reward-info" style="font-size:11px;margin-left:8px;">' + escapeHtml(date) + '</span>' +
                     '</div>';
             }).join('');
         }
 
         function copyShareLink() {
-            const input = document.getElementById('shareLinkInput');
+            var input = document.getElementById('shareLinkInput');
             if (!input) return;
 
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -11327,8 +11626,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function showCopySuccess() {
-            const btn = document.querySelector('.share-link-box button');
-            const originalText = btn.textContent;
+            var btn = document.querySelector('.share-link-box button');
+            var originalText = btn.textContent;
             btn.textContent = '已复制!';
             btn.style.background = 'var(--green)';
             setTimeout(function() {
@@ -11343,7 +11642,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (sessionStorage.getItem('apirank_referral_shown')) return;
             sessionStorage.setItem('apirank_referral_shown', '1');
 
-            const toast = document.createElement('div');
+            var toast = document.createElement('div');
             toast.className = 'referral-toast';
             toast.textContent = '欢迎! 你已通过好友分享链接到达，好友获得了 +1 查找次数奖励';
             document.body.appendChild(toast);
@@ -11356,7 +11655,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // --- Finder 次数逻辑改造 ---
         // 覆盖原有的 checkFreeUsage 函数，优先使用服务端数据
-        const _originalCheckFreeUsage = checkFreeUsage;
+        var _originalCheckFreeUsage = checkFreeUsage;
 
         checkFreeUsage = function() {
             // 如果服务端可用，使用服务端数据
@@ -11372,7 +11671,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // 覆盖原有的 recordUsage 函数
-        const _originalRecordUsage = recordUsage;
+        var _originalRecordUsage = recordUsage;
 
         recordUsage = function() {
             // 尝试在服务端记录
@@ -11395,8 +11694,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // --- 初始化 ---
-        // 页面加载时初始化分享系统
-        initShareUser();
+        // 页面加载时：仅处理推荐参数（已在上方调用 processReferralParam）
+        // 用户注册和面板数据加载延迟到打开面板时执行
 
         // ESC 关闭分享面板
         document.addEventListener('keydown', function(e) {
