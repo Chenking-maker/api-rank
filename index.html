@@ -4697,6 +4697,115 @@
             opacity: 0.85;
         }
 
+        /* 手机号绑定 */
+        .share-phone-bind {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+        }
+        .share-phone-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .phone-status-icon { font-size: 18px; }
+        .phone-status-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .phone-status-text.bound { color: var(--green); font-weight: 600; }
+        .share-phone-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .phone-country-select {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+        }
+        .phone-country-select:focus { border-color: var(--accent); }
+        .phone-number-input {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .phone-number-input:focus { border-color: var(--accent); }
+        .phone-verify-row {
+            display: flex;
+            gap: 8px;
+        }
+        .phone-verify-input {
+            flex: 1;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .phone-verify-input:focus { border-color: var(--accent); }
+        .phone-send-code-btn {
+            background: var(--gradient-2);
+            border: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .phone-send-code-btn:hover { opacity: 0.85; }
+        .phone-send-code-btn:disabled {
+            background: #555;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .phone-bind-btn {
+            background: var(--gradient-1);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .phone-bind-btn:hover { opacity: 0.9; }
+        .phone-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--green);
+            color: var(--green);
+            font-weight: 500;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+        .phone-toggle-btn:hover {
+            background: rgba(78, 205, 196, 0.1);
+        }
+
         .share-link-box {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -5606,6 +5715,45 @@
                         <input type="text" id="shareRestoreInput" placeholder="输入旧吉祥号恢复身份..." class="share-restore-input" />
                         <button class="share-restore-btn" onclick="restoreByAuspiciousCode()">恢复</button>
                     </div>
+                </div>
+
+                <!-- 手机号绑定 -->
+                <div class="share-phone-bind" id="sharePhoneBind">
+                    <div class="share-phone-status" id="sharePhoneStatus">
+                        <span class="phone-status-icon">&#128241;</span>
+                        <span class="phone-status-text" id="phoneStatusText">未绑定手机号</span>
+                    </div>
+                    <div class="share-phone-form" id="sharePhoneForm" style="display:none;">
+                        <select id="phoneCountryCode" class="phone-country-select">
+                            <option value="+86">&#127464;&#127475; +86 中国</option>
+                            <option value="+852">&#127469;&#127472; +852 香港</option>
+                            <option value="+853">&#127469;&#127472; +853 澳门</option>
+                            <option value="+886">&#127481;&#127484; +886 台湾</option>
+                            <option value="+1">&#127482;&#127480; +1 美国/加拿大</option>
+                            <option value="+44">&#127468;&#127463; +44 英国</option>
+                            <option value="+81">&#127471;&#127477; +81 日本</option>
+                            <option value="+82">&#127472;&#127479; +82 韩国</option>
+                            <option value="+65">&#127480;&#127468; +65 新加坡</option>
+                            <option value="+61">&#127462;&#127482; +61 澳大利亚</option>
+                            <option value="+49">&#127465;&#127466; +49 德国</option>
+                            <option value="+33">&#127467;&#127479; +33 法国</option>
+                            <option value="+7">&#127479;&#127482; +7 俄罗斯</option>
+                            <option value="+91">&#127470;&#127475; +91 印度</option>
+                            <option value="+66">&#127481;&#127469; +66 泰国</option>
+                            <option value="+84">&#127483;&#127475; +84 越南</option>
+                            <option value="+62">&#127470;&#127465; +62 印尼</option>
+                            <option value="+60">&#127474;&#127468; +60 马来西亚</option>
+                            <option value="+63">&#127477;&#127468; +63 菲律宾</option>
+                            <option value="+971">&#127462;&#127466; +971 阿联酋</option>
+                        </select>
+                        <input type="tel" id="phoneNumberInput" placeholder="请输入手机号" class="phone-number-input" maxlength="15" />
+                        <div class="phone-verify-row">
+                            <input type="text" id="phoneVerifyCode" placeholder="验证码" class="phone-verify-input" maxlength="6" />
+                            <button class="phone-send-code-btn" id="phoneSendCodeBtn" onclick="sendPhoneVerifyCode()">获取验证码</button>
+                        </div>
+                        <button class="phone-bind-btn" onclick="bindPhoneNumber()">绑定手机号</button>
+                    </div>
+                    <button class="phone-toggle-btn" id="phoneToggleBtn" onclick="togglePhoneForm()">立即绑定</button>
                 </div>
 
                 <!-- 分享链接区域 -->
@@ -11501,6 +11649,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('shareModal').classList.add('active');
             document.body.style.overflow = 'hidden';
             loadSharePanelData();
+            initPhoneBindStatus();
         }
 
         function closeSharePanel() {
@@ -11534,17 +11683,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('shareStatBonus').textContent = profile.stats.total_bonus_uses || 0;
                     document.getElementById('shareStatRemaining').textContent = profile.today.remaining_total || 0;
 
-                    // 更新分享链接
+                    // 更新分享链接 - 使用当前网站域名
+                    var siteUrl = window.location.origin + '/';
                     if (profile.share_code) {
-                        var shareUrl = window.location.origin + window.location.pathname + '?ref=' + profile.share_code;
+                        var shareUrl = siteUrl + '?ref=' + profile.share_code;
                         document.getElementById('shareLinkInput').value = shareUrl;
                     } else {
                         // 没有分享码，生成一个
                         var genResult = await generateShareLink();
-                        if (genResult) {
-                            document.getElementById('shareLinkInput').value = genResult.share_url;
+                        if (genResult && genResult.share_code) {
+                            var shareUrl = siteUrl + '?ref=' + genResult.share_code;
+                            document.getElementById('shareLinkInput').value = shareUrl;
+                            // 保存分享码到本地
+                            localStorage.setItem('apirank_share_code', genResult.share_code);
                         } else {
-                            document.getElementById('shareLinkInput').value = window.location.origin + window.location.pathname;
+                            document.getElementById('shareLinkInput').value = siteUrl;
                         }
                     }
 
@@ -11692,6 +11845,87 @@ document.addEventListener('DOMContentLoaded', function() {
                 _originalRecordUsage();
             }
         };
+
+        // --- 手机号绑定功能 ---
+        function togglePhoneForm() {
+            var form = document.getElementById('sharePhoneForm');
+            var btn = document.getElementById('phoneToggleBtn');
+            if (form.style.display === 'none') {
+                form.style.display = 'flex';
+                btn.textContent = '取消';
+            } else {
+                form.style.display = 'none';
+                btn.textContent = '立即绑定';
+            }
+        }
+
+        function sendPhoneVerifyCode() {
+            var countryCode = document.getElementById('phoneCountryCode').value;
+            var phone = document.getElementById('phoneNumberInput').value.trim();
+            var btn = document.getElementById('phoneSendCodeBtn');
+
+            if (!phone) {
+                alert('请输入手机号');
+                return;
+            }
+
+            // 模拟发送验证码（实际项目中需要接入短信服务商）
+            btn.disabled = true;
+            btn.textContent = '发送中...';
+
+            // 生成6位随机验证码并存储
+            var verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
+            sessionStorage.setItem('apirank_phone_verify_code', verifyCode);
+            sessionStorage.setItem('apirank_phone_verify_target', countryCode + phone);
+
+            setTimeout(function() {
+                btn.textContent = '已发送';
+                alert('验证码: ' + verifyCode + '（演示模式，实际应通过短信发送）');
+                setTimeout(function() {
+                    btn.disabled = false;
+                    btn.textContent = '获取验证码';
+                }, 3000);
+            }, 1000);
+        }
+
+        function bindPhoneNumber() {
+            var countryCode = document.getElementById('phoneCountryCode').value;
+            var phone = document.getElementById('phoneNumberInput').value.trim();
+            var verifyCode = document.getElementById('phoneVerifyCode').value.trim();
+            var expectedCode = sessionStorage.getItem('apirank_phone_verify_code');
+            var expectedPhone = sessionStorage.getItem('apirank_phone_verify_target');
+
+            if (!phone || !verifyCode) {
+                alert('请填写手机号和验证码');
+                return;
+            }
+
+            if (verifyCode !== expectedCode || (countryCode + phone) !== expectedPhone) {
+                alert('验证码错误');
+                return;
+            }
+
+            // 保存到 localStorage
+            var fullPhone = countryCode + ' ' + phone;
+            localStorage.setItem('apirank_phone', fullPhone);
+
+            // 更新UI
+            document.getElementById('phoneStatusText').textContent = '已绑定: ' + fullPhone;
+            document.getElementById('phoneStatusText').classList.add('bound');
+            document.getElementById('sharePhoneForm').style.display = 'none';
+            document.getElementById('phoneToggleBtn').textContent = '更换手机号';
+
+            alert('手机号绑定成功！');
+        }
+
+        function initPhoneBindStatus() {
+            var phone = localStorage.getItem('apirank_phone');
+            if (phone) {
+                document.getElementById('phoneStatusText').textContent = '已绑定: ' + phone;
+                document.getElementById('phoneStatusText').classList.add('bound');
+                document.getElementById('phoneToggleBtn').textContent = '更换手机号';
+            }
+        }
 
         // --- 初始化 ---
         // 页面加载时：仅处理推荐参数（已在上方调用 processReferralParam）
