@@ -1,101 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>已失效站点 - API排行榜</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0d14;color:#e0e0e0;min-height:100vh;padding:40px 20px}
-.container{max-width:800px;margin:0 auto}
-h1{font-size:24px;margin-bottom:8px;color:#ff6b6b}
-.subtitle{color:#888;margin-bottom:24px;font-size:14px}
-.dead-list{list-style:none}
-.dead-list li{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:10px;margin-bottom:8px;border:1px solid rgba(255,107,107,.1)}
-.dead-list li .name{font-size:15px;font-weight:500}
-.dead-list li .domain{font-size:12px;color:#666;margin-left:8px}
-.dead-list li .reason{font-size:12px;color:#ff6b6b;background:rgba(255,107,107,.1);padding:2px 10px;border-radius:6px}
-.dead-list li .date{font-size:11px;color:#555;margin-left:8px}
-.back{display:inline-block;margin-top:24px;color:#4ecdc4;text-decoration:none;font-size:14px}
-.back:hover{text-decoration:underline}
-.count{font-size:13px;color:#888;margin-bottom:16px}
-.loading{text-align:center;padding:40px;color:#666;font-size:14px}
-.update-time{font-size:12px;color:#555;margin-top:12px;text-align:center}
-.section-title{font-size:16px;color:#aaa;margin:20px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06)}
-.filtered-section{margin-top:30px}
-.filtered-list{list-style:none}
-.filtered-list li{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(255,255,255,.02);border-radius:10px;margin-bottom:6px;border:1px solid rgba(255,255,255,.05)}
-.filtered-list li .name{font-size:14px;color:#999}
-.filtered-list li .filter-reason{font-size:11px;color:#f0a500;background:rgba(240,165,0,.1);padding:2px 8px;border-radius:6px}
+<title>已失效站点 - API排行榜</title><style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0d14;color:#e0e0e0;min-height:100vh;padding:40px 20px}
+.container{max-width:800px;margin:0 auto}h1{font-size:24px;margin-bottom:8px;color:#ff6b6b}.subtitle{color:#888;margin-bottom:24px;font-size:14px}
+.dead-list{list-style:none}.dead-list li{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:10px;margin-bottom:8px;border:1px solid rgba(255,107,107,.1)}
+.dead-list li .name{font-size:15px;font-weight:500}.dead-list li .reason{font-size:12px;color:#ff6b6b;background:rgba(255,107,107,.1);padding:2px 10px;border-radius:6px}
+.back{display:inline-block;margin-top:24px;color:#4ecdc4;text-decoration:none;font-size:14px}.back:hover{text-decoration:underline}.count{font-size:13px;color:#888;margin-bottom:16px}
 </style></head><body><div class="container">
-<h1>⚠️ 已失效站点</h1>
-<p class="subtitle">以下站点无法访问或已停止服务，已从排行榜中隐藏</p>
-<div id="deadContent"><div class="loading">正在加载失效站点数据...</div></div>
-
-<div class="filtered-section">
-    <h2 class="section-title">🚫 已过滤站点</h2>
-    <p class="subtitle" style="margin-bottom:12px">以下站点因数据不完整或非中转站被过滤，不参与排行</p>
-    <div id="filteredContent"><div class="loading">正在加载...</div></div>
-</div>
-
+<h1>⚠️ 已失效站点</h1><p class="subtitle">以下站点无法访问或已停止服务，已自动排到排行榜末尾</p>
+<p class="count">共 15 个失效站点</p><ul class="dead-list">
+    <li><span class="name">非线智能Api</span><span class="reason">404错误</span></li>
+    <li><span class="name">PoloAPI</span><span class="reason">连接超时</span></li>
+    <li><span class="name">速创API</span><span class="reason">无法访问</span></li>
+    <li><span class="name">Anyrouter</span><span class="reason">无法访问</span></li>
+    <li><span class="name">B4U API</span><span class="reason">403禁止</span></li>
+    <li><span class="name">91Code API</span><span class="reason">无法访问</span></li>
+    <li><span class="name">JAY中转API</span><span class="reason">无法访问</span></li>
+    <li><span class="name">超凡API中转站</span><span class="reason">无法访问</span></li>
+    <li><span class="name">词元无忧API (Token5u)</span><span class="reason">无法访问</span></li>
+    <li><span class="name">B.AI (波场)</span><span class="reason">无法访问</span></li>
+    <li><span class="name">莹的API</span><span class="reason">SSL错误</span></li>
+    <li><span class="name">CloseAI</span><span class="reason">无法访问</span></li>
+    <li><span class="name">AOK</span><span class="reason">无法访问</span></li>
+    <li><span class="name">NekoCode</span><span class="reason">无法访问</span></li>
+    <li><span class="name">ClauqeAI</span><span class="reason">访问失败</span></li>
+</ul>
 <a href="index.html" class="back">← 返回排行榜</a>
-</div>
-
-<script>
-(async function() {
-    const deadEl = document.getElementById('deadContent');
-    const filteredEl = document.getElementById('filteredContent');
-    
-    // 加载失效站点
-    try {
-        const deadResp = await fetch('data/dead_sites.json');
-        const deadSites = await deadResp.json();
-        
-        if (Array.isArray(deadSites) && deadSites.length > 0) {
-            let html = '<p class="count">共 ' + deadSites.length + ' 个失效站点</p><ul class="dead-list">';
-            deadSites.forEach(s => {
-                const name = s.name || s.domain || '未知站点';
-                const domain = s.domain || s.url ? s.url.replace(/^https?:\/\//, '').replace(/\/.*$/, '') : '';
-                const reason = s.reason || s.status === 'dead' ? '无法访问' : '未知';
-                html += '<li><span><span class="name">' + name + '</span><span class="domain">(' + domain + ')</span></span><span class="reason">' + reason + '</span></li>';
-            });
-            html += '</ul>';
-            deadEl.innerHTML = html;
-        } else {
-            deadEl.innerHTML = '<p class="count">暂无失效站点 ✅</p>';
-        }
-    } catch(e) {
-        deadEl.innerHTML = '<p class="count" style="color:#f0a500">加载失败，请稍后刷新</p>';
-    }
-    
-    // 加载被过滤的站点（从 localStorage 的 filteredStations）
-    try {
-        const filtered = JSON.parse(localStorage.getItem('filteredStations') || '[]');
-        if (filtered.length > 0) {
-            let html = '<p class="count">共 ' + filtered.length + ' 个被过滤站点</p><ul class="filtered-list">';
-            filtered.forEach(s => {
-                const name = s.name || '未知';
-                const reason = s.filterReason || '数据不完整';
-                html += '<li><span class="name">' + name + '</span><span class="filter-reason">' + reason + '</span></li>';
-            });
-            html += '</ul>';
-            filteredEl.innerHTML = html;
-        } else {
-            filteredEl.innerHTML = '<p class="count">暂无被过滤站点</p>';
-        }
-    } catch(e) {
-        filteredEl.innerHTML = '<p class="count">暂无数据</p>';
-    }
-    
-    // 显示更新时间
-    try {
-        const statusResp = await fetch('data/site_status.json');
-        const status = await statusResp.json();
-        if (status.updated_at) {
-            const time = new Date(status.updated_at).toLocaleString('zh-CN');
-            const timeEl = document.createElement('p');
-            timeEl.className = 'update-time';
-            timeEl.textContent = '最近更新：' + time + '（每日自动检测）';
-            deadEl.appendChild(timeEl);
-        }
-    } catch(e) {}
-})();
-</script>
-</body></html>
+</div></body></html>

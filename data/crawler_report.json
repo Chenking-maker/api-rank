@@ -1,48 +1,185 @@
 {
-  "timestamp": "2026-05-31T11:58:08.745106",
-  "elapsed_seconds": 339.6,
+  "timestamp": "2026-06-23T09:03:17.979281",
+  "elapsed_seconds": 292.9,
   "summary": {
-    "total_existing": 61,
-    "total_existing_with_url": 61,
-    "total_pending": 20,
-    "total_dead": 11,
-    "new_discovered": 2,
-    "new_dead": 2,
-    "new_recovered": 2,
+    "total_existing": 20,
+    "total_existing_with_url": 20,
+    "total_pending": 15,
+    "total_dead": 4,
+    "new_discovered": 10,
+    "new_dead": 0,
+    "new_recovered": 29,
     "scrapling_available": true
   },
   "new_discovered": [
     {
+      "url": "https://www.hvoy.ai",
+      "name": "hvoy.ai",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://api.whatai.cc",
+      "name": "api.whatai.cc",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://xyai2.top",
+      "name": "xyai2.top",
+      "source": "github:API中转站 推_extract"
+    },
+    {
       "url": "https://api.coderplan.ai",
-      "name": "CoderPlan",
+      "name": "api.coderplan.ai",
       "source": "github:API中转站 推_extract"
     },
     {
       "url": "https://coderplan.ai",
-      "name": "CoderPlan",
+      "name": "coderplan.ai",
       "source": "github:API中转站 推_extract"
-    }
-  ],
-  "new_dead": [
-    {
-      "url": "https://openai-sb.com",
-      "name": "OpenAI-SB",
-      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://openai-sb.c"
     },
     {
-      "url": "https://closeai-asia.com",
-      "name": "CloseAI",
-      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://closeai-asi"
+      "url": "https://api.catrouter.net",
+      "name": "api.catrouter.net",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://gpt.zhizengzeng.com",
+      "name": "gpt.zhizengzeng.com",
+      "source": "github:ChatGPT _extract"
+    },
+    {
+      "url": "https://api.zhizengzeng.com",
+      "name": "api.zhizengzeng.com",
+      "source": "github:ChatGPT _extract"
+    },
+    {
+      "url": "https://ai.centos.hk",
+      "name": "ai.centos.hk",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://www.atlascloud.ai",
+      "name": "atlascloud.ai",
+      "source": "github:OpenAI A_extract"
     }
   ],
+  "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
+      "url": "https://shiyunapi.com",
+      "name": "诗云API"
     },
     {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
+      "url": "https://xdhdancer.top",
+      "name": "产灵API"
+    },
+    {
+      "url": "https://anyroute.com",
+      "name": "AnyRoute"
+    },
+    {
+      "url": "https://qianfan.baidubce.com",
+      "name": "百度千帆"
+    },
+    {
+      "url": "https://zhihuiapi.com",
+      "name": "智惠API"
+    },
+    {
+      "url": "https://modcon.ai",
+      "name": "ModCon"
+    },
+    {
+      "url": "https://switchbase.com",
+      "name": "SwitchBase"
+    },
+    {
+      "url": "https://anpin.ai",
+      "name": "AnPin AI"
+    },
+    {
+      "url": "https://claudecn.com",
+      "name": "ClaudeCN"
+    },
+    {
+      "url": "https://toknex.com",
+      "name": "Toknex"
+    },
+    {
+      "url": "https://sevnx.com",
+      "name": "SevnX"
+    },
+    {
+      "url": "https://luminai.com",
+      "name": "Lumin AI"
+    },
+    {
+      "url": "https://claudeapi.net",
+      "name": "Claude API"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI"
+    },
+    {
+      "url": "https://frontierintelligence.ai",
+      "name": "Frontier Intelligence"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay"
+    },
+    {
+      "url": "https://4sapi.com",
+      "name": "星链4SAPI"
+    },
+    {
+      "url": "https://api.easyapi.com",
+      "name": "API易"
+    },
+    {
+      "url": "https://api.ikuncode.cc",
+      "name": "爱坤代码 (IKunCode)"
+    },
+    {
+      "url": "https://302.ai",
+      "name": "302.AI"
+    },
+    {
+      "url": "https://ai.huoyachat.com",
+      "name": "AI中文版"
+    },
+    {
+      "url": "https://web.apiplus.org",
+      "name": "APIPlus"
+    },
+    {
+      "url": "https://bewildcard.com",
+      "name": "万卡API (WildCard)"
+    },
+    {
+      "url": "https://fishxcode.com",
+      "name": "鱼代码 (FishXCode)"
+    },
+    {
+      "url": "https://apimart.ai",
+      "name": "API集市 (API Mart)"
+    },
+    {
+      "url": "https://console.mistral.ai",
+      "name": "Mistral AI"
+    },
+    {
+      "url": "https://console.groq.com",
+      "name": "Groq"
+    },
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB"
     }
   ]
 }

@@ -103,5 +103,175 @@
     "submitTime": "2026-05-23T09:48:51.511997",
     "checked_at": "2026-05-23T09:48:51.511999",
     "check_count": 1
+  },
+  {
+    "name": "hvoy.ai",
+    "url": "https://www.hvoy.ai",
+    "submitTime": "2026-06-23T09:03:17.977199",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977209",
+    "check_count": 1
+  },
+  {
+    "name": "api.whatai.cc",
+    "url": "https://api.whatai.cc",
+    "submitTime": "2026-06-23T09:03:17.977216",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977219",
+    "check_count": 1
+  },
+  {
+    "name": "xyai2.top",
+    "url": "https://xyai2.top",
+    "submitTime": "2026-06-23T09:03:17.977222",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977224",
+    "check_count": 1
+  },
+  {
+    "name": "api.coderplan.ai",
+    "url": "https://api.coderplan.ai",
+    "submitTime": "2026-06-23T09:03:17.977226",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977228",
+    "check_count": 1
+  },
+  {
+    "name": "coderplan.ai",
+    "url": "https://coderplan.ai",
+    "submitTime": "2026-06-23T09:03:17.977230",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977232",
+    "check_count": 1
+  },
+  {
+    "name": "api.catrouter.net",
+    "url": "https://api.catrouter.net",
+    "submitTime": "2026-06-23T09:03:17.977234",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977236",
+    "check_count": 1
+  },
+  {
+    "name": "gpt.zhizengzeng.com",
+    "url": "https://gpt.zhizengzeng.com",
+    "submitTime": "2026-06-23T09:03:17.977238",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977239",
+    "check_count": 1
+  },
+  {
+    "name": "api.zhizengzeng.com",
+    "url": "https://api.zhizengzeng.com",
+    "submitTime": "2026-06-23T09:03:17.977241",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977243",
+    "check_count": 1
+  },
+  {
+    "name": "ai.centos.hk",
+    "url": "https://ai.centos.hk",
+    "submitTime": "2026-06-23T09:03:17.977244",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977246",
+    "check_count": 1
+  },
+  {
+    "name": "atlascloud.ai",
+    "url": "https://www.atlascloud.ai",
+    "submitTime": "2026-06-23T09:03:17.977248",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977249",
+    "check_count": 1
   }
 ]
