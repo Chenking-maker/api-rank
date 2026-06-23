@@ -44,10 +44,237 @@
             --danger: #ef4444;
             --warning: #f59e0b;
             --radius: 12px;
+            --gradient-1: linear-gradient(135deg, #6c5ce7, #a29bfe);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
-        
+
+        /* ===== Navbar ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            background: rgba(10,10,15,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent-light);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-badge {
+            background: rgba(108,92,231,0.15);
+            color: var(--accent-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                z-index: 200;
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: #f0f0f5;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .nav-links.mobile-open {
+                display: flex !important;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: rgba(10, 10, 15, 0.98) !important;
+                backdrop-filter: blur(20px) !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 20px !important;
+                z-index: 9999 !important;
+                padding: 80px 24px 40px !important;
+                animation: fadeIn 0.2s ease;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .nav-links.mobile-open li {
+                list-style: none !important;
+                width: 100% !important;
+                max-width: 280px !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .nav-links.mobile-open a,
+            .nav-links.mobile-open .nav-badge {
+                font-size: 17px !important;
+                color: #f0f0f5 !important;
+                text-decoration: none !important;
+                padding: 14px 24px !important;
+                display: block !important;
+                text-align: center !important;
+                border-radius: 12px !important;
+                transition: background 0.2s !important;
+                width: 100% !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .nav-links.mobile-open a:hover,
+            .nav-links.mobile-open a:active {
+                background: rgba(108, 92, 231, 0.15) !important;
+            }
+
+            .nav-links.mobile-open .nav-badge {
+                font-size: 13px !important;
+                margin-top: 8px !important;
+                background: rgba(108,92,231,0.15) !important;
+                color: var(--accent-light) !important;
+                padding: 8px 16px !important;
+                border-radius: 20px !important;
+                text-align: center !important;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .login-page { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
         .login-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; width: 420px; }
         .login-logo { text-align: center; margin-bottom: 32px; }
@@ -214,9 +441,30 @@
     </div>
 
     <div class="dashboard" id="dashboard">
-        <div class="topbar">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">A</div>
+                    <div class="logo-text">API<span>排行榜</span></div>
+                </a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#ranking">排行榜</a></li>
+                    <li><a href="creative-tools.html" style="color: #667eea; font-weight: 600;">🎨 在线绘图/视频专区</a></li>
+                    <li><a href="javascript:void(0)" onclick="openFinderModal()" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
+                    <li><a href="javascript:void(0)" onclick="openSubmitModal()">提交收录</a></li>
+                    <li><a href="index.html#guide">选站指南</a></li>
+                    <li><a href="dead-sites.html" style="color: #ff6b6b;">&#9888; 失效站点</a></li>
+                    <li><span class="nav-badge">实时更新</span></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="topbar" style="top: 68px;">
             <div class="topbar-left">
-                <a href="index.html" class="topbar-logo" style="text-decoration:none;color:#fff;">AR</a>
                 <div class="topbar-title">工作台 <span>智能推荐引擎</span></div>
             </div>
             <div class="topbar-right">
@@ -224,7 +472,7 @@
             </div>
         </div>
 
-        <div class="main-content">
+        <div class="main-content" style="padding-top: 100px;">
             <div class="tab-nav">
                 <button class="tab-btn active" onclick="switchTab('recommend')">智能推荐</button>
                 <button class="tab-btn" onclick="switchTab('review')">
@@ -1849,6 +2097,60 @@ function generateTags(site) {
     
     return tags.slice(0, 3);
 }
+
+// Mobile menu
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const isOpen = navLinks.classList.toggle('mobile-open');
+    menuBtn.classList.toggle('active');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    if (navLinks && navLinks.classList.contains('mobile-open')) {
+        navLinks.classList.remove('mobile-open');
+        if (menuBtn) menuBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.getElementById('navLinks');
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMobileMenu();
+    });
+});
+
+function openFinderModal() {
+    alert('找适合自己的中转站功能正在开发中，请前往首页使用完整功能。');
+}
+function openSubmitModal() {
+    alert('提交收录功能正在开发中，请前往首页使用完整功能。');
+}
 </script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">© 2026 API排行榜 · 数据仅供参考，请自行判断</div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="index.html#ranking">排行榜</a>
+                    <a href="creative-tools.html">绘图/视频</a>
+                    <a href="dead-sites.html">失效站点</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
