@@ -1,5 +1,65 @@
 [
   {
+    "url": "https://feixian-api.com",
+    "name": "非线智能Api",
+    "domain": "feixian-api.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://suchuangapi.com",
+    "name": "速创API",
+    "domain": "suchuangapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://api.anyrouter.com",
+    "name": "Anyrouter",
+    "domain": "api.anyrouter.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://b4uapi.com",
+    "name": "B4U API",
+    "domain": "b4uapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://91codeapi.com",
+    "name": "91Code API",
+    "domain": "91codeapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://jayapi.com",
+    "name": "JAY中转API",
+    "domain": "jayapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://chaofanapi.com",
+    "name": "超凡API中转站",
+    "domain": "chaofanapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://token5u.com",
+    "name": "词元无忧API (Token5u)",
+    "domain": "token5u.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://yingapi.com",
+    "name": "莹的API",
+    "domain": "yingapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://closeai-asia.com",
+    "name": "CloseAI",
+    "domain": "closeai-asia.com",
+    "status": "dead"
+  },
+  {
     "url": "https://aok.ai",
     "name": "AOK",
     "domain": "aok.ai",
@@ -18,12 +78,5 @@
     "domain": "clauqe.com",
     "status": "dead",
     "reason": "访问失败"
-  },
-  {
-    "url": "https://closeai-asia.com",
-    "name": "CloseAI",
-    "domain": "closeai-asia.com",
-    "status": "dead",
-    "reason": "域名无法解析"
   }
 ]

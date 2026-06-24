@@ -273,5 +273,141 @@
     "freeAmount": "",
     "checked_at": "2026-06-23T09:03:17.977249",
     "check_count": 1
+  },
+  {
+    "name": "tailwindcss.com",
+    "url": "https://tailwindcss.com",
+    "submitTime": "2026-06-24T08:58:28.939830",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939851",
+    "check_count": 1
+  },
+  {
+    "name": "studio-api.suno.ai",
+    "url": "https://studio-api.suno.ai",
+    "submitTime": "2026-06-24T08:58:28.939861",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939864",
+    "check_count": 1
+  },
+  {
+    "name": "free.yunwu.ai",
+    "url": "https://free.yunwu.ai",
+    "submitTime": "2026-06-24T08:58:28.939867",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939869",
+    "check_count": 1
+  },
+  {
+    "name": "chaxun.wlai.vip",
+    "url": "https://chaxun.wlai.vip",
+    "submitTime": "2026-06-24T08:58:28.939871",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939873",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.ai",
+    "url": "https://yunwu.ai",
+    "submitTime": "2026-06-24T08:58:28.939879",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939881",
+    "check_count": 1
+  },
+  {
+    "name": "web.apiplus.org",
+    "url": "https://web.apiplus.org",
+    "submitTime": "2026-06-24T08:58:28.939883",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939885",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.apifox.cn",
+    "url": "https://yunwu.apifox.cn",
+    "submitTime": "2026-06-24T08:58:28.939887",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939889",
+    "check_count": 1
+  },
+  {
+    "name": "demo.sub2api.org",
+    "url": "https://demo.sub2api.org",
+    "submitTime": "2026-06-24T08:58:28.939891",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939892",
+    "check_count": 1
   }
 ]
