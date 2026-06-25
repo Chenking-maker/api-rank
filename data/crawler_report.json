@@ -1,67 +1,17 @@
 {
-  "timestamp": "2026-06-24T08:58:28.941937",
-  "elapsed_seconds": 328.0,
+  "timestamp": "2026-06-25T08:51:43.250221",
+  "elapsed_seconds": 284.1,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 23,
     "total_dead": 13,
-    "new_discovered": 8,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://tailwindcss.com",
-      "name": "tailwindcss.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://studio-api.suno.ai",
-      "name": "studio-api.suno.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://free.yunwu.ai",
-      "name": "free.yunwu.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://chaxun.wlai.vip",
-      "name": "chaxun.wlai.vip",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://yunwu.ai",
-      "name": "yunwu.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://web.apiplus.org",
-      "name": "web.apiplus.org",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://yunwu.apifox.cn",
-      "name": "yunwu.apifox.cn",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://demo.sub2api.org",
-      "name": "demo.sub2api.org",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
-  "new_recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    }
-  ]
+  "new_recovered": []
 }
