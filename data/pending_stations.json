@@ -409,5 +409,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-24T08:58:28.939892",
     "check_count": 1
+  },
+  {
+    "name": "unity2.ai",
+    "url": "https://unity2.ai",
+    "submitTime": "2026-06-27T08:30:48.409418",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-27T08:30:48.409437",
+    "check_count": 1
   }
 ]
