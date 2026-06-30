@@ -1,17 +1,32 @@
 {
-  "timestamp": "2026-06-29T10:26:05.129976",
-  "elapsed_seconds": 276.7,
+  "timestamp": "2026-06-30T09:00:50.206919",
+  "elapsed_seconds": 289.6,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 24,
+    "total_pending": 25,
     "total_dead": 13,
-    "new_discovered": 0,
+    "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [],
+  "new_discovered": [
+    {
+      "url": "https://api.ztoken.pro",
+      "name": "api.ztoken.pro",
+      "source": "github:ChatGPT _extract"
+    }
+  ],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }

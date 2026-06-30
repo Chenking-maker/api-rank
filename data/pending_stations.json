@@ -426,5 +426,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-27T08:30:48.409437",
     "check_count": 1
+  },
+  {
+    "name": "api.ztoken.pro",
+    "url": "https://api.ztoken.pro",
+    "submitTime": "2026-06-30T09:00:50.201192",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-30T09:00:50.201212",
+    "check_count": 1
   }
 ]
