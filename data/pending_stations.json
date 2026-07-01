@@ -443,5 +443,22 @@
     "freeAmount": "",
     "checked_at": "2026-06-30T09:00:50.201212",
     "check_count": 1
+  },
+  {
+    "name": "free2ai.pages.dev",
+    "url": "https://free2ai.pages.dev",
+    "submitTime": "2026-07-01T09:34:00.622129",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-01T09:34:00.622148",
+    "check_count": 1
   }
 ]
