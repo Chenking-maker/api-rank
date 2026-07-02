@@ -1,23 +1,26 @@
 {
-  "timestamp": "2026-07-01T09:34:00.624396",
-  "elapsed_seconds": 298.8,
+  "timestamp": "2026-07-02T08:46:25.704177",
+  "elapsed_seconds": 289.0,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 26,
     "total_dead": 13,
-    "new_discovered": 1,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://free2ai.pages.dev",
-      "name": "free2ai.pages.dev",
-      "source": "github:ChatGPT _extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
