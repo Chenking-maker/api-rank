@@ -460,5 +460,175 @@
     "freeAmount": "",
     "checked_at": "2026-07-01T09:34:00.622148",
     "check_count": 1
+  },
+  {
+    "name": "openmodel.ai",
+    "url": "https://www.openmodel.ai",
+    "submitTime": "2026-07-04T08:28:26.108795",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108815",
+    "check_count": 1
+  },
+  {
+    "name": "etok.ai",
+    "url": "https://etok.ai",
+    "submitTime": "2026-07-04T08:28:26.108824",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108826",
+    "check_count": 1
+  },
+  {
+    "name": "aicodemirror.com",
+    "url": "https://www.aicodemirror.com",
+    "submitTime": "2026-07-04T08:28:26.108828",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108829",
+    "check_count": 1
+  },
+  {
+    "name": "bestproxy.com",
+    "url": "https://bestproxy.com",
+    "submitTime": "2026-07-04T08:28:26.108831",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108833",
+    "check_count": 1
+  },
+  {
+    "name": "pateway.ai",
+    "url": "https://pateway.ai",
+    "submitTime": "2026-07-04T08:28:26.108835",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108836",
+    "check_count": 1
+  },
+  {
+    "name": "api.pptoken.org",
+    "url": "https://api.pptoken.org",
+    "submitTime": "2026-07-04T08:28:26.108838",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108839",
+    "check_count": 1
+  },
+  {
+    "name": "apikl.ai",
+    "url": "https://apikl.ai",
+    "submitTime": "2026-07-04T08:28:26.108841",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108842",
+    "check_count": 1
+  },
+  {
+    "name": "tokeneum.ai",
+    "url": "https://tokeneum.ai",
+    "submitTime": "2026-07-04T08:28:26.108844",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108846",
+    "check_count": 1
+  },
+  {
+    "name": "666api.work",
+    "url": "https://666api.work",
+    "submitTime": "2026-07-04T08:28:26.108847",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108848",
+    "check_count": 1
+  },
+  {
+    "name": "miyaip.com",
+    "url": "https://www.miyaip.com",
+    "submitTime": "2026-07-04T08:28:26.108850",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108852",
+    "check_count": 1
   }
 ]

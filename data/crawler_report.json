@@ -1,17 +1,77 @@
 {
-  "timestamp": "2026-07-03T08:53:08.312091",
-  "elapsed_seconds": 286.4,
+  "timestamp": "2026-07-04T08:28:26.110805",
+  "elapsed_seconds": 312.2,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 26,
+    "total_pending": 36,
     "total_dead": 13,
-    "new_discovered": 0,
+    "new_discovered": 10,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [],
+  "new_discovered": [
+    {
+      "url": "https://www.openmodel.ai",
+      "name": "openmodel.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://etok.ai",
+      "name": "etok.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://www.aicodemirror.com",
+      "name": "aicodemirror.com",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://bestproxy.com",
+      "name": "bestproxy.com",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://pateway.ai",
+      "name": "pateway.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://api.pptoken.org",
+      "name": "api.pptoken.org",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://apikl.ai",
+      "name": "apikl.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://tokeneum.ai",
+      "name": "tokeneum.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://666api.work",
+      "name": "666api.work",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://www.miyaip.com",
+      "name": "miyaip.com",
+      "source": "github:OpenAI A_extract"
+    }
+  ],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
