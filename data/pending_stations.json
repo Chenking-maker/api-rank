@@ -630,5 +630,56 @@
     "freeAmount": "",
     "checked_at": "2026-07-04T08:28:26.108852",
     "check_count": 1
+  },
+  {
+    "name": "anpin.ai",
+    "url": "https://anpin.ai",
+    "submitTime": "2026-07-05T08:45:00.913651",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-05T08:45:00.913668",
+    "check_count": 1
+  },
+  {
+    "name": "proxy4free.com",
+    "url": "https://www.proxy4free.com",
+    "submitTime": "2026-07-05T08:45:00.913678",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-05T08:45:00.913681",
+    "check_count": 1
+  },
+  {
+    "name": "api.x.ai",
+    "url": "https://api.x.ai",
+    "submitTime": "2026-07-05T08:45:00.913684",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-05T08:45:00.913687",
+    "check_count": 1
   }
 ]

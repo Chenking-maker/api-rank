@@ -1,77 +1,33 @@
 {
-  "timestamp": "2026-07-04T08:28:26.110805",
-  "elapsed_seconds": 312.2,
+  "timestamp": "2026-07-05T08:45:00.916247",
+  "elapsed_seconds": 292.0,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 36,
+    "total_pending": 39,
     "total_dead": 13,
-    "new_discovered": 10,
+    "new_discovered": 3,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": true
   },
   "new_discovered": [
     {
-      "url": "https://www.openmodel.ai",
-      "name": "openmodel.ai",
+      "url": "https://anpin.ai",
+      "name": "anpin.ai",
       "source": "github:OpenAI A_extract"
     },
     {
-      "url": "https://etok.ai",
-      "name": "etok.ai",
+      "url": "https://www.proxy4free.com",
+      "name": "proxy4free.com",
       "source": "github:OpenAI A_extract"
     },
     {
-      "url": "https://www.aicodemirror.com",
-      "name": "aicodemirror.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://bestproxy.com",
-      "name": "bestproxy.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://pateway.ai",
-      "name": "pateway.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://api.pptoken.org",
-      "name": "api.pptoken.org",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://apikl.ai",
-      "name": "apikl.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://tokeneum.ai",
-      "name": "tokeneum.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://666api.work",
-      "name": "666api.work",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://www.miyaip.com",
-      "name": "miyaip.com",
+      "url": "https://api.x.ai",
+      "name": "api.x.ai",
       "source": "github:OpenAI A_extract"
     }
   ],
   "new_dead": [],
-  "new_recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    }
-  ]
+  "new_recovered": []
 }
