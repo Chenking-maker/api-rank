@@ -1,33 +1,26 @@
 {
-  "timestamp": "2026-07-05T08:45:00.916247",
-  "elapsed_seconds": 292.0,
+  "timestamp": "2026-07-06T10:00:23.927943",
+  "elapsed_seconds": 310.3,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 39,
     "total_dead": 13,
-    "new_discovered": 3,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://anpin.ai",
-      "name": "anpin.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://www.proxy4free.com",
-      "name": "proxy4free.com",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://api.x.ai",
-      "name": "api.x.ai",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
