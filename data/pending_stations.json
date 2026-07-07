@@ -681,5 +681,73 @@
     "freeAmount": "",
     "checked_at": "2026-07-05T08:45:00.913687",
     "check_count": 1
+  },
+  {
+    "name": "duiapi.com",
+    "url": "https://www.duiapi.com",
+    "submitTime": "2026-07-07T09:28:08.748100",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748124",
+    "check_count": 1
+  },
+  {
+    "name": "airelay.pro",
+    "url": "https://www.airelay.pro",
+    "submitTime": "2026-07-07T09:28:08.748136",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748138",
+    "check_count": 1
+  },
+  {
+    "name": "cun.ai",
+    "url": "https://cun.ai",
+    "submitTime": "2026-07-07T09:28:08.748142",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748144",
+    "check_count": 1
+  },
+  {
+    "name": "fastaitoken.com",
+    "url": "http://www.fastaitoken.com",
+    "submitTime": "2026-07-07T09:28:08.748147",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748149",
+    "check_count": 1
   }
 ]
