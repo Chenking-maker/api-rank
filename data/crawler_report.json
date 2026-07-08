@@ -1,38 +1,26 @@
 {
-  "timestamp": "2026-07-07T09:28:08.750859",
-  "elapsed_seconds": 297.5,
+  "timestamp": "2026-07-08T08:12:42.111452",
+  "elapsed_seconds": 303.3,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 43,
     "total_dead": 13,
-    "new_discovered": 4,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://www.duiapi.com",
-      "name": "duiapi.com",
-      "source": "github:API中转站 推_extract"
-    },
-    {
-      "url": "https://www.airelay.pro",
-      "name": "airelay.pro",
-      "source": "github:API中转站 推_extract"
-    },
-    {
-      "url": "https://cun.ai",
-      "name": "cun.ai",
-      "source": "github:API中转站 推_extract"
-    },
-    {
-      "url": "http://www.fastaitoken.com",
-      "name": "fastaitoken.com",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
