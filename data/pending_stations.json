@@ -749,5 +749,22 @@
     "freeAmount": "",
     "checked_at": "2026-07-07T09:28:08.748149",
     "check_count": 1
+  },
+  {
+    "name": "api.fenno.ai",
+    "url": "https://api.fenno.ai",
+    "submitTime": "2026-07-09T09:25:50.327130",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-09T09:25:50.327155",
+    "check_count": 1
   }
 ]

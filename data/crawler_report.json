@@ -1,26 +1,23 @@
 {
-  "timestamp": "2026-07-08T08:12:42.111452",
-  "elapsed_seconds": 303.3,
+  "timestamp": "2026-07-09T09:25:50.331784",
+  "elapsed_seconds": 291.6,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 43,
+    "total_pending": 44,
     "total_dead": 13,
-    "new_discovered": 0,
+    "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": true
   },
-  "new_discovered": [],
-  "new_dead": [],
-  "new_recovered": [
+  "new_discovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
+      "url": "https://api.fenno.ai",
+      "name": "api.fenno.ai",
+      "source": "github:OpenAI A_extract"
     }
-  ]
+  ],
+  "new_dead": [],
+  "new_recovered": []
 }
