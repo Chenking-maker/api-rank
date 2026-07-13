@@ -1,30 +1,23 @@
 {
-  "timestamp": "2026-07-12T08:03:58.100694",
-  "elapsed_seconds": 296.9,
+  "timestamp": "2026-07-13T08:52:11.127172",
+  "elapsed_seconds": 287.9,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
-    "total_pending": 45,
+    "total_pending": 46,
     "total_dead": 13,
-    "new_discovered": 0,
+    "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 3,
+    "new_recovered": 0,
     "scrapling_available": true
   },
-  "new_discovered": [],
-  "new_dead": [],
-  "new_recovered": [
+  "new_discovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    },
-    {
-      "url": "https://www.dmxapi.com",
-      "name": "大模型API (DMXAPI)"
+      "url": "https://cli-chat-proxy.grok.com",
+      "name": "cli-chat-proxy.grok.com",
+      "source": "github:OpenAI A_extract"
     }
-  ]
+  ],
+  "new_dead": [],
+  "new_recovered": []
 }

@@ -783,5 +783,22 @@
     "freeAmount": "",
     "checked_at": "2026-07-10T09:23:23.192669",
     "check_count": 1
+  },
+  {
+    "name": "cli-chat-proxy.grok.com",
+    "url": "https://cli-chat-proxy.grok.com",
+    "submitTime": "2026-07-13T08:52:11.124247",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-13T08:52:11.124270",
+    "check_count": 1
   }
 ]
