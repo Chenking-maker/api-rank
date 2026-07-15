@@ -800,5 +800,22 @@
     "freeAmount": "",
     "checked_at": "2026-07-13T08:52:11.124270",
     "check_count": 1
+  },
+  {
+    "name": "aimzoon.com",
+    "url": "http://aimzoon.com",
+    "submitTime": "2026-07-15T07:54:39.045516",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-15T07:54:39.045528",
+    "check_count": 1
   }
 ]
