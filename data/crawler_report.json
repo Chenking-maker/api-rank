@@ -1,28 +1,26 @@
 {
-  "timestamp": "2026-07-17T07:56:19.361508",
-  "elapsed_seconds": 281.7,
+  "timestamp": "2026-07-18T07:31:15.003806",
+  "elapsed_seconds": 274.4,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 49,
     "total_dead": 13,
-    "new_discovered": 2,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [
+  "new_discovered": [],
+  "new_dead": [],
+  "new_recovered": [
     {
-      "url": "https://console.claudeapi.com",
-      "name": "console.claudeapi.com",
-      "source": "github:OpenAI A_extract"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
     },
     {
-      "url": "https://code0.ai",
-      "name": "code0.ai",
-      "source": "github:OpenAI A_extract"
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
     }
-  ],
-  "new_dead": [],
-  "new_recovered": []
+  ]
 }
