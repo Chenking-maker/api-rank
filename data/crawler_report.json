@@ -1,32 +1,17 @@
 {
-  "timestamp": "2026-07-20T08:43:48.337831",
-  "elapsed_seconds": 278.1,
+  "timestamp": "2026-07-21T08:12:09.787397",
+  "elapsed_seconds": 290.7,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 50,
     "total_dead": 13,
-    "new_discovered": 1,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://api.pptoken.cc",
-      "name": "api.pptoken.cc",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
-  "new_recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    }
-  ]
+  "new_recovered": []
 }
