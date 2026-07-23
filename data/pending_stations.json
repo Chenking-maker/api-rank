@@ -868,5 +868,39 @@
     "freeAmount": "",
     "checked_at": "2026-07-20T08:43:48.334565",
     "check_count": 1
+  },
+  {
+    "name": "nagora.ai",
+    "url": "https://nagora.ai",
+    "submitTime": "2026-07-23T08:16:37.966452",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-23T08:16:37.966478",
+    "check_count": 1
+  },
+  {
+    "name": "infistar.ai",
+    "url": "https://infistar.ai",
+    "submitTime": "2026-07-23T08:16:37.966489",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-23T08:16:37.966491",
+    "check_count": 1
   }
 ]
