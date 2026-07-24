@@ -1,28 +1,26 @@
 {
-  "timestamp": "2026-07-23T08:16:37.969018",
-  "elapsed_seconds": 308.4,
+  "timestamp": "2026-07-24T08:11:38.351018",
+  "elapsed_seconds": 287.7,
   "summary": {
     "total_existing": 20,
     "total_existing_with_url": 20,
     "total_pending": 52,
     "total_dead": 13,
-    "new_discovered": 2,
+    "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [
+  "new_discovered": [],
+  "new_dead": [],
+  "new_recovered": [
     {
-      "url": "https://nagora.ai",
-      "name": "nagora.ai",
-      "source": "github:OpenAI A_extract"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
     },
     {
-      "url": "https://infistar.ai",
-      "name": "infistar.ai",
-      "source": "github:OpenAI A_extract"
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
     }
-  ],
-  "new_dead": [],
-  "new_recovered": []
+  ]
 }
