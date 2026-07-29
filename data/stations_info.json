@@ -142,54 +142,6 @@
         "likes": 0
     },
     {
-        "url": "https://api.lingyaai.cn/register?aff=k8I8",
-        "domain": "lingyaai.cn",
-        "name": "灵芽API",
-        "description": "运营2年+的老牌API中转平台，服务2万+开发者。聚合100+主流AI模型，全球多节点部署。新增GLM-5.2、Kimi-K2.7-Code、MiniMax M3等旗舰模型专线(低至0.69折)。支持支付宝/微信充值，国内直连低延迟。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "domestic",
-            "drawing"
-        ],
-        "features": [
-            "stable",
-            "multi",
-            "enterprise"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.78,
-        "response_time": 1.05,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "display_tags": [
-            "2年老牌",
-            "100+模型",
-            "2万+用户"
-        ],
-        "display_metrics": [
-            {
-                "label": "资历",
-                "value": "2年+运营",
-                "cls": "green"
-            },
-            {
-                "label": "规模",
-                "value": "100+模型",
-                "cls": "accent"
-            },
-            {
-                "label": "用户",
-                "value": "2万+",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
         "url": "https://www.right.codes/register?aff=56503380",
         "domain": "right.codes",
         "name": "莱特代码 (RightCode)",
@@ -1057,7 +1009,7 @@
         "likes": 0
     },
     {
-        "url": "https://api.zhizengzeng.com",
+        "url": "https://gpt.zhizengzeng.com/#/home",
         "domain": "zhizengzeng.com",
         "name": "智增增",
         "description": "支持Claude/GPT/DeepSeek等主流模型，国内直连，响应0.29s极速。价格实惠，适合高频调用场景。",
@@ -2894,8 +2846,8 @@
         ]
     },
     {
-        "url": "https://tokenriver.ai",
-        "domain": "tokenriver.ai",
+        "url": "https://tokenriver.cn/",
+        "domain": "tokenriver.cn",
         "name": "词元之河(TokenRiver)",
         "description": "2026年AI中转站评测榜首，20ms超低首字延迟，99.92%运行稳定性，12万QPS超高并发，支持GPT-5.2/Claude 4.5/Gemini 3全系模型。",
         "models": [
@@ -3073,7 +3025,7 @@
         "likes": 0
     },
     {
-        "url": "https://api.88api.chat",
+        "url": "https://api.88api.chat/register?aff=tbAp",
         "domain": "88api.chat",
         "name": "88API",
         "description": "国内直连100+顶级AI模型，20ms低延迟，99.99%企业级稳定性，成本比官方低50%，支持GPT-5.2/Claude Opus 4.5/Gemini 3 Pro/Midjourney V7/Sora 2等。",
@@ -3125,56 +3077,53 @@
         "free_amount": ""
     },
     {
-        "url": "https://www.4stoken.cn",
-        "domain": "4stoken.cn",
-        "name": "4SToken",
-        "description": "企业级生产环境API聚合平台，支持GPT-5.6/Claude/Gemini全系模型，兼容OpenAI SDK，国内.cn域名，ICP备案，支持人民币结算和企业级发票。",
+        "url": "https://api.linktoagi.com/sign-up?aff=ydHk",
+        "domain": "linktoagi.com",
+        "name": "LinkAGI",
+        "description": "GPT/Codex一手号源池，同时提供Claude、Gemini等模型。支持OpenAI兼容接口、Responses API、流式输出、工具调用和图片生成。支持Codex、Claude Code、Gemini CLI。按量计费，支付宝/微信支付。",
         "models": [
             "claude",
             "gpt",
             "gemini",
-            "deepseek",
-            "qwen",
-            "grok",
-            "kimi"
+            "deepseek"
         ],
         "features": [
-            "企业级",
-            "ICP备案",
-            "多模型",
-            "专线优化",
-            "人民币结算"
+            "一手号源",
+            "OpenAI兼容",
+            "Codex支持",
+            "按量计费",
+            "图片生成"
         ],
         "price": "medium",
         "alive": true,
-        "score": 8.7,
-        "response_time": 0.35,
+        "score": 8.5,
+        "response_time": 0.38,
         "check_count": 3,
         "last_check": "2026-07-29",
-        "last_response_time": 0.35,
+        "last_response_time": 0.38,
         "display_tags": [
-            "企业级",
-            "ICP备案",
-            "GPT-5.6"
+            "一手号源",
+            "Codex",
+            "OpenAI兼容"
         ],
         "display_metrics": [
             {
-                "label": "模型数",
-                "value": "100+",
+                "label": "GPT",
+                "value": "5.6 Luna/Terra/Sol",
                 "trend": "up"
             },
             {
-                "label": "SLA",
-                "value": "99.9%",
+                "label": "接口",
+                "value": "OpenAI兼容",
                 "trend": "up"
             },
             {
                 "label": "支付",
-                "value": "国内结算",
+                "value": "支付宝/微信",
                 "trend": "up"
             }
         ],
-        "free_amount": ""
+        "free_amount": "注册送¥0.2测试额度"
     },
     {
         "url": "https://aihubmix.com/?aff=U9CV",
@@ -3304,6 +3253,108 @@
         "likes": 0
     },
     {
+        "url": "https://api.lingyaai.cn/register?aff=k8I8",
+        "domain": "lingyaai.cn",
+        "name": "灵芽API",
+        "description": "运营2年+的老牌API中转平台，服务2万+开发者。聚合100+主流AI模型，全球多节点部署。新增GLM-5.2、Kimi-K2.7-Code、MiniMax M3等旗舰模型专线(低至0.69折)。支持支付宝/微信充值，国内直连低延迟。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "domestic",
+            "drawing"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "enterprise"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 0,
+        "response_time": 1.05,
+        "alive": false,
+        "last_check": "2026-07-29",
+        "check_count": 3,
+        "display_tags": [
+            "2年老牌",
+            "100+模型",
+            "2万+用户"
+        ],
+        "display_metrics": [
+            {
+                "label": "资历",
+                "value": "2年+运营",
+                "cls": "green"
+            },
+            {
+                "label": "规模",
+                "value": "100+模型",
+                "cls": "accent"
+            },
+            {
+                "label": "用户",
+                "value": "2万+",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "dead_reason": "站点已失效/无法注册"
+    },
+    {
+        "url": "https://www.4stoken.cn",
+        "domain": "4stoken.cn",
+        "name": "4SToken",
+        "description": "企业级生产环境API聚合平台，支持GPT-5.6/Claude/Gemini全系模型，兼容OpenAI SDK，国内.cn域名，ICP备案，支持人民币结算和企业级发票。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "qwen",
+            "grok",
+            "kimi"
+        ],
+        "features": [
+            "企业级",
+            "ICP备案",
+            "多模型",
+            "专线优化",
+            "人民币结算"
+        ],
+        "price": "medium",
+        "alive": false,
+        "score": 0,
+        "response_time": 0.35,
+        "check_count": 3,
+        "last_check": "2026-07-29",
+        "last_response_time": 0.35,
+        "display_tags": [
+            "企业级",
+            "ICP备案",
+            "GPT-5.6"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型数",
+                "value": "100+",
+                "trend": "up"
+            },
+            {
+                "label": "SLA",
+                "value": "99.9%",
+                "trend": "up"
+            },
+            {
+                "label": "支付",
+                "value": "国内结算",
+                "trend": "up"
+            }
+        ],
+        "free_amount": "",
+        "dead_reason": "站点已失效/无法注册"
+    },
+    {
         "url": "https://api.aiyungc.cn",
         "domain": "aiyungc.cn",
         "name": "方舟API",
@@ -3322,8 +3373,8 @@
             "聚合中转"
         ],
         "price": "medium",
-        "alive": true,
-        "score": 8.0,
+        "alive": false,
+        "score": 0,
         "response_time": 0.52,
         "check_count": 3,
         "last_check": "2026-07-29",
@@ -3350,7 +3401,8 @@
                 "trend": "up"
             }
         ],
-        "free_amount": ""
+        "free_amount": "",
+        "dead_reason": "站点已失效/无法注册"
     },
     {
         "url": "https://shiyunapi.com/register?aff=mR1T",
