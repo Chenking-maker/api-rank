@@ -5851,13 +5851,13 @@
                         <span style="display:inline-block;width:8px;height:8px;background:#4ecdc4;border-radius:50%;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></span>
                         热门中转站 · 流量排行
                     </h3>
-                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb 2026年6月 · 月访问量估算 · 点击波浪访问站点</p>
+                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb <span id="trafficMonth">2026年7月</span> · 月访问量估算 · 点击波浪访问站点</p>
                 </div>
             </div>
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span> <a href="creative-tools.html" class="creative-tools-btn" title="在线绘图/视频专区">🎨 在线绘图/视频专区</a></h2>
+                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年7月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span> <a href="creative-tools.html" class="creative-tools-btn" title="在线绘图/视频专区">🎨 在线绘图/视频专区</a></h2>
 
                 <div class="filter-tabs">
 
@@ -6573,41 +6573,7 @@
                 
 
 
-                <!-- #19 灵芽API -->
-
-
-                <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#18</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">灵芽API</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">100+模型</span>
-                                <span class="tag tag-stable">国内直连</span>
-                                <span class="tag tag-stable">按量计费</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">聚合100+主流AI模型，国内直连低延迟。支持支付宝/微信，按量计费透明。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value green">支付宝充值</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">100+模型</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value">按量透明</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">9.78 <small>/10</small></div>
-                        <a href="https://api.lingyaai.cn/register?aff=k8I8" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
                 
 
@@ -6985,7 +6951,7 @@
 
                 infoEl.style.display = 'none';
 
-                document.getElementById('sectionDate').textContent = '2026年6月';
+                document.getElementById('sectionDate').textContent = new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月';
 
                 // 显示"查看更多"按钮
                 const loadMoreBtnReset = document.getElementById('loadMoreBtn');
@@ -7120,7 +7086,7 @@
 
                 const labels = {
 
-                    all: '2026年6月',
+                    all: new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月',
 
                     claude: 'Claude 专区',
 
@@ -10816,8 +10782,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // ========== 热门中转站流量排行图（流体波浪版） ==========
         function renderTrafficRank() {
-            // SimilarWeb 2026年6月数据（月访问量估算）
-            // 热门中转站流量排行（2026年6月数据，基于行业评测热度+用户关注度综合估算）
+            // SimilarWeb 数据（月访问量估算）
+            // 热门中转站流量排行（基于行业评测热度+用户关注度综合估算）
             const trafficData = [
                 { name: '硅基流动', domain: 'cloud.siliconflow.cn', url: 'https://cloud.siliconflow.cn/i/E5yUpjCP', visits: 185000 },
                 { name: 'DeepSeek API', domain: 'platform.deepseek.com', url: 'https://platform.deepseek.com', visits: 98000 },
@@ -10828,8 +10794,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 { name: 'API2D', domain: 'api2d.com', url: 'https://api2d.com', visits: 42000 },
                 { name: '无限星河AI', domain: 'infistar.ai', url: 'https://infistar.ai', visits: 38000 },
                 { name: '清沐API', domain: 'openqi.sbs', url: 'https://openqi.sbs', visits: 32000 },
-                { name: '灵芽API', domain: 'api.lingyaai.cn', url: 'https://api.lingyaai.cn/register?aff=k8I8', visits: 28000 },
+                
             ];
+
+            // 动态更新流量排行月份显示
+            const trafficMonthEl = document.getElementById('trafficMonth');
+            if (trafficMonthEl) {
+                trafficMonthEl.textContent = new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月';
+            }
 
             // 启动流体波浪 Canvas 动画
             initWaveCanvas(trafficData);

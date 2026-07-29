@@ -4852,7 +4852,7 @@
 
             <div class="section-header">
 
-                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年6月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
+                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年7月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
 
                 <div class="filter-tabs">
 
@@ -5605,41 +5605,7 @@
                 
 
 
-                <!-- #19 灵芽API -->
-
-
-                <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#19</div>
-                    <div class="rank-info">
-                        <div class="rank-info-top">
-                            <span class="rank-name">灵芽API</span>
-                            <div class="rank-tags">
-                                                                <span class="tag tag-stable">100+模型</span>
-                                <span class="tag tag-stable">国内直连</span>
-                                <span class="tag tag-stable">按量计费</span>
-                            </div>
-                        </div>
-                        <div class="rank-desc">聚合100+主流AI模型，国内直连低延迟。支持支付宝/微信，按量计费透明。</div>
-                        <div class="rank-metrics">
-                            <div class="metric">
-                                <span class="metric-label">优惠</span>
-                                <span class="metric-value green">支付宝充值</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">专业</span>
-                                <span class="metric-value accent">100+模型</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">价格</span>
-                                <span class="metric-value">按量透明</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-action">
-                        <div class="rank-score">7.51 <small>/10</small></div>
-                        <a href="https://api.lingyaai.cn/register?aff=k8I8" target="_blank" class="btn btn-primary">立即访问 →</a>
-                    </div>
-                </div>
+                
 
                 
 
@@ -5867,7 +5833,7 @@
 
                 infoEl.style.display = 'none';
 
-                document.getElementById('sectionDate').textContent = '2026年6月';
+                document.getElementById('sectionDate').textContent = new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月';
 
                 updateStats();
 
@@ -5980,7 +5946,7 @@
 
                 const labels = {
 
-                    all: '2026年6月',
+                    all: new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月',
 
                     claude: 'Claude 专区',
 

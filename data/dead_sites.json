@@ -225,5 +225,26 @@
     "domain": "closeai-asia.com",
     "status": "dead",
     "reason": "域名无法解析"
+  },
+  {
+    "url": "https://api.lingyaai.cn/register?aff=k8I8",
+    "name": "灵芽API",
+    "domain": "lingyaai.cn",
+    "status": "dead",
+    "reason": "站点已失效/无法注册"
+  },
+  {
+    "url": "https://www.4stoken.cn",
+    "name": "4SToken",
+    "domain": "4stoken.cn",
+    "status": "dead",
+    "reason": "站点已失效/无法注册"
+  },
+  {
+    "url": "https://api.aiyungc.cn",
+    "name": "方舟API",
+    "domain": "aiyungc.cn",
+    "status": "dead",
+    "reason": "站点已失效/无法注册"
   }
 ]
