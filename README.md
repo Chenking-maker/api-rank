@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/在线访问-api--rank--lake.vercel.app-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
-  <img src="https://img.shields.io/badge/收录平台-113+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-118+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -37,20 +37,20 @@
 
 ---
 
-## 🏆 热门推荐（2026年6月）
+## 🏆 热门推荐（2026年7月）
 
 | 排名 | 平台 | 评分 | 特色 | 邀请链接 |
 |:----:|------|:----:|------|----------|
 | 🥇 | **豆腐 (ToAPIs)** | 9.95 | 6大厂商官方授权，50+模型，视频模型 | [访问](https://toapis.com/login?aff=yjH5) |
 | 🥈 | **派客代码** | 9.88 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
 | 🥉 | **OpenRouter** | 9.85 | 400+模型，10M+用户，100T月Token | [访问](https://openrouter.ai) |
-| 4 | **灵芽API** | 9.78 | 2年+老牌，100+模型，旗舰专线0.69折 | [访问](https://api.lingyaai.cn/register?aff=k8I8) |
-| 5 | **莱特代码** | 9.72 | 企业级Agent分发，99.5%可用率 | [访问](https://right.codes/register?aff=56503380) |
-| 6 | **CoderPlan** | 9.68 | 多模型聚合，开发者友好 | [访问](https://coderplan.ai) |
-| 7 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
-| 8 | **红麦API** | 9.58 | 稳定运营，多模型支持 | [访问](https://hongmacc.com) |
-| 9 | **RK API** | 9.55 | 高性价比，多渠道可选 | [访问](https://rkapi.com) |
-| 10 | **无限星河AI** | 9.52 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai) |
+| 4 | **莱特代码** | 9.72 | 企业级Agent分发，99.5%可用率 | [访问](https://right.codes/register?aff=56503380) |
+| 5 | **CoderPlan** | 9.68 | 多模型聚合，开发者友好 | [访问](https://coderplan.ai) |
+| 6 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
+| 7 | **红麦API** | 9.58 | 稳定运营，多模型支持 | [访问](https://hongmacc.com) |
+| 8 | **RK API** | 9.55 | 高性价比，多渠道可选 | [访问](https://rkapi.com) |
+| 9 | **无限星河AI** | 9.52 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai) |
+| 10 | **木瓜AI** | 9.48 | GPT-5.5特价，多分组渠道，Claude/GPT全系列 | [访问](https://api.mooko.ai/register?aff=JiqY) |
 
 > 完整排名请访问 [在线网站](https://api-rank-lake.vercel.app) 查看
 
@@ -79,7 +79,7 @@ api-rank/
 ├── creative-tools.html      # AI绘图/视频专区
 ├── dead-sites.html          # 失效站点列表
 ├── data/
-│   └── stations_info.json   # 主站点数据（113个）
+│   └── stations_info.json   # 主站点数据（118个）
 ├── api/                     # Cloudflare Workers 后端
 │   ├── wrangler.toml        # Workers 配置
 │   ├── schema.sql           # D1 数据库建表
@@ -143,9 +143,9 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 113+ |
-| 有效站点 | 79 |
-| 失效站点 | 34 |
+| 收录平台 | 118+ |
+| 有效站点 | 72 |
+| 失效站点 | 46 |
 | 支持模型类型 | 7+（含绘画/视频） |
 | 评分范围 | 8.00 - 9.95 |
 | 更新频率 | 每日 |
@@ -172,7 +172,7 @@ wrangler deploy  # 部署Workers
 
 ## 📝 更新日志
 
-### v1.1.0 (2026-06-22)
+### v1.1.0 (2026-07-29)
 - ✅ 新增分享赚次数系统（Cloudflare Workers后端）
 - ✅ 新增API用户号自动注册（类似菩提苑）
 - ✅ 新增国际化手机号绑定（20+国家/地区）
@@ -182,7 +182,7 @@ wrangler deploy  # 部署Workers
 - ✅ 更新豆腐、派客代码、OpenRouter等站点描述
 - ✅ 修复SSSAICode等失效站点数据
 
-### v1.0.0 (2026-06-05)
+### v1.0.0 (2026-07-29)
 - 🎉 首次正式发布
 - ✅ 收录107个API中转站
 - ✅ 实时可用性检测

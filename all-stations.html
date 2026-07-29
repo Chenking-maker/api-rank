@@ -4446,6 +4446,21 @@
 
     </style>
 
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "全部中转站排行榜 - API中转站排行",
+    "url": "https://api-rank-lake.vercel.app/all-stations.html",
+    "description": "AI API中转站实时排行榜，自动测试延迟、价格、稳定性，收录118+平台",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "AI API中转站排行榜",
+        "url": "https://api-rank-lake.vercel.app/"
+    }
+}
+</script>
+
 </head>
 
 <body>
@@ -4791,6 +4806,33 @@
     </div>
 </div>
 
+<!-- Model Matrix - 热门模型支持矩阵 -->
+<div class="container" style="margin-top:40px;">
+    <div class="section-header">
+        <h2>&#x1F4CA; 热门模型支持矩阵</h2>
+        <p style="color:var(--text-secondary);font-size:14px;">一览各平台支持的主流模型，灰色表示不支持</p>
+    </div>
+    <div class="model-matrix" style="overflow-x:auto;margin-top:16px;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--bg-card);border-radius:12px;overflow:hidden;">
+            <thead>
+                <tr style="background:var(--bg-secondary);">
+                    <th style="padding:10px 12px;text-align:left;color:var(--text-primary);white-space:nowrap;">平台</th>
+                    <th style="padding:10px 8px;text-align:center;color:#74b9ff;">GPT</th>
+                    <th style="padding:10px 8px;text-align:center;color:#e17055;">Claude</th>
+                    <th style="padding:10px 8px;text-align:center;color:#00cec9;">Gemini</th>
+                    <th style="padding:10px 8px;text-align:center;color:#a29bfe;">DeepSeek</th>
+                    <th style="padding:10px 8px;text-align:center;color:#fdcb6e;">Codex</th>
+                    <th style="padding:10px 8px;text-align:center;color:#55efc4;">Claude Code</th>
+                    <th style="padding:10px 8px;text-align:center;color:#fd79a8;">视频</th>
+                </tr>
+            </thead>
+            <tbody id="modelMatrixBody">
+                <tr><td colspan="8" style="text-align:center;padding:20px;color:var(--text-secondary);">加载中...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
     <div class="toast-container" id="toastContainer"></div>
 
@@ -4830,6 +4872,12 @@
 
                     <button class="filter-tab" onclick="filterCards('image', this)">&#127912; 绘图</button>
 
+                    <button class="filter-tab" onclick="filterCards('codex', this)">&#x1F4BB; Codex</button>
+
+                    <button class="filter-tab" onclick="filterCards('claude-code', this)">&#x1F916; Claude Code</button>
+
+                    <button class="filter-tab" onclick="filterCards('video', this)">&#x1F3AC; 视频</button>
+
                 </div>
 
                 <div class="search-box">
@@ -4858,7 +4906,7 @@
 
             <div class="ranking-list" id="rankingList">
                 <!-- #1 诗云API(ShiyunApi) - DEAD -->
-                <div class="rank-card top-1 fade-in dead" data-tags="claude,gpt,gemini,domestic,enterprise">
+                <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,domestic,enterprise">
                     <div class="rank-number">#1</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -5053,7 +5101,7 @@
                 <!-- #6 ToAPIs -->
 
 
-                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,cheap">
+                <div class="rank-card fade-in" data-tags="claude,gpt,gemini,image,video,cheap">
                     <div class="rank-number">#6</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
@@ -5946,7 +5994,13 @@
 
                     enterprise: '企业级',
 
-                    image: '绘图'
+                    image: '绘图',
+
+                    codex: 'Codex',
+
+                    'claude-code': 'Claude Code',
+
+                    video: '视频'
 
                 };
 
@@ -10016,6 +10070,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        async function renderModelMatrix() {
+            try {
+                const stations = await fetchOnce('data/stations_info.json');
+                if (!Array.isArray(stations)) return;
+                const aliveStations = stations.filter(s => s.alive && s.score > 0);
+                aliveStations.sort((a, b) => (b.score || 0) - (a.score || 0));
+                const top = aliveStations.slice(0, 15);
+
+                const modelKeys = ['gpt', 'claude', 'gemini', 'deepseek', 'gpt-codex', 'claude-code', 'video'];
+
+                const tbody = document.getElementById('modelMatrixBody');
+                tbody.innerHTML = top.map(s => {
+                    const models = (s.models || []).map(m => m.toLowerCase());
+                    const cells = modelKeys.map(k => {
+                        const has = models.some(m => m === k || m.includes(k) || k.includes(m));
+                        return '<td style="text-align:center;padding:8px;">' + (has ? '&#x2705;' : '<span style="color:#555;">&mdash;</span>') + '</td>';
+                    }).join('');
+                    return '<tr style="border-bottom:1px solid var(--border);">' +
+                        '<td style="padding:8px 12px;font-weight:500;white-space:nowrap;">' + (s.name || s.domain) + '</td>' +
+                        cells +
+                        '</tr>';
+                }).join('');
+            } catch(e) { console.log('模型矩阵加载失败:', e); }
+        }
+
         document.addEventListener('DOMContentLoaded', async function() {
             // all-stations.html 没有流量排行榜，直接加载数据
 
@@ -10042,6 +10121,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadApprovedFromData(),
             ]);
             loadApprovedFromAdmin();
+
+            // 渲染模型支持矩阵
+            renderModelMatrix();
 
             // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行
             await loadApprovedSites();

@@ -5381,7 +5381,7 @@
 
                 <h2>🔍 提交中转站收录</h2>
 
-                <p>输入中转站网址，系统将自动检测其可用性并评估是否收录</p>
+                <p>输入中转站网址，系统将模拟检测其可用性（基于公开信息评估），审核通过后收录</p>
 
             </div>
 
@@ -5407,7 +5407,7 @@
 
                         <span>🚀</span>
 
-                        <span>提交并自动检测</span>
+                        <span>提交并模拟评估</span>
 
                     </button>
 
@@ -5591,7 +5591,7 @@
 
             <div class="dead-list-footer">
                 <a href="dead-sites.html">查看完整失效站点列表 →</a>
-                <span class="update-time">每日自动检测更新</span>
+                <span class="update-time">数据每日人工审核更新</span>
             </div>
 
         </div>
@@ -5604,7 +5604,7 @@
         <button class="section-modal-close" onclick="closeSectionModal('scoreInfoModal')">✕</button>
         <div class="score-info-content">
             <h3>📊 评分维度与权重</h3>
-            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">综合评分由以下7个维度加权计算，每日自动检测更新</p>
+            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">综合评分由以下7个维度加权计算（基于公开信息评估），每日更新</p>
             
             <div class="score-dimension">
                 <span class="dim-icon">🛡️</span>
@@ -5680,6 +5680,33 @@
                 ⚠️ 投票数据每月1日自动清零，确保评分反映近期真实口碑。点击每个站点旁的 👍 按钮即可投票。
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Model Matrix - 热门模型支持矩阵 -->
+<div class="container" style="margin-top:40px;">
+    <div class="section-header">
+        <h2>&#x1F4CA; 热门模型支持矩阵</h2>
+        <p style="color:var(--text-secondary);font-size:14px;">一览各平台支持的主流模型，灰色表示不支持</p>
+    </div>
+    <div class="model-matrix" style="overflow-x:auto;margin-top:16px;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--bg-card);border-radius:12px;overflow:hidden;">
+            <thead>
+                <tr style="background:var(--bg-secondary);">
+                    <th style="padding:10px 12px;text-align:left;color:var(--text-primary);white-space:nowrap;">平台</th>
+                    <th style="padding:10px 8px;text-align:center;color:#74b9ff;">GPT</th>
+                    <th style="padding:10px 8px;text-align:center;color:#e17055;">Claude</th>
+                    <th style="padding:10px 8px;text-align:center;color:#00cec9;">Gemini</th>
+                    <th style="padding:10px 8px;text-align:center;color:#a29bfe;">DeepSeek</th>
+                    <th style="padding:10px 8px;text-align:center;color:#fdcb6e;">Codex</th>
+                    <th style="padding:10px 8px;text-align:center;color:#55efc4;">Claude Code</th>
+                    <th style="padding:10px 8px;text-align:center;color:#fd79a8;">视频</th>
+                </tr>
+            </thead>
+            <tbody id="modelMatrixBody">
+                <tr><td colspan="8" style="text-align:center;padding:20px;color:var(--text-secondary);">加载中...</td></tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -5849,6 +5876,12 @@
                     <button class="filter-tab" onclick="filterCards('enterprise', this)">企业级</button>
 
                     <button class="filter-tab" onclick="filterCards('image', this)">&#127912; 绘图</button>
+
+                    <button class="filter-tab" onclick="filterCards('codex', this)">&#x1F4BB; Codex</button>
+
+                    <button class="filter-tab" onclick="filterCards('claude-code', this)">&#x1F916; Claude Code</button>
+
+                    <button class="filter-tab" onclick="filterCards('video', this)">&#x1F3AC; 视频</button>
 
                 </div>
 
@@ -6115,7 +6148,7 @@
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt">
-                    <div class="rank-number">#8</div>
+                    <div class="rank-number">#7</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">爱坤代码 (IKunCode)</span>
@@ -6154,7 +6187,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#9</div>
+                    <div class="rank-number">#8</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">木瓜AI</span>
@@ -6193,7 +6226,7 @@
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#10</div>
+                    <div class="rank-number">#9</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">302.AI</span>
@@ -6232,7 +6265,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#11</div>
+                    <div class="rank-number">#10</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">大模型API (DMXAPI)</span>
@@ -6271,7 +6304,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#12</div>
+                    <div class="rank-number">#11</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">147AI</span>
@@ -6310,7 +6343,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#13</div>
+                    <div class="rank-number">#12</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">向量引擎</span>
@@ -6349,7 +6382,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#14</div>
+                    <div class="rank-number">#13</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">OpenRouter</span>
@@ -6388,7 +6421,7 @@
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt">
-                    <div class="rank-number">#15</div>
+                    <div class="rank-number">#14</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">SSSAICode</span>
@@ -6427,7 +6460,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#16</div>
+                    <div class="rank-number">#15</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">Fchat API (aioncode)</span>
@@ -6466,7 +6499,7 @@
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#17</div>
+                    <div class="rank-number">#16</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">蛇GPT (SnakeGPT)</span>
@@ -6505,7 +6538,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini">
-                    <div class="rank-number">#18</div>
+                    <div class="rank-number">#17</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">AI代码站 (aigocode)</span>
@@ -6544,7 +6577,7 @@
 
 
                 <div class="rank-card fade-in dead" data-tags="claude,gpt,gemini,domestic">
-                    <div class="rank-number">#19</div>
+                    <div class="rank-number">#18</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">灵芽API</span>
@@ -6583,7 +6616,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="claude,gpt,gemini,image">
-                    <div class="rank-number">#20</div>
+                    <div class="rank-number">#19</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">省钱AI (Save AI)</span>
@@ -6622,7 +6655,7 @@
 
 
                 <div class="rank-card fade-in" data-tags="image,creative">
-                    <div class="rank-number">#21</div>
+                    <div class="rank-number">#20</div>
                     <div class="rank-info">
                         <div class="rank-info-top">
                             <span class="rank-name">灵犀万相 (Hurrai)</span>
@@ -7101,7 +7134,13 @@
 
                     enterprise: '企业级',
 
-                    image: '绘图'
+                    image: '绘图',
+
+                    codex: 'Codex',
+
+                    'claude-code': 'Claude Code',
+
+                    video: '视频'
 
                 };
 
@@ -11157,6 +11196,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        async function renderModelMatrix() {
+            try {
+                const stations = await fetchOnce('data/stations_info.json');
+                if (!Array.isArray(stations)) return;
+                const aliveStations = stations.filter(s => s.alive && s.score > 0);
+                aliveStations.sort((a, b) => (b.score || 0) - (a.score || 0));
+                const top = aliveStations.slice(0, 15);
+
+                const modelKeys = ['gpt', 'claude', 'gemini', 'deepseek', 'gpt-codex', 'claude-code', 'video'];
+
+                const tbody = document.getElementById('modelMatrixBody');
+                tbody.innerHTML = top.map(s => {
+                    const models = (s.models || []).map(m => m.toLowerCase());
+                    const cells = modelKeys.map(k => {
+                        const has = models.some(m => m === k || m.includes(k) || k.includes(m));
+                        return '<td style="text-align:center;padding:8px;">' + (has ? '&#x2705;' : '<span style="color:#555;">&mdash;</span>') + '</td>';
+                    }).join('');
+                    return '<tr style="border-bottom:1px solid var(--border);">' +
+                        '<td style="padding:8px 12px;font-weight:500;white-space:nowrap;">' + (s.name || s.domain) + '</td>' +
+                        cells +
+                        '</tr>';
+                }).join('');
+            } catch(e) { console.log('模型矩阵加载失败:', e); }
+        }
+
         document.addEventListener('DOMContentLoaded', async function() {
             // 渲染流量排行榜（纯静态数据，不依赖异步加载）
             renderTrafficRank();
@@ -11189,6 +11253,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             loadApprovedFromAdmin();
+
+            // 渲染模型支持矩阵
+            renderModelMatrix();
 
             // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行
             await loadApprovedSites();
