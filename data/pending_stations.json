@@ -103,5 +103,804 @@
     "submitTime": "2026-05-23T09:48:51.511997",
     "checked_at": "2026-05-23T09:48:51.511999",
     "check_count": 1
+  },
+  {
+    "name": "hvoy.ai",
+    "url": "https://www.hvoy.ai",
+    "submitTime": "2026-06-23T09:03:17.977199",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977209",
+    "check_count": 1
+  },
+  {
+    "name": "api.whatai.cc",
+    "url": "https://api.whatai.cc",
+    "submitTime": "2026-06-23T09:03:17.977216",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977219",
+    "check_count": 1
+  },
+  {
+    "name": "xyai2.top",
+    "url": "https://xyai2.top",
+    "submitTime": "2026-06-23T09:03:17.977222",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977224",
+    "check_count": 1
+  },
+  {
+    "name": "api.coderplan.ai",
+    "url": "https://api.coderplan.ai",
+    "submitTime": "2026-06-23T09:03:17.977226",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977228",
+    "check_count": 1
+  },
+  {
+    "name": "coderplan.ai",
+    "url": "https://coderplan.ai",
+    "submitTime": "2026-06-23T09:03:17.977230",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977232",
+    "check_count": 1
+  },
+  {
+    "name": "api.catrouter.net",
+    "url": "https://api.catrouter.net",
+    "submitTime": "2026-06-23T09:03:17.977234",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977236",
+    "check_count": 1
+  },
+  {
+    "name": "gpt.zhizengzeng.com",
+    "url": "https://gpt.zhizengzeng.com",
+    "submitTime": "2026-06-23T09:03:17.977238",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977239",
+    "check_count": 1
+  },
+  {
+    "name": "api.zhizengzeng.com",
+    "url": "https://api.zhizengzeng.com",
+    "submitTime": "2026-06-23T09:03:17.977241",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977243",
+    "check_count": 1
+  },
+  {
+    "name": "ai.centos.hk",
+    "url": "https://ai.centos.hk",
+    "submitTime": "2026-06-23T09:03:17.977244",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977246",
+    "check_count": 1
+  },
+  {
+    "name": "atlascloud.ai",
+    "url": "https://www.atlascloud.ai",
+    "submitTime": "2026-06-23T09:03:17.977248",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-23T09:03:17.977249",
+    "check_count": 1
+  },
+  {
+    "name": "tailwindcss.com",
+    "url": "https://tailwindcss.com",
+    "submitTime": "2026-06-24T08:58:28.939830",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939851",
+    "check_count": 1
+  },
+  {
+    "name": "studio-api.suno.ai",
+    "url": "https://studio-api.suno.ai",
+    "submitTime": "2026-06-24T08:58:28.939861",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939864",
+    "check_count": 1
+  },
+  {
+    "name": "free.yunwu.ai",
+    "url": "https://free.yunwu.ai",
+    "submitTime": "2026-06-24T08:58:28.939867",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939869",
+    "check_count": 1
+  },
+  {
+    "name": "chaxun.wlai.vip",
+    "url": "https://chaxun.wlai.vip",
+    "submitTime": "2026-06-24T08:58:28.939871",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939873",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.ai",
+    "url": "https://yunwu.ai",
+    "submitTime": "2026-06-24T08:58:28.939879",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939881",
+    "check_count": 1
+  },
+  {
+    "name": "web.apiplus.org",
+    "url": "https://web.apiplus.org",
+    "submitTime": "2026-06-24T08:58:28.939883",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939885",
+    "check_count": 1
+  },
+  {
+    "name": "yunwu.apifox.cn",
+    "url": "https://yunwu.apifox.cn",
+    "submitTime": "2026-06-24T08:58:28.939887",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939889",
+    "check_count": 1
+  },
+  {
+    "name": "demo.sub2api.org",
+    "url": "https://demo.sub2api.org",
+    "submitTime": "2026-06-24T08:58:28.939891",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-24T08:58:28.939892",
+    "check_count": 1
+  },
+  {
+    "name": "unity2.ai",
+    "url": "https://unity2.ai",
+    "submitTime": "2026-06-27T08:30:48.409418",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-27T08:30:48.409437",
+    "check_count": 1
+  },
+  {
+    "name": "api.ztoken.pro",
+    "url": "https://api.ztoken.pro",
+    "submitTime": "2026-06-30T09:00:50.201192",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-06-30T09:00:50.201212",
+    "check_count": 1
+  },
+  {
+    "name": "free2ai.pages.dev",
+    "url": "https://free2ai.pages.dev",
+    "submitTime": "2026-07-01T09:34:00.622129",
+    "status": "pending",
+    "source": "github:ChatGPT _extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-01T09:34:00.622148",
+    "check_count": 1
+  },
+  {
+    "name": "openmodel.ai",
+    "url": "https://www.openmodel.ai",
+    "submitTime": "2026-07-04T08:28:26.108795",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108815",
+    "check_count": 1
+  },
+  {
+    "name": "etok.ai",
+    "url": "https://etok.ai",
+    "submitTime": "2026-07-04T08:28:26.108824",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108826",
+    "check_count": 1
+  },
+  {
+    "name": "aicodemirror.com",
+    "url": "https://www.aicodemirror.com",
+    "submitTime": "2026-07-04T08:28:26.108828",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108829",
+    "check_count": 1
+  },
+  {
+    "name": "bestproxy.com",
+    "url": "https://bestproxy.com",
+    "submitTime": "2026-07-04T08:28:26.108831",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108833",
+    "check_count": 1
+  },
+  {
+    "name": "pateway.ai",
+    "url": "https://pateway.ai",
+    "submitTime": "2026-07-04T08:28:26.108835",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108836",
+    "check_count": 1
+  },
+  {
+    "name": "api.pptoken.org",
+    "url": "https://api.pptoken.org",
+    "submitTime": "2026-07-04T08:28:26.108838",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108839",
+    "check_count": 1
+  },
+  {
+    "name": "apikl.ai",
+    "url": "https://apikl.ai",
+    "submitTime": "2026-07-04T08:28:26.108841",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108842",
+    "check_count": 1
+  },
+  {
+    "name": "tokeneum.ai",
+    "url": "https://tokeneum.ai",
+    "submitTime": "2026-07-04T08:28:26.108844",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108846",
+    "check_count": 1
+  },
+  {
+    "name": "666api.work",
+    "url": "https://666api.work",
+    "submitTime": "2026-07-04T08:28:26.108847",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108848",
+    "check_count": 1
+  },
+  {
+    "name": "miyaip.com",
+    "url": "https://www.miyaip.com",
+    "submitTime": "2026-07-04T08:28:26.108850",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-04T08:28:26.108852",
+    "check_count": 1
+  },
+  {
+    "name": "anpin.ai",
+    "url": "https://anpin.ai",
+    "submitTime": "2026-07-05T08:45:00.913651",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-05T08:45:00.913668",
+    "check_count": 1
+  },
+  {
+    "name": "proxy4free.com",
+    "url": "https://www.proxy4free.com",
+    "submitTime": "2026-07-05T08:45:00.913678",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-05T08:45:00.913681",
+    "check_count": 1
+  },
+  {
+    "name": "api.x.ai",
+    "url": "https://api.x.ai",
+    "submitTime": "2026-07-05T08:45:00.913684",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-05T08:45:00.913687",
+    "check_count": 1
+  },
+  {
+    "name": "duiapi.com",
+    "url": "https://www.duiapi.com",
+    "submitTime": "2026-07-07T09:28:08.748100",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748124",
+    "check_count": 1
+  },
+  {
+    "name": "airelay.pro",
+    "url": "https://www.airelay.pro",
+    "submitTime": "2026-07-07T09:28:08.748136",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748138",
+    "check_count": 1
+  },
+  {
+    "name": "cun.ai",
+    "url": "https://cun.ai",
+    "submitTime": "2026-07-07T09:28:08.748142",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748144",
+    "check_count": 1
+  },
+  {
+    "name": "fastaitoken.com",
+    "url": "http://www.fastaitoken.com",
+    "submitTime": "2026-07-07T09:28:08.748147",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-07T09:28:08.748149",
+    "check_count": 1
+  },
+  {
+    "name": "api.fenno.ai",
+    "url": "https://api.fenno.ai",
+    "submitTime": "2026-07-09T09:25:50.327130",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-09T09:25:50.327155",
+    "check_count": 1
+  },
+  {
+    "name": "cctk.ai",
+    "url": "https://cctk.ai",
+    "submitTime": "2026-07-10T09:23:23.192648",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-10T09:23:23.192669",
+    "check_count": 1
+  },
+  {
+    "name": "cli-chat-proxy.grok.com",
+    "url": "https://cli-chat-proxy.grok.com",
+    "submitTime": "2026-07-13T08:52:11.124247",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-13T08:52:11.124270",
+    "check_count": 1
+  },
+  {
+    "name": "aimzoon.com",
+    "url": "http://aimzoon.com",
+    "submitTime": "2026-07-15T07:54:39.045516",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-15T07:54:39.045528",
+    "check_count": 1
+  },
+  {
+    "name": "console.claudeapi.com",
+    "url": "https://console.claudeapi.com",
+    "submitTime": "2026-07-17T07:56:19.358175",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-17T07:56:19.358195",
+    "check_count": 1
+  },
+  {
+    "name": "code0.ai",
+    "url": "https://code0.ai",
+    "submitTime": "2026-07-17T07:56:19.358206",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-17T07:56:19.358208",
+    "check_count": 1
+  },
+  {
+    "name": "api.pptoken.cc",
+    "url": "https://api.pptoken.cc",
+    "submitTime": "2026-07-20T08:43:48.334546",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-20T08:43:48.334565",
+    "check_count": 1
+  },
+  {
+    "name": "nagora.ai",
+    "url": "https://nagora.ai",
+    "submitTime": "2026-07-23T08:16:37.966452",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-23T08:16:37.966478",
+    "check_count": 1
+  },
+  {
+    "name": "infistar.ai",
+    "url": "https://infistar.ai",
+    "submitTime": "2026-07-23T08:16:37.966489",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-07-23T08:16:37.966491",
+    "check_count": 1
   }
 ]
