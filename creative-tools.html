@@ -42,11 +42,11 @@
             --yellow: #F59E0B;
             --red: #EF4444;
             --orange: #F97316;
-            --gradient-purple: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            --gradient-green: linear-gradient(135deg, #00d2a0, #00b894);
-            --gradient-orange: linear-gradient(135deg, #ff9f43, #ee5a24);
-            --gradient-pink: linear-gradient(135deg, #fd79a8, #e84393);
-            --gradient-1: linear-gradient(135deg, #4A90D9, #7EC8E3);
+            --gradient-purple: #4A90D9;
+            --gradient-green: #10B981;
+            --gradient-orange: #F97316;
+            --gradient-pink: #4A90D9;
+            --gradient-1: #4A90D9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,7 +90,7 @@
         .logo-icon {
             width: 36px;
             height: 36px;
-            background: var(--gradient-1);
+            background: var(--accent);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -146,7 +146,7 @@
         .hero {
             padding: 60px 24px 40px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(108,92,231,0.08) 0%, transparent 100%);
+            background: #4A90D9 0%, transparent 100%);
         }
 
         .hero-badge {
@@ -166,9 +166,9 @@
             font-size: 36px;
             font-weight: 800;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #f0f0f5, #a29bfe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: #4A90D9;
+            
+            
         }
 
         .hero p {
@@ -656,7 +656,7 @@
         }
 
         .tool-card.both-tool::before {
-            background: linear-gradient(90deg, #fd79a8, #ff9f43);
+            background: #4A90D9;
         }
 
         .card-header {
@@ -684,7 +684,7 @@
 
         .card-icon.image { background: rgba(253,121,168,0.15); }
         .card-icon.video { background: rgba(255,159,67,0.15); }
-        .card-icon.both { background: linear-gradient(135deg, rgba(253,121,168,0.15), rgba(255,159,67,0.15)); }
+        .card-icon.both { background: #4A90D9, rgba(255,159,67,0.15)); }
 
         .card-name {
             font-size: 18px;

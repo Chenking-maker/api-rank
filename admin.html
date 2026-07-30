@@ -44,7 +44,7 @@
             --danger: #ef4444;
             --warning: #f59e0b;
             --radius: 12px;
-            --gradient-1: linear-gradient(135deg, #4A90D9, #7EC8E3);
+            --gradient-1: #4A90D9;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
@@ -80,7 +80,7 @@
         .logo-icon {
             width: 36px;
             height: 36px;
-            background: var(--gradient-1);
+            background: var(--accent);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -278,18 +278,18 @@
         .login-page { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
         .login-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; width: 420px; }
         .login-logo { text-align: center; margin-bottom: 32px; }
-        .login-logo .logo-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--accent), var(--green)); border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 16px; }
+        .login-logo .logo-icon { width: 56px; height: 56px; background: #4A90D9, var(--green)); border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 16px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
         .form-group input { width: 100%; padding: 12px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; }
-        .login-btn { width: 100%; padding: 12px; background: linear-gradient(135deg, var(--accent), #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+        .login-btn { width: 100%; padding: 12px; background: #4A90D9, #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
         .login-error { color: var(--danger); font-size: 13px; text-align: center; margin-top: 12px; }
         
         .dashboard { display: none; }
         .dashboard.active { display: block; }
         .topbar { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
         .topbar-left { display: flex; align-items: center; gap: 12px; }
-        .topbar-logo { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--green)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; }
+        .topbar-logo { width: 36px; height: 36px; background: #4A90D9, var(--green)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; }
         .logout-btn { padding: 6px 16px; background: transparent; border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 13px; cursor: pointer; }
         
         .main-content { padding: 32px; max-width: 1400px; margin: 0 auto; }
@@ -312,7 +312,7 @@
         .quick-tag-clear:hover { border-color: var(--danger); color: var(--danger); }
         .customer-textarea { width: 100%; min-height: 180px; padding: 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; resize: vertical; }
         .parse-actions { display: flex; gap: 12px; margin-top: 16px; }
-        .btn-primary { flex: 1; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .btn-primary { flex: 1; padding: 12px 24px; background: #4A90D9, #5a4bd4); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
         .btn-secondary { padding: 12px 20px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 14px; cursor: pointer; }
         
         .results-placeholder { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
@@ -321,9 +321,9 @@
         .station-card.selected { border-color: var(--green); box-shadow: 0 0 0 2px rgba(0,210,160,0.2); }
         .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
         .card-rank { width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-right: 10px; }
-        .rank-1 { background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; }
-        .rank-2 { background: linear-gradient(135deg, #94a3b8, #64748b); color: #fff; }
-        .rank-3 { background: linear-gradient(135deg, #cd7f32, #a0522d); color: #fff; }
+        .rank-1 { background: #4A90D9; color: #000; }
+        .rank-2 { background: #4A90D9; color: #fff; }
+        .rank-3 { background: #4A90D9; color: #fff; }
         .card-name { font-size: 15px; font-weight: 600; flex: 1; }
         .card-score { font-size: 18px; font-weight: 700; color: var(--green); }
         .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
@@ -380,8 +380,8 @@
         
         .report-section { margin-bottom: 28px; }
         .report-section-title { font-size: 14px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-        .best-rec { background: linear-gradient(135deg, rgba(0,210,160,0.08), rgba(108,92,231,0.05)); border: 1px solid rgba(0,210,160,0.3); border-radius: var(--radius); padding: 20px; display: flex; align-items: center; gap: 16px; }
-        .best-rec-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--green), #00b890); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .best-rec { background: #4A90D9, rgba(108,92,231,0.05)); border: 1px solid rgba(0,210,160,0.3); border-radius: var(--radius); padding: 20px; display: flex; align-items: center; gap: 16px; }
+        .best-rec-icon { width: 48px; height: 48px; background: #4A90D9, #00b890); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
         .best-rec-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
         .best-rec-info p { font-size: 13px; color: var(--text-secondary); }
         .best-rec-score { margin-left: auto; text-align: center; }
@@ -393,9 +393,9 @@
         .bar-label { width: 120px; font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .bar-track { flex: 1; height: 24px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
         .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 600; color: #fff; }
-        .bar-fill.speed { background: linear-gradient(90deg, #10b981, #34d399); }
-        .bar-fill.stability { background: linear-gradient(90deg, #6366f1, #818cf8); }
-        .bar-fill.support { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .bar-fill.speed { background: #4A90D9; }
+        .bar-fill.stability { background: #4A90D9; }
+        .bar-fill.support { background: #4A90D9; }
         .bar-value { width: 30px; text-align: right; font-size: 12px; font-weight: 600; }
         
         .compare-table { width: 100%; border-collapse: collapse; }
@@ -562,7 +562,7 @@
                         </div>
                     </div>
                     <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
-                        <button onclick="checkAllDeadSites()" id="btnCheckAll" style="padding:8px 16px;background:linear-gradient(135deg,#6c5ce7,#5a4bd4);color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500;">🔍 一键检测全部</button>
+                        <button onclick="checkAllDeadSites()" id="btnCheckAll" style="padding:8px 16px;background: #4A90D9;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;font-weight:500;">🔍 一键检测全部</button>
                         <button onclick="exportDeadSitesChanges()" style="padding:8px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text-secondary);cursor:pointer;">📤 导出变更</button>
                         <button onclick="clearRecoveredSites()" style="padding:8px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text-secondary);cursor:pointer;">🧹 清除已恢复</button>
                     </div>
@@ -572,7 +572,7 @@
                             <span style="font-size:12px;color:var(--accent);" id="deadCheckCount">0/0</span>
                         </div>
                         <div style="height:4px;background:var(--bg-primary);border-radius:2px;overflow:hidden;">
-                            <div id="deadCheckBar" style="height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:2px;width:0%;transition:width 0.3s;"></div>
+                            <div id="deadCheckBar" style="height:100%;background: #4A90D9,var(--green));border-radius:2px;width:0%;transition:width 0.3s;"></div>
                         </div>
                     </div>
                     <div id="deadList" style="display:flex;flex-direction:column;gap:8px;">

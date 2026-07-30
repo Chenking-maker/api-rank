@@ -97,11 +97,11 @@
 
             --orange: #F97316;
 
-            --gradient-1: linear-gradient(135deg, #4A90D9, #7EC8E3);
+            --gradient-1: #4A90D9;
 
-            --gradient-2: linear-gradient(135deg, #10B981, #34D399);
+            --gradient-2: #10B981;
 
-            --gradient-3: linear-gradient(135deg, #EF4444, #F97316);
+            --gradient-3: #EF4444;
 
         }
 
@@ -261,7 +261,7 @@
 
             height: 36px;
 
-            background: var(--gradient-1);
+            background: var(--accent);
 
             border-radius: 10px;
 
@@ -377,9 +377,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(ellipse at 30% 20%, rgba(108,92,231,0.04) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 60%, rgba(0,210,160,0.03) 0%, transparent 50%),
-                        radial-gradient(ellipse at 50% 80%, rgba(162,155,254,0.025) 0%, transparent 40%);
+            background: transparent;
             animation: aurora-shift 15s ease-in-out infinite;
             background-size: 200% 200%;
             pointer-events: none;
@@ -449,18 +447,7 @@
 
         }
 
-        /* ===== react-bits 灵感：ShinyText 光泽扫过动画 ===== */
-        @keyframes shiny-sweep {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-
-        /* ===== react-bits 灵感：GradientText 渐变流动 ===== */
-        @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        /* ===== react-bits 灵感：BlurText 模糊入场 ===== */
 
         /* ===== react-bits 灵感：BlurText 模糊入场 ===== */
         @keyframes blur-in {
@@ -500,28 +487,8 @@
 
         }
 
-        /* ShinyText 光泽扫过效果（非 gradient-text 部分） */
-        .hero h1::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            animation: shiny-sweep 4s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-
-
         .hero h1 .gradient-text {
-
-            background: linear-gradient(90deg, #6c5ce7, #a29bfe, #00d2a0, #a29bfe, #6c5ce7);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-flow 6s ease infinite;
+            color: var(--accent);
         }
 
 
@@ -859,11 +826,11 @@
 
 
 
-        .rank-card.top-1::before { background: var(--gradient-1); }
+        .rank-card.top-1::before { background: var(--accent); }
 
-        .rank-card.top-2::before { background: var(--gradient-2); }
+        .rank-card.top-2::before { background: var(--green); }
 
-        .rank-card.top-3::before { background: linear-gradient(135deg, #ffd43b, #f0932b); }
+        .rank-card.top-3::before { background: var(--yellow); }
 
         /* 前三名卡片 hover 发光 */
         .rank-card.top-1:hover { box-shadow: 0 8px 24px rgba(74,144,217,0.12), 0 0 0 1px rgba(74,144,217,0.15); }
@@ -876,7 +843,7 @@
 
             border-color: rgba(108,92,231,0.2);
 
-            background: linear-gradient(135deg, rgba(108,92,231,0.05), var(--bg-card));
+            background: var(--bg-card);
 
         }
 
@@ -921,36 +888,36 @@
         
 
         .top-1 .rank-number {
-            background: linear-gradient(180deg, rgba(108,92,231,0.25), rgba(108,92,231,0.08));
+            background: rgba(74, 144, 217, 0.15);
             color: #fff;
         }
 
         .top-2 .rank-number {
-            background: linear-gradient(180deg, rgba(46,213,115,0.25), rgba(46,213,115,0.08));
+            background: rgba(16, 185, 129, 0.15);
             color: #2ed573;
         }
 
         .top-3 .rank-number {
-            background: linear-gradient(180deg, rgba(255,193,7,0.25), rgba(255,193,7,0.08));
+            background: rgba(245, 158, 11, 0.15);
             color: #ffc107;
         }
 
         .top-4 .rank-number,
         .top-5 .rank-number {
-            background: linear-gradient(180deg, rgba(0,168,255,0.2), rgba(0,168,255,0.06));
+            background: rgba(74, 144, 217, 0.15);
             color: #00a8ff;
         }
 
         .top-6 .rank-number,
         .top-7 .rank-number {
-            background: linear-gradient(180deg, rgba(255,107,107,0.2), rgba(255,107,107,0.06));
+            background: rgba(239, 68, 68, 0.15);
             color: #ff6b6b;
         }
 
         .top-8 .rank-number,
         .top-9 .rank-number,
         .top-10 .rank-number {
-            background: linear-gradient(180deg, rgba(162,155,254,0.15), rgba(162,155,254,0.04));
+            background: rgba(74, 144, 217, 0.1);
             color: #a29bfe;
         }
 
@@ -1032,7 +999,7 @@
         }
         .dead-list-modal.active { display: flex; }
         .dead-list-box {
-            background: linear-gradient(145deg, #1a1a28, #14141e);
+            background: var(--bg-card);
             border: 1px solid rgba(239,68,68,0.12);
             border-radius: 20px;
             padding: 0;
@@ -1046,7 +1013,7 @@
         .dead-list-header {
             padding: 28px 28px 20px;
             border-bottom: 1px solid var(--border);
-            background: linear-gradient(135deg, rgba(255,107,107,0.06), transparent);
+            background: rgba(239, 68, 68, 0.06);
         }
         .dead-list-header-row {
             display: flex;
@@ -1433,7 +1400,7 @@
 
 
         .tag-official {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            background: var(--accent) !important;
             color: #fff !important;
             border: none !important;
         }
@@ -1697,7 +1664,7 @@
 
         .btn-primary {
 
-            background: var(--gradient-1);
+            background: var(--accent);
 
             color: white;
 
@@ -1739,7 +1706,7 @@
 
         .btn-green {
 
-            background: var(--gradient-2);
+            background: var(--green);
 
             color: white;
 
@@ -2807,7 +2774,7 @@
 
             height: 3px;
 
-            background: linear-gradient(90deg, var(--green), var(--accent));
+            background: var(--accent);
 
         }
 
@@ -2861,7 +2828,7 @@
 
             margin-top: 20px;
 
-            background: linear-gradient(135deg, var(--green), #00b894);
+            background: var(--green);
 
         }
 
@@ -2903,7 +2870,7 @@
 
         .finder-paywall {
 
-            background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(0,210,160,0.1));
+            background: rgba(74, 144, 217, 0.1);
 
             border: 1px solid var(--border);
 
@@ -3057,11 +3024,11 @@
 
 
 
-        .finder-card-rank.rank-1 { background: linear-gradient(135deg, #ffd43b, #f0932b); color: #000; }
+        .finder-card-rank.rank-1 { background: var(--yellow); color: #000; }
 
-        .finder-card-rank.rank-2 { background: linear-gradient(135deg, #a8a8a8, #888); color: #000; }
+        .finder-card-rank.rank-2 { background: #9CA3AF; color: #000; }
 
-        .finder-card-rank.rank-3 { background: linear-gradient(135deg, #cd7f32, #b87333); color: #fff; }
+        .finder-card-rank.rank-3 { background: #D97706; color: #fff; }
 
         .finder-card-rank.rank-4, .finder-card-rank.rank-5 { background: var(--bg-card); color: var(--text-secondary); }
 
@@ -3245,7 +3212,7 @@
 
             height: 3px;
 
-            background: var(--gradient-1);
+            background: var(--accent);
 
         }
 
@@ -3429,7 +3396,7 @@
 
             padding: 16px;
 
-            background: var(--gradient-1);
+            background: var(--accent);
 
             border: none;
 
@@ -4331,70 +4298,49 @@
             background: var(--bg-hover);
         }
 
-        .search-input::placeholder {
-
+        .search-kbd {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 11px;
             color: var(--text-muted);
-
+            background: var(--bg-primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
 
         .search-input:focus {
-
             border-color: var(--accent);
-
             box-shadow: 0 0 0 3px var(--accent-glow);
-
         }
 
-
+        .search-input:focus + .search-kbd,
+        .search-box:focus-within .search-kbd {
+            display: none;
+        }
 
         .search-result-info {
-
-            position: absolute;
-
-            top: 100%;
-
-            left: 0;
-
-            right: 0;
-
-            margin-top: 6px;
-
             font-size: 12px;
-
             color: var(--text-muted);
-
             padding: 0 4px;
-
         }
 
-
-
         .search-empty {
-
-            position: absolute;
-
-            top: calc(100% + 8px);
-
-            left: 0;
-
-            right: 0;
-
             background: var(--bg-card);
-
             border: 1px solid var(--border);
-
             border-radius: 12px;
-
             padding: 24px;
-
             text-align: center;
-
             z-index: 10;
-
             animation: fadeIn 0.2s ease;
-
         }
 
 
@@ -4807,101 +4753,39 @@
     </div>
 </div>
 
-<!-- Model Matrix - 热门模型支持矩阵 -->
-<div class="container" style="margin-top:40px;">
-    <div class="section-header">
-        <h2>&#x1F4CA; 热门模型支持矩阵</h2>
-        <p style="color:var(--text-secondary);font-size:14px;">一览各平台支持的主流模型，灰色表示不支持</p>
-    </div>
-    <div class="model-matrix" style="overflow-x:auto;margin-top:16px;">
-        <table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--bg-card);border-radius:12px;overflow:hidden;">
-            <thead>
-                <tr style="background:var(--bg-secondary);">
-                    <th style="padding:10px 12px;text-align:left;color:var(--text-primary);white-space:nowrap;">平台</th>
-                    <th style="padding:10px 8px;text-align:center;color:#74b9ff;">GPT</th>
-                    <th style="padding:10px 8px;text-align:center;color:#e17055;">Claude</th>
-                    <th style="padding:10px 8px;text-align:center;color:#00cec9;">Gemini</th>
-                    <th style="padding:10px 8px;text-align:center;color:#a29bfe;">DeepSeek</th>
-                    <th style="padding:10px 8px;text-align:center;color:#fdcb6e;">Codex</th>
-                    <th style="padding:10px 8px;text-align:center;color:#55efc4;">Claude Code</th>
-                    <th style="padding:10px 8px;text-align:center;color:#fd79a8;">视频</th>
-                </tr>
-            </thead>
-            <tbody id="modelMatrixBody">
-                <tr><td colspan="8" style="text-align:center;padding:20px;color:var(--text-secondary);">加载中...</td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-    <div class="toast-container" id="toastContainer"></div>
 
 
 
-    <!-- Ranking Section -->
 
-    <section class="section" id="ranking">
-
-        <div class="container">
-
-            <div style="margin-bottom: 20px;">
-                <a href="index.html" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;padding:10px 24px;border-radius:10px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent-light)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-secondary)'">
-                    ← 返回首页
-                </a>
-            </div>
-
-            <div class="section-header">
-
-                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年7月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span></h2>
-
-                <div class="filter-tabs">
-
-                    <button class="filter-tab active" onclick="filterCards('all', this)">全部</button>
-
-                    <button class="filter-tab" onclick="filterCards('claude', this)">Claude</button>
-
-                    <button class="filter-tab" onclick="filterCards('gpt', this)">GPT</button>
-
-                    <button class="filter-tab" onclick="filterCards('gemini', this)">Gemini</button>
-
-                    <button class="filter-tab" onclick="filterCards('domestic', this)">国产模型</button>
-
-                    <button class="filter-tab" onclick="filterCards('cheap', this)">最低价</button>
-
-                    <button class="filter-tab" onclick="filterCards('enterprise', this)">企业级</button>
-
-                    <button class="filter-tab" onclick="filterCards('image', this)">&#127912; 绘图</button>
-
-                    <button class="filter-tab" onclick="filterCards('codex', this)">&#x1F4BB; Codex</button>
-
-                    <button class="filter-tab" onclick="filterCards('claude-code', this)">&#x1F916; Claude Code</button>
-
-                    <button class="filter-tab" onclick="filterCards('video', this)">&#x1F3AC; 视频</button>
-
-                </div>
-
-                <div class="search-box">
+            <div class="section-header" style="margin-bottom:20px;">
+                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年7月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span></h2>
+                <div class="search-box" style="max-width:280px;width:280px;">
                     <input type="text" id="searchInput" class="search-input" placeholder="搜索中转站名称..." oninput="searchCards(this.value)" onfocus="showClearBtn()" onblur="hideClearBtn()" />
                     <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" style="display:none;" title="清除搜索">✕</button>
-
-                    <div class="search-result-info" id="searchResultInfo" style="display:none;"></div>
-
-                    <div class="search-empty" id="searchEmpty" style="display:none;">
-
-                        <div class="search-empty-icon">&#128269;</div>
-
-                        <div class="search-empty-text">未找到匹配的中转站</div>
-
-                        <a href="#submit" class="btn btn-primary btn-sm" onclick="document.getElementById('siteName').focus()">提交收录新中转站 &#8594;</a>
-
-                    </div>
-
+                    <span class="search-kbd">Ctrl K</span>
                 </div>
-
             </div>
 
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="filterCards('all', this)">全部</button>
+                <button class="filter-tab" onclick="filterCards('claude', this)">Claude</button>
+                <button class="filter-tab" onclick="filterCards('gpt', this)">GPT</button>
+                <button class="filter-tab" onclick="filterCards('gemini', this)">Gemini</button>
+                <button class="filter-tab" onclick="filterCards('domestic', this)">国产模型</button>
+                <button class="filter-tab" onclick="filterCards('cheap', this)">最低价</button>
+                <button class="filter-tab" onclick="filterCards('enterprise', this)">企业级</button>
+                <button class="filter-tab" onclick="filterCards('image', this)">&#127912; 绘图</button>
+                <button class="filter-tab" onclick="filterCards('codex', this)">&#x1F4BB; Codex</button>
+                <button class="filter-tab" onclick="filterCards('claude-code', this)">&#x1F916; Claude Code</button>
+                <button class="filter-tab" onclick="filterCards('video', this)">&#x1F3AC; 视频</button>
+            </div>
 
+            <div class="search-empty" id="searchEmpty" style="display:none;margin:12px 0;">
+                <div class="search-empty-icon">&#128269;</div>
+                <div class="search-empty-text">未找到匹配的中转站</div>
+                <a href="index.html#submit" class="btn btn-primary btn-sm">提交收录新中转站 &#8594;</a>
+            </div>
+            <div class="search-result-info" id="searchResultInfo" style="display:none;margin:8px 0;"></div>
 
             <div class="last-update">最近更新：<span id="updateTime">2026-07-29 08:00</span></div>
 
@@ -6027,7 +5911,7 @@
 
 
 
-        // ESC 关闭弹窗
+        // ESC 关闭弹窗 / Ctrl+K 聚焦搜索
 
         document.addEventListener('keydown', function(e) {
 
@@ -6041,6 +5925,12 @@
 
                 document.body.style.overflow = '';
 
+            }
+
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) searchInput.focus();
             }
 
         });
@@ -10037,31 +9927,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        async function renderModelMatrix() {
-            try {
-                const stations = await fetchOnce('data/stations_info.json');
-                if (!Array.isArray(stations)) return;
-                const aliveStations = stations.filter(s => s.alive && s.score > 0);
-                aliveStations.sort((a, b) => (b.score || 0) - (a.score || 0));
-                const top = aliveStations.slice(0, 15);
-
-                const modelKeys = ['gpt', 'claude', 'gemini', 'deepseek', 'gpt-codex', 'claude-code', 'video'];
-
-                const tbody = document.getElementById('modelMatrixBody');
-                tbody.innerHTML = top.map(s => {
-                    const models = (s.models || []).map(m => m.toLowerCase());
-                    const cells = modelKeys.map(k => {
-                        const has = models.some(m => m === k || m.includes(k) || k.includes(m));
-                        return '<td style="text-align:center;padding:8px;">' + (has ? '&#x2705;' : '<span style="color:#555;">&mdash;</span>') + '</td>';
-                    }).join('');
-                    return '<tr style="border-bottom:1px solid var(--border);">' +
-                        '<td style="padding:8px 12px;font-weight:500;white-space:nowrap;">' + (s.name || s.domain) + '</td>' +
-                        cells +
-                        '</tr>';
-                }).join('');
-            } catch(e) { console.log('模型矩阵加载失败:', e); }
-        }
-
         document.addEventListener('DOMContentLoaded', async function() {
             // all-stations.html 没有流量排行榜，直接加载数据
 
@@ -10088,9 +9953,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadApprovedFromData(),
             ]);
             loadApprovedFromAdmin();
-
-            // 渲染模型支持矩阵
-            renderModelMatrix();
 
             // loadApprovedSites 依赖 renderAllStationsFromData 的 existingUrls，串行执行
             await loadApprovedSites();
