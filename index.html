@@ -286,7 +286,7 @@
 
         .nav-links a {
 
-            color: var(--text-secondary);
+            color: var(--text-primary);
 
             text-decoration: none;
 
@@ -309,8 +309,8 @@
 
 
         .nav-badge {
-            background: rgba(108,92,231,0.15);
-            color: var(--accent-light);
+            background: rgba(74, 144, 217, 0.1);
+            color: var(--accent);
             padding: 4px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -1482,9 +1482,9 @@
 /* ===== 评分说明按钮 ===== */
 .score-info-btn {
     display: inline-block;
-    background: rgba(102, 126, 234, 0.15);
-    border: 1px solid rgba(102, 126, 234, 0.3);
-    color: #667eea;
+    background: rgba(74, 144, 217, 0.1);
+    border: 1px solid rgba(74, 144, 217, 0.25);
+    color: var(--accent);
     font-size: 12px;
     padding: 2px 10px;
     border-radius: 12px;
@@ -1494,8 +1494,8 @@
     vertical-align: middle;
 }
 .score-info-btn:hover {
-    background: rgba(102, 126, 234, 0.25);
-    border-color: rgba(102, 126, 234, 0.5);
+    background: rgba(74, 144, 217, 0.18);
+    border-color: rgba(74, 144, 217, 0.4);
 }
 
 /* ===== 绘图/视频专区按钮（与评分说明统一风格） ===== */
@@ -1503,9 +1503,9 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background: rgba(102, 126, 234, 0.15);
-    border: 1px solid rgba(102, 126, 234, 0.3);
-    color: #667eea;
+    background: rgba(74, 144, 217, 0.1);
+    border: 1px solid rgba(74, 144, 217, 0.25);
+    color: var(--accent);
     font-size: 12px;
     padding: 2px 10px;
     border-radius: 12px;
@@ -1516,9 +1516,9 @@
     font-weight: 500;
 }
 .creative-tools-btn:hover {
-    background: rgba(102, 126, 234, 0.25);
-    border-color: rgba(102, 126, 234, 0.5);
-    color: #667eea;
+    background: rgba(74, 144, 217, 0.18);
+    border-color: rgba(74, 144, 217, 0.4);
+    color: var(--accent);
 }
 
 /* ===== 评分说明弹窗 ===== */
@@ -4370,19 +4370,8 @@
 
         /* ===== Share Commission System - 分享佣金系统 ===== */
         .share-btn {
-            color: var(--green) !important;
-            font-weight: 600 !important;
-            position: relative;
-        }
-        .share-btn::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--green);
-            border-radius: 1px;
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
         .share-modal-overlay {
@@ -4946,9 +4935,9 @@
 
                 <li><a href="#ranking">排行榜</a></li>
 
-                <li><a href="creative-tools.html" style="color: #667eea; font-weight: 600;">🎨 在线绘图/视频专区</a></li>
+                <li><a href="creative-tools.html">🎨 在线绘图/视频专区</a></li>
 
-                <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')" style="color: var(--green); font-weight: 600;">🎯 找适合自己的中转站</a></li>
+                <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')">🎯 找适合自己的中转站</a></li>
 
                 <li><a href="javascript:void(0)" class="share-btn" onclick="openSharePanel()">🔗 分享赚次数</a></li>
 
@@ -4956,7 +4945,7 @@
 
                 <li><a href="#guide">选站指南</a></li>
 
-                <li><a href="dead-sites.html" style="color: #ff6b6b;">&#9888; 失效站点</a></li>
+                <li><a href="dead-sites.html">⚠ 失效站点</a></li>
 
 
 
@@ -5585,7 +5574,100 @@
 
 
 
-                <!-- 规则说明 -->
+                <!-- Share Commission Modal - 分享赚次数面板 -->
+    <div class="share-modal-overlay" id="shareModal" onclick="if(event.target===this)closeSharePanel()">
+        <div class="share-modal">
+            <button class="share-modal-close" onclick="closeSharePanel()">&#10005;</button>
+
+            <h2><span class="icon">&#128279;</span> 分享赚查找次数</h2>
+
+            <div id="shareModalLoading" class="share-modal-loading">
+                <div class="spinner"></div>
+                <p>正在初始化，请稍候...</p>
+            </div>
+
+            <div id="shareModalContent" style="display:none;">
+
+                <div class="share-user-card">
+                    <div class="share-user-card-header">
+                        <span class="share-user-badge">我的身份</span>
+                    </div>
+                    <div class="share-user-id-row">
+                        <span class="share-user-id-label">用户ID</span>
+                        <span class="share-user-id-value" id="shareUserIdDisplay">--</span>
+                    </div>
+                    <div class="share-auspicious-row">
+                        <span class="share-auspicious-label">API用户号</span>
+                            <span class="share-auspicious-value" id="shareAuspiciousCode"></span>
+                            <button class="share-copy-auspicious-btn" onclick="copyAuspiciousCode()" title="复制API用户号">&#128203;</button>
+                    </div>
+                    <div class="share-user-time-row">
+                        <span class="share-user-time-label">注册时间</span>
+                        <span class="share-user-time-value" id="shareUserTimeDisplay">--</span>
+                    </div>
+                    <div class="share-user-tip">
+                        &#128161; 请记下这串号码，换浏览器时可凭此或手机号恢复
+                    </div>
+                    <div class="share-restore-row" id="shareRestoreRow" style="display:none;">
+                        <input type="text" id="shareRestoreInput" placeholder="输入API用户号恢复身份..." class="share-restore-input" />
+                        <button class="share-restore-btn" onclick="restoreByAuspiciousCode()">恢复</button>
+                    </div>
+                </div>
+
+                <div class="share-phone-bind" id="sharePhoneBind">
+                    <div class="share-phone-status" id="sharePhoneStatus">
+                        <span class="phone-status-icon">&#128241;</span>
+                        <span class="phone-status-text" id="phoneStatusText">未绑定手机号</span>
+                    </div>
+                    <div class="share-phone-form" id="sharePhoneForm" style="display:none;">
+                        <select id="phoneCountryCode" class="phone-country-select">
+                            <option value="+86">&#127464;&#127475; +86 中国</option>
+                            <option value="+852">&#127469;&#127472; +852 香港</option>
+                            <option value="+853">&#127469;&#127472; +853 澳门</option>
+                            <option value="+886">&#127481;&#127484; +886 台湾</option>
+                            <option value="+1">&#127482;&#127480; +1 美国/加拿大</option>
+                            <option value="+44">&#127468;&#127463; +44 英国</option>
+                            <option value="+81">&#127471;&#127477; +81 日本</option>
+                            <option value="+82">&#127472;&#127479; +82 韩国</option>
+                            <option value="+65">&#127480;&#127468; +65 新加坡</option>
+                            <option value="+61">&#127462;&#127482; +61 澳大利亚</option>
+                            <option value="+49">&#127465;&#127466; +49 德国</option>
+                            <option value="+33">&#127467;&#127479; +33 法国</option>
+                            <option value="+7">&#127479;&#127482; +7 俄罗斯</option>
+                            <option value="+91">&#127470;&#127475; +91 印度</option>
+                            <option value="+66">&#127481;&#127469; +66 泰国</option>
+                            <option value="+84">&#127483;&#127475; +84 越南</option>
+                            <option value="+62">&#127470;&#127465; +62 印尼</option>
+                            <option value="+60">&#127474;&#127468; +60 马来西亚</option>
+                            <option value="+63">&#127477;&#127468; +63 菲律宾</option>
+                            <option value="+971">&#127462;&#127466; +971 阿联酋</option>
+                        </select>
+                        <input type="tel" id="phoneNumberInput" placeholder="请输入手机号" class="phone-number-input" maxlength="15" />
+                        <button class="phone-bind-btn" onclick="bindPhoneNumber()">绑定手机号</button>
+                    </div>
+                    <button class="phone-toggle-btn" id="phoneToggleBtn" onclick="togglePhoneForm()">立即绑定</button>
+                </div>
+
+                <div class="share-link-box">
+                    <input type="text" id="shareLinkInput" readonly value="生成中..." />
+                    <button onclick="copyShareLink()">复制链接</button>
+                </div>
+
+                <div class="share-stats-grid">
+                    <div class="share-stat-card">
+                        <div class="stat-value" id="shareStatReferrals">0</div>
+                        <div class="stat-label">累计推荐</div>
+                    </div>
+                    <div class="share-stat-card">
+                        <div class="stat-value" id="shareStatBonus">0</div>
+                        <div class="stat-label">累计奖励</div>
+                    </div>
+                    <div class="share-stat-card">
+                        <div class="stat-value" id="shareStatRemaining">-</div>
+                        <div class="stat-label">今日剩余</div>
+                    </div>
+                </div>
+
                 <div class="share-rules">
                     <h4>规则说明</h4>
                     <ul>
@@ -5596,7 +5678,6 @@
                     </ul>
                 </div>
 
-                <!-- 最近推荐记录 -->
                 <div class="reward-list">
                     <h4>最近推荐记录</h4>
                     <div id="rewardListContent">
