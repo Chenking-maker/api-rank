@@ -1,17 +1,114 @@
 {
-  "timestamp": "2026-07-29T08:24:12.622355",
-  "elapsed_seconds": 283.4,
+  "timestamp": "2026-07-30T08:12:04.732227",
+  "elapsed_seconds": 316.1,
   "summary": {
-    "total_existing": 20,
-    "total_existing_with_url": 20,
+    "total_existing": 19,
+    "total_existing_with_url": 19,
     "total_pending": 52,
     "total_dead": 13,
     "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 24,
     "scrapling_available": true
   },
   "new_discovered": [],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://claudecn.com",
+      "name": "ClaudeCN"
+    },
+    {
+      "url": "https://toknex.com",
+      "name": "Toknex"
+    },
+    {
+      "url": "https://sevnx.com",
+      "name": "SevnX"
+    },
+    {
+      "url": "https://luminai.com",
+      "name": "Lumin AI"
+    },
+    {
+      "url": "https://claudeapi.net",
+      "name": "Claude API"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI"
+    },
+    {
+      "url": "https://frontierintelligence.ai",
+      "name": "Frontier Intelligence"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay"
+    },
+    {
+      "url": "https://4sapi.com",
+      "name": "星链4SAPI"
+    },
+    {
+      "url": "https://api.easyapi.com",
+      "name": "API易"
+    },
+    {
+      "url": "https://api.ikuncode.cc",
+      "name": "爱坤代码 (IKunCode)"
+    },
+    {
+      "url": "https://302.ai",
+      "name": "302.AI"
+    },
+    {
+      "url": "https://ai.huoyachat.com",
+      "name": "AI中文版"
+    },
+    {
+      "url": "https://web.apiplus.org",
+      "name": "APIPlus"
+    },
+    {
+      "url": "https://bewildcard.com",
+      "name": "万卡API (WildCard)"
+    },
+    {
+      "url": "https://fishxcode.com",
+      "name": "鱼代码 (FishXCode)"
+    },
+    {
+      "url": "https://apimart.ai",
+      "name": "API集市 (API Mart)"
+    },
+    {
+      "url": "https://console.mistral.ai",
+      "name": "Mistral AI"
+    },
+    {
+      "url": "https://console.groq.com",
+      "name": "Groq"
+    },
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB"
+    },
+    {
+      "url": "https://api.lingyaai.cn/register?aff=k8I8",
+      "name": "灵芽API"
+    },
+    {
+      "url": "https://www.4stoken.cn",
+      "name": "4SToken"
+    },
+    {
+      "url": "https://api.aiyungc.cn",
+      "name": "方舟API"
+    }
+  ]
 }
