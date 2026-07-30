@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#F5F7FA">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -63,45 +63,45 @@
 
         :root {
 
-            --bg-primary: #0a0a0f;
+            --bg-primary: #F5F7FA;
 
-            --bg-secondary: #12121a;
+            --bg-secondary: #FFFFFF;
 
-            --bg-card: #16161f;
+            --bg-card: #FFFFFF;
 
-            --bg-card-hover: #1c1c28;
+            --bg-card-hover: #F0F4F8;
 
-            --border: rgba(255,255,255,0.06);
+            --border: rgba(0, 0, 0, 0.08);
 
-            --border-hover: rgba(255,255,255,0.12);
+            --border-hover: rgba(0, 0, 0, 0.15);
 
-            --text-primary: #f0f0f5;
+            --text-primary: #1A1A2E;
 
-            --text-secondary: #8888a0;
+            --text-secondary: #6B7280;
 
-            --text-muted: #555570;
+            --text-muted: #9CA3AF;
 
-            --accent: #6c5ce7;
+            --accent: #4A90D9;
 
-            --accent-light: #a29bfe;
+            --accent-light: #7EC8E3;
 
-            --accent-glow: rgba(108,92,231,0.3);
+            --accent-glow: rgba(74, 144, 217, 0.2);
 
-            --green: #00d2a0;
+            --green: #10B981;
 
-            --green-glow: rgba(0,210,160,0.2);
+            --green-glow: rgba(16, 185, 129, 0.15);
 
-            --yellow: #ffd43b;
+            --yellow: #F59E0B;
 
-            --red: #ff6b6b;
+            --red: #EF4444;
 
-            --orange: #ff9f43;
+            --orange: #F97316;
 
-            --gradient-1: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --gradient-1: linear-gradient(135deg, #4A90D9, #7EC8E3);
 
-            --gradient-2: linear-gradient(135deg, #00d2a0, #00b894);
+            --gradient-2: linear-gradient(135deg, #10B981, #34D399);
 
-            --gradient-3: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            --gradient-3: linear-gradient(135deg, #EF4444, #F97316);
 
         }
 
@@ -149,8 +149,8 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                linear-gradient(rgba(108,92,231,0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(108,92,231,0.015) 1px, transparent 1px);
+                linear-gradient(rgba(74,144,217,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74,144,217,0.04) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
             z-index: 0;
@@ -215,7 +215,7 @@
 
             padding: 16px 0;
 
-            background: rgba(10,10,15,0.8);
+            background: rgba(255,255,255,0.85);
 
             backdrop-filter: blur(20px);
 
@@ -752,9 +752,10 @@
 
         .rank-card {
 
-            background: linear-gradient(135deg, rgba(30,30,45,0.9), rgba(20,20,35,0.95));
+            background: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid var(--border);
 
             border-radius: 20px;
 
@@ -842,7 +843,7 @@
 
             transform: translateY(-2px);
 
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.06);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(74,144,217,0.1);
 
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -865,9 +866,9 @@
         .rank-card.top-3::before { background: linear-gradient(135deg, #ffd43b, #f0932b); }
 
         /* 前三名卡片 hover 发光 */
-        .rank-card.top-1:hover { box-shadow: 0 8px 24px rgba(108,92,231,0.08), 0 0 0 1px rgba(108,92,231,0.1); }
-        .rank-card.top-2:hover { box-shadow: 0 8px 24px rgba(0,210,160,0.08), 0 0 0 1px rgba(0,210,160,0.1); }
-        .rank-card.top-3:hover { box-shadow: 0 8px 24px rgba(255,212,59,0.06), 0 0 0 1px rgba(255,212,59,0.08); }
+        .rank-card.top-1:hover { box-shadow: 0 8px 24px rgba(74,144,217,0.12), 0 0 0 1px rgba(74,144,217,0.15); }
+        .rank-card.top-2:hover { box-shadow: 0 8px 24px rgba(16,185,129,0.12), 0 0 0 1px rgba(16,185,129,0.15); }
+        .rank-card.top-3:hover { box-shadow: 0 8px 24px rgba(245,158,11,0.1), 0 0 0 1px rgba(245,158,11,0.12); }
 
 
 
@@ -895,7 +896,7 @@
 
             background: rgba(108,92,231,0.1);
 
-            border-right: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid var(--border);
 
             display: flex;
 
@@ -1032,7 +1033,7 @@
         .dead-list-modal.active { display: flex; }
         .dead-list-box {
             background: linear-gradient(145deg, #1a1a28, #14141e);
-            border: 1px solid rgba(255,107,107,0.12);
+            border: 1px solid rgba(239,68,68,0.12);
             border-radius: 20px;
             padding: 0;
             max-width: 560px;
@@ -1044,7 +1045,7 @@
         }
         .dead-list-header {
             padding: 28px 28px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--border);
             background: linear-gradient(135deg, rgba(255,107,107,0.06), transparent);
         }
         .dead-list-header-row {
@@ -1077,7 +1078,7 @@
             background: rgba(255,255,255,0.04);
             padding: 4px 12px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--border);
         }
         .dead-list-subtitle {
             font-size: 13px;
@@ -1091,7 +1092,7 @@
             width: 32px;
             height: 32px;
             border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--border);
             background: rgba(255,255,255,0.04);
             color: var(--text-muted);
             font-size: 14px;
@@ -1105,7 +1106,7 @@
         .dead-list-close:hover {
             background: rgba(255,107,107,0.15);
             color: #ff8a8a;
-            border-color: rgba(255,107,107,0.2);
+            border-color: rgba(239,68,68,0.2);
         }
         .dead-list-body {
             padding: 16px 20px 24px;
@@ -1135,7 +1136,7 @@
         }
         .dead-list-body ul li:hover {
             background: rgba(255,255,255,0.04);
-            border-color: rgba(255,255,255,0.06);
+            border-color: var(--border);
         }
         .dead-list-body ul li .dead-site-name {
             display: flex;
@@ -1162,7 +1163,7 @@
         }
         .dead-list-footer {
             padding: 16px 28px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1425,7 +1426,7 @@
 
             padding-top: 16px;
 
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border);
 
         }
 
@@ -1443,7 +1444,7 @@
     align-items: center;
     gap: 3px;
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--border);
     color: var(--text-secondary);
     font-size: 12px;
     padding: 2px 8px;
@@ -1454,7 +1455,7 @@
 }
 .vote-btn:hover {
     background: rgba(255,255,255,0.12);
-    border-color: rgba(255,255,255,0.2);
+    border-color: var(--border-hover);
     color: var(--text-primary);
 }
 .vote-btn.voted-up {
@@ -1483,7 +1484,7 @@
     align-items: center;
     gap: 2px;
     background: none;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     color: var(--text-secondary);
     font-size: 11px;
     padding: 1px 6px;
@@ -1553,7 +1554,7 @@
     display: flex;
     align-items: center;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--border);
 }
 .score-dimension:last-child {
     border-bottom: none;
@@ -1591,7 +1592,7 @@
     padding: 12px 16px;
     background: rgba(255,255,255,0.04);
     border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.8;
@@ -2439,7 +2440,7 @@
 
                 height: 2px;
 
-                background: #f0f0f5;
+                background: var(--text-primary);
 
                 border-radius: 2px;
 
@@ -2482,7 +2483,7 @@
                 bottom: 0 !important;
                 width: 100vw !important;
                 height: 100vh !important;
-                background: rgba(10, 10, 15, 0.98) !important;
+                background: rgba(245, 247, 250, 0.98) !important;
                 backdrop-filter: blur(20px) !important;
                 flex-direction: column !important;
                 align-items: center !important;
@@ -2512,7 +2513,7 @@
             .nav-links.mobile-open a,
             .nav-links.mobile-open .nav-badge {
                 font-size: 17px !important;
-                color: #f0f0f5 !important;
+                color: var(--text-primary) !important;
                 text-decoration: none !important;
                 padding: 14px 24px !important;
                 display: block !important;
@@ -2526,14 +2527,14 @@
             
             .nav-links.mobile-open a:hover,
             .nav-links.mobile-open a:active {
-                background: rgba(108, 92, 231, 0.15) !important;
+                background: rgba(74, 144, 217, 0.12) !important;
             }
             
             .nav-links.mobile-open .nav-badge {
                 font-size: 13px !important;
                 margin-top: 8px !important;
-                background: rgba(108,92,231,0.15) !important;
-                color: var(--accent-light) !important;
+                background: rgba(74,144,217,0.12) !important;
+                color: var(--accent) !important;
                 padding: 8px 16px !important;
                 border-radius: 20px !important;
                 text-align: center !important;
@@ -3492,7 +3493,7 @@
 
             top: 0; left: 0; right: 0; bottom: 0;
 
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.35);
 
             backdrop-filter: blur(8px);
 
@@ -3600,7 +3601,7 @@
 
             top: 0; left: 0; right: 0; bottom: 0;
 
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.35);
 
             backdrop-filter: blur(8px);
 
@@ -4050,7 +4051,7 @@
 
             background: rgba(255,107,107,0.15);
 
-            border: 1px solid rgba(255,107,107,0.3);
+            border: 1px solid rgba(239,68,68,0.25);
 
             color: var(--red);
 
