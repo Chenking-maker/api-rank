@@ -1,28 +1,32 @@
 {
-  "timestamp": "2026-08-01T08:05:43.380423",
-  "elapsed_seconds": 162.6,
+  "timestamp": "2026-08-02T08:07:38.644616",
+  "elapsed_seconds": 170.3,
   "summary": {
     "total_existing": 19,
     "total_existing_with_url": 19,
-    "total_pending": 54,
+    "total_pending": 55,
     "total_dead": 13,
-    "new_discovered": 2,
+    "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": false
   },
   "new_discovered": [
     {
-      "url": "https://www.aicodemirror.ai",
-      "name": "aicodemirror.ai",
-      "source": "github:OpenAI A_extract"
-    },
-    {
-      "url": "https://lanox.ai",
-      "name": "lanox.ai",
+      "url": "https://www.xuanshuapi.com",
+      "name": "xuanshuapi.com",
       "source": "github:OpenAI A_extract"
     }
   ],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
