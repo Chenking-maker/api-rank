@@ -1,32 +1,23 @@
 {
-  "timestamp": "2026-08-02T08:07:38.644616",
-  "elapsed_seconds": 170.3,
+  "timestamp": "2026-08-03T09:22:59.459064",
+  "elapsed_seconds": 163.1,
   "summary": {
     "total_existing": 19,
     "total_existing_with_url": 19,
-    "total_pending": 55,
+    "total_pending": 56,
     "total_dead": 13,
     "new_discovered": 1,
     "new_dead": 0,
-    "new_recovered": 2,
+    "new_recovered": 0,
     "scrapling_available": false
   },
   "new_discovered": [
     {
-      "url": "https://www.xuanshuapi.com",
-      "name": "xuanshuapi.com",
+      "url": "https://api.tpz.pub",
+      "name": "api.tpz.pub",
       "source": "github:OpenAI A_extract"
     }
   ],
   "new_dead": [],
-  "new_recovered": [
-    {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
-    },
-    {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
-    }
-  ]
+  "new_recovered": []
 }
