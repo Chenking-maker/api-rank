@@ -21,6 +21,12 @@
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="apple-touch-icon" href="favicon.jpg">
     <link rel="manifest" href="manifest.json">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'light';
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -47,6 +53,39 @@
             --gradient-orange: #F97316;
             --gradient-pink: #4A90D9;
             --gradient-1: #4A90D9;
+            --navbar-bg: rgba(255,255,255,0.85);
+            --bg-grid-line: rgba(74,144,217,0.04);
+            --shadow: rgba(0,0,0,0.06);
+            --bg-hover: rgba(74, 144, 217, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0F1117;
+            --bg-secondary: #1A1D28;
+            --bg-card: #1A1D28;
+            --bg-card-hover: #242838;
+            --bg-hover: rgba(74, 144, 217, 0.1);
+            --border: rgba(255,255,255,0.08);
+            --border-hover: rgba(255,255,255,0.18);
+            --text-primary: #E8EAF0;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --accent: #5B9FE8;
+            --accent-light: #7EC8E3;
+            --accent-glow: rgba(91, 159, 232, 0.25);
+            --green: #34D399;
+            --green-glow: rgba(52, 211, 153, 0.15);
+            --yellow: #FBBF24;
+            --red: #F87171;
+            --orange: #FB923C;
+            --navbar-bg: rgba(15,17,23,0.85);
+            --bg-grid-line: rgba(91,159,232,0.05);
+            --shadow: rgba(0,0,0,0.3);
+            --gradient-purple: #5B9FE8;
+            --gradient-green: #34D399;
+            --gradient-orange: #FB923C;
+            --gradient-pink: #5B9FE8;
+            --gradient-1: #5B9FE8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -67,7 +106,7 @@
             right: 0;
             z-index: 100;
             padding: 16px 0;
-            background: rgba(255,255,255,0.85);
+            background: var(--navbar-bg);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             transition: all 0.3s ease;
@@ -140,6 +179,25 @@
 
         .mobile-menu-btn {
             display: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
         }
 
         /* Hero Section */
@@ -951,7 +1009,7 @@
                 bottom: 0 !important;
                 width: 100vw !important;
                 height: 100vh !important;
-                background: rgba(245, 247, 250, 0.98) !important;
+                background: var(--navbar-bg) !important;
                 backdrop-filter: blur(20px) !important;
                 flex-direction: column !important;
                 align-items: center !important;
@@ -1043,6 +1101,7 @@
                 <li><a href="index.html#guide">选站指南</a></li>
                 <li><a href="dead-sites.html">⚠ 失效站点</a></li>
                 <li><span class="nav-badge">实时更新</span></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
             </ul>
         </div>
     </nav>
@@ -1890,6 +1949,21 @@
             menuBtn.classList.toggle('active');
             document.body.style.overflow = isOpen ? 'hidden' : '';
         }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            const btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        }
+        (function() {
+            var t = document.documentElement.getAttribute('data-theme');
+            var btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        })();
 
         function closeMobileMenu() {
             const navLinks = document.getElementById('navLinks');

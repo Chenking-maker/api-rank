@@ -1,29 +1,469 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>已失效站点 - API排行榜</title><style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0d14;color:#e0e0e0;min-height:100vh;padding:40px 20px}
-.container{max-width:800px;margin:0 auto}h1{font-size:24px;margin-bottom:8px;color:#ff6b6b}.subtitle{color:#888;margin-bottom:24px;font-size:14px}
-.dead-list{list-style:none}.dead-list li{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:10px;margin-bottom:8px;border:1px solid rgba(255,107,107,.1)}
-.dead-list li .name{font-size:15px;font-weight:500}.dead-list li .reason{font-size:12px;color:#ff6b6b;background:rgba(255,107,107,.1);padding:2px 10px;border-radius:6px}
-.back{display:inline-block;margin-top:24px;color:#4ecdc4;text-decoration:none;font-size:14px}.back:hover{text-decoration:underline}.count{font-size:13px;color:#888;margin-bottom:16px}
-</style></head><body><div class="container">
-<h1>⚠️ 已失效站点</h1><p class="subtitle">以下站点无法访问或已停止服务，已自动排到排行榜末尾</p>
-<p class="count">共 15 个失效站点</p><ul class="dead-list">
-    <li><span class="name">非线智能Api</span><span class="reason">404错误</span></li>
-    <li><span class="name">PoloAPI</span><span class="reason">连接超时</span></li>
-    <li><span class="name">速创API</span><span class="reason">无法访问</span></li>
-    <li><span class="name">Anyrouter</span><span class="reason">无法访问</span></li>
-    <li><span class="name">B4U API</span><span class="reason">403禁止</span></li>
-    <li><span class="name">91Code API</span><span class="reason">无法访问</span></li>
-    <li><span class="name">JAY中转API</span><span class="reason">无法访问</span></li>
-    <li><span class="name">超凡API中转站</span><span class="reason">无法访问</span></li>
-    <li><span class="name">词元无忧API (Token5u)</span><span class="reason">无法访问</span></li>
-    <li><span class="name">B.AI (波场)</span><span class="reason">无法访问</span></li>
-    <li><span class="name">莹的API</span><span class="reason">SSL错误</span></li>
-    <li><span class="name">CloseAI</span><span class="reason">无法访问</span></li>
-    <li><span class="name">AOK</span><span class="reason">无法访问</span></li>
-    <li><span class="name">NekoCode</span><span class="reason">无法访问</span></li>
-    <li><span class="name">ClauqeAI</span><span class="reason">访问失败</span></li>
-</ul>
-<a href="index.html" class="back">← 返回排行榜</a>
-</div></body></html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>已失效站点 - API排行榜</title>
+    <meta name="description" content="已失效的AI API中转站列表，无法访问或已停止服务的站点。">
+    <meta name="theme-color" content="#F5F7FA">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'light';
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #F5F7FA;
+            --bg-secondary: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #F0F4F8;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(0, 0, 0, 0.15);
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --accent: #4A90D9;
+            --accent-light: #7EC8E3;
+            --red: #EF4444;
+            --navbar-bg: rgba(255,255,255,0.85);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0F1117;
+            --bg-secondary: #1A1D28;
+            --bg-card: #1A1D28;
+            --bg-card-hover: #242838;
+            --border: rgba(255,255,255,0.08);
+            --border-hover: rgba(255,255,255,0.18);
+            --text-primary: #E8EAF0;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --accent: #5B9FE8;
+            --accent-light: #7EC8E3;
+            --red: #F87171;
+            --navbar-bg: rgba(15,17,23,0.85);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent-light);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-badge {
+            background: rgba(74, 144, 217, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
+        }
+
+        /* ===== Content ===== */
+        .page-header {
+            padding: 120px 0 32px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .page-header .subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .dead-count-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .dead-list {
+            list-style: none;
+            padding-bottom: 48px;
+        }
+
+        .dead-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .dead-list li:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+        }
+
+        .dead-list li .name {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .dead-list li .domain {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .dead-list li .reason {
+            font-size: 12px;
+            color: var(--red);
+            background: rgba(239, 68, 68, 0.08);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 24px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: var(--navbar-bg) !important;
+                backdrop-filter: blur(20px) !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 20px !important;
+                z-index: 9999 !important;
+                padding: 80px 24px 40px !important;
+            }
+
+            .nav-links.mobile-open {
+                display: flex !important;
+            }
+
+            .nav-links.mobile-open a {
+                font-size: 17px !important;
+                color: var(--text-primary) !important;
+                padding: 14px 24px !important;
+                display: block !important;
+                text-align: center !important;
+                border-radius: 12px !important;
+                width: 100% !important;
+                max-width: 280px !important;
+            }
+
+            .nav-links.mobile-open a:hover {
+                background: rgba(74, 144, 217, 0.1) !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex !important;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 4px;
+            }
+
+            .mobile-menu-btn span {
+                width: 22px;
+                height: 2px;
+                background: var(--text-primary);
+                border-radius: 2px;
+                transition: all 0.3s;
+            }
+
+            .page-header {
+                padding: 100px 0 24px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .dead-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .dead-list li .reason {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div class="logo-text">API<span>排行榜</span></div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#ranking">排行榜</a></li>
+                <li><a href="creative-tools.html">🎨 在线绘图/视频专区</a></li>
+                <li><a href="javascript:void(0)" onclick="openFinderModal()">🎯 找适合自己的中转站</a></li>
+                <li><a href="javascript:void(0)" onclick="openSubmitModal()">提交收录</a></li>
+                <li><a href="index.html#guide">选站指南</a></li>
+                <li><a href="dead-sites.html">⚠ 失效站点</a></li>
+                <li><span class="nav-badge">实时更新</span></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>⚠️ 已失效站点</h1>
+            <p class="subtitle">以下站点无法访问或已停止服务，已自动排到排行榜末尾</p>
+            <div class="dead-count-badge" id="deadCountBadge">共 0 个失效站点</div>
+        </div>
+
+        <ul class="dead-list" id="deadList">
+            <!-- 由JS动态填充 -->
+        </ul>
+
+        <a href="index.html" class="back-link">← 返回排行榜</a>
+    </div>
+
+    <script>
+        // 失效站点数据（回退用，与 data/dead_sites.json 同步）
+        const deadSites = [
+            { name: "非线智能Api", domain: "feixian-api.com", reason: "404错误" },
+            { name: "速创API", domain: "suchuangapi.com", reason: "无法访问" },
+            { name: "B4U API", domain: "b4uapi.com", reason: "403禁止" },
+            { name: "91Code API", domain: "91codeapi.com", reason: "无法访问" },
+            { name: "JAY中转API", domain: "jayapi.com", reason: "无法访问" },
+            { name: "超凡API中转站", domain: "chaofanapi.com", reason: "无法访问" },
+            { name: "词元无忧API (Token5u)", domain: "token5u.com", reason: "无法访问" },
+            { name: "莹的API", domain: "yingapi.com", reason: "SSL错误" },
+            { name: "CloseAI", domain: "closeai-asia.com", reason: "无法访问" },
+            { name: "AOK", domain: "aok.ai", reason: "无法访问" },
+            { name: "NekoCode", domain: "nekocode.com", reason: "无法访问" },
+            { name: "ClauqeAI", domain: "clauqe.com", reason: "访问失败" }
+        ];
+
+        // 去重并渲染
+        function renderDeadSites() {
+            // 尝试从 JSON 文件加载
+            fetch('data/dead_sites.json')
+                .then(r => r.json())
+                .then(data => {
+                    const sites = data.map(s => ({
+                        name: s.name,
+                        domain: s.domain || s.url.replace(/^https?:\/\//, ''),
+                        reason: s.reason || '无法访问'
+                    }));
+                    renderList(sites);
+                })
+                .catch(() => {
+                    // 回退到内嵌数据
+                    renderList(deadSites);
+                });
+        }
+
+        function renderList(sites) {
+            const list = document.getElementById('deadList');
+            const badge = document.getElementById('deadCountBadge');
+            badge.textContent = `共 ${sites.length} 个失效站点`;
+
+            if (sites.length === 0) {
+                list.innerHTML = '<div class="empty-state">暂无失效站点 🎉</div>';
+                return;
+            }
+
+            list.innerHTML = sites.map(s => `
+                <li>
+                    <div>
+                        <div class="name">${s.name}</div>
+                        <div class="domain">${s.domain}</div>
+                    </div>
+                    <span class="reason">${s.reason}</span>
+                </li>
+            `).join('');
+        }
+
+        // 移动端菜单
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('mobile-open');
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            const btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        }
+        (function() {
+            var t = document.documentElement.getAttribute('data-theme');
+            var btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        })();
+
+        // 简化的弹窗函数（导航栏需要）
+        function openFinderModal() { window.location.href = 'index.html#ranking'; }
+        function openSubmitModal() { window.location.href = 'index.html#ranking'; }
+
+        renderDeadSites();
+    </script>
+</body>
+</html>
