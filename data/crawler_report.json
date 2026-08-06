@@ -1,26 +1,28 @@
 {
-  "timestamp": "2026-08-05T08:18:21.695181",
-  "elapsed_seconds": 161.0,
+  "timestamp": "2026-08-06T08:19:33.982315",
+  "elapsed_seconds": 306.8,
   "summary": {
     "total_existing": 19,
     "total_existing_with_url": 19,
-    "total_pending": 56,
+    "total_pending": 58,
     "total_dead": 13,
-    "new_discovered": 0,
+    "new_discovered": 2,
     "new_dead": 0,
-    "new_recovered": 2,
-    "scrapling_available": false
+    "new_recovered": 0,
+    "scrapling_available": true
   },
-  "new_discovered": [],
-  "new_dead": [],
-  "new_recovered": [
+  "new_discovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
+      "url": "https://www.rapidproxy.io",
+      "name": "rapidproxy.io",
+      "source": "github:OpenAI A_extract"
     },
     {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
+      "url": "https://hao.ai",
+      "name": "hao.ai",
+      "source": "github:OpenAI A_extract"
     }
-  ]
+  ],
+  "new_dead": [],
+  "new_recovered": []
 }

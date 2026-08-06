@@ -970,5 +970,39 @@
     "freeAmount": "",
     "checked_at": "2026-08-04T08:22:20.106082",
     "check_count": 1
+  },
+  {
+    "name": "rapidproxy.io",
+    "url": "https://www.rapidproxy.io",
+    "submitTime": "2026-08-06T08:19:33.979092",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-06T08:19:33.979116",
+    "check_count": 1
+  },
+  {
+    "name": "hao.ai",
+    "url": "https://hao.ai",
+    "submitTime": "2026-08-06T08:19:33.979126",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-06T08:19:33.979129",
+    "check_count": 1
   }
 ]
