@@ -1004,5 +1004,73 @@
     "freeAmount": "",
     "checked_at": "2026-08-06T08:19:33.979129",
     "check_count": 1
+  },
+  {
+    "name": "yesapi.online",
+    "url": "https://yesapi.online",
+    "submitTime": "2026-08-09T06:42:30.421537",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-09T06:42:30.421555",
+    "check_count": 1
+  },
+  {
+    "name": "edenai.co",
+    "url": "https://www.edenai.co",
+    "submitTime": "2026-08-09T06:42:30.421566",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-09T06:42:30.421569",
+    "check_count": 1
+  },
+  {
+    "name": "requesty.ai",
+    "url": "https://www.requesty.ai",
+    "submitTime": "2026-08-09T06:42:30.421573",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-09T06:42:30.421575",
+    "check_count": 1
+  },
+  {
+    "name": "gate.ai",
+    "url": "https://gate.ai",
+    "submitTime": "2026-08-09T06:42:30.421578",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-09T06:42:30.421580",
+    "check_count": 1
   }
 ]

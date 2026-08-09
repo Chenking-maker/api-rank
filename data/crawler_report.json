@@ -1,17 +1,47 @@
 {
-  "timestamp": "2026-08-08T06:38:51.939663",
-  "elapsed_seconds": 296.6,
+  "timestamp": "2026-08-09T06:42:30.425089",
+  "elapsed_seconds": 290.8,
   "summary": {
     "total_existing": 19,
     "total_existing_with_url": 19,
-    "total_pending": 58,
+    "total_pending": 62,
     "total_dead": 13,
-    "new_discovered": 0,
+    "new_discovered": 4,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 2,
     "scrapling_available": true
   },
-  "new_discovered": [],
+  "new_discovered": [
+    {
+      "url": "https://yesapi.online",
+      "name": "yesapi.online",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://www.edenai.co",
+      "name": "edenai.co",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://www.requesty.ai",
+      "name": "requesty.ai",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://gate.ai",
+      "name": "gate.ai",
+      "source": "github:API中转站 推_extract"
+    }
+  ],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
+    },
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    }
+  ]
 }
