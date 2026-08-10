@@ -5456,7 +5456,7 @@
         "url": "https://free.supxh.xin/register?code=XVGW49",
         "domain": "supxh.xin",
         "name": "肖恩AI (SeanAI)",
-        "description": "免费 API 公益站，注册就送 5000 额度。支持多种 AI 模型调用，主打公益免费，适合学生和个人开发者体验测试。",
+        "description": "免费 API 公益站，注册即送 5000 额度。支持 Claude/GPT/Gemini 等主流模型调用，主打公益免费路线，无套路无隐藏消费。适合学生党、个人开发者及 AI 爱好者体验测试，社区活跃持续更新模型列表，新手友好文档完善。",
         "models": [
             "claude",
             "gpt",
@@ -5468,7 +5468,7 @@
         ],
         "price": "free",
         "free_amount": "注册送5000额度",
-        "score": 8.80,
+        "score": 9.48,
         "response_time": 0.75,
         "alive": true,
         "last_check": "2026-08-10",
