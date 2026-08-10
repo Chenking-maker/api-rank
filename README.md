@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/在线访问-api--rank--lake.vercel.app-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
-  <img src="https://img.shields.io/badge/收录平台-118+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
+  <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
+  <img src="https://img.shields.io/badge/收录平台-133+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -13,7 +14,8 @@
 </p>
 
 <p align="center">
-  🔗 <a href="https://api-rank-lake.vercel.app">在线访问</a> ·
+  🇨🇳 <a href="https://chenking-maker.github.io/api-rank/">国内访问</a> ·
+  🌍 <a href="https://api-rank-lake.vercel.app">国际访问</a> ·
   📖 <a href="https://github.com/Chenking-maker/api-rank/wiki">使用文档</a> ·
   💬 <a href="https://github.com/Chenking-maker/api-rank/discussions">讨论区</a> ·
   🎨 <a href="https://api-rank-lake.vercel.app/creative-tools.html">AI绘图/视频专区</a>
@@ -26,7 +28,7 @@
 | 功能 | 说明 |
 |------|------|
 | 📊 **实时检测** | 自动检测各平台可用性，失效站点自动标记 |
-| 🏅 **综合评分** | 稳定性、速度、价格、支持等多维度评分（8.00-9.95分） |
+| 🏅 **综合评分** | 稳定性、速度、价格、支持等多维度评分（8.30-9.88分） |
 | 🔍 **智能筛选** | 按模型类型（Claude/GPT/Gemini/国产/绘画/视频）、价格、用途筛选 |
 | 💰 **邀请优惠** | 整理各平台邀请链接，注册享额外优惠 |
 | 🔗 **分享赚次数** | 分享专属链接，好友注册即可获得额外查找次数 |
@@ -41,9 +43,9 @@
 
 | 排名 | 平台 | 评分 | 特色 | 邀请链接 |
 |:----:|------|:----:|------|----------|
-| 🥇 | **豆腐 (ToAPIs)** | 9.95 | 6大厂商官方授权，50+模型，视频模型 | [访问](https://toapis.com/login?aff=yjH5) |
+| 🥇 | **豆腐 (ToAPIs)** | 9.35 | 6大厂商官方授权，50+模型，视频模型 | [访问](https://toapis.com/login?aff=yjH5) |
 | 🥈 | **派客代码** | 9.88 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
-| 🥉 | **OpenRouter** | 9.85 | 400+模型，10M+用户，100T月Token | [访问](https://openrouter.ai) |
+| 🥉 | **OpenRouter** | 9.08 | 400+模型，10M+用户，100T月Token | [访问](https://openrouter.ai) |
 | 4 | **莱特代码** | 9.72 | 企业级Agent分发，99.5%可用率 | [访问](https://right.codes/register?aff=56503380) |
 | 5 | **CoderPlan** | 9.68 | 多模型聚合，开发者友好 | [访问](https://coderplan.ai) |
 | 6 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
@@ -52,7 +54,7 @@
 | 9 | **无限星河AI** | 9.52 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai) |
 | 10 | **木瓜AI** | 9.48 | GPT-5.5特价，多分组渠道，Claude/GPT全系列 | [访问](https://api.mooko.ai/register?aff=JiqY) |
 
-> 完整排名请访问 [在线网站](https://api-rank-lake.vercel.app) 查看
+> 完整排名请访问 [国内网站](https://chenking-maker.github.io/api-rank/) 或 [国际网站](https://api-rank-lake.vercel.app) 查看
 
 ---
 
@@ -79,7 +81,7 @@ api-rank/
 ├── creative-tools.html      # AI绘图/视频专区
 ├── dead-sites.html          # 失效站点列表
 ├── data/
-│   └── stations_info.json   # 主站点数据（118个）
+│   └── stations_info.json   # 主站点数据（125个）
 ├── api/                     # Cloudflare Workers 后端
 │   ├── wrangler.toml        # Workers 配置
 │   ├── schema.sql           # D1 数据库建表
@@ -97,7 +99,8 @@ api-rank/
 ## 🚀 快速开始
 
 ### 在线使用
-直接访问 [https://api-rank-lake.vercel.app](https://api-rank-lake.vercel.app)
+- 🇨🇳 **国内访问**（GitHub Pages）: [https://chenking-maker.github.io/api-rank/](https://chenking-maker.github.io/api-rank/)
+- 🌍 **国际访问**（Vercel）: [https://api-rank-lake.vercel.app](https://api-rank-lake.vercel.app)
 
 ### 本地部署
 ```bash
@@ -143,11 +146,11 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 118+ |
-| 有效站点 | 72 |
-| 失效站点 | 46 |
+| 收录平台 | 133+ |
+| 有效站点 | 79 |
+| 失效站点 | 54 |
 | 支持模型类型 | 7+（含绘画/视频） |
-| 评分范围 | 8.00 - 9.95 |
+| 评分范围 | 8.30 - 9.88 |
 | 更新频率 | 每日 |
 
 ---
@@ -171,6 +174,14 @@ wrangler deploy  # 部署Workers
 ---
 
 ## 📝 更新日志
+
+### v1.2.0 (2026-08-10)
+- ✅ 新增国内访问地址（GitHub Pages）：https://chenking-maker.github.io/api-rank/
+- ✅ 国际访问地址保持不变（Vercel）：https://api-rank-lake.vercel.app
+- ✅ 修复失效站点数据不同步问题（从15个修复为54个）
+- ✅ 调整豆腐(ToAPIs)评分至9.35，OpenRouter评分至9.08
+- ✅ 修复在线绘图/视频专区导航栏样式问题
+- ✅ 更新dead_sites.json与stations_info.json数据同步
 
 ### v1.1.0 (2026-07-29)
 - ✅ 新增分享赚次数系统（Cloudflare Workers后端）
@@ -196,7 +207,8 @@ wrangler deploy  # 部署Workers
 
 ## 📱 相关链接
 
-- 🌐 **在线网站**: [https://api-rank-lake.vercel.app](https://api-rank-lake.vercel.app)
+- 🌐 **国内网站**: [https://chenking-maker.github.io/api-rank/](https://chenking-maker.github.io/api-rank/)
+- 🌍 **国际网站**: [https://api-rank-lake.vercel.app](https://api-rank-lake.vercel.app)
 - 📖 **Wiki文档**: [https://github.com/Chenking-maker/api-rank/wiki](https://github.com/Chenking-maker/api-rank/wiki)
 - 💬 **讨论区**: [https://github.com/Chenking-maker/api-rank/discussions](https://github.com/Chenking-maker/api-rank/discussions)
 - 🐛 **问题反馈**: [https://github.com/Chenking-maker/api-rank/issues](https://github.com/Chenking-maker/api-rank/issues)
