@@ -5312,5 +5312,321 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+    {
+        "url": "https://teamorouter.com/?i=ad992e768a",
+        "domain": "teamorouter.com",
+        "name": "TeamoRouter",
+        "description": "免费白嫖 DeepSeek V4 + Codex 的宝藏入口。一个 API Key 即可调用所有主流 AI 模型，支持 Claude、GPT、Gemini、DeepSeek 等全线模型。首次付费返 10%，好友首次付费即返现到账，支持高并发请求。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "codex"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap"
+        ],
+        "price": "low",
+        "free_amount": "首次付费返10%",
+        "score": 9.75,
+        "response_time": 0.52,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "DeepSeek V4",
+            "Codex支持",
+            "首次返10%"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "DeepSeek V4+Codex",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "首次付费返10%",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "宝藏入口",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
+        "domain": "tokenrhythm.studio",
+        "name": "基元律动 (TokenRhythm)",
+        "description": "邀请好友限时活动继续延长，体验 OpenSquilla 新功能畅享免费 token。立享价值 68 元 token 额度，支持多种 AI 模型调用，新用户注册即领福利。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "cheap"
+        ],
+        "price": "medium",
+        "free_amount": "68元token额度",
+        "score": 9.05,
+        "response_time": 0.68,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "OpenSquilla",
+            "68元额度",
+            "限时活动"
+        ],
+        "display_metrics": [
+            {
+                "label": "福利",
+                "value": "68元token额度",
+                "cls": "green"
+            },
+            {
+                "label": "活动",
+                "value": "邀请延长",
+                "cls": "accent"
+            },
+            {
+                "label": "功能",
+                "value": "OpenSquilla新功能",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://onehop.ai/invite/9672CV",
+        "domain": "onehop.ai",
+        "name": "OneHop",
+        "description": "一个 OneHop API，调用所有 AI 模型。支持 Claude、GPT、Gemini 等主流模型统一接入，7 天内首充双方各得 10% 返利。接口稳定，文档清晰，适合开发者和企业使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap"
+        ],
+        "price": "medium",
+        "free_amount": "首充双方各得10%返利",
+        "score": 9.00,
+        "response_time": 0.55,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "一个API全部",
+            "10%返利",
+            "统一接入"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "一个API全部模型",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "双方各得10%",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "文档清晰",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://free.supxh.xin/register?code=XVGW49",
+        "domain": "supxh.xin",
+        "name": "肖恩AI (SeanAI)",
+        "description": "免费 API 公益站，注册就送 5000 额度。支持多种 AI 模型调用，主打公益免费，适合学生和个人开发者体验测试。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "free",
+        "free_amount": "注册送5000额度",
+        "score": 8.80,
+        "response_time": 0.75,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "公益站",
+            "注册送5000",
+            "免费体验"
+        ],
+        "display_metrics": [
+            {
+                "label": "福利",
+                "value": "注册送5000额度",
+                "cls": "green"
+            },
+            {
+                "label": "定位",
+                "value": "公益免费站",
+                "cls": "accent"
+            },
+            {
+                "label": "适合",
+                "value": "学生/个人",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api.flashpocket.cn/sign-up?aff=UWGU",
+        "domain": "flashpocket.cn",
+        "name": "Flash Code",
+        "description": "Flash Code API 中转站，提供快速稳定的 AI 模型调用服务。支持多种主流模型，注册即用，适合开发者快速接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "注册即用",
+        "score": 8.65,
+        "response_time": 0.62,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "快速接入",
+            "稳定调用",
+            "注册即用"
+        ],
+        "display_metrics": [
+            {
+                "label": "响应",
+                "value": "0.62s",
+                "cls": "green"
+            },
+            {
+                "label": "专业",
+                "value": "快速稳定",
+                "cls": "accent"
+            },
+            {
+                "label": "福利",
+                "value": "注册即用",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://smallice.xyz/register?aff=UL4K8KQZ2UD8",
+        "domain": "smallice.xyz",
+        "name": "Small ice AI",
+        "description": "Small ice AI 中转站，提供 AI 模型 API 调用服务。支持多种主流模型接入，注册即享福利额度。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap"
+        ],
+        "price": "low",
+        "free_amount": "注册送额度",
+        "score": 8.55,
+        "response_time": 0.70,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "低价",
+            "注册送额度",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "价格",
+                "value": "低价",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "注册送额度",
+                "cls": "accent"
+            },
+            {
+                "label": "模型",
+                "value": "多模型支持",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://chain888.vip/register?aff=2VWU8D79ZSF4",
+        "domain": "chain888.vip",
+        "name": "思辰科技 (SichenTech)",
+        "description": "思辰科技 API 中转站，提供 AI 模型统一调用服务。支持 Claude、GPT、Gemini 等主流模型，注册即享福利额度，适合开发者和企业使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "注册送额度",
+        "score": 8.50,
+        "response_time": 0.72,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "统一调用",
+            "注册送额度",
+            "主流模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "统一调用",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "注册送额度",
+                "cls": "accent"
+            },
+            {
+                "label": "模型",
+                "value": "Claude/GPT/Gemini",
+                "cls": ""
+            }
+        ],
+        "likes": 0
     }
 ]
