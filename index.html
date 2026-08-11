@@ -4935,6 +4935,110 @@
             }
         }
 
+        /* ===== 广告位 ===== */
+        .ad-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .ad-container {
+            display: flex;
+            gap: 20px;
+            margin: 24px 0;
+        }
+        .ad-slot {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f0f4f8;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .ad-slot:hover {
+            box-shadow: 0 4px 24px rgba(74, 144, 217, 0.15);
+            transform: translateY(-2px);
+        }
+        .ad-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .ad-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .ad-slide.active {
+            opacity: 1;
+        }
+        .ad-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .ad-slide-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e3ecf5 100%);
+            color: #4A90D9;
+            font-size: 24px;
+            font-weight: 600;
+            gap: 6px;
+        }
+        .ad-slide-placeholder .ad-sub {
+            font-size: 13px;
+            color: #99aabb;
+            font-weight: 400;
+        }
+        .ad-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+        .ad-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            padding: 0;
+        }
+        .ad-dot.active {
+            background: #fff;
+            width: 24px;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .ad-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .ad-slide-placeholder {
+                font-size: 18px;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">
@@ -5749,6 +5853,20 @@
     <div class="toast-container" id="toastContainer"></div>
 
 
+
+    <!-- 广告位 -->
+    <div class="ad-section">
+        <div class="ad-container">
+            <div class="ad-slot" id="adSlotLeft">
+                <div class="ad-carousel" id="adCarouselLeft"></div>
+                <div class="ad-dots" id="adDotsLeft"></div>
+            </div>
+            <div class="ad-slot" id="adSlotRight">
+                <div class="ad-carousel" id="adCarouselRight"></div>
+                <div class="ad-dots" id="adDotsRight"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Ranking Section -->
 
@@ -12029,6 +12147,87 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // ========== 广告位轮播系统 ==========
+        // 广告配置 - 在此处添加/修改广告图片和链接
+        // img: 广告图片路径（留空则显示占位符）  url: 点击跳转链接
+        const adConfig = {
+            left: [
+                { img: 'https://github.com/Chenking-maker/api-rank/blob/master/PIC/019feef3-32ba-7a10-9cbb-ee5497c09f74.png?raw=true', url: 'https://askgo.io/' },
+                { img: 'https://github.com/Chenking-maker/api-rank/blob/master/PIC/8ba40265-3cbc-4da2-83e8-ff5dcc687882.png?raw=true', url: 'https://sui-xiang.com/register?aff=5J3USAV9LQEB' }
+            ],
+            right: [
+                { img: 'https://github.com/Chenking-maker/api-rank/blob/master/PIC/dbfc60ef-0edd-4164-ae07-32c724bda282.png?raw=true', url: '#' }
+            ]
+        };
+
+        function initAdCarousel(side) {
+            var cap = side.charAt(0).toUpperCase() + side.slice(1);
+            var carousel = document.getElementById('adCarousel' + cap);
+            var dotsContainer = document.getElementById('adDots' + cap);
+            var slot = document.getElementById('adSlot' + cap);
+            var ads = adConfig[side];
+            if (!carousel || !ads || ads.length === 0) return;
+
+            // 生成 slides
+            carousel.innerHTML = ads.map(function(ad, i) {
+                var cls = 'ad-slide' + (i === 0 ? ' active' : '');
+                if (ad.img) {
+                    return '<div class="' + cls + '"><img src="' + ad.img + '" alt="广告"></div>';
+                }
+                return '<div class="' + cls + '"><div class="ad-slide-placeholder">广告位' +
+                    '<span class="ad-sub">16:9 · ' + (side === 'left' ? '左侧' : '右侧') + '</span>' +
+                    '</div></div>';
+            }).join('');
+
+            // 点击跳转
+            slot.addEventListener('click', function() {
+                var active = carousel.querySelector('.ad-slide.active');
+                var idx = Array.prototype.indexOf.call(carousel.children, active);
+                var url = ads[idx] ? ads[idx].url : '#';
+                if (url && url !== '#') window.open(url, '_blank');
+            });
+
+            // 多广告时启用圆点 + 自动轮播
+            if (ads.length > 1) {
+                dotsContainer.innerHTML = ads.map(function(_, i) {
+                    return '<button class="ad-dot' + (i === 0 ? ' active' : '') +
+                        '" data-side="' + side + '" data-idx="' + i + '"></button>';
+                }).join('');
+
+                dotsContainer.querySelectorAll('.ad-dot').forEach(function(dot) {
+                    dot.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        switchAd(this.getAttribute('data-side'), parseInt(this.getAttribute('data-idx')));
+                    });
+                });
+
+                var cur = 0;
+                setInterval(function() {
+                    cur = (cur + 1) % ads.length;
+                    switchAd(side, cur);
+                }, 5000);
+            }
+        }
+
+        function switchAd(side, idx) {
+            var cap = side.charAt(0).toUpperCase() + side.slice(1);
+            var carousel = document.getElementById('adCarousel' + cap);
+            var dotsContainer = document.getElementById('adDots' + cap);
+            if (!carousel) return;
+
+            carousel.querySelectorAll('.ad-slide').forEach(function(s, i) {
+                s.classList.toggle('active', i === idx);
+            });
+            if (dotsContainer) {
+                dotsContainer.querySelectorAll('.ad-dot').forEach(function(d, i) {
+                    d.classList.toggle('active', i === idx);
+                });
+            }
+        }
+
+        // 初始化广告轮播
+        initAdCarousel('left');
+        initAdCarousel('right');
 
     </script>
 
