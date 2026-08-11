@@ -1,6 +1,19 @@
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /all-stations.html
+Allow: /creative-tools.html
+Allow: /dead-sites.html
 Disallow: /admin.html
 Disallow: /api/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /PIC/
 
+# Crawl-delay
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://api-rank-lake.vercel.app/sitemap.xml
+Sitemap: https://chenking-maker.github.io/api-rank/sitemap.xml

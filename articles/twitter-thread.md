@@ -1,72 +1,101 @@
 # Twitter/X 推广推文串
 
 ## 推文1 - 项目发布
-🚀 做了一个AI API中转站排行榜
+🚀 Built an AI API relay station leaderboard
 
-📊 实时检测100+平台的可用性
-💰 包含邀请链接，注册有优惠
-🎯 综合评分排名，帮你找到最合适的API
+📊 139+ platforms tracked
+✅ 93 active | 46 down
+⏰ Daily auto-detection
+🔬 7-dimension scoring
 
-🔗 https://api-rank-lake.vercel.app
-⭐ https://github.com/Chenking-maker/api-rank
+🌐 https://api-rank-lake.vercel.app
+🇨🇳 https://chenking-maker.github.io/api-rank/
 
-#AI #API #LLM #OpenAI #Claude #DeepSeek #开发者工具
-
----
-
-## 推文2 - Top 3推荐
-🏆 2026年6月AI API平台Top 3：
-
-🥇 硅基流动 - 国产模型首选，每日免费额度
-🥈 DeepSeek API - 官方超低价
-🥉 OpenRouter - 多模型聚合，新用户$1免费
-
-完整排名 👉 https://api-rank-lake.vercel.app
-
-#AIAPI #API中转 #开发者
+#AI #API #LLM
 
 ---
 
-## 推文3 - 邀请链接优惠
-💰 整理了各大AI API平台的邀请链接：
+## 推文2 - Top 3 推荐
+🏆 Aug 2026 Top 3 AI API platforms:
 
-🔥 硅基流动 → 每日免费额度
-🔥 DeepSeek → 月免费额度  
-🔥 OpenRouter → 新用户$1免费
-🔥 PackyCode → 稳定多模型
+🥇 TeamoRouter - 9.94
+🥈 派客代码 PackyCode - 9.88
+🥉 基元律动 - 9.78
 
-通过邀请链接注册有额外优惠！
-👉 https://api-rank-lake.vercel.app
+Score range: 8.30-9.94
+
+Full ranking 👇
+https://api-rank-lake.vercel.app
+
+#AIAPI #API中转
+
+---
+
+## 推文3 - 7大评测维度
+🔬 7 evaluation dimensions:
+
+1️⃣ Latency 延迟
+2️⃣ Price 价格
+3️⃣ Stability 稳定性
+4️⃣ Model authenticity 模型真实性
+5️⃣ Response speed 响应速度
+6️⃣ Free quota 免费额度
+7️⃣ User reputation 口碑
+
+#AI #API
+
+---
+
+## 推文4 - 支持的模型
+🤖 Supports mainstream models:
+
+✅ Claude
+✅ GPT
+✅ Gemini
+✅ DeepSeek
+...and more
+
+Find the best API relay for your needs 👇
+https://api-rank-lake.vercel.app
+
+#LLM #OpenAI #Claude
+
+---
+
+## 推文5 - 邀请链接优惠
+💰 Invitation link discounts / 邀请链接优惠
+
+Curated invite links for every platform → register with extra perks and save on API costs 💸
+
+👉 https://chenking-maker.github.io/api-rank/
 
 #省钱 #AI #API
 
 ---
 
-## 推文4 - 开源项目
-📢 开源项目推荐：
+## 推文6 - 完全开源
+📦 Fully open source / 完全开源
 
-AI API中转站实时排行榜
-✅ 100+平台收录
-✅ 每小时自动检测
-✅ 综合评分系统
-✅ 完全开源
+✅ All detection data transparent
+✅ Detection scripts open-sourced
+✅ Community driven, welcome PRs
 
-欢迎Star和PR！
-⭐ https://github.com/Chenking-maker/api-rank
+Star & contribute ⭐
+https://github.com/Chenking-maker/api-rank
 
 #开源 #GitHub #AI
 
 ---
 
-## 推文5 - 使用场景
-🤔 什么时候需要API中转站？
+## 推文7 - 使用场景
+🤔 When do you need an API relay?
 
-1️⃣ 国内访问OpenAI/Claude困难
-2️⃣ 需要对比多个模型的效果
-3️⃣ 寻找更便宜的API价格
-4️⃣ 需要企业级支持
+1️⃣ Can't access OpenAI/Claude directly
+2️⃣ Want cheaper API prices
+3️⃣ Need to compare multiple models
+4️⃣ Want reliable enterprise-grade support
 
-排行榜帮你找到最适合的平台 👇
+Find yours 👇
 https://api-rank-lake.vercel.app
 
-#AI开发 #API #ChatGPT
+#AIdev #API
