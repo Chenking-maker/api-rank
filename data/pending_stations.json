@@ -908,8 +908,18 @@
     "url": "https://teamorouter.com/?i=ad992e768a",
     "domain": "teamorouter.com",
     "description": "免费白嫖 DeepSeek V4 + Codex 的宝藏入口。一个 API Key 调用所有主流 AI 模型，首次付费返 10%。",
-    "features": ["stable", "multi", "cheap"],
-    "models": ["claude", "gpt", "gemini", "deepseek", "codex"],
+    "features": [
+      "stable",
+      "multi",
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini",
+      "deepseek",
+      "codex"
+    ],
     "score": 9.75,
     "responseTime": 0.52,
     "freeAmount": "首次付费返10%",
@@ -924,8 +934,15 @@
     "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
     "domain": "tokenrhythm.studio",
     "description": "邀请好友限时活动继续延长，体验 OpenSquilla 新功能畅享免费 token，立享价值 68 元 token 额度。",
-    "features": ["stable", "cheap"],
-    "models": ["claude", "gpt", "gemini"],
+    "features": [
+      "stable",
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
     "score": 9.05,
     "responseTime": 0.68,
     "freeAmount": "68元token额度",
@@ -940,9 +957,17 @@
     "url": "https://onehop.ai/invite/9672CV",
     "domain": "onehop.ai",
     "description": "一个 OneHop API，调用所有 AI 模型。7 天内首充双方各得 10% 返利。",
-    "features": ["stable", "multi", "cheap"],
-    "models": ["claude", "gpt", "gemini"],
-    "score": 9.00,
+    "features": [
+      "stable",
+      "multi",
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "score": 9.0,
     "responseTime": 0.55,
     "freeAmount": "首充双方各得10%返利",
     "source": "user_submission",
@@ -956,9 +981,16 @@
     "url": "https://free.supxh.xin/register?code=XVGW49",
     "domain": "supxh.xin",
     "description": "免费 API 公益站，注册就送 5000 额度。",
-    "features": ["cheap", "stable"],
-    "models": ["claude", "gpt", "gemini"],
-    "score": 8.80,
+    "features": [
+      "cheap",
+      "stable"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "score": 8.8,
     "responseTime": 0.75,
     "freeAmount": "注册送5000额度",
     "source": "user_submission",
@@ -972,8 +1004,14 @@
     "url": "https://api.flashpocket.cn/sign-up?aff=UWGU",
     "domain": "flashpocket.cn",
     "description": "Flash Code API 中转站，提供快速稳定的 AI 模型调用服务。",
-    "features": ["stable"],
-    "models": ["claude", "gpt", "gemini"],
+    "features": [
+      "stable"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
     "score": 8.65,
     "responseTime": 0.62,
     "freeAmount": "注册即用",
@@ -988,10 +1026,16 @@
     "url": "https://smallice.xyz/register?aff=UL4K8KQZ2UD8",
     "domain": "smallice.xyz",
     "description": "Small ice AI 中转站，提供 AI 模型 API 调用服务。",
-    "features": ["cheap"],
-    "models": ["claude", "gpt", "gemini"],
+    "features": [
+      "cheap"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
     "score": 8.55,
-    "responseTime": 0.70,
+    "responseTime": 0.7,
     "freeAmount": "注册送额度",
     "source": "user_submission",
     "status": "pending",
@@ -1004,15 +1048,174 @@
     "url": "https://chain888.vip/register?aff=2VWU8D79ZSF4",
     "domain": "chain888.vip",
     "description": "思辰科技 API 中转站，提供 AI 模型统一调用服务。",
-    "features": ["stable"],
-    "models": ["claude", "gpt", "gemini"],
-    "score": 8.50,
+    "features": [
+      "stable"
+    ],
+    "models": [
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "score": 8.5,
     "responseTime": 0.72,
     "freeAmount": "注册送额度",
     "source": "user_submission",
     "status": "pending",
     "submitTime": "2026-08-10T00:00:00",
     "checked_at": "2026-08-10T00:00:00",
+    "check_count": 1
+  },
+  {
+    "name": "yesapi.online",
+    "url": "https://yesapi.online",
+    "submitTime": "2026-08-11T06:51:18.063629",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063647",
+    "check_count": 1
+  },
+  {
+    "name": "edenai.co",
+    "url": "https://www.edenai.co",
+    "submitTime": "2026-08-11T06:51:18.063656",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063659",
+    "check_count": 1
+  },
+  {
+    "name": "requesty.ai",
+    "url": "https://www.requesty.ai",
+    "submitTime": "2026-08-11T06:51:18.063662",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063664",
+    "check_count": 1
+  },
+  {
+    "name": "gate.ai",
+    "url": "https://gate.ai",
+    "submitTime": "2026-08-11T06:51:18.063667",
+    "status": "pending",
+    "source": "github:API中转站 推_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063669",
+    "check_count": 1
+  },
+  {
+    "name": "lanox.ai",
+    "url": "https://lanox.ai",
+    "submitTime": "2026-08-11T06:51:18.063672",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063675",
+    "check_count": 1
+  },
+  {
+    "name": "rapidproxy.io",
+    "url": "https://www.rapidproxy.io",
+    "submitTime": "2026-08-11T06:51:18.063678",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063679",
+    "check_count": 1
+  },
+  {
+    "name": "xuanshuapi.com",
+    "url": "https://www.xuanshuapi.com",
+    "submitTime": "2026-08-11T06:51:18.063683",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063685",
+    "check_count": 1
+  },
+  {
+    "name": "aicodemirror.ai",
+    "url": "https://www.aicodemirror.ai",
+    "submitTime": "2026-08-11T06:51:18.063687",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063689",
+    "check_count": 1
+  },
+  {
+    "name": "api.tpz.pub",
+    "url": "https://api.tpz.pub",
+    "submitTime": "2026-08-11T06:51:18.063691",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-11T06:51:18.063693",
     "check_count": 1
   }
 ]

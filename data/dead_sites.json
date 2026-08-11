@@ -1,56 +1,139 @@
 [
-  {"url": "https://feixian-api.com", "name": "非线智能Api", "domain": "feixian-api.com", "status": "dead", "reason": "404错误"},
-  {"url": "https://suchuangapi.com", "name": "速创API", "domain": "suchuangapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://b4uapi.com", "name": "B4U API", "domain": "b4uapi.com", "status": "dead", "reason": "403禁止"},
-  {"url": "https://91codeapi.com", "name": "91Code API", "domain": "91codeapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://jayapi.com", "name": "JAY中转API", "domain": "jayapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://chaofanapi.com", "name": "超凡API中转站", "domain": "chaofanapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://token5u.com", "name": "词元无忧API (Token5u)", "domain": "token5u.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://yingapi.com", "name": "莹的API", "domain": "yingapi.com", "status": "dead", "reason": "SSL错误"},
-  {"url": "https://api.lingyaai.cn", "name": "灵芽API", "domain": "lingyaai.cn", "status": "dead", "reason": "站点已失效"},
-  {"url": "https://4stoken.cn", "name": "4SToken", "domain": "4stoken.cn", "status": "dead", "reason": "站点已失效"},
-  {"url": "https://api.aiyungc.cn", "name": "方舟API", "domain": "aiyungc.cn", "status": "dead", "reason": "站点已失效"},
-  {"url": "https://shiyunapi.com", "name": "诗云API", "domain": "shiyunapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://4sapi.com", "name": "星链4SAPI", "domain": "4sapi.com", "status": "dead", "reason": "403错误"},
-  {"url": "https://api.easyapi.com", "name": "API易", "domain": "easyapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://api.ikuncode.cc", "name": "爱坤代码 (IKunCode)", "domain": "ikuncode.cc", "status": "dead", "reason": "无法访问"},
-  {"url": "https://302.ai", "name": "302.AI", "domain": "302.ai", "status": "dead", "reason": "访问超时"},
-  {"url": "https://www.sssaicode.com", "name": "SSSAICode", "domain": "sssaicode.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://snakegpt.vip", "name": "蛇GPT (SnakeGPT)", "domain": "snakegpt.vip", "status": "dead", "reason": "已转型"},
-  {"url": "https://gptcat.cc", "name": "GPT猫 (GPTCat)", "domain": "gptcat.cc", "status": "dead", "reason": "已转型"},
-  {"url": "https://ai.huoyachat.com", "name": "AI中文版", "domain": "ai.huoyachat.com", "status": "dead", "reason": "已转型"},
-  {"url": "https://web.apiplus.org", "name": "APIPlus", "domain": "apiplus.org", "status": "dead", "reason": "非中转站"},
-  {"url": "https://b.ai", "name": "B.AI (波场)", "domain": "b.ai", "status": "dead", "reason": "访问超时"},
-  {"url": "https://xdhdancer.top", "name": "产灵API", "domain": "xdhdancer.top", "status": "dead", "reason": "无法访问"},
-  {"url": "https://bewildcard.com", "name": "万卡API (WildCard)", "domain": "bewildcard.com", "status": "dead", "reason": "服务已暂停"},
-  {"url": "https://doro.lol", "name": "Doro API", "domain": "doro.lol", "status": "dead", "reason": "安全拦截"},
-  {"url": "https://qianfan.baidubce.com", "name": "百度千帆", "domain": "qianfan.baidubce.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://fishxcode.com", "name": "鱼代码 (FishXCode)", "domain": "fishxcode.com", "status": "dead", "reason": "无实际服务"},
-  {"url": "https://apimart.ai", "name": "API集市 (API Mart)", "domain": "apimart.ai", "status": "dead", "reason": "无法访问"},
-  {"url": "https://console.mistral.ai", "name": "Mistral AI", "domain": "console.mistral.ai", "status": "dead", "reason": "访问超时"},
-  {"url": "https://console.groq.com", "name": "Groq", "domain": "console.groq.com", "status": "dead", "reason": "网站乱码"},
-  {"url": "https://suirenai.com", "name": "随人AI", "domain": "suirenai.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://unity2.ai", "name": "Unity2.AI", "domain": "unity2.ai", "status": "dead", "reason": "无法访问"},
-  {"url": "https://anpin.ai", "name": "AnPin AI", "domain": "anpin.ai", "status": "dead", "reason": "无法访问"},
-  {"url": "https://nekocode.com", "name": "NekoCode", "domain": "nekocode.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://clauqe.com", "name": "ClauqeAI", "domain": "clauqe.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://claudecn.com", "name": "ClaudeCN", "domain": "claudecn.com", "status": "dead", "reason": "安全验证"},
-  {"url": "https://toknex.com", "name": "Toknex", "domain": "toknex.com", "status": "dead", "reason": "访问超时"},
-  {"url": "https://sevnx.com", "name": "SevnX", "domain": "sevnx.com", "status": "dead", "reason": "非中转站"},
-  {"url": "https://sudocode.com", "name": "SudoCode", "domain": "sudocode.com", "status": "dead", "reason": "地区限制"},
-  {"url": "https://luminai.com", "name": "Lumin AI", "domain": "luminai.com", "status": "dead", "reason": "非中转站"},
-  {"url": "https://claudeapi.net", "name": "Claude API", "domain": "claudeapi.net", "status": "dead", "reason": "已转型"},
-  {"url": "https://muskai.com", "name": "MuskAI", "domain": "muskai.com", "status": "dead", "reason": "非中转站"},
-  {"url": "https://modcon.ai", "name": "ModCon", "domain": "modcon.ai", "status": "dead", "reason": "非中转站"},
-  {"url": "https://switchbase.com", "name": "SwitchBase", "domain": "switchbase.com", "status": "dead", "reason": "非中转站"},
-  {"url": "https://zhihuiapi.com", "name": "智惠API", "domain": "zhihuiapi.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://aok.ai", "name": "AOK", "domain": "aok.ai", "status": "dead", "reason": "无法访问"},
-  {"url": "https://frontierintelligence.ai", "name": "Frontier Intelligence", "domain": "frontierintelligence.ai", "status": "dead", "reason": "访问超时"},
-  {"url": "https://derouter.com", "name": "DeRouter", "domain": "derouter.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://coderelay.com", "name": "CodeRelay", "domain": "coderelay.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://anyroute.com", "name": "AnyRoute", "domain": "anyroute.com", "status": "dead", "reason": "无法访问"},
-  {"url": "https://runapi.co", "name": "RunAPI", "domain": "runapi.co", "status": "dead", "reason": "403错误"},
-  {"url": "https://apikey.fun", "name": "ApiKey.fun", "domain": "apikey.fun", "status": "dead", "reason": "地区限制"},
-  {"url": "https://openai-sb.com", "name": "OpenAI-SB", "domain": "openai-sb.com", "status": "dead", "reason": "域名无法解析"},
-  {"url": "https://closeai-asia.com", "name": "CloseAI", "domain": "closeai-asia.com", "status": "dead", "reason": "域名无法解析"}
+  {
+    "url": "https://feixian-api.com",
+    "name": "非线智能Api",
+    "domain": "feixian-api.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://suchuangapi.com",
+    "name": "速创API",
+    "domain": "suchuangapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://b4uapi.com",
+    "name": "B4U API",
+    "domain": "b4uapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://91codeapi.com",
+    "name": "91Code API",
+    "domain": "91codeapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://jayapi.com",
+    "name": "JAY中转API",
+    "domain": "jayapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://chaofanapi.com",
+    "name": "超凡API中转站",
+    "domain": "chaofanapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://token5u.com",
+    "name": "词元无忧API (Token5u)",
+    "domain": "token5u.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://yingapi.com",
+    "name": "莹的API",
+    "domain": "yingapi.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://api.anyrouter.com",
+    "name": "AnyRoute",
+    "domain": "api.anyrouter.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://closeai-asia.com",
+    "name": "CloseAI",
+    "domain": "closeai-asia.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://gptcat.cc",
+    "name": "GPT猫 (GPTCat)",
+    "domain": "gptcat.cc",
+    "status": "dead",
+    "reason": "已转型"
+  },
+  {
+    "url": "https://qianfan.baidubce.com",
+    "name": "百度千帆",
+    "domain": "qianfan.baidubce.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://nekocode.com",
+    "name": "NekoCode",
+    "domain": "nekocode.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://clauqe.com",
+    "name": "ClauqeAI",
+    "domain": "clauqe.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://claudecn.com",
+    "name": "ClaudeCN",
+    "domain": "claudecn.com",
+    "status": "dead",
+    "reason": "安全验证"
+  },
+  {
+    "url": "https://claudeapi.net",
+    "name": "Claude API",
+    "domain": "claudeapi.net",
+    "status": "dead",
+    "reason": "已转型"
+  },
+  {
+    "url": "https://zhihuiapi.com",
+    "name": "智惠API",
+    "domain": "zhihuiapi.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://aok.ai",
+    "name": "AOK",
+    "domain": "aok.ai",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://frontierintelligence.ai",
+    "name": "Frontier Intelligence",
+    "domain": "frontierintelligence.ai",
+    "status": "dead",
+    "reason": "访问超时"
+  },
+  {
+    "url": "https://anyroute.com",
+    "name": "AnyRoute",
+    "domain": "anyroute.com",
+    "status": "dead",
+    "reason": "无法访问"
+  },
+  {
+    "url": "https://openai-sb.com",
+    "name": "OpenAI-SB",
+    "domain": "openai-sb.com",
+    "status": "dead",
+    "reason": "域名无法解析"
+  }
 ]

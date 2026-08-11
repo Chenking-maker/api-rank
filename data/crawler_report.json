@@ -1,17 +1,200 @@
 {
-  "timestamp": "2026-08-10T07:12:11.485501",
-  "elapsed_seconds": 166.4,
+  "timestamp": "2026-08-11T06:51:18.067695",
+  "elapsed_seconds": 278.2,
   "summary": {
-    "total_existing": 19,
-    "total_existing_with_url": 19,
-    "total_pending": 62,
-    "total_dead": 13,
-    "new_discovered": 0,
+    "total_existing": 26,
+    "total_existing_with_url": 26,
+    "total_pending": 68,
+    "total_dead": 21,
+    "new_discovered": 9,
     "new_dead": 0,
-    "new_recovered": 0,
+    "new_recovered": 34,
     "scrapling_available": true
   },
-  "new_discovered": [],
+  "new_discovered": [
+    {
+      "url": "https://yesapi.online",
+      "name": "yesapi.online",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://www.edenai.co",
+      "name": "edenai.co",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://www.requesty.ai",
+      "name": "requesty.ai",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://gate.ai",
+      "name": "gate.ai",
+      "source": "github:API中转站 推_extract"
+    },
+    {
+      "url": "https://lanox.ai",
+      "name": "lanox.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://www.rapidproxy.io",
+      "name": "rapidproxy.io",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://www.xuanshuapi.com",
+      "name": "xuanshuapi.com",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://www.aicodemirror.ai",
+      "name": "aicodemirror.ai",
+      "source": "github:OpenAI A_extract"
+    },
+    {
+      "url": "https://api.tpz.pub",
+      "name": "api.tpz.pub",
+      "source": "github:OpenAI A_extract"
+    }
+  ],
   "new_dead": [],
-  "new_recovered": []
+  "new_recovered": [
+    {
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    },
+    {
+      "url": "https://api.lingyaai.cn",
+      "name": "灵芽API"
+    },
+    {
+      "url": "https://4stoken.cn",
+      "name": "4SToken"
+    },
+    {
+      "url": "https://api.aiyungc.cn",
+      "name": "方舟API"
+    },
+    {
+      "url": "https://shiyunapi.com",
+      "name": "诗云API"
+    },
+    {
+      "url": "https://4sapi.com",
+      "name": "星链4SAPI"
+    },
+    {
+      "url": "https://api.easyapi.com",
+      "name": "API易"
+    },
+    {
+      "url": "https://api.ikuncode.cc",
+      "name": "爱坤代码 (IKunCode)"
+    },
+    {
+      "url": "https://302.ai",
+      "name": "302.AI"
+    },
+    {
+      "url": "https://www.sssaicode.com",
+      "name": "SSSAICode"
+    },
+    {
+      "url": "https://snakegpt.vip",
+      "name": "蛇GPT (SnakeGPT)"
+    },
+    {
+      "url": "https://ai.huoyachat.com",
+      "name": "AI中文版"
+    },
+    {
+      "url": "https://web.apiplus.org",
+      "name": "APIPlus"
+    },
+    {
+      "url": "https://xdhdancer.top",
+      "name": "产灵API"
+    },
+    {
+      "url": "https://bewildcard.com",
+      "name": "万卡API (WildCard)"
+    },
+    {
+      "url": "https://doro.lol",
+      "name": "Doro API"
+    },
+    {
+      "url": "https://fishxcode.com",
+      "name": "鱼代码 (FishXCode)"
+    },
+    {
+      "url": "https://apimart.ai",
+      "name": "API集市 (API Mart)"
+    },
+    {
+      "url": "https://console.mistral.ai",
+      "name": "Mistral AI"
+    },
+    {
+      "url": "https://console.groq.com",
+      "name": "Groq"
+    },
+    {
+      "url": "https://suirenai.com",
+      "name": "随人AI"
+    },
+    {
+      "url": "https://unity2.ai",
+      "name": "Unity2.AI"
+    },
+    {
+      "url": "https://anpin.ai",
+      "name": "AnPin AI"
+    },
+    {
+      "url": "https://toknex.com",
+      "name": "Toknex"
+    },
+    {
+      "url": "https://sevnx.com",
+      "name": "SevnX"
+    },
+    {
+      "url": "https://sudocode.com",
+      "name": "SudoCode"
+    },
+    {
+      "url": "https://luminai.com",
+      "name": "Lumin AI"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI"
+    },
+    {
+      "url": "https://modcon.ai",
+      "name": "ModCon"
+    },
+    {
+      "url": "https://switchbase.com",
+      "name": "SwitchBase"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay"
+    },
+    {
+      "url": "https://runapi.co",
+      "name": "RunAPI"
+    },
+    {
+      "url": "https://apikey.fun",
+      "name": "ApiKey.fun"
+    }
+  ]
 }
