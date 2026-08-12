@@ -12,6 +12,12 @@
     "status": "dead"
   },
   {
+    "url": "https://api.anyrouter.com",
+    "name": "Anyrouter",
+    "domain": "api.anyrouter.com",
+    "status": "dead"
+  },
+  {
     "url": "https://b4uapi.com",
     "name": "B4U API",
     "domain": "b4uapi.com",
@@ -48,15 +54,15 @@
     "status": "dead"
   },
   {
-    "url": "https://api.anyrouter.com",
-    "name": "AnyRoute",
-    "domain": "api.anyrouter.com",
-    "status": "dead"
-  },
-  {
     "url": "https://closeai-asia.com",
     "name": "CloseAI",
     "domain": "closeai-asia.com",
+    "status": "dead"
+  },
+  {
+    "url": "https://api.anyrouter.com",
+    "name": "AnyRoute",
+    "domain": "api.anyrouter.com",
     "status": "dead"
   },
   {
