@@ -1217,5 +1217,22 @@
     "freeAmount": "",
     "checked_at": "2026-08-11T06:51:18.063693",
     "check_count": 1
+  },
+  {
+    "name": "swiftproxy.net",
+    "url": "https://www.swiftproxy.net",
+    "submitTime": "2026-08-13T07:15:01.731037",
+    "status": "pending",
+    "source": "github:OpenAI A_extract",
+    "description": "",
+    "features": [],
+    "models": [
+      "multi"
+    ],
+    "score": 7.0,
+    "responseTime": null,
+    "freeAmount": "",
+    "checked_at": "2026-08-13T07:15:01.731055",
+    "check_count": 1
   }
 ]
