@@ -1,28 +1,22 @@
 {
-  "timestamp": "2026-08-13T07:15:01.735038",
-  "elapsed_seconds": 214.6,
+  "timestamp": "2026-08-14T07:11:34.637878",
+  "elapsed_seconds": 207.6,
   "summary": {
     "total_existing": 26,
     "total_existing_with_url": 26,
     "total_pending": 69,
     "total_dead": 22,
-    "new_discovered": 1,
+    "new_discovered": 0,
     "new_dead": 0,
     "new_recovered": 1,
     "scrapling_available": true
   },
-  "new_discovered": [
-    {
-      "url": "https://www.swiftproxy.net",
-      "name": "swiftproxy.net",
-      "source": "github:OpenAI A_extract"
-    }
-  ],
+  "new_discovered": [],
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://b.ai",
-      "name": "B.AI (波场)"
+      "url": "https://poloapi.com",
+      "name": "PoloAPI"
     }
   ]
 }
