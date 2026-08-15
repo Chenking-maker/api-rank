@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-08-14T07:11:34.637878",
-  "elapsed_seconds": 207.6,
+  "timestamp": "2026-08-15T06:23:17.990825",
+  "elapsed_seconds": 205.8,
   "summary": {
     "total_existing": 26,
     "total_existing_with_url": 26,
@@ -15,8 +15,8 @@
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
     }
   ]
 }
