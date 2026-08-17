@@ -217,6 +217,25 @@ class SmartCrawler:
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(PENDING_FILE, 'w', encoding='utf-8') as f:
             json.dump(self.pending_stations, f, ensure_ascii=False, indent=2)
+        # Merge dead stations from stations_info.json to prevent data loss
+        try:
+            with open(f'{DATA_DIR}/stations_info.json', 'r', encoding='utf-8') as f:
+                all_stations = json.load(f)
+            dead_from_json = [s for s in all_stations if not s.get('alive', True)]
+            existing_dead_domains = {s.get('domain', '').lower() for s in self.dead_sites}
+            for s in dead_from_json:
+                domain = (s.get('domain') or '').lower()
+                if domain and domain not in existing_dead_domains:
+                    self.dead_sites.append({
+                        'url': s.get('url', ''),
+                        'domain': s.get('domain', ''),
+                        'name': s.get('name', ''),
+                        'reason': '标记为失效(alive=false)',
+                        'status': 'dead'
+                    })
+                    existing_dead_domains.add(domain)
+        except Exception as e:
+            print(f"  [WARN] 合并stations_info.json失败站点失败: {e}")
         with open(DEAD_FILE, 'w', encoding='utf-8') as f:
             json.dump(self.dead_sites, f, ensure_ascii=False, indent=2)
         site_status = {
@@ -532,7 +551,9 @@ class SmartCrawler:
                 still_dead.append(site)
                 print(f"  ✗ 仍失效: {site.get('name', get_domain(url))}")
             time.sleep(0.3)
-        self.dead_sites = still_dead
+        # Preserve entries that couldn't be re-checked (no URL)
+        unchecked_dead = [s for s in self.dead_sites if not s.get('url')]
+        self.dead_sites = still_dead + unchecked_dead
 
     def _search_url_for_name(self, query: str, target_name: str) -> str:
         """通过搜索引擎查找站点URL"""
