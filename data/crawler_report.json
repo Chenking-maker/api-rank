@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-08-18T06:28:38.082563",
-  "elapsed_seconds": 252.5,
+  "timestamp": "2026-08-20T06:33:13.361294",
+  "elapsed_seconds": 424.9,
   "summary": {
     "total_existing": 26,
     "total_existing_with_url": 26,
@@ -8,15 +8,175 @@
     "total_dead": 56,
     "new_discovered": 0,
     "new_dead": 0,
-    "new_recovered": 1,
+    "new_recovered": 41,
     "scrapling_available": true
   },
   "new_discovered": [],
   "new_dead": [],
   "new_recovered": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
+      "url": "https://b.ai",
+      "name": "B.AI (波场)"
+    },
+    {
+      "url": "https://api.lingyaai.cn/register?aff=k8I8",
+      "name": "灵芽API"
+    },
+    {
+      "url": "https://www.4stoken.cn",
+      "name": "4SToken"
+    },
+    {
+      "url": "https://api.aiyungc.cn",
+      "name": "方舟API"
+    },
+    {
+      "url": "https://shiyunapi.com/register?aff=mR1T",
+      "name": "诗云API"
+    },
+    {
+      "url": "https://4sapi.com",
+      "name": "星链4SAPI"
+    },
+    {
+      "url": "https://api.easyapi.com",
+      "name": "API易"
+    },
+    {
+      "url": "https://api.ikuncode.cc",
+      "name": "爱坤代码 (IKunCode)"
+    },
+    {
+      "url": "https://302.ai",
+      "name": "302.AI"
+    },
+    {
+      "url": "https://www.sssaicode.com/register?ref=SRVFVP",
+      "name": "SSSAICode"
+    },
+    {
+      "url": "https://snakegpt.vip",
+      "name": "蛇GPT (SnakeGPT)"
+    },
+    {
+      "url": "https://gptcat.cc",
+      "name": "GPT猫 (GPTCat)"
+    },
+    {
+      "url": "https://ai.huoyachat.com",
+      "name": "AI中文版"
+    },
+    {
+      "url": "https://web.apiplus.org",
+      "name": "APIPlus"
+    },
+    {
+      "url": "https://xdhdancer.top",
+      "name": "产灵API"
+    },
+    {
+      "url": "https://bewildcard.com",
+      "name": "万卡API (WildCard)"
+    },
+    {
+      "url": "https://doro.lol/register?aff=0LSF",
+      "name": "Doro API"
+    },
+    {
+      "url": "https://qianfan.baidubce.com",
+      "name": "百度千帆"
+    },
+    {
+      "url": "https://fishxcode.com",
+      "name": "鱼代码 (FishXCode)"
+    },
+    {
+      "url": "https://apimart.ai",
+      "name": "API集市 (API Mart)"
+    },
+    {
+      "url": "https://console.mistral.ai",
+      "name": "Mistral AI"
+    },
+    {
+      "url": "https://console.groq.com",
+      "name": "Groq"
+    },
+    {
+      "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
+      "name": "随人AI"
+    },
+    {
+      "url": "https://unity2.ai/register?ref=bayLaABG",
+      "name": "Unity2.AI"
+    },
+    {
+      "url": "https://anpin.ai",
+      "name": "AnPin AI"
+    },
+    {
+      "url": "https://claudecn.com",
+      "name": "ClaudeCN"
+    },
+    {
+      "url": "https://toknex.com",
+      "name": "Toknex"
+    },
+    {
+      "url": "https://sevnx.com",
+      "name": "SevnX"
+    },
+    {
+      "url": "https://sudocode.run/register?aff=G7iU",
+      "name": "SudoCode"
+    },
+    {
+      "url": "https://luminai.com",
+      "name": "Lumin AI"
+    },
+    {
+      "url": "https://claudeapi.net",
+      "name": "Claude API"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI"
+    },
+    {
+      "url": "https://modcon.ai",
+      "name": "ModCon"
+    },
+    {
+      "url": "https://switchbase.com",
+      "name": "SwitchBase"
+    },
+    {
+      "url": "https://zhihuiapi.com",
+      "name": "智惠API"
+    },
+    {
+      "url": "https://frontierintelligence.ai",
+      "name": "Frontier Intelligence"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay"
+    },
+    {
+      "url": "https://runapi.co/register?aff=mS0w",
+      "name": "RunAPI"
+    },
+    {
+      "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
+      "name": "ApiKey.fun"
+    },
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB"
     }
   ]
 }

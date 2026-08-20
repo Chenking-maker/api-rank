@@ -66,6 +66,34 @@
     "status": "dead"
   },
   {
+    "url": "https://nekocode.com",
+    "domain": "nekocode.com",
+    "name": "NekoCode",
+    "reason": "标记为失效(alive=false)",
+    "status": "dead"
+  },
+  {
+    "url": "https://clauqe.com",
+    "domain": "clauqe.com",
+    "name": "ClauqeAI",
+    "reason": "标记为失效(alive=false)",
+    "status": "dead"
+  },
+  {
+    "url": "https://aok.ai",
+    "domain": "aok.ai",
+    "name": "AOK",
+    "reason": "标记为失效(alive=false)",
+    "status": "dead"
+  },
+  {
+    "url": "https://anyroute.com",
+    "domain": "anyroute.com",
+    "name": "AnyRoute",
+    "reason": "标记为失效(alive=false)",
+    "status": "dead"
+  },
+  {
     "url": "https://api.lingyaai.cn/register?aff=k8I8",
     "domain": "lingyaai.cn",
     "name": "灵芽API",
@@ -241,20 +269,6 @@
     "status": "dead"
   },
   {
-    "url": "https://nekocode.com",
-    "domain": "nekocode.com",
-    "name": "NekoCode",
-    "reason": "标记为失效(alive=false)",
-    "status": "dead"
-  },
-  {
-    "url": "https://clauqe.com",
-    "domain": "clauqe.com",
-    "name": "ClauqeAI",
-    "reason": "标记为失效(alive=false)",
-    "status": "dead"
-  },
-  {
     "url": "https://claudecn.com",
     "domain": "claudecn.com",
     "name": "ClaudeCN",
@@ -325,13 +339,6 @@
     "status": "dead"
   },
   {
-    "url": "https://aok.ai",
-    "domain": "aok.ai",
-    "name": "AOK",
-    "reason": "标记为失效(alive=false)",
-    "status": "dead"
-  },
-  {
     "url": "https://frontierintelligence.ai",
     "domain": "frontierintelligence.ai",
     "name": "Frontier Intelligence",
@@ -349,13 +356,6 @@
     "url": "https://coderelay.com",
     "domain": "coderelay.com",
     "name": "CodeRelay",
-    "reason": "标记为失效(alive=false)",
-    "status": "dead"
-  },
-  {
-    "url": "https://anyroute.com",
-    "domain": "anyroute.com",
-    "name": "AnyRoute",
     "reason": "标记为失效(alive=false)",
     "status": "dead"
   },
