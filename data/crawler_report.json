@@ -1,23 +1,30 @@
 {
-  "timestamp": "2026-08-21T06:32:30.501418",
-  "elapsed_seconds": 301.6,
+  "timestamp": "2026-08-22T06:34:12.943045",
+  "elapsed_seconds": 759.4,
   "summary": {
     "total_existing": 26,
     "total_existing_with_url": 26,
     "total_pending": 69,
-    "total_dead": 56,
+    "total_dead": 58,
     "new_discovered": 0,
-    "new_dead": 0,
-    "new_recovered": 42,
+    "new_dead": 2,
+    "new_recovered": 39,
     "scrapling_available": true
   },
   "new_discovered": [],
-  "new_dead": [],
-  "new_recovered": [
+  "new_dead": [
     {
-      "url": "https://poloapi.com",
-      "name": "PoloAPI"
+      "url": "https://www.dmxapi.com",
+      "name": "大模型API (DMXAPI)",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
     },
+    {
+      "url": "https://teamorouter.com",
+      "name": "TeamoRouter",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    }
+  ],
+  "new_recovered": [
     {
       "url": "https://b.ai",
       "name": "B.AI (波场)"
@@ -27,16 +34,8 @@
       "name": "灵芽API"
     },
     {
-      "url": "https://www.4stoken.cn",
-      "name": "4SToken"
-    },
-    {
       "url": "https://api.aiyungc.cn",
       "name": "方舟API"
-    },
-    {
-      "url": "https://shiyunapi.com/register?aff=mR1T",
-      "name": "诗云API"
     },
     {
       "url": "https://4sapi.com",

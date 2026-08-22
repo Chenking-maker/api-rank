@@ -94,13 +94,6 @@
     "status": "dead"
   },
   {
-    "url": "https://api.lingyaai.cn/register?aff=k8I8",
-    "domain": "lingyaai.cn",
-    "name": "灵芽API",
-    "reason": "标记为失效(alive=false)",
-    "status": "dead"
-  },
-  {
     "url": "https://www.4stoken.cn",
     "domain": "4stoken.cn",
     "name": "4SToken",
@@ -108,16 +101,39 @@
     "status": "dead"
   },
   {
-    "url": "https://api.aiyungc.cn",
-    "domain": "aiyungc.cn",
-    "name": "方舟API",
+    "url": "https://shiyunapi.com/register?aff=mR1T",
+    "domain": "shiyunapi.com",
+    "name": "诗云API",
     "reason": "标记为失效(alive=false)",
     "status": "dead"
   },
   {
-    "url": "https://shiyunapi.com/register?aff=mR1T",
-    "domain": "shiyunapi.com",
-    "name": "诗云API",
+    "url": "https://www.dmxapi.com",
+    "name": "大模型API (DMXAPI)",
+    "domain": "dmxapi.com",
+    "died_at": "2026-08-22T06:22:33.023776",
+    "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin",
+    "status": "dead"
+  },
+  {
+    "url": "https://teamorouter.com",
+    "name": "TeamoRouter",
+    "domain": "teamorouter.com",
+    "died_at": "2026-08-22T06:23:29.719787",
+    "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin",
+    "status": "dead"
+  },
+  {
+    "url": "https://api.lingyaai.cn/register?aff=k8I8",
+    "domain": "lingyaai.cn",
+    "name": "灵芽API",
+    "reason": "标记为失效(alive=false)",
+    "status": "dead"
+  },
+  {
+    "url": "https://api.aiyungc.cn",
+    "domain": "aiyungc.cn",
+    "name": "方舟API",
     "reason": "标记为失效(alive=false)",
     "status": "dead"
   },
