@@ -1,12 +1,253 @@
 {
-  "updated_at": "2026-08-17T06:36:10.796783",
+  "updated_at": "2026-08-22T06:34:12.941876",
   "recovered": [
     {
       "url": "https://b.ai",
       "name": "B.AI (波场)",
       "domain": "b.ai",
-      "recovered_at": "2026-08-17T06:33:43.582211"
+      "recovered_at": "2026-08-22T06:25:57.458080"
+    },
+    {
+      "url": "https://api.lingyaai.cn/register?aff=k8I8",
+      "name": "灵芽API",
+      "domain": "api.lingyaai.cn",
+      "recovered_at": "2026-08-22T06:26:56.304892"
+    },
+    {
+      "url": "https://api.aiyungc.cn",
+      "name": "方舟API",
+      "domain": "api.aiyungc.cn",
+      "recovered_at": "2026-08-22T06:27:56.883048"
+    },
+    {
+      "url": "https://4sapi.com",
+      "name": "星链4SAPI",
+      "domain": "4sapi.com",
+      "recovered_at": "2026-08-22T06:30:15.920754"
+    },
+    {
+      "url": "https://api.easyapi.com",
+      "name": "API易",
+      "domain": "api.easyapi.com",
+      "recovered_at": "2026-08-22T06:30:16.221060"
+    },
+    {
+      "url": "https://api.ikuncode.cc",
+      "name": "爱坤代码 (IKunCode)",
+      "domain": "api.ikuncode.cc",
+      "recovered_at": "2026-08-22T06:30:16.521323"
+    },
+    {
+      "url": "https://302.ai",
+      "name": "302.AI",
+      "domain": "302.ai",
+      "recovered_at": "2026-08-22T06:30:16.821585"
+    },
+    {
+      "url": "https://www.sssaicode.com/register?ref=SRVFVP",
+      "name": "SSSAICode",
+      "domain": "sssaicode.com",
+      "recovered_at": "2026-08-22T06:30:17.121849"
+    },
+    {
+      "url": "https://snakegpt.vip",
+      "name": "蛇GPT (SnakeGPT)",
+      "domain": "snakegpt.vip",
+      "recovered_at": "2026-08-22T06:30:17.422111"
+    },
+    {
+      "url": "https://gptcat.cc",
+      "name": "GPT猫 (GPTCat)",
+      "domain": "gptcat.cc",
+      "recovered_at": "2026-08-22T06:30:19.840480"
+    },
+    {
+      "url": "https://ai.huoyachat.com",
+      "name": "AI中文版",
+      "domain": "ai.huoyachat.com",
+      "recovered_at": "2026-08-22T06:30:21.552217"
+    },
+    {
+      "url": "https://web.apiplus.org",
+      "name": "APIPlus",
+      "domain": "web.apiplus.org",
+      "recovered_at": "2026-08-22T06:30:22.150934"
+    },
+    {
+      "url": "https://xdhdancer.top",
+      "name": "产灵API",
+      "domain": "xdhdancer.top",
+      "recovered_at": "2026-08-22T06:30:23.757180"
+    },
+    {
+      "url": "https://bewildcard.com",
+      "name": "万卡API (WildCard)",
+      "domain": "bewildcard.com",
+      "recovered_at": "2026-08-22T06:30:24.341610"
+    },
+    {
+      "url": "https://doro.lol/register?aff=0LSF",
+      "name": "Doro API",
+      "domain": "doro.lol",
+      "recovered_at": "2026-08-22T06:30:24.797269"
+    },
+    {
+      "url": "https://qianfan.baidubce.com",
+      "name": "百度千帆",
+      "domain": "qianfan.baidubce.com",
+      "recovered_at": "2026-08-22T06:30:28.707654"
+    },
+    {
+      "url": "https://fishxcode.com",
+      "name": "鱼代码 (FishXCode)",
+      "domain": "fishxcode.com",
+      "recovered_at": "2026-08-22T06:30:29.333593"
+    },
+    {
+      "url": "https://apimart.ai",
+      "name": "API集市 (API Mart)",
+      "domain": "apimart.ai",
+      "recovered_at": "2026-08-22T06:30:30.067737"
+    },
+    {
+      "url": "https://console.mistral.ai",
+      "name": "Mistral AI",
+      "domain": "console.mistral.ai",
+      "recovered_at": "2026-08-22T06:30:31.588112"
+    },
+    {
+      "url": "https://console.groq.com",
+      "name": "Groq",
+      "domain": "console.groq.com",
+      "recovered_at": "2026-08-22T06:30:32.220846"
+    },
+    {
+      "url": "https://suirenai.com/register?aff=2MR82HWMYJVX",
+      "name": "随人AI",
+      "domain": "suirenai.com",
+      "recovered_at": "2026-08-22T06:30:33.639457"
+    },
+    {
+      "url": "https://unity2.ai/register?ref=bayLaABG",
+      "name": "Unity2.AI",
+      "domain": "unity2.ai",
+      "recovered_at": "2026-08-22T06:30:34.149677"
+    },
+    {
+      "url": "https://anpin.ai",
+      "name": "AnPin AI",
+      "domain": "anpin.ai",
+      "recovered_at": "2026-08-22T06:30:36.726459"
+    },
+    {
+      "url": "https://claudecn.com",
+      "name": "ClaudeCN",
+      "domain": "claudecn.com",
+      "recovered_at": "2026-08-22T06:30:39.704102"
+    },
+    {
+      "url": "https://toknex.com",
+      "name": "Toknex",
+      "domain": "toknex.com",
+      "recovered_at": "2026-08-22T06:30:40.094040"
+    },
+    {
+      "url": "https://sevnx.com",
+      "name": "SevnX",
+      "domain": "sevnx.com",
+      "recovered_at": "2026-08-22T06:30:40.516275"
+    },
+    {
+      "url": "https://sudocode.run/register?aff=G7iU",
+      "name": "SudoCode",
+      "domain": "sudocode.run",
+      "recovered_at": "2026-08-22T06:30:41.454132"
+    },
+    {
+      "url": "https://luminai.com",
+      "name": "Lumin AI",
+      "domain": "luminai.com",
+      "recovered_at": "2026-08-22T06:30:42.061925"
+    },
+    {
+      "url": "https://claudeapi.net",
+      "name": "Claude API",
+      "domain": "claudeapi.net",
+      "recovered_at": "2026-08-22T06:30:45.668912"
+    },
+    {
+      "url": "https://muskai.com",
+      "name": "MuskAI",
+      "domain": "muskai.com",
+      "recovered_at": "2026-08-22T06:30:46.059732"
+    },
+    {
+      "url": "https://modcon.ai",
+      "name": "ModCon",
+      "domain": "modcon.ai",
+      "recovered_at": "2026-08-22T06:30:46.576858"
+    },
+    {
+      "url": "https://switchbase.com",
+      "name": "SwitchBase",
+      "domain": "switchbase.com",
+      "recovered_at": "2026-08-22T06:30:47.206881"
+    },
+    {
+      "url": "https://zhihuiapi.com",
+      "name": "智惠API",
+      "domain": "zhihuiapi.com",
+      "recovered_at": "2026-08-22T06:30:49.476050"
+    },
+    {
+      "url": "https://frontierintelligence.ai",
+      "name": "Frontier Intelligence",
+      "domain": "frontierintelligence.ai",
+      "recovered_at": "2026-08-22T06:30:52.184069"
+    },
+    {
+      "url": "https://derouter.com",
+      "name": "DeRouter",
+      "domain": "derouter.com",
+      "recovered_at": "2026-08-22T06:30:52.648527"
+    },
+    {
+      "url": "https://coderelay.com",
+      "name": "CodeRelay",
+      "domain": "coderelay.com",
+      "recovered_at": "2026-08-22T06:30:53.122656"
+    },
+    {
+      "url": "https://runapi.co/register?aff=mS0w",
+      "name": "RunAPI",
+      "domain": "runapi.co",
+      "recovered_at": "2026-08-22T06:30:53.745704"
+    },
+    {
+      "url": "https://apikey.fun/register?aff=68W3Q3WELNBD",
+      "name": "ApiKey.fun",
+      "domain": "apikey.fun",
+      "recovered_at": "2026-08-22T06:30:54.216382"
+    },
+    {
+      "url": "https://openai-sb.com",
+      "name": "OpenAI-SB",
+      "domain": "openai-sb.com",
+      "recovered_at": "2026-08-22T06:30:57.444281"
     }
   ],
-  "new_dead": []
+  "new_dead": [
+    {
+      "url": "https://www.dmxapi.com",
+      "name": "大模型API (DMXAPI)",
+      "domain": "dmxapi.com",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    },
+    {
+      "url": "https://teamorouter.com",
+      "name": "TeamoRouter",
+      "domain": "teamorouter.com",
+      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    }
+  ]
 }
