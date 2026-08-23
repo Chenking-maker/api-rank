@@ -5314,8 +5314,8 @@
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
     },
     {
-        "url": "https://teamorouter.com/?i=ad992e768a",
-        "domain": "teamorouter.com",
+        "url": "https://teamorouter.cn/?i=ad992e768a",
+        "domain": "teamorouter.cn",
         "name": "TeamoRouter",
         "description": "DeepSeek V4 + Codex 双引擎驱动的全能 API 中转站。一个 API Key 调用 Claude、GPT、Gemini、DeepSeek 等全线模型，首次付费返 10%，好友首次付费即返现到账。支持高并发请求，响应仅 0.52s，适合开发者和团队高频调用。",
         "models": [
