@@ -409,7 +409,7 @@
                 "cls": ""
             }
         ],
-        "score": 9.52,
+        "score": 9.66,
         "price": "medium",
         "response_time": 0.45,
         "alive": true,
@@ -819,7 +819,7 @@
                 "cls": ""
             }
         ],
-        "score": 9.3,
+        "score": 9.58,
         "price": "low",
         "response_time": 0.86,
         "alive": true,
@@ -889,7 +889,7 @@
         ],
         "price": "medium",
         "free_amount": "",
-        "score": 9.28,
+        "score": 9.64,
         "response_time": 0.95,
         "alive": true,
         "last_check": "2026-07-06",
@@ -5377,7 +5377,7 @@
         ],
         "price": "medium",
         "free_amount": "68元token额度",
-        "score": 9.78,
+        "score": 9.63,
         "response_time": 0.68,
         "alive": true,
         "last_check": "2026-08-10",
@@ -5468,7 +5468,7 @@
         ],
         "price": "free",
         "free_amount": "注册送5000额度",
-        "score": 9.64,
+        "score": 9.71,
         "response_time": 0.75,
         "alive": true,
         "last_check": "2026-08-10",
@@ -5961,7 +5961,7 @@
         ],
         "price": "medium",
         "free_amount": "",
-        "score": 9.71,
+        "score": 9.82,
         "response_time": 0.48,
         "alive": true,
         "last_check": "2026-08-11",
@@ -6256,6 +6256,240 @@
             {
                 "label": "口碑",
                 "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api2.laozhang.ai/register/?aff_code=NkYN",
+        "domain": "api2.laozhang.ai",
+        "name": "老张API (LaoZhang API)",
+        "description": "老牌API中转站，提供GPT-5、Claude、Gemini、Grok等全模型接口分发服务。接入简单，消费透明，官方渠道API资源，加密传输，专业运营团队保障服务稳定性和可用性。支持请求日志、按量付费，适合生产团队接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok"
+        ],
+        "features": [
+            "multi",
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "$0.5体验券",
+        "score": 9.45,
+        "response_time": 0.55,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "老牌运营",
+            "全模型覆盖",
+            "生产级稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "全模型覆盖",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "$0.5体验券",
+                "cls": "accent"
+            },
+            {
+                "label": "运营",
+                "value": "老牌可靠",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://aihubmix.com/?aff=U9CV",
+        "domain": "aihubmix.com",
+        "name": "推理时代AIHubMix",
+        "description": "一个接口路由所有大语言模型，支持500+模型，包括文本、图片/视频生成、向量嵌入、Rerank、TTS、STT、OCR等主流模型全覆盖。统一OpenAI兼容接口，代码零改动即可平滑切换。按量付费，无会员无包月，支持OpenAI、Google Gemini、Anthropic多种兼容格式。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "grok",
+            "qwen",
+            "kemi",
+            "glm"
+        ],
+        "features": [
+            "multi",
+            "enterprise"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.74,
+        "response_time": 0.42,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "500+模型",
+            "统一接口",
+            "按量付费"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "500+模型",
+                "cls": "green"
+            },
+            {
+                "label": "兼容",
+                "value": "多协议接入",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量付费",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://zivv.pro/register?invite=1c91881d",
+        "domain": "zivv.pro",
+        "name": "Zivv",
+        "description": "主打稳定的AI API中转站，自建站点、三协议自主开发、非套壳非开源。一手CCMAX等号池自控，100%满血官方模型，人民币1:1结算。7日可用率97.3%，平均延迟1.9s，不掉线、不限流、不涨价，适合高频调用场景。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "adobe",
+            "codex"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.38,
+        "response_time": 1.9,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "极致稳定",
+            "满血官方",
+            "1:1结算"
+        ],
+        "display_metrics": [
+            {
+                "label": "稳定",
+                "value": "97.3%可用",
+                "cls": "green"
+            },
+            {
+                "label": "品质",
+                "value": "100%满血",
+                "cls": "accent"
+            },
+            {
+                "label": "结算",
+                "value": "人民币1:1",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://www.ddshub.cc/register?aff=YP3QF3YV5VYX",
+        "domain": "ddshub.cc",
+        "name": "呆呆兽DDSHub",
+        "description": "专注Claude/Codex的API中转站，提供兼容Anthropic原生协议与OpenAI SDK格式的国内直连接口。Claude系列低至3折，Codex系列低至1折，满血模型保障。支持支付宝/微信支付，可开发票，提供企业分组管理，适合企业级调用和开发者高频使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "codex"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "cheap",
+        "free_amount": "",
+        "score": 9.28,
+        "response_time": 0.48,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "Claude专精",
+            "低至1折",
+            "企业友好"
+        ],
+        "display_metrics": [
+            {
+                "label": "专精",
+                "value": "Claude/Codex",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "低至1折",
+                "cls": "accent"
+            },
+            {
+                "label": "服务",
+                "value": "可开发票",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://hao.ai/invite/15LGCD17",
+        "domain": "hao.ai",
+        "name": "HaoAI",
+        "description": "高速稳定的AI API中转站，支持Codex WebSocket长连接，请求级账单逐笔可查。支持Claude/GPT/Gemini等主流模型，用量、延迟、费用全透明。配置简单，修改base_url即可接入，兼容主流IDE如Cursor、VS Code，适合开发者快速集成。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "codex"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.42,
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "WebSocket长连接",
+            "请求级账单",
+            "高速稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "技术",
+                "value": "WebSocket",
+                "cls": "green"
+            },
+            {
+                "label": "透明",
+                "value": "逐笔可查",
+                "cls": "accent"
+            },
+            {
+                "label": "速度",
+                "value": "高速接入",
                 "cls": ""
             }
         ],
