@@ -5181,7 +5181,7 @@
 
                 <li><a href="about.html">关于本站</a></li>
 
-                <li><a href="dead-sites.html">⚠ 失效站点</a></li>
+                <li><a href="news.html">相关新闻</a></li>
 
 
 
@@ -5422,9 +5422,9 @@
 
 
 
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: stretch;">
 
-                        <button class="submit-btn finder-btn" onclick="startFinder()" style="flex: 1; min-width: 200px;">
+                        <button class="submit-btn finder-btn" onclick="startFinder()" style="flex: 1; min-width: 180px; display: flex; align-items: center; justify-content: center; gap: 8px;">
 
                             <span>🔍</span>
 
@@ -5432,11 +5432,13 @@
 
                         </button>
 
-                        <button class="submit-btn" onclick="randomPick()" id="randomPickBtn" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s;">
+                        <button onclick="randomPick()" id="randomPickBtn" style="flex: 1; min-width: 180px; background: var(--bg-card); border: 2px dashed var(--accent); color: var(--text-primary); padding: 12px 24px; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s; position: relative; overflow: hidden;">
 
-                            <span>🎲</span>
+                            <span style="font-size: 20px;">🎁</span>
 
-                            <span id="randomPickText">随机盲选一个</span>
+                            <span id="randomPickText">随机盲盒·试试手气</span>
+
+                            <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(74,144,217,0.15), transparent); transition: left 0.6s;" id="randomPickShine"></span>
 
                         </button>
 
@@ -7900,23 +7902,43 @@
 
             const candidates = stationDatabase.filter(s => s.link && (s.link.includes('aff=') || s.link.includes('invite=') || s.link.includes('ref=') || s.link.includes('aff_code=') || s.link.includes('code=')));
 
-            
+
 
             const btn = document.getElementById('randomPickBtn');
 
             const btnText = document.getElementById('randomPickText');
 
+            const shine = document.getElementById('randomPickShine');
+
             const originalText = btnText.textContent;
 
-            
+            const originalBorder = btn.style.border;
+
+
 
             // 禁用按钮
 
             btn.style.pointerEvents = 'none';
 
-            btn.style.opacity = '0.8';
+            btn.style.opacity = '0.9';
 
-            
+
+
+            // 添加闪光循环
+
+            let shineCount = 0;
+
+            const shineInterval = setInterval(() => {
+
+                shine.style.left = '100%';
+
+                setTimeout(() => { shine.style.left = '-100%'; }, 50);
+
+                shineCount++;
+
+            }, 400);
+
+
 
             // 滚动动画效果
 
@@ -7930,19 +7952,23 @@
 
                 const randomStation = candidates[randomIdx];
 
-                btnText.textContent = '🎲 ' + randomStation.name;
+                btnText.textContent = '🎁 ' + randomStation.name;
 
-                btn.style.transform = 'scale(' + (1 + Math.sin(count * 0.5) * 0.05) + ') rotate(' + (Math.sin(count * 0.3) * 2) + 'deg)';
+                btn.style.transform = 'scale(' + (1 + Math.sin(count * 0.5) * 0.03) + ')';
+
+                btn.style.border = '2px solid ' + (count % 2 === 0 ? 'var(--accent)' : 'var(--green)');
 
                 count++;
 
-                
+
 
                 if (count >= totalCount) {
 
                     clearInterval(interval);
 
-                    
+                    clearInterval(shineInterval);
+
+
 
                     // 最终选中
 
@@ -7950,17 +7976,21 @@
 
                     const winner = candidates[finalIdx];
 
-                    
 
-                    btnText.textContent = '🎉 恭喜选中：' + winner.name;
 
-                    btn.style.transform = 'scale(1) rotate(0)';
+                    btnText.textContent = '🎉 恭喜抽中：' + winner.name;
+
+                    btn.style.transform = 'scale(1)';
+
+                    btn.style.border = '2px solid var(--green)';
 
                     btn.style.pointerEvents = '';
 
                     btn.style.opacity = '';
 
-                    
+                    shine.style.left = '-100%';
+
+
 
                     // 显示结果
 
@@ -7968,13 +7998,15 @@
 
                     displayFinderResults(results, true);
 
-                    
 
-                    // 3秒后恢复按钮文字
+
+                    // 5秒后恢复按钮文字和样式
 
                     setTimeout(() => {
 
                         btnText.textContent = originalText;
+
+                        btn.style.border = originalBorder;
 
                     }, 5000);
 
@@ -12561,6 +12593,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // 初始化广告轮播
         initAdCarousel('left');
         initAdCarousel('right');
+
+        // 从about页面跳转来自动打开finder
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('finder') === '1') {
+                setTimeout(function() { openSectionModal('finderModal'); }, 500);
+            }
+        })();
 
     </script>
 
