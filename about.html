@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F7FA">
+    <title>关于本站 - API排行榜 | AI API中转站性价比实时排行</title>
+    <meta name="description" content="API排行榜是什么？怎么用？一份完整的介绍和使用指南，帮你快速上手AI API中转站排行榜。">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'light';
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #F5F7FA;
+            --bg-secondary: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #F0F4F8;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(0, 0, 0, 0.15);
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --accent: #4A90D9;
+            --accent-glow: rgba(74, 144, 217, 0.2);
+            --green: #10B981;
+            --yellow: #F59E0B;
+            --red: #EF4444;
+            --navbar-bg: rgba(255,255,255,0.85);
+            --shadow: rgba(0,0,0,0.06);
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0F1117;
+            --bg-secondary: #1A1D28;
+            --bg-card: #1A1D28;
+            --bg-card-hover: #242838;
+            --border: rgba(255,255,255,0.08);
+            --border-hover: rgba(255,255,255,0.18);
+            --text-primary: #E8EAF0;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --accent: #5B9FE8;
+            --accent-glow: rgba(91, 159, 232, 0.25);
+            --green: #34D399;
+            --yellow: #FBBF24;
+            --red: #F87171;
+            --navbar-bg: rgba(15,17,23,0.85);
+            --shadow: rgba(0,0,0,0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Navbar */
+        .navbar {
+            position: sticky; top: 0; z-index: 1000;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: var(--navbar-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+        .navbar .container {
+            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: var(--accent); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 18px;
+        }
+        .logo-text { font-size: 20px; font-weight: 800; color: var(--text-primary); }
+        .logo-text span { color: var(--accent); }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 8px; }
+        .nav-links a {
+            color: #000; text-decoration: none; padding: 8px 14px;
+            border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.2s;
+        }
+        [data-theme="dark"] .nav-links a { color: var(--text-primary); }
+        .nav-links a:hover { background: var(--bg-card-hover); text-decoration: none; }
+        .theme-toggle {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            width: 36px; height: 36px; cursor: pointer; font-size: 16px;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+        }
+        .mobile-menu-btn {
+            display: none; background: none; border: none; cursor: pointer;
+            flex-direction: column; gap: 4px; padding: 8px;
+        }
+        .mobile-menu-btn span {
+            display: block; width: 22px; height: 2px;
+            background: var(--text-primary); border-radius: 2px;
+        }
+
+        /* Main */
+        .about-hero {
+            max-width: 800px; margin: 0 auto; padding: 60px 20px 40px; text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 36px; font-weight: 800; margin-bottom: 16px;
+        }
+        .about-hero p {
+            font-size: 18px; color: var(--text-secondary); margin-bottom: 8px;
+        }
+        .about-content {
+            max-width: 800px; margin: 0 auto; padding: 0 20px 60px;
+        }
+        .section {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 32px; margin-bottom: 24px; transition: all 0.3s;
+        }
+        .section:hover { border-color: var(--border-hover); }
+        .section h2 {
+            font-size: 24px; font-weight: 700; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section h3 {
+            font-size: 18px; font-weight: 600; margin: 20px 0 10px;
+            color: var(--accent);
+        }
+        .section p { color: var(--text-secondary); margin-bottom: 12px; font-size: 15px; }
+        .section ul { padding-left: 20px; margin-bottom: 12px; }
+        .section li { color: var(--text-secondary); margin-bottom: 8px; font-size: 15px; }
+        .section strong { color: var(--text-primary); font-weight: 600; }
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px; margin-top: 20px;
+        }
+        .feature-card {
+            background: var(--bg-primary); border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; text-align: center; transition: all 0.3s;
+        }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .feature-card .icon { font-size: 32px; margin-bottom: 10px; }
+        .feature-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .feature-card p { font-size: 13px; color: var(--text-muted); margin: 0; }
+        .step-list { counter-reset: step; list-style: none; padding: 0; }
+        .step-list li {
+            counter-increment: step; position: relative; padding-left: 50px; margin-bottom: 20px;
+        }
+        .step-list li::before {
+            content: counter(step); position: absolute; left: 0; top: 0;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--accent); color: #fff; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; font-size: 14px;
+        }
+        .bookmark-box {
+            background: linear-gradient(135deg, rgba(74,144,217,0.08), rgba(16,185,129,0.08));
+            border: 2px solid var(--accent); border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .bookmark-box h2 { justify-content: center; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 24px; background: var(--accent); color: #fff;
+            border-radius: 8px; font-weight: 600; text-decoration: none; transition: opacity 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.85; text-decoration: none; }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 24px; background: var(--bg-card); color: var(--text-primary);
+            border: 1px solid var(--border); border-radius: 8px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s; margin-left: 10px;
+        }
+        .btn-secondary:hover { border-color: var(--accent); text-decoration: none; }
+        .donation-box {
+            background: var(--bg-primary); border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; margin-top: 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center;
+        }
+        .donation-box .usdt-addr {
+            background: var(--bg-card); padding: 6px 12px; border-radius: 6px;
+            border: 1px solid var(--border); font-family: monospace; font-size: 13px;
+            cursor: pointer; user-select: all;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.mobile-open { display: flex; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-card); padding: 20px; border-bottom: 1px solid var(--border); gap: 4px; }
+            .mobile-menu-btn { display: flex; }
+            .about-hero h1 { font-size: 26px; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div class="logo-text">API<span>排行榜</span></div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#ranking">排行榜</a></li>
+                <li><a href="creative-tools.html">🎨 绘图/视频</a></li>
+                <li><a href="index.html#guide">选站指南</a></li>
+                <li><a href="about.html">关于本站</a></li>
+                <li><a href="dead-sites.html">⚠ 失效站点</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
+                <li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <h1>关于 API排行榜</h1>
+        <p>帮你找到性价比最高的 AI API 中转服务</p>
+    </section>
+
+    <!-- Content -->
+    <div class="about-content">
+
+        <!-- 什么是API排行榜 -->
+        <div class="section">
+            <h2>📋 API排行榜是什么？</h2>
+            <p><strong>API排行榜</strong>是一个专门收录和评测 AI API 中转站的平台。我们对市面上所有的 Claude/GPT/Gemini/DeepSeek API 中转服务进行多维度评分和实时排行，帮助开发者、企业和个人用户快速找到最适合自己的 API 中转站。</p>
+            <p>我们不仅提供评分排名，还附带每个站点的<strong>邀请链接</strong>，让你注册即享优惠。所有评分保留两位小数，确保排名精准区分。</p>
+
+            <h3>我们评测的维度</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h4>响应速度</h4>
+                    <p>API延迟测试</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💰</div>
+                    <h4>价格水平</h4>
+                    <p>按量/包月对比</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡️</div>
+                    <h4>稳定性</h4>
+                    <p>可用率监测</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✅</div>
+                    <h4>模型真实性</h4>
+                    <p>验真检测</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📞</div>
+                    <h4>售后服务</h4>
+                    <p>客服响应评价</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h4>更新频率</h4>
+                    <p>新模型同步速度</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 怎么用 -->
+        <div class="section">
+            <h2>🎮 怎么玩怎么用？</h2>
+            <ol class="step-list">
+                <li>
+                    <strong>查看排行榜</strong>：打开首页，默认按评分从高到低展示所有中转站。每张卡片包含站点名称、评分、特色标签、介绍和访问按钮。
+                </li>
+                <li>
+                    <strong>使用快速选站</strong>：点击导航栏的「🎯 快速选站（适合你）」，填写你的需求（模型、预算、场景等），系统会智能推荐最适合的5个中转站。<strong>完全免费、无限次使用。</strong>
+                </li>
+                <li>
+                    <strong>随机盲选</strong>：在快速选站弹窗中，点击「🎲 随机盲选一个」按钮，系统会随机为你推荐一个中转站，带动画效果，有趣又实用。
+                </li>
+                <li>
+                    <strong>筛选模型</strong>：在排行榜上方点击模型标签（Claude / GPT / Gemini / DeepSeek 等），快速筛选支持你所需模型的中转站。
+                </li>
+                <li>
+                    <strong>搜索站点</strong>：使用搜索框输入站点名称，实时搜索定位。快捷键 <strong>Ctrl + K</strong> 可快速聚焦搜索框。
+                </li>
+                <li>
+                    <strong>点击访问</strong>：找到满意的中转站后，点击「立即访问 →」按钮，通过邀请链接注册即可享受优惠。
+                </li>
+                <li>
+                    <strong>查看失效站</strong>：导航栏点击「⚠ 失效站点」查看已失效的中转站，避免踩坑。失效站点也附带可点击链接，方便确认是否恢复。
+                </li>
+            </ol>
+        </div>
+
+        <!-- 核心功能 -->
+        <div class="section">
+            <h2>✨ 核心功能</h2>
+            <ul>
+                <li><strong>实时排行榜</strong>：139+ 中转站按综合评分排序，评分保留2位小数确保精准排名</li>
+                <li><strong>快速选站器</strong>：免费智能匹配，根据你的需求推荐最合适的5个站点</li>
+                <li><strong>随机盲选</strong>：选困难症？点一下随机给你推荐一个，带动效</li>
+                <li><strong>模型筛选</strong>：按 Claude / GPT / Gemini / DeepSeek / 国产模型 等快速筛选</li>
+                <li><strong>实时搜索</strong>：输入站点名称即时搜索，Ctrl+K 快捷键</li>
+                <li><strong>失效站点追踪</strong>：已失效站点单独展示，带可点击链接方便确认</li>
+                <li><strong>深色/浅色模式</strong>：自动跟随系统或手动切换，护眼又好看</li>
+                <li><strong>在线绘图/视频专区</strong>：创意工具页面，支持多种AI绘图和视频生成模型</li>
+            </ul>
+        </div>
+
+        <!-- 收藏提示 -->
+        <div class="section bookmark-box">
+            <h2>⭐ 请收藏本网页</h2>
+            <p style="text-align:center; margin-bottom:20px;">把本站加入书签，随时打开就能查看最新排行榜、快速选站、随机盲选，找到最划算的 AI API 中转服务。</p>
+            <div style="text-align:center;">
+                <a href="index.html" class="btn-primary">前往排行榜 →</a>
+                <a href="javascript:void(0)" class="btn-secondary" onclick="bookmarkSite()">⭐ 加入收藏夹</a>
+            </div>
+        </div>
+
+        <!-- 支持我们 -->
+        <div class="section">
+            <h2>💛 支持我们</h2>
+            <p>本站完全免费运营，如果你觉得有帮助，可以通过以下方式支持我们：</p>
+            <div class="donation-box">
+                <a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" class="btn-primary">⭐ Star GitHub仓库</a>
+                <span style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:14px;">
+                    <span style="font-weight:600;">USDT (BEP20):</span>
+                    <span class="usdt-addr" onclick="navigator.clipboard.writeText('0x8F459Ac9A44206aa6E49Ca24Ea8a091f080FBE95');alert('USDT地址已复制')" title="点击复制">0x8F459Ac9A44206aa6E49Ca24Ea8a091f080FBE95</span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            var current = document.documentElement.getAttribute('data-theme');
+            var newTheme = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.getElementById('themeToggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+        function toggleMobileMenu() {
+            var nav = document.getElementById('navLinks');
+            nav.classList.toggle('mobile-open');
+        }
+        function bookmarkSite() {
+            if (navigator.userAgent.indexOf('Chrome') !== -1 || navigator.userAgent.indexOf('Safari') !== -1) {
+                try {
+                    window.external.AddFavorite(window.location.href, document.title);
+                } catch(e) {
+                    alert('请按 Ctrl+D (Mac: Cmd+D) 手动添加书签');
+                }
+            } else if (window.sidebar && window.sidebar.addPanel) {
+                window.sidebar.addPanel(document.title, window.location.href, '');
+            } else {
+                alert('请按 Ctrl+D (Mac: Cmd+D) 手动添加书签');
+            }
+        }
+        (function() {
+            var t = localStorage.getItem('theme') || 'light';
+            var btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        })();
+    </script>
+</body>
+</html>
