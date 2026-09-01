@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F7FA">
+    <title>相关新闻 - AI API中转站行业资讯 | API排行榜 2026</title>
+    <meta name="description" content="AI API中转站行业新闻与深度文章，涵盖API中转站是什么、和官方API区别、优缺点、收费模式、数据安全、报错排查等热门话题，帮你看懂中转站。">
+    <meta name="keywords" content="AI API中转站,API中转站是什么,API中转站优缺点,API中转站收费,中转站报错排查,API代理,Claude API,GPT API,DeepSeek API">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'light';
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #F5F7FA; --bg-secondary: #FFFFFF; --bg-card: #FFFFFF;
+            --bg-card-hover: #F0F4F8; --border: rgba(0,0,0,0.08);
+            --border-hover: rgba(0,0,0,0.15);
+            --text-primary: #1A1A2E; --text-secondary: #6B7280; --text-muted: #9CA3AF;
+            --accent: #4A90D9; --accent-glow: rgba(74,144,217,0.2);
+            --green: #10B981; --yellow: #F59E0B; --red: #EF4444;
+            --navbar-bg: rgba(255,255,255,0.85); --shadow: rgba(0,0,0,0.06);
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0F1117; --bg-secondary: #1A1D28; --bg-card: #1A1D28;
+            --bg-card-hover: #242838; --border: rgba(255,255,255,0.08);
+            --border-hover: rgba(255,255,255,0.18);
+            --text-primary: #E8EAF0; --text-secondary: #9CA3AF; --text-muted: #6B7280;
+            --accent: #5B9FE8; --accent-glow: rgba(91,159,232,0.25);
+            --green: #34D399; --yellow: #FBBF24; --red: #F87171;
+            --navbar-bg: rgba(15,17,23,0.85); --shadow: rgba(0,0,0,0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; transition: background 0.3s,color 0.3s; }
+        a { color: var(--accent); text-decoration: none; }
+
+        .navbar { position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: var(--navbar-bg); border-bottom: 1px solid var(--border); padding: 12px 0; }
+        .navbar .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; }
+        .logo-text { font-size: 20px; font-weight: 800; color: var(--text-primary); }
+        .logo-text span { color: var(--accent); }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 4px; }
+        .nav-links a { color: #000; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+        [data-theme="dark"] .nav-links a { color: var(--text-primary); }
+        .nav-links a:hover { background: var(--bg-card-hover); }
+        .theme-toggle { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 8px; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+
+        .page-header { max-width: 800px; margin: 0 auto; padding: 50px 20px 30px; text-align: center; }
+        .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+        .page-header p { font-size: 16px; color: var(--text-secondary); }
+
+        .news-container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .news-grid { display: flex; flex-direction: column; gap: 16px; }
+        .news-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+        .news-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px var(--shadow); }
+        .news-card .news-tag { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+        .news-card .news-tag.blue { background: rgba(74,144,217,0.1); color: var(--accent); }
+        .news-card .news-tag.green { background: rgba(16,185,129,0.1); color: var(--green); }
+        .news-card .news-tag.orange { background: rgba(249,115,22,0.1); color: #F97316; }
+        .news-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); transition: color 0.2s; }
+        .news-card:hover h2 { color: var(--accent); }
+        .news-card .news-date { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+        .news-card .news-summary { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+        .news-card .news-read-more { margin-top: 12px; font-size: 14px; color: var(--accent); font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+        .article-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: flex-start; justify-content: center; overflow-y: auto; padding: 40px 20px; }
+        .article-modal.active { display: flex; }
+        .article-content { background: var(--bg-card); border-radius: 16px; max-width: 800px; width: 100%; padding: 40px; position: relative; }
+        .article-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: var(--bg-primary); border: 1px solid var(--border); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+        .article-content h1 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+        .article-content .article-date { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .article-content h2 { font-size: 20px; font-weight: 700; margin: 24px 0 12px; color: var(--accent); }
+        .article-content h3 { font-size: 17px; font-weight: 600; margin: 20px 0 8px; }
+        .article-content p { font-size: 15px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.8; }
+        .article-content ul { padding-left: 20px; margin-bottom: 14px; }
+        .article-content li { font-size: 15px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.8; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content code { background: var(--bg-primary); padding: 2px 6px; border-radius: 4px; font-size: 13px; font-family: monospace; }
+        .article-footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; }
+        .article-footer a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; background: var(--accent); color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.mobile-open { display: flex; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-card); padding: 20px; border-bottom: 1px solid var(--border); }
+            .mobile-menu-btn { display: flex; }
+            .page-header h1 { font-size: 24px; }
+            .article-content { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo"><div class="logo-icon">A</div><div class="logo-text">API<span>排行榜</span></div></a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html#ranking">排行榜</a></li>
+            <li><a href="creative-tools.html">🎨 在线绘图/视频专区</a></li>
+            <li><a href="index.html?finder=1">🎯 快速选站（适合你）</a></li>
+            <li><a href="index.html#guide">选站指南</a></li>
+            <li><a href="about.html">关于本站</a></li>
+            <li><a href="news.html">相关新闻</a></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
+            <li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="page-header">
+    <h1>📰 相关新闻</h1>
+    <p>AI API中转站行业资讯 · 深度解析 · 帮你看懂中转站</p>
+</section>
+
+<div class="news-container">
+    <div class="news-grid" id="newsGrid"></div>
+</div>
+
+<div class="article-modal" id="articleModal">
+    <div class="article-content" id="articleContent">
+        <button class="article-close" onclick="closeArticle()">✕</button>
+        <div id="articleBody"></div>
+    </div>
+</div>
+
+<script>
+var articles = [
+    {
+        title: "API中转站是什么？接口转发、代理调试完整详解",
+        date: "2026-09-01",
+        tag: "blue", tagText: "基础科普",
+        summary: "API中转站是介于客户端与目标API服务之间的中间层代理服务。它通过统一入口将用户请求转发到对应的AI大模型，相当于用户与AI之间的智能翻译+路由器。",
+        content: '<h1>API中转站是什么？接口转发、代理调试完整详解</h1><div class="article-date">2026-09-01</div><p><strong>API中转站</strong>（API Proxy / API Gateway）是介于客户端（用户应用）与目标API服务（如大模型官方API）之间的中间层代理服务。它通过统一的入口，将用户的请求转发到对应的目标API，并将结果返回给用户，相当于用户与AI大模型之间的"智能翻译+路由器"。</p><h2>一、核心工作原理</h2><p>当用户调用API中转站时，流程如下：</p><ul><li>用户应用发送请求到中转站的统一API地址</li><li>中转站接收请求，进行鉴权、限流、格式转换</li><li>中转站将请求转发到目标大模型（如Claude、GPT、Gemini）</li><li>目标模型返回结果，中转站再将结果回传给用户</li></ul><h2>二、为什么需要API中转站？</h2><p>1. <strong>网络加速</strong>：国内用户直连OpenAI等海外API延迟高、不稳定，中转站提供国内节点加速。</p><p>2. <strong>统一管理</strong>：一个接口调用多个大模型，无需单独适配每个厂商的SDK。</p><p>3. <strong>成本优化</strong>：中转站通过批量采购获得更低价格，转嫁给用户。</p><p>4. <strong>兼容适配</strong>：统一为OpenAI兼容格式，代码零改动即可切换模型。</p><h2>三、常见使用场景</h2><ul><li>使用Claude Code、Cursor等编程工具调用AI</li><li>企业应用集成多个AI模型</li><li>个人开发者低成本使用GPT/Claude</li><li>国内直连海外AI模型，无需翻墙</li></ul><div class="article-footer"><a href="index.html">前往排行榜选站 →</a></div>'
+    },
+    {
+        title: "AI中转站和官方API接口有什么区别？",
+        date: "2026-09-01",
+        tag: "blue", tagText: "基础科普",
+        summary: "AI中转站与官方API在成本、稳定性、合规性及适用场景上存在显著区别。官方API是直连服务，中转站是中间代理服务，各有优劣。",
+        content: '<h1>AI中转站和官方API接口有什么区别？</h1><div class="article-date">2026-09-01</div><p><strong>AI中转站</strong>（API中转站/代理）与<strong>官方API接口</strong>在本质、成本、稳定性、合规性及适用场景上存在显著区别。官方API是模型厂商直接提供的"直连"服务，而AI中转站是介于用户与官方API之间的"中间代理"服务。</p><h2>一、成本对比</h2><ul><li><strong>官方API</strong>：按官方原价计费，价格透明，无中间差价</li><li><strong>中转站</strong>：通常比官方价格更低（低至3-7折），通过批量采购获得优惠</li><li><strong>注意</strong>：部分中转站可能存在隐形消费或"跑路"风险</li></ul><h2>二、稳定性对比</h2><ul><li><strong>官方API</strong>：SLA保障高，可用率通常99.9%+</li><li><strong>中转站</strong>：稳定性取决于中转站的运营能力和上游账号池质量，波动较大</li></ul><h2>三、网络访问</h2><ul><li><strong>官方API</strong>：海外服务器，国内访问需翻墙或使用CDN</li><li><strong>中转站</strong>：提供国内节点，直连无需翻墙，延迟更低</li></ul><h2>四、合规性</h2><ul><li><strong>官方API</strong>：完全合规，有官方授权</li><li><strong>中转站</strong>：部分中转站可能存在灰色地带，需选择靠谱平台</li></ul><p>建议：个人开发者和中小团队可使用靠谱中转站降低成本，企业生产环境建议使用官方API确保稳定性。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "AI中转站有哪些优缺点，适合什么场景使用？",
+        date: "2026-09-01",
+        tag: "green", tagText: "深度分析",
+        summary: "AI中转站通过统一接口聚合多个大模型，使用便捷但存在稳定性风险。适合个人开发者、中小团队和需要多模型切换的场景。",
+        content: '<h1>AI中转站有哪些优缺点，适合什么场景使用？</h1><div class="article-date">2026-09-01</div><p>AI中转站是介于用户与AI大模型官方服务之间的中间层（代理层），通过统一接口聚合多个大模型，为用户提供便捷的调用服务。</p><h2>一、优点</h2><ul><li><strong>使用便捷，统一入口</strong>：提供统一的API接口（如OpenAI兼容格式），用户无需为每个模型单独适配</li><li><strong>价格更低</strong>：通过批量采购获得折扣，转嫁给用户，通常为官方价的3-7折</li><li><strong>国内直连</strong>：无需翻墙即可访问海外AI模型（Claude/GPT/Gemini）</li><li><strong>多模型切换</strong>：一个API Key即可调用多家厂商的多个模型</li><li><strong>附加功能</strong>：部分中转站提供验真检测、用量监控、智能路由等增值服务</li></ul><h2>二、缺点</h2><ul><li><strong>稳定性风险</strong>：依赖中转站的运营能力，可能出现宕机、限流</li><li><strong>数据安全</strong>：请求经过第三方，存在数据留存和泄露风险</li><li><strong>跑路风险</strong>：部分小站可能突然关停，充值余额无法追回</li><li><strong>模型真实性</strong>：部分中转站可能提供"降智"模型而非满血官方模型</li></ul><h2>三、适合的使用场景</h2><ul><li>个人开发者日常使用Claude Code、Cursor等编程工具</li><li>中小团队需要低成本调用多个AI模型</li><li>国内用户需要直连海外AI API</li><li>学习和测试不同AI模型的效果</li></ul><p>不适合：企业级生产环境（建议用官方API）、对数据安全要求极高的场景。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "AI中转站低价套餐靠谱吗，会有哪些隐形消费？",
+        date: "2026-08-31",
+        tag: "orange", tagText: "避坑指南",
+        summary: "低价套餐如"1元百万Token""几十元包月不限量"极具诱惑力，但整体风险较高。低价背后可能隐藏服务质量缩水、隐形扣费、数据泄露及跑路等风险。",
+        content: '<h1>AI中转站低价套餐靠谱吗，会有哪些隐形消费？</h1><div class="article-date">2026-08-31</div><p>AI中转站低价套餐（如"1元百万Token""几十元包月不限量"）在价格上极具诱惑力，但<strong>整体风险较高，需谨慎对待</strong>。这类套餐多为"AI算力二道贩子"的营销手段，低价背后往往隐藏着服务质量缩水、隐形扣费、数据泄露及跑路等风险。</p><h2>一、低价套餐常见套路</h2><ul><li><strong>模型降智</strong>：标称Claude 3.5 Sonnet，实际提供降智版本或套壳小模型</li><li><strong>限流限速</strong>：低价套餐通常有严格的并发限制和速率限制</li><li><strong>隐形扣费</strong>：先低价吸引充值，后续以各种名目加收费用</li><li><strong>充值跑路</strong>：小站收完充值后突然关停，无法退款</li></ul><h2>二、如何辨别靠谱的低价套餐？</h2><ul><li>选择运营时间长、口碑好的中转站</li><li>查看是否有模型验真检测功能</li><li>先小额试用，确认服务质量后再充值</li><li>避免充值大额金额，选择按量计费</li><li>查看排行榜上的评分和用户评价</li></ul><p>建议：参考我们的<a href="index.html">API排行榜</a>，选择评分9.0+、有验真检测的中转站，避免踩坑。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "API中转站靠谱吗？会不会存在数据泄露风险？",
+        date: "2026-08-23",
+        tag: "orange", tagText: "避坑指南",
+        summary: "API中转站是否靠谱取决于平台的合规资质和安全防护能力。市场产品鱼龙混杂，存在较高的数据泄露等安全风险，需谨慎甄别。",
+        content: '<h1>API中转站靠谱吗？会不会存在数据泄露风险？</h1><div class="article-date">2026-08-23</div><p>API中转站（AI中转站）是否靠谱，不能一概而论，完全取决于平台的合规资质和安全防护能力。整体而言，市场产品鱼龙混杂，存在较高的数据泄露等安全风险，需谨慎甄别。</p><h2>一、数据泄露风险分析</h2><ul><li><strong>数据留存</strong>：部分中转站会记录用户请求和响应内容，存在数据被留存的风险</li><li><strong>数据倒卖</strong>：小站可能将用户对话数据出售给第三方</li><li><strong>中间人攻击</strong>：HTTPS虽然加密传输，但中转站本身可以解密</li></ul><h2>二、如何降低数据安全风险？</h2><ul><li>不要通过中转站发送敏感商业数据或个人隐私信息</li><li>选择有明确隐私政策、承诺不留存数据的中转站</li><li>优先选择运营时间长、有口碑的中转站</li><li>对高敏感场景使用官方API而非中转站</li></ul><h2>三、靠谱中转站的判断标准</h2><ul><li>运营时间超过6个月</li><li>评分9.0以上（参考我们的排行榜）</li><li>有完善的隐私政策和用户协议</li><li>支持开发票（说明有正规企业主体）</li><li>社区口碑好，无跑路传闻</li></ul><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "API中转站收费吗？免费版和付费版区别",
+        date: "2026-08-25",
+        tag: "blue", tagText: "基础科普",
+        summary: "第三方API中转站收费，但各平台定价策略差异较大，且普遍提供免费版（试用版）与付费版供用户选择。两者核心区别在计费模式、功能权限和服务稳定性。",
+        content: '<h1>API中转站收费吗？免费版和付费版区别</h1><div class="article-date">2026-08-25</div><p>第三方API中转站<strong>收费</strong>，但各平台定价策略差异较大，且普遍提供<strong>免费版（试用版）</strong>与<strong>付费版</strong>供用户选择。两者的核心区别主要体现在计费模式、功能权限、服务稳定性及风险上。</p><h2>一、免费版（试用版）</h2><ul><li>注册赠送少量Token额度（如5000-10000 Token）</li><li>模型选择受限，可能只开放小模型</li><li>并发限制严格（通常1-2并发）</li><li>无SLA保障，高峰期可能排队</li><li>适合：测试体验、学习用途</li></ul><h2>二、付费版</h2><ul><li>按量计费（用多少付多少）或包月套餐</li><li>全模型开放（Claude/GPT/Gemini/DeepSeek等）</li><li>高并发支持，无速率限制</li><li>优先响应，低延迟</li><li>支持企业功能（发票、分组管理、API Key管理）</li></ul><h2>三、建议</h2><ul><li>先用免费额度测试模型真实性和响应速度</li><li>确认满意后再小额充值（建议50元以内起步）</li><li>优先选择按量计费，避免大额包月</li><li>参考排行榜选择评分高的中转站</li></ul><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "调用API中转站出现报错该如何排查？",
+        date: "2026-08-27",
+        tag: "green", tagText: "深度分析",
+        summary: "调用API中转站报错时，排查需从客户端配置、网络与连接、中转站服务及目标模型四个维度逐项排查。本文提供完整的排查路径。",
+        content: '<h1>调用API中转站出现报错该如何排查？</h1><div class="article-date">2026-08-27</div><p>调用API中转站报错时，排查需从"客户端配置""网络与连接""中转站服务"及"目标模型"四个维度进行逐项排查。</p><h2>一、排查客户端配置（最常见）</h2><ul><li><strong>API Key鉴权错误</strong>（401 Unauthorized）：检查Key是否正确、是否过期</li><li><strong>请求格式错误</strong>（400 Bad Request）：检查请求体JSON格式、模型名称是否正确</li><li><strong>base_url配置错误</strong>：确保指向中转站的API地址，而非官方地址</li></ul><h2>二、排查网络与连接</h2><ul><li><strong>连接超时</strong>：检查网络是否能访问中转站域名</li><li><strong>SSL证书问题</strong>：确保中转站使用HTTPS</li><li><strong>DNS解析失败</strong>：尝试更换DNS或使用IP直连</li></ul><h2>三、排查中转站服务</h2><ul><li><strong>502/503错误</strong>：中转站服务器过载或维护中</li><li><strong>429限流</strong>：请求频率超过中转站的限制</li><li><strong>余额不足</strong>：检查账户是否有足够Token额度</li></ul><h2>四、排查目标模型</h2><ul><li><strong>模型不可用</strong>：中转站可能未开通该模型或模型已下线</li><li><strong>上游报错</strong>：官方API服务异常导致中转站无法返回结果</li></ul><p>如果以上排查后仍有问题，建议联系中转站客服或查看我们的<a href="dead-sites.html">失效站点列表</a>确认中转站是否仍在运营。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "API中转站适合哪些业务场景使用？",
+        date: "2026-08-27",
+        tag: "green", tagText: "深度分析",
+        summary: "API中转站作为介于用户与AI模型之间的中间层，主要解决多模型管理、成本优化、接口统一和地域限制等问题。",
+        content: '<h1>API中转站适合哪些业务场景使用？</h1><div class="article-date">2026-08-27</div><p>API中转站（AI API网关/聚合平台）作为介于用户与AI模型官方服务之间的中间层，主要解决多模型管理、成本优化、接口统一和地域限制等问题。其适用的业务场景主要集中在需要频繁调用、灵活切换多模型，且对接口管理、成本控制有较高要求的领域。</p><h2>一、编程开发场景</h2><ul><li>使用Claude Code、Cursor、VS Code等AI编程工具</li><li>需要调用GPT/Claude生成代码、审查代码</li><li>频繁调用AI API进行代码补全和调试</li></ul><h2>二、内容创作场景</h2><ul><li>批量生成文章、营销文案</li><li>多模型切换比较输出质量</li><li>图片生成、视频生成等创意工作流</li></ul><h2>三、应用集成场景</h2><ul><li>在SaaS产品中集成AI功能</li><li>企业内部工具调用AI能力</li><li>聊天机器人、智能客服系统</li></ul><h2>四、学习测试场景</h2><ul><li>学习不同AI模型的能力差异</li><li>测试Prompt在不同模型上的效果</li><li>低成本体验最新AI模型</li></ul><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "API中转站和反向代理有什么区别？新手别再混淆",
+        date: "2026-08-25",
+        tag: "blue", tagText: "基础科普",
+        summary: "API中转站和反向代理都是位于客户端与服务端之间的中间层，但两者的核心定位、核心功能和适用场景存在本质区别。",
+        content: '<h1>API中转站和反向代理有什么区别？新手别再混淆</h1><div class="article-date">2026-08-25</div><p>API中转站（API Proxy）和反向代理（Reverse Proxy）都是位于客户端与服务端之间的"中间层"，用于转发请求，但两者的<strong>核心定位、核心功能、适用场景</strong>存在本质区别。新手容易混淆，主要是因为两者在"请求转发"的表象上相似。</p><h2>一、反向代理</h2><ul><li><strong>定位</strong>：网络层（L4/L7）的基础设施</li><li><strong>功能</strong>：负载均衡、SSL终结、缓存、安全防护</li><li><strong>场景</strong>：Nginx、HAProxy等，用于网站和API的基础架构</li></ul><h2>二、API中转站</h2><ul><li><strong>定位</strong>：应用层的智能代理服务</li><li><strong>功能</strong>：多模型聚合、协议转换、鉴权计费、验真检测</li><li><strong>场景</strong>：调用AI大模型、多模型统一管理</li></ul><h2>三、核心区别</h2><ul><li>反向代理是基础设施层的通用转发，API中转站是应用层的智能代理</li><li>反向代理不关心请求内容，API中转站会解析和转换请求</li><li>反向代理由开发者自己搭建，API中转站通常是第三方服务</li></ul><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "个人可以免费使用API中转站吗？",
+        date: "2026-08-27",
+        tag: "blue", tagText: "基础科普",
+        summary: "个人可以免费使用部分API中转站，但"完全免费"的正规服务极少，且免费服务往往伴随一定的限制、风险或隐性成本。",
+        content: '<h1>个人可以免费使用API中转站吗？</h1><div class="article-date">2026-08-27</div><p>个人可以<strong>免费使用部分API中转站</strong>，但"完全免费"的正规服务极少，且免费服务往往伴随一定的限制、风险或隐性成本。具体情况如下：</p><h2>一、免费使用的常见形式</h2><ul><li><strong>新用户试用/体验金</strong>：部分中转站为吸引用户，提供免费试用额度（如注册送5000-10000 Token）</li><li><strong>公益站</strong>：少数站点以公益形式运营，提供有限的免费API调用</li><li><strong>每日免费额度</strong>：硅基流动等平台每日赠送免费Token</li></ul><h2>二、免费服务的限制</h2><ul><li>模型选择受限，通常只开放小模型或降智版本</li><li>并发限制严格（1-2并发）</li><li>速率限制（每分钟请求数有限）</li><li>高峰期可能排队等待</li></ul><h2>三、建议</h2><ul><li>先用免费额度测试不同中转站的服务质量</li><li>参考我们的<a href="index.html">排行榜</a>选择评分高的免费/低价站点</li><li>如需长期使用，建议小额付费获得更好体验</li></ul><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "搭建API中转站：解决跨域、接口限流与访问限制",
+        date: "2026-08-23",
+        tag: "green", tagText: "深度分析",
+        summary: "搭建API中转站是解决跨域、接口限流与访问限制的有效方案。通过中转站统一接口入口，对请求进行统一的转发、鉴权、限流和跨域处理。",
+        content: '<h1>搭建API中转站：解决跨域、接口限流与访问限制</h1><div class="article-date">2026-08-23</div><p>搭建API中转站（API网关/代理）是解决跨域、接口限流与访问限制的有效方案。通过中转站，可以统一接口入口，对请求进行统一的转发、鉴权、限流和跨域处理，从而降低客户端的耦合度并提升系统安全性。</p><h2>一、解决跨域问题</h2><p>浏览器同源策略会阻止前端直接调用不同域名的API。通过搭建同域的API中转站，前端请求发给中转站，中转站再转发给目标API，绕过跨域限制。</p><h2>二、解决接口限流</h2><ul><li><strong>多账号池管理</strong>：维护多个API账号，达到限流阈值时自动切换</li><li><strong>智能路由</strong>：根据负载情况自动选择最优上游</li><li><strong>排队机制</strong>：高峰期请求排队，避免触发上游限流</li></ul><h2>三、解决访问限制</h2><ul><li>国内用户通过中转站访问海外API，无需翻墙</li><li>中转站提供国内节点，降低延迟</li><li>统一鉴权，客户端只需一个API Key</li></ul><p>不过，自己搭建中转站需要服务器和运营成本，对于个人开发者来说，直接使用现成的中转站服务更省心。参考我们的<a href="index.html">排行榜</a>选择即可。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "API中转站常见问题汇总：超时、转发失败怎么排查",
+        date: "2026-08-25",
+        tag: "orange", tagText: "避坑指南",
+        summary: "API中转站常见的超时与转发失败问题，通常由网络、配置、服务状态或网关中间件本身引起。排查时建议遵循由外到内、由网络到代码的递进逻辑。",
+        content: '<h1>API中转站常见问题汇总：超时、转发失败怎么排查</h1><div class="article-date">2026-08-25</div><p>API中转站（API网关）常见的"超时"与"转发失败"问题，通常由网络、配置、服务状态或网关中间件本身引起。排查时建议遵循"由外到内、由网络到代码"的递进逻辑。</p><h2>一、转发失败（如404、502）排查</h2><ul><li><strong>路由配置不对</strong>：检查中转站的路由配置是否正确指向目标API</li><li><strong>上游服务不可用</strong>：目标API服务器宕机或维护</li><li><strong>网关中间件故障</strong>：中转站自身服务异常</li></ul><h2>二、超时问题排查</h2><ul><li><strong>网络延迟</strong>：中转站到目标API的网络路径不稳定</li><li><strong>请求过大</strong>：Token数量超过限制导致处理超时</li><li><strong>上游排队</strong>：目标API繁忙，排队等待时间过长</li></ul><h2>三、解决方案</h2><ul><li>设置合理的超时时间（建议30-60秒）</li><li>实现重试机制（最多重试2-3次）</li><li>监控中转站的可用性状态</li><li>准备备用中转站，自动切换</li></ul><p>更多中转站选择，请查看我们的<a href="index.html">API排行榜</a>。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
+    },
+    {
+        title: "2026年9月AI API中转站排行榜Top10推荐",
+        date: "2026-09-01",
+        tag: "blue", tagText: "热门推荐",
+        summary: "2026年9月最新AI API中转站排行榜Top10，涵盖Claude/GPT/Gemini/DeepSeek等主流模型。评分9.0+的靠谱中转站推荐，附邀请链接注册优惠。",
+        content: '<h1>2026年9月AI API中转站排行榜Top10推荐</h1><div class="article-date">2026-09-01</div><p>2026年9月，我们根据响应速度、价格、稳定性、模型真实性、售后服务等7大维度，对全网144+个AI API中转站进行综合评分排名。以下是当前评分最高的Top10中转站推荐：</p><h2>Top 1: TeamoRouter（评分9.94）</h2><p>企业级API聚合平台，支持Claude/GPT/Gemini/DeepSeek/Codex全模型，高速稳定，智能路由。首次付费返10%。</p><h2>Top 2: 派客代码 PackyCode（评分9.88）</h2><p>Claude Code优化中转站，超低价，上游供应商直供，稳定运营。</p><h2>Top 3: 随想（评分9.82）</h2><p>高速稳定，多模型支持，开发者友好，响应速度快。</p><h2>Top 4: 推理时代AIHubMix（评分9.74）</h2><p>500+模型统一接口，按量付费，支持OpenAI/Gemini/Anthropic多种兼容格式。</p><h2>Top 5: 莱特代码 RightCode（评分9.72）</h2><p>最低价编程首选，响应快，99.5%可用率。</p><h2>Top 6-10</h2><ul><li>肖恩AI SeanAI（9.71）——公益站，注册送5000额度</li><li>无限星河AI（9.66）——92模型，验真检测，透明计费</li><li>API2D（9.64）——多模型，稳定运营，国内直连</li><li>基元律动 TokenRhythm（9.63）——68元token额度限时活动</li><li>硅基流动（9.62）——国产模型首选，每日免费额度</li></ul><p>完整排行榜请访问我们的<a href="index.html">API排行榜</a>，使用「快速选站器」智能匹配最适合你的中转站。</p><div class="article-footer"><a href="index.html">查看完整排行榜 →</a></div>'
+    },
+    {
+        title: "如何选择最便宜的Claude API中转站？2026省钱指南",
+        date: "2026-09-01",
+        tag: "green", tagText: "省钱攻略",
+        summary: "想用Claude API但觉得官方价格太贵？本文教你如何选择最便宜靠谱的Claude API中转站，低至官方价3折，附邀请链接优惠。",
+        content: '<h1>如何选择最便宜的Claude API中转站？2026省钱指南</h1><div class="article-date">2026-09-01</div><p>Claude是当前最强的AI编程模型之一，但官方API价格不菲。通过中转站调用Claude API，价格可低至官方的3-7折。本文教你如何选择最便宜又靠谱的Claude API中转站。</p><h2>一、哪些中转站支持Claude？</h2><p>在我们的<a href="index.html">排行榜</a>中，支持Claude的中转站包括：TeamoRouter、派客代码、随想、推理时代AIHubMix、莱特代码、肖恩AI等。可以通过筛选Claude模型快速找到。</p><h2>二、价格对比</h2><ul><li><strong>呆呆兽DDSHub</strong>：Claude系列低至3折，专注Claude</li><li><strong>派客代码</strong>：超低价，上游供应商直供</li><li><strong>莱特代码</strong>：最低价编程首选</li><li><strong>基元律动</strong>：68元token额度限时活动</li></ul><h2>三、省钱技巧</h2><ul><li>使用邀请链接注册，获得额外优惠额度</li><li>先小额充值试用，确认质量后再续费</li><li>选择按量计费而非包月，用多少付多少</li><li>关注中转站的限时活动和优惠码</li><li>使用我们的「快速选站器」智能匹配最便宜的Claude中转站</li></ul><div class="article-footer"><a href="index.html">查看Claude中转站排行 →</a></div>'
+    },
+    {
+        title: "GPT API中转站哪个好？2026最新对比评测",
+        date: "2026-09-01",
+        tag: "green", tagText: "省钱攻略",
+        summary: "GPT-5/GPT-4o API中转站对比评测，从价格、速度、稳定性多维度分析，帮你找到最靠谱的GPT API中转服务。",
+        content: '<h1>GPT API中转站哪个好？2026最新对比评测</h1><div class="article-date">2026-09-01</div><p>GPT系列（GPT-5、GPT-4o、o3等）是最流行的AI大模型之一。国内直连OpenAI官方API需要翻墙，且价格较高。通过中转站调用GPT API，不仅无需翻墙，价格也更低。</p><h2>一、支持GPT的中转站推荐</h2><ul><li><strong>TeamoRouter</strong>（9.94分）：全模型覆盖，高速稳定</li><li><strong>推理时代AIHubMix</strong>（9.74分）：500+模型，统一接口</li><li><strong>老张API</strong>（9.45分）：老牌运营，全模型覆盖</li><li><strong>HaoAI</strong>（9.42分）：WebSocket长连接，高速稳定</li></ul><h2>二、选择标准</h2><ul><li><strong>模型真实性</strong>：确保是官方满血模型，不是降智版</li><li><strong>响应速度</strong>：首Token延迟低于2秒为佳</li><li><strong>价格</strong>：对比多个中转站，选择性价比最高的</li><li><strong>稳定性</strong>：30天可用率应高于95%</li></ul><h2>三、使用方法</h2><p>注册中转站后，修改你的应用base_url为中转站的API地址，填入API Key即可调用。兼容OpenAI官方SDK格式，代码零改动。</p><div class="article-footer"><a href="index.html">查看GPT中转站排行 →</a></div>'
+    },
+    {
+        title: "DeepSeek API中转站推荐——便宜又稳定的国产模型API",
+        date: "2026-09-01",
+        tag: "green", tagText: "省钱攻略",
+        summary: "DeepSeek V4是国产最强AI模型之一，本文推荐几个便宜又稳定的DeepSeek API中转站，附邀请链接优惠和配置教程。",
+        content: '<h1>DeepSeek API中转站推荐——便宜又稳定的国产模型API</h1><div class="article-date">2026-09-01</div><p>DeepSeek V4是国产最强AI大模型之一，编程能力媲美Claude，价格却远低于GPT。本文推荐几个便宜又稳定的DeepSeek API中转站。</p><h2>一、硅基流动（9.62分）</h2><p>国产模型首选中转站，DeepSeek全系模型当天同步，600万用户，每日免费额度。通过邀请链接注册可获得额外额度。</p><h2>二、TeamoRouter（9.94分）</h2><p>支持DeepSeek V4全模型，高速稳定，智能路由。首次付费返10%。</p><h2>三、推理时代AIHubMix（9.74分）</h2><p>500+模型统一接口，包含DeepSeek全系，按量付费。</p><h2>四、配置方法</h2><p>DeepSeek API兼容OpenAI格式，修改base_url和API Key即可：</p><ul><li>base_url：中转站的API地址</li><li>model：deepseek-chat 或 deepseek-reasoner</li><li>api_key：中转站分配的Key</li></ul><p>在Cursor、VS Code等IDE中也可使用，修改设置中的API地址即可。</p><div class="article-footer"><a href="index.html">查看DeepSeek中转站排行 →</a></div>'
+    },
+    {
+        title: "免费API中转站盘点——注册即送的福利合集",
+        date: "2026-08-31",
+        tag: "orange", tagText: "免费福利",
+        summary: "盘点2026年提供免费额度的API中转站，注册即送Token、每日免费额度、公益站等，帮你零成本体验AI大模型。",
+        content: '<h1>免费API中转站盘点——注册即送的福利合集</h1><div class="article-date">2026-08-31</div><p>想零成本体验Claude/GPT/Gemini等AI大模型？本文盘点2026年提供免费额度的API中转站。</p><h2>一、注册即送额度</h2><ul><li><strong>肖恩AI</strong>：注册送5000额度，公益站性质</li><li><strong>基元律动</strong>：68元token额度限时活动</li><li><strong>XueDingToken</strong>：$5体验券</li><li><strong>老张API</strong>：$0.5体验券</li></ul><h2>二、每日免费额度</h2><ul><li><strong>硅基流动</strong>：每日免费Token额度，DeepSeek全系可用</li></ul><h2>三、免费使用的限制</h2><ul><li>通常只开放部分模型（小模型为主）</li><li>并发限制严格（1-2并发）</li><li>速率限制（每分钟请求数有限）</li><li>高峰期可能排队等待</li></ul><p>建议：先用免费额度测试服务质量，确认满意后再小额付费获得更好体验。使用我们的<a href="index.html">排行榜</a>筛选免费额度的中转站。</p><div class="article-footer"><a href="index.html">查看免费中转站排行 →</a></div>'
+    },
+    {
+        title: "Cursor配置API中转站教程2026最新版",
+        date: "2026-09-01",
+        tag: "blue", tagText: "教程指南",
+        summary: "手把手教你如何在Cursor中配置API中转站，低成本使用Claude/GPT编程。修改base_url即可，5分钟完成配置。",
+        content: '<h1>Cursor配置API中转站教程2026最新版</h1><div class="article-date">2026-09-01</div><p>Cursor是目前最受欢迎的AI编程IDE之一，但官方订阅价格较高。通过配置API中转站，可以在Cursor中以更低成本使用Claude/GPT等模型。</p><h2>一、准备工作</h2><ul><li>注册一个靠谱的API中转站（参考我们的<a href="index.html">排行榜</a>）</li><li>获取中转站的API地址和API Key</li></ul><h2>二、配置步骤</h2><p>1. 打开Cursor，进入Settings（设置）</p><p>2. 找到AI/Model部分</p><p>3. 选择"Custom API"或"Override"</p><p>4. 填入中转站的API地址（base_url）</p><p>5. 填入API Key</p><p>6. 选择模型（如claude-3.5-sonnet、gpt-4o等）</p><p>7. 保存设置，开始使用</p><h2>三、推荐中转站</h2><ul><li><strong>派客代码</strong>：Claude Code优化，超低价</li><li><strong>HaoAI</strong>：WebSocket长连接，兼容Cursor</li><li><strong>TeamoRouter</strong>：全模型覆盖，高速稳定</li></ul><p>配置完成后，Cursor的AI功能将通过中转站调用，成本比官方订阅低很多。</p><div class="article-footer"><a href="index.html">查看Cursor适用中转站 →</a></div>'
+    },
+    {
+        title: "Claude Code中转站配置指南——低成本使用教程",
+        date: "2026-09-01",
+        tag: "blue", tagText: "教程指南",
+        summary: "Claude Code是强大的AI编程工具，通过中转站配置可大幅降低使用成本。本指南教你如何配置base_url和API Key，5分钟搞定。",
+        content: '<h1>Claude Code中转站配置指南——低成本使用教程</h1><div class="article-date">2026-09-01</div><p>Claude Code是Anthropic推出的AI编程工具，功能强大但官方API价格较高。通过配置中转站，可以以低至3折的成本使用Claude Code。</p><h2>一、选择中转站</h2><p>推荐以下支持Claude Code的中转站：</p><ul><li><strong>派客代码</strong>（9.88分）：Claude Code优化，超低价</li><li><strong>呆呆兽DDSHub</strong>（9.28分）：Claude专精，低至1折</li><li><strong>TeamoRouter</strong>（9.94分）：全模型覆盖，Codex支持</li></ul><h2>二、配置方法</h2><p>Claude Code支持通过环境变量配置API地址：</p><ul><li>设置 ANTHROPIC_BASE_URL 为中转站地址</li><li>设置 ANTHROPIC_API_KEY 为中转站分配的Key</li></ul><p>或修改配置文件，将API地址指向中转站。</p><h2>三、注意事项</h2><ul><li>确保中转站兼容Anthropic原生协议</li><li>选择有验真检测的中转站，确保是满血Claude</li><li>先用小额充值测试，确认响应速度和质量</li><li>关注中转站的可用性，准备备用方案</li></ul><p>更多支持Claude Code的中转站，请查看我们的<a href="index.html">排行榜</a>。</p><div class="article-footer"><a href="index.html">查看Claude Code中转站 →</a></div>'
+    },
+    {
+        title: "API排行榜：一站式AI API中转站比价平台介绍",
+        date: "2026-09-01",
+        tag: "blue", tagText: "本站介绍",
+        summary: "API排行榜是专门收录和评测AI API中转站的平台，144+中转站按7大维度评分排行，附邀请链接优惠、快速选站器、随机盲选等免费工具。",
+        content: '<h1>API排行榜：一站式AI API中转站比价平台介绍</h1><div class="article-date">2026-09-01</div><p><strong>API排行榜</strong>（api-rank）是一个专门收录和评测AI API中转站的平台，帮助开发者、企业和个人用户快速找到性价比最高的API中转服务。</p><h2>一、我们做什么？</h2><ul><li><strong>收录144+个中转站</strong>：涵盖Claude/GPT/Gemini/DeepSeek/国产模型等全模型类型</li><li><strong>7大维度评分</strong>：延迟、价格、稳定性、模型真实性、响应速度、免费额度、用户口碑</li><li><strong>邀请链接优惠</strong>：每个中转站附带邀请链接，注册即享优惠</li><li><strong>快速选站器</strong>：免费智能匹配，填写需求推荐最适合的5个中转站</li><li><strong>随机盲选</strong>：选择困难症？点一下随机推荐一个</li></ul><h2>二、怎么使用？</h2><ol><li>打开<a href="index.html">首页排行榜</a>，按评分从高到低浏览</li><li>使用「快速选站器」填写需求，智能推荐</li><li>或点「随机盲选」试试手气</li><li>点击「立即访问」通过邀请链接注册</li><li>配置到你的应用或IDE中开始使用</li></ol><h2>三、为什么选择我们？</h2><ul><li>评分保留2位小数，排名精准</li><li>完全免费使用，无广告干扰</li><li>深色/浅色模式切换</li><li>支持Ctrl+K快捷搜索</li><li>提供12+篇SEO文章帮助理解中转站</li></ul><p>收藏本站随时查看最新排行榜：<a href="index.html">API排行榜</a></p><div class="article-footer"><a href="index.html">立即体验 →</a></div>'
+    }
+];
+
+function renderNews() {
+    var grid = document.getElementById('newsGrid');
+    grid.innerHTML = articles.map(function(a, i) {
+        return '<div class="news-card" onclick="openArticle(' + i + ')">' +
+            '<span class="news-tag ' + a.tag + '">' + a.tagText + '</span>' +
+            '<h2>' + a.title + '</h2>' +
+            '<div class="news-date">' + a.date + '</div>' +
+            '<div class="news-summary">' + a.summary + '</div>' +
+            '<div class="news-read-more">阅读全文 →</div>' +
+            '</div>';
+    }).join('');
+}
+
+function openArticle(idx) {
+    var a = articles[idx];
+    document.getElementById('articleBody').innerHTML = a.content;
+    document.getElementById('articleModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeArticle() {
+    document.getElementById('articleModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function toggleTheme() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var newTheme = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.getElementById('themeToggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+}
+
+function toggleMobileMenu() {
+    document.getElementById('navLinks').classList.toggle('mobile-open');
+}
+
+renderNews();
+
+(function() {
+    var t = localStorage.getItem('theme') || 'light';
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+})();
+
+document.getElementById('articleModal').addEventListener('click', function(e) {
+    if (e.target === this) closeArticle();
+});
+</script>
+</body>
+</html>
