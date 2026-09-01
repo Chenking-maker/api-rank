@@ -86,8 +86,8 @@
 | 6 | **肖恩AI** | 9.71 | SeanAI智能分发，注册送5000额度 | [访问](https://free.supxh.xin/register?code=XVGW49) |
 | 7 | **无限星河AI** | 9.66 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai/register?aff=E5A9B3X8) |
 | 8 | **API2D** | 9.64 | 多模型，稳定运营，国内直连 | [访问](https://api2d.com/r/241389) |
-| 9 | **基元律动** | 9.63 | TokenRhythm引擎，多模型智能调度 | [访问](https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J) |
-| 10 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
+| 9 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
+| 10 | **基元律动** | 9.61 | TokenRhythm引擎，多模型智能调度 | [访问](https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J) |
 
 > 完整排名请访问 [国内网站](https://chenking-maker.github.io/api-rank/) 或 [国际网站](https://api-rank-lake.vercel.app) 查看
 
@@ -283,52 +283,19 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 ## 📝 更新日志
 
 ### v1.4.0 (2026-09-01)
-- ✅ 新增5个中转站（老张API、推理时代AIHubMix、Zivv、呆呆兽DDSHub、HaoAI）
-- ✅ 更新6个站点评分（随想9.82、肖恩AI 9.71、无限星河9.66、API2D 9.64、基元律动9.63、雪顶Token 9.58）
-- ✅ 新增「快速选站器」——免费智能匹配，无限次使用，只推荐带邀请链接的站点
-- ✅ 新增「随机盲选」功能——点一下随机抽一个中转站，带闪光动效
-- ✅ 新增「关于本站」页面（about.html）——介绍站点、使用指南、收藏提示
-- ✅ 新增「相关新闻」页面（news.html）——12篇SEO文章，涵盖中转站热门话题
-- ✅ 导航栏新增GitHub图标按钮，去掉「分享赚次数」「提交收录」「失效站点」
-- ✅ 取消自动化检测，改为手动标记失效站点（避免网络误判）
-- ✅ 失效站点添加可点击链接（保留邀请链接）
-- ✅ 修复TeamoRouter域名（.com → .cn）
-- ✅ 深色/浅色模式全面适配
+- ✅ 新增5个中转站 + 新增「快速选站器」和「随机盲选」功能
+- ✅ 新增「关于本站」和「相关新闻」页面，深色/浅色模式全面适配
+- ✅ 修复GitHub图标一致性、新闻页空白、评分同步更新
 
 ### v1.3.0 (2026-08-11)
-- ✅ 新增首页广告位系统（左右双位 16:9，支持图片轮播、点击跳转）
-- ✅ 新增15个中转站（虎妞API、cctk、hao.ai、fenno、七牛云、code0、aimzoon、随想、哈基米、爱玩、青屿、橘子汽水、舒芙蕾、星辰等）
-- ✅ 调整多个站点评分（TeamoRouter 9.94、基元律动 9.78、清沐API 9.58等）
-- ✅ 移除冗余导航按钮（Codex、Claude Code、视频）
+- ✅ 新增首页广告位系统 + 新增15个中转站
 - ✅ 全面优化SEO（meta标签、结构化数据、sitemap、robots.txt）
-- ✅ 更新推广文章模板（V2EX/知乎/Twitter）
-- ✅ 收录平台总数提升至139+（93个有效，46个失效）
+- ✅ 收录平台总数提升至139+
 
 ### v1.2.0 (2026-08-10)
-- ✅ 新增国内访问地址（GitHub Pages）：https://chenking-maker.github.io/api-rank/
-- ✅ 国际访问地址保持不变（Vercel）：https://api-rank-lake.vercel.app
-- ✅ 修复失效站点数据不同步问题（从15个修复为54个）
-- ✅ 调整豆腐(ToAPIs)评分至9.35，OpenRouter评分至9.08
-- ✅ 修复在线绘图/视频专区导航栏样式问题
-- ✅ 更新dead_sites.json与stations_info.json数据同步
-
-### v1.1.0 (2026-07-29)
-- ✅ 新增分享赚次数系统（Cloudflare Workers后端）
-- ✅ 新增API用户号自动注册（类似菩提苑）
-- ✅ 新增国际化手机号绑定（20+国家/地区）
-- ✅ 新增AI绘图/视频专区（creative-tools.html）
-- ✅ 收录Seede AI、叮当次元袋、灵犀万相
-- ✅ 全面重新评分（8.00-9.95分，拉开差距）
-
-### v1.0.0 (2026-07-29)
-- 🎉 首次正式发布
-- ✅ 收录107个API中转站
-- ✅ 实时可用性检测
-- ✅ 综合评分排名系统
-- ✅ XSS安全防护
-- ✅ 响应式设计
-- ✅ 商家后台管理
-- ✅ GitHub Actions自动检测
+- ✅ 新增国内访问地址（GitHub Pages）
+- ✅ 修复失效站点数据不同步问题
+- ✅ 更新数据同步机制
 
 ---
 
