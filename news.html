@@ -47,11 +47,11 @@
         .logo-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; }
         .logo-text { font-size: 20px; font-weight: 800; color: var(--text-primary); }
         .logo-text span { color: var(--accent); }
-        .nav-links { list-style: none; display: flex; align-items: center; gap: 4px; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 8px; }
         .nav-links a { color: #000; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.2s; }
         [data-theme="dark"] .nav-links a { color: var(--text-primary); }
         .nav-links a:hover { background: var(--bg-card-hover); }
-        .theme-toggle { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .theme-toggle { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; width: 36px; height: 36px; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
         .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 8px; }
         .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
 
@@ -113,7 +113,7 @@
             <li><a href="about.html">关于本站</a></li>
             <li><a href="news.html">相关新闻</a></li>
             <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
-            <li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+            <li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex-shrink:0;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
         </ul>
     </div>
 </nav>
@@ -161,7 +161,7 @@ var articles = [
         title: "AI中转站低价套餐靠谱吗，会有哪些隐形消费？",
         date: "2026-08-31",
         tag: "orange", tagText: "避坑指南",
-        summary: "低价套餐如"1元百万Token""几十元包月不限量"极具诱惑力，但整体风险较高。低价背后可能隐藏服务质量缩水、隐形扣费、数据泄露及跑路等风险。",
+        summary: "低价套餐如\"1元百万Token\"\"几十元包月不限量\"极具诱惑力，但整体风险较高。低价背后可能隐藏服务质量缩水、隐形扣费、数据泄露及跑路等风险。",
         content: '<h1>AI中转站低价套餐靠谱吗，会有哪些隐形消费？</h1><div class="article-date">2026-08-31</div><p>AI中转站低价套餐（如"1元百万Token""几十元包月不限量"）在价格上极具诱惑力，但<strong>整体风险较高，需谨慎对待</strong>。这类套餐多为"AI算力二道贩子"的营销手段，低价背后往往隐藏着服务质量缩水、隐形扣费、数据泄露及跑路等风险。</p><h2>一、低价套餐常见套路</h2><ul><li><strong>模型降智</strong>：标称Claude 3.5 Sonnet，实际提供降智版本或套壳小模型</li><li><strong>限流限速</strong>：低价套餐通常有严格的并发限制和速率限制</li><li><strong>隐形扣费</strong>：先低价吸引充值，后续以各种名目加收费用</li><li><strong>充值跑路</strong>：小站收完充值后突然关停，无法退款</li></ul><h2>二、如何辨别靠谱的低价套餐？</h2><ul><li>选择运营时间长、口碑好的中转站</li><li>查看是否有模型验真检测功能</li><li>先小额试用，确认服务质量后再充值</li><li>避免充值大额金额，选择按量计费</li><li>查看排行榜上的评分和用户评价</li></ul><p>建议：参考我们的<a href="index.html">API排行榜</a>，选择评分9.0+、有验真检测的中转站，避免踩坑。</p><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
     },
     {
@@ -203,7 +203,7 @@ var articles = [
         title: "个人可以免费使用API中转站吗？",
         date: "2026-08-27",
         tag: "blue", tagText: "基础科普",
-        summary: "个人可以免费使用部分API中转站，但"完全免费"的正规服务极少，且免费服务往往伴随一定的限制、风险或隐性成本。",
+        summary: "个人可以免费使用部分API中转站，但\"完全免费\"的正规服务极少，且免费服务往往伴随一定的限制、风险或隐性成本。",
         content: '<h1>个人可以免费使用API中转站吗？</h1><div class="article-date">2026-08-27</div><p>个人可以<strong>免费使用部分API中转站</strong>，但"完全免费"的正规服务极少，且免费服务往往伴随一定的限制、风险或隐性成本。具体情况如下：</p><h2>一、免费使用的常见形式</h2><ul><li><strong>新用户试用/体验金</strong>：部分中转站为吸引用户，提供免费试用额度（如注册送5000-10000 Token）</li><li><strong>公益站</strong>：少数站点以公益形式运营，提供有限的免费API调用</li><li><strong>每日免费额度</strong>：硅基流动等平台每日赠送免费Token</li></ul><h2>二、免费服务的限制</h2><ul><li>模型选择受限，通常只开放小模型或降智版本</li><li>并发限制严格（1-2并发）</li><li>速率限制（每分钟请求数有限）</li><li>高峰期可能排队等待</li></ul><h2>三、建议</h2><ul><li>先用免费额度测试不同中转站的服务质量</li><li>参考我们的<a href="index.html">排行榜</a>选择评分高的免费/低价站点</li><li>如需长期使用，建议小额付费获得更好体验</li></ul><div class="article-footer"><a href="index.html">查看靠谱中转站排行 →</a></div>'
     },
     {
