@@ -5149,6 +5149,19 @@
 
 
 
+    <!-- Top Banner -->
+    <div class="top-banner" style="background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 8px 16px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 14px; position: sticky; top: 0; z-index: 1001;">
+        <a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; background: #4A90D9; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600; white-space: nowrap; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            ⭐ 请多多Star 我的GitHub
+        </a>
+        <span style="color: var(--text-secondary); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span style="font-weight: 600; color: var(--text);">💛 欢迎资助打赏</span>
+            <span style="background: var(--bg-main); padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border); font-family: monospace; font-size: 13px; cursor: pointer; user-select: all;" onclick="navigator.clipboard.writeText('0x8F459Ac9A44206aa6E49Ca24Ea8a091f080FBE95');showToast('USDT地址已复制')" title="点击复制地址">
+                USDT (BEP20): 0x8F459Ac9A44206aa6E49Ca24Ea8a091f080FBE95
+            </span>
+        </span>
+    </div>
+
     <!-- Navbar -->
 
     <nav class="navbar">
@@ -5175,7 +5188,7 @@
 
                 <li><a href="creative-tools.html">🎨 在线绘图/视频专区</a></li>
 
-                <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')">🎯 找适合自己的中转站</a></li>
+                <li><a href="javascript:void(0)" onclick="openSectionModal('finderModal')">🎯 快速选站（适合你）</a></li>
 
                 <li><a href="javascript:void(0)" class="share-btn" onclick="openSharePanel()">🔗 分享赚次数</a></li>
 
@@ -5257,7 +5270,7 @@
 
     </section>
 
-    <!-- Finder Modal - 找适合自己的中转站 -->
+    <!-- Finder Modal - 快速选站 -->
 
     <div class="section-modal-overlay" id="finderModal">
 
@@ -5267,14 +5280,12 @@
 
             <div class="finder-header">
 
-                <h2>🎯 找适合自己的中转站</h2>
+                <h2>🎯 快速选站（适合你）</h2>
 
-                <p>填写您的需求，系统将智能匹配最适合的5个API中转站</p>
+                <p>填写您的需求，系统将智能匹配最适合的5个API中转站（完全免费）</p>
 
-                <div class="free-usage-info" id="freeUsageInfo" style="margin-top: 12px; padding: 10px 16px; background: rgba(46, 213, 115, 0.1); border: 1px solid rgba(46, 213, 115, 0.3); border-radius: 8px; font-size: 14px; color: #2ed573;">
-
-                    <span id="usageStatus">本月剩余免费次数：1次</span>
-
+                <div style="margin-top: 12px; padding: 10px 16px; background: rgba(74, 144, 217, 0.1); border: 1px solid rgba(74, 144, 217, 0.3); border-radius: 8px; font-size: 14px; color: #4A90D9; display: flex; align-items: center; gap: 8px;">
+                    <span>✅ 完全免费 · 无限次使用 · 只推荐带邀请链接的站点</span>
                 </div>
 
             </div>
@@ -5412,13 +5423,25 @@
 
 
 
-                    <button class="submit-btn finder-btn" onclick="startFinder()">
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
 
-                        <span>🔍</span>
+                        <button class="submit-btn finder-btn" onclick="startFinder()" style="flex: 1; min-width: 200px;">
 
-                        <span>开始智能匹配</span>
+                            <span>🔍</span>
 
-                    </button>
+                            <span>开始智能匹配</span>
+
+                        </button>
+
+                        <button class="submit-btn" onclick="randomPick()" id="randomPickBtn" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s;">
+
+                            <span>🎲</span>
+
+                            <span id="randomPickText">随机盲选一个</span>
+
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -5430,37 +5453,7 @@
 
                     <div class="finder-results-header">
 
-                        <h3>📊 为您推荐以下 5 个中转站</h3>
-
-                        <div class="finder-paywall" id="finderPaywall">
-
-                            <div class="paywall-content">
-
-                                <div class="paywall-icon">🔒</div>
-
-                                <div class="paywall-title">查看完整推荐结果</div>
-
-                                <div class="paywall-desc">购买《API中转站选择指南》解锁完整分析报告</div>
-
-                                <div class="paywall-price">¥9.9</div>
-
-                                <button class="btn btn-primary" onclick="showPaymentInfo()">立即购买</button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    
-
-                    <!-- 商家内部入口 -->
-
-                    <div class="admin-entry">
-
-                        <input type="password" id="adminPassword" class="form-input" placeholder="商家内部入口（输入密码）" style="max-width: 300px;" />
-
-                        <button class="btn btn-primary btn-sm" onclick="verifyAdmin()">验证</button>
+                        <h3>📊 为您推荐以下中转站</h3>
 
                     </div>
 
@@ -7674,19 +7667,43 @@
 
         const stationDatabase = [
 
-            { name: '硅基流动', url: 'siliconflow.cn', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 9.15, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '✅ 每日免费额度' },
+            { name: 'TeamoRouter', url: 'teamorouter.cn', link: 'https://teamorouter.cn/?i=ad992e768a', models: ['claude','gpt','gemini','deepseek','codex'], price: 'low', scene: ['coding','chat','api','enterprise'], special: ['fast','cheap'], concurrency: 'high', payment: 'payg', score: 9.94, stability: 9.5, speed: 9.8, support: 9.0, features: ['DeepSeek V4','Codex支持','首次返10%'], freeAmount: '首次付费返10%' },
 
-            { name: 'DeepSeek API', url: 'platform.deepseek.com', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['cheap','direct','fast'], concurrency: 'high', payment: 'payg', score: 9.0, stability: 9.5, speed: 9.5, support: 9.0, features: ['官方API','超低价','DeepSeek全系'], freeAmount: '✅ 每月免费额度' },
+            { name: '派客代码 (PackyCode)', url: 'packyapi.com', link: 'https://www.packyapi.com/register?aff=zrXb', models: ['claude','gpt','gemini'], price: 'low', scene: ['coding','api'], special: ['cheap','stable'], concurrency: 'high', payment: 'payg', score: 9.88, stability: 9.5, speed: 9.0, support: 9.0, features: ['Claude Code优化','超低价','上游供应商'], freeAmount: '' },
 
-            { name: 'OpenRouter', url: 'openrouter.ai', models: ['claude','gpt','gemini','domestic'], price: 'medium', scene: ['coding','chat','api'], special: ['fast'], concurrency: 'medium', payment: 'payg', score: 8.5, stability: 8.5, speed: 9.0, support: 8.0, features: ['多模型聚合','官方价格','无需翻墙'], freeAmount: '✅ 新用户$1免费' },
+            { name: '硅基流动', url: 'siliconflow.cn', link: 'https://cloud.siliconflow.cn/i/E5yUpjCP', models: ['domestic'], price: 'low', scene: ['coding','chat','api','learning'], special: ['fast','direct'], concurrency: 'high', payment: 'payg', score: 9.62, stability: 9.0, speed: 9.5, support: 8.5, features: ['国产模型当天同步','DeepSeek全系','600万用户'], freeAmount: '每日免费额度' },
 
-            { name: '豆包API(火山引擎)', url: 'volcengine.com', models: ['domestic'], price: 'low', scene: ['chat','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'both', score: 8.5, stability: 9.0, speed: 9.0, support: 9.0, features: ['字节官方','豆包全系','企业支持'], freeAmount: '✅ 新用户免费额度' },
+            { name: '莱特代码 (RightCode)', url: 'rightcode.io', link: 'https://rightcode.io/register?aff=KxRf', models: ['claude','gpt','gemini'], price: 'low', scene: ['coding','api'], special: ['cheap','fast'], concurrency: 'medium', payment: 'payg', score: 9.72, stability: 9.0, speed: 9.2, support: 8.5, features: ['最低价','响应快','编程首选'], freeAmount: '' },
 
-            { name: 'API2D', url: 'api2d.com', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 9.64, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
+            { name: '推理时代AIHubMix', url: 'aihubmix.com', link: 'https://aihubmix.com/?aff=U9CV', models: ['claude','gpt','gemini','deepseek','grok','qwen','kimi','glm'], price: 'medium', scene: ['coding','chat','api','enterprise'], special: ['fast','verify'], concurrency: 'high', payment: 'payg', score: 9.74, stability: 9.0, speed: 9.0, support: 8.5, features: ['500+模型','统一接口','按量付费'], freeAmount: '' },
 
-            { name: '无限星河AI', url: 'infistar.ai', models: ['gpt','claude','gemini','deepseek','grok','qwen','kimi','glm'], price: 'medium', scene: ['coding','chat','api','enterprise'], special: ['verify','transparent','redundancy'], concurrency: 'high', payment: 'payg', score: 9.66, stability: 8.5, speed: 8.0, support: 8.5, features: ['92模型','验真检测','透明计费','自建号池'], freeAmount: '' },
+            { name: '随想', url: 'sui-xiang.com', link: 'https://sui-xiang.com/register?aff=5J3USAV9LQEB', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','chat','api'], special: ['fast','stable'], concurrency: 'medium', payment: 'payg', score: 9.82, stability: 9.0, speed: 9.5, support: 8.5, features: ['多模型支持','快速响应','稳定可靠'], freeAmount: '' },
 
-            { name: '清沐API', url: 'openqi.sbs', models: ['gpt','claude','gemini','deepseek'], price: 'medium', scene: ['coding','chat','api','enterprise'], special: ['smart-route','team','stable'], concurrency: 'high', payment: 'payg', score: 8.0, stability: 8.5, speed: 8.0, support: 8.0, features: ['智能调度','团队配额','负载均衡'], freeAmount: '' }
+            { name: '基元律动 (TokenRhythm)', url: 'tokenrhythm.studio', link: 'https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J', models: ['claude','gpt','gemini'], price: 'low', scene: ['coding','chat','api'], special: ['cheap'], concurrency: 'medium', payment: 'payg', score: 9.63, stability: 8.5, speed: 8.0, support: 8.0, features: ['OpenSquilla','68元额度','限时活动'], freeAmount: '68元token额度' },
+
+            { name: 'OneHop', url: 'onehop.top', link: 'https://onehop.top/register?aff=Q5KB', models: ['claude','gpt','gemini'], price: 'low', scene: ['coding','api'], special: ['cheap','stable'], concurrency: 'medium', payment: 'payg', score: 9.47, stability: 8.5, speed: 8.0, support: 8.5, features: ['低价中转','稳定运营'], freeAmount: '' },
+
+            { name: '肖恩AI (SeanAI)', url: 'free.supxh.xin', link: 'https://free.supxh.xin/register?code=XVGW49', models: ['claude','gpt','gemini'], price: 'low', scene: ['coding','chat','learning'], special: ['cheap'], concurrency: 'low', payment: 'payg', score: 9.71, stability: 8.0, speed: 8.5, support: 8.0, features: ['公益站','注册送5000','免费体验'], freeAmount: '注册送5000额度' },
+
+            { name: '无限星河AI', url: 'infistar.ai', link: 'https://infistar.ai/register?aff=E5A9B3X8&ref_source=link', models: ['gpt','claude','gemini','deepseek','grok','qwen','kimi','glm'], price: 'medium', scene: ['coding','chat','api','enterprise'], special: ['verify','transparent','redundancy'], concurrency: 'high', payment: 'payg', score: 9.66, stability: 8.5, speed: 8.0, support: 8.5, features: ['92模型','验真检测','透明计费','自建号池'], freeAmount: '' },
+
+            { name: 'API2D', url: 'api2d.com', link: 'https://api2d.com/r/241389', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'both', score: 9.64, stability: 8.5, speed: 8.0, support: 8.5, features: ['多模型','稳定运营','国内直连'], freeAmount: '新用户送额度' },
+
+            { name: 'XueDingToken (雪顶Token)', url: 'shop.xuedingtoken.com', link: 'https://shop.xuedingtoken.com/?invite=2DPLSD7Z', models: ['gpt','claude','gemini'], price: 'medium', scene: ['coding','api'], special: ['cheap'], concurrency: 'medium', payment: 'both', score: 9.58, stability: 8.5, speed: 8.0, support: 8.0, features: ['卖Token','赚钱伙伴','$5体验券'], freeAmount: '$5体验券' },
+
+            { name: '老张API (LaoZhang API)', url: 'api2.laozhang.ai', link: 'https://api2.laozhang.ai/register/?aff_code=NkYN', models: ['claude','gpt','gemini','grok'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'payg', score: 9.45, stability: 9.0, speed: 8.5, support: 8.5, features: ['老牌运营','全模型覆盖','生产级稳定'], freeAmount: '$0.5体验券' },
+
+            { name: 'Zivv', url: 'zivv.pro', link: 'https://zivv.pro/register?invite=1c91881d', models: ['claude','gpt','gemini','codex'], price: 'medium', scene: ['coding','api','enterprise'], special: ['stable','direct'], concurrency: 'high', payment: 'payg', score: 9.38, stability: 9.5, speed: 7.5, support: 8.5, features: ['极致稳定','满血官方','1:1结算'], freeAmount: '' },
+
+            { name: '呆呆兽DDSHub', url: 'ddshub.cc', link: 'https://www.ddshub.cc/register?aff=YP3QF3YV5VYX', models: ['claude','gpt','codex'], price: 'low', scene: ['coding','api','enterprise'], special: ['cheap','stable'], concurrency: 'medium', payment: 'both', score: 9.28, stability: 8.5, speed: 8.0, support: 8.5, features: ['Claude专精','低至1折','企业友好'], freeAmount: '' },
+
+            { name: 'HaoAI', url: 'hao.ai', link: 'https://hao.ai/invite/15LGCD17', models: ['claude','gpt','gemini','codex'], price: 'medium', scene: ['coding','api','enterprise'], special: ['fast','stable'], concurrency: 'high', payment: 'payg', score: 9.42, stability: 8.5, speed: 9.0, support: 8.0, features: ['WebSocket长连接','请求级账单','高速稳定'], freeAmount: '' },
+
+            { name: '豆腐 (ToAPIs)', url: 'toapis.com', link: 'https://toapis.com/register?aff=XRvp', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','chat','api'], special: ['stable','fast'], concurrency: 'high', payment: 'payg', score: 9.35, stability: 9.0, speed: 9.0, support: 8.5, features: ['多模型','稳定运营','快速响应'], freeAmount: '' },
+
+            { name: '木瓜AI', url: 'papayaai.com', link: 'https://papayaai.com/register?aff=Kq7B', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','chat','api'], special: ['stable'], concurrency: 'medium', payment: 'payg', score: 9.48, stability: 8.5, speed: 8.5, support: 8.5, features: ['多模型','稳定可靠'], freeAmount: '' },
+
+            { name: '147AI', url: '147ai.com', link: 'https://147ai.com/register?aff=VmTq', models: ['claude','gpt','gemini'], price: 'medium', scene: ['coding','api'], special: ['stable'], concurrency: 'medium', payment: 'payg', score: 9.42, stability: 8.5, speed: 8.5, support: 8.5, features: ['多模型','稳定运营'], freeAmount: '' }
 
         ];
 
@@ -7792,26 +7809,6 @@
 
         function startFinder() {
 
-            // 检查免费次数
-
-            const usage = checkFreeUsage();
-
-            if (!usage.canUse) {
-
-                alert('您本月的免费搜索次数已用完（每月1次）\n\n请下个月再来使用，或联系客服获取更多服务。');
-
-                return;
-
-            }
-
-            
-
-            // 记录使用
-
-            recordUsage();
-
-            
-
             const model = document.getElementById('finderModel').value;
 
             const budget = document.getElementById('finderBudget').value;
@@ -7826,9 +7823,15 @@
 
 
 
+            // 只从带邀请链接的站点中筛选
+
+            const candidates = stationDatabase.filter(s => s.link && (s.link.includes('aff=') || s.link.includes('invite=') || s.link.includes('ref=') || s.link.includes('aff_code=') || s.link.includes('code=')));
+
+
+
             // 计算匹配分数
 
-            const results = stationDatabase.map(station => {
+            const results = candidates.map(station => {
 
                 let score = station.score;
 
@@ -7892,21 +7895,123 @@
 
 
 
-        function displayFinderResults(results) {
+        // 随机盲选
+
+        function randomPick() {
+
+            const candidates = stationDatabase.filter(s => s.link && (s.link.includes('aff=') || s.link.includes('invite=') || s.link.includes('ref=') || s.link.includes('aff_code=') || s.link.includes('code=')));
+
+            
+
+            const btn = document.getElementById('randomPickBtn');
+
+            const btnText = document.getElementById('randomPickText');
+
+            const originalText = btnText.textContent;
+
+            
+
+            // 禁用按钮
+
+            btn.style.pointerEvents = 'none';
+
+            btn.style.opacity = '0.8';
+
+            
+
+            // 滚动动画效果
+
+            let count = 0;
+
+            const totalCount = 25;
+
+            const interval = setInterval(() => {
+
+                const randomIdx = Math.floor(Math.random() * candidates.length);
+
+                const randomStation = candidates[randomIdx];
+
+                btnText.textContent = '🎲 ' + randomStation.name;
+
+                btn.style.transform = 'scale(' + (1 + Math.sin(count * 0.5) * 0.05) + ') rotate(' + (Math.sin(count * 0.3) * 2) + 'deg)';
+
+                count++;
+
+                
+
+                if (count >= totalCount) {
+
+                    clearInterval(interval);
+
+                    
+
+                    // 最终选中
+
+                    const finalIdx = Math.floor(Math.random() * candidates.length);
+
+                    const winner = candidates[finalIdx];
+
+                    
+
+                    btnText.textContent = '🎉 恭喜选中：' + winner.name;
+
+                    btn.style.transform = 'scale(1) rotate(0)';
+
+                    btn.style.pointerEvents = '';
+
+                    btn.style.opacity = '';
+
+                    
+
+                    // 显示结果
+
+                    const results = [{ ...winner, matchScore: winner.score.toFixed(2) }];
+
+                    displayFinderResults(results, true);
+
+                    
+
+                    // 3秒后恢复按钮文字
+
+                    setTimeout(() => {
+
+                        btnText.textContent = originalText;
+
+                    }, 5000);
+
+                }
+
+            }, 80);
+
+        }
+
+
+
+        function displayFinderResults(results, isRandom) {
 
             document.getElementById('finderResults').style.display = 'block';
 
             
 
+            const header = document.querySelector('#finderResults .finder-results-header h3');
+
+            if (header) {
+
+                header.textContent = isRandom ? '🎲 随机盲选结果' : '📊 为您推荐以下 ' + results.length + ' 个中转站';
+
+            }
+
+            
+
             const cardsHtml = results.map((station, index) => `
 
-                <div class="finder-card">
+                <div class="finder-card" style="cursor: pointer;" onclick="window.open('${station.link || '#'}', '_blank')">
 
                     <div class="finder-card-rank rank-${index + 1}">${index + 1}</div>
 
                     <div class="finder-card-info">
 
-                        <h4>${escapeHtml(station.name)}</h4>
+                        <h4>${escapeHtml(station.name)} <span style="font-size: 12px; color: #4A90D9;">↗ 点击访问</span></h4>
 
                         <p>${escapeHtml(station.features.slice(0, 3).join(' · '))}</p>
 
