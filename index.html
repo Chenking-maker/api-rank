@@ -11299,6 +11299,12 @@
             card.className = 'rank-card fade-in reveal' + rankClass;
 
             card.setAttribute('data-tags', tags);
+            card.setAttribute('data-score', score);
+
+            // 去掉标签里的emoji
+            function stripEmoji(text) {
+                return text.replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}\u{1F000}-\u{1F02F}]/gu, '').trim();
+            }
 
             // 去掉标签里的emoji
             function stripEmoji(text) {
@@ -11352,6 +11358,14 @@
             rankingList.appendChild(card);
 
             card.style.animationPlayState = 'running';
+
+            // 延迟触发评分环动画
+            setTimeout(() => {
+                const fill = card.querySelector('.score-ring-fill');
+                if (fill) {
+                    fill.style.strokeDashoffset = dashOffset;
+                }
+            }, 300 + nextRank * 50);
 
         }
 
