@@ -90,7 +90,7 @@
         }
         a { color: var(--accent); text-decoration: none; }
 
-        /* Navbar */
+        /* ===== Navbar (和首页一致) ===== */
         .navbar {
             position: sticky;
             top: 0;
@@ -106,7 +106,7 @@
             box-shadow: var(--shadow-sm);
         }
         .navbar .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
@@ -120,8 +120,8 @@
             text-decoration: none;
         }
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 8px;
             background: var(--accent);
             color: #fff;
@@ -129,31 +129,64 @@
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 18px;
         }
         .logo-text {
-            font-size: 17px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             color: var(--text-primary);
         }
         .logo-text span { color: var(--accent); }
-        .nav-right {
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+        }
+        .mobile-menu-btn span {
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .nav-links {
+            list-style: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
         }
-        .nav-link {
+        .nav-links li {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 8px;
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
         }
-        .nav-link:hover {
-            color: var(--text-primary);
+        [data-theme="dark"] .nav-links a { color: var(--text-primary); }
+        .nav-links a:hover {
             background: var(--bg-card-hover);
+            color: var(--accent);
+        }
+        .nav-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: var(--green);
+            color: #fff;
+            margin-left: 8px;
         }
         .theme-toggle {
             background: var(--bg-card);
@@ -167,14 +200,34 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
+            padding: 0;
         }
         .theme-toggle:hover {
             border-color: var(--accent);
         }
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            padding: 0;
+            flex-shrink: 0;
+        }
+        .github-link:hover {
+            border-color: var(--accent);
+        }
+        .github-link svg {
+            color: var(--text-primary);
+        }
 
-        /* Main */
+        /* ===== Main Content ===== */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -216,7 +269,7 @@
         }
         .stats-bar {
             display: flex;
-            gap: 24px;
+            gap: 32px;
             margin-top: 24px;
             padding-top: 24px;
             border-top: 1px solid var(--border);
@@ -237,40 +290,45 @@
             color: var(--text-muted);
         }
 
-        /* Dead list */
+        /* ===== Dead List (两列) ===== */
         .dead-section {
             padding: 0 0 80px;
         }
-        .dead-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+        .dead-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 24px;
         }
         .dead-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 18px;
+            padding: 12px 16px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             transition: all 0.2s;
+            gap: 12px;
         }
         .dead-item:hover {
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
         }
         .dead-item .site-name {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             color: var(--text-primary);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            opacity: 0.7;
-            transition: opacity 0.2s;
+            gap: 6px;
+            opacity: 0.65;
+            transition: all 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            min-width: 0;
         }
         .dead-item .site-name:hover {
             opacity: 1;
@@ -278,17 +336,19 @@
         }
         .dead-item .site-name::after {
             content: '↗';
-            font-size: 13px;
+            font-size: 12px;
             opacity: 0.5;
+            flex-shrink: 0;
         }
         .dead-item .reason {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             background: var(--bg-primary);
-            padding: 4px 10px;
+            padding: 3px 10px;
             border-radius: 9999px;
             border: 1px solid var(--border);
             white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .tip-card {
@@ -317,34 +377,69 @@
             gap: 10px;
         }
 
-        /* Mobile */
-        @media (max-width: 640px) {
+        /* ===== Mobile ===== */
+        @media (max-width: 768px) {
+            .navbar .container { padding: 0 16px; }
+            .mobile-menu-btn { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: var(--bg-card);
+                flex-direction: column;
+                padding: 16px;
+                gap: 4px;
+                border-bottom: 1px solid var(--border);
+                transform: translateY(-120%);
+                transition: transform 0.3s ease;
+            }
+            .nav-links.open {
+                transform: translateY(0);
+            }
+            .nav-links a {
+                width: 100%;
+                padding: 10px 14px;
+            }
+            .nav-badge { display: none; }
+
             .container { padding: 0 16px; }
             .page-header { padding: 40px 0 32px; }
-            .stats-bar { gap: 16px; flex-wrap: wrap; }
+            .stats-bar { gap: 20px; flex-wrap: wrap; }
+
+            .dead-grid {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
             .dead-item { padding: 12px 14px; }
             .dead-item .site-name { font-size: 14px; }
             .dead-item .reason { font-size: 11px; padding: 3px 8px; }
-            .nav-link { display: none; }
         }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar (和首页结构一致) -->
 <nav class="navbar" id="navbar">
     <div class="container">
         <a href="index.html" class="logo">
             <div class="logo-icon">A</div>
-            <div class="logo-text">API<span>Rank</span></div>
+            <div class="logo-text">API<span>排行榜</span></div>
         </a>
-        <div class="nav-right">
-            <a href="index.html" class="nav-link">首页</a>
-            <a href="all-stations.html" class="nav-link">全部</a>
-            <a href="news.html" class="nav-link">新闻</a>
-            <a href="about.html" class="nav-link">关于</a>
-            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
-        </div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#ranking">排行榜</a></li>
+            <li><a href="creative-tools.html">🎨 在线绘图/视频专区</a></li>
+            <li><a href="index.html" onclick="localStorage.setItem('openFinder','1')">🎯 快速选站</a></li>
+            <li><a href="index.html#guide">选站指南</a></li>
+            <li><a href="about.html">关于本站</a></li>
+            <li><a href="news.html">相关新闻</a></li>
+            <li><span class="nav-badge">实时更新</span></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
+            <li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" class="github-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+        </ul>
     </div>
 </nav>
 
@@ -366,64 +461,64 @@
     </header>
 
     <section class="dead-section">
-        <ul class="dead-list" id="deadList">
-            <li class="dead-item"><a href="https://feixian-api.com" target="_blank" rel="noopener noreferrer" class="site-name">非线智能Api</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://suchuangapi.com" target="_blank" rel="noopener noreferrer" class="site-name">速创API</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://api.anyrouter.com" target="_blank" rel="noopener noreferrer" class="site-name">Anyrouter</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://b4uapi.com" target="_blank" rel="noopener noreferrer" class="site-name">B4U API</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://91codeapi.com" target="_blank" rel="noopener noreferrer" class="site-name">91Code API</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://jayapi.com" target="_blank" rel="noopener noreferrer" class="site-name">JAY中转API</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://chaofanapi.com" target="_blank" rel="noopener noreferrer" class="site-name">超凡API中转站</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://token5u.com" target="_blank" rel="noopener noreferrer" class="site-name">词元无忧API (Token5u)</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://yingapi.com" target="_blank" rel="noopener noreferrer" class="site-name">莹的API</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://closeai-asia.com" target="_blank" rel="noopener noreferrer" class="site-name">CloseAI</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://api.anyrouter.com" target="_blank" rel="noopener noreferrer" class="site-name">AnyRoute</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://gptcat.cc" target="_blank" rel="noopener noreferrer" class="site-name">GPT猫 (GPTCat)</a><span class="reason">已转型</span></li>
-            <li class="dead-item"><a href="https://qianfan.baidubce.com" target="_blank" rel="noopener noreferrer" class="site-name">百度千帆</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://nekocode.com" target="_blank" rel="noopener noreferrer" class="site-name">NekoCode</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://clauqe.com" target="_blank" rel="noopener noreferrer" class="site-name">ClauqeAI</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://claude.cn.com" target="_blank" rel="noopener noreferrer" class="site-name">ClaudeCN</a><span class="reason">安全验证</span></li>
-            <li class="dead-item"><a href="https://claudeapi.net" target="_blank" rel="noopener noreferrer" class="site-name">Claude API</a><span class="reason">已转型</span></li>
-            <li class="dead-item"><a href="https://zhihuiapi.com" target="_blank" rel="noopener noreferrer" class="site-name">智惠API</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://aok.ai" target="_blank" rel="noopener noreferrer" class="site-name">AOK</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://frontierintelligence.ai" target="_blank" rel="noopener noreferrer" class="site-name">Frontier Intelligence</a><span class="reason">访问超时</span></li>
-            <li class="dead-item"><a href="https://anyroute.com" target="_blank" rel="noopener noreferrer" class="site-name">AnyRoute</a><span class="reason">无法访问</span></li>
-            <li class="dead-item"><a href="https://openai-sb.com" target="_blank" rel="noopener noreferrer" class="site-name">OpenAI-SB</a><span class="reason">域名无法解析</span></li>
-            <li class="dead-item"><a href="https://api.lingyaai.cn/register?aff=k8I8" target="_blank" rel="noopener noreferrer" class="site-name">灵芽API</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://www.4stoken.cn" target="_blank" rel="noopener noreferrer" class="site-name">4SToken</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://api.aiyungc.cn" target="_blank" rel="noopener noreferrer" class="site-name">方舟API</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://shiyunapi.com/register?aff=mR1T" target="_blank" rel="noopener noreferrer" class="site-name">诗云API</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://4sapi.com" target="_blank" rel="noopener noreferrer" class="site-name">星链4SAPI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://api.easyapi.com" target="_blank" rel="noopener noreferrer" class="site-name">API易</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://api.ikuncode.cc" target="_blank" rel="noopener noreferrer" class="site-name">爱坤代码 (IKunCode)</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://302.ai" target="_blank" rel="noopener noreferrer" class="site-name">302.AI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://www.sssaicode.com/register?ref=SRVFVP" target="_blank" rel="noopener noreferrer" class="site-name">SSSAICode</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://snakegpt.vip" target="_blank" rel="noopener noreferrer" class="site-name">蛇GPT (SnakeGPT)</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://ai.huoyachat.com" target="_blank" rel="noopener noreferrer" class="site-name">AI中文版</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://web.apiplus.org" target="_blank" rel="noopener noreferrer" class="site-name">APIPlus</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://b.ai" target="_blank" rel="noopener noreferrer" class="site-name">B.AI (波场)</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://xdhdancer.top" target="_blank" rel="noopener noreferrer" class="site-name">产灵API</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://bewildcard.com" target="_blank" rel="noopener noreferrer" class="site-name">万卡API (WildCard)</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://doro.lol/register?aff=0LSF" target="_blank" rel="noopener noreferrer" class="site-name">Doro API</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://fishxcode.com" target="_blank" rel="noopener noreferrer" class="site-name">鱼代码 (FishXCode)</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://apimart.ai" target="_blank" rel="noopener noreferrer" class="site-name">API集市 (API Mart)</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://console.mistral.ai" target="_blank" rel="noopener noreferrer" class="site-name">Mistral AI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" class="site-name">Groq</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://suirenai.com/register?aff=2MR82HWMYJVX" target="_blank" rel="noopener noreferrer" class="site-name">随人AI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://unity2.ai/register?ref=bayLaABG" target="_blank" rel="noopener noreferrer" class="site-name">Unity2.AI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://anpin.ai" target="_blank" rel="noopener noreferrer" class="site-name">AnPin AI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://toknex.com" target="_blank" rel="noopener noreferrer" class="site-name">Toknex</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://sevnx.com" target="_blank" rel="noopener noreferrer" class="site-name">SevnX</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://sudocode.run/register?aff=G7iU" target="_blank" rel="noopener noreferrer" class="site-name">SudoCode</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://luminai.com" target="_blank" rel="noopener noreferrer" class="site-name">Lumin AI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://muskai.com" target="_blank" rel="noopener noreferrer" class="site-name">MuskAI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://modcon.ai" target="_blank" rel="noopener noreferrer" class="site-name">ModCon</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://switchbase.com" target="_blank" rel="noopener noreferrer" class="site-name">SwitchBase</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://derouter.com" target="_blank" rel="noopener noreferrer" class="site-name">DeRouter</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://coderelay.com" target="_blank" rel="noopener noreferrer" class="site-name">CodeRelay</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://runapi.co/register?aff=mS0w" target="_blank" rel="noopener noreferrer" class="site-name">RunAPI</a><span class="reason">标记为失效</span></li>
-            <li class="dead-item"><a href="https://apikey.fun/register?aff=68W3Q3WELNBD" target="_blank" rel="noopener noreferrer" class="site-name">ApiKey.fun</a><span class="reason">标记为失效</span></li>
-        </ul>
+        <div class="dead-grid" id="deadGrid">
+            <div class="dead-item"><a href="https://feixian-api.com" target="_blank" rel="noopener noreferrer" class="site-name">非线智能Api</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://suchuangapi.com" target="_blank" rel="noopener noreferrer" class="site-name">速创API</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://api.anyrouter.com" target="_blank" rel="noopener noreferrer" class="site-name">Anyrouter</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://b4uapi.com" target="_blank" rel="noopener noreferrer" class="site-name">B4U API</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://91codeapi.com" target="_blank" rel="noopener noreferrer" class="site-name">91Code API</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://jayapi.com" target="_blank" rel="noopener noreferrer" class="site-name">JAY中转API</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://chaofanapi.com" target="_blank" rel="noopener noreferrer" class="site-name">超凡API中转站</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://token5u.com" target="_blank" rel="noopener noreferrer" class="site-name">词元无忧API (Token5u)</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://yingapi.com" target="_blank" rel="noopener noreferrer" class="site-name">莹的API</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://closeai-asia.com" target="_blank" rel="noopener noreferrer" class="site-name">CloseAI</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://api.anyrouter.com" target="_blank" rel="noopener noreferrer" class="site-name">AnyRoute</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://gptcat.cc" target="_blank" rel="noopener noreferrer" class="site-name">GPT猫 (GPTCat)</a><span class="reason">已转型</span></div>
+            <div class="dead-item"><a href="https://qianfan.baidubce.com" target="_blank" rel="noopener noreferrer" class="site-name">百度千帆</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://nekocode.com" target="_blank" rel="noopener noreferrer" class="site-name">NekoCode</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://clauqe.com" target="_blank" rel="noopener noreferrer" class="site-name">ClauqeAI</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://claude.cn.com" target="_blank" rel="noopener noreferrer" class="site-name">ClaudeCN</a><span class="reason">安全验证</span></div>
+            <div class="dead-item"><a href="https://claudeapi.net" target="_blank" rel="noopener noreferrer" class="site-name">Claude API</a><span class="reason">已转型</span></div>
+            <div class="dead-item"><a href="https://zhihuiapi.com" target="_blank" rel="noopener noreferrer" class="site-name">智惠API</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://aok.ai" target="_blank" rel="noopener noreferrer" class="site-name">AOK</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://frontierintelligence.ai" target="_blank" rel="noopener noreferrer" class="site-name">Frontier Intelligence</a><span class="reason">访问超时</span></div>
+            <div class="dead-item"><a href="https://anyroute.com" target="_blank" rel="noopener noreferrer" class="site-name">AnyRoute</a><span class="reason">无法访问</span></div>
+            <div class="dead-item"><a href="https://openai-sb.com" target="_blank" rel="noopener noreferrer" class="site-name">OpenAI-SB</a><span class="reason">域名无法解析</span></div>
+            <div class="dead-item"><a href="https://api.lingyaai.cn/register?aff=k8I8" target="_blank" rel="noopener noreferrer" class="site-name">灵芽API</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://www.4stoken.cn" target="_blank" rel="noopener noreferrer" class="site-name">4SToken</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://api.aiyungc.cn" target="_blank" rel="noopener noreferrer" class="site-name">方舟API</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://shiyunapi.com/register?aff=mR1T" target="_blank" rel="noopener noreferrer" class="site-name">诗云API</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://4sapi.com" target="_blank" rel="noopener noreferrer" class="site-name">星链4SAPI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://api.easyapi.com" target="_blank" rel="noopener noreferrer" class="site-name">API易</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://api.ikuncode.cc" target="_blank" rel="noopener noreferrer" class="site-name">爱坤代码 (IKunCode)</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://302.ai" target="_blank" rel="noopener noreferrer" class="site-name">302.AI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://www.sssaicode.com/register?ref=SRVFVP" target="_blank" rel="noopener noreferrer" class="site-name">SSSAICode</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://snakegpt.vip" target="_blank" rel="noopener noreferrer" class="site-name">蛇GPT (SnakeGPT)</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://ai.huoyachat.com" target="_blank" rel="noopener noreferrer" class="site-name">AI中文版</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://web.apiplus.org" target="_blank" rel="noopener noreferrer" class="site-name">APIPlus</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://b.ai" target="_blank" rel="noopener noreferrer" class="site-name">B.AI (波场)</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://xdhdancer.top" target="_blank" rel="noopener noreferrer" class="site-name">产灵API</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://bewildcard.com" target="_blank" rel="noopener noreferrer" class="site-name">万卡API (WildCard)</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://doro.lol/register?aff=0LSF" target="_blank" rel="noopener noreferrer" class="site-name">Doro API</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://fishxcode.com" target="_blank" rel="noopener noreferrer" class="site-name">鱼代码 (FishXCode)</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://apimart.ai" target="_blank" rel="noopener noreferrer" class="site-name">API集市 (API Mart)</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://console.mistral.ai" target="_blank" rel="noopener noreferrer" class="site-name">Mistral AI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" class="site-name">Groq</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://suirenai.com/register?aff=2MR82HWMYJVX" target="_blank" rel="noopener noreferrer" class="site-name">随人AI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://unity2.ai/register?ref=bayLaABG" target="_blank" rel="noopener noreferrer" class="site-name">Unity2.AI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://anpin.ai" target="_blank" rel="noopener noreferrer" class="site-name">AnPin AI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://toknex.com" target="_blank" rel="noopener noreferrer" class="site-name">Toknex</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://sevnx.com" target="_blank" rel="noopener noreferrer" class="site-name">SevnX</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://sudocode.run/register?aff=G7iU" target="_blank" rel="noopener noreferrer" class="site-name">SudoCode</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://luminai.com" target="_blank" rel="noopener noreferrer" class="site-name">Lumin AI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://muskai.com" target="_blank" rel="noopener noreferrer" class="site-name">MuskAI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://modcon.ai" target="_blank" rel="noopener noreferrer" class="site-name">ModCon</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://switchbase.com" target="_blank" rel="noopener noreferrer" class="site-name">SwitchBase</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://derouter.com" target="_blank" rel="noopener noreferrer" class="site-name">DeRouter</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://coderelay.com" target="_blank" rel="noopener noreferrer" class="site-name">CodeRelay</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://runapi.co/register?aff=mS0w" target="_blank" rel="noopener noreferrer" class="site-name">RunAPI</a><span class="reason">标记为失效</span></div>
+            <div class="dead-item"><a href="https://apikey.fun/register?aff=68W3Q3WELNBD" target="_blank" rel="noopener noreferrer" class="site-name">ApiKey.fun</a><span class="reason">标记为失效</span></div>
+        </div>
 
         <div class="tip-card">
             点击站点名称可跳转至原网站（可能已无法访问）。如果你发现某个站点已恢复服务，欢迎反馈更新。
@@ -434,43 +529,58 @@
 </div>
 
 <script>
-    // Theme toggle
-    (function() {
-        var toggle = document.getElementById('themeToggle');
+    // Theme toggle (和首页一致)
+    function toggleTheme() {
         var html = document.documentElement;
-        function updateIcon() {
-            toggle.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+        var current = html.getAttribute('data-theme');
+        if (current === 'dark') {
+            html.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
         }
-        updateIcon();
-        toggle.addEventListener('click', function() {
-            if (html.getAttribute('data-theme') === 'dark') {
-                html.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-            updateIcon();
+        updateThemeIcon();
+    }
+    function updateThemeIcon() {
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+            btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+        }
+    }
+    updateThemeIcon();
+
+    // Mobile menu
+    function toggleMobileMenu() {
+        var nav = document.getElementById('navLinks');
+        nav.classList.toggle('open');
+    }
+
+    // Navbar scroll effect
+    var navbar = document.getElementById('navbar');
+    function handleScroll() {
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Auto count
+    var grid = document.getElementById('deadGrid');
+    var countEl = document.getElementById('deadCount');
+    if (grid && countEl) {
+        countEl.textContent = grid.children.length;
+    }
+
+    // 点击菜单链接后自动关闭移动菜单
+    document.querySelectorAll('#navLinks a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var nav = document.getElementById('navLinks');
+            if (nav) nav.classList.remove('open');
         });
-
-        // Navbar scroll effect
-        var navbar = document.getElementById('navbar');
-        function handleScroll() {
-            if (window.scrollY > 10) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        // Update dead count
-        var list = document.getElementById('deadList');
-        var countEl = document.getElementById('deadCount');
-        if (list && countEl) {
-            countEl.textContent = list.children.length;
-        }
-    })();
+    });
 </script>
 
 </body>
