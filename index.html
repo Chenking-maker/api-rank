@@ -515,15 +515,15 @@
 
             gap: 8px;
 
-            background: rgba(0,210,160,0.1);
+            background: var(--accent-50);
 
-            border: 1px solid rgba(0,210,160,0.2);
+            border: 1px solid var(--accent-100);
 
-            color: var(--green);
+            color: var(--accent);
 
             padding: 6px 16px;
 
-            border-radius: 50px;
+            border-radius: 9999px;
 
             font-size: 13px;
 
@@ -1072,6 +1072,267 @@
 
             color: var(--text-muted) !important;
 
+        }
+
+        /* ===== 评分圆形进度环 ===== */
+        .score-ring {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+        }
+
+        .score-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .score-ring-bg {
+            fill: none;
+            stroke: var(--border);
+            stroke-width: 3;
+        }
+
+        .score-ring-fill {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .score-ring-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        .score-ring-text small {
+            font-size: 9px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* ===== 前三名特殊卡片 ===== */
+        .rank-card.rank-1 {
+            border: 1px solid transparent;
+            background:
+                linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                linear-gradient(135deg, #F59E0B, #FBBF24, #FDE68A) border-box;
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.12);
+        }
+
+        .rank-card.rank-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #F59E0B, #FBBF24);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .rank-card.rank-1 .rank-number {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .rank-card.rank-2 {
+            border: 1px solid transparent;
+            background:
+                linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                linear-gradient(135deg, #94A3B8, #CBD5E1, #E2E8F0) border-box;
+            box-shadow: 0 6px 24px rgba(148, 163, 184, 0.1);
+        }
+
+        .rank-card.rank-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #94A3B8, #CBD5E1);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .rank-card.rank-2 .rank-number {
+            background: linear-gradient(135deg, #94A3B8, #64748B);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .rank-card.rank-3 {
+            border: 1px solid transparent;
+            background:
+                linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                linear-gradient(135deg, #CD7F32, #D4A574, #E8C99B) border-box;
+            box-shadow: 0 6px 24px rgba(205, 127, 50, 0.08);
+        }
+
+        .rank-card.rank-3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #CD7F32, #D4A574);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .rank-card.rank-3 .rank-number {
+            background: linear-gradient(135deg, #CD7F32, #B8860B);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* ===== 标签系统升级 ===== */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.6;
+            border: 1px solid transparent;
+        }
+
+        .tag-stable {
+            background: var(--accent-50);
+            color: var(--accent);
+            border-color: var(--accent-100);
+        }
+
+        .tag-hot {
+            background: rgba(239, 68, 68, 0.08);
+            color: var(--red);
+            border-color: rgba(239, 68, 68, 0.15);
+        }
+
+        .tag-cheap {
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--green);
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+
+        .tag-official {
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--purple);
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+
+        .tag-new {
+            background: rgba(249, 115, 22, 0.08);
+            color: var(--orange);
+            border-color: rgba(249, 115, 22, 0.15);
+        }
+
+        /* ===== 按钮 Pill 化 ===== */
+        .btn {
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+            box-shadow: 0 1px 3px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            background: #2563EB;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px var(--accent-glow);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* ===== 滚动入场动画 ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== 导航栏滚动变化 ===== */
+        .navbar.scrolled {
+            box-shadow: var(--shadow-sm);
+            border-bottom-color: var(--border);
+        }
+
+        /* ===== 背景微纹理 ===== */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+            background-size: 32px 32px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse, var(--accent-glow), transparent 70%);
+            opacity: 0.6;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== 数字滚动动画辅助 ===== */
+        .count-up {
+            display: inline-block;
+            font-variant-numeric: tabular-nums;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .score-ring-fill {
+                transition: none;
+            }
+            .rank-card:hover {
+                transform: none;
+            }
+            .hero-stat:hover {
+                transform: none;
+            }
         }
 
         /* 查看更多横幅按钮 */
@@ -11025,13 +11286,37 @@
 
             const card = document.createElement('div');
 
-            card.className = 'rank-card fade-in';
+            const score = site.score ? Number(site.score) : 0;
+            const scorePercent = score / 10;
+            const circumference = 2 * Math.PI * 24; // r=24
+            const dashOffset = circumference * (1 - scorePercent);
+
+            // 评分颜色
+            let scoreColor = 'var(--accent)';
+            if (score >= 9.5) scoreColor = 'var(--green)';
+            else if (score >= 9.0) scoreColor = 'var(--accent)';
+            else if (score >= 8.5) scoreColor = 'var(--yellow)';
+            else scoreColor = 'var(--text-muted)';
+
+            // 前三名特殊类
+            let rankClass = '';
+            if (nextRank === 1) rankClass = ' rank-1';
+            else if (nextRank === 2) rankClass = ' rank-2';
+            else if (nextRank === 3) rankClass = ' rank-3';
+
+            card.className = 'rank-card fade-in reveal' + rankClass;
 
             card.setAttribute('data-tags', tags);
+            card.setAttribute('data-score', score);
+
+            // 去掉标签里的emoji
+            function stripEmoji(text) {
+                return text.replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}\u{1F000}-\u{1F02F}]/gu, '').trim();
+            }
 
             card.innerHTML = `
 
-                <div class="rank-number">#${nextRank}</div>
+                <div class="rank-number">${nextRank}</div>
 
                 <div class="rank-info">
 
@@ -11041,7 +11326,7 @@
 
                         <div class="rank-tags">
 
-                            ${displayTags.map(t => '<span class="tag ' + t.cls + '">' + escapeHtml(t.text) + '</span>').join('')}
+                            ${displayTags.map(t => '<span class="tag ' + t.cls + '">' + escapeHtml(stripEmoji(t.text)) + '</span>').join('')}
 
                         </div>
 
@@ -11056,9 +11341,21 @@
 
                 <div class="rank-action">
 
-                    <div class="rank-score">${site.score ? Number(site.score).toFixed(2) : '?.??'} <small>/10</small></div>
+                    <div class="score-ring" data-score="${score}">
+                        <svg viewBox="0 0 52 52">
+                            <circle class="score-ring-bg" cx="26" cy="26" r="24"/>
+                            <circle class="score-ring-fill" cx="26" cy="26" r="24"
+                                stroke="${scoreColor}"
+                                stroke-dasharray="${circumference}"
+                                stroke-dashoffset="${circumference}"/>
+                        </svg>
+                        <div class="score-ring-text">
+                            <span>${score ? score.toFixed(1) : '?.?'}</span>
+                            <small>/10</small>
+                        </div>
+                    </div>
 
-                    <a href="${escapeHtml(site.url)}" target="_blank" class="btn btn-primary">立即访问 →</a>
+                    <a href="${escapeHtml(site.url)}" target="_blank" class="btn btn-primary">立即访问</a>
 
                 </div>
 
@@ -11069,6 +11366,14 @@
             rankingList.appendChild(card);
 
             card.style.animationPlayState = 'running';
+
+            // 延迟触发评分环动画
+            setTimeout(() => {
+                const fill = card.querySelector('.score-ring-fill');
+                if (fill) {
+                    fill.style.strokeDashoffset = dashOffset;
+                }
+            }, 300 + nextRank * 50);
 
         }
 
@@ -12751,11 +13056,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </script>
 
+    <!-- ===== 滚动动效 & 导航栏滚动 ===== -->
+    <script>
+        (function() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
 
+            // 导航栏滚动变化
+            const navbar = document.querySelector('.navbar');
+            function handleNavScroll() {
+                if (window.scrollY > 10) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', handleNavScroll, { passive: true });
+            handleNavScroll();
 
+            // 滚动入场动画 (IntersectionObserver)
+            const revealElements = document.querySelectorAll('.reveal, .section, .hero-stats-card, .rank-card');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, i) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, i * 60);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -40px 0px'
+                });
 
-
-
+                revealElements.forEach(el => observer.observe(el));
+            } else {
+                // 降级：直接显示
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
 
     </body>
 
