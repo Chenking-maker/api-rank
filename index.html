@@ -2019,23 +2019,25 @@
 
             gap: 4px;
 
-            font-size: 32px;
+            font-size: 28px;
 
-            font-weight: 800;
+            font-weight: 700;
 
             font-family: 'JetBrains Mono', monospace;
 
-            color: #a29bfe;
+            color: var(--accent);
+            letter-spacing: -0.02em;
 
         }
 
-        
+        .rank-score.green { color: var(--green); }
+        .rank-score.yellow { color: var(--yellow); }
 
         .rank-score small {
 
-            font-size: 14px;
+            font-size: 13px;
 
-            color: rgba(255,255,255,0.5);
+            color: var(--text-muted);
 
             font-weight: 400;
 
@@ -11287,16 +11289,6 @@
             const card = document.createElement('div');
 
             const score = site.score ? Number(site.score) : 0;
-            const scorePercent = score / 10;
-            const circumference = 2 * Math.PI * 24; // r=24
-            const dashOffset = circumference * (1 - scorePercent);
-
-            // 评分颜色
-            let scoreColor = 'var(--accent)';
-            if (score >= 9.5) scoreColor = 'var(--green)';
-            else if (score >= 9.0) scoreColor = 'var(--accent)';
-            else if (score >= 8.5) scoreColor = 'var(--yellow)';
-            else scoreColor = 'var(--text-muted)';
 
             // 前三名特殊类
             let rankClass = '';
@@ -11307,12 +11299,18 @@
             card.className = 'rank-card fade-in reveal' + rankClass;
 
             card.setAttribute('data-tags', tags);
-            card.setAttribute('data-score', score);
 
             // 去掉标签里的emoji
             function stripEmoji(text) {
                 return text.replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}\u{1F000}-\u{1F02F}]/gu, '').trim();
             }
+
+            // 评分颜色
+            let scoreClass = 'accent';
+            if (score >= 9.5) scoreClass = 'green';
+            else if (score >= 9.0) scoreClass = 'accent';
+            else if (score >= 8.5) scoreClass = 'yellow';
+            else scoreClass = '';
 
             card.innerHTML = `
 
@@ -11341,19 +11339,7 @@
 
                 <div class="rank-action">
 
-                    <div class="score-ring" data-score="${score}">
-                        <svg viewBox="0 0 52 52">
-                            <circle class="score-ring-bg" cx="26" cy="26" r="24"/>
-                            <circle class="score-ring-fill" cx="26" cy="26" r="24"
-                                stroke="${scoreColor}"
-                                stroke-dasharray="${circumference}"
-                                stroke-dashoffset="${circumference}"/>
-                        </svg>
-                        <div class="score-ring-text">
-                            <span>${score ? score.toFixed(1) : '?.?'}</span>
-                            <small>/10</small>
-                        </div>
-                    </div>
+                    <div class="rank-score ${scoreClass}">${score ? score.toFixed(2) : '?.??'} <small>/10</small></div>
 
                     <a href="${escapeHtml(site.url)}" target="_blank" class="btn btn-primary">立即访问</a>
 
@@ -11366,14 +11352,6 @@
             rankingList.appendChild(card);
 
             card.style.animationPlayState = 'running';
-
-            // 延迟触发评分环动画
-            setTimeout(() => {
-                const fill = card.querySelector('.score-ring-fill');
-                if (fill) {
-                    fill.style.strokeDashoffset = dashOffset;
-                }
-            }, 300 + nextRank * 50);
 
         }
 
