@@ -6495,4 +6495,55 @@
         ],
         "likes": 0
     }
+,
+    {
+        "url": "https://logitstoken.com/sign-up",
+        "domain": "logitstoken.com",
+        "name": "Logits Token",
+        "description": "统一AI API网关，支持OpenAI、Claude、Gemini、DeepSeek、Qwen、Llama及生图模型。兼容多种API协议，提供按量计费、用量与成本监控、团队权限管理和自动负载均衡。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "domestic",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "enterprise",
+            "team",
+            "smart-route"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 0,
+        "response_time": 0,
+        "alive": true,
+        "last_check": "2026-09-17",
+        "check_count": 1,
+        "display_tags": [
+            "统一网关",
+            "多协议兼容",
+            "透明计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "多模型聚合",
+                "cls": "green"
+            },
+            {
+                "label": "计费",
+                "value": "按量付费",
+                "cls": "accent"
+            },
+            {
+                "label": "能力",
+                "value": "团队与负载均衡",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    }
 ]
