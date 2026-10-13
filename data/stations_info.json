@@ -1,49 +1,47 @@
 [
     {
-        "url": "https://toapis.com/login?aff=yjH5",
-        "domain": "toapis.com",
-        "name": "豆腐 (ToAPIs)",
-        "description": "AI API网关排行榜冠军平台，OpenAI/Anthropic/Google/字节/阿里/DeepSeek官方授权合作伙伴。50+模型统一接入（文本/图像/视频），支持Kling V3 Turbo/Veo/Sora2视频模型。企业级SLA保障，全球多节点部署，新用户注册即领$0.2体验金。",
+        "url": "https://teamorouter.cn/?i=ad992e768a",
+        "domain": "teamorouter.cn",
+        "name": "TeamoRouter",
+        "description": "DeepSeek V4 + Codex 双引擎驱动的全能 API 中转站。一个 API Key 调用 Claude、GPT、Gemini、DeepSeek 等全线模型，首次付费返 10%，好友首次付费即返现到账。支持高并发请求，响应仅 0.52s，适合开发者和团队高频调用。",
         "models": [
             "claude",
             "gpt",
             "gemini",
-            "image",
-            "video",
-            "cheap"
+            "deepseek",
+            "codex"
         ],
         "features": [
             "stable",
             "multi",
-            "cheap",
-            "enterprise"
+            "cheap"
         ],
-        "price": "medium",
-        "free_amount": "$0.2体验金",
-        "score": 9.35,
-        "response_time": 3.03,
+        "price": "low",
+        "free_amount": "首次付费返10%",
+        "score": 9.94,
+        "response_time": 0.52,
         "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 4,
+        "last_check": "2026-08-10",
+        "check_count": 1,
         "display_tags": [
-            "官方授权合作",
-            "50+模型",
-            "视频模型"
+            "DeepSeek V4",
+            "Codex支持",
+            "首次返10%"
         ],
         "display_metrics": [
             {
-                "label": "权威",
-                "value": "6大厂商官方授权",
+                "label": "模型",
+                "value": "DeepSeek V4+Codex",
                 "cls": "green"
             },
             {
-                "label": "模型",
-                "value": "50+文本/图像/视频",
+                "label": "福利",
+                "value": "首次付费返10%",
                 "cls": "accent"
             },
             {
-                "label": "福利",
-                "value": "$0.2体验金",
+                "label": "口碑",
+                "value": "宝藏入口",
                 "cls": ""
             }
         ],
@@ -97,53 +95,143 @@
         "likes": 0
     },
     {
-        "url": "https://openrouter.ai",
-        "domain": "openrouter.ai",
-        "name": "OpenRouter",
-        "description": "全球最知名LLM API聚合商，70+供应商、400+模型、10M+用户、100T月Token。a16z/Stripe背书，新增Claude Fable 5、GPT-5.5、Gemini 3.1 Pro Preview。生态成熟可靠。",
+        "url": "https://sui-xiang.com/register?aff=5J3USAV9LQEB",
+        "domain": "sui-xiang.com",
+        "name": "随想",
+        "description": "AI API中转站，支持Claude/GPT/Gemini等多种主流模型调用，响应快速稳定，适合开发者高频调用场景。",
         "models": [
             "claude",
             "gpt",
             "gemini"
         ],
         "features": [
-            "multi",
-            "enterprise"
+            "stable",
+            "multi"
         ],
         "price": "medium",
-        "free_amount": "新用户$1免费",
-        "score": 9.08,
-        "response_time": 0.9,
+        "free_amount": "",
+        "score": 9.82,
+        "response_time": 0.48,
         "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
+        "last_check": "2026-08-11",
+        "check_count": 1,
         "display_tags": [
-            "海外原生",
-            "250k+应用",
-            "60+Provider"
+            "多模型",
+            "快速响应",
+            "稳定可靠"
         ],
         "display_metrics": [
             {
-                "label": "应用",
-                "value": "全球聚合",
+                "label": "专业",
+                "value": "多模型支持",
                 "cls": "green"
             },
             {
-                "label": "价格",
-                "value": "按量付费",
+                "label": "响应",
+                "value": "0.48s",
                 "cls": "accent"
             },
             {
                 "label": "口碑",
-                "value": "a16z引用",
+                "value": "稳定可靠",
                 "cls": ""
             }
         ],
         "likes": 0
     },
     {
-        "url": "https://www.right.codes/register?aff=56503380",
-        "domain": "right.codes",
+        "url": "https://apinebula.ai/0gDuPn",
+        "domain": "apinebula.ai",
+        "name": "apinebula",
+        "description": "面向全球开发者的AI API网关，支持支付宝充值，统一接入当前开放的主流AI模型。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.81,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "全球网关",
+            "支付宝充值",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "支付",
+                "value": "支付宝",
+                "cls": "accent"
+            },
+            {
+                "label": "定位",
+                "value": "全球开发者",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "统一接入",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://moacode.org/register?ref=king308",
+        "domain": "moacode.org",
+        "name": "moacode",
+        "description": "一个Key连接所有编程Agent。支持Claude Code、Codex CLI、Gemini CLI统一接入。智能路由容灾，Token级透明计费，无加价无最低消费。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.79,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "编程Agent",
+            "智能路由",
+            "透明计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "支持",
+                "value": "Claude Code",
+                "cls": "accent"
+            },
+            {
+                "label": "特色",
+                "value": "无最低消费",
+                "cls": "green"
+            },
+            {
+                "label": "容灾",
+                "value": "智能路由",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://rightapi.ai/register?aff=56503380",
+        "domain": "rightapi.ai",
         "name": "莱特代码 (RightCode)",
         "description": "专为编程设计，专注Claude/Gemini/GPT接口。文档清晰响应快(0.43s)，1元起充小额测试无压力。",
         "models": [
@@ -182,6 +270,141 @@
             {
                 "label": "口碑",
                 "value": "文档清晰",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://free.supxh.xin/register?code=XVGW49",
+        "domain": "supxh.xin",
+        "name": "肖恩AI (SeanAI)",
+        "description": "免费 API 公益站，注册即送 5000 额度。支持 Claude/GPT/Gemini 等主流模型调用，主打公益免费路线，无套路无隐藏消费。适合学生党、个人开发者及 AI 爱好者体验测试，社区活跃持续更新模型列表，新手友好文档完善。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "free",
+        "free_amount": "注册送5000额度",
+        "score": 9.71,
+        "response_time": 0.75,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "公益站",
+            "注册送5000",
+            "免费体验"
+        ],
+        "display_metrics": [
+            {
+                "label": "福利",
+                "value": "注册送5000额度",
+                "cls": "green"
+            },
+            {
+                "label": "定位",
+                "value": "公益免费站",
+                "cls": "accent"
+            },
+            {
+                "label": "适合",
+                "value": "学生/个人",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://s.qiniu.com/aYRV3a",
+        "domain": "qiniu.com",
+        "name": "七牛云",
+        "description": "七牛云AI API服务，依托七牛云企业级云基础设施，提供稳定可靠的大模型API调用服务。支持Claude/GPT/Gemini等主流模型，企业级SLA保障。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "enterprise",
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.7,
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "企业级",
+            "云基础设施",
+            "SLA保障"
+        ],
+        "display_metrics": [
+            {
+                "label": "定位",
+                "value": "企业级云服务",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.45s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "七牛云品牌",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://openox.tech/r/46525",
+        "domain": "openox.tech",
+        "name": "OpenOx",
+        "description": "一个API Key接入GPT-5.6、Claude Opus 5，以及Kimi K3、GLM 5.2、Grok、Seedance、Fable 5等主流模型。订阅最低约0.43折起。企业级稳定满血低价官方。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.7,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "满血官方",
+            "超低价",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "折扣",
+                "value": "0.43折起",
+                "cls": "accent"
+            },
+            {
+                "label": "模型",
+                "value": "GPT-5.6+Opus5",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "企业稳定",
                 "cls": ""
             }
         ],
@@ -233,6 +456,194 @@
         "likes": 0
     },
     {
+        "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
+        "domain": "infistar.ai",
+        "name": "无限星河AI",
+        "description": "覆盖92个主流模型，提供模型验真检测，透明计费，自建号池多线路冗余，官方5折优惠。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "domestic",
+            "enterprise"
+        ],
+        "features": [
+            "multi",
+            "enterprise"
+        ],
+        "display_tags": [
+            "92模型",
+            "验真检测",
+            "透明计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "92模型",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "官方5折",
+                "cls": "accent"
+            },
+            {
+                "label": "应用",
+                "value": "多线路冗余",
+                "cls": ""
+            }
+        ],
+        "score": 9.66,
+        "price": "medium",
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "likes": 0
+    },
+    {
+        "url": "https://api.fenno.ai/s/ICUO",
+        "domain": "fenno.ai",
+        "name": "fenno",
+        "description": "AI API中转平台，支持Claude/GPT/Gemini等多种主流模型调用，接口稳定响应快速，适合开发者和团队高频使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.66,
+        "response_time": 0.5,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "稳定响应",
+            "高频适用"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.50s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "稳定可靠",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://aihubmix.com/?aff=U9CV",
+        "domain": "aihubmix.com",
+        "name": "推理时代AIHubMix",
+        "description": "一个接口路由所有大语言模型，支持500+模型，包括文本、图片/视频生成、向量嵌入、Rerank、TTS、STT、OCR等主流模型全覆盖。统一OpenAI兼容接口，代码零改动即可平滑切换。按量付费，无会员无包月，支持OpenAI、Google Gemini、Anthropic多种兼容格式。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "grok",
+            "qwen",
+            "kemi",
+            "glm"
+        ],
+        "features": [
+            "multi",
+            "enterprise"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.66,
+        "response_time": 0.42,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "500+模型",
+            "统一接口",
+            "按量付费"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "500+模型",
+                "cls": "green"
+            },
+            {
+                "label": "兼容",
+                "value": "多协议接入",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量付费",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api2d.com/r/241389",
+        "domain": "api2d.com",
+        "name": "API2D",
+        "description": "国内老牌API中转服务，支持Claude/GPT/Gemini及国产模型，支付宝充值，运营时间长口碑稳定。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "domestic"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.64,
+        "response_time": 0.95,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 4,
+        "display_tags": [
+            "老牌中转",
+            "国内直连",
+            "支付宝充值"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "老牌中转",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.83s",
+                "cls": "accent"
+            },
+            {
+                "label": "优惠",
+                "value": "支付宝充值",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://cloud.siliconflow.cn/i/E5yUpjCP",
         "domain": "siliconflow.cn",
         "name": "硅基流动",
@@ -280,49 +691,232 @@
         "likes": 0
     },
     {
-        "url": "https://hongmacc.com/?ref=HONGMACC-3BC31A16",
-        "domain": "hongmacc.com",
-        "name": "红麦API (hongmacc)",
-        "description": "企业级API网关，20+全球节点部署，延迟<50ms。支持Claude Code、Codex CLI等编程工具接入，高并发稳定，适合团队和企业使用。",
+        "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
+        "domain": "tokenrhythm.studio",
+        "name": "基元律动 (TokenRhythm)",
+        "description": "OpenSquilla 新功能上线，邀请好友限时活动延长中。注册即享价值 68 元 token 额度，支持 Claude/GPT/Gemini 等主流模型调用。新用户注册即领福利，老用户邀友双赢，社区活跃持续更新模型列表。",
         "models": [
             "claude",
             "gpt",
             "gemini"
         ],
         "features": [
-            "enterprise",
-            "code",
-            "stable"
+            "stable",
+            "cheap"
         ],
+        "price": "medium",
+        "free_amount": "68元token额度",
+        "score": 9.61,
+        "response_time": 0.68,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
         "display_tags": [
-            "企业网关",
-            "20+节点",
-            "<50ms延迟"
+            "OpenSquilla",
+            "68元额度",
+            "限时活动"
         ],
         "display_metrics": [
             {
-                "label": "性能",
-                "value": "<50ms延迟",
-                "cls": "accent"
-            },
-            {
-                "label": "节点",
-                "value": "20+全球",
+                "label": "福利",
+                "value": "68元token额度",
                 "cls": "green"
             },
             {
-                "label": "场景",
-                "value": "Claude Code",
+                "label": "活动",
+                "value": "邀请延长",
+                "cls": "accent"
+            },
+            {
+                "label": "功能",
+                "value": "OpenSquilla新功能",
                 "cls": ""
             }
         ],
-        "score": 9.22,
+        "likes": 0
+    },
+    {
+        "url": "https://api2.laozhang.ai/register/?aff_code=NkYN",
+        "domain": "api2.laozhang.ai",
+        "name": "老张API (LaoZhang API)",
+        "description": "老牌API中转站，提供GPT-5、Claude、Gemini、Grok等全模型接口分发服务。接入简单，消费透明，官方渠道API资源，加密传输，专业运营团队保障服务稳定性和可用性。支持请求日志、按量付费，适合生产团队接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok"
+        ],
+        "features": [
+            "multi",
+            "stable"
+        ],
         "price": "medium",
-        "response_time": 0.98,
+        "free_amount": "$0.5体验券",
+        "score": 9.59,
+        "response_time": 0.55,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "老牌运营",
+            "全模型覆盖",
+            "生产级稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "全模型覆盖",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "$0.5体验券",
+                "cls": "accent"
+            },
+            {
+                "label": "运营",
+                "value": "老牌可靠",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://shop.xuedingtoken.com/?invite=2DPLSD7Z",
+        "domain": "shop.xuedingtoken.com",
+        "name": "XueDingToken (雪顶Token)",
+        "description": "卖Token+可赚钱伙伴模式，新人$5体验券，支持余额模式和兑换码模式，支持GPT/Claude/Gemini。",
+        "models": [
+            "gpt",
+            "claude",
+            "gemini"
+        ],
+        "features": [
+            "multi",
+            "cheap"
+        ],
+        "display_tags": [
+            "卖Token",
+            "赚钱伙伴",
+            "$5体验券"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "Token销售",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "新人$5体验",
+                "cls": "accent"
+            },
+            {
+                "label": "应用",
+                "value": "可赚钱伙伴",
+                "cls": ""
+            }
+        ],
+        "score": 9.58,
+        "price": "low",
+        "response_time": 0.86,
         "alive": true,
         "last_check": "2026-07-06",
         "check_count": 3,
         "likes": 0
+    },
+    {
+        "url": "https://openqi.sbs/register?aff=ENKWT9RMZV97",
+        "domain": "openqi.sbs",
+        "name": "清沐API",
+        "description": "智能调度多上游账号，自动切换和负载均衡，保障高可用性。支持团队用量管理、配额设置和费用分摊，响应仅 0.48s 极速。适合团队协作和企业级 API 管理，OpenAI 兼容接口开箱即用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "domestic",
+            "cheap"
+        ],
+        "features": [
+            "multi",
+            "smart-route"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.58,
+        "response_time": 0.48,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "display_tags": [
+            "智能调度",
+            "团队配额",
+            "质量优选"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "智能调度",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "按量计费",
+                "cls": "accent"
+            },
+            {
+                "label": "应用",
+                "value": "团队管理",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://fishxcode.com/register?aff=0tRv",
+        "domain": "fishxcode.com",
+        "name": "鱼代码 (FishXCode)",
+        "description": "统一AI API网关，官方账号池直连不降智。企业级稳定，平均首Token 2秒内。支持Claude/GPT/Gemini/Grok，智能路由调度，Token级透明计费。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "display_tags": [
+            "官方直连",
+            "不降智",
+            "企业稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "首Token",
+                "value": "2秒内",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "官方账号池",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "透明",
+                "cls": ""
+            }
+        ],
+        "score": 9.56,
+        "price": "medium",
+        "response_time": 1.11,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 1,
+        "likes": 0,
+        "dead_reason": "仅显示部署时间信息，无实际服务"
     },
     {
         "url": "https://rkapi.com/register?aff=zCFG",
@@ -368,53 +962,6 @@
                 "cls": ""
             }
         ],
-        "likes": 0
-    },
-    {
-        "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
-        "domain": "infistar.ai",
-        "name": "无限星河AI",
-        "description": "覆盖92个主流模型，提供模型验真检测，透明计费，自建号池多线路冗余，官方5折优惠。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "deepseek",
-            "domestic",
-            "enterprise"
-        ],
-        "features": [
-            "multi",
-            "enterprise"
-        ],
-        "display_tags": [
-            "92模型",
-            "验真检测",
-            "透明计费"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "92模型",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "官方5折",
-                "cls": "accent"
-            },
-            {
-                "label": "应用",
-                "value": "多线路冗余",
-                "cls": ""
-            }
-        ],
-        "score": 9.66,
-        "price": "medium",
-        "response_time": 0.45,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
         "likes": 0
     },
     {
@@ -464,6 +1011,97 @@
         "likes": 0
     },
     {
+        "url": "https://www.tokaify.com/register?aff=2wsgmE",
+        "domain": "tokaify.com",
+        "name": "Tokaify",
+        "description": "简洁高效的AI API中转服务，新用户¥1即可获得$5额度。支持主流大模型调用，低门槛快速接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.48,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "display_tags": [
+            "低门槛",
+            "新用户优惠",
+            "简洁"
+        ],
+        "display_metrics": [
+            {
+                "label": "优惠",
+                "value": "¥1=$5",
+                "cls": "accent"
+            },
+            {
+                "label": "特色",
+                "value": "极简接入",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "快速",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://onehop.ai/invite/9672CV",
+        "domain": "onehop.ai",
+        "name": "OneHop",
+        "description": "一个 OneHop API，调用所有 AI 模型。支持 Claude、GPT、Gemini 等主流模型统一接入，7 天内首充双方各得 10% 返利。接口稳定响应 0.55s，文档清晰完整，适合开发者和企业快速集成。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap"
+        ],
+        "price": "medium",
+        "free_amount": "首充双方各得10%返利",
+        "score": 9.47,
+        "response_time": 0.55,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "一个API全部",
+            "10%返利",
+            "统一接入"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "一个API全部模型",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "双方各得10%",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "文档清晰",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://147ai.com/register?aff=vGwq",
         "domain": "147ai.com",
         "name": "147AI",
@@ -503,6 +1141,52 @@
             {
                 "label": "价格",
                 "value": "按量计费",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://hao.ai/invite/15LGCD17",
+        "domain": "hao.ai",
+        "name": "HaoAI",
+        "description": "高速稳定的AI API中转站，支持Codex WebSocket长连接，请求级账单逐笔可查。支持Claude/GPT/Gemini等主流模型，用量、延迟、费用全透明。配置简单，修改base_url即可接入，兼容主流IDE如Cursor、VS Code，适合开发者快速集成。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "codex"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.42,
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "WebSocket长连接",
+            "请求级账单",
+            "高速稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "技术",
+                "value": "WebSocket",
+                "cls": "green"
+            },
+            {
+                "label": "透明",
+                "value": "逐笔可查",
+                "cls": "accent"
+            },
+            {
+                "label": "速度",
+                "value": "高速接入",
                 "cls": ""
             }
         ],
@@ -600,6 +1284,103 @@
         "likes": 0
     },
     {
+        "url": "https://zivv.pro/register?invite=1c91881d",
+        "domain": "zivv.pro",
+        "name": "Zivv",
+        "description": "主打稳定的AI API中转站，自建站点、三协议自主开发、非套壳非开源。一手CCMAX等号池自控，100%满血官方模型，人民币1:1结算。7日可用率97.3%，平均延迟1.9s，不掉线、不限流、不涨价，适合高频调用场景。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "adobe",
+            "codex"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.38,
+        "response_time": 1.9,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "极致稳定",
+            "满血官方",
+            "1:1结算"
+        ],
+        "display_metrics": [
+            {
+                "label": "稳定",
+                "value": "97.3%可用",
+                "cls": "green"
+            },
+            {
+                "label": "品质",
+                "value": "100%满血",
+                "cls": "accent"
+            },
+            {
+                "label": "结算",
+                "value": "人民币1:1",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://toapis.com/login?aff=yjH5",
+        "domain": "toapis.com",
+        "name": "豆腐 (ToAPIs)",
+        "description": "AI API网关排行榜冠军平台，OpenAI/Anthropic/Google/字节/阿里/DeepSeek官方授权合作伙伴。50+模型统一接入（文本/图像/视频），支持Kling V3 Turbo/Veo/Sora2视频模型。企业级SLA保障，全球多节点部署，新用户注册即领$0.2体验金。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "image",
+            "video",
+            "cheap"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap",
+            "enterprise"
+        ],
+        "price": "medium",
+        "free_amount": "$0.2体验金",
+        "score": 9.35,
+        "response_time": 3.03,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 4,
+        "display_tags": [
+            "官方授权合作",
+            "50+模型",
+            "视频模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "权威",
+                "value": "6大厂商官方授权",
+                "cls": "green"
+            },
+            {
+                "label": "模型",
+                "value": "50+文本/图像/视频",
+                "cls": "accent"
+            },
+            {
+                "label": "福利",
+                "value": "$0.2体验金",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://ykh.ai",
         "domain": "ykh.ai",
         "name": "YKH.AI",
@@ -640,6 +1421,51 @@
             {
                 "label": "特色",
                 "value": "问题结构化",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://novaapi.ai/sign-up?aff=N1zZ",
+        "domain": "novaapi.ai",
+        "name": "NovaAPI",
+        "description": "统一API网关，50+上游服务，100+模型计费。142ms首Token延迟，99.99%可用率。智能路由，企业级安全。7天退款保障。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.35,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "99.99%可用",
+            "142ms",
+            "7天退款"
+        ],
+        "display_metrics": [
+            {
+                "label": "首Token",
+                "value": "142ms",
+                "cls": "green"
+            },
+            {
+                "label": "可用率",
+                "value": "99.99%",
+                "cls": "accent"
+            },
+            {
+                "label": "保障",
+                "value": "7天退款",
                 "cls": ""
             }
         ],
@@ -784,50 +1610,6 @@
         "likes": 0
     },
     {
-        "url": "https://shop.xuedingtoken.com/?invite=2DPLSD7Z",
-        "domain": "shop.xuedingtoken.com",
-        "name": "XueDingToken (雪顶Token)",
-        "description": "卖Token+可赚钱伙伴模式，新人$5体验券，支持余额模式和兑换码模式，支持GPT/Claude/Gemini。",
-        "models": [
-            "gpt",
-            "claude",
-            "gemini"
-        ],
-        "features": [
-            "multi",
-            "cheap"
-        ],
-        "display_tags": [
-            "卖Token",
-            "赚钱伙伴",
-            "$5体验券"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "Token销售",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "新人$5体验",
-                "cls": "accent"
-            },
-            {
-                "label": "应用",
-                "value": "可赚钱伙伴",
-                "cls": ""
-            }
-        ],
-        "score": 9.58,
-        "price": "low",
-        "response_time": 0.86,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "likes": 0
-    },
-    {
         "url": "https://dawcode.com/register?aff=FzKj",
         "domain": "dawcode.com",
         "name": "DawCode",
@@ -867,52 +1649,6 @@
             {
                 "label": "场景",
                 "value": "编程专用",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api2d.com/r/241389",
-        "domain": "api2d.com",
-        "name": "API2D",
-        "description": "国内老牌API中转服务，支持Claude/GPT/Gemini及国产模型，支付宝充值，运营时间长口碑稳定。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "domestic"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.64,
-        "response_time": 0.95,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 4,
-        "display_tags": [
-            "老牌中转",
-            "国内直连",
-            "支付宝充值"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "老牌中转",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.83s",
-                "cls": "accent"
-            },
-            {
-                "label": "优惠",
-                "value": "支付宝充值",
                 "cls": ""
             }
         ],
@@ -1003,6 +1739,51 @@
             {
                 "label": "场景",
                 "value": "编程专用",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://www.ddshub.cc/register?aff=YP3QF3YV5VYX",
+        "domain": "ddshub.cc",
+        "name": "呆呆兽DDSHub",
+        "description": "专注Claude/Codex的API中转站，提供兼容Anthropic原生协议与OpenAI SDK格式的国内直连接口。Claude系列低至3折，Codex系列低至1折，满血模型保障。支持支付宝/微信支付，可开发票，提供企业分组管理，适合企业级调用和开发者高频使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "codex"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "cheap",
+        "free_amount": "",
+        "score": 9.28,
+        "response_time": 0.48,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "Claude专精",
+            "低至1折",
+            "企业友好"
+        ],
+        "display_metrics": [
+            {
+                "label": "专精",
+                "value": "Claude/Codex",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "低至1折",
+                "cls": "accent"
+            },
+            {
+                "label": "服务",
+                "value": "可开发票",
                 "cls": ""
             }
         ],
@@ -1293,6 +2074,51 @@
         "likes": 0
     },
     {
+        "url": "https://hongmacc.com/?ref=HONGMACC-3BC31A16",
+        "domain": "hongmacc.com",
+        "name": "红麦API (hongmacc)",
+        "description": "企业级API网关，20+全球节点部署，延迟<50ms。支持Claude Code、Codex CLI等编程工具接入，高并发稳定，适合团队和企业使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "enterprise",
+            "code",
+            "stable"
+        ],
+        "display_tags": [
+            "企业网关",
+            "20+节点",
+            "<50ms延迟"
+        ],
+        "display_metrics": [
+            {
+                "label": "性能",
+                "value": "<50ms延迟",
+                "cls": "accent"
+            },
+            {
+                "label": "节点",
+                "value": "20+全球",
+                "cls": "green"
+            },
+            {
+                "label": "场景",
+                "value": "Claude Code",
+                "cls": ""
+            }
+        ],
+        "score": 9.22,
+        "price": "medium",
+        "response_time": 0.98,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "likes": 0
+    },
+    {
         "url": "https://poloapi.com",
         "domain": "poloapi.com",
         "name": "PoloAPI",
@@ -1491,98 +2317,6 @@
             {
                 "label": "福利",
                 "value": "注册赠$3",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://openqi.sbs/register?aff=ENKWT9RMZV97",
-        "domain": "openqi.sbs",
-        "name": "清沐API",
-        "description": "智能调度多上游账号，自动切换和负载均衡，保障高可用性。支持团队用量管理、配额设置和费用分摊，响应仅 0.48s 极速。适合团队协作和企业级 API 管理，OpenAI 兼容接口开箱即用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "domestic",
-            "cheap"
-        ],
-        "features": [
-            "multi",
-            "smart-route"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.58,
-        "response_time": 0.48,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "display_tags": [
-            "智能调度",
-            "团队配额",
-            "质量优选"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "智能调度",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "按量计费",
-                "cls": "accent"
-            },
-            {
-                "label": "应用",
-                "value": "团队管理",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://www.tokaify.com/register?aff=2wsgmE",
-        "domain": "tokaify.com",
-        "name": "Tokaify",
-        "description": "简洁高效的AI API中转服务，新用户¥1即可获得$5额度。支持主流大模型调用，低门槛快速接入。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "cheap",
-            "stable"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.2,
-        "response_time": 1,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "display_tags": [
-            "低门槛",
-            "新用户优惠",
-            "简洁"
-        ],
-        "display_metrics": [
-            {
-                "label": "优惠",
-                "value": "¥1=$5",
-                "cls": "accent"
-            },
-            {
-                "label": "特色",
-                "value": "极简接入",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "快速",
                 "cls": ""
             }
         ],
@@ -2123,6 +2857,52 @@
         ]
     },
     {
+        "url": "https://flashcoding.ai/register?aff=UUJJ9FE8JJPX",
+        "domain": "flashcoding.ai",
+        "name": "flashcoding",
+        "description": "统一AI API网关，官方账号池直连不降智。企业级稳定，平均首Token 2秒内。支持Claude/GPT/Gemini/Grok，智能路由调度，Token级透明计费。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.12,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "官方直连",
+            "不降智",
+            "2秒首Token"
+        ],
+        "display_metrics": [
+            {
+                "label": "首Token",
+                "value": "2秒内",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "官方账号池",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "透明",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://www.bigmodel.cn/invite?icode=7yu3wzGsCVG384EyFkPekuZLO2QH3C0EBTSr%2BArzMw4%3D",
         "domain": "bigmodel.cn",
         "name": "智谱AI (BigModel)",
@@ -2255,6 +3035,51 @@
         "alive": true,
         "last_check": "2026-07-06",
         "check_count": 3,
+        "likes": 0
+    },
+    {
+        "url": "https://openrouter.ai",
+        "domain": "openrouter.ai",
+        "name": "OpenRouter",
+        "description": "全球最知名LLM API聚合商，70+供应商、400+模型、10M+用户、100T月Token。a16z/Stripe背书，新增Claude Fable 5、GPT-5.5、Gemini 3.1 Pro Preview。生态成熟可靠。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "multi",
+            "enterprise"
+        ],
+        "price": "medium",
+        "free_amount": "新用户$1免费",
+        "score": 9.08,
+        "response_time": 0.9,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "display_tags": [
+            "海外原生",
+            "250k+应用",
+            "60+Provider"
+        ],
+        "display_metrics": [
+            {
+                "label": "应用",
+                "value": "全球聚合",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "按量付费",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "a16z引用",
+                "cls": ""
+            }
+        ],
         "likes": 0
     },
     {
@@ -2982,6 +3807,187 @@
         "likes": 0
     },
     {
+        "url": "https://cctk.ai/register?aff=V5W7FFQDSFPU",
+        "domain": "cctk.ai",
+        "name": "cctk",
+        "description": "AI API中转平台，支持Claude/GPT/Gemini等多种主流模型，适合开发者快速接入，接口响应快速。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.92,
+        "response_time": 0.58,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "快速响应",
+            "开发者友好"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.58s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://aimzoon.com/register?aff=GZV4SMRXWGTF",
+        "domain": "aimzoon.com",
+        "name": "aimzoon",
+        "description": "AI API中转平台，支持Claude/GPT/Gemini等主流模型，注册即用，接口稳定，适合个人开发者和团队使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.9,
+        "response_time": 0.56,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "注册即用",
+            "接口稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.56s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://hao.ai/invite/15LGCD17",
+        "domain": "hao.ai",
+        "name": "hao.ai",
+        "description": "AI API中转服务，支持Claude/GPT/Gemini等主流模型统一接入，邀请注册享优惠，适合开发者和团队使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap"
+        ],
+        "price": "medium",
+        "free_amount": "邀请注册优惠",
+        "score": 8.88,
+        "response_time": 0.62,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "邀请优惠",
+            "统一接入"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "邀请注册优惠",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://qingyuapi.com/sign-up?aff=EbSO",
+        "domain": "qingyuapi.com",
+        "name": "青屿",
+        "description": "AI API中转站，支持Claude/GPT/Gemini等主流模型，接口稳定，注册即用，适合开发者使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.86,
+        "response_time": 0.64,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "接口稳定",
+            "注册即用"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.64s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://dingdang.ding-ai.com/register?invite_code=IDrGXOLHq",
         "domain": "ding-ai.com",
         "name": "叮当次元袋",
@@ -3019,6 +4025,141 @@
             {
                 "label": "场景",
                 "value": "电商卖家",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api.huniuhub.com/register?aff=T8L6CFFJZTAE",
+        "domain": "huniuhub.com",
+        "name": "虎妞API",
+        "description": "AI API中转站，支持Claude/GPT/Gemini等主流模型调用，注册即用，接口稳定可靠，适合开发者快速接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.85,
+        "response_time": 0.65,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "注册即用",
+            "接口稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.65s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api.apistar.com.cn/sign-up?aff=8u6d",
+        "domain": "apistar.com.cn",
+        "name": "星辰",
+        "description": "AI API中转站，支持Claude/GPT/Gemini等多种主流模型调用，注册即用，响应稳定，适合开发者使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.84,
+        "response_time": 0.66,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "注册即用",
+            "响应稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.66s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://console.code0.ai/register?aff=FITD",
+        "domain": "code0.ai",
+        "name": "code0",
+        "description": "AI API中转站，支持多种主流模型，专注于编程开发场景，适合Claude Code/Cursor等工具接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "code"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.82,
+        "response_time": 0.6,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "编程专精",
+            "多模型",
+            "开发工具"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "编程开发",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.60s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
                 "cls": ""
             }
         ],
@@ -3077,6 +4218,407 @@
         "free_amount": ""
     },
     {
+        "url": "https://api.aiwanai.cc/register?aff=wBii",
+        "domain": "aiwanai.cc",
+        "name": "爱玩",
+        "description": "AI API中转平台，支持Claude/GPT/Gemini等多种主流模型调用，适合个人开发者快速接入使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.8,
+        "response_time": 0.68,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "快速接入",
+            "个人友好"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.68s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://as.apinoma.com/sign-up?aff=M8xp",
+        "domain": "as.apinoma.com",
+        "name": "诺玛AI",
+        "description": "专业AI API服务，50+模型一个Key接入。99.9%可用性，支持GPT/Claude/Gemini/DeepSeek/Qwen/豆包。支持USDT充值，公开状态页。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.78,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "50+模型",
+            "99.9%可用",
+            "USDT充值"
+        ],
+        "display_metrics": [
+            {
+                "label": "可用率",
+                "value": "99.9%",
+                "cls": "green"
+            },
+            {
+                "label": "支付",
+                "value": "USDT",
+                "cls": "accent"
+            },
+            {
+                "label": "透明",
+                "value": "公开状态页",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api.gemai.cc/sign-up?aff=XeTDEfV8",
+        "domain": "gemai.cc",
+        "name": "哈基米",
+        "description": "AI API中转服务，支持Claude/GPT/Gemini等主流模型，注册即用，适合个人开发者体验测试。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 8.75,
+        "response_time": 0.7,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "注册即用",
+            "低价"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "低价优惠",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://juziqishui.net/register?aff=wLGv",
+        "domain": "juziqishui.net",
+        "name": "橘子汽水",
+        "description": "AI API中转服务，支持Claude/GPT/Gemini等多种主流模型调用，新用户注册享福利，适合快速体验。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap"
+        ],
+        "price": "low",
+        "free_amount": "新用户注册福利",
+        "score": 8.72,
+        "response_time": 0.72,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "注册福利",
+            "低价"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "注册福利",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://shufulei.net/register?aff=gcfI",
+        "domain": "shufulei.net",
+        "name": "舒芙蕾",
+        "description": "AI API中转平台，支持Claude/GPT/Gemini等主流模型，适合快速接入，接口响应稳定。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.7,
+        "response_time": 0.74,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "多模型",
+            "快速接入",
+            "响应稳定"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "多模型支持",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.74s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "新收录",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api.flashpocket.cn/sign-up?aff=UWGU",
+        "domain": "flashpocket.cn",
+        "name": "Flash Code",
+        "description": "Flash Code API 中转站，提供快速稳定的 AI 模型调用服务。支持多种主流模型，注册即用，适合开发者快速接入。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "注册即用",
+        "score": 8.65,
+        "response_time": 0.62,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "快速接入",
+            "稳定调用",
+            "注册即用"
+        ],
+        "display_metrics": [
+            {
+                "label": "响应",
+                "value": "0.62s",
+                "cls": "green"
+            },
+            {
+                "label": "专业",
+                "value": "快速稳定",
+                "cls": "accent"
+            },
+            {
+                "label": "福利",
+                "value": "注册即用",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://www.bytecatcode.org/sign-up?aff=ymRm",
+        "domain": "bytecatcode.org",
+        "name": "bytecat",
+        "description": "AI应用基础设施平台，统一API网关接入海量AI模型。多协议兼容，高性能负载均衡，透明计费，团队协作。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.62,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "基础设施",
+            "多协议",
+            "团队协作"
+        ],
+        "display_metrics": [
+            {
+                "label": "特色",
+                "value": "多协议兼容",
+                "cls": "accent"
+            },
+            {
+                "label": "性能",
+                "value": "负载均衡",
+                "cls": "green"
+            },
+            {
+                "label": "计费",
+                "value": "透明",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://smallice.xyz/register?aff=UL4K8KQZ2UD8",
+        "domain": "smallice.xyz",
+        "name": "Small ice AI",
+        "description": "Small ice AI 中转站，提供 AI 模型 API 调用服务。支持多种主流模型接入，注册即享福利额度。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap"
+        ],
+        "price": "low",
+        "free_amount": "注册送额度",
+        "score": 8.55,
+        "response_time": 0.7,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "低价",
+            "注册送额度",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "价格",
+                "value": "低价",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "注册送额度",
+                "cls": "accent"
+            },
+            {
+                "label": "模型",
+                "value": "多模型支持",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://linkai.pics/register?aff=EBQRJ8Y4PJQQ",
+        "domain": "linkai.pics",
+        "name": "AILink",
+        "description": "AI API中转服务，支持图像生成与对话模型，提供OpenAI兼容接口，快速接入主流AI能力。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.52,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "图像生成",
+            "OpenAI兼容",
+            "快速接入"
+        ],
+        "display_metrics": [
+            {
+                "label": "接口",
+                "value": "OpenAI兼容",
+                "cls": "green"
+            },
+            {
+                "label": "能力",
+                "value": "图像+对话",
+                "cls": "accent"
+            },
+            {
+                "label": "特色",
+                "value": "快速接入",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://api.linktoagi.com/sign-up?aff=ydHk",
         "domain": "linktoagi.com",
         "name": "LinkAGI",
@@ -3124,6 +4666,95 @@
             }
         ],
         "free_amount": "注册送¥0.2测试额度"
+    },
+    {
+        "url": "https://chain888.vip/register?aff=2VWU8D79ZSF4",
+        "domain": "chain888.vip",
+        "name": "思辰科技 (SichenTech)",
+        "description": "思辰科技 API 中转站，提供 AI 模型统一调用服务。支持 Claude、GPT、Gemini 等主流模型，注册即享福利额度，适合开发者和企业使用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "注册送额度",
+        "score": 8.5,
+        "response_time": 0.72,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "统一调用",
+            "注册送额度",
+            "主流模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "统一调用",
+                "cls": "green"
+            },
+            {
+                "label": "福利",
+                "value": "注册送额度",
+                "cls": "accent"
+            },
+            {
+                "label": "模型",
+                "value": "Claude/GPT/Gemini",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://hapiopen.cc/register?aff=CWBG3N2BVHL3",
+        "domain": "hapiopen.cc",
+        "name": "H API",
+        "description": "一个入口连接AI的更多可能。统一接入GPT、Claude与图像模型，兼容OpenAI SDK，支持Claude Code、Python、Node.js。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.45,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "OpenAI SDK",
+            "Claude Code",
+            "多语言"
+        ],
+        "display_metrics": [
+            {
+                "label": "兼容",
+                "value": "OpenAI SDK",
+                "cls": "green"
+            },
+            {
+                "label": "支持",
+                "value": "Claude Code",
+                "cls": "accent"
+            },
+            {
+                "label": "语言",
+                "value": "Python/Node",
+                "cls": ""
+            }
+        ],
+        "likes": 0
     },
     {
         "url": "https://aihubmix.com/?aff=U9CV",
@@ -3250,6 +4881,92 @@
         "alive": true,
         "last_check": "2026-07-06",
         "check_count": 3,
+        "likes": 0
+    },
+    {
+        "url": "https://tacklekey.com/register?aff=MfcL",
+        "domain": "tacklekey.com",
+        "name": "tacklekey",
+        "description": "AI API网关服务，提供模型广场、控制台与文档资源。一站式模型管理与接入，支持主流大模型。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.15,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "模型广场",
+            "控制台",
+            "一站式"
+        ],
+        "display_metrics": [
+            {
+                "label": "管理",
+                "value": "控制台",
+                "cls": "accent"
+            },
+            {
+                "label": "特色",
+                "value": "模型广场",
+                "cls": "green"
+            },
+            {
+                "label": "文档",
+                "value": "齐全",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://mxdapi.com/sign-up?aff=f824",
+        "domain": "mxdapi.com",
+        "name": "模型岛",
+        "description": "AI API中转平台，提供模型广场与控制台管理，支持主流大模型接入，操作简单。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [],
+        "price": "medium",
+        "free_amount": "",
+        "score": 7.92,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "模型广场",
+            "操作简单",
+            "中转平台"
+        ],
+        "display_metrics": [
+            {
+                "label": "管理",
+                "value": "控制台",
+                "cls": "accent"
+            },
+            {
+                "label": "特色",
+                "value": "操作简单",
+                "cls": "green"
+            },
+            {
+                "label": "接入",
+                "value": "主流模型",
+                "cls": ""
+            }
+        ],
         "likes": 0
     },
     {
@@ -4095,49 +5812,6 @@
         "last_check": "2026-07-06",
         "check_count": 1,
         "likes": 0
-    },
-    {
-        "url": "https://fishxcode.com",
-        "domain": "fishxcode.com",
-        "name": "鱼代码 (FishXCode)",
-        "description": "专为编程场景优化，支持Claude Code和Codex，适合编程开发者和IDE集成使用。",
-        "models": [
-            "claude",
-            "gpt"
-        ],
-        "features": [
-            "multi"
-        ],
-        "display_tags": [
-            "编程优化",
-            "Claude Code",
-            "Codex"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "编程优化",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "1.26s",
-                "cls": "accent"
-            },
-            {
-                "label": "福利",
-                "value": "Claude Code",
-                "cls": ""
-            }
-        ],
-        "score": 0,
-        "price": "medium",
-        "response_time": 1.11,
-        "alive": false,
-        "last_check": "2026-07-06",
-        "check_count": 1,
-        "likes": 0,
-        "dead_reason": "仅显示部署时间信息，无实际服务"
     },
     {
         "url": "https://apimart.ai",
@@ -5312,1187 +6986,5 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
-    },
-    {
-        "url": "https://teamorouter.cn/?i=ad992e768a",
-        "domain": "teamorouter.cn",
-        "name": "TeamoRouter",
-        "description": "DeepSeek V4 + Codex 双引擎驱动的全能 API 中转站。一个 API Key 调用 Claude、GPT、Gemini、DeepSeek 等全线模型，首次付费返 10%，好友首次付费即返现到账。支持高并发请求，响应仅 0.52s，适合开发者和团队高频调用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "deepseek",
-            "codex"
-        ],
-        "features": [
-            "stable",
-            "multi",
-            "cheap"
-        ],
-        "price": "low",
-        "free_amount": "首次付费返10%",
-        "score": 9.94,
-        "response_time": 0.52,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "DeepSeek V4",
-            "Codex支持",
-            "首次返10%"
-        ],
-        "display_metrics": [
-            {
-                "label": "模型",
-                "value": "DeepSeek V4+Codex",
-                "cls": "green"
-            },
-            {
-                "label": "福利",
-                "value": "首次付费返10%",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "宝藏入口",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
-        "domain": "tokenrhythm.studio",
-        "name": "基元律动 (TokenRhythm)",
-        "description": "OpenSquilla 新功能上线，邀请好友限时活动延长中。注册即享价值 68 元 token 额度，支持 Claude/GPT/Gemini 等主流模型调用。新用户注册即领福利，老用户邀友双赢，社区活跃持续更新模型列表。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "cheap"
-        ],
-        "price": "medium",
-        "free_amount": "68元token额度",
-        "score": 9.61,
-        "response_time": 0.68,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "OpenSquilla",
-            "68元额度",
-            "限时活动"
-        ],
-        "display_metrics": [
-            {
-                "label": "福利",
-                "value": "68元token额度",
-                "cls": "green"
-            },
-            {
-                "label": "活动",
-                "value": "邀请延长",
-                "cls": "accent"
-            },
-            {
-                "label": "功能",
-                "value": "OpenSquilla新功能",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://onehop.ai/invite/9672CV",
-        "domain": "onehop.ai",
-        "name": "OneHop",
-        "description": "一个 OneHop API，调用所有 AI 模型。支持 Claude、GPT、Gemini 等主流模型统一接入，7 天内首充双方各得 10% 返利。接口稳定响应 0.55s，文档清晰完整，适合开发者和企业快速集成。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi",
-            "cheap"
-        ],
-        "price": "medium",
-        "free_amount": "首充双方各得10%返利",
-        "score": 9.47,
-        "response_time": 0.55,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "一个API全部",
-            "10%返利",
-            "统一接入"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "一个API全部模型",
-                "cls": "green"
-            },
-            {
-                "label": "福利",
-                "value": "双方各得10%",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "文档清晰",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://free.supxh.xin/register?code=XVGW49",
-        "domain": "supxh.xin",
-        "name": "肖恩AI (SeanAI)",
-        "description": "免费 API 公益站，注册即送 5000 额度。支持 Claude/GPT/Gemini 等主流模型调用，主打公益免费路线，无套路无隐藏消费。适合学生党、个人开发者及 AI 爱好者体验测试，社区活跃持续更新模型列表，新手友好文档完善。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "cheap",
-            "stable"
-        ],
-        "price": "free",
-        "free_amount": "注册送5000额度",
-        "score": 9.71,
-        "response_time": 0.75,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "公益站",
-            "注册送5000",
-            "免费体验"
-        ],
-        "display_metrics": [
-            {
-                "label": "福利",
-                "value": "注册送5000额度",
-                "cls": "green"
-            },
-            {
-                "label": "定位",
-                "value": "公益免费站",
-                "cls": "accent"
-            },
-            {
-                "label": "适合",
-                "value": "学生/个人",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api.flashpocket.cn/sign-up?aff=UWGU",
-        "domain": "flashpocket.cn",
-        "name": "Flash Code",
-        "description": "Flash Code API 中转站，提供快速稳定的 AI 模型调用服务。支持多种主流模型，注册即用，适合开发者快速接入。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable"
-        ],
-        "price": "medium",
-        "free_amount": "注册即用",
-        "score": 8.65,
-        "response_time": 0.62,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "快速接入",
-            "稳定调用",
-            "注册即用"
-        ],
-        "display_metrics": [
-            {
-                "label": "响应",
-                "value": "0.62s",
-                "cls": "green"
-            },
-            {
-                "label": "专业",
-                "value": "快速稳定",
-                "cls": "accent"
-            },
-            {
-                "label": "福利",
-                "value": "注册即用",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://smallice.xyz/register?aff=UL4K8KQZ2UD8",
-        "domain": "smallice.xyz",
-        "name": "Small ice AI",
-        "description": "Small ice AI 中转站，提供 AI 模型 API 调用服务。支持多种主流模型接入，注册即享福利额度。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "cheap"
-        ],
-        "price": "low",
-        "free_amount": "注册送额度",
-        "score": 8.55,
-        "response_time": 0.7,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "低价",
-            "注册送额度",
-            "多模型"
-        ],
-        "display_metrics": [
-            {
-                "label": "价格",
-                "value": "低价",
-                "cls": "green"
-            },
-            {
-                "label": "福利",
-                "value": "注册送额度",
-                "cls": "accent"
-            },
-            {
-                "label": "模型",
-                "value": "多模型支持",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://chain888.vip/register?aff=2VWU8D79ZSF4",
-        "domain": "chain888.vip",
-        "name": "思辰科技 (SichenTech)",
-        "description": "思辰科技 API 中转站，提供 AI 模型统一调用服务。支持 Claude、GPT、Gemini 等主流模型，注册即享福利额度，适合开发者和企业使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable"
-        ],
-        "price": "medium",
-        "free_amount": "注册送额度",
-        "score": 8.5,
-        "response_time": 0.72,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "统一调用",
-            "注册送额度",
-            "主流模型"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "统一调用",
-                "cls": "green"
-            },
-            {
-                "label": "福利",
-                "value": "注册送额度",
-                "cls": "accent"
-            },
-            {
-                "label": "模型",
-                "value": "Claude/GPT/Gemini",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api.huniuhub.com/register?aff=T8L6CFFJZTAE",
-        "domain": "huniuhub.com",
-        "name": "虎妞API",
-        "description": "AI API中转站，支持Claude/GPT/Gemini等主流模型调用，注册即用，接口稳定可靠，适合开发者快速接入。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.85,
-        "response_time": 0.65,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "注册即用",
-            "接口稳定"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.65s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://cctk.ai/register?aff=V5W7FFQDSFPU",
-        "domain": "cctk.ai",
-        "name": "cctk",
-        "description": "AI API中转平台，支持Claude/GPT/Gemini等多种主流模型，适合开发者快速接入，接口响应快速。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.92,
-        "response_time": 0.58,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "快速响应",
-            "开发者友好"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.58s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://hao.ai/invite/15LGCD17",
-        "domain": "hao.ai",
-        "name": "hao.ai",
-        "description": "AI API中转服务，支持Claude/GPT/Gemini等主流模型统一接入，邀请注册享优惠，适合开发者和团队使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi",
-            "cheap"
-        ],
-        "price": "medium",
-        "free_amount": "邀请注册优惠",
-        "score": 8.88,
-        "response_time": 0.62,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "邀请优惠",
-            "统一接入"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "邀请注册优惠",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api.fenno.ai/s/ICUO",
-        "domain": "fenno.ai",
-        "name": "fenno",
-        "description": "AI API中转平台，支持Claude/GPT/Gemini等多种主流模型调用，接口稳定响应快速，适合开发者和团队高频使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.66,
-        "response_time": 0.5,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "稳定响应",
-            "高频适用"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.50s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "稳定可靠",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://s.qiniu.com/aYRV3a",
-        "domain": "qiniu.com",
-        "name": "七牛云",
-        "description": "七牛云AI API服务，依托七牛云企业级云基础设施，提供稳定可靠的大模型API调用服务。支持Claude/GPT/Gemini等主流模型，企业级SLA保障。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "enterprise",
-            "stable"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.7,
-        "response_time": 0.45,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "企业级",
-            "云基础设施",
-            "SLA保障"
-        ],
-        "display_metrics": [
-            {
-                "label": "定位",
-                "value": "企业级云服务",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.45s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "七牛云品牌",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://console.code0.ai/register?aff=FITD",
-        "domain": "code0.ai",
-        "name": "code0",
-        "description": "AI API中转站，支持多种主流模型，专注于编程开发场景，适合Claude Code/Cursor等工具接入。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "code"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.82,
-        "response_time": 0.6,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "编程专精",
-            "多模型",
-            "开发工具"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "编程开发",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.60s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://aimzoon.com/register?aff=GZV4SMRXWGTF",
-        "domain": "aimzoon.com",
-        "name": "aimzoon",
-        "description": "AI API中转平台，支持Claude/GPT/Gemini等主流模型，注册即用，接口稳定，适合个人开发者和团队使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.9,
-        "response_time": 0.56,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "注册即用",
-            "接口稳定"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.56s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://sui-xiang.com/register?aff=5J3USAV9LQEB",
-        "domain": "sui-xiang.com",
-        "name": "随想",
-        "description": "AI API中转站，支持Claude/GPT/Gemini等多种主流模型调用，响应快速稳定，适合开发者高频调用场景。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.82,
-        "response_time": 0.48,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "快速响应",
-            "稳定可靠"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.48s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "稳定可靠",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api.gemai.cc/sign-up?aff=XeTDEfV8",
-        "domain": "gemai.cc",
-        "name": "哈基米",
-        "description": "AI API中转服务，支持Claude/GPT/Gemini等主流模型，注册即用，适合个人开发者体验测试。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "low",
-        "free_amount": "",
-        "score": 8.75,
-        "response_time": 0.7,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "注册即用",
-            "低价"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "价格",
-                "value": "低价优惠",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api.aiwanai.cc/register?aff=wBii",
-        "domain": "aiwanai.cc",
-        "name": "爱玩",
-        "description": "AI API中转平台，支持Claude/GPT/Gemini等多种主流模型调用，适合个人开发者快速接入使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.8,
-        "response_time": 0.68,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "快速接入",
-            "个人友好"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.68s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://qingyuapi.com/sign-up?aff=EbSO",
-        "domain": "qingyuapi.com",
-        "name": "青屿",
-        "description": "AI API中转站，支持Claude/GPT/Gemini等主流模型，接口稳定，注册即用，适合开发者使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.86,
-        "response_time": 0.64,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "接口稳定",
-            "注册即用"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.64s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://juziqishui.net/register?aff=wLGv",
-        "domain": "juziqishui.net",
-        "name": "橘子汽水",
-        "description": "AI API中转服务，支持Claude/GPT/Gemini等多种主流模型调用，新用户注册享福利，适合快速体验。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi",
-            "cheap"
-        ],
-        "price": "low",
-        "free_amount": "新用户注册福利",
-        "score": 8.72,
-        "response_time": 0.72,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "注册福利",
-            "低价"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "注册福利",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://shufulei.net/register?aff=gcfI",
-        "domain": "shufulei.net",
-        "name": "舒芙蕾",
-        "description": "AI API中转平台，支持Claude/GPT/Gemini等主流模型，适合快速接入，接口响应稳定。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.7,
-        "response_time": 0.74,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "快速接入",
-            "响应稳定"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.74s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api.apistar.com.cn/sign-up?aff=8u6d",
-        "domain": "apistar.com.cn",
-        "name": "星辰",
-        "description": "AI API中转站，支持Claude/GPT/Gemini等多种主流模型调用，注册即用，响应稳定，适合开发者使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 8.84,
-        "response_time": 0.66,
-        "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "多模型",
-            "注册即用",
-            "响应稳定"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "多模型支持",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.66s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "新收录",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://api2.laozhang.ai/register/?aff_code=NkYN",
-        "domain": "api2.laozhang.ai",
-        "name": "老张API (LaoZhang API)",
-        "description": "老牌API中转站，提供GPT-5、Claude、Gemini、Grok等全模型接口分发服务。接入简单，消费透明，官方渠道API资源，加密传输，专业运营团队保障服务稳定性和可用性。支持请求日志、按量付费，适合生产团队接入。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "grok"
-        ],
-        "features": [
-            "multi",
-            "stable"
-        ],
-        "price": "medium",
-        "free_amount": "$0.5体验券",
-        "score": 9.59,
-        "response_time": 0.55,
-        "alive": true,
-        "last_check": "2026-09-01",
-        "check_count": 1,
-        "display_tags": [
-            "老牌运营",
-            "全模型覆盖",
-            "生产级稳定"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "全模型覆盖",
-                "cls": "green"
-            },
-            {
-                "label": "福利",
-                "value": "$0.5体验券",
-                "cls": "accent"
-            },
-            {
-                "label": "运营",
-                "value": "老牌可靠",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://aihubmix.com/?aff=U9CV",
-        "domain": "aihubmix.com",
-        "name": "推理时代AIHubMix",
-        "description": "一个接口路由所有大语言模型，支持500+模型，包括文本、图片/视频生成、向量嵌入、Rerank、TTS、STT、OCR等主流模型全覆盖。统一OpenAI兼容接口，代码零改动即可平滑切换。按量付费，无会员无包月，支持OpenAI、Google Gemini、Anthropic多种兼容格式。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "deepseek",
-            "grok",
-            "qwen",
-            "kemi",
-            "glm"
-        ],
-        "features": [
-            "multi",
-            "enterprise"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.74,
-        "response_time": 0.42,
-        "alive": true,
-        "last_check": "2026-09-01",
-        "check_count": 1,
-        "display_tags": [
-            "500+模型",
-            "统一接口",
-            "按量付费"
-        ],
-        "display_metrics": [
-            {
-                "label": "模型",
-                "value": "500+模型",
-                "cls": "green"
-            },
-            {
-                "label": "兼容",
-                "value": "多协议接入",
-                "cls": "accent"
-            },
-            {
-                "label": "计费",
-                "value": "按量付费",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://zivv.pro/register?invite=1c91881d",
-        "domain": "zivv.pro",
-        "name": "Zivv",
-        "description": "主打稳定的AI API中转站，自建站点、三协议自主开发、非套壳非开源。一手CCMAX等号池自控，100%满血官方模型，人民币1:1结算。7日可用率97.3%，平均延迟1.9s，不掉线、不限流、不涨价，适合高频调用场景。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "adobe",
-            "codex"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.38,
-        "response_time": 1.9,
-        "alive": true,
-        "last_check": "2026-09-01",
-        "check_count": 1,
-        "display_tags": [
-            "极致稳定",
-            "满血官方",
-            "1:1结算"
-        ],
-        "display_metrics": [
-            {
-                "label": "稳定",
-                "value": "97.3%可用",
-                "cls": "green"
-            },
-            {
-                "label": "品质",
-                "value": "100%满血",
-                "cls": "accent"
-            },
-            {
-                "label": "结算",
-                "value": "人民币1:1",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://www.ddshub.cc/register?aff=YP3QF3YV5VYX",
-        "domain": "ddshub.cc",
-        "name": "呆呆兽DDSHub",
-        "description": "专注Claude/Codex的API中转站，提供兼容Anthropic原生协议与OpenAI SDK格式的国内直连接口。Claude系列低至3折，Codex系列低至1折，满血模型保障。支持支付宝/微信支付，可开发票，提供企业分组管理，适合企业级调用和开发者高频使用。",
-        "models": [
-            "claude",
-            "gpt",
-            "codex"
-        ],
-        "features": [
-            "cheap",
-            "stable"
-        ],
-        "price": "cheap",
-        "free_amount": "",
-        "score": 9.28,
-        "response_time": 0.48,
-        "alive": true,
-        "last_check": "2026-09-01",
-        "check_count": 1,
-        "display_tags": [
-            "Claude专精",
-            "低至1折",
-            "企业友好"
-        ],
-        "display_metrics": [
-            {
-                "label": "专精",
-                "value": "Claude/Codex",
-                "cls": "green"
-            },
-            {
-                "label": "价格",
-                "value": "低至1折",
-                "cls": "accent"
-            },
-            {
-                "label": "服务",
-                "value": "可开发票",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://hao.ai/invite/15LGCD17",
-        "domain": "hao.ai",
-        "name": "HaoAI",
-        "description": "高速稳定的AI API中转站，支持Codex WebSocket长连接，请求级账单逐笔可查。支持Claude/GPT/Gemini等主流模型，用量、延迟、费用全透明。配置简单，修改base_url即可接入，兼容主流IDE如Cursor、VS Code，适合开发者快速集成。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "codex"
-        ],
-        "features": [
-            "stable",
-            "multi"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.42,
-        "response_time": 0.45,
-        "alive": true,
-        "last_check": "2026-09-01",
-        "check_count": 1,
-        "display_tags": [
-            "WebSocket长连接",
-            "请求级账单",
-            "高速稳定"
-        ],
-        "display_metrics": [
-            {
-                "label": "技术",
-                "value": "WebSocket",
-                "cls": "green"
-            },
-            {
-                "label": "透明",
-                "value": "逐笔可查",
-                "cls": "accent"
-            },
-            {
-                "label": "速度",
-                "value": "高速接入",
-                "cls": ""
-            }
-        ],
-        "likes": 0
     }
 ]

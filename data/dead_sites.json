@@ -238,12 +238,7 @@
         "name": "Doro API",
         "reason": "标记为失效(alive=false)"
     },
-    {
-        "url": "https://fishxcode.com",
-        "domain": "fishxcode.com",
-        "name": "鱼代码 (FishXCode)",
-        "reason": "标记为失效(alive=false)"
-    },
+
     {
         "url": "https://apimart.ai",
         "domain": "apimart.ai",
