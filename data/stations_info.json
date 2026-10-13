@@ -1790,6 +1790,53 @@
         "likes": 0
     },
     {
+        "url": "https://logitstoken.com/",
+        "domain": "logitstoken.com",
+        "name": "Logits Token",
+        "description": "统一API网关接入GPT、Claude Code、Gemini、DeepSeek、Qwen、Llama等模型。套餐订阅7.5折起（日票¥19.9起），毫秒级响应，多地区负载均衡，企业级权限管理，开源可自托管，支持团队协作与实时用量监控。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek"
+        ],
+        "features": [
+            "cheap",
+            "stable",
+            "fast"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.28,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "开源可自托管",
+            "套餐7.5折起",
+            "毫秒响应"
+        ],
+        "display_metrics": [
+            {
+                "label": "折扣",
+                "value": "7.5折起",
+                "cls": "accent"
+            },
+            {
+                "label": "响应",
+                "value": "毫秒级",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "开源/团队协作",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://gpt.zhizengzeng.com/#/home",
         "domain": "zhizengzeng.com",
         "name": "智增增",
@@ -3669,6 +3716,53 @@
                 "cls": ""
             }
         ]
+    },
+    {
+        "url": "https://relaycore.cn/register?aff=7X4AU3AAMJVD",
+        "domain": "relaycore.cn",
+        "name": "RelayCore",
+        "description": "一个API接入Claude、GPT、Gemini、Grok、DeepSeek、Kimi、GLM等7+主流模型。OpenAI SDK兼容，Token级用量与成本记录，多线路智能容灾调度，独立API Key管理，支持个人与团队项目。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "deepseek"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.05,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "7+模型族",
+            "多线路容灾",
+            "Token计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "7+家族",
+                "cls": "accent"
+            },
+            {
+                "label": "兼容",
+                "value": "OpenAI SDK",
+                "cls": "green"
+            },
+            {
+                "label": "调度",
+                "value": "多线路容灾",
+                "cls": ""
+            }
+        ],
+        "likes": 0
     },
     {
         "url": "https://tokenriver.cn/",
