@@ -113,11 +113,11 @@
         .logo-text span { color: var(--accent); }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 8px; }
         .nav-links a {
-            color: #000; text-decoration: none; padding: 8px 14px;
+            color: var(--text-primary); text-decoration: none; padding: 8px 14px;
             border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.2s;
         }
         [data-theme="dark"] .nav-links a { color: var(--text-primary); }
-        .nav-links a:hover { background: var(--bg-card-hover); text-decoration: none; }
+        .nav-links a:hover { color: var(--accent); background: var(--bg-hover); text-decoration: none; }
         .theme-toggle {
             background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
             width: 36px; height: 36px; cursor: pointer; font-size: 18px;
