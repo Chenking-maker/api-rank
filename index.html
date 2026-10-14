@@ -5450,6 +5450,70 @@
             }
         }
 
+        /* ===== 最新收录 ===== */
+        .recent-section {
+            padding: 56px 0 28px;
+        }
+        .recent-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+        .recent-head h2 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .recent-head h2 span { color: var(--accent); }
+        .recent-head p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 12px;
+        }
+        .recent-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .recent-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .recent-item .rn {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .recent-item .rd {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+            .recent-section { padding: 40px 0 20px; }
+            .recent-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+            .recent-head h2 { font-size: 20px; }
+        }
+
     </style>
 
     <script type="application/ld+json">
@@ -5533,6 +5597,7 @@
 </head>
 
 <body>
+<script src="assets/notice.js"></script>
 
     <!-- Background Effects -->
 
@@ -7632,6 +7697,28 @@
                 </ul>
 
             </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 最新收录 -->
+
+    <section class="recent-section" id="recent">
+
+        <div class="container">
+
+            <div class="recent-head">
+
+                <h2>最新<span>收录</span></h2>
+
+                <p>本站近期新增收录的 API 中转站，按收录时间排列</p>
+
+            </div>
+
+            <div class="recent-grid" id="recentGrid"></div>
 
         </div>
 
@@ -12188,6 +12275,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // 页面加载完成后执行
+        // 最新收录：展示最近新增的站点（链接自带邀请参数，文本仅显示站名）
+        function renderRecentStations(stations) {
+            const grid = document.getElementById('recentGrid');
+            if (!grid || !Array.isArray(stations)) return;
+            const recent = stations
+                .filter(s => s && s.alive && s.added && (s.url || s.domain))
+                .sort((a, b) => String(b.added || '').localeCompare(String(a.added || '')));
+            const top = recent.slice(0, 20);
+            if (top.length === 0) {
+                const sec = document.getElementById('recent');
+                if (sec) sec.style.display = 'none';
+                return;
+            }
+            grid.innerHTML = top.map(s => {
+                const url = s.url || ('https://' + s.domain);
+                return '<a class="recent-item" href="' + url + '" target="_blank" rel="noopener noreferrer">' +
+                    '<span class="rn">' + escapeHtml(s.name || s.domain) + '</span>' +
+                    '<span class="rd">' + escapeHtml(s.added) + '</span>' +
+                '</a>';
+            }).join('');
+        }
+
         // 从文件加载所有站点并渲染
         // #1-#20 为硬编码卡片，#21+ 从 stations_info.json 动态加载
         async function renderAllStationsFromData() {
@@ -12198,6 +12307,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('站点数据为空');
                     return;
                 }
+
+                // 渲染底部「最新收录」（需在排序前调用，保持原有顺序）
+                renderRecentStations(stations);
 
                 // 获取已有硬编码卡片的URL集合，防止重复
                 const existingUrls = getExistingUrls();

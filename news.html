@@ -12,6 +12,7 @@
     <meta property="og:title" content="AI API中转站新闻资讯 - 行业动态与使用指南">
     <meta property="og:description" content="AI API中转站行业新闻、使用教程、选购指南与技术干货。">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apiranking.com/news.html">
     <link rel="canonical" href="https://apiranking.com/news.html">
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="apple-touch-icon" href="favicon.jpg">
@@ -168,11 +169,8 @@
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
+        .page-header h1 span { color: var(--accent); }
         .page-header .subtitle {
             font-size: 16px;
             color: var(--text-secondary);
@@ -180,59 +178,135 @@
             margin: 0 auto;
         }
 
-        /* ===== News List ===== */
-        .news-section {
-            max-width: 900px;
+        /* ===== Layout ===== */
+        .news-layout {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px 80px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 32px;
+            align-items: start;
         }
-        .news-list { display: flex; flex-direction: column; gap: 16px; }
+        .news-main { min-width: 0; }
+        .news-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
         .news-card {
+            display: flex;
+            flex-direction: column;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 24px;
+            overflow: hidden;
             transition: all 0.25s;
-            display: block;
         }
         .news-card:hover {
             border-color: var(--accent);
             box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
+        .news-cover {
+            height: 96px;
+            background: var(--accent-50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+        }
+        .news-body { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
         .news-card-meta {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             margin-bottom: 10px;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
         }
         .news-tag {
             background: var(--accent-50);
             color: var(--accent);
-            padding: 2px 10px;
+            padding: 2px 9px;
             border-radius: 10px;
             font-weight: 600;
             font-size: 12px;
         }
         .news-card h2 {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 8px;
-            line-height: 1.4;
+            line-height: 1.45;
         }
         .news-card:hover h2 { color: var(--accent); }
         .news-card p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             line-height: 1.7;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            margin-bottom: 12px;
         }
+        .read-more { margin-top: auto; font-size: 13px; color: var(--accent); font-weight: 600; }
+
+        /* ===== Sidebar ===== */
+        .news-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 84px; }
+        .side-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 18px;
+        }
+        .side-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text-primary); }
+        .side-list { counter-reset: s; list-style: none; }
+        .side-list li {
+            counter-increment: s;
+            display: flex;
+            gap: 10px;
+            padding: 9px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+        .side-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .side-list li::before {
+            content: counter(s);
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            border-radius: 6px;
+            background: var(--accent-50);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .side-list li:nth-child(-n+3)::before { background: var(--accent); color: #fff; }
+        .side-list a { font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; font-weight: 500; }
+        .side-list a:hover { color: var(--accent); }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag-cloud a {
+            font-size: 12.5px;
+            padding: 4px 11px;
+            border-radius: 9999px;
+            background: var(--accent-50);
+            color: var(--accent);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .tag-cloud a:hover, .tag-cloud a.active { background: var(--accent); color: #fff; }
+        .side-link {
+            display: block;
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border);
+            transition: color 0.2s;
+        }
+        .side-link:last-child { border-bottom: none; padding-bottom: 0; }
+        .side-link:hover { color: var(--accent); }
 
         /* ===== Pagination ===== */
         .pagination {
@@ -240,7 +314,7 @@
             justify-content: center;
             align-items: center;
             gap: 8px;
-            margin-top: 48px;
+            margin-top: 40px;
             flex-wrap: wrap;
         }
         .pagination a, .pagination span {
@@ -251,35 +325,56 @@
             color: var(--text-secondary);
             transition: all 0.2s;
             cursor: pointer;
+            background: var(--bg-card);
         }
         .pagination a:hover { border-color: var(--accent); color: var(--accent); }
-        .pagination .active {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
+        .pagination .active { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .filter-bar {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            font-size: 14px;
+            color: var(--text-secondary);
         }
+        .filter-bar.show { display: flex; }
+        .filter-bar button {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+        .filter-bar button:hover { border-color: var(--accent); color: var(--accent); }
 
         /* ===== Back link ===== */
         .back-link {
             display: inline-block;
-            margin-top: 48px;
+            margin-top: 40px;
             color: var(--text-secondary);
             font-size: 14px;
             transition: color 0.2s;
         }
         .back-link:hover { color: var(--accent); }
 
+        @media (max-width: 900px) {
+            .news-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+            .news-sidebar { position: static; }
+        }
         @media (max-width: 768px) {
             .nav-links { gap: 4px; }
             .nav-links a { padding: 6px 8px; font-size: 13px; }
             .page-header { padding: 32px 16px 24px; }
             .page-header h1 { font-size: 28px; }
-            .news-card { padding: 18px; }
-            .news-card h2 { font-size: 17px; }
+            .news-grid { grid-template-columns: minmax(0, 1fr); }
+            .news-layout { padding: 0 16px 60px; }
         }
     </style>
 </head>
 <body>
+<script src="assets/notice.js"></script>
 
 <nav class="navbar" id="navbar">
     <div class="container">
@@ -298,22 +393,40 @@
     </div>
 </nav>
 
-<div class="container">
-    <header class="page-header">
-        <div class="page-badge">📰 新闻资讯</div>
-        <h1>AI API中转站新闻与指南</h1>
-        <p class="subtitle">行业动态、使用教程、选购指南与技术干货，助你高效接入大模型</p>
-    </header>
+<div class="page-header">
+    <div class="page-badge">📰 新闻资讯</div>
+    <h1>AI API中转站<span>新闻与指南</span></h1>
+    <p class="subtitle">行业动态、使用教程、选购指南与技术干货，助你高效接入大模型</p>
+</div>
 
-    <section class="news-section">
-        <div class="news-list" id="newsList">
-            <!-- JS动态渲染新闻列表 -->
+<div class="news-layout">
+    <main class="news-main">
+        <div class="filter-bar" id="filterBar">
+            <span id="filterText"></span>
+            <button onclick="clearTag()">清除筛选</button>
         </div>
-
+        <div class="news-grid" id="newsGrid"></div>
         <div class="pagination" id="pagination"></div>
-
         <a href="index.html" class="back-link">← 返回排行榜</a>
-    </section>
+    </main>
+
+    <aside class="news-sidebar">
+        <div class="side-card">
+            <h3>🔥 推荐文章</h3>
+            <ol class="side-list" id="sideList"></ol>
+        </div>
+        <div class="side-card">
+            <h3>🏷️ 热门标签</h3>
+            <div class="tag-cloud" id="tagCloud"></div>
+        </div>
+        <div class="side-card">
+            <h3>🔗 快捷入口</h3>
+            <a class="side-link" href="index.html#ranking">API中转站排行榜</a>
+            <a class="side-link" href="all-stations.html">完整榜单（全部站点）</a>
+            <a class="side-link" href="dead-sites.html">已失效站点</a>
+            <a class="side-link" href="about.html">关于本站</a>
+        </div>
+    </aside>
 </div>
 
 <script>
@@ -346,41 +459,73 @@
 
     // 新闻数据（每条对应一个独立文章页面，利于SEO收录）
     var newsData = [
-        { title: "什么是API中转站？核心作用与底层原理一次性讲透", summary: "API中转站是介于开发者与AI模型厂商之间的中间代理平台，通过统一接口格式聚合、转发和封装各家大模型API，解决多模型接入、成本控制与网络访问等问题。", date: "2026-10-14", tag: "入门指南", url: "news/what-is-api-relay.html" },
-        { title: "AI API中转站靠谱吗？风险识别与避坑要点全解析", summary: "API中转站市场鱼龙混杂，灰产风险极高。本文从法律合规、数据安全、资金风险三个维度，教你识别正规中转站并避开常见陷阱。", date: "2026-10-13", tag: "安全指南", url: "news/api-relay-safety.html" },
-        { title: "2026年API中转站推荐：高性价比平台对比评测", summary: "精选10款主流AI API中转站，从模型覆盖、价格、稳定性、速度、客服五个维度横向对比，帮你找到最适合的中转服务。", date: "2026-10-12", tag: "推荐评测", url: "news/best-api-relay-2026.html" },
-        { title: "GPT中转API怎么选？Claude与GPT中转方案对比", summary: "GPT中转API是开发者接入大模型的常用方案。本文对比Claude中转、GPT中转在价格、速度、可用性上的差异，并给出选型建议。", date: "2026-10-11", tag: "选购指南", url: "news/gpt-claude-relay-compare.html" },
-        { title: "API中转站常见报错排查：超时、401、速率限制解决办法", summary: "AI中转站常见报错集中在超时、401未授权、速率限制三方面。本文逐一分析原因并给出排查步骤和解决方案。", date: "2026-10-10", tag: "技术排查", url: "news/api-relay-error-fix.html" },
-        { title: "自建API中转站教程：用New API搭建统一模型网关", summary: "自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。", date: "2026-10-09", tag: "自建教程", url: "news/self-host-api-relay.html" },
-        { title: "API中转站价格对比：按量付费与套餐订阅哪个更划算", summary: "中转站计费模式分按量付费和套餐订阅两种。本文通过实际使用场景计算，分析不同用量下哪种模式更省钱。", date: "2026-10-08", tag: "价格分析", url: "news/api-relay-pricing.html" },
-        { title: "API中转站接口限流与日志监控配置实操指南", summary: "针对API中转站的限流与日志监控，核心思路是根据业务场景选择限流维度与算法，日志监控兼顾调试便利性与存储成本。", date: "2026-10-07", tag: "运维实操", url: "news/api-relay-rate-limit.html" }
+        { title: "什么是API中转站？核心作用与底层原理一次性讲透", tag: "入门指南", emoji: "📘", date: "2026-10-14", featured: true, summary: "API中转站是介于开发者与AI模型厂商之间的中间代理平台，通过统一接口格式聚合、转发和封装各家大模型API，解决多模型接入、成本控制与网络访问等问题。", url: "news/what-is-api-relay.html" },
+        { title: "AI API中转站靠谱吗？风险识别与避坑要点全解析", tag: "安全指南", emoji: "🛡️", date: "2026-10-13", featured: true, summary: "API中转站市场鱼龙混杂，灰产风险极高。本文从法律合规、数据安全、资金风险三个维度，教你识别正规中转站并避开常见陷阱。", url: "news/api-relay-safety.html" },
+        { title: "2026年API中转站推荐：高性价比平台对比评测", tag: "推荐评测", emoji: "⭐", date: "2026-10-12", featured: true, summary: "精选10款主流AI API中转站，从模型覆盖、价格、稳定性、速度、客服五个维度横向对比，帮你找到最适合的中转服务。", url: "news/best-api-relay-2026.html" },
+        { title: "GPT中转API怎么选？Claude与GPT中转方案对比", tag: "选购指南", emoji: "🛒", date: "2026-10-11", summary: "GPT中转API是开发者接入大模型的常用方案。本文对比Claude中转、GPT中转在价格、速度、可用性上的差异，并给出选型建议。", url: "news/gpt-claude-relay-compare.html" },
+        { title: "API中转站常见报错排查：超时、401、速率限制解决办法", tag: "技术排查", emoji: "🔧", date: "2026-10-10", summary: "AI中转站常见报错集中在超时、401未授权、速率限制三方面。本文逐一分析原因并给出排查步骤和解决方案。", url: "news/api-relay-error-fix.html" },
+        { title: "自建API中转站教程：用New API搭建统一模型网关", tag: "自建教程", emoji: "🏗️", date: "2026-10-09", featured: true, summary: "自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。", url: "news/self-host-api-relay.html" },
+        { title: "API中转站价格对比：按量付费与套餐订阅哪个更划算", tag: "价格分析", emoji: "💰", date: "2026-10-08", summary: "中转站计费模式分按量付费和套餐订阅两种。本文通过实际使用场景计算，分析不同用量下哪种模式更省钱。", url: "news/api-relay-pricing.html" },
+        { title: "API中转站接口限流与日志监控配置实操指南", tag: "运维实操", emoji: "⚙️", date: "2026-10-07", summary: "针对API中转站的限流与日志监控，核心思路是根据业务场景选择限流维度与算法，日志监控兼顾调试便利性与存储成本。", url: "news/api-relay-rate-limit.html" },
+        { title: "API中转站和官方API有什么区别？该选哪个", tag: "对比解析", emoji: "⚖️", date: "2026-10-06", featured: true, summary: "全面对比API中转站与官方API在价格、稳定性、模型数量、账单方式与合规性上的差异，帮你判断什么场景该用中转、什么场景该直连官方。", url: "news/api-relay-vs-official.html" },
+        { title: "Claude Code 中转站使用指南：配置与常见问题", tag: "工具教程", emoji: "🧰", date: "2026-10-05", summary: "Claude Code 通过中转站接入的完整配置教程：环境变量设置、模型选择、常见报错排查与成本控制建议，帮你用更低的成本跑 Claude Code。", url: "news/claude-code-relay-guide.html" },
+        { title: "API Key 安全使用指南：防盗刷与泄露应急处理", tag: "安全指南", emoji: "🔐", date: "2026-10-04", featured: true, summary: "API Key 被盗刷轻则损失余额，重则泄露数据。本文讲解 Key 泄露的常见途径、日常防护措施，以及发现泄露后的应急处理流程。", url: "news/api-key-security-guide.html" },
+        { title: "国产大模型API接入指南：DeepSeek、Kimi、通义、GLM", tag: "模型接入", emoji: "🧠", date: "2026-10-03", summary: "国产大模型 DeepSeek、Kimi、通义千问、GLM 的 API 特点、适用场景与统一接入方法，教你用一个 Key 同时调用多款国产模型。", url: "news/domestic-llm-api-guide.html" },
+        { title: "团队版API中转站怎么选？成员与用量管理指南", tag: "团队协作", emoji: "👥", date: "2026-10-02", summary: "小团队或企业选购 API 中转站时，成员权限、子 Key、用量报表与成本分摊是关键。本文给出团队场景的功能清单与选型方法。", url: "news/api-relay-team-management.html" },
+        { title: "如何降低大模型API响应延迟？8个实用技巧", tag: "性能优化", emoji: "⚡", date: "2026-10-01", featured: true, summary: "大模型 API 延迟高会严重影响体验。本文先教你定位延迟来源，再给出 8 个实测有效的优化技巧，包括流式输出、并发、缓存与线路选择。", url: "news/reduce-api-latency.html" },
+        { title: "AI绘图与视频生成API接入指南：中转站怎么用", tag: "多模态", emoji: "🎨", date: "2026-09-30", summary: "AI 绘图与视频生成 API 的接入方法与注意事项：常见模型、任务类型、异步轮询机制、成本与排队问题，以及如何用中转站统一调用。", url: "news/image-video-api-relay.html" },
+        { title: "挑选API中转站的10项检查清单（避坑必看）", tag: "选购清单", emoji: "✅", date: "2026-09-29", featured: true, summary: "选 API 中转站前，先过一遍这 10 项检查清单：经营时长、状态页、价格透明度、退款政策、客服响应等，还有必须警惕的红灯信号。", url: "news/api-relay-checklist.html" },
+        { title: "AI编程工具（Cursor/Codex）如何接入API中转站", tag: "工具教程", emoji: "🧰", date: "2026-09-28", summary: "Cursor、Codex CLI、Cline 等 AI 编程工具接入 API 中转站的配置方法，包含 Base URL 设置、模型选择、常见报错与成本优化建议。", url: "news/coding-agent-api-guide.html" }
     ];
 
-    var PAGE_SIZE = 10;
+    var PAGE_SIZE = 6;
     var currentPage = 1;
+    var currentTag = null;
+
+    function getFiltered() {
+        if (!currentTag) return newsData;
+        return newsData.filter(function (n) { return n.tag === currentTag; });
+    }
 
     function renderNews() {
-        var list = document.getElementById('newsList');
+        var list = document.getElementById('newsGrid');
+        var items = getFiltered();
         var start = (currentPage - 1) * PAGE_SIZE;
-        var end = start + PAGE_SIZE;
-        var pageItems = newsData.slice(start, end);
+        var pageItems = items.slice(start, start + PAGE_SIZE);
 
-        list.innerHTML = pageItems.map(function(item) {
+        list.innerHTML = pageItems.map(function (item) {
+            var emoji = item.emoji || '📄';
             return '<a class="news-card" href="' + item.url + '">' +
-                '<div class="news-card-meta">' +
-                    '<span class="news-tag">' + item.tag + '</span>' +
-                    '<span>' + item.date + '</span>' +
+                '<div class="news-cover">' + emoji + '</div>' +
+                '<div class="news-body">' +
+                    '<div class="news-card-meta">' +
+                        '<span class="news-tag">' + item.tag + '</span>' +
+                        '<span>' + item.date + '</span>' +
+                    '</div>' +
+                    '<h2>' + item.title + '</h2>' +
+                    '<p>' + item.summary + '</p>' +
+                    '<span class="read-more">阅读全文 →</span>' +
                 '</div>' +
-                '<h2>' + item.title + '</h2>' +
-                '<p>' + item.summary + '</p>' +
             '</a>';
         }).join('');
 
-        renderPagination();
+        renderPagination(items.length);
+        renderFilterBar();
     }
 
-    function renderPagination() {
-        var totalPages = Math.ceil(newsData.length / PAGE_SIZE);
+    function renderFilterBar() {
+        var bar = document.getElementById('filterBar');
+        var txt = document.getElementById('filterText');
+        if (currentTag) {
+            bar.classList.add('show');
+            txt.innerHTML = '当前标签：<strong style="color:var(--accent)">' + currentTag + '</strong>';
+        } else {
+            bar.classList.remove('show');
+        }
+    }
+
+    function renderPagination(total) {
+        var totalPages = Math.ceil(total / PAGE_SIZE);
         var pag = document.getElementById('pagination');
         if (totalPages <= 1) { pag.innerHTML = ''; return; }
 
@@ -405,7 +550,48 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function setTag(tag) {
+        currentTag = (currentTag === tag) ? null : tag;
+        currentPage = 1;
+        renderNews();
+        renderTagCloud();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function clearTag() {
+        currentTag = null;
+        currentPage = 1;
+        renderNews();
+        renderTagCloud();
+    }
+
+    // 右侧推荐
+    function renderSidebar() {
+        var side = document.getElementById('sideList');
+        var feat = newsData.filter(function (n) { return n.featured; });
+        side.innerHTML = feat.map(function (n) {
+            return '<li><a href="' + n.url + '">' + n.title + '</a></li>';
+        }).join('');
+
+        renderTagCloud();
+    }
+
+    function renderTagCloud() {
+        var cloud = document.getElementById('tagCloud');
+        var seen = {};
+        var tags = [];
+        newsData.forEach(function (n) {
+            if (!seen[n.tag]) { seen[n.tag] = 0; }
+            seen[n.tag]++;
+        });
+        tags = Object.keys(seen);
+        cloud.innerHTML = tags.map(function (t) {
+            var cls = (t === currentTag) ? ' class="active"' : '';
+            return '<a' + cls + ' onclick="setTag(\'' + t + '\')">' + t + '</a>';
+        }).join('');
+    }
+
     renderNews();
+    renderSidebar();
 </script>
 
 </body>

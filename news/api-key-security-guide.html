@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Key 安全使用指南：防盗刷与泄露应急处理</title>
+<meta name="description" content="API Key 被盗刷轻则损失余额，重则泄露数据。本文讲解 Key 泄露的常见途径、日常防护措施，以及发现泄露后的应急处理流程。">
+<meta name="keywords" content="API Key安全,密钥泄露,防盗刷,API密钥管理,中转站安全,密钥轮换">
+<meta name="author" content="API排行榜">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apiranking.com/news/api-key-security-guide.html">
+<meta property="og:title" content="API Key 安全使用指南：防盗刷与泄露应急处理">
+<meta property="og:description" content="API Key 被盗刷轻则损失余额，重则泄露数据。本文讲解 Key 泄露的常见途径、日常防护措施，以及发现泄露后的应急处理流程。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apiranking.com/news/api-key-security-guide.html">
+<meta property="og:site_name" content="API排行榜">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "API Key 安全使用指南：防盗刷与泄露应急处理",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "author": {"@type": "Organization", "name": "API排行榜"},
+  "description": "API Key 被盗刷轻则损失余额，重则泄露数据。本文讲解 Key 泄露的常见途径、日常防护措施，以及发现泄露后的应急处理流程。",
+  "publisher": {"@type": "Organization", "name": "API排行榜"},
+  "mainEntityOfPage": "https://apiranking.com/news/api-key-security-guide.html"
+}
+</script>
+<link rel="icon" type="image/jpeg" href="../favicon.jpg">
+<script>(function(){var t=localStorage.getItem('theme')||'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg-primary:#FAFAFA;--bg-card:#FFFFFF;--border:#E4E4E7;--text-primary:#18181B;--text-secondary:#71717A;--text-muted:#A1A1AA;--accent:#4A90D9;--accent-50:#EFF6FF;--accent-100:#DBEAFE;--navbar-bg:rgba(255,255,255,0.72);--shadow-sm:0 1px 2px rgba(24,24,27,0.04);--shadow-md:0 4px 12px rgba(24,24,27,0.06);--radius-sm:8px;--radius-md:12px;--radius-lg:16px}
+[data-theme="dark"]{--bg-primary:#09090B;--bg-card:#18181B;--border:#27272A;--text-primary:#FAFAFA;--text-secondary:#A1A1AA;--text-muted:#71717A;--accent:#60A5FA;--accent-50:rgba(74,144,217,0.1);--navbar-bg:rgba(9,9,11,0.72);--shadow-sm:0 1px 2px rgba(0,0,0,0.3);--shadow-md:0 4px 12px rgba(0,0,0,0.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.navbar{position:sticky;top:0;z-index:1000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--navbar-bg);border-bottom:1px solid var(--border);padding:12px 0}
+.navbar .container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:8px}
+.logo-text{font-size:20px;font-weight:800;color:var(--text-primary)}
+.logo-text span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{color:var(--text-secondary);font-size:14px;font-weight:500;padding:8px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--accent);background:var(--accent-50)}
+.theme-toggle{background:none;border:1px solid var(--border);cursor:pointer;padding:6px 10px;border-radius:8px;font-size:16px}
+.article-wrap{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+.article-tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--accent-50);padding:4px 12px;border-radius:10px;font-weight:600;margin-bottom:16px}
+.article-date{font-size:14px;color:var(--text-muted);margin-bottom:12px}
+.article-wrap h1{font-size:36px;font-weight:800;letter-spacing:-.5px;line-height:1.3;margin-bottom:24px}
+.article-body{font-size:16px;color:var(--text-primary)}
+.article-body h2{font-size:24px;font-weight:700;margin:36px 0 16px;line-height:1.4}
+.article-body h3{font-size:19px;font-weight:600;margin:24px 0 12px}
+.article-body p{margin-bottom:16px;color:var(--text-secondary);line-height:1.9}
+.article-body ul,.article-body ol{margin:12px 0 16px 24px;color:var(--text-secondary);line-height:1.9}
+.article-body li{margin-bottom:8px}
+.article-body code{background:var(--accent-50);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'JetBrains Mono',monospace}
+.article-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.article-body th,.article-body td{border:1px solid var(--border);padding:10px 12px;text-align:left;color:var(--text-secondary)}
+.article-body th{background:var(--accent-50);color:var(--text-primary);font-weight:600}
+.related{margin-top:60px;padding-top:32px;border-top:1px solid var(--border)}
+.related h3{font-size:18px;font-weight:700;margin-bottom:16px}
+.related a{display:block;padding:12px 0;border-bottom:1px solid var(--border);color:var(--text-secondary);transition:color .2s}
+.related a:hover{color:var(--accent)}
+.back-link{display:inline-block;margin-top:32px;color:var(--text-secondary);font-size:14px}
+.back-link:hover{color:var(--accent)}
+@media(max-width:768px){.nav-links a{padding:6px 8px;font-size:13px}.article-wrap h1{font-size:26px}.article-wrap{padding:24px 16px 60px}.article-body h2{font-size:20px}}</style>
+</head>
+<body>
+<script src="../assets/notice.js"></script>
+<nav class="navbar"><div class="container">
+<a href="../index.html" class="logo"><img src="../favicon.jpg" alt="API排行榜"><span class="logo-text">API<span>排行榜</span></span></a>
+<ul class="nav-links"><li><a href="../index.html#ranking">排行榜</a></li><li><a href="../index.html#guide">选站指南</a></li><li><a href="../news.html">相关新闻</a></li><li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button></li></ul>
+</div></nav>
+
+<div class="article-wrap">
+<span class="article-tag">安全指南</span>
+<div class="article-date">2026-10-04</div>
+<h1>API Key 安全使用指南：防盗刷与泄露应急处理</h1>
+<div class="article-body">
+
+<p>API Key 就是你账户的"钱包 + 身份凭证"。一旦泄露，别人可以直接用你的余额调用模型，甚至读取你提交的数据。本文给出一套实用的 Key 安全规范。</p>
+
+<h2>一、Key 泄露的常见途径</h2>
+<ul>
+<li><strong>硬编码到代码</strong>：把 Key 直接写进源码并 push 到公开仓库，是最常见的泄露方式；</li>
+<li><strong>前端暴露</strong>：把 Key 放在网页 JS 里，任何人按 F12 都能看到；</li>
+<li><strong>截图与分享</strong>：在群聊、教程截图里带出了完整 Key；</li>
+<li><strong>第三方工具</strong>：使用来源不明的客户端或插件，Key 被悄悄上传；</li>
+<li><strong>日志与报错</strong>：把带 Key 的请求日志发给了别人。</li>
+</ul>
+
+<h2>二、日常防护措施</h2>
+<ol>
+<li>Key 只放在服务端环境变量或密钥管理服务里，绝不进前端和代码仓库；</li>
+<li>为不同项目、不同成员分配独立的子 Key，便于隔离与追溯；</li>
+<li>给子 Key 设置额度上限、模型白名单与过期时间；</li>
+<li>在仓库中配置 <code>.gitignore</code>，并对历史提交做密钥扫描；</li>
+<li>定期轮换 Key，尤其是成员离职后立即更换。</li>
+</ol>
+
+<h2>三、发现泄露后的应急处理</h2>
+<ol>
+<li><strong>立即撤销</strong>：到中转站后台删除或禁用该 Key，这是止损第一步；</li>
+<li><strong>检查账单</strong>：查看异常调用记录，确认损失范围；</li>
+<li><strong>重新签发</strong>：生成新 Key 并更新到所有使用方；</li>
+<li><strong>修正源头</strong>：删掉泄露的代码/截图，撤销历史提交中的密钥；</li>
+<li><strong>开启告警</strong>：设置余额与调用量告警，防止再次被刷。</li>
+</ol>
+
+<h2>四、团队场景的密钥管理</h2>
+<p>团队应避免"一个 Key 大家共用"。正确做法是：每人/每个服务一个子 Key，由管理员统一在后台管理权限与额度，定期导出用量报表核对。更多团队管理方法见<a href="api-relay-team-management.html">团队版中转站指南</a>。</p>
+
+</div>
+
+<div class="related">
+<h3>相关文章</h3>
+<a href="api-relay-safety.html">AI API中转站靠谱吗？风险识别与避坑要点全解析</a>
+<a href="api-relay-team-management.html">团队版API中转站怎么选？成员与用量管理指南</a>
+<a href="api-relay-checklist.html">挑选API中转站的10项检查清单（避坑必看）</a>
+</div>
+<a href="../news.html" class="back-link">← 返回新闻列表</a>
+</div>
+
+<script>
+function toggleTheme(){var h=document.documentElement;if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');localStorage.setItem('theme','dark')}updateThemeIcon()}
+function updateThemeIcon(){var b=document.getElementById('themeToggle');if(b)b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙'}
+updateThemeIcon();
+</script>
+</body>
+</html>

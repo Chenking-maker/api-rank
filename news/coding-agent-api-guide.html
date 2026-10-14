@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI编程工具（Cursor/Codex）如何接入API中转站</title>
+<meta name="description" content="Cursor、Codex CLI、Cline 等 AI 编程工具接入 API 中转站的配置方法，包含 Base URL 设置、模型选择、常见报错与成本优化建议。">
+<meta name="keywords" content="AI编程工具,Cursor配置,Codex CLI,Cline中转,编程Agent,API Base URL">
+<meta name="author" content="API排行榜">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apiranking.com/news/coding-agent-api-guide.html">
+<meta property="og:title" content="AI编程工具（Cursor/Codex）如何接入API中转站">
+<meta property="og:description" content="Cursor、Codex CLI、Cline 等 AI 编程工具接入 API 中转站的配置方法，包含 Base URL 设置、模型选择、常见报错与成本优化建议。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apiranking.com/news/coding-agent-api-guide.html">
+<meta property="og:site_name" content="API排行榜">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI编程工具（Cursor/Codex）如何接入API中转站",
+  "datePublished": "2026-09-28",
+  "dateModified": "2026-09-28",
+  "author": {"@type": "Organization", "name": "API排行榜"},
+  "description": "Cursor、Codex CLI、Cline 等 AI 编程工具接入 API 中转站的配置方法，包含 Base URL 设置、模型选择、常见报错与成本优化建议。",
+  "publisher": {"@type": "Organization", "name": "API排行榜"},
+  "mainEntityOfPage": "https://apiranking.com/news/coding-agent-api-guide.html"
+}
+</script>
+<link rel="icon" type="image/jpeg" href="../favicon.jpg">
+<script>(function(){var t=localStorage.getItem('theme')||'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg-primary:#FAFAFA;--bg-card:#FFFFFF;--border:#E4E4E7;--text-primary:#18181B;--text-secondary:#71717A;--text-muted:#A1A1AA;--accent:#4A90D9;--accent-50:#EFF6FF;--accent-100:#DBEAFE;--navbar-bg:rgba(255,255,255,0.72);--shadow-sm:0 1px 2px rgba(24,24,27,0.04);--shadow-md:0 4px 12px rgba(24,24,27,0.06);--radius-sm:8px;--radius-md:12px;--radius-lg:16px}
+[data-theme="dark"]{--bg-primary:#09090B;--bg-card:#18181B;--border:#27272A;--text-primary:#FAFAFA;--text-secondary:#A1A1AA;--text-muted:#71717A;--accent:#60A5FA;--accent-50:rgba(74,144,217,0.1);--navbar-bg:rgba(9,9,11,0.72);--shadow-sm:0 1px 2px rgba(0,0,0,0.3);--shadow-md:0 4px 12px rgba(0,0,0,0.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.navbar{position:sticky;top:0;z-index:1000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--navbar-bg);border-bottom:1px solid var(--border);padding:12px 0}
+.navbar .container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:8px}
+.logo-text{font-size:20px;font-weight:800;color:var(--text-primary)}
+.logo-text span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{color:var(--text-secondary);font-size:14px;font-weight:500;padding:8px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--accent);background:var(--accent-50)}
+.theme-toggle{background:none;border:1px solid var(--border);cursor:pointer;padding:6px 10px;border-radius:8px;font-size:16px}
+.article-wrap{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+.article-tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--accent-50);padding:4px 12px;border-radius:10px;font-weight:600;margin-bottom:16px}
+.article-date{font-size:14px;color:var(--text-muted);margin-bottom:12px}
+.article-wrap h1{font-size:36px;font-weight:800;letter-spacing:-.5px;line-height:1.3;margin-bottom:24px}
+.article-body{font-size:16px;color:var(--text-primary)}
+.article-body h2{font-size:24px;font-weight:700;margin:36px 0 16px;line-height:1.4}
+.article-body h3{font-size:19px;font-weight:600;margin:24px 0 12px}
+.article-body p{margin-bottom:16px;color:var(--text-secondary);line-height:1.9}
+.article-body ul,.article-body ol{margin:12px 0 16px 24px;color:var(--text-secondary);line-height:1.9}
+.article-body li{margin-bottom:8px}
+.article-body code{background:var(--accent-50);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'JetBrains Mono',monospace}
+.article-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.article-body th,.article-body td{border:1px solid var(--border);padding:10px 12px;text-align:left;color:var(--text-secondary)}
+.article-body th{background:var(--accent-50);color:var(--text-primary);font-weight:600}
+.related{margin-top:60px;padding-top:32px;border-top:1px solid var(--border)}
+.related h3{font-size:18px;font-weight:700;margin-bottom:16px}
+.related a{display:block;padding:12px 0;border-bottom:1px solid var(--border);color:var(--text-secondary);transition:color .2s}
+.related a:hover{color:var(--accent)}
+.back-link{display:inline-block;margin-top:32px;color:var(--text-secondary);font-size:14px}
+.back-link:hover{color:var(--accent)}
+@media(max-width:768px){.nav-links a{padding:6px 8px;font-size:13px}.article-wrap h1{font-size:26px}.article-wrap{padding:24px 16px 60px}.article-body h2{font-size:20px}}</style>
+</head>
+<body>
+<script src="../assets/notice.js"></script>
+<nav class="navbar"><div class="container">
+<a href="../index.html" class="logo"><img src="../favicon.jpg" alt="API排行榜"><span class="logo-text">API<span>排行榜</span></span></a>
+<ul class="nav-links"><li><a href="../index.html#ranking">排行榜</a></li><li><a href="../index.html#guide">选站指南</a></li><li><a href="../news.html">相关新闻</a></li><li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button></li></ul>
+</div></nav>
+
+<div class="article-wrap">
+<span class="article-tag">工具教程</span>
+<div class="article-date">2026-09-28</div>
+<h1>AI编程工具（Cursor/Codex）如何接入API中转站</h1>
+<div class="article-body">
+
+<p>Cursor、Codex CLI、Cline、Continue 这类 AI 编程工具，本质都在调用大模型的补全或对话接口。通过中转站接入，可以显著降低费用并解决网络问题。本文介绍通用配置思路。</p>
+
+<h2>一、为什么编程工具需要中转</h2>
+<p>编程 Agent 会反复读取文件、拼接上下文，Token 消耗远高于普通对话。直连官方时成本高、且部分工具对网络有要求。中转站提供了更低的单价、国内直连与按量计费，非常适合高频使用场景。</p>
+
+<h2>二、常见工具与配置方式</h2>
+<ul>
+<li><strong>Cursor</strong>：设置中把 OpenAI Base URL 与 API Key 改为中转地址与 Key；</li>
+<li><strong>Codex CLI</strong>：通过环境变量指定 Base URL 与 Key；</li>
+<li><strong>Cline / Continue</strong>：在插件设置里选择 OpenAI 兼容模式，填入中转地址与模型名；</li>
+<li><strong>自研脚本</strong>：使用官方 SDK，把 <code>base_url</code> 指向中转站。</li>
+</ul>
+
+<h2>三、配置步骤（通用）</h2>
+<ol>
+<li>在中转站申请 Key，复制兼容接口地址；</li>
+<li>打开工具的模型设置，选择"OpenAI 兼容 / 自定义接口"；</li>
+<li>填入 Base URL（一般以 <code>/v1</code> 结尾）与 Key；</li>
+<li>填写你需要的模型名（以中转站命名为准）；</li>
+<li>发送一条测试请求，确认能正常返回。</li>
+</ol>
+
+<h2>四、常见问题</h2>
+<ul>
+<li><strong>模型名不对</strong>：工具内置的名称可能与中转站不同，需手动改成站点支持的名称；</li>
+<li><strong>路径重复</strong>：地址末尾已有 <code>/v1</code>，工具又自动补一次，导致 404；</li>
+<li><strong>上下文过大</strong>：被中途截断或报错，需缩小工作区或开启缓存。</li>
+</ul>
+
+<h2>五、成本与模型选择</h2>
+<p>代码任务对推理要求高，建议主力用 Claude 系或 DeepSeek 系；日常补全可用更便宜的小模型。结合按量计费与每日限额，能有效避免"一个下午烧掉几十块"。相关配置细节可参考<a href="claude-code-relay-guide.html">Claude Code 中转配置指南</a>。</p>
+
+</div>
+
+<div class="related">
+<h3>相关文章</h3>
+<a href="claude-code-relay-guide.html">Claude Code 中转站使用指南：配置与常见问题</a>
+<a href="reduce-api-latency.html">如何降低大模型API响应延迟？8个实用技巧</a>
+<a href="api-relay-error-fix.html">API中转站常见报错排查：超时、401、速率限制解决办法</a>
+</div>
+<a href="../news.html" class="back-link">← 返回新闻列表</a>
+</div>
+
+<script>
+function toggleTheme(){var h=document.documentElement;if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');localStorage.setItem('theme','dark')}updateThemeIcon()}
+function updateThemeIcon(){var b=document.getElementById('themeToggle');if(b)b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙'}
+updateThemeIcon();
+</script>
+</body>
+</html>
