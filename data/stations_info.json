@@ -411,6 +411,51 @@
         "likes": 0
     },
     {
+        "url": "https://cdn.sta1n.cn/sign-up?aff=qaLL",
+        "domain": "cdn.sta1n.cn",
+        "name": "STA1N API",
+        "description": "为你的应用连接大模型。选择模型、获取密钥，三步开始第一次调用。提供免费可用模型，支持OpenAI兼容接口，社区活跃。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "免费模型可用",
+        "score": 9.69,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-14",
+        "check_count": 1,
+        "display_tags": [
+            "免费模型",
+            "三步接入",
+            "社区活跃"
+        ],
+        "display_metrics": [
+            {
+                "label": "免费",
+                "value": "有免费模型",
+                "cls": "accent"
+            },
+            {
+                "label": "接入",
+                "value": "三步上手",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "社区活跃",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://coderplan.ai/register?aff=9liD",
         "domain": "coderplan.ai",
         "name": "CoderPlan",
@@ -1649,6 +1694,52 @@
             {
                 "label": "场景",
                 "value": "编程专用",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://ckffai.com/sign-up?aff=YBn3",
+        "domain": "ckffai.com",
+        "name": "小鸡农场",
+        "description": "CKF AI TECHNOLOGY统一模型接入平台。一个API Key调用100+模型，OpenAI兼容，无月费无最低消费。腾讯云+AWS双节点，实时状态监控，24小时无用量退款，邀请返利2.5%。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable",
+            "fast"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.3,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-14",
+        "check_count": 1,
+        "display_tags": [
+            "100+模型",
+            "无最低消费",
+            "双节点"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "100+",
+                "cls": "accent"
+            },
+            {
+                "label": "节点",
+                "value": "腾讯+AWS",
+                "cls": "green"
+            },
+            {
+                "label": "保障",
+                "value": "24h退款",
                 "cls": ""
             }
         ],
@@ -4492,6 +4583,50 @@
         "likes": 0
     },
     {
+        "url": "https://api.qimingx.net/sign-up?aff=GoA9",
+        "domain": "api.qimingx.net",
+        "name": "启明星API",
+        "description": "AI API中转服务，支持Claude、GPT、Gemini等主流大模型统一接入。注册需用户名、密码与邮箱验证码，安全可靠，快速开通。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 8.72,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-14",
+        "check_count": 1,
+        "display_tags": [
+            "主流模型",
+            "邮箱验证",
+            "快速开通"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "GPT/Claude",
+                "cls": "accent"
+            },
+            {
+                "label": "注册",
+                "value": "邮箱验证",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "安全可靠",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://shufulei.net/register?aff=gcfI",
         "domain": "shufulei.net",
         "name": "舒芙蕾",
@@ -4663,6 +4798,50 @@
             {
                 "label": "模型",
                 "value": "多模型支持",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://api.huihuiyun.top/register?aff=9XWUZTPRM8PK",
+        "domain": "api.huihuiyun.top",
+        "name": "慧慧云",
+        "description": "慧慧云API订阅转换平台，号称不跑路版。商店每日签到可领额度，支持主流大模型统一接入，稳定可靠的API中转服务。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap"
+        ],
+        "price": "low",
+        "free_amount": "签到领额度",
+        "score": 8.55,
+        "response_time": 2,
+        "alive": true,
+        "last_check": "2026-10-14",
+        "check_count": 1,
+        "display_tags": [
+            "签到领额度",
+            "不跑路版",
+            "订阅转换"
+        ],
+        "display_metrics": [
+            {
+                "label": "福利",
+                "value": "每日签到",
+                "cls": "accent"
+            },
+            {
+                "label": "定位",
+                "value": "订阅转换",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "不跑路版",
                 "cls": ""
             }
         ],
