@@ -12,8 +12,8 @@
     <meta property="og:title" content="AI API中转站新闻资讯 - 行业动态与使用指南">
     <meta property="og:description" content="AI API中转站行业新闻、使用教程、选购指南与技术干货。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://apiranking.com/news.html">
-    <link rel="canonical" href="https://apiranking.com/news.html">
+    <meta property="og:url" content="https://api-rank-lake.vercel.app/news.html">
+    <link rel="canonical" href="https://api-rank-lake.vercel.app/news.html">
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="apple-touch-icon" href="favicon.jpg">
     <script>
@@ -205,14 +205,6 @@
             box-shadow: var(--shadow-md);
             transform: translateY(-3px);
         }
-        .news-cover {
-            height: 96px;
-            background: var(--accent-50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-        }
         .news-body { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
         .news-card-meta {
             display: flex;
@@ -371,6 +363,7 @@
             .news-grid { grid-template-columns: minmax(0, 1fr); }
             .news-layout { padding: 0 16px 60px; }
         }
+            .nav-links a.active{background:var(--bg-hover);color:var(--accent);font-weight:600}
     </style>
 </head>
 <body>
@@ -383,13 +376,16 @@
             <span class="logo-text">API<span>排行榜</span></span>
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html#ranking">排行榜</a></li>
-            <li><a href="index.html#guide">选站指南</a></li>
-            <li><a href="about.html">关于本站</a></li>
-            <li><a href="news.html" style="color: var(--accent); background: var(--bg-hover);">相关新闻</a></li>
-            <li><span class="nav-badge">实时更新</span></li>
-            <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
-        </ul>
+<li><a href="index.html#ranking">排行榜</a></li>
+<li class="hide-m"><a href="creative-tools.html">🎨 在线绘图/视频专区</a></li>
+<li class="hide-m"><a href="index.html">🎯 快速选站（适合你）</a></li>
+<li><a href="index.html#guide">选站指南</a></li>
+<li><a href="about.html">关于本站</a></li>
+<li><a href="news.html" class="active">相关新闻</a></li>
+<li class="hide-m"><span class="nav-badge">实时更新</span></li>
+<li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
+<li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex-shrink:0;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+</ul>
     </div>
 </nav>
 
@@ -459,23 +455,33 @@
 
     // 新闻数据（每条对应一个独立文章页面，利于SEO收录）
     var newsData = [
-        { title: "什么是API中转站？核心作用与底层原理一次性讲透", tag: "入门指南", emoji: "📘", date: "2026-10-14", featured: true, summary: "API中转站是介于开发者与AI模型厂商之间的中间代理平台，通过统一接口格式聚合、转发和封装各家大模型API，解决多模型接入、成本控制与网络访问等问题。", url: "news/what-is-api-relay.html" },
-        { title: "AI API中转站靠谱吗？风险识别与避坑要点全解析", tag: "安全指南", emoji: "🛡️", date: "2026-10-13", featured: true, summary: "API中转站市场鱼龙混杂，灰产风险极高。本文从法律合规、数据安全、资金风险三个维度，教你识别正规中转站并避开常见陷阱。", url: "news/api-relay-safety.html" },
-        { title: "2026年API中转站推荐：高性价比平台对比评测", tag: "推荐评测", emoji: "⭐", date: "2026-10-12", featured: true, summary: "精选10款主流AI API中转站，从模型覆盖、价格、稳定性、速度、客服五个维度横向对比，帮你找到最适合的中转服务。", url: "news/best-api-relay-2026.html" },
-        { title: "GPT中转API怎么选？Claude与GPT中转方案对比", tag: "选购指南", emoji: "🛒", date: "2026-10-11", summary: "GPT中转API是开发者接入大模型的常用方案。本文对比Claude中转、GPT中转在价格、速度、可用性上的差异，并给出选型建议。", url: "news/gpt-claude-relay-compare.html" },
-        { title: "API中转站常见报错排查：超时、401、速率限制解决办法", tag: "技术排查", emoji: "🔧", date: "2026-10-10", summary: "AI中转站常见报错集中在超时、401未授权、速率限制三方面。本文逐一分析原因并给出排查步骤和解决方案。", url: "news/api-relay-error-fix.html" },
-        { title: "自建API中转站教程：用New API搭建统一模型网关", tag: "自建教程", emoji: "🏗️", date: "2026-10-09", featured: true, summary: "自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。", url: "news/self-host-api-relay.html" },
-        { title: "API中转站价格对比：按量付费与套餐订阅哪个更划算", tag: "价格分析", emoji: "💰", date: "2026-10-08", summary: "中转站计费模式分按量付费和套餐订阅两种。本文通过实际使用场景计算，分析不同用量下哪种模式更省钱。", url: "news/api-relay-pricing.html" },
-        { title: "API中转站接口限流与日志监控配置实操指南", tag: "运维实操", emoji: "⚙️", date: "2026-10-07", summary: "针对API中转站的限流与日志监控，核心思路是根据业务场景选择限流维度与算法，日志监控兼顾调试便利性与存储成本。", url: "news/api-relay-rate-limit.html" },
-        { title: "API中转站和官方API有什么区别？该选哪个", tag: "对比解析", emoji: "⚖️", date: "2026-10-06", featured: true, summary: "全面对比API中转站与官方API在价格、稳定性、模型数量、账单方式与合规性上的差异，帮你判断什么场景该用中转、什么场景该直连官方。", url: "news/api-relay-vs-official.html" },
-        { title: "Claude Code 中转站使用指南：配置与常见问题", tag: "工具教程", emoji: "🧰", date: "2026-10-05", summary: "Claude Code 通过中转站接入的完整配置教程：环境变量设置、模型选择、常见报错排查与成本控制建议，帮你用更低的成本跑 Claude Code。", url: "news/claude-code-relay-guide.html" },
-        { title: "API Key 安全使用指南：防盗刷与泄露应急处理", tag: "安全指南", emoji: "🔐", date: "2026-10-04", featured: true, summary: "API Key 被盗刷轻则损失余额，重则泄露数据。本文讲解 Key 泄露的常见途径、日常防护措施，以及发现泄露后的应急处理流程。", url: "news/api-key-security-guide.html" },
-        { title: "国产大模型API接入指南：DeepSeek、Kimi、通义、GLM", tag: "模型接入", emoji: "🧠", date: "2026-10-03", summary: "国产大模型 DeepSeek、Kimi、通义千问、GLM 的 API 特点、适用场景与统一接入方法，教你用一个 Key 同时调用多款国产模型。", url: "news/domestic-llm-api-guide.html" },
-        { title: "团队版API中转站怎么选？成员与用量管理指南", tag: "团队协作", emoji: "👥", date: "2026-10-02", summary: "小团队或企业选购 API 中转站时，成员权限、子 Key、用量报表与成本分摊是关键。本文给出团队场景的功能清单与选型方法。", url: "news/api-relay-team-management.html" },
-        { title: "如何降低大模型API响应延迟？8个实用技巧", tag: "性能优化", emoji: "⚡", date: "2026-10-01", featured: true, summary: "大模型 API 延迟高会严重影响体验。本文先教你定位延迟来源，再给出 8 个实测有效的优化技巧，包括流式输出、并发、缓存与线路选择。", url: "news/reduce-api-latency.html" },
-        { title: "AI绘图与视频生成API接入指南：中转站怎么用", tag: "多模态", emoji: "🎨", date: "2026-09-30", summary: "AI 绘图与视频生成 API 的接入方法与注意事项：常见模型、任务类型、异步轮询机制、成本与排队问题，以及如何用中转站统一调用。", url: "news/image-video-api-relay.html" },
-        { title: "挑选API中转站的10项检查清单（避坑必看）", tag: "选购清单", emoji: "✅", date: "2026-09-29", featured: true, summary: "选 API 中转站前，先过一遍这 10 项检查清单：经营时长、状态页、价格透明度、退款政策、客服响应等，还有必须警惕的红灯信号。", url: "news/api-relay-checklist.html" },
-        { title: "AI编程工具（Cursor/Codex）如何接入API中转站", tag: "工具教程", emoji: "🧰", date: "2026-09-28", summary: "Cursor、Codex CLI、Cline 等 AI 编程工具接入 API 中转站的配置方法，包含 Base URL 设置、模型选择、常见报错与成本优化建议。", url: "news/coding-agent-api-guide.html" }
+        { title: "什么是API中转站？核心作用与底层原理一次性讲透", tag: "入门指南", date: "2026-10-14", featured: true, summary: "API中转站是介于开发者与AI模型厂商之间的中间代理平台，通过统一接口格式聚合、转发和封装各家大模型API，解决多模型接入、成本控制与网络访问等问题。", url: "news/what-is-api-relay.html" },
+        { title: "AI API中转站靠谱吗？风险识别与避坑要点全解析", tag: "安全指南", date: "2026-10-13", featured: true, summary: "API中转站市场鱼龙混杂，灰产风险极高。本文从法律合规、数据安全、资金风险三个维度，教你识别正规中转站并避开常见陷阱。", url: "news/api-relay-safety.html" },
+        { title: "2026年API中转站推荐：高性价比平台对比评测", tag: "推荐评测", date: "2026-10-12", featured: true, summary: "精选10款主流AI API中转站，从模型覆盖、价格、稳定性、速度、客服五个维度横向对比，帮你找到最适合的中转服务。", url: "news/best-api-relay-2026.html" },
+        { title: "GPT中转API怎么选？Claude与GPT中转方案对比", tag: "选购指南", date: "2026-10-11", summary: "GPT中转API是开发者接入大模型的常用方案。本文对比Claude中转、GPT中转在价格、速度、可用性上的差异，并给出选型建议。", url: "news/gpt-claude-relay-compare.html" },
+        { title: "API中转站常见报错排查：超时、401、速率限制解决办法", tag: "技术排查", date: "2026-10-10", summary: "AI中转站常见报错集中在超时、401未授权、速率限制三方面。本文逐一分析原因并给出排查步骤和解决方案。", url: "news/api-relay-error-fix.html" },
+        { title: "自建API中转站教程：用New API搭建统一模型网关", tag: "自建教程", date: "2026-10-09", featured: true, summary: "自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。", url: "news/self-host-api-relay.html" },
+        { title: "API中转站价格对比：按量付费与套餐订阅哪个更划算", tag: "价格分析", date: "2026-10-08", summary: "中转站计费模式分按量付费和套餐订阅两种。本文通过实际使用场景计算，分析不同用量下哪种模式更省钱。", url: "news/api-relay-pricing.html" },
+        { title: "API中转站接口限流与日志监控配置实操指南", tag: "运维实操", date: "2026-10-07", summary: "针对API中转站的限流与日志监控，核心思路是根据业务场景选择限流维度与算法，日志监控兼顾调试便利性与存储成本。", url: "news/api-relay-rate-limit.html" },
+        { title: "API中转站和官方API有什么区别？该选哪个", tag: "对比解析", date: "2026-10-06", featured: true, summary: "全面对比API中转站与官方API在价格、稳定性、模型数量、账单方式与合规性上的差异，帮你判断什么场景该用中转、什么场景该直连官方。", url: "news/api-relay-vs-official.html" },
+        { title: "Claude Code 中转站使用指南：配置与常见问题", tag: "工具教程", date: "2026-10-05", summary: "Claude Code 通过中转站接入的完整配置教程：环境变量设置、模型选择、常见报错排查与成本控制建议，帮你用更低的成本跑 Claude Code。", url: "news/claude-code-relay-guide.html" },
+        { title: "API Key 安全使用指南：防盗刷与泄露应急处理", tag: "安全指南", date: "2026-10-04", featured: true, summary: "API Key 被盗刷轻则损失余额，重则泄露数据。本文讲解 Key 泄露的常见途径、日常防护措施，以及发现泄露后的应急处理流程。", url: "news/api-key-security-guide.html" },
+        { title: "国产大模型API接入指南：DeepSeek、Kimi、通义、GLM", tag: "模型接入", date: "2026-10-03", summary: "国产大模型 DeepSeek、Kimi、通义千问、GLM 的 API 特点、适用场景与统一接入方法，教你用一个 Key 同时调用多款国产模型。", url: "news/domestic-llm-api-guide.html" },
+        { title: "团队版API中转站怎么选？成员与用量管理指南", tag: "团队协作", date: "2026-10-02", summary: "小团队或企业选购 API 中转站时，成员权限、子 Key、用量报表与成本分摊是关键。本文给出团队场景的功能清单与选型方法。", url: "news/api-relay-team-management.html" },
+        { title: "如何降低大模型API响应延迟？8个实用技巧", tag: "性能优化", date: "2026-10-01", featured: true, summary: "大模型 API 延迟高会严重影响体验。本文先教你定位延迟来源，再给出 8 个实测有效的优化技巧，包括流式输出、并发、缓存与线路选择。", url: "news/reduce-api-latency.html" },
+        { title: "AI绘图与视频生成API接入指南：中转站怎么用", tag: "多模态", date: "2026-09-30", summary: "AI 绘图与视频生成 API 的接入方法与注意事项：常见模型、任务类型、异步轮询机制、成本与排队问题，以及如何用中转站统一调用。", url: "news/image-video-api-relay.html" },
+        { title: "挑选API中转站的10项检查清单（避坑必看）", tag: "选购清单", date: "2026-09-29", featured: true, summary: "选 API 中转站前，先过一遍这 10 项检查清单：经营时长、状态页、价格透明度、退款政策、客服响应等，还有必须警惕的红灯信号。", url: "news/api-relay-checklist.html" },
+        { title: "AI编程工具（Cursor/Codex）如何接入API中转站", tag: "工具教程", date: "2026-09-28", summary: "Cursor、Codex CLI、Cline 等 AI 编程工具接入 API 中转站的配置方法，包含 Base URL 设置、模型选择、常见报错与成本优化建议。", url: "news/coding-agent-api-guide.html" },
+        { title: "免费API中转站靠谱吗？免费额度背后的真相与风险", tag: "安全指南", date: "2026-09-27", summary: "免费API中转站看似零成本，实则暗藏数据回收、限速降智、突然关停等风险。本文拆解免费模式的盈利逻辑，告诉你哪些免费用得、哪些碰不得。", url: "news/free-api-relay-risks.html" },
+        { title: "2026年Claude中转站实测：速度、价格与稳定性对比", tag: "推荐评测", date: "2026-09-26", summary: "Claude 系列模型是编程与写作的首选。本文实测多家 Claude 中转站的首 Token 速度、价格折扣与稳定性，给出不同预算下的选购建议。", url: "news/claude-relay-2026.html" },
+        { title: "GPT API中转价格大盘点：这样买最省钱", tag: "价格分析", date: "2026-09-25", summary: "GPT 系列模型中转价格差异巨大，从 3 折到 9 折都有。本文盘点主流计费方式、折扣陷阱与省钱组合拳，帮你把 GPT API 成本压到最低。", url: "news/gpt-api-relay-price.html" },
+        { title: "DeepSeek API中转站实测：哪家又快又稳", tag: "推荐评测", date: "2026-09-24", summary: "DeepSeek 凭借强推理和低价成为国产模型首选。本文实测多家中转站的 DeepSeek 接口速度、稳定性与计费透明度，并给出选购建议。", url: "news/deepseek-relay-compare.html" },
+        { title: "中转站跑路前的5个危险信号，看到就赶紧撤", tag: "安全指南", date: "2026-09-23", summary: "API中转站跑路并非毫无征兆：客服失联、提现困难、异常促销、频繁换域名、状态页停更，这5个信号出现两个以上就该立即转移余额和业务。", url: "news/relay-exit-signals.html" },
+        { title: "什么是OpenAI兼容接口？为什么所有中转站都用它", tag: "入门指南", date: "2026-09-22", summary: "OpenAI 兼容接口已成为大模型 API 的事实标准。本文讲清它的定义、请求结构、为什么中转站都基于它，以及迁移时需要注意的细节差异。", url: "news/openai-compatible-api.html" },
+        { title: "Gemini API中转站使用教程：免费额度与接入方法", tag: "模型接入", date: "2026-09-21", summary: "Gemini 系列以长上下文和多模态见长，还有官方免费额度。本文介绍 Gemini 的特点、官方免费通道与中转接入方法，以及常见报错处理。", url: "news/gemini-relay-guide.html" },
+        { title: "API中转站充值与退款注意事项（新手必读）", tag: "安全指南", date: "2026-09-20", summary: "中转站充值看似简单，实则有不少坑：最低充值、汇率加价、赠送金不退、退款周期等。本文整理充值前后的完整注意事项，保护你的每一分钱。", url: "news/relay-recharge-refund.html" },
+        { title: "API中转站常见问题FAQ：新手入门20问", tag: "入门指南", date: "2026-09-19", summary: "汇总新手使用API中转站最常问的20个问题：Key怎么获取、base_url怎么填、为什么会401、模型名怎么写、账单怎么核对等，一文扫盲。", url: "news/api-relay-faq.html" },
+        { title: "AI编程成本优化：中转站+模型混搭省钱实战", tag: "价格分析", date: "2026-09-18", summary: "AI编程工具是Token消耗大户。本文给出可落地的成本优化方案：模型分层、缓存利用、上下文裁剪与预算告警，实测可省40%以上。", url: "news/coding-cost-optimization.html" }
     ];
 
     var PAGE_SIZE = 6;
@@ -494,9 +500,7 @@
         var pageItems = items.slice(start, start + PAGE_SIZE);
 
         list.innerHTML = pageItems.map(function (item) {
-            var emoji = item.emoji || '📄';
             return '<a class="news-card" href="' + item.url + '">' +
-                '<div class="news-cover">' + emoji + '</div>' +
                 '<div class="news-body">' +
                     '<div class="news-card-meta">' +
                         '<span class="news-tag">' + item.tag + '</span>' +

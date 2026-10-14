@@ -3,4 +3,4 @@ Allow: /
 Disallow: /data/
 Disallow: /admin/
 
-Sitemap: https://apiranking.com/sitemap.xml
+Sitemap: https://api-rank-lake.vercel.app/sitemap.xml

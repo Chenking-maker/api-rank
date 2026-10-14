@@ -7,12 +7,12 @@
 <meta name="description" content="自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。">
 <meta name="keywords" content="自建API中转站,New API,One API,Docker部署,AI网关搭建">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://apiranking.com/news/self-host-api-relay.html">
+<link rel="canonical" href="https://api-rank-lake.vercel.app/news/self-host-api-relay.html">
 <meta property="og:title" content="自建API中转站教程：用New API搭建统一模型网关">
 <meta property="og:description" content="自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。">
 <meta property="og:type" content="article">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"自建API中转站教程：用New API搭建统一模型网关","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"API排行榜"},"description":"自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。","publisher":{"@type":"Organization","name":"API排行榜"},"mainEntityOfPage":"https://apiranking.com/news/self-host-api-relay.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"自建API中转站教程：用New API搭建统一模型网关","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"API排行榜"},"description":"自建AI中转站推荐使用New API（One API升级版），一条Docker命令即可把DeepSeek、GPT、Claude等模型统一成OpenAI标准格式。","publisher":{"@type":"Organization","name":"API排行榜"},"mainEntityOfPage":"https://api-rank-lake.vercel.app/news/self-host-api-relay.html"}
 </script>
 <link rel="icon" type="image/jpeg" href="../favicon.jpg">
 <script>(function(){var t=localStorage.getItem('theme')||'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
@@ -51,13 +51,16 @@ a{color:var(--accent);text-decoration:none}
 .back-link{display:inline-block;margin-top:32px;color:var(--text-secondary);font-size:14px}
 .back-link:hover{color:var(--accent)}
 @media(max-width:768px){.nav-links a{padding:6px 8px;font-size:13px}.article-wrap h1{font-size:26px}.article-wrap{padding:24px 16px 60px}}
+
+.nav-links a.active{background:var(--accent-50);color:var(--accent);font-weight:600}
+.nav-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--accent-50);color:var(--accent)}
 </style>
 </head>
 <body>
 <script src="../assets/notice.js"></script>
 <nav class="navbar"><div class="container">
 <a href="../index.html" class="logo"><img src="../favicon.jpg" alt="API排行榜"><span class="logo-text">API<span>排行榜</span></span></a>
-<ul class="nav-links"><li><a href="../index.html#ranking">排行榜</a></li><li><a href="../index.html#guide">选站指南</a></li><li><a href="../news.html">相关新闻</a></li><li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button></li></ul>
+<ul class="nav-links" id="navLinks"><li><a href="../index.html#ranking">排行榜</a></li><li class="hide-m"><a href="../creative-tools.html">🎨 在线绘图/视频专区</a></li><li class="hide-m"><a href="../index.html">🎯 快速选站（适合你）</a></li><li><a href="../index.html#guide">选站指南</a></li><li><a href="../about.html">关于本站</a></li><li><a href="../news.html" class="active">相关新闻</a></li><li class="hide-m"><span class="nav-badge">实时更新</span></li><li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li><li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex-shrink:0;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li></ul>
 </div></nav>
 <div class="article-wrap">
 <span class="article-tag">自建教程</span>

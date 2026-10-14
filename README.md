@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
   <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
-  <img src="https://img.shields.io/badge/收录平台-139+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-161+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -74,20 +74,20 @@
 
 ---
 
-## 🏆 热门推荐（2026年9月）
+## 🏆 热门推荐（2026年10月）
 
 | 排名 | 平台 | 评分 | 特色 | 邀请链接 |
 |:----:|------|:----:|------|----------|
 | 🥇 | **TeamoRouter** | 9.94 | 企业级API聚合，高速稳定，智能路由 | [访问](https://teamorouter.cn/?i=ad992e768a) |
 | 🥈 | **派客代码** | 9.88 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
 | 🥉 | **随想** | 9.82 | 高速稳定，多模型支持，开发者友好 | [访问](https://sui-xiang.com/register?aff=5J3USAV9LQEB) |
-| 4 | **推理时代AIHubMix** | 9.74 | 500+模型统一接口，按量付费 | [访问](https://aihubmix.com/?aff=U9CV) |
-| 5 | **莱特代码** | 9.72 | 企业级Agent分发，99.5%可用率 | [访问](https://right.codes/register?aff=56503380) |
-| 6 | **肖恩AI** | 9.71 | SeanAI智能分发，注册送5000额度 | [访问](https://free.supxh.xin/register?code=XVGW49) |
-| 7 | **无限星河AI** | 9.66 | 92模型，验真检测，透明计费 | [访问](https://infistar.ai/register?aff=E5A9B3X8) |
-| 8 | **API2D** | 9.64 | 多模型，稳定运营，国内直连 | [访问](https://api2d.com/r/241389) |
-| 9 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
-| 10 | **基元律动** | 9.61 | TokenRhythm引擎，多模型智能调度 | [访问](https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J) |
+| 4 | **apinebula** | 9.81 | 全球AI API网关，支付宝充值，多模型统一接入 | [访问](https://apinebula.ai/0gDuPn) |
+| 5 | **moacode** | 9.79 | 一个Key连接所有编程Agent，智能路由容灾 | [访问](https://moacode.org/register?ref=king308) |
+| 6 | **OpenOx** | 9.70 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
+| 7 | **STA1N API** | 9.69 | 三步接入，有免费可用模型，社区活跃 | [访问](https://cdn.sta1n.cn/sign-up?aff=qaLL) |
+| 8 | **推理时代AIHubMix** | 9.66 | 500+模型统一接口，按量付费 | [访问](https://aihubmix.com/?aff=U9CV) |
+| 9 | **API2D** | 9.64 | 多模型，稳定运营，国内直连 | [访问](https://api2d.com/r/241389) |
+| 10 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
 
 > 完整排名请访问 [国内网站](https://chenking-maker.github.io/api-rank/) 或 [国际网站](https://api-rank-lake.vercel.app) 查看
 
@@ -129,16 +129,19 @@
 
 ```
 api-rank/
-├── index.html              # 首页（Top 50 + 动态加载 + 广告位轮播 + 快速选站器 + 随机盲选）
-├── all-stations.html       # 全部站点页面（144+，无数量限制）
+├── index.html              # 首页（Top 50 + 动态加载 + 广告位轮播 + 快速选站器 + 随机盲选 + 最新收录）
+├── all-stations.html       # 全部站点页面（161+，无数量限制）
 ├── about.html              # 关于本站（介绍 + 使用指南 + 收藏提示）
-├── news.html               # 相关新闻（SEO文章，12+篇深度解析）
+├── news.html               # 相关新闻（2列卡片+右侧推荐+标签筛选+分页，27篇深度文章）
+├── news/                   # 27篇独立URL的SEO文章（结构化数据+内部互链）
 ├── creative-tools.html     # AI绘图/视频专区
-├── dead-sites.html         # 失效站点列表（带可点击链接）
+├── dead-sites.html         # 失效站点列表（动态加载，与首页交叉验证）
 ├── admin.html              # 商家管理后台
+├── assets/
+│   └── notice.js           # 全站顶部提醒横幅（换域名/收藏提示）
 ├── data/
-│   ├── stations_info.json  # 主站点数据（144个）
-│   ├── dead_sites.json     # 失效站点记录（56个，带邀请链接）
+│   ├── stations_info.json  # 主站点数据（161个，含added收录日期）
+│   ├── dead_sites.json     # 失效站点记录
 │   └── pending_stations.json # 待审核站点
 ├── api/                    # Cloudflare Workers 后端
 │   ├── wrangler.toml       # Workers 配置
@@ -211,13 +214,13 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 144+ |
-| 有效站点 | 88 |
-| 失效站点 | 56 |
+| 收录平台 | 161+ |
+| 有效站点 | 116 |
+| 失效站点 | 26（动态交叉验证） |
 | 支持模型类型 | 7+（含绘画/视频） |
-| 评分范围 | 8.30 - 9.94 |
+| 评分范围 | 8.15 - 9.94 |
 | 评测维度 | 7个 |
-| SEO文章 | 20篇 |
+| SEO文章 | 27篇 |
 | 更新频率 | 手动更新（已取消自动检测） |
 | 开源协议 | MIT |
 
@@ -282,6 +285,12 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 
 ## 📝 更新日志
 
+### v1.5.0 (2026-10-14)
+- ✅ 新增全站顶部提醒横幅（换域名提示，适配 fixed/sticky 导航）+ 导航栏全站统一（当前页高亮）
+- ✅ 相关新闻改版：2列卡片 + 右侧推荐/热门标签 + 分页，文章扩充至 27 篇
+- ✅ 首页新增「最新收录」区块（按收录时间展示，最多20个）
+- ✅ sitemap/robots/canonical 统一为正式域名，失效计数动态交叉验证统一为 26
+
 ### v1.4.0 (2026-09-01)
 - ✅ 新增5个中转站 + 新增「快速选站器」和「随机盲选」功能
 - ✅ 新增「关于本站」和「相关新闻」页面，深色/浅色模式全面适配
@@ -314,20 +323,33 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 
 ## 📰 相关新闻
 
-本站提供12+篇SEO优化文章，涵盖API中转站热门话题：
+本站提供 27 篇 SEO 深度文章（独立URL，搜索引擎可逐篇收录），热门文章：
 
-- [API中转站是什么？接口转发、代理调试完整详解](https://chenking-maker.github.io/api-rank/news.html)
-- [AI中转站和官方API接口有什么区别？](https://chenking-maker.github.io/api-rank/news.html)
-- [AI中转站有哪些优缺点，适合什么场景使用？](https://chenking-maker.github.io/api-rank/news.html)
-- [AI中转站低价套餐靠谱吗，会有哪些隐形消费？](https://chenking-maker.github.io/api-rank/news.html)
-- [API中转站靠谱吗？会不会存在数据泄露风险？](https://chenking-maker.github.io/api-rank/news.html)
-- [API中转站收费吗？免费版和付费版区别](https://chenking-maker.github.io/api-rank/news.html)
-- [调用API中转站出现报错该如何排查？](https://chenking-maker.github.io/api-rank/news.html)
-- [API中转站适合哪些业务场景使用？](https://chenking-maker.github.io/api-rank/news.html)
-- [API中转站和反向代理有什么区别？](https://chenking-maker.github.io/api-rank/news.html)
-- [个人可以免费使用API中转站吗？](https://chenking-maker.github.io/api-rank/news.html)
-- [搭建API中转站：解决跨域、接口限流与访问限制](https://chenking-maker.github.io/api-rank/news.html)
-- [API中转站常见问题汇总：超时、转发失败怎么排查](https://chenking-maker.github.io/api-rank/news.html)
+**入门与避坑**
+- [什么是API中转站？核心作用与底层原理一次性讲透](https://api-rank-lake.vercel.app/news/what-is-api-relay.html)
+- [AI API中转站靠谱吗？风险识别与避坑要点全解析](https://api-rank-lake.vercel.app/news/api-relay-safety.html)
+- [挑选API中转站的10项检查清单（避坑必看）](https://api-rank-lake.vercel.app/news/api-relay-checklist.html)
+- [中转站跑路前的5个危险信号](https://api-rank-lake.vercel.app/news/relay-exit-signals.html)
+- [免费API中转站靠谱吗？免费额度背后的真相](https://api-rank-lake.vercel.app/news/free-api-relay-risks.html)
+- [API中转站常见问题FAQ：新手入门20问](https://api-rank-lake.vercel.app/news/api-relay-faq.html)
+
+**评测与价格**
+- [2026年API中转站推荐：高性价比平台对比评测](https://api-rank-lake.vercel.app/news/best-api-relay-2026.html)
+- [2026年Claude中转站实测：速度、价格与稳定性对比](https://api-rank-lake.vercel.app/news/claude-relay-2026.html)
+- [DeepSeek API中转站实测：哪家又快又稳](https://api-rank-lake.vercel.app/news/deepseek-relay-compare.html)
+- [API中转站价格对比：按量付费与套餐订阅哪个更划算](https://api-rank-lake.vercel.app/news/api-relay-pricing.html)
+- [GPT API中转价格大盘点：这样买最省钱](https://api-rank-lake.vercel.app/news/gpt-api-relay-price.html)
+- [API中转站和官方API有什么区别？该选哪个](https://api-rank-lake.vercel.app/news/api-relay-vs-official.html)
+
+**工具与技术**
+- [Claude Code 中转站使用指南：配置与常见问题](https://api-rank-lake.vercel.app/news/claude-code-relay-guide.html)
+- [AI编程工具（Cursor/Codex）如何接入API中转站](https://api-rank-lake.vercel.app/news/coding-agent-api-guide.html)
+- [AI编程成本优化：中转站+模型混搭省钱实战](https://api-rank-lake.vercel.app/news/coding-cost-optimization.html)
+- [API Key 安全使用指南：防盗刷与泄露应急处理](https://api-rank-lake.vercel.app/news/api-key-security-guide.html)
+- [API中转站常见报错排查：超时、401、速率限制](https://api-rank-lake.vercel.app/news/api-relay-error-fix.html)
+- [什么是OpenAI兼容接口？为什么所有中转站都用它](https://api-rank-lake.vercel.app/news/openai-compatible-api.html)
+
+👉 完整列表：[相关新闻](https://api-rank-lake.vercel.app/news.html)
 
 ---
 

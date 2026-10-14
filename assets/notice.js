@@ -14,7 +14,6 @@
         '#siteNoticeBanner .snb-ico{font-size:15px;line-height:1}',
         '#siteNoticeBanner .snb-kbd{background:rgba(255,255,255,.22);padding:1px 8px;border-radius:6px;',
         'font-weight:700;font-family:"JetBrains Mono",Consolas,monospace}',
-        '#siteNoticeBanner .snb-strong{font-weight:800;text-decoration:underline;text-underline-offset:2px}',
         '@media(max-width:768px){#siteNoticeBanner{font-size:12px;padding:8px 12px;line-height:1.45}}'
     ].join('');
 
@@ -34,11 +33,31 @@
             '</div>';
 
         var body = document.body;
-        if (body && body.firstChild) {
-            body.insertBefore(bar, body.firstChild);
-        } else if (body) {
-            body.appendChild(bar);
-        }
+        if (!body) return;
+        if (body.firstChild) body.insertBefore(bar, body.firstChild);
+        else body.appendChild(bar);
+
+        // 兼容 fixed 定位导航栏（如首页）：把导航下移到横幅之下，滚动时平滑归位
+        // 注意：本脚本可能被放在导航 HTML 之前，需等 DOM 就绪后再查找 .navbar
+        var adjustNav = function () {
+            var nav = document.querySelector('.navbar');
+            if (!nav) return;
+            var pos = '';
+            try { pos = window.getComputedStyle(nav).position; } catch (e) {}
+            if (pos === 'fixed') {
+                var h = bar.offsetHeight || 36;
+                nav.style.transition = 'none';
+                nav.style.top = h + 'px';
+                var onScroll = function () {
+                    var y = window.scrollY || window.pageYOffset || 0;
+                    nav.style.top = Math.max(0, h - y) + 'px';
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+        };
+        if (document.querySelector('.navbar')) adjustNav();
+        else document.addEventListener('DOMContentLoaded', adjustNav);
     }
 
     if (document.body) {
