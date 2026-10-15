@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片反推提示词 - AI提示词工具 | API排行榜实用工具</title>
+    <meta name="description" content="上传任意图片，AI 九维智能拆解，一键反推高质量绘图提示词。支持 GPT 生图、Midjourney、Stable Diffusion、Flux 多格式输出，中文英文一键切换，免费使用。">
+    <meta name="keywords" content="图片反推提示词,AI提示词工具,图生提示词,prompt reverse,Midjourney提示词,Stable Diffusion提示词,GPT Image生图,AI绘图">
+    <meta name="theme-color" content="#F5F7FA">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="图片反推提示词 - AI提示词工具 | 实用工具">
+    <meta property="og:description" content="上传任意图片，AI 九维智能拆解，一键反推高质量绘图提示词，支持 GPT 生图 / Midjourney / SD / Flux 多格式输出。">
+    <meta property="og:url" content="https://api-rank-lake.vercel.app/img-prompt.html">
+    <meta property="og:site_name" content="AI API中转站排行榜">
+    <meta property="og:image" content="https://api-rank-lake.vercel.app/favicon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="图片反推提示词 - AI提示词工具 | 实用工具">
+    <meta name="twitter:description" content="上传任意图片，AI 九维智能拆解，一键反推高质量绘图提示词。">
+    <link rel="canonical" href="https://api-rank-lake.vercel.app/img-prompt.html">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'light';
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "图片反推提示词工具",
+        "url": "https://api-rank-lake.vercel.app/img-prompt.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "description": "上传任意图片，AI 九维智能拆解，一键反推高质量绘图提示词，支持多格式输出",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "AI API中转站排行榜",
+            "url": "https://api-rank-lake.vercel.app/"
+        }
+    }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #F5F7FA;
+            --bg-secondary: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #F0F4F8;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(0, 0, 0, 0.15);
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --accent: #4A90D9;
+            --accent-light: #7EC8E3;
+            --accent-glow: rgba(74, 144, 217, 0.2);
+            --green: #10B981;
+            --green-glow: rgba(16, 185, 129, 0.15);
+            --yellow: #F59E0B;
+            --red: #EF4444;
+            --orange: #F97316;
+            --gradient-purple: #4A90D9;
+            --gradient-green: #10B981;
+            --gradient-orange: #F97316;
+            --gradient-pink: #4A90D9;
+            --gradient-1: #4A90D9;
+            --navbar-bg: rgba(255,255,255,0.85);
+            --bg-grid-line: rgba(74,144,217,0.04);
+            --shadow: rgba(0,0,0,0.06);
+            --bg-hover: rgba(74, 144, 217, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0F1117;
+            --bg-secondary: #1A1D28;
+            --bg-card: #1A1D28;
+            --bg-card-hover: #242838;
+            --bg-hover: rgba(74, 144, 217, 0.1);
+            --border: rgba(255,255,255,0.08);
+            --border-hover: rgba(255,255,255,0.18);
+            --text-primary: #E8EAF0;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --accent: #5B9FE8;
+            --accent-light: #7EC8E3;
+            --accent-glow: rgba(91, 159, 232, 0.25);
+            --green: #34D399;
+            --green-glow: rgba(52, 211, 153, 0.15);
+            --yellow: #FBBF24;
+            --red: #F87171;
+            --orange: #FB923C;
+            --navbar-bg: rgba(15,17,23,0.85);
+            --bg-grid-line: rgba(91,159,232,0.05);
+            --shadow: rgba(0,0,0,0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); }
+
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 16px; color: white;
+        }
+
+        .logo-text { font-weight: 700; font-size: 18px; letter-spacing: -0.5px; }
+        .logo-text span { color: var(--accent-light); }
+
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); background: var(--bg-hover); text-decoration: none; }
+
+        .nav-badge {
+            background: rgba(74, 144, 217, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn { display: none; }
+
+        .theme-toggle {
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            cursor: pointer; font-size: 18px;
+            transition: all 0.2s; flex-shrink: 0;
+        }
+        .theme-toggle:hover { border-color: var(--accent); background: var(--bg-hover); }
+
+        /* Hero */
+        .hero {
+            padding: 130px 24px 32px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(74, 144, 217, 0.06) 0%, transparent 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 16px;
+            background: rgba(74, 144, 217, 0.1);
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            border-radius: 50px;
+            font-size: 13px; color: var(--accent);
+            font-weight: 500; margin-bottom: 20px;
+        }
+
+        .hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: var(--text-primary); }
+
+        .hero p { font-size: 15px; color: var(--text-secondary); max-width: 640px; margin: 0 auto; }
+
+        .hero-back {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 13px; color: var(--text-muted);
+            text-decoration: none; margin-bottom: 18px;
+            padding: 6px 14px; border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            transition: all 0.2s;
+        }
+        .hero-back:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+        /* Main Tool Card */
+        .tool-section { max-width: 1160px; margin: 20px auto 0; padding: 0 24px 32px; }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px var(--shadow);
+        }
+
+        .tool-body {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            min-height: 560px;
+        }
+
+        /* Left: inputs */
+        .tool-inputs {
+            padding: 22px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .field label.flabel {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        /* Upload zone */
+        .dropzone {
+            border: 2px dashed var(--border);
+            border-radius: 14px;
+            padding: 26px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        .dropzone:hover, .dropzone.dragover { border-color: var(--accent); background: rgba(74,144,217,0.05); }
+        .dropzone .dz-icon { font-size: 34px; margin-bottom: 8px; }
+        .dropzone .dz-main { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+        .dropzone .dz-sub { font-size: 12px; color: var(--text-muted); }
+        .dropzone img.preview {
+            max-width: 100%; max-height: 180px;
+            border-radius: 10px;
+            display: block; margin: 0 auto;
+        }
+        .dz-remove {
+            position: absolute; top: 10px; right: 10px;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            border: none; cursor: pointer;
+            background: rgba(239,68,68,0.9);
+            color: #fff; font-size: 14px; line-height: 1;
+            display: none;
+            align-items: center; justify-content: center;
+        }
+        .dz-remove:hover { background: var(--red); }
+
+        .url-row { display: flex; gap: 8px; }
+        .url-row input { flex: 1; }
+
+        input[type="text"], input[type="password"], select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 13px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+
+        .row-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        /* Format chips */
+        .fmt-chips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+        .fmt-chip {
+            padding: 9px 4px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .fmt-chip small {
+            display: block;
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            font-weight: 600;
+            transform: scale(0.9);
+        }
+        .fmt-chip:hover { border-color: var(--accent); }
+        .fmt-chip.active {
+            background: var(--gradient-purple);
+            border-color: transparent;
+            color: #fff;
+        }
+        .fmt-chip.active small { color: rgba(255,255,255,0.85); }
+
+        /* API settings */
+        .api-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .api-head {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 12px; font-weight: 700; color: var(--text-secondary);
+        }
+        .api-head .hint { font-weight: 500; color: var(--text-muted); font-size: 11px; }
+        .key-row { display: flex; gap: 8px; }
+        .key-row input { flex: 1; }
+        .btn-mini {
+            padding: 10px 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .btn-mini:hover { border-color: var(--accent); }
+        .checkbox-label {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 12px; color: var(--text-muted); cursor: pointer;
+        }
+        .checkbox-label input { accent-color: var(--accent); }
+        .key-status { font-size: 11px; min-height: 15px; }
+        .key-status.ok { color: var(--green); }
+        .key-status.err { color: var(--red); }
+
+        /* Generate button */
+        .gen-btn {
+            width: 100%;
+            padding: 13px;
+            background: var(--gradient-purple);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            margin-top: 2px;
+        }
+        .gen-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow); }
+        .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .gen-btn.stop { background: var(--red); }
+
+        .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+
+        /* Right: output */
+        .tool-output {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .output-head {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 12px; font-weight: 600; color: var(--text-secondary);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .output-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn-act {
+            padding: 7px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex; align-items: center; gap: 5px;
+        }
+        .btn-act:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-act:disabled { opacity: 0.45; cursor: not-allowed; }
+
+        .empty-state {
+            flex: 1;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 10px;
+            color: var(--text-muted);
+            border: 1px dashed var(--border);
+            border-radius: 14px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .empty-state .es-icon { font-size: 40px; }
+        .empty-state .es-title { font-size: 15px; font-weight: 600; color: var(--text-secondary); }
+        .empty-state .es-sub { font-size: 12px; max-width: 360px; }
+
+        .stream-box {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+            font-size: 13px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-y: auto;
+            max-height: 420px;
+            display: none;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+        .stream-box.streaming { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+
+        .prompt-boxes { display: none; flex-direction: column; gap: 12px; }
+        .prompt-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+        .prompt-box .pb-head {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 8px;
+        }
+        .prompt-box .pb-title { font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+        .prompt-box.pos .pb-title { color: var(--green); }
+        .prompt-box.neg .pb-title { color: var(--red); }
+        .pb-copy {
+            font-size: 11px; padding: 4px 10px;
+            border-radius: 7px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .pb-copy:hover { border-color: var(--accent); color: var(--accent); }
+        .prompt-box .pb-body {
+            font-size: 13px; line-height: 1.8; color: var(--text-primary);
+            white-space: pre-wrap; word-break: break-word;
+        }
+
+        .gen-meta { font-size: 11px; color: var(--text-muted); display: none; }
+
+        /* History */
+        .history-section { max-width: 1160px; margin: 0 auto; padding: 0 24px 40px; }
+        .history-head {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 14px;
+        }
+        .history-head h2 { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .history-head .h-count { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+        .btn-clear {
+            font-size: 12px; padding: 6px 14px;
+            border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .btn-clear:hover { border-color: var(--red); color: var(--red); }
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 14px;
+        }
+        .history-empty {
+            border: 1px dashed var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        .h-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .h-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .h-card .h-thumb {
+            width: 100%; height: 110px;
+            object-fit: cover; display: block;
+            background: var(--bg-secondary);
+        }
+        .h-card .h-info { padding: 10px 12px; }
+        .h-card .h-time { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+        .h-card .h-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+        .h-card .h-tag {
+            font-size: 10px; padding: 2px 8px;
+            border-radius: 10px;
+            background: rgba(74,144,217,0.08);
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .h-card .h-del {
+            position: absolute; top: 8px; right: 8px;
+            width: 24px; height: 24px;
+            border-radius: 50%; border: none;
+            background: rgba(0,0,0,0.55); color: #fff;
+            font-size: 12px; cursor: pointer;
+            display: none; align-items: center; justify-content: center;
+        }
+        .h-card:hover .h-del { display: flex; }
+        .h-card .h-del:hover { background: var(--red); }
+
+        /* Tips */
+        .tips-section { max-width: 1160px; margin: 0 auto; padding: 0 24px 48px; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .tip-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+        }
+        .tip-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+        .tip-card p, .tip-card li { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+        .tip-card ul { padding-left: 18px; }
+
+        .pro-strip {
+            margin-top: 16px;
+            background: linear-gradient(90deg, rgba(74,144,217,0.08), rgba(16,185,129,0.06));
+            border: 1px solid rgba(74,144,217,0.2);
+            border-radius: 14px;
+            padding: 16px 22px;
+            display: flex; align-items: center; justify-content: space-between; gap: 14px;
+            flex-wrap: wrap;
+        }
+        .pro-strip .ps-left { font-size: 13px; color: var(--text-secondary); }
+        .pro-strip .ps-left strong { color: var(--text-primary); }
+        .pro-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-size: 11px; font-weight: 700;
+            padding: 2px 9px; border-radius: 20px;
+            background: rgba(249,115,22,0.12);
+            color: var(--orange);
+            border: 1px solid rgba(249,115,22,0.3);
+            margin-right: 6px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Footer */
+        .footer { padding: 28px 0; border-top: 1px solid var(--border); }
+        .footer-content {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 12px;
+        }
+        .footer-text { font-size: 13px; color: var(--text-muted); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+        .footer-links a:hover { color: var(--accent); }
+
+        @media (max-width: 900px) {
+            .tool-body { grid-template-columns: 1fr; }
+            .tool-inputs { border-right: none; border-bottom: 1px solid var(--border); }
+            .fmt-chips { grid-template-columns: repeat(5, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 110px 24px 28px; }
+            .hero h1 { font-size: 26px; }
+            .nav-links { display: none; }
+
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                z-index: 200;
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 22px; height: 2px;
+                background: var(--text-primary);
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+            .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+            .nav-links.mobile-open {
+                display: flex !important;
+                position: fixed !important;
+                top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+                width: 100vw !important; height: 100vh !important;
+                background: var(--navbar-bg) !important;
+                backdrop-filter: blur(20px) !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 20px !important;
+                z-index: 9999 !important;
+                padding: 80px 24px 40px !important;
+                animation: fadeIn 0.2s ease;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .nav-links.mobile-open li {
+                list-style: none !important;
+                width: 100% !important;
+                max-width: 280px !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .nav-links.mobile-open a,
+            .nav-links.mobile-open .nav-badge {
+                font-size: 17px !important;
+                color: var(--text-primary) !important;
+                text-decoration: none !important;
+                padding: 14px 24px !important;
+                display: block !important;
+                text-align: center !important;
+                border-radius: 12px !important;
+                transition: background 0.2s !important;
+                width: 100% !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .nav-links.mobile-open a:hover,
+            .nav-links.mobile-open a:active { background: rgba(74, 144, 217, 0.12) !important; }
+
+            .nav-links.mobile-open .nav-badge {
+                font-size: 13px !important;
+                margin-top: 8px !important;
+                background: rgba(74,144,217,0.12) !important;
+                color: var(--accent) !important;
+                padding: 8px 16px !important;
+                border-radius: 20px !important;
+                text-align: center !important;
+            }
+
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+        .nav-links a.active{background:var(--bg-hover);color:var(--accent);font-weight:600}
+    </style>
+</head>
+<body>
+<script src="assets/notice.js"></script>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div class="logo-text">API<span>排行榜</span></div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+<li><a href="index.html#ranking">排行榜</a></li>
+<li class="hide-m"><a href="tools.html" class="active">🔥 实用工具</a></li>
+<li class="hide-m"><a href="javascript:void(0)" onclick="openFinderModal()">🎯 快速选站（适合你）</a></li>
+<li><a href="index.html#guide">选站指南</a></li>
+<li><a href="about.html">关于本站</a></li>
+<li><a href="news.html">相关新闻</a></li>
+<li class="hide-m"><span class="nav-badge">实时更新</span></li>
+<li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li>
+<li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex-shrink:0;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+</ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <a href="tools.html" class="hero-back">← 返回实用工具</a>
+        <div class="hero-badge">
+            <span>🖼️</span>
+            <span>图片反推提示词</span>
+        </div>
+        <h1>图片反推提示词</h1>
+        <p>上传任意图片，AI 从九大维度智能拆解画面要素，一键反推高质量绘图提示词。支持 GPT 生图 / Midjourney / Stable Diffusion / Flux 多种格式，结果可直接复制使用。</p>
+    </section>
+
+    <!-- Tool -->
+    <section class="tool-section">
+        <div class="tool-card">
+            <div class="tool-body">
+                <!-- 左侧：输入区 -->
+                <div class="tool-inputs">
+                    <!-- 上传 -->
+                    <div class="field">
+                        <label class="flabel">上传图片</label>
+                        <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
+                            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" style="display:none">
+                            <div id="dzEmpty">
+                                <div class="dz-icon">🖼️</div>
+                                <div class="dz-main">拖拽 / 点击 / 粘贴上传</div>
+                                <div class="dz-sub">支持 JPG / PNG / WebP，≤ 10MB</div>
+                            </div>
+                            <img id="dzPreview" class="preview" style="display:none" alt="预览图">
+                            <button class="dz-remove" id="dzRemove" onclick="event.stopPropagation();clearImage()" title="移除图片">✕</button>
+                        </div>
+                    </div>
+
+                    <!-- URL -->
+                    <div class="field">
+                        <label class="flabel">或输入图片链接</label>
+                        <div class="url-row">
+                            <input type="text" id="imageUrl" placeholder="https://example.com/image.jpg">
+                            <button class="btn-mini" onclick="loadImageUrl()" title="载入图片">载入</button>
+                        </div>
+                    </div>
+
+                    <!-- 模式 -->
+                    <div class="field row-two">
+                        <div>
+                            <label class="flabel">分析模式</label>
+                            <select id="detailMode">
+                                <option value="detailed">详细版（含九维拆解）</option>
+                                <option value="brief">简洁版（仅提示词）</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="flabel">输出语言</label>
+                            <select id="outLang">
+                                <option value="zh">简体中文</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 目标格式 -->
+                    <div class="field">
+                        <label class="flabel">目标格式</label>
+                        <div class="fmt-chips" id="fmtChips">
+                            <div class="fmt-chip active" data-fmt="gpt" title="自然语言段落，适配 GPT Image 2.5 / DALL-E 3">🤖<small>GPT生图</small></div>
+                            <div class="fmt-chip" data-fmt="mj" title="关键词 + --ar 参数，适配 Midjourney V7">🌊<small>MJ</small></div>
+                            <div class="fmt-chip" data-fmt="sd" title="标签 + 权重标记，适配 Stable Diffusion 4">🎨<small>SD</small></div>
+                            <div class="fmt-chip" data-fmt="flux" title="自然语言短语，适配 Flux 2">⚡<small>Flux</small></div>
+                            <div class="fmt-chip" data-fmt="generic" title="通用关键词，适配任意AI绘画工具">🔑<small>通用</small></div>
+                        </div>
+                    </div>
+
+                    <!-- API 设置 -->
+                    <div class="field">
+                        <div class="api-box">
+                            <div class="api-head">
+                                <span>⚙️ API 配置</span>
+                                <span class="hint">Key 仅存本地浏览器</span>
+                            </div>
+                            <div>
+                                <label class="flabel">API Key</label>
+                                <div class="key-row">
+                                    <input type="password" id="apiKey" placeholder="sk-...">
+                                    <button class="btn-mini" id="eyeBtn" onclick="toggleKeyVisible()" title="显示/隐藏">👁</button>
+                                    <button class="btn-mini" onclick="testConnection()" title="测试连接">🔗</button>
+                                </div>
+                                <label class="checkbox-label" style="margin-top:6px;">
+                                    <input type="checkbox" id="saveKey"> 记住 API Key（保存在本地）
+                                </label>
+                                <div class="key-status" id="keyStatus"></div>
+                            </div>
+                            <div>
+                                <label class="flabel">Base URL</label>
+                                <select id="baseUrlSelect" onchange="handleBaseUrlChange()">
+                                    <option value="">选择平台...</option>
+                                    <option value="https://api.savebill.store">省钱AI (savebill.store)</option>
+                                    <option value="https://api.teaai.cc">TeaAI (teaai.cc)</option>
+                                    <option value="https://api.zaotu.vip">造图局 (zaotu.vip)</option>
+                                    <option value="https://api.poloapi.com">PoloAPI (poloapi.com)</option>
+                                    <option value="https://api.dmxapi.com">大模型API (dmxapi.com)</option>
+                                    <option value="https://api.gptcat.cc">GPT猫 (gptcat.cc)</option>
+                                    <option value="custom">自定义 URL...</option>
+                                </select>
+                                <input type="text" id="customBaseUrl" placeholder="https://your-api.com（以 /v1 结尾请去掉）" style="display:none;margin-top:8px;">
+                                <div style="font-size:11px;color:var(--text-muted);margin-top:5px;">选择你拥有 Key 的平台，不确定请查看该平台「API文档」页获取 Base URL。</div>
+                            </div>
+                            <div>
+                                <label class="flabel">模型名称</label>
+                                <input type="text" id="modelName" placeholder="例如 gpt-5-mini / gemini-3-flash（需支持视觉）">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="gen-btn" id="genBtn" onclick="generate()">
+                        <span>✨ 开始反推</span>
+                    </button>
+                </div>
+
+                <!-- 右侧：输出区 -->
+                <div class="tool-output">
+                    <div class="output-head">
+                        <span>反推结果</span>
+                        <div class="output-actions">
+                            <button class="btn-act" id="btnCopyAll" onclick="copyAll()" disabled>📋 复制全部</button>
+                            <button class="btn-act" id="btnExpTxt" onclick="exportTxt()" disabled>⬇️ TXT</button>
+                            <button class="btn-act" id="btnExpMd" onclick="exportMd()" disabled>⬇️ MD</button>
+                        </div>
+                    </div>
+
+                    <div class="empty-state" id="emptyState">
+                        <div class="es-icon">🪄</div>
+                        <div class="es-title">上传图片后点击「开始反推」</div>
+                        <div class="es-sub">AI 将从主体、场景、风格、姿态、镜头、色彩、构图、光线、质感九个维度完整拆解你的图片，生成可直接使用的绘图提示词。</div>
+                    </div>
+
+                    <div class="stream-box" id="streamBox"></div>
+
+                    <div class="prompt-boxes" id="promptBoxes">
+                        <div class="prompt-box pos">
+                            <div class="pb-head">
+                                <span class="pb-title">✅ 正面提示词</span>
+                                <button class="pb-copy" onclick="copyPos()">复制</button>
+                            </div>
+                            <div class="pb-body" id="posBody"></div>
+                        </div>
+                        <div class="prompt-box neg">
+                            <div class="pb-head">
+                                <span class="pb-title">🚫 负面提示词</span>
+                                <button class="pb-copy" onclick="copyNeg()">复制</button>
+                            </div>
+                            <div class="pb-body" id="negBody"></div>
+                        </div>
+                    </div>
+
+                    <div class="gen-meta" id="genMeta"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History -->
+    <section class="history-section">
+        <div class="history-head">
+            <h2>🕘 历史记录 <span class="h-count" id="hCount"></span></h2>
+            <button class="btn-clear" id="btnClearHis" onclick="clearHistory()" style="display:none;">🗑 清空记录</button>
+        </div>
+        <div class="history-grid" id="historyGrid"></div>
+    </section>
+
+    <!-- Tips -->
+    <section class="tips-section">
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h3>💡 使用技巧</h3>
+                <ul>
+                    <li>分析需使用<b>支持视觉的模型</b>（如 GPT-5-mini、Gemini、Claude 系列），图像生成模型（GPT Image 2.5 等）无法识别图片。</li>
+                    <li>GPT 生图格式输出自然语言段落，可直接粘贴到 GPT Image 2.5 / DALL-E 3 中使用，比例用文字描述。</li>
+                    <li>Midjourney 格式自动附带 --ar 画幅参数，负面内容以 --no 形式给出，适配 Midjourney V7。</li>
+                    <li>SD 格式自带 (keyword:1.2) 权重标记，适配 Stable Diffusion 4 / SDXL。</li>
+                    <li>历史记录仅保存在你的浏览器本地（最多 20 条），可随时点击卡片恢复结果。</li>
+                </ul>
+            </div>
+            <div class="tip-card">
+                <h3>🔐 隐私与安全</h3>
+                <ul>
+                    <li>API Key 与历史记录全部保存在本地浏览器，本站不存储、不上传。</li>
+                    <li>请求由你的浏览器直接发往你所选的 API 平台，不经过第三方服务器。</li>
+                    <li>建议使用额度有限的 Key，并定期在平台后台检查用量。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pro-strip">
+            <!-- 付费扩展预留：后续可在此接入会员/激活码校验逻辑 -->
+            <div class="ps-left">
+                <span class="pro-badge">PRO</span>
+                <strong>高级版规划中：</strong>批量图片反推 · 历史云同步 · 专属高速模型通道 · 无限次数。当前版本全部功能免费使用。
+            </div>
+            <a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" class="btn-act" style="flex-shrink:0;">🔔 关注更新</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">© 2026 API排行榜 · 数据仅供参考，请自行判断</div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="index.html#ranking">排行榜</a>
+                    <a href="tools.html">实用工具</a>
+                    <a href="dead-sites.html">失效站点</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ================= 基础 UI =================
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const isOpen = navLinks.classList.toggle('mobile-open');
+            menuBtn.classList.toggle('active');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+        function toggleTheme() {
+            const html = document.documentElement;
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            const btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        }
+        (function() {
+            var t = document.documentElement.getAttribute('data-theme');
+            var btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        })();
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (navLinks && navLinks.classList.contains('mobile-open')) {
+                navLinks.classList.remove('mobile-open');
+                if (menuBtn) menuBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileMenu(); });
+        });
+        function openFinderModal() { alert('找适合自己的中转站功能正在开发中，请前往首页使用完整功能。'); }
+        function openSubmitModal() { alert('提交收录功能正在开发中，请前往首页使用完整功能。'); }
+
+        // ================= 状态 =================
+        const LS = {
+            key: 'pf_api_key', flag: 'pf_save_key', base: 'pf_base_url', custom: 'pf_base_custom',
+            model: 'pf_model', history: 'pf_history'
+        };
+        let currentImage = null;      // { dataUrl } 或 { url }
+        let imageDataUrl = null;      // 本地上传的 dataURL（用于缩略图）
+        let currentFormat = 'gpt';
+        let lastRaw = '';
+        let lastPos = '';
+        let lastNeg = '';
+        let abortCtrl = null;
+        let generating = false;
+
+        const FMT = {
+            gpt: {
+                name: 'GPT 生图格式',
+                rule: '正面提示词用流畅的自然语言段落完整描述画面，涵盖主体、场景、风格、动作、镜头、色彩、构图、光线与细节质感；图片比例用文字自然描述（例如"横版16:9宽幅画面"），禁止使用 --ar、--v 等参数标记；负面提示词用自然语言列出需要避免的元素。该格式用于直接粘贴到 GPT（GPT Image 2.5 / DALL-E 3 等 OpenAI 生图模型）中使用。'
+            },
+            mj: {
+                name: 'Midjourney 格式',
+                rule: '正面提示词用逗号分隔的关键词或短语，按重要性从高到低排列，并在末尾自动附加画幅参数 --ar {RATIO}；负面提示词以 --no 参数形式列出。适配 Midjourney V7。'
+            },
+            sd: {
+                name: 'Stable Diffusion 格式',
+                rule: '正面提示词用逗号分隔的标签式关键词，重要关键词使用权重标记，如 (keyword:1.2)；负面提示词使用 SD 标签格式列出需避免的元素。适配 Stable Diffusion 4 / SDXL 系列。'
+            },
+            flux: {
+                name: 'Flux 格式',
+                rule: '正面提示词用自然语言的简洁短语组合，流畅连贯，不使用权重符号与参数标记；负面提示词用简洁短语列出。适配 Flux 2 系列。'
+            },
+            generic: {
+                name: '通用关键词格式',
+                rule: '正面提示词用逗号分隔的关键词，按重要性排序，通用适配各类 AI 绘画工具；负面提示词列出需要避免的元素。'
+            }
+        };
+
+        // ================= 图片处理 =================
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+
+        ['dragenter', 'dragover'].forEach(ev => dropzone.addEventListener(ev, e => {
+            e.preventDefault(); dropzone.classList.add('dragover');
+        }));
+        ['dragleave', 'drop'].forEach(ev => dropzone.addEventListener(ev, e => {
+            e.preventDefault(); dropzone.classList.remove('dragover');
+        }));
+        dropzone.addEventListener('drop', e => {
+            const f = e.dataTransfer.files && e.dataTransfer.files[0];
+            if (f) handleFile(f);
+        });
+        fileInput.addEventListener('change', e => {
+            if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+        });
+        document.addEventListener('paste', e => {
+            if (generating) return;
+            const items = e.clipboardData && e.clipboardData.items;
+            if (!items) return;
+            for (const it of items) {
+                if (it.type.startsWith('image/')) {
+                    const f = it.getAsFile();
+                    if (f) { handleFile(f); break; }
+                }
+            }
+        });
+
+        function handleFile(file) {
+            if (!/^image\/(jpeg|png|webp)$/.test(file.type)) { alert('仅支持 JPG / PNG / WebP 格式图片'); return; }
+            if (file.size > 10 * 1024 * 1024) { alert('图片大小不能超过 10MB'); return; }
+            const reader = new FileReader();
+            reader.onload = e => {
+                imageDataUrl = e.target.result;
+                currentImage = { dataUrl: imageDataUrl };
+                showPreview(imageDataUrl);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function showPreview(src) {
+            const img = document.getElementById('dzPreview');
+            img.src = src;
+            img.style.display = 'block';
+            document.getElementById('dzEmpty').style.display = 'none';
+            document.getElementById('dzRemove').style.display = 'flex';
+        }
+
+        function clearImage() {
+            currentImage = null;
+            imageDataUrl = null;
+            document.getElementById('dzPreview').style.display = 'none';
+            document.getElementById('dzEmpty').style.display = 'block';
+            document.getElementById('dzRemove').style.display = 'none';
+            fileInput.value = '';
+        }
+
+        function loadImageUrl() {
+            const url = document.getElementById('imageUrl').value.trim();
+            if (!url) { alert('请输入图片链接'); return; }
+            if (!/^https?:\/\//i.test(url)) { alert('请输入以 http(s):// 开头的图片链接'); return; }
+            currentImage = { url: url };
+            imageDataUrl = null;
+            showPreview(url);
+        }
+
+        // 生成缩略图（历史记录用）
+        function makeThumb(dataUrl, cb) {
+            const img = new Image();
+            img.onload = () => {
+                try {
+                    const c = document.createElement('canvas');
+                    const size = 160;
+                    const scale = Math.min(size / img.width, size / img.height, 1);
+                    c.width = Math.round(img.width * scale) || size;
+                    c.height = Math.round(img.height * scale) || size;
+                    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+                    cb(c.toDataURL('image/jpeg', 0.6));
+                } catch (err) { cb(''); }
+            };
+            img.onerror = () => cb('');
+            img.src = dataUrl;
+        }
+
+        // 图片宽高比（约分）
+        function imageRatio() {
+            const img = document.getElementById('dzPreview');
+            if (!img || !img.naturalWidth) return '1:1';
+            const g = (a, b) => b ? g(b, a % b) : a;
+            const d = g(img.naturalWidth, img.naturalHeight) || 1;
+            return (img.naturalWidth / d) + ':' + (img.naturalHeight / d);
+        }
+
+        // ================= 提示词构建 =================
+        function buildTaskPrompt() {
+            const fmt = FMT[currentFormat];
+            const detail = document.getElementById('detailMode').value;
+            const lang = document.getElementById('outLang').value;
+            const ratio = currentFormat === 'mj' ? imageRatio() : null;
+            const rule = ratio ? fmt.rule.replace('{RATIO}', ratio) : fmt.rule.replace(' --ar {RATIO}', '').replace('--ar {RATIO}，', '');
+            const langLine = lang === 'zh'
+                ? '【重要】你必须全程使用简体中文输出（专有名词、模型参数除外）。'
+                : '【重要】You must output entirely in English.';
+            const detailLine = detail === 'detailed'
+                ? '- 先用简洁的列表快速展示九大维度的拆解结果，然后再输出提示词。'
+                : '- 简洁模式：直接输出提示词，不要输出维度分析过程。';
+
+            return `你是专业的AI绘画提示词工程师。请分析这张图片，从以下九个维度提取所有视觉要素：
+1. 主体内容 2. 场景环境 3. 艺术风格 4. 动作姿态 5. 镜头参数 6. 色彩方案 7. 构图方式 8. 光线效果 9. 细节质感
+
+输出要求：
+- 输出格式：${fmt.name}。${rule}
+${detailLine}
+${langLine}
+请严格按照以下格式输出：
+【正面提示词】
+（正面提示词内容）
+【负面提示词】
+（负面提示词内容）`;
+        }
+
+        // ================= API 配置 =================
+        function toggleKeyVisible() {
+            const el = document.getElementById('apiKey');
+            el.type = el.type === 'password' ? 'text' : 'password';
+        }
+
+        function handleBaseUrlChange() {
+            const sel = document.getElementById('baseUrlSelect').value;
+            const custom = document.getElementById('customBaseUrl');
+            custom.style.display = sel === 'custom' ? 'block' : 'none';
+            localStorage.setItem(LS.base, sel);
+        }
+
+        function getBaseUrl() {
+            const sel = document.getElementById('baseUrlSelect').value;
+            if (sel === 'custom') {
+                let u = document.getElementById('customBaseUrl').value.trim().replace(/\/+$/, '');
+                if (u && !/\/v\d+$/.test(u) && !/chat\/completions/.test(u)) u += '/v1';
+                return u;
+            }
+            return sel.replace(/\/+$/, '');
+        }
+
+        function getKey() { return document.getElementById('apiKey').value.trim(); }
+        function getModel() { return document.getElementById('modelName').value.trim(); }
+
+        function setKeyStatus(msg, cls) {
+            const el = document.getElementById('keyStatus');
+            el.textContent = msg;
+            el.className = 'key-status ' + (cls || '');
+        }
+
+        async function testConnection() {
+            const key = getKey(), base = getBaseUrl();
+            if (!key) { alert('请先填写 API Key'); return; }
+            if (!base) { alert('请先选择 Base URL 平台'); return; }
+            setKeyStatus('⏳ 正在测试连接...', '');
+            try {
+                const r = await fetch(base + '/models', { headers: { 'Authorization': 'Bearer ' + key } });
+                if (r.ok) { setKeyStatus('✅ 连接成功', 'ok'); }
+                else setKeyStatus('❌ 连接失败（HTTP ' + r.status + '），请检查 Key 与 Base URL', 'err');
+            } catch (e) {
+                setKeyStatus('❌ 网络错误或跨域受限，请检查 Base URL', 'err');
+            }
+        }
+
+        // 恢复已保存配置
+        (function loadConfig() {
+            const flag = localStorage.getItem(LS.flag) === 'true';
+            document.getElementById('saveKey').checked = flag;
+            if (flag) {
+                const k = localStorage.getItem(LS.key);
+                if (k) document.getElementById('apiKey').value = k;
+            }
+            const base = localStorage.getItem(LS.base);
+            if (base) {
+                document.getElementById('baseUrlSelect').value = base;
+                if (base === 'custom') {
+                    document.getElementById('customBaseUrl').style.display = 'block';
+                    const c = localStorage.getItem(LS.custom);
+                    if (c) document.getElementById('customBaseUrl').value = c;
+                }
+            }
+            const m = localStorage.getItem(LS.model);
+            if (m) document.getElementById('modelName').value = m;
+        })();
+
+        document.getElementById('saveKey').addEventListener('change', function() {
+            localStorage.setItem(LS.flag, this.checked);
+            if (this.checked) localStorage.setItem(LS.key, getKey());
+            else localStorage.removeItem(LS.key);
+        });
+        document.getElementById('apiKey').addEventListener('input', function() {
+            if (document.getElementById('saveKey').checked) localStorage.setItem(LS.key, this.value.trim());
+        });
+        document.getElementById('customBaseUrl').addEventListener('input', function() {
+            localStorage.setItem(LS.custom, this.value.trim());
+        });
+        document.getElementById('modelName').addEventListener('input', function() {
+            localStorage.setItem(LS.model, this.value.trim());
+        });
+
+        // ================= 目标格式切换 =================
+        document.getElementById('fmtChips').addEventListener('click', function(e) {
+            const chip = e.target.closest('.fmt-chip');
+            if (!chip) return;
+            this.querySelectorAll('.fmt-chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            currentFormat = chip.dataset.fmt;
+        });
+
+        // ================= 生成 =================
+        async function generate() {
+            if (generating) { abortCtrl && abortCtrl.abort(); return; }
+
+            const key = getKey(), base = getBaseUrl(), model = getModel();
+            if (!currentImage) { alert('请先上传图片或输入图片链接'); return; }
+            if (!key) { alert('请先填写 API Key'); document.getElementById('apiKey').focus(); return; }
+            if (!base) { alert('请先选择 Base URL 平台'); return; }
+            if (!model) { alert('请填写模型名称（需支持视觉，如 gpt-5-mini / gemini-3-flash）'); document.getElementById('modelName').focus(); return; }
+
+            generating = true;
+            const btn = document.getElementById('genBtn');
+            btn.classList.add('stop');
+            btn.innerHTML = '<span class="spin"></span><span>点击停止</span>';
+
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('promptBoxes').style.display = 'none';
+            const box = document.getElementById('streamBox');
+            box.style.display = 'block';
+            box.classList.add('streaming');
+            box.textContent = '';
+
+            lastRaw = ''; lastPos = ''; lastNeg = '';
+            abortCtrl = new AbortController();
+
+            const imgUrl = currentImage.dataUrl || currentImage.url;
+            const payload = {
+                model: model,
+                messages: [{
+                    role: 'user',
+                    content: [
+                        { type: 'text', text: buildTaskPrompt() },
+                        { type: 'image_url', image_url: { url: imgUrl, detail: 'high' } }
+                    ]
+                }],
+                stream: true,
+                max_tokens: 4096
+            };
+
+            try {
+                const resp = await fetch(base + '/chat/completions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+                    body: JSON.stringify(payload),
+                    signal: abortCtrl.signal
+                });
+
+                if (!resp.ok) {
+                    let msg = 'HTTP ' + resp.status;
+                    try { const j = await resp.json(); msg = j.error && j.error.message ? j.error.message : msg; } catch (e) {}
+                    throw new Error(msg);
+                }
+
+                const reader = resp.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop();
+                    for (const line of lines) {
+                        const t = line.trim();
+                        if (!t.startsWith('data:')) continue;
+                        const data = t.slice(5).trim();
+                        if (data === '[DONE]') continue;
+                        try {
+                            const j = JSON.parse(data);
+                            const delta = j.choices && j.choices[0] && j.choices[0].delta && j.choices[0].delta.content || '';
+                            if (delta) {
+                                lastRaw += delta;
+                                box.textContent = lastRaw;
+                                box.scrollTop = box.scrollHeight;
+                            }
+                        } catch (err) {}
+                    }
+                }
+                finishGeneration();
+            } catch (err) {
+                if (err.name === 'AbortError') {
+                    finishGeneration(true);
+                } else {
+                    box.textContent = lastRaw + '\n\n❌ 生成失败：' + err.message;
+                    resetGenBtn();
+                }
+            }
+        }
+
+        function finishGeneration(aborted) {
+            parsePrompts();
+            const box = document.getElementById('streamBox');
+            box.classList.remove('streaming');
+            if (aborted && lastRaw) box.textContent = lastRaw + '\n\n（已手动停止）';
+            if (lastRaw) {
+                if (lastPos) {
+                    document.getElementById('promptBoxes').style.display = 'flex';
+                    document.getElementById('posBody').textContent = lastPos;
+                    document.getElementById('negBody').textContent = lastNeg;
+                    box.style.display = 'none';
+                }
+                document.getElementById('genMeta').style.display = 'block';
+                document.getElementById('genMeta').textContent = '模型: ' + getModel() + ' · 格式: ' + FMT[currentFormat].name + ' · 时间: ' + new Date().toLocaleString();
+                ['btnCopyAll', 'btnExpTxt', 'btnExpMd'].forEach(id => document.getElementById(id).disabled = false);
+                saveHistory();
+            } else if (!aborted) {
+                document.getElementById('emptyState').style.display = 'flex';
+                box.style.display = 'none';
+            }
+            resetGenBtn();
+        }
+
+        function resetGenBtn() {
+            generating = false;
+            const btn = document.getElementById('genBtn');
+            btn.classList.remove('stop');
+            btn.innerHTML = '<span>✨ 开始反推</span>';
+        }
+
+        function parsePrompts() {
+            const pos = lastRaw.match(/【正面提示词】\s*([\s\S]*?)(?=\s*【负面提示词】|$)/);
+            const neg = lastRaw.match(/【负面提示词】\s*([\s\S]*?)$/);
+            lastPos = pos ? pos[1].trim() : '';
+            lastNeg = neg ? neg[1].trim() : '';
+        }
+
+        // ================= 复制 / 导出 =================
+        function copyText(text, tip) {
+            navigator.clipboard.writeText(text).then(() => {
+                const el = event && event.target;
+                if (el) { const old = el.textContent; el.textContent = '✓ 已复制'; setTimeout(() => el.textContent = old, 1200); }
+            }).catch(() => alert('复制失败，请手动选择文本复制'));
+        }
+        function copyPos() { lastPos && copyText(lastPos); }
+        function copyNeg() { lastNeg && copyText(lastNeg); }
+        function copyAll() { lastRaw && copyText(lastRaw); }
+
+        function download(name, content) {
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = name;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+        function exportTxt() {
+            if (!lastRaw) return;
+            download('提示词_' + Date.now() + '.txt', lastRaw);
+        }
+        function exportMd() {
+            if (!lastRaw) return;
+            const md = '# 图片反推提示词\n\n> 生成时间：' + new Date().toLocaleString() + '\n> 目标格式：' + FMT[currentFormat].name + '\n\n' + lastRaw + '\n';
+            download('提示词_' + Date.now() + '.md', md);
+        }
+
+        // ================= 历史记录 =================
+        function getHistory() {
+            try { return JSON.parse(localStorage.getItem(LS.history)) || []; } catch (e) { return []; }
+        }
+
+        function saveHistory() {
+            const list = getHistory();
+            const entry = {
+                t: Date.now(),
+                thumb: imageDataUrl || (currentImage && currentImage.url) || '',
+                pos: lastPos, neg: lastNeg, raw: lastRaw,
+                fmt: currentFormat, lang: document.getElementById('outLang').value,
+                model: getModel()
+            };
+            list.unshift(entry);
+            if (list.length > 20) list.length = 20;
+            localStorage.setItem(LS.history, JSON.stringify(list));
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const list = getHistory();
+            const grid = document.getElementById('historyGrid');
+            document.getElementById('hCount').textContent = list.length ? '（' + list.length + '/20）' : '';
+            document.getElementById('btnClearHis').style.display = list.length ? 'inline-flex' : 'none';
+            if (!list.length) {
+                grid.innerHTML = '<div class="history-empty" style="grid-column:1/-1;">暂无历史记录，上传图片开始第一次反推吧 🚀</div>';
+                return;
+            }
+            grid.innerHTML = list.map((h, i) => `
+                <div class="h-card" onclick="restoreHistory(${i})">
+                    ${h.thumb ? `<img class="h-thumb" src="${h.thumb}" alt="缩略图" onerror="this.style.display='none'">` : ''}
+                    <div class="h-info">
+                        <div class="h-time">${new Date(h.t).toLocaleString()}</div>
+                        <div class="h-tags">
+                            <span class="h-tag">${({gpt:'GPT生图',mj:'MJ',sd:'SD',flux:'Flux',generic:'通用'})[h.fmt] || h.fmt}</span>
+                            <span class="h-tag">${h.lang === 'zh' ? '中文' : 'EN'}</span>
+                        </div>
+                    </div>
+                    <button class="h-del" onclick="event.stopPropagation();deleteHistory(${i})" title="删除">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function restoreHistory(i) {
+            const h = getHistory()[i];
+            if (!h) return;
+            lastRaw = h.raw; lastPos = h.pos; lastNeg = h.neg;
+            currentFormat = h.fmt;
+            document.querySelectorAll('.fmt-chip').forEach(c => c.classList.toggle('active', c.dataset.fmt === h.fmt));
+            document.getElementById('outLang').value = h.lang || 'zh';
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('promptBoxes').style.display = lastPos ? 'flex' : 'none';
+            document.getElementById('posBody').textContent = lastPos || '';
+            document.getElementById('negBody').textContent = lastNeg || '';
+            const box = document.getElementById('streamBox');
+            if (!lastPos && lastRaw) {
+                box.style.display = 'block';
+                box.textContent = lastRaw;
+            } else {
+                box.style.display = 'none';
+            }
+            document.getElementById('genMeta').style.display = 'block';
+            document.getElementById('genMeta').textContent = '历史记录 · 模型: ' + (h.model || '-') + ' · ' + new Date(h.t).toLocaleString();
+            ['btnCopyAll', 'btnExpTxt', 'btnExpMd'].forEach(id => document.getElementById(id).disabled = false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function deleteHistory(i) {
+            const list = getHistory();
+            list.splice(i, 1);
+            localStorage.setItem(LS.history, JSON.stringify(list));
+            renderHistory();
+        }
+
+        function clearHistory() {
+            if (!confirm('确定清空全部历史记录吗？')) return;
+            localStorage.removeItem(LS.history);
+            renderHistory();
+        }
+
+        renderHistory();
+    </script>
+</body>
+</html>

@@ -32,4 +32,7 @@
   <url><loc>https://api-rank-lake.vercel.app/news/relay-recharge-refund.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/news/api-relay-faq.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/news/coding-cost-optimization.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/tools.html</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/img-prompt.html</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/creative-tools.html</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
