@@ -1901,42 +1901,32 @@
     text-align: center;
 }
 
-/* ===== 评分说明按钮 ===== */
-.score-info-btn {
+/* ===== 评分说明按钮 / 实用工具按钮（统一尺寸） ===== */
+.score-info-btn,
+.creative-tools-btn {
     display: inline-block;
+    box-sizing: border-box;
     background: rgba(74, 144, 217, 0.1);
     border: 1px solid rgba(74, 144, 217, 0.25);
     color: var(--accent);
     font-size: 12px;
     font-weight: 700;
+    line-height: 1.2;
     padding: 2px 10px;
     border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
     margin-left: 8px;
     vertical-align: middle;
+    white-space: nowrap;
+    transition: all 0.2s;
 }
 .score-info-btn:hover {
     background: rgba(74, 144, 217, 0.18);
     border-color: rgba(74, 144, 217, 0.4);
 }
 
-/* ===== 实用工具按钮（与评分说明统一风格） ===== */
 .creative-tools-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: rgba(74, 144, 217, 0.1);
-    border: 1px solid rgba(74, 144, 217, 0.25);
-    color: var(--accent);
-    font-size: 12px;
-    padding: 2px 10px;
-    border-radius: 12px;
     text-decoration: none;
-    margin-left: 8px;
-    vertical-align: middle;
-    transition: all 0.2s;
-    font-weight: 700;
+    cursor: pointer;
 }
 .creative-tools-btn:hover {
     background: rgba(74, 144, 217, 0.18);
