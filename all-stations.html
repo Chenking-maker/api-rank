@@ -4843,7 +4843,7 @@
         <div class="container">
 
             <div class="section-header" style="margin-bottom:20px;">
-                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年8月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span></h2>
+                <h2 class="section-title">全部中转站排行榜 <span id="sectionDate">2026年10月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span></h2>
                 <div class="search-box" style="max-width:280px;width:280px;">
                     <input type="text" id="searchInput" class="search-input" placeholder="搜索中转站名称..." oninput="searchCards(this.value)" onfocus="showClearBtn()" onblur="hideClearBtn()" />
                     <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" style="display:none;" title="清除搜索">✕</button>
@@ -10418,6 +10418,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('DOMContentLoaded', async function() {
             // all-stations.html 没有流量排行榜，直接加载数据
+
+            // 首次加载即同步排行榜日期（避免 HTML 硬编码月份过时）
+            const sectionDateElInit = document.getElementById('sectionDate');
+            if (sectionDateElInit) {
+                sectionDateElInit.textContent = new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月';
+            }
 
             // 预填充全局URL集合（硬编码卡片的URL），避免 addSiteToRanking 重复添加
             const initUrls = getExistingUrls();

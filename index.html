@@ -6414,13 +6414,13 @@
                         <span style="display:inline-block;width:8px;height:8px;background:#4ecdc4;border-radius:50%;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></span>
                         热门中转站 · 流量排行
                     </h3>
-                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb <span id="trafficMonth">2026年8月</span> · 月访问量估算 · 点击波浪访问站点</p>
+                    <p style="font-size:11px;color:#666;margin:4px 0 0;">数据来源：SimilarWeb <span id="trafficMonth">2026年10月</span> · 月访问量估算 · 点击波浪访问站点</p>
                 </div>
             </div>
 
             <div class="section-header">
 
-                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年8月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span> <a href="tools.html" class="creative-tools-btn" title="实用工具">🔥 实用工具</a></h2>
+                <h2 class="section-title">综合排行榜 <span id="sectionDate">2026年10月</span> <span id="sectionCount" style="font-size:14px;color:var(--text-secondary);margin-left:8px;"></span> <span class="dead-badge" id="deadBadge" onclick="showDeadList()" style="cursor:pointer;display:none;" title="点击查看失效站点列表">0 已失效</span> <span class="score-info-btn" onclick="openSectionModal('scoreInfoModal')" title="查看评分维度与权重">📊 评分说明</span> <a href="tools.html" class="creative-tools-btn" title="实用工具">🔥 实用工具</a></h2>
 
                 <div class="search-box" style="max-width:280px;width:280px;">
                     <input type="text" id="searchInput" class="search-input" placeholder="搜索中转站名称..." oninput="searchCards(this.value)" onfocus="showClearBtn()" onblur="hideClearBtn()" />
@@ -12334,6 +12334,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         document.addEventListener('DOMContentLoaded', async function() {
+            // 首次加载即同步排行榜日期（避免 HTML 硬编码月份过时）
+            const sectionDateElInit = document.getElementById('sectionDate');
+            if (sectionDateElInit) {
+                sectionDateElInit.textContent = new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月';
+            }
+
             // 渲染流量排行榜（纯静态数据，不依赖异步加载）
             renderTrafficRank();
 
