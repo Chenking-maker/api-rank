@@ -368,6 +368,55 @@
         "likes": 0
     },
     {
+        "url": "https://aruhub.com/sign-up?aff=kJbM",
+        "domain": "aruhub.com",
+        "name": "aruhub API",
+        "description": "AruHub 聚合型 AI 大模型 API 中转站，一个 Key 即可调用 GPT-6、Claude 5、Gemini 4、Grok 4.7 及 GPT-Image-2.5 等前沿模型，兼容 OpenAI / Anthropic / Gemini / Responses 四种协议。分组计价最低至官方 0.1 倍，支持 Claude Code、Codex、Cursor 等主流客户端一键配置，注册后每日签到可领额度。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "stable",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "每日签到领额度",
+        "score": 9.7,
+        "response_time": 0.75,
+        "alive": true,
+        "last_check": "2026-10-15",
+        "check_count": 1,
+        "display_tags": [
+            "前沿模型",
+            "分组低价",
+            "多客户端"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "GPT-6 / Claude 5",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "低至0.1倍",
+                "cls": "accent"
+            },
+            {
+                "label": "协议",
+                "value": "四种协议",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://openox.tech/r/46525",
         "domain": "openox.tech",
         "name": "OpenOx",

@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
   <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
-  <img src="https://img.shields.io/badge/收录平台-161+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-162+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
