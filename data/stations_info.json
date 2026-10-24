@@ -697,6 +697,53 @@
         "likes": 0
     },
     {
+        "url": "https://beeaicloud.com/a-register?aff=sjJjkYOMW7uh&lang=zh-CN",
+        "domain": "beeaicloud.com",
+        "name": "蜂桥AI (BeeBridge)",
+        "description": "蜂桥 AI（BeeBridge）是面向开发者与企业的 AI 模型 API 中转与推理算力平台，一个账户统一接入多家模型系列，兼容 OpenAI API 格式，并支持 Gemini 原生格式中转。能力覆盖对话补全、文本嵌入、重排序、语音识别/合成、实时语音、图像生成与视频生成（Sora 接口），无需自建模型服务。控制台可在线查看模型广场与分组价格、创建 API Key，并通过调用日志清晰追踪每一次 Token 用量与费用，接入代码助手、智能体与 AI 应用更省心。",
+        "models": [
+            "gpt",
+            "gemini",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "docs",
+            "enterprise"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.65,
+        "response_time": 0.8,
+        "alive": true,
+        "last_check": "2026-10-24",
+        "check_count": 1,
+        "display_tags": [
+            "统一接入",
+            "全能力覆盖",
+            "用量透明"
+        ],
+        "display_metrics": [
+            {
+                "label": "接入",
+                "value": "OpenAI兼容",
+                "cls": "green"
+            },
+            {
+                "label": "能力",
+                "value": "文/图/音/视频",
+                "cls": "accent"
+            },
+            {
+                "label": "管理",
+                "value": "日志看用量",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-24"
+    },
+    {
         "url": "https://api2d.com/r/241389",
         "domain": "api2d.com",
         "name": "API2D",

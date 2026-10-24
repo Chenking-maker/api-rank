@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
   <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
-  <img src="https://img.shields.io/badge/收录平台-162+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-163+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -27,7 +27,7 @@
   🌍 <a href="https://api-rank-lake.vercel.app">国际访问</a> ·
   📖 <a href="https://github.com/Chenking-maker/api-rank/wiki">使用文档</a> ·
   💬 <a href="https://github.com/Chenking-maker/api-rank/discussions">讨论区</a> ·
-  🎨 <a href="https://api-rank-lake.vercel.app/creative-tools.html">AI绘图/视频专区</a>
+  🔥 <a href="https://api-rank-lake.vercel.app/tools.html">实用工具</a>
 </p>
 
 <p align="center">
@@ -67,6 +67,7 @@
 | 📱 **手机号绑定** | 国际化手机号绑定，换设备可恢复身份 |
 | 🛡️ **商家后台** | 站长可提交站点、管理信息 |
 | 🎨 **AI绘图/视频** | 在线绘图/视频生成工具，支持6+模型 |
+| 🧰 **实用工具** | 自研AI工具导航：AI找券、图片反推提示词、ChatGPT代充等 |
 | 📰 **相关新闻** | SEO优化文章，涵盖API中转站热门话题，提升搜索曝光 |
 | 📱 **响应式** | 完美适配PC和移动端 |
 | 🌙 **深色模式** | 支持深色/浅色模式切换，护眼又好看 |
@@ -83,11 +84,11 @@
 | 🥉 | **随想** | 9.82 | 高速稳定，多模型支持，开发者友好 | [访问](https://sui-xiang.com/register?aff=5J3USAV9LQEB) |
 | 4 | **apinebula** | 9.81 | 全球AI API网关，支付宝充值，多模型统一接入 | [访问](https://apinebula.ai/0gDuPn) |
 | 5 | **moacode** | 9.79 | 一个Key连接所有编程Agent，智能路由容灾 | [访问](https://moacode.org/register?ref=king308) |
-| 6 | **OpenOx** | 9.70 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
-| 7 | **STA1N API** | 9.69 | 三步接入，有免费可用模型，社区活跃 | [访问](https://cdn.sta1n.cn/sign-up?aff=qaLL) |
-| 8 | **推理时代AIHubMix** | 9.66 | 500+模型统一接口，按量付费 | [访问](https://aihubmix.com/?aff=U9CV) |
-| 9 | **API2D** | 9.64 | 多模型，稳定运营，国内直连 | [访问](https://api2d.com/r/241389) |
-| 10 | **硅基流动** | 9.62 | 国产模型首选，DeepSeek全系，每日免费额度 | [访问](https://cloud.siliconflow.cn/i/E5yUpjCP) |
+| 6 | **莱特代码** | 9.72 | 专为编程设计，响应快(0.43s)，1元起充 | [访问](https://rightapi.ai/register?aff=56503380) |
+| 7 | **肖恩AI** | 9.71 | 免费公益站，注册送5000额度，新手友好 | [访问](https://free.supxh.xin/register?code=XVGW49) |
+| 8 | **七牛云** | 9.70 | 企业级云基础设施，大模型API稳定可靠 | [访问](https://s.qiniu.com/aYRV3a) |
+| 9 | **aruhub API** | 9.70 | 前沿模型聚合，分组计价低至0.1倍 | [访问](https://aruhub.com/sign-up?aff=kJbM) |
+| 10 | **OpenOx** | 9.70 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
 
 > 完整排名请访问 [国内网站](https://chenking-maker.github.io/api-rank/) 或 [国际网站](https://api-rank-lake.vercel.app) 查看
 
@@ -97,13 +98,13 @@
 
 | 类型 | 模型 |
 |------|------|
-| 🔵 **Claude** | Claude 4 Opus, Claude 4 Sonnet, Claude 3.5 |
-| 🟢 **GPT** | GPT-5.5, GPT-5, GPT-4o, o3, o1 |
-| 🟡 **Gemini** | Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.5 Flash |
+| 🔵 **Claude** | Claude 5, Claude Opus 5.5, Claude Haiku 5.5 |
+| 🟢 **GPT** | GPT-6 Sol/Luna, GPT-5.5, o系列 |
+| 🟡 **Gemini** | Gemini 4, Nano Banana 2.1, Gemini 3.1 Pro |
 | 🔴 **DeepSeek** | DeepSeek V4, DeepSeek V3.2, DeepSeek R1 |
-| 🟣 **国产** | GLM-5.2, Kimi K2.7, Qwen, 豆包, MiniMax M3 |
-| 🟠 **绘画** | Midjourney, GPT-image-2, DALL-E, Stable Diffusion |
-| 🎬 **视频** | Kling V3 Turbo, Veo, Sora2 |
+| 🟣 **国产** | Kimi K3.1 Pro, GLM-5.2, Qwen, 豆包, MiniMax M3 |
+| 🟠 **绘画** | Midjourney, GPT-Image-2.5, Nano Banana 2.1, Stable Diffusion |
+| 🎬 **视频** | Sora 2, Kling V3 Turbo, Veo |
 
 ---
 
@@ -130,17 +131,19 @@
 ```
 api-rank/
 ├── index.html              # 首页（Top 50 + 动态加载 + 广告位轮播 + 快速选站器 + 随机盲选 + 最新收录）
-├── all-stations.html       # 全部站点页面（161+，无数量限制）
+├── all-stations.html       # 全部站点页面（163+，无数量限制）
 ├── about.html              # 关于本站（介绍 + 使用指南 + 收藏提示）
-├── news.html               # 相关新闻（2列卡片+右侧推荐+标签筛选+分页，27篇深度文章）
-├── news/                   # 27篇独立URL的SEO文章（结构化数据+内部互链）
-├── creative-tools.html     # AI绘图/视频专区
+├── tools.html              # 🔥 实用工具（自研AI工具 + 精选服务导航）
+├── img-prompt.html         # 图片反推提示词工具（多格式输出 + 历史记录）
+├── creative-tools.html     # AI绘图/视频专区（在线生成）
+├── news.html               # 相关新闻（2列卡片+右侧推荐+标签筛选+分页，34篇深度文章）
+├── news/                   # 34篇独立URL的SEO文章（结构化数据+内部互链）
 ├── dead-sites.html         # 失效站点列表（动态加载，与首页交叉验证）
 ├── admin.html              # 商家管理后台
 ├── assets/
 │   └── notice.js           # 全站顶部提醒横幅（换域名/收藏提示）
 ├── data/
-│   ├── stations_info.json  # 主站点数据（161个，含added收录日期）
+│   ├── stations_info.json  # 主站点数据（163个，含added收录日期）
 │   ├── dead_sites.json     # 失效站点记录
 │   └── pending_stations.json # 待审核站点
 ├── api/                    # Cloudflare Workers 后端
@@ -214,13 +217,13 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 161+ |
-| 有效站点 | 116 |
+| 收录平台 | 163+ |
+| 有效站点 | 117 |
 | 失效站点 | 26（动态交叉验证） |
 | 支持模型类型 | 7+（含绘画/视频） |
 | 评分范围 | 8.15 - 9.94 |
 | 评测维度 | 7个 |
-| SEO文章 | 27篇 |
+| SEO文章 | 34篇 |
 | 更新频率 | 手动更新（已取消自动检测） |
 | 开源协议 | MIT |
 
@@ -285,6 +288,12 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 
 ## 📝 更新日志
 
+### v1.6.0 (2026-10-24)
+- ✅ 新增中转站「蜂桥AI (BeeBridge)」等，收录总数达 163+，首页日期自动同步当前月份
+- ✅ 推出「🔥 实用工具」导航页：AI找券（羊毛AIHUB）、图片反推提示词、在线绘图/视频、GPT自助代充
+- ✅ 相关新闻扩充至 34 篇：新增 Kimi K3.1 Pro、GPT-6 全量开放、Claude 登陆 Google Cloud 等 7 篇热点解读
+- ✅ 统一全站导航与标题行按钮样式，最新收录区块与站点数据自动联动
+
 ### v1.5.0 (2026-10-14)
 - ✅ 新增全站顶部提醒横幅（换域名提示，适配 fixed/sticky 导航）+ 导航栏全站统一（当前页高亮）
 - ✅ 相关新闻改版：2列卡片 + 右侧推荐/热门标签 + 分页，文章扩充至 27 篇
@@ -316,14 +325,23 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 - 📰 **相关新闻**: [AI API中转站行业资讯](https://chenking-maker.github.io/api-rank/news.html)
 - 💬 **讨论区**: [https://github.com/Chenking-maker/api-rank/discussions](https://github.com/Chenking-maker/api-rank/discussions)
 - 🐛 **问题反馈**: [https://github.com/Chenking-maker/api-rank/issues](https://github.com/Chenking-maker/api-rank/issues)
-- 🎨 **AI绘图/视频**: [在线绘图/视频专区](https://api-rank-lake.vercel.app/creative-tools.html)
+- 🔥 **实用工具**: [AI找券/图片反推提示词/在线绘图/ChatGPT代充](https://api-rank-lake.vercel.app/tools.html)
 - 💀 **失效站点**: [失效站点列表](https://api-rank-lake.vercel.app/dead-sites.html)
 
 ---
 
 ## 📰 相关新闻
 
-本站提供 27 篇 SEO 深度文章（独立URL，搜索引擎可逐篇收录），热门文章：
+本站提供 34 篇 SEO 深度文章（独立URL，搜索引擎可逐篇收录），热门文章：
+
+**热点速递（2026年10月）**
+- [Kimi K3.1 Pro发布：3万亿参数开源模型，API接入指南与中转建议](https://api-rank-lake.vercel.app/news/kimi-k3-open-source.html)
+- [GPT-6全量开放：Sol与Luna十月更新，免费可用对中转市场意味着什么](https://api-rank-lake.vercel.app/news/gpt6-october-update.html)
+- [Claude Models登陆Google Cloud：Anthropic托管接入与计费变化解读](https://api-rank-lake.vercel.app/news/claude-on-google-cloud.html)
+- [10月新模型扎堆：Gemini 4 Argon与Claude Haiku 5.5怎么选](https://api-rank-lake.vercel.app/news/october-new-models-2026.html)
+- [Gemini Nano Banana 2.1上线：AI绘图API新基准](https://api-rank-lake.vercel.app/news/gemini-nano-banana-2-1.html)
+- [Uber向3万员工全面部署ChatGPT Work](https://api-rank-lake.vercel.app/news/uber-chatgpt-work.html)
+- [Claude写下1.8亿行证明：AI编程进入形式化验证时代](https://api-rank-lake.vercel.app/news/ai-formal-verification.html)
 
 **入门与避坑**
 - [什么是API中转站？核心作用与底层原理一次性讲透](https://api-rank-lake.vercel.app/news/what-is-api-relay.html)

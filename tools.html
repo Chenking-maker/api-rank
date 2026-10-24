@@ -35,7 +35,7 @@
         "@type": "CollectionPage",
         "name": "实用工具 - AI工具导航集合",
         "url": "https://api-rank-lake.vercel.app/tools.html",
-        "description": "精选站长原创AI实用工具导航：在线AI绘图/视频生成、图片反推提示词等",
+        "description": "精选站长原创AI实用工具导航：AI找券省钱、图片反推提示词、在线AI绘图/视频生成、ChatGPT会员自助代充等",
         "isPartOf": {
             "@type": "WebSite",
             "name": "AI API中转站排行榜",
@@ -248,74 +248,130 @@
             margin: 0 auto;
         }
 
-        /* Tools Grid */
+        /* Tools Sections */
         .tools-section {
             max-width: 1000px;
-            margin: 24px auto 0;
+            margin: 8px auto 0;
             padding: 0 24px 48px;
+        }
+
+        .tools-group + .tools-group { margin-top: 44px; }
+
+        .tools-head {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .tools-head h2 {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+        }
+        .tools-head p {
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
         }
 
         .tool-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 28px 24px;
+            border-radius: 16px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
             transition: all 0.25s;
             position: relative;
             text-decoration: none;
             color: inherit;
+            min-height: 196px;
         }
 
         .tool-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--accent);
-            box-shadow: 0 12px 36px var(--accent-glow);
+            box-shadow: 0 12px 32px var(--accent-glow);
             text-decoration: none;
         }
 
+        .tool-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 56px;
+        }
+
         .tool-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
             background: rgba(74, 144, 217, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 23px;
             flex-shrink: 0;
         }
 
+        .tool-title { min-width: 0; }
+
         .tool-card h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--text-primary);
+            line-height: 1.3;
         }
 
-        .tool-card p {
-            font-size: 14px;
+        .tool-cat {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-top: 5px;
+            background: rgba(74, 144, 217, 0.1);
+            color: var(--accent);
+        }
+        .tool-cat.green { background: rgba(16,185,129,0.1); color: var(--green); }
+        .tool-cat.orange { background: rgba(249,115,22,0.1); color: var(--orange); }
+
+        .tool-desc {
+            font-size: 13.5px;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.75;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             flex: 1;
+        }
+
+        .tool-foot {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
         }
 
         .tool-tags {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .tool-tag {
-            font-size: 12px;
-            padding: 4px 10px;
+            font-size: 11px;
+            padding: 3px 9px;
             border-radius: 20px;
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -326,9 +382,11 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--accent);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .tool-card:hover .tool-go { gap: 10px; }
@@ -348,24 +406,36 @@
             border: 1px solid rgba(16, 185, 129, 0.25);
         }
 
-        /* Coming soon card */
-        .tool-card.coming {
-            border-style: dashed;
-            opacity: 0.75;
-            justify-content: center;
-            align-items: center;
+        /* Coming soon strip */
+        .coming-strip {
+            margin-top: 36px;
+            border: 1px dashed var(--border-hover);
+            border-radius: 14px;
+            padding: 20px 24px;
             text-align: center;
-            min-height: 240px;
-            cursor: default;
+            font-size: 14px;
+            color: var(--text-secondary);
+            background: var(--bg-card);
         }
-        .tool-card.coming:hover {
-            transform: none;
-            border-color: var(--border);
-            box-shadow: none;
+        .coming-strip strong { color: var(--text-primary); }
+
+        /* Hero chips */
+        .hero-chips {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        .tool-card.coming .coming-icon { font-size: 32px; margin-bottom: 8px; }
-        .tool-card.coming h3 { color: var(--text-secondary); }
-        .tool-card.coming p { flex: 0; }
+        .hero-chip {
+            font-size: 12.5px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .hero-chip b { color: var(--accent); font-weight: 700; }
 
         /* Info strip */
         .info-strip {
@@ -518,70 +588,121 @@
             <span>实用工具</span>
         </div>
         <h1>实用工具导航</h1>
-        <p>站长自研 AI 工具与精选服务集合：AI 找券省钱、图片反推提示词、在线绘图/视频生成、ChatGPT 会员代充等，持续更新中。</p>
+        <p>站长自研 AI 工具与精选服务集合，一站式直达，持续更新中。</p>
+        <div class="hero-chips">
+            <span class="hero-chip"><b>4+</b> 实用工具</span>
+            <span class="hero-chip"><b>免费</b> 自研工具开箱即用</span>
+            <span class="hero-chip"><b>本地存储</b> Key 不上传服务器</span>
+        </div>
     </section>
 
     <!-- Tools Grid -->
     <section class="tools-section">
-        <div class="tools-grid">
 
-            <a href="https://chenking-maker.github.io/yangmao-aihub/" target="_blank" rel="noopener noreferrer" class="tool-card">
-                <span class="tool-badge-new">NEW</span>
-                <div class="tool-icon">🐑</div>
-                <h3>羊毛AIHUB</h3>
-                <p>双11必备的 AI 找券助手：说出想买什么，AI 自动找隐藏优惠券、领淘宝/京东超级红包、智能算凑单；发商品链接还能转成专属优惠链接。内置 AI 实时好价榜、秒杀线报、双11日历与 9.9 包邮专区，全免费打开即用。</p>
-                <div class="tool-tags">
-                    <span class="tool-tag">AI找券</span>
-                    <span class="tool-tag">超级红包</span>
-                    <span class="tool-tag">实时线报</span>
-                </div>
-                <span class="tool-go">立即使用 →</span>
-            </a>
-
-            <a href="https://shop.laolin.ai/shop?cps_context=AG7990ErXMuI9HdW4WONHiXIDyhD-CwZVsTFFV5HIlo" target="_blank" rel="noopener noreferrer" class="tool-card">
-                <span class="tool-badge-new">NEW</span>
-                <div class="tool-icon">💳</div>
-                <h3>GPT自助代充</h3>
-                <p>ChatGPT 官方会员自助充值：Go / Plus / Pro 全档位，自有账号凭兑换码充值，订阅成功质保 30 天；另有 250 / 500 / 1000 点数加购与短信接码服务，付款后自动发码，附完整兑换指南。点数加购不改变会员套餐。</p>
-                <div class="tool-tags">
-                    <span class="tool-tag">ChatGPT充值</span>
-                    <span class="tool-tag">凭码兑换</span>
-                    <span class="tool-tag">质保30天</span>
-                </div>
-                <span class="tool-go">前往充值 →</span>
-            </a>
-
-            <a href="img-prompt.html" class="tool-card">
-                <div class="tool-icon">🖼️</div>
-                <h3>图片反推提示词</h3>
-                <p>上传任意图片，AI 从九大维度智能拆解，一键反推出高质量绘图提示词。支持 GPT 生图 / Midjourney / Stable Diffusion / Flux 多种格式输出，可直接复制使用。</p>
-                <div class="tool-tags">
-                    <span class="tool-tag">图片理解</span>
-                    <span class="tool-tag">提示词工程</span>
-                    <span class="tool-tag">流式输出</span>
-                </div>
-                <span class="tool-go">立即使用 →</span>
-            </a>
-
-            <a href="creative-tools.html" class="tool-card">
-                <div class="tool-icon">🎨</div>
-                <h3>在线绘图 / 视频专区</h3>
-                <p>输入 API Key 即可在线生成 AI 图片与视频，支持 GPT-Image-2、Nano Banana 2、Midjourney V7、Sora 2、可灵 3.0 等最新模型，Key 仅保存在本地浏览器。</p>
-                <div class="tool-tags">
-                    <span class="tool-tag">AI绘图</span>
-                    <span class="tool-tag">AI视频</span>
-                    <span class="tool-tag">在线生成</span>
-                </div>
-                <span class="tool-go">立即使用 →</span>
-            </a>
-
-            <div class="tool-card coming">
-                <div class="coming-icon">🚧</div>
-                <h3>更多工具开发中</h3>
-                <p>AI 文案生成、长文翻译、代码助手等工具正在路上，敬请期待。</p>
+        <div class="tools-group">
+            <div class="tools-head">
+                <h2>🔥 本期推荐</h2>
+                <p>双11省钱与会员充值，站长在用的靠谱服务</p>
             </div>
+            <div class="tools-grid">
 
+                <a href="https://chenking-maker.github.io/yangmao-aihub/" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <span class="tool-badge-new">NEW</span>
+                    <div class="tool-top">
+                        <div class="tool-icon">🐑</div>
+                        <div class="tool-title">
+                            <h3>羊毛AIHUB</h3>
+                            <span class="tool-cat green">双11必备</span>
+                        </div>
+                    </div>
+                    <p class="tool-desc">双11必备的 AI 找券助手：说出想买什么，自动找隐藏优惠券、领淘宝/京东超级红包、智能算凑单；内置实时好价榜、秒杀线报与 9.9 包邮专区，全免费打开即用。</p>
+                    <div class="tool-foot">
+                        <div class="tool-tags">
+                            <span class="tool-tag">AI找券</span>
+                            <span class="tool-tag">超级红包</span>
+                            <span class="tool-tag">实时线报</span>
+                        </div>
+                        <span class="tool-go">立即使用 →</span>
+                    </div>
+                </a>
+
+                <a href="https://shop.laolin.ai/shop?cps_context=AG7990ErXMuI9HdW4WONHiXIDyhD-CwZVsTFFV5HIlo" target="_blank" rel="noopener noreferrer" class="tool-card">
+                    <span class="tool-badge-new">NEW</span>
+                    <div class="tool-top">
+                        <div class="tool-icon">💳</div>
+                        <div class="tool-title">
+                            <h3>GPT自助代充</h3>
+                            <span class="tool-cat orange">合作渠道</span>
+                        </div>
+                    </div>
+                    <p class="tool-desc">ChatGPT 官方会员自助充值：Go / Plus / Pro 全档位，自有账号凭兑换码充值，订阅成功质保 30 天；支持点数加购与短信接码，付款自动发码，点数加购不改变会员套餐。</p>
+                    <div class="tool-foot">
+                        <div class="tool-tags">
+                            <span class="tool-tag">ChatGPT充值</span>
+                            <span class="tool-tag">凭码兑换</span>
+                            <span class="tool-tag">质保30天</span>
+                        </div>
+                        <span class="tool-go">前往充值 →</span>
+                    </div>
+                </a>
+
+            </div>
         </div>
+
+        <div class="tools-group">
+            <div class="tools-head">
+                <h2>🛠️ 站长自研</h2>
+                <p>数据与 API Key 仅存本地浏览器，打开即用</p>
+            </div>
+            <div class="tools-grid">
+
+                <a href="img-prompt.html" class="tool-card">
+                    <div class="tool-top">
+                        <div class="tool-icon">🖼️</div>
+                        <div class="tool-title">
+                            <h3>图片反推提示词</h3>
+                            <span class="tool-cat">提示词工程</span>
+                        </div>
+                    </div>
+                    <p class="tool-desc">上传任意图片，AI 从九大维度智能拆解，一键反推高质量绘图提示词；支持 GPT 生图 / Midjourney / Stable Diffusion / Flux 多格式输出，可直接复制使用。</p>
+                    <div class="tool-foot">
+                        <div class="tool-tags">
+                            <span class="tool-tag">图片理解</span>
+                            <span class="tool-tag">多格式</span>
+                            <span class="tool-tag">流式输出</span>
+                        </div>
+                        <span class="tool-go">立即使用 →</span>
+                    </div>
+                </a>
+
+                <a href="creative-tools.html" class="tool-card">
+                    <div class="tool-top">
+                        <div class="tool-icon">🎨</div>
+                        <div class="tool-title">
+                            <h3>在线绘图 / 视频专区</h3>
+                            <span class="tool-cat">AI 生成</span>
+                        </div>
+                    </div>
+                    <p class="tool-desc">输入 API Key 即可在线生成 AI 图片与视频，支持 GPT-Image-2、Nano Banana 2、Midjourney V7、Sora 2、可灵 3.0 等最新模型，Key 仅保存在本地浏览器。</p>
+                    <div class="tool-foot">
+                        <div class="tool-tags">
+                            <span class="tool-tag">AI绘图</span>
+                            <span class="tool-tag">AI视频</span>
+                            <span class="tool-tag">在线生成</span>
+                        </div>
+                        <span class="tool-go">立即使用 →</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="coming-strip">
+            <strong>🚧 更多工具开发中</strong> —— AI 文案生成、长文翻译、代码助手等正在路上，欢迎去
+            <a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;font-weight:600;">GitHub</a>
+            提需求。
+        </div>
+
     </section>
 
     <!-- Info -->

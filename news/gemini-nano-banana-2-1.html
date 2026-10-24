@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini Nano Banana 2.1上线：AI绘图API新基准，效率与一致性双升级</title>
+<meta name="description" content="Google于10月6日发布Nano Banana 2.1，被官方列为图像生成与对话式编辑的首选高效模型。本文整理模型特性、API调用方式与绘图中转站选择建议。">
+<meta name="keywords" content="Nano Banana 2.1,Gemini绘图,AI绘图API,图像生成,对话式改图,绘图中转站">
+<meta name="author" content="API排行榜">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://api-rank-lake.vercel.app/news/gemini-nano-banana-2-1.html">
+<meta property="og:title" content="Gemini Nano Banana 2.1上线：AI绘图API新基准，效率与一致性双升级">
+<meta property="og:description" content="Google于10月6日发布Nano Banana 2.1，被官方列为图像生成与对话式编辑的首选高效模型。本文整理模型特性、API调用方式与绘图中转站选择建议。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://api-rank-lake.vercel.app/news/gemini-nano-banana-2-1.html">
+<meta property="og:site_name" content="API排行榜">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Gemini Nano Banana 2.1上线：AI绘图API新基准，效率与一致性双升级","datePublished":"2026-10-06","dateModified":"2026-10-06","author":{"@type":"Organization","name":"API排行榜"},"description":"Google于10月6日发布Nano Banana 2.1，被官方列为图像生成与对话式编辑的首选高效模型。本文整理模型特性、API调用方式与绘图中转站选择建议。","publisher":{"@type":"Organization","name":"API排行榜"},"mainEntityOfPage":"https://api-rank-lake.vercel.app/news/gemini-nano-banana-2-1.html"}
+</script>
+<link rel="icon" type="image/jpeg" href="../favicon.jpg">
+<script>(function(){var t=localStorage.getItem('theme')||'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg-primary:#FAFAFA;--bg-card:#FFFFFF;--border:#E4E4E7;--text-primary:#18181B;--text-secondary:#71717A;--text-muted:#A1A1AA;--accent:#4A90D9;--accent-50:#EFF6FF;--accent-100:#DBEAFE;--bg-hover:rgba(74,144,217,0.08);--navbar-bg:rgba(255,255,255,0.72);--shadow-sm:0 1px 2px rgba(24,24,27,0.04);--shadow-md:0 4px 12px rgba(24,24,27,0.06);--radius-sm:8px;--radius-md:12px;--radius-lg:16px}
+[data-theme="dark"]{--bg-primary:#09090B;--bg-card:#18181B;--border:#27272A;--text-primary:#FAFAFA;--text-secondary:#A1A1AA;--text-muted:#71717A;--accent:#60A5FA;--accent-50:rgba(74,144,217,0.1);--bg-hover:rgba(74,144,217,0.12);--navbar-bg:rgba(9,9,11,0.72);--shadow-sm:0 1px 2px rgba(0,0,0,0.3);--shadow-md:0 4px 12px rgba(0,0,0,0.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.navbar{position:sticky;top:0;z-index:1000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--navbar-bg);border-bottom:1px solid var(--border);padding:12px 0}
+.navbar .container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:8px}
+.logo-text{font-size:20px;font-weight:800;color:var(--text-primary)}
+.logo-text span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{color:var(--text-primary);font-size:14px;font-weight:500;padding:8px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--accent);background:var(--accent-50)}
+.nav-links a.active{background:var(--accent-50);color:var(--accent);font-weight:600}
+.nav-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--accent-50);color:var(--accent)}
+@media(max-width:900px){#navLinks li.hide-m{display:none}}
+.theme-toggle{background:none;border:1px solid var(--border);cursor:pointer;padding:6px 10px;border-radius:8px;font-size:16px}
+.article-wrap{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+.article-tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--accent-50);padding:4px 12px;border-radius:10px;font-weight:600;margin-bottom:16px}
+.article-date{font-size:14px;color:var(--text-muted);margin-bottom:12px}
+.article-wrap h1{font-size:36px;font-weight:800;letter-spacing:-.5px;line-height:1.3;margin-bottom:24px}
+.article-body{font-size:16px;color:var(--text-primary)}
+.article-body h2{font-size:24px;font-weight:700;margin:36px 0 16px;line-height:1.4}
+.article-body h3{font-size:19px;font-weight:600;margin:24px 0 12px}
+.article-body p{margin-bottom:16px;color:var(--text-secondary);line-height:1.9}
+.article-body ul,.article-body ol{margin:12px 0 16px 24px;color:var(--text-secondary);line-height:1.9}
+.article-body li{margin-bottom:8px}
+.article-body code{background:var(--accent-50);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'JetBrains Mono',monospace}
+.article-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.article-body th,.article-body td{border:1px solid var(--border);padding:10px 12px;text-align:left;color:var(--text-secondary)}
+.article-body th{background:var(--accent-50);color:var(--text-primary);font-weight:600}
+.related{margin-top:60px;padding-top:32px;border-top:1px solid var(--border)}
+.related h3{font-size:18px;font-weight:700;margin-bottom:16px}
+.related a{display:block;padding:12px 0;border-bottom:1px solid var(--border);color:var(--text-secondary);transition:color .2s}
+.related a:hover{color:var(--accent)}
+.back-link{display:inline-block;margin-top:32px;color:var(--text-secondary);font-size:14px}
+.back-link:hover{color:var(--accent)}
+@media(max-width:768px){.nav-links a{padding:6px 8px;font-size:13px}.article-wrap h1{font-size:26px}.article-wrap{padding:24px 16px 60px}.article-body h2{font-size:20px}}</style>
+</head>
+<body>
+<script src="../assets/notice.js"></script>
+<nav class="navbar"><div class="container">
+<a href="../index.html" class="logo"><img src="../favicon.jpg" alt="API排行榜"><span class="logo-text">API<span>排行榜</span></span></a>
+<ul class="nav-links" id="navLinks"><li><a href="../index.html#ranking">排行榜</a></li><li class="hide-m"><a href="../tools.html">🔥 实用工具</a></li><li class="hide-m"><a href="../index.html">🎯 快速选站（适合你）</a></li><li><a href="../index.html#guide">选站指南</a></li><li><a href="../about.html">关于本站</a></li><li><a href="../news.html" class="active">相关新闻</a></li><li class="hide-m"><span class="nav-badge">实时更新</span></li><li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li><li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex-shrink:0;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li></ul>
+</div></nav>
+
+<div class="article-wrap">
+<span class="article-tag">模型发布</span>
+<div class="article-date">2026-10-06</div>
+<h1>Gemini Nano Banana 2.1上线：AI绘图API新基准，效率与一致性双升级</h1>
+<div class="article-body">
+
+<p>Google 于 10 月 6 日发布 <strong>Gemini Nano Banana 2.1</strong>，作为 Nano Banana 2 的迭代版本，已被 Gemini API 官方文档列为<strong>图像生成与对话式编辑的首选高效模型</strong>。</p>
+
+<h2>一、2.1 升级了什么</h2>
+<ul>
+<li><strong>生成效率</strong>：出图速度与单位成本进一步优化，适合批量生产场景；</li>
+<li><strong>对话式编辑</strong>：多轮改图的角色与风格一致性显著增强，改十轮不走样；</li>
+<li><strong>指令跟随</strong>：对中文描述、版式细节（文字、排版）的还原度提升。</li>
+</ul>
+
+<h2>二、API 怎么接</h2>
+<p>Nano Banana 2.1 走 Gemini 系 API 通道，也兼容 OpenAI 图像接口格式的中转封装。开发流程：创建 Key → 选择模型 → 提交生成任务 → 拉取结果。对话式编辑把上一轮图像与修改指令一起传入即可。</p>
+
+<h2>三、在哪个通道调用最划算</h2>
+<ol>
+<li>官方 API：质量最稳，按量计费，适合生产环境；</li>
+<li>中转站：通常有折扣，且可同时调用 Midjourney、GPT-Image-2 等其他绘图模型做对比；</li>
+<li>在线工具：不想写代码，可以直接用本站<a href="../tools.html">实用工具</a>里的在线绘图/视频专区，填 Key 即用。</li>
+</ol>
+
+<p>绘图与视频 API 的任务类型、异步轮询机制与排队问题的完整说明，见<a href="image-video-api-relay.html">AI 绘图与视频生成 API 接入指南</a>。</p>
+
+</div>
+
+<div class="related">
+<h3>相关文章</h3>
+<a href="image-video-api-relay.html">AI绘图与视频生成API接入指南：中转站怎么用</a>
+<a href="gemini-relay-guide.html">Gemini API中转站使用教程：免费额度与接入方法</a>
+<a href="api-relay-pricing.html">API中转站价格对比：按量付费与套餐订阅哪个更划算</a>
+</div>
+<a href="../news.html" class="back-link">← 返回新闻列表</a>
+</div>
+
+<script>
+function toggleTheme(){var h=document.documentElement;if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');localStorage.setItem('theme','dark')}updateThemeIcon()}
+function updateThemeIcon(){var b=document.getElementById('themeToggle');if(b)b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙'}
+updateThemeIcon();
+</script>
+</body>
+</html>

@@ -455,6 +455,13 @@
 
     // 新闻数据（每条对应一个独立文章页面，利于SEO收录）
     var newsData = [
+        { title: "Kimi K3.1 Pro发布：3万亿参数开源模型，API接入指南与中转建议", tag: "模型发布", date: "2026-10-24", featured: true, summary: "月之暗面发布Kimi K3.1 Pro，3万亿参数、100万Token上下文，蝉联全球参数规模最大的开源模型，价格约为GPT-6 Astra的五分之一。本文解读模型亮点、API接入方式与中转站选择建议。", url: "news/kimi-k3-open-source.html" },
+        { title: "Uber向3万员工全面部署ChatGPT Work：企业AI办公进入规模化时代", tag: "行业动态", date: "2026-10-23", summary: "OpenAI宣布Uber将ChatGPT Work从千人试点推广至全球逾3万名员工，可连接Google Drive、Gmail、Calendar与Slack。企业规模化落地给团队API管理与成本控制带来哪些启示。", url: "news/uber-chatgpt-work.html" },
+        { title: "Claude Models登陆Google Cloud：Anthropic托管接入与计费变化解读", tag: "行业动态", date: "2026-10-22", featured: true, summary: "Anthropic在Google Cloud推出Claude Models（Anthropic managed），由Google Cloud IAM管控访问、Marketplace统一结算，Opus 5.5还支持快速模式。本文解读企业接入新路径与计费变化。", url: "news/claude-on-google-cloud.html" },
+        { title: "Claude写下1.8亿行证明：AI编程进入形式化验证时代", tag: "技术前沿", date: "2026-10-15", summary: "Anthropic前沿红队联合Theorem Labs，用Claude在RISC-V汇编层完成形式化验证，数周内覆盖123个开源库、揪出人工万次测试漏掉的Bug。这对AI编程工具用户意味着什么。", url: "news/ai-formal-verification.html" },
+        { title: "10月新模型扎堆：Gemini 4 Argon与Claude Haiku 5.5怎么选", tag: "模型发布", date: "2026-10-09", summary: "Gemini 4 Argon、Claude Haiku 5.5、Nano Banana 2.1、Kimi K3.1 Pro相继发布，10月堪称模型爱好者过年。本文按编程、绘图、长文本等场景帮你选型，并给出中转站接入要点。", url: "news/october-new-models-2026.html" },
+        { title: "GPT-6全量开放：Sol与Luna十月更新，免费可用对中转市场意味着什么", tag: "模型发布", date: "2026-10-07", featured: true, summary: "OpenAI将GPT-6推向全球所有ChatGPT用户（含免费版），配备智能界面与可视化交互。本文解读Sol/Luna双版本差异、新能力，以及对API中转价格与选站策略的影响。", url: "news/gpt6-october-update.html" },
+        { title: "Gemini Nano Banana 2.1上线：AI绘图API新基准，效率与一致性双升级", tag: "模型发布", date: "2026-10-06", summary: "Google于10月6日发布Nano Banana 2.1，被官方列为图像生成与对话式编辑的首选高效模型。本文整理模型特性、API调用方式与绘图中转站选择建议。", url: "news/gemini-nano-banana-2-1.html" },
         { title: "什么是API中转站？核心作用与底层原理一次性讲透", tag: "入门指南", date: "2026-10-14", featured: true, summary: "API中转站是介于开发者与AI模型厂商之间的中间代理平台，通过统一接口格式聚合、转发和封装各家大模型API，解决多模型接入、成本控制与网络访问等问题。", url: "news/what-is-api-relay.html" },
         { title: "AI API中转站靠谱吗？风险识别与避坑要点全解析", tag: "安全指南", date: "2026-10-13", featured: true, summary: "API中转站市场鱼龙混杂，灰产风险极高。本文从法律合规、数据安全、资金风险三个维度，教你识别正规中转站并避开常见陷阱。", url: "news/api-relay-safety.html" },
         { title: "2026年API中转站推荐：高性价比平台对比评测", tag: "推荐评测", date: "2026-10-12", featured: true, summary: "精选10款主流AI API中转站，从模型覆盖、价格、稳定性、速度、客服五个维度横向对比，帮你找到最适合的中转服务。", url: "news/best-api-relay-2026.html" },

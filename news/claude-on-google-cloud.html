@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Models登陆Google Cloud：Anthropic托管接入与计费变化解读</title>
+<meta name="description" content="Anthropic在Google Cloud推出Claude Models（Anthropic managed），由Google Cloud IAM管控访问、Marketplace统一结算，Opus 5.5还支持快速模式。本文解读企业接入新路径与计费变化。">
+<meta name="keywords" content="Claude Google Cloud,Anthropic managed,Claude API,Opus 5.5,企业AI接入,云厂商大模型">
+<meta name="author" content="API排行榜">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://api-rank-lake.vercel.app/news/claude-on-google-cloud.html">
+<meta property="og:title" content="Claude Models登陆Google Cloud：Anthropic托管接入与计费变化解读">
+<meta property="og:description" content="Anthropic在Google Cloud推出Claude Models（Anthropic managed），由Google Cloud IAM管控访问、Marketplace统一结算，Opus 5.5还支持快速模式。本文解读企业接入新路径与计费变化。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://api-rank-lake.vercel.app/news/claude-on-google-cloud.html">
+<meta property="og:site_name" content="API排行榜">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Claude Models登陆Google Cloud：Anthropic托管接入与计费变化解读","datePublished":"2026-10-22","dateModified":"2026-10-22","author":{"@type":"Organization","name":"API排行榜"},"description":"Anthropic在Google Cloud推出Claude Models（Anthropic managed），由Google Cloud IAM管控访问、Marketplace统一结算，Opus 5.5还支持快速模式。本文解读企业接入新路径与计费变化。","publisher":{"@type":"Organization","name":"API排行榜"},"mainEntityOfPage":"https://api-rank-lake.vercel.app/news/claude-on-google-cloud.html"}
+</script>
+<link rel="icon" type="image/jpeg" href="../favicon.jpg">
+<script>(function(){var t=localStorage.getItem('theme')||'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg-primary:#FAFAFA;--bg-card:#FFFFFF;--border:#E4E4E7;--text-primary:#18181B;--text-secondary:#71717A;--text-muted:#A1A1AA;--accent:#4A90D9;--accent-50:#EFF6FF;--accent-100:#DBEAFE;--bg-hover:rgba(74,144,217,0.08);--navbar-bg:rgba(255,255,255,0.72);--shadow-sm:0 1px 2px rgba(24,24,27,0.04);--shadow-md:0 4px 12px rgba(24,24,27,0.06);--radius-sm:8px;--radius-md:12px;--radius-lg:16px}
+[data-theme="dark"]{--bg-primary:#09090B;--bg-card:#18181B;--border:#27272A;--text-primary:#FAFAFA;--text-secondary:#A1A1AA;--text-muted:#71717A;--accent:#60A5FA;--accent-50:rgba(74,144,217,0.1);--bg-hover:rgba(74,144,217,0.12);--navbar-bg:rgba(9,9,11,0.72);--shadow-sm:0 1px 2px rgba(0,0,0,0.3);--shadow-md:0 4px 12px rgba(0,0,0,0.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.navbar{position:sticky;top:0;z-index:1000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--navbar-bg);border-bottom:1px solid var(--border);padding:12px 0}
+.navbar .container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:8px}
+.logo-text{font-size:20px;font-weight:800;color:var(--text-primary)}
+.logo-text span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{color:var(--text-primary);font-size:14px;font-weight:500;padding:8px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--accent);background:var(--accent-50)}
+.nav-links a.active{background:var(--accent-50);color:var(--accent);font-weight:600}
+.nav-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--accent-50);color:var(--accent)}
+@media(max-width:900px){#navLinks li.hide-m{display:none}}
+.theme-toggle{background:none;border:1px solid var(--border);cursor:pointer;padding:6px 10px;border-radius:8px;font-size:16px}
+.article-wrap{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+.article-tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--accent-50);padding:4px 12px;border-radius:10px;font-weight:600;margin-bottom:16px}
+.article-date{font-size:14px;color:var(--text-muted);margin-bottom:12px}
+.article-wrap h1{font-size:36px;font-weight:800;letter-spacing:-.5px;line-height:1.3;margin-bottom:24px}
+.article-body{font-size:16px;color:var(--text-primary)}
+.article-body h2{font-size:24px;font-weight:700;margin:36px 0 16px;line-height:1.4}
+.article-body h3{font-size:19px;font-weight:600;margin:24px 0 12px}
+.article-body p{margin-bottom:16px;color:var(--text-secondary);line-height:1.9}
+.article-body ul,.article-body ol{margin:12px 0 16px 24px;color:var(--text-secondary);line-height:1.9}
+.article-body li{margin-bottom:8px}
+.article-body code{background:var(--accent-50);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'JetBrains Mono',monospace}
+.article-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.article-body th,.article-body td{border:1px solid var(--border);padding:10px 12px;text-align:left;color:var(--text-secondary)}
+.article-body th{background:var(--accent-50);color:var(--text-primary);font-weight:600}
+.related{margin-top:60px;padding-top:32px;border-top:1px solid var(--border)}
+.related h3{font-size:18px;font-weight:700;margin-bottom:16px}
+.related a{display:block;padding:12px 0;border-bottom:1px solid var(--border);color:var(--text-secondary);transition:color .2s}
+.related a:hover{color:var(--accent)}
+.back-link{display:inline-block;margin-top:32px;color:var(--text-secondary);font-size:14px}
+.back-link:hover{color:var(--accent)}
+@media(max-width:768px){.nav-links a{padding:6px 8px;font-size:13px}.article-wrap h1{font-size:26px}.article-wrap{padding:24px 16px 60px}.article-body h2{font-size:20px}}</style>
+</head>
+<body>
+<script src="../assets/notice.js"></script>
+<nav class="navbar"><div class="container">
+<a href="../index.html" class="logo"><img src="../favicon.jpg" alt="API排行榜"><span class="logo-text">API<span>排行榜</span></span></a>
+<ul class="nav-links" id="navLinks"><li><a href="../index.html#ranking">排行榜</a></li><li class="hide-m"><a href="../tools.html">🔥 实用工具</a></li><li class="hide-m"><a href="../index.html">🎯 快速选站（适合你）</a></li><li><a href="../index.html#guide">选站指南</a></li><li><a href="../about.html">关于本站</a></li><li><a href="../news.html" class="active">相关新闻</a></li><li class="hide-m"><span class="nav-badge">实时更新</span></li><li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="切换深色/浅色模式">🌙</button></li><li><a href="https://github.com/Chenking-maker/api-rank" target="_blank" rel="noopener noreferrer" title="GitHub仓库" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex-shrink:0;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-primary);"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></li></ul>
+</div></nav>
+
+<div class="article-wrap">
+<span class="article-tag">行业动态</span>
+<div class="article-date">2026-10-22</div>
+<h1>Claude Models登陆Google Cloud：Anthropic托管接入与计费变化解读</h1>
+<div class="article-body">
+
+<p>10月22日，Anthropic 正式在 Google Cloud 推出 <strong>Claude Models（Anthropic managed）</strong>：由 Anthropic 运营的 Claude API，直接接入你的 Google Cloud 项目——访问由 Google Cloud IAM 管控，费用通过 Google Cloud Marketplace 统一结算。同日，Claude Opus 5.5 在该通道上支持了"快速模式"。</p>
+
+<h2>一、这次发布改变了什么</h2>
+<p>此前企业用 Claude 要么直连 Anthropic 官方 API，要么走云厂商的模型托管（Bedrock/Vertex）。"Anthropic managed on Google Cloud" 是一条中间路线：<strong>模型运营权在 Anthropic，但身份、网络与账单都在 Google Cloud 体系内</strong>。</p>
+
+<h2>二、对企业的价值</h2>
+<ul>
+<li>已有 Google Cloud 合约的企业可直接用承诺消费抵扣模型费用；</li>
+<li>IAM 权限体系与现有云安全策略无缝衔接，无需额外账号体系；</li>
+<li>Marketplace 账单统一，财务对账成本大幅下降。</li>
+</ul>
+
+<h2>三、个人开发者该关心什么</h2>
+<p>云厂商通道主要服务企业合规场景，个人开发者的性价比选择依然是中转站或官方按量付费。两条路径的差异可参考<a href="api-relay-vs-official.html">API中转站和官方API的区别</a>；如果团队正在做技术选型，<a href="coding-agent-api-guide.html">AI 编程工具接入指南</a>给出了更落地的配置方案。</p>
+
+<p>大模型分销渠道越来越多元：官方直连、云托管、中转站各有适用场景，关键是按"合规要求 + 用量规模 + 成本预算"三要素做决策。</p>
+
+</div>
+
+<div class="related">
+<h3>相关文章</h3>
+<a href="api-relay-vs-official.html">API中转站和官方API有什么区别？该选哪个</a>
+<a href="coding-agent-api-guide.html">AI编程工具（Cursor/Codex）如何接入API中转站</a>
+<a href="api-relay-team-management.html">团队版API中转站怎么选？成员与用量管理指南</a>
+</div>
+<a href="../news.html" class="back-link">← 返回新闻列表</a>
+</div>
+
+<script>
+function toggleTheme(){var h=document.documentElement;if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');localStorage.setItem('theme','dark')}updateThemeIcon()}
+function updateThemeIcon(){var b=document.getElementById('themeToggle');if(b)b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙'}
+updateThemeIcon();
+</script>
+</body>
+</html>
