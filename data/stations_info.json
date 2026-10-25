@@ -6260,5 +6260,28 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://big-model.smart-agi.com/",
+        "domain": "big-model.smart-agi.com",
+        "name": "Twinkle Model",
+        "description": "基于 sub2api 的 OpenAI 兼容中转，渠道为官方订阅。GPT 0.1/0.15/0.2/0.25 倍分组，Claude Kiro 高缓 0.15、CC-MAX 满血 1 倍，Grok 0.15，GLM/DeepSeek/Kimi 1折/6折，另有视频与生图（0.1元/次）。支付宝 ¥1 起充，可开发票。",
+        "models": [
+            "gpt",
+            "claude",
+            "gemini",
+            "grok",
+            "deepseek",
+            "glm",
+            "kimi"
+        ],
+        "features": [
+            "multi",
+            "cheap"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "alive": true,
+        "last_check": "2026-10-25"
     }
 ]
