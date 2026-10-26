@@ -186,50 +186,52 @@
         "added": "2026-10-13"
     },
     {
-        "url": "https://moacode.org/register?ref=king308",
-        "domain": "moacode.org",
-        "name": "moacode",
-        "description": "一个Key连接所有编程Agent。支持Claude Code、Codex CLI、Gemini CLI统一接入。智能路由容灾，Token级透明计费，无加价无最低消费。",
+        "url": "https://a6api.com/?auth=register&aff=AUyB",
+        "domain": "a6api.com",
+        "name": "a6api",
+        "description": "a6api 是下一代 AI 聚合路由器，主打 Token 交易源头市场：聚合全球优质大模型渠道，支持 Token 批量供销、多维度渠道筛选、毫秒级自适应价格路由与自动容灾切换。官方宣称接入 200+ 主流模型、14ms 边缘 TTFT 延迟、3000+ 供货渠道、10x 保真担保。适合有批量采购、分销商或高并发场景的团队使用。",
         "models": [
             "claude",
             "gpt",
-            "gemini"
+            "gemini",
+            "deepseek"
         ],
         "features": [
-            "cheap",
+            "multi",
+            "enterprise",
             "stable"
         ],
-        "price": "low",
+        "price": "unknown",
         "free_amount": "",
-        "score": 9.79,
-        "response_time": 1,
+        "score": 9.75,
+        "response_time": 0.8,
         "alive": true,
-        "last_check": "2026-10-13",
+        "last_check": "2026-10-24",
         "check_count": 1,
         "display_tags": [
-            "编程Agent",
-            "智能路由",
-            "透明计费"
+            "Token源头市场",
+            "多维度路由",
+            "10x保真"
         ],
         "display_metrics": [
             {
-                "label": "支持",
-                "value": "Claude Code",
-                "cls": "accent"
-            },
-            {
-                "label": "特色",
-                "value": "无最低消费",
+                "label": "模型",
+                "value": "200+",
                 "cls": "green"
             },
             {
-                "label": "容灾",
-                "value": "智能路由",
+                "label": "供货",
+                "value": "3000+渠道",
+                "cls": "accent"
+            },
+            {
+                "label": "延迟",
+                "value": "14ms TTFT",
                 "cls": ""
             }
         ],
         "likes": 0,
-        "added": "2026-10-13"
+        "added": "2026-10-26"
     },
     {
         "url": "https://rightapi.ai/register?aff=56503380",
@@ -837,6 +839,53 @@
         "likes": 0
     },
     {
+        "url": "https://big-model.smart-agi.com/register?aff=HC3EJHHKKCMG",
+        "domain": "big-model.smart-agi.com",
+        "name": "Twinkle Model",
+        "description": "Twinkle Model 是面向开发者与团队的 AI API 网关平台：一个 Key 统一接入 Claude、GPT、Gemini 等多家模型服务，支持统一端点调用、自动智能路由与上游账号故障时的无缝容灾切换，按 Token 用量计费并提供透明的团队用量看板。适合不想管理多份订阅、希望以单一入口承接多模型能力的个人开发者与中小团队。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "multi",
+            "stable",
+            "docs"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.62,
+        "response_time": 0.9,
+        "alive": true,
+        "last_check": "2026-10-24",
+        "check_count": 1,
+        "display_tags": [
+            "统一Key",
+            "智能路由",
+            "自动容灾"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "OpenAI兼容",
+                "cls": "green"
+            },
+            {
+                "label": "路由",
+                "value": "自动容灾",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量+限额",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-26"
+    },
+    {
         "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
         "domain": "tokenrhythm.studio",
         "name": "基元律动 (TokenRhythm)",
@@ -880,6 +929,54 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://aimover.cc/register?aff=4MBD6JFQHZCT",
+        "domain": "aimover.cc",
+        "name": "AI Mover",
+        "description": "AI Mover 以「守护隐私，官方保真」为定位：一个 API 入口统一连接 OpenAI、Claude、xAI Grok 与 Google Gemini，支持 Codex 满血 Pro、Vertex 官逆等多种计费分组，OpenAI 兼容接口调用，全程 HTTPS 加密、密钥独立可控、对话不留存、调用明细可查。控制台展示季度接口可用率 99.9%，适合对数据隐私有明确要求的团队与个人。",
+        "models": [
+            "gpt",
+            "claude",
+            "gemini",
+            "grok"
+        ],
+        "features": [
+            "multi",
+            "stable",
+            "enterprise"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.6,
+        "response_time": 0.75,
+        "alive": true,
+        "last_check": "2026-10-24",
+        "check_count": 1,
+        "display_tags": [
+            "隐私优先",
+            "99.9%可用率",
+            "多计费分组"
+        ],
+        "display_metrics": [
+            {
+                "label": "可用率",
+                "value": "99.9%/季度",
+                "cls": "green"
+            },
+            {
+                "label": "分组",
+                "value": "Codex满血Pro等",
+                "cls": "accent"
+            },
+            {
+                "label": "隐私",
+                "value": "对话不留存",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-26"
     },
     {
         "url": "https://api2.laozhang.ai/register/?aff_code=NkYN",
@@ -1664,6 +1761,52 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://moacode.org/register?ref=king308",
+        "domain": "moacode.org",
+        "name": "moacode",
+        "description": "一个Key连接所有编程Agent。支持Claude Code、Codex CLI、Gemini CLI统一接入。智能路由容灾，Token级透明计费，无加价无最低消费。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.33,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "编程Agent",
+            "智能路由",
+            "透明计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "支持",
+                "value": "Claude Code",
+                "cls": "accent"
+            },
+            {
+                "label": "特色",
+                "value": "无最低消费",
+                "cls": "green"
+            },
+            {
+                "label": "容灾",
+                "value": "智能路由",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-13"
     },
     {
         "url": "https://aigocode.com/invite/FY2CMDBZ",
