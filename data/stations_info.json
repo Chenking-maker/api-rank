@@ -7516,5 +7516,27 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+    {
+        "url": "https://103.38.83.69.sslip.io/",
+        "domain": "103.38.83.69.sslip.io",
+        "name": "sky",
+        "description": "面向 AI 编程与应用开发的模型 API 中转站，公开模型列表包含 GPT、Gemini、Grok，提供模型定价页和中文 Codex 接入指南，覆盖 Windows、macOS 与 Linux/WSL。具体型号与价格以站点实时信息为准。",
+        "models": [
+            "gpt",
+            "gemini",
+            "grok"
+        ],
+        "features": [
+            "multi"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "alive": true,
+        "display_tags": [
+            "多模型",
+            "公开定价",
+            "中文接入指南"
+        ]
     }
 ]
