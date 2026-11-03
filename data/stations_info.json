@@ -7621,5 +7621,33 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+    {
+        "url": "https://www.codebyai.net",
+        "domain": "codebyai.net",
+        "name": "Code By AI",
+        "description": "面向 AI 编码工具的 API 网关，一个 Key 调用 Claude、GPT/Codex、Gemini（官网列出 21 个模型），兼容 Claude Code、Codex CLI、Gemini CLI 等；按 token 计费，无订阅，最低充值 US$3。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "codex"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "code"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 0,
+        "response_time": 0,
+        "alive": true,
+        "last_check": "2026-11-03",
+        "check_count": 0,
+        "display_tags": [],
+        "display_metrics": [],
+        "likes": 0,
+        "added": "2026-11-03"
     }
 ]
