@@ -10262,8 +10262,9 @@
             }
             
             // 检查名称是否就是域名（如 "demo.sub2api.org"、"yunwu.apifox.cn"）
-            // 规则：名称包含"."且全是小写字母、数字、连字符，没有中文字符
-            if (name && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(name) && !/[\u4e00-\u9fff]/.test(name)) {
+            // 规则：名称包含"."且全是小写字母、数字、连字符，没有中文字符，
+            // 且描述缺失或过短（有完整人工介绍的精编站点不算脏数据）
+            if (name && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(name) && !/[\u4e00-\u9fff]/.test(name) && desc.length < 20) {
                 // 名称看起来像域名，检查是否与URL域名一致
                 const urlDomain = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '').toLowerCase();
                 if (name.toLowerCase() === urlDomain || urlDomain.includes(name.toLowerCase())) {
