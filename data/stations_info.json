@@ -986,7 +986,7 @@
     {
         "url": "https://api.foo/sign-up?aff=GG7D",
         "domain": "api.foo",
-        "name": "api.foo",
+        "name": "api.foo（统一AI网关）",
         "description": "api.foo 是统一 API 网关，一个 Key 直连 100+ 顶尖模型——GPT-6.1 Sol/Terra/Astra、Claude Opus 5.5 / Sonnet / Haiku / Fable 5.1、Gemini 4 Argon、Grok 4.7、DeepSeek V4 Pro、Kimi K3、GLM 5.3、MiniMax M3 全系列覆盖。30 天 SLA 99.9%，自动负载均衡 + 上游故障秒级容灾切换，平均示例延迟 142ms；官方满血不稀释、不降智，原生支持 Prompt Caching 进一步降本，多协议同时支持 OpenAI 兼容端点、Anthropic 与 Gemini 原生格式。接入文档齐全，Cherry Studio、CC Switch、Claude Code、Codex 均可一键配置。定价人民币直接充、¥1 = ¥1，最低仅 ¥5 就能起充零压力；新用户通过邀请链接注册后首充多送 5%，无月费、余额永不过期，适合个人开发者和中小团队小额试水或长期稳定调用。",
         "models": [
             "claude",
