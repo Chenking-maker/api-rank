@@ -98,6 +98,57 @@
         "likes": 0
     },
     {
+        "url": "https://synterolink.com/register?aff=SMKPQR5Y57Q3",
+        "domain": "synterolink.com",
+        "name": "synterolink",
+        "description": "SynteroLink 是面向全球的 AI API 网关：一个 API Key、一个标准端点即可调用 OpenAI、Anthropic、Google、xAI 等已接入的模型服务，按用量统一结算与管控。站点公开实时模型目录（当前 29 个模型、3 家供应商，含 Claude Fable 5、Opus 4.x/5、Sonnet 5、GPT-5.6 Sol/Terra、GPT-6 Astra、GLM-5.3 等），支持多供应商智能路由、密钥隔离、额度控制与用量追踪；采用 OpenAI 兼容的 /v1/responses 接口，查 Key 用量、设配额、管权限都在同一控制台完成，接入成本低。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "glm",
+            "multi"
+        ],
+        "features": [
+            "multi",
+            "stable",
+            "docs",
+            "smart-route"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.84,
+        "response_time": 0.6,
+        "alive": true,
+        "last_check": "2026-11-06",
+        "check_count": 1,
+        "display_tags": [
+            "统一端点",
+            "29模型·3供应商",
+            "用量追踪"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "29+",
+                "cls": "green"
+            },
+            {
+                "label": "协议",
+                "value": "OpenAI兼容",
+                "cls": "accent"
+            },
+            {
+                "label": "管控",
+                "value": "智能路由·密钥隔离",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-06"
+    },
+    {
         "url": "https://www.packyapi.com/register?aff=zrXb",
         "domain": "packyapi.com",
         "name": "派客代码 (PackyCode)",
@@ -143,52 +194,6 @@
             }
         ],
         "likes": 0
-    },
-    {
-        "url": "https://apinebula.ai/0gDuPn",
-        "domain": "apinebula.ai",
-        "name": "apinebula",
-        "description": "面向全球开发者的AI API网关，支持支付宝充值，统一接入当前开放的主流AI模型。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "fast"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.81,
-        "response_time": 1,
-        "alive": true,
-        "last_check": "2026-10-13",
-        "check_count": 1,
-        "display_tags": [
-            "全球网关",
-            "支付宝充值",
-            "多模型"
-        ],
-        "display_metrics": [
-            {
-                "label": "支付",
-                "value": "支付宝",
-                "cls": "accent"
-            },
-            {
-                "label": "定位",
-                "value": "全球开发者",
-                "cls": "green"
-            },
-            {
-                "label": "特色",
-                "value": "统一接入",
-                "cls": ""
-            }
-        ],
-        "likes": 0,
-        "added": "2026-10-13"
     },
     {
         "url": "https://a6api.com/?auth=register&aff=AUyB",
@@ -562,6 +567,52 @@
         "likes": 0
     },
     {
+        "url": "https://apinebula.ai/0gDuPn",
+        "domain": "apinebula.ai",
+        "name": "apinebula",
+        "description": "面向全球开发者的AI API网关，支持支付宝充值，统一接入当前开放的主流AI模型。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.67,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "全球网关",
+            "支付宝充值",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "支付",
+                "value": "支付宝",
+                "cls": "accent"
+            },
+            {
+                "label": "定位",
+                "value": "全球开发者",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "统一接入",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-13"
+    },
+    {
         "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
         "domain": "infistar.ai",
         "name": "无限星河AI",
@@ -795,6 +846,59 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://www.aiwts.com/sign-up?aff=SDHV",
+        "domain": "aiwts.com",
+        "name": "维塔斯AI",
+        "description": "维塔斯 AI（Vitas API）主打企业级稳定：官方 Key 独立池直连，多通道容灾 + 智能负载均衡，通道异常秒级自动切换，承诺 SLA 99.99% 并写入正式合同，符合条件按约赔付。平台公布并发峰值 2.0M、调用延迟低至 20ms（CN2 GIA 专线），全链路 AES-256 加密、通过 ISO27001 认证、审计级日志可溯源。一个 Key 调用 200+ 主流模型（GPT-6 Sol/Astra/Luna、Claude Opus 5.5、Gemini 3.x、DeepSeek V4 Pro、GLM-5.3、Kimi K3、Qwen3.8、Grok 4.7），OpenAI 兼容、三步接入最快 2 分钟；支持子账号与 IP 白名单、对公转账与增值税专票、未消耗余额无理由退款，7×24 小时值守群随时响应。",
+        "models": [
+            "gpt",
+            "claude",
+            "gemini",
+            "deepseek",
+            "glm",
+            "kimi",
+            "qwen",
+            "grok"
+        ],
+        "features": [
+            "enterprise",
+            "stable",
+            "multi",
+            "docs"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.64,
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-11-06",
+        "check_count": 1,
+        "display_tags": [
+            "SLA99.99%",
+            "7×24值守",
+            "专票·可退款"
+        ],
+        "display_metrics": [
+            {
+                "label": "SLA",
+                "value": "99.99%",
+                "cls": "green"
+            },
+            {
+                "label": "模型",
+                "value": "200+",
+                "cls": "accent"
+            },
+            {
+                "label": "性能",
+                "value": "20ms·2.0M并发",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-06"
     },
     {
         "url": "https://cloud.siliconflow.cn/i/E5yUpjCP",
@@ -1037,6 +1141,57 @@
         "added": "2026-11-03"
     },
     {
+        "url": "https://mirgo.top/sign-up?aff=RJVT",
+        "domain": "mirgo.top",
+        "name": "米尔戈 Mirgo",
+        "description": "米尔戈 Mirgo 是以「星系」视觉打造的模型 API 网关，主张把复杂留在身后：独立密钥、多协议接入、调用日志与用量账单全部可追溯，一个标准端点即可调用已上架模型。官方公开与主流竞品的价格对比——国产模型全面更低（DeepSeek 系便宜 50%+、GLM 系约 30%、Kimi 约 8%），Claude 走 Kiro 正价号池（不降智、0 注入），该分组近期整体再降 27%。站点提供模型广场、快速接入指南、计费说明与接口文档，OpenAI 兼容 cURL 示例开箱即用，适合在意成本与模型保真的开发者。",
+        "models": [
+            "claude",
+            "deepseek",
+            "glm",
+            "kimi",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.6,
+        "response_time": 0.72,
+        "alive": true,
+        "last_check": "2026-11-06",
+        "check_count": 1,
+        "display_tags": [
+            "国产低至5折",
+            "Claude不降智",
+            "多协议接入"
+        ],
+        "display_metrics": [
+            {
+                "label": "价格",
+                "value": "国产低至5折",
+                "cls": "green"
+            },
+            {
+                "label": "Claude",
+                "value": "Kiro正价号池",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量·账单可查",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-06"
+    },
+    {
         "url": "https://api2.laozhang.ai/register/?aff_code=NkYN",
         "domain": "api2.laozhang.ai",
         "name": "老张API (LaoZhang API)",
@@ -1219,6 +1374,55 @@
         ],
         "likes": 0,
         "added": "2026-10-31"
+    },
+    {
+        "url": "https://aigs.cc/zh/register?invite=ARTCQD3F",
+        "domain": "aigs.cc",
+        "name": "小红马AIGS",
+        "description": "AIGS.CC 自称「你的 AI 燃料站」，把 AI 编程代理与模型 API 收进同一个工作空间。AIGS Agent 提供桌面端与终端两种形态：读取本地项目上下文、直接编辑代码、运行工具并检查结果，改动先审阅再落地；Model API 则按实际 Token 用量计费，控制台统一管理密钥、余额、单价、报表与账号信息。平台另有在线/桌面业务软件与定制集成服务，覆盖从写代码到跑业务的完整链路。注册后可免费下载安装器，按量付费、用多少算多少，适合想把 AI 真正接进日常工作流的开发者与团队。",
+        "models": [
+            "multi",
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "multi",
+            "docs",
+            "code",
+            "enterprise"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.57,
+        "response_time": 0.85,
+        "alive": true,
+        "last_check": "2026-11-06",
+        "check_count": 1,
+        "display_tags": [
+            "AI编程Agent",
+            "按量计费",
+            "统一控制台"
+        ],
+        "display_metrics": [
+            {
+                "label": "形态",
+                "value": "桌面+终端",
+                "cls": "green"
+            },
+            {
+                "label": "能力",
+                "value": "Agent+API",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量·报表可查",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-06"
     },
     {
         "url": "https://fishxcode.com/register?aff=0tRv",
