@@ -7825,5 +7825,50 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+    {
+        "url": "https://teapotrouter.com",
+        "domain": "teapotrouter.com",
+        "name": "Teapot Router",
+        "description": "Claude Code 与 OpenAI SDK 双协议网关:一个 Key 同时接入 Anthropic 与 OpenAI 协议;按量计费、余额永不过期、每笔请求费用可查;价格表公开且机器可读(/api/pricing);注册送体验额度,站内模型实验室可先测模型水平再充值。",
+        "models": [
+            "claude",
+            "gpt",
+            "codex"
+        ],
+        "features": [
+            "stable",
+            "multi"
+        ],
+        "price": "low",
+        "free_amount": "注册送体验额度",
+        "score": 0,
+        "response_time": 0,
+        "alive": true,
+        "last_check": "",
+        "check_count": 0,
+        "display_tags": [
+            "双协议",
+            "模型实验室",
+            "价格公开"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "Anthropic+OpenAI",
+                "cls": "green"
+            },
+            {
+                "label": "最低充值",
+                "value": "$1",
+                "cls": "accent"
+            },
+            {
+                "label": "余额",
+                "value": "永不过期",
+                "cls": ""
+            }
+        ],
+        "likes": 0
     }
 ]
