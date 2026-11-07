@@ -4,7 +4,12 @@
   <url><loc>https://api-rank-lake.vercel.app/all-stations.html</loc><lastmod>2026-10-14</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/dead-sites.html</loc><lastmod>2026-10-14</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/about.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://api-rank-lake.vercel.app/news.html</loc><lastmod>2026-10-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/news.html</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/news/api-rank-november-2026.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/news/gpt6-claude-gemini-november-compare.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/news/deepseek-v41-flash-review.html</loc><lastmod>2026-11-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/news/enterprise-api-procurement.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://api-rank-lake.vercel.app/news/november-price-watch-2026.html</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/news/what-is-api-relay.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/news/kimi-k3-open-source.html</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://api-rank-lake.vercel.app/news/uber-chatgpt-work.html</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

@@ -136,8 +136,8 @@ api-rank/
 ├── tools.html              # 🔥 实用工具（自研AI工具 + 精选服务导航）
 ├── img-prompt.html         # 图片反推提示词工具（多格式输出 + 历史记录）
 ├── creative-tools.html     # AI绘图/视频专区（在线生成）
-├── news.html               # 相关新闻（2列卡片+右侧推荐+标签筛选+分页，34篇深度文章）
-├── news/                   # 34篇独立URL的SEO文章（结构化数据+内部互链）
+├── news.html               # 相关新闻（2列卡片+右侧推荐+标签筛选+分页，39篇深度文章）
+├── news/                   # 39篇独立URL的SEO文章（结构化数据+内部互链）
 ├── dead-sites.html         # 失效站点列表（动态加载，与首页交叉验证）
 ├── admin.html              # 商家管理后台
 ├── assets/
@@ -223,7 +223,7 @@ wrangler deploy  # 部署Workers
 | 支持模型类型 | 7+（含绘画/视频） |
 | 评分范围 | 8.15 - 9.94 |
 | 评测维度 | 7个 |
-| SEO文章 | 34篇 |
+| SEO文章 | 39篇 |
 | 更新频率 | 手动更新（已取消自动检测） |
 | 开源协议 | MIT |
 
@@ -281,12 +281,19 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 
 ### 推广分享
 - 在社交媒体分享本站链接，帮助更多开发者发现好用的API中转站
+- 推广渠道、现成文案与执行清单见 [PROMOTION.md](PROMOTION.md)
+- 向搜索引擎提交收录：`sitemap.xml` 已包含全部页面与 39 篇新闻，可在 Google Search Console / Bing Webmaster 提交
 - Star 我们的 GitHub 仓库支持项目持续运营
 - 资助打赏 USDT (BEP20): `0x8F459Ac9A44206aa6E49Ca24Ea8a091f080FBE95`
 
 ---
 
 ## 📝 更新日志
+
+### v1.6.5 (2026-11-07)
+- ✅ 相关新闻扩充至 39 篇：新增 11月排行榜、三大旗舰横评、DeepSeek V4.1 Flash 测评、企业采购指南、11月价格观察 5 篇搜索热度选题
+- ✅ sitemap.xml 同步新增 5 个新闻 URL（新闻页 lastmod 更新至 11-07）
+- ✅ 新增 PROMOTION.md 推广执行方案（渠道清单、现成文案、SEO 提交与周度节奏）
 
 ### v1.6.4 (2026-11-06)
 - ✅ 新增 4 家中转站：synterolink（9.84，全球网关/29+模型统一端点）、维塔斯AI（9.64，SLA 99.99%/200+模型/专票可退款）、米尔戈 Mirgo（9.60，国产低至5折/Claude不降智）、小红马AIGS（9.57，AI编程Agent+模型API），收录总数达 172+
@@ -349,7 +356,14 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 
 ## 📰 相关新闻
 
-本站提供 34 篇 SEO 深度文章（独立URL，搜索引擎可逐篇收录），热门文章：
+本站提供 39 篇 SEO 深度文章（独立URL，搜索引擎可逐篇收录），热门文章：
+
+**热点速递（2026年11月）**
+- [2026年11月AI API中转站排行榜：172家实测，Top 10谁在领跑](https://api-rank-lake.vercel.app/news/api-rank-november-2026.html)
+- [GPT-6 Astra、Claude Opus 5.5、Gemini 4 Argon横评：编程、写作、多模态怎么选](https://api-rank-lake.vercel.app/news/gpt6-claude-gemini-november-compare.html)
+- [DeepSeek V4.1 Flash实战测评：为什么它是2026年编程性价比之王](https://api-rank-lake.vercel.app/news/deepseek-v41-flash-review.html)
+- [企业采购AI API中转站必读：SLA、发票、合同与数据合规四件事](https://api-rank-lake.vercel.app/news/enterprise-api-procurement.html)
+- [11月中转站价格观察：国产模型集体降价，Claude分组低至7.3折](https://api-rank-lake.vercel.app/news/november-price-watch-2026.html)
 
 **热点速递（2026年10月）**
 - [Kimi K3.1 Pro发布：3万亿参数开源模型，API接入指南与中转建议](https://api-rank-lake.vercel.app/news/kimi-k3-open-source.html)
