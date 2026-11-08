@@ -348,13 +348,17 @@ class SmartCrawler:
         # 第1级: HEAD
         try:
             resp = self.session.head(url, timeout=5, allow_redirects=True)
-            if resp.status_code == 200:
+            # 403/429 多为 Cloudflare 等反爬拦截，站点本身在线，不能判为失效
+            if resp.status_code in (200, 401, 403, 429):
                 self.check_cache[domain] = {'alive': True, 'date': today, 'msg': f"HTTP {resp.status_code}"}
                 return True, f"HTTP {resp.status_code}"
         except:
             pass
         # 第2级: GET
         ok, result = self.http_get(url, timeout=8)
+        if result in ("HTTP 401", "HTTP 403", "HTTP 429"):
+            self.check_cache[domain] = {'alive': True, 'date': today, 'msg': f"{result}（反爬拦截，站点在线）"}
+            return True, f"{result}（反爬拦截，站点在线）"
         if ok:
             try:
                 soup = BeautifulSoup(result, 'html.parser')

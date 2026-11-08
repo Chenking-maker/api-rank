@@ -180,7 +180,7 @@ class DailyChecker:
             response = self.session.head(url, timeout=10, allow_redirects=True)
             elapsed = time.time() - start_time
             
-            if response.status_code < 400:
+            if response.status_code < 400 or response.status_code in (401, 403, 429):
                 return {
                     "status": "online",
                     "response_time": round(elapsed * 1000, 2),

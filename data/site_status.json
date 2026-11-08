@@ -242,12 +242,6 @@
       "name": "大模型API (DMXAPI)",
       "domain": "dmxapi.com",
       "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
-    },
-    {
-      "url": "https://teamorouter.com",
-      "name": "TeamoRouter",
-      "domain": "teamorouter.com",
-      "reason": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
     }
   ]
 }

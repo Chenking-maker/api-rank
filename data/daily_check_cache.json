@@ -95,9 +95,9 @@
     "msg": "HTTP 200"
   },
   "teamorouter.com": {
-    "alive": false,
-    "date": "2026-08-22",
-    "msg": "Page.goto: Timeout 10000ms exceeded.\nCall log:\n  - navigatin"
+    "alive": true,
+    "date": "2026-11-08",
+    "msg": "HTTP 200（人工复核，反爬拦截不代表失效）"
   },
   "tokenrhythm.studio": {
     "alive": true,

@@ -290,6 +290,10 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 
 ## 📝 更新日志
 
+### v1.6.7 (2026-11-08)
+- 🐛 修复 TeamoRouter 换域名后从榜单消失：清掉 `site_status.json` 中 2026-08-22 遗留的失效记录（该站实测 HTTP 200 在线）
+- 🛡️ 检测脚本增加反爬容错：HEAD/GET 返回 401/403/429 视为「在线（反爬拦截）」，不再误判 Cloudflare 站点失效（`daily_check.py` / `weekly_check.py` / `crawler_v3.py`）
+
 ### v1.6.6 (2026-11-08)
 - ✅ TeamoRouter 官方域名迁移：全站链接 `teamorouter.cn` → `teamorouter.com`（邀请参数 `?i=ad992e768a` 保留），共更新 4 个文件 9 处
 - ✅ 新增「茶壶 TeapotRouter」中转站（9.55，Claude Code + GPT 双协议直连 / 约官方 35% 价格 / $1 起充 / 余额永不过期 / 模型实验室免费试跑），收录总数达 173+
