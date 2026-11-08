@@ -1,7 +1,7 @@
 [
     {
-        "url": "https://teamorouter.cn/?i=ad992e768a",
-        "domain": "teamorouter.cn",
+        "url": "https://teamorouter.com/?i=ad992e768a",
+        "domain": "teamorouter.com",
         "name": "TeamoRouter",
         "description": "DeepSeek V4 + Codex 双引擎驱动的全能 API 中转站。一个 API Key 调用 Claude、GPT、Gemini、DeepSeek 等全线模型，首次付费返 10%，好友首次付费即返现到账。支持高并发请求，响应仅 0.52s，适合开发者和团队高频调用。",
         "models": [
@@ -1515,6 +1515,54 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://teapotrouter.com/zh/register?aff=PktH&utm_source=invite",
+        "domain": "teapotrouter.com",
+        "name": "茶壶 TeapotRouter",
+        "description": "茶壶 TeapotRouter 自称「企业级 AI 网关」，不做大而全的模型超市，只保留两条最常用的通道：Claude Code 通道（Sonnet / Opus / Haiku，支持缓存与工具调用）与 GPT 通道（Responses、Chat Completions、Codex 工作流），一个余额同时覆盖两家。双协议设计——Claude Code 只需设置 ANTHROPIC_BASE_URL 与 Token 两个环境变量，OpenAI SDK 改一个 base_url 即可接入，Cursor、OpenCode 等兼容客户端零改代码。预付费按量计费，最低 1 美元起充，余额永不过期、闲置月份不花钱；每笔请求的模型、Token、费用与耗时都有明细可对账，价格表公开到每个模型的输入/输出单价（约为官方标价 35%）。多条上游通道可配置优先级与权重，故障时自动重试可用路由；官方正品模型，低价来自通道与缓存效率而非降智，注册即送体验额度，还可在无需账号的模型实验室里先跑真实请求再决定充值。名字取自 RFC 2324 的 418「我是一个茶壶」梗——茶壶不生产茶，只负责送到。",
+        "models": [
+            "claude",
+            "gpt",
+            "codex"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "注册送体验额度",
+        "score": 9.55,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-07",
+        "check_count": 0,
+        "display_tags": [
+            "双协议直连",
+            "$1起充",
+            "余额永不过期"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "Anthropic+OpenAI",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "约官方35%",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量·明细可查",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-08"
     },
     {
         "url": "https://api.mooko.ai/register?aff=JiqY",
