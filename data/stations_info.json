@@ -98,57 +98,6 @@
         "likes": 0
     },
     {
-        "url": "https://synterolink.com/register?aff=SMKPQR5Y57Q3",
-        "domain": "synterolink.com",
-        "name": "synterolink",
-        "description": "SynteroLink 是面向全球的 AI API 网关：一个 API Key、一个标准端点即可调用 OpenAI、Anthropic、Google、xAI 等已接入的模型服务，按用量统一结算与管控。站点公开实时模型目录（当前 29 个模型、3 家供应商，含 Claude Fable 5、Opus 4.x/5、Sonnet 5、GPT-5.6 Sol/Terra、GPT-6 Astra、GLM-5.3 等），支持多供应商智能路由、密钥隔离、额度控制与用量追踪；采用 OpenAI 兼容的 /v1/responses 接口，查 Key 用量、设配额、管权限都在同一控制台完成，接入成本低。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "grok",
-            "glm",
-            "multi"
-        ],
-        "features": [
-            "multi",
-            "stable",
-            "docs",
-            "smart-route"
-        ],
-        "price": "unknown",
-        "free_amount": "",
-        "score": 9.84,
-        "response_time": 0.6,
-        "alive": true,
-        "last_check": "2026-11-06",
-        "check_count": 1,
-        "display_tags": [
-            "统一端点",
-            "29模型·3供应商",
-            "用量追踪"
-        ],
-        "display_metrics": [
-            {
-                "label": "模型",
-                "value": "29+",
-                "cls": "green"
-            },
-            {
-                "label": "协议",
-                "value": "OpenAI兼容",
-                "cls": "accent"
-            },
-            {
-                "label": "管控",
-                "value": "智能路由·密钥隔离",
-                "cls": ""
-            }
-        ],
-        "likes": 0,
-        "added": "2026-11-06"
-    },
-    {
         "url": "https://www.packyapi.com/register?aff=zrXb",
         "domain": "packyapi.com",
         "name": "派客代码 (PackyCode)",
@@ -194,6 +143,52 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://openox.tech/r/46525",
+        "domain": "openox.tech",
+        "name": "OpenOx",
+        "description": "一个API Key接入GPT-5.6、Claude Opus 5，以及Kimi K3、GLM 5.2、Grok、Seedance、Fable 5等主流模型。订阅最低约0.43折起。企业级稳定满血低价官方。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.83,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "满血官方",
+            "超低价",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "折扣",
+                "value": "0.43折起",
+                "cls": "accent"
+            },
+            {
+                "label": "模型",
+                "value": "GPT-5.6+Opus5",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "企业稳定",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-13"
     },
     {
         "url": "https://a6api.com/?auth=register&aff=AUyB",
@@ -335,6 +330,52 @@
         "likes": 0
     },
     {
+        "url": "https://apinebula.ai/0gDuPn",
+        "domain": "apinebula.ai",
+        "name": "apinebula",
+        "description": "面向全球开发者的AI API网关，支持支付宝充值，统一接入当前开放的主流AI模型。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "fast"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.71,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-13",
+        "check_count": 1,
+        "display_tags": [
+            "全球网关",
+            "支付宝充值",
+            "多模型"
+        ],
+        "display_metrics": [
+            {
+                "label": "支付",
+                "value": "支付宝",
+                "cls": "accent"
+            },
+            {
+                "label": "定位",
+                "value": "全球开发者",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "统一接入",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-13"
+    },
+    {
         "url": "https://s.qiniu.com/aYRV3a",
         "domain": "qiniu.com",
         "name": "七牛云",
@@ -430,52 +471,6 @@
         "added": "2026-10-15"
     },
     {
-        "url": "https://openox.tech/r/46525",
-        "domain": "openox.tech",
-        "name": "OpenOx",
-        "description": "一个API Key接入GPT-5.6、Claude Opus 5，以及Kimi K3、GLM 5.2、Grok、Seedance、Fable 5等主流模型。订阅最低约0.43折起。企业级稳定满血低价官方。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "cheap",
-            "stable"
-        ],
-        "price": "low",
-        "free_amount": "",
-        "score": 9.7,
-        "response_time": 1,
-        "alive": true,
-        "last_check": "2026-10-13",
-        "check_count": 1,
-        "display_tags": [
-            "满血官方",
-            "超低价",
-            "多模型"
-        ],
-        "display_metrics": [
-            {
-                "label": "折扣",
-                "value": "0.43折起",
-                "cls": "accent"
-            },
-            {
-                "label": "模型",
-                "value": "GPT-5.6+Opus5",
-                "cls": "green"
-            },
-            {
-                "label": "特色",
-                "value": "企业稳定",
-                "cls": ""
-            }
-        ],
-        "likes": 0,
-        "added": "2026-10-13"
-    },
-    {
         "url": "https://cdn.sta1n.cn/sign-up?aff=qaLL",
         "domain": "cdn.sta1n.cn",
         "name": "STA1N API",
@@ -522,95 +517,52 @@
         "added": "2026-10-14"
     },
     {
-        "url": "https://coderplan.ai/register?aff=9liD",
-        "domain": "coderplan.ai",
-        "name": "CoderPlan",
-        "description": "包月级价格按量付费的AI编程API中转站，支持Claude Code/Cursor/Codex CLI/Gemini CLI等工具。高缓存命中率节省成本，每次调用可查看模型、tokens和费用明细。",
+        "url": "https://aimover.cc/register?aff=4MBD6JFQHZCT",
+        "domain": "aimover.cc",
+        "name": "AI Mover",
+        "description": "AI Mover 以「守护隐私，官方保真」为定位：一个 API 入口统一连接 OpenAI、Claude、xAI Grok 与 Google Gemini，支持 Codex 满血 Pro、Vertex 官逆等多种计费分组，OpenAI 兼容接口调用，全程 HTTPS 加密、密钥独立可控、对话不留存、调用明细可查。控制台展示季度接口可用率 99.9%，适合对数据隐私有明确要求的团队与个人。",
         "models": [
-            "claude",
             "gpt",
-            "gemini"
+            "claude",
+            "gemini",
+            "grok"
         ],
         "features": [
-            "cheap",
             "multi",
-            "stable"
-        ],
-        "display_tags": [
-            "按量付费",
-            "缓存优化",
-            "编程专精"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "编程工具",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "0.7折起",
-                "cls": "accent"
-            },
-            {
-                "label": "应用",
-                "value": "Claude Code",
-                "cls": ""
-            }
-        ],
-        "score": 9.68,
-        "price": "low",
-        "response_time": 0.46,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "likes": 0
-    },
-    {
-        "url": "https://apinebula.ai/0gDuPn",
-        "domain": "apinebula.ai",
-        "name": "apinebula",
-        "description": "面向全球开发者的AI API网关，支持支付宝充值，统一接入当前开放的主流AI模型。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
             "stable",
-            "fast"
+            "enterprise"
         ],
-        "price": "medium",
+        "price": "unknown",
         "free_amount": "",
-        "score": 9.67,
-        "response_time": 1,
+        "score": 9.68,
+        "response_time": 0.75,
         "alive": true,
-        "last_check": "2026-10-13",
+        "last_check": "2026-10-24",
         "check_count": 1,
         "display_tags": [
-            "全球网关",
-            "支付宝充值",
-            "多模型"
+            "隐私优先",
+            "99.9%可用率",
+            "多计费分组"
         ],
         "display_metrics": [
             {
-                "label": "支付",
-                "value": "支付宝",
-                "cls": "accent"
-            },
-            {
-                "label": "定位",
-                "value": "全球开发者",
+                "label": "可用率",
+                "value": "99.9%/季度",
                 "cls": "green"
             },
             {
-                "label": "特色",
-                "value": "统一接入",
+                "label": "分组",
+                "value": "Codex满血Pro等",
+                "cls": "accent"
+            },
+            {
+                "label": "隐私",
+                "value": "对话不留存",
                 "cls": ""
             }
         ],
         "likes": 0,
-        "added": "2026-10-13"
+        "added": "2026-10-26"
     },
     {
         "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
@@ -699,56 +651,6 @@
             {
                 "label": "口碑",
                 "value": "稳定可靠",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://aihubmix.com/?aff=U9CV",
-        "domain": "aihubmix.com",
-        "name": "推理时代AIHubMix",
-        "description": "一个接口路由所有大语言模型，支持500+模型，包括文本、图片/视频生成、向量嵌入、Rerank、TTS、STT、OCR等主流模型全覆盖。统一OpenAI兼容接口，代码零改动即可平滑切换。按量付费，无会员无包月，支持OpenAI、Google Gemini、Anthropic多种兼容格式。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "deepseek",
-            "grok",
-            "qwen",
-            "kemi",
-            "glm"
-        ],
-        "features": [
-            "multi",
-            "enterprise"
-        ],
-        "price": "medium",
-        "free_amount": "",
-        "score": 9.66,
-        "response_time": 0.42,
-        "alive": true,
-        "last_check": "2026-09-01",
-        "check_count": 1,
-        "display_tags": [
-            "500+模型",
-            "统一接口",
-            "按量付费"
-        ],
-        "display_metrics": [
-            {
-                "label": "模型",
-                "value": "500+模型",
-                "cls": "green"
-            },
-            {
-                "label": "兼容",
-                "value": "多协议接入",
-                "cls": "accent"
-            },
-            {
-                "label": "计费",
-                "value": "按量付费",
                 "cls": ""
             }
         ],
@@ -901,6 +803,57 @@
         "added": "2026-11-06"
     },
     {
+        "url": "https://synterolink.com/register?aff=SMKPQR5Y57Q3",
+        "domain": "synterolink.com",
+        "name": "synterolink",
+        "description": "SynteroLink 是面向全球的 AI API 网关：一个 API Key、一个标准端点即可调用 OpenAI、Anthropic、Google、xAI 等已接入的模型服务，按用量统一结算与管控。站点公开实时模型目录（当前 29 个模型、3 家供应商，含 Claude Fable 5、Opus 4.x/5、Sonnet 5、GPT-5.6 Sol/Terra、GPT-6 Astra、GLM-5.3 等），支持多供应商智能路由、密钥隔离、额度控制与用量追踪；采用 OpenAI 兼容的 /v1/responses 接口，查 Key 用量、设配额、管权限都在同一控制台完成，接入成本低。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "glm",
+            "multi"
+        ],
+        "features": [
+            "multi",
+            "stable",
+            "docs",
+            "smart-route"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.62,
+        "response_time": 0.6,
+        "alive": true,
+        "last_check": "2026-11-06",
+        "check_count": 1,
+        "display_tags": [
+            "统一端点",
+            "29模型·3供应商",
+            "用量追踪"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "29+",
+                "cls": "green"
+            },
+            {
+                "label": "协议",
+                "value": "OpenAI兼容",
+                "cls": "accent"
+            },
+            {
+                "label": "管控",
+                "value": "智能路由·密钥隔离",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-06"
+    },
+    {
         "url": "https://cloud.siliconflow.cn/i/E5yUpjCP",
         "domain": "siliconflow.cn",
         "name": "硅基流动",
@@ -988,99 +941,6 @@
             {
                 "label": "计费",
                 "value": "按量+限额",
-                "cls": ""
-            }
-        ],
-        "likes": 0,
-        "added": "2026-10-26"
-    },
-    {
-        "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
-        "domain": "tokenrhythm.studio",
-        "name": "基元律动 (TokenRhythm)",
-        "description": "OpenSquilla 新功能上线，邀请好友限时活动延长中。注册即享价值 68 元 token 额度，支持 Claude/GPT/Gemini 等主流模型调用。新用户注册即领福利，老用户邀友双赢，社区活跃持续更新模型列表。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "stable",
-            "cheap"
-        ],
-        "price": "medium",
-        "free_amount": "68元token额度",
-        "score": 9.61,
-        "response_time": 0.68,
-        "alive": true,
-        "last_check": "2026-08-10",
-        "check_count": 1,
-        "display_tags": [
-            "OpenSquilla",
-            "68元额度",
-            "限时活动"
-        ],
-        "display_metrics": [
-            {
-                "label": "福利",
-                "value": "68元token额度",
-                "cls": "green"
-            },
-            {
-                "label": "活动",
-                "value": "邀请延长",
-                "cls": "accent"
-            },
-            {
-                "label": "功能",
-                "value": "OpenSquilla新功能",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://aimover.cc/register?aff=4MBD6JFQHZCT",
-        "domain": "aimover.cc",
-        "name": "AI Mover",
-        "description": "AI Mover 以「守护隐私，官方保真」为定位：一个 API 入口统一连接 OpenAI、Claude、xAI Grok 与 Google Gemini，支持 Codex 满血 Pro、Vertex 官逆等多种计费分组，OpenAI 兼容接口调用，全程 HTTPS 加密、密钥独立可控、对话不留存、调用明细可查。控制台展示季度接口可用率 99.9%，适合对数据隐私有明确要求的团队与个人。",
-        "models": [
-            "gpt",
-            "claude",
-            "gemini",
-            "grok"
-        ],
-        "features": [
-            "multi",
-            "stable",
-            "enterprise"
-        ],
-        "price": "unknown",
-        "free_amount": "",
-        "score": 9.6,
-        "response_time": 0.75,
-        "alive": true,
-        "last_check": "2026-10-24",
-        "check_count": 1,
-        "display_tags": [
-            "隐私优先",
-            "99.9%可用率",
-            "多计费分组"
-        ],
-        "display_metrics": [
-            {
-                "label": "可用率",
-                "value": "99.9%/季度",
-                "cls": "green"
-            },
-            {
-                "label": "分组",
-                "value": "Codex满血Pro等",
-                "cls": "accent"
-            },
-            {
-                "label": "隐私",
-                "value": "对话不留存",
                 "cls": ""
             }
         ],
@@ -1376,6 +1236,51 @@
         "added": "2026-10-31"
     },
     {
+        "url": "https://coderplan.ai/register?aff=9liD",
+        "domain": "coderplan.ai",
+        "name": "CoderPlan",
+        "description": "包月级价格按量付费的AI编程API中转站，支持Claude Code/Cursor/Codex CLI/Gemini CLI等工具。高缓存命中率节省成本，每次调用可查看模型、tokens和费用明细。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "multi",
+            "stable"
+        ],
+        "display_tags": [
+            "按量付费",
+            "缓存优化",
+            "编程专精"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "编程工具",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "0.7折起",
+                "cls": "accent"
+            },
+            {
+                "label": "应用",
+                "value": "Claude Code",
+                "cls": ""
+            }
+        ],
+        "score": 9.57,
+        "price": "low",
+        "response_time": 0.46,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "likes": 0
+    },
+    {
         "url": "https://aigs.cc/zh/register?invite=ARTCQD3F",
         "domain": "aigs.cc",
         "name": "小红马AIGS",
@@ -1656,6 +1561,51 @@
         "likes": 0
     },
     {
+        "url": "https://tokenrhythm.studio/i/rf_tr_AWXQ-f_hWZi2EarV7qIQX06J",
+        "domain": "tokenrhythm.studio",
+        "name": "基元律动 (TokenRhythm)",
+        "description": "OpenSquilla 新功能上线，邀请好友限时活动延长中。注册即享价值 68 元 token 额度，支持 Claude/GPT/Gemini 等主流模型调用。新用户注册即领福利，老用户邀友双赢，社区活跃持续更新模型列表。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "stable",
+            "cheap"
+        ],
+        "price": "medium",
+        "free_amount": "68元token额度",
+        "score": 9.47,
+        "response_time": 0.68,
+        "alive": true,
+        "last_check": "2026-08-10",
+        "check_count": 1,
+        "display_tags": [
+            "OpenSquilla",
+            "68元额度",
+            "限时活动"
+        ],
+        "display_metrics": [
+            {
+                "label": "福利",
+                "value": "68元token额度",
+                "cls": "green"
+            },
+            {
+                "label": "活动",
+                "value": "邀请延长",
+                "cls": "accent"
+            },
+            {
+                "label": "功能",
+                "value": "OpenSquilla新功能",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://onehop.ai/invite/9672CV",
         "domain": "onehop.ai",
         "name": "OneHop",
@@ -1696,6 +1646,56 @@
             {
                 "label": "口碑",
                 "value": "文档清晰",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
+        "url": "https://aihubmix.com/?aff=U9CV",
+        "domain": "aihubmix.com",
+        "name": "推理时代AIHubMix",
+        "description": "一个接口路由所有大语言模型，支持500+模型，包括文本、图片/视频生成、向量嵌入、Rerank、TTS、STT、OCR等主流模型全覆盖。统一OpenAI兼容接口，代码零改动即可平滑切换。按量付费，无会员无包月，支持OpenAI、Google Gemini、Anthropic多种兼容格式。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "grok",
+            "qwen",
+            "kemi",
+            "glm"
+        ],
+        "features": [
+            "multi",
+            "enterprise"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.44,
+        "response_time": 0.42,
+        "alive": true,
+        "last_check": "2026-09-01",
+        "check_count": 1,
+        "display_tags": [
+            "500+模型",
+            "统一接口",
+            "按量付费"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "500+模型",
+                "cls": "green"
+            },
+            {
+                "label": "兼容",
+                "value": "多协议接入",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量付费",
                 "cls": ""
             }
         ],

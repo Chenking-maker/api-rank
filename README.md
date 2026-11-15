@@ -81,14 +81,14 @@
 |:----:|------|:----:|------|----------|
 | 🥇 | **TeamoRouter** | 9.94 | 企业级API聚合，高速稳定，智能路由 | [访问](https://teamorouter.com/?i=ad992e768a) |
 | 🥈 | **随想** | 9.86 | 隐私优先，逐字节原样转发，99.97%可用率 | [访问](https://sui-xiang.com/register?aff=5J3USAV9LQEB) |
-| 🥉 | **synterolink** | 9.84 | 全球AI API网关，统一端点，29+模型多供应商路由 | [访问](https://synterolink.com/register?aff=SMKPQR5Y57Q3) |
-| 4 | **派客代码** | 9.83 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
+| 🥉 | **派客代码** | 9.83 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
+| 4 | **OpenOx** | 9.83 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
 | 5 | **a6api** | 9.75 | Token交易源头市场，3000+渠道，10x保真担保 | [访问](https://a6api.com/?auth=register&aff=AUyB) |
 | 6 | **莱特代码** | 9.72 | 专为编程设计，响应快(0.43s)，1元起充 | [访问](https://rightapi.ai/register?aff=56503380) |
 | 7 | **肖恩AI** | 9.71 | 免费公益站，注册送5000额度，新手友好 | [访问](https://free.supxh.xin/register?code=XVGW49) |
-| 8 | **七牛云** | 9.70 | 企业级云基础设施，大模型API稳定可靠 | [访问](https://s.qiniu.com/aYRV3a) |
-| 9 | **aruhub API** | 9.70 | 前沿模型聚合，分组计价低至0.1倍 | [访问](https://aruhub.com/sign-up?aff=kJbM) |
-| 10 | **OpenOx** | 9.70 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
+| 8 | **apinebula** | 9.71 | 全球AI API网关，支付宝充值，多模型统一接入 | [访问](https://apinebula.ai/0gDuPn) |
+| 9 | **七牛云** | 9.70 | 企业级云基础设施，大模型API稳定可靠 | [访问](https://s.qiniu.com/aYRV3a) |
+| 10 | **aruhub API** | 9.70 | 前沿模型聚合，分组计价低至0.1倍 | [访问](https://aruhub.com/sign-up?aff=kJbM) |
 
 > 完整排名请访问 [国内网站](https://chenking-maker.github.io/api-rank/) 或 [国际网站](https://api-rank-lake.vercel.app) 查看
 
@@ -289,6 +289,10 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 ---
 
 ## 📝 更新日志
+
+### v1.6.8 (2026-11-15)
+- ✅ 批量调整 7 站评分：OpenOx 9.70→9.83（升第 4）、apinebula 9.67→9.71（升第 8）、AI Mover 9.60→9.68、synterolink 9.84→9.62、CoderPlan 9.68→9.57、基元律动 9.61→9.47、推理时代AIHubMix 9.66→9.44
+- ✅ synterolink 跌出 Top 10，由 apinebula 补入第 8；全站按 score 降序重排
 
 ### v1.6.7 (2026-11-08)
 - 🐛 修复 TeamoRouter 换域名后从榜单消失：清掉 `site_status.json` 中 2026-08-22 遗留的失效记录（该站实测 HTTP 200 在线）
