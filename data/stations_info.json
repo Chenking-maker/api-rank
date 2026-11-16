@@ -7873,5 +7873,61 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+    {
+        "url": "https://guantian.vip",
+        "domain": "guantian.vip",
+        "name": "观天 API",
+        "description": "Key调50+模型，16组0.08～1.4倍：GPT0.08、Grok0.1、Claude0.15、Gemini0.25、国产0.3、按次0.05起，最低价分组见价格页；1元=1美元，国内直连；新人不送额度，进群领测试额度，缺模型找站长。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "deepseek",
+            "glm",
+            "kimi",
+            "qwen",
+            "codex"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "stable",
+            "OpenAI兼容",
+            "人民币结算",
+            "国内直连"
+        ],
+        "price": "low",
+        "free_amount": "进群领测试额度（新用户不赠送）",
+        "score": 0,
+        "response_time": 0,
+        "alive": true,
+        "last_check": "2026-11-16",
+        "check_count": 0,
+        "display_tags": [
+            "50+ 模型",
+            "最低 0.08 倍",
+            "国内直连"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "50+ 全系",
+                "cls": "green"
+            },
+            {
+                "label": "最低倍率",
+                "value": "0.08 倍起",
+                "cls": "accent"
+            },
+            {
+                "label": "测试额度",
+                "value": "进群领取",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-16"
     }
 ]
