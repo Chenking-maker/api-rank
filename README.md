@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
   <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
-  <img src="https://img.shields.io/badge/收录平台-173+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-175+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -131,7 +131,7 @@
 ```
 api-rank/
 ├── index.html              # 首页（Top 50 + 动态加载 + 广告位轮播 + 快速选站器 + 随机盲选 + 最新收录）
-├── all-stations.html       # 全部站点页面（173+，无数量限制）
+├── all-stations.html       # 全部站点页面（175+，无数量限制）
 ├── about.html              # 关于本站（介绍 + 使用指南 + 收藏提示）
 ├── tools.html              # 🔥 实用工具（自研AI工具 + 精选服务导航）
 ├── img-prompt.html         # 图片反推提示词工具（多格式输出 + 历史记录）
@@ -143,7 +143,7 @@ api-rank/
 ├── assets/
 │   └── notice.js           # 全站顶部提醒横幅（换域名/收藏提示）
 ├── data/
-│   ├── stations_info.json  # 主站点数据（173个，含added收录日期）
+│   ├── stations_info.json  # 主站点数据（175个，含added收录日期）
 │   ├── dead_sites.json     # 失效站点记录
 │   └── pending_stations.json # 待审核站点
 ├── api/                    # Cloudflare Workers 后端
@@ -217,8 +217,8 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 173+ |
-| 有效站点 | 128 |
+| 收录平台 | 175+ |
+| 有效站点 | 130 |
 | 失效站点 | 26（动态交叉验证） |
 | 支持模型类型 | 7+（含绘画/视频） |
 | 评分范围 | 8.15 - 9.94 |
@@ -289,6 +289,11 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 ---
 
 ## 📝 更新日志
+
+### v1.6.9 (2026-11-19)
+- ✅ 新增「HardysAPI」（9.64，100+模型/19条线路0.08x起/1元=1美元/支付宝·微信·USDT/余额永久有效），排名 #18
+- ✅ 新增「AgentGate」（9.56，OpenAI+Anthropic+Gemini 三协议原生/28模型/分组倍率低至0.05x/注册送$1），排名 #31
+- ✅ 收录总数 173 → 175，有效站点 128 → 130；全站按 score 降序重排
 
 ### v1.6.8 (2026-11-15)
 - ✅ 批量调整 7 站评分：OpenOx 9.70→9.83（升第 4）、apinebula 9.67→9.71（升第 8）、AI Mover 9.60→9.68、synterolink 9.84→9.62、CoderPlan 9.68→9.57、基元律动 9.61→9.47、推理时代AIHubMix 9.66→9.44

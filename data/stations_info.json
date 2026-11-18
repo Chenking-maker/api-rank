@@ -803,6 +803,61 @@
         "added": "2026-11-06"
     },
     {
+        "url": "https://hardysapi.com/register?aff=2HLG7KF995SP",
+        "domain": "hardysapi.com",
+        "name": "HardysAPI",
+        "description": "HardysAPI 是面向国内开发者的统一 AI API 网关，100+ 模型、19 条线路逐条公开倍率：GPT 低至 0.08x、DeepSeek 全系专线 0.15x、Claude Kiro 渠道 0.18x、Claude 订阅渠道 0.4x，OpenAI 官方直连 4x，实付 = 厂商刊例价 × 线路倍率，生图按张计价。站内按 1 元 = 1 美元额度记账，没有汇率损耗，最低充值 10 元，支持支付宝、微信、USDT 与 PayNow，余额永久有效。国内直连免 VPN，兼容 OpenAI Chat Completions/Responses、Anthropic Messages 与 Gemini 原生协议，Claude Code、Cursor、Cline、Continue、Dify 只需替换 base_url 与 key，5 分钟完成迁移；多账号池配合故障自动切换，粘性会话优先、并发溢出自动分流，控制台按模型、按天逐笔可查。官方声明仅做协议中转，对话内容不在服务器持久化，只保留 7 天排错日志且不用于训练。新用户注册送 $0.1 体验额度，邀请好友每笔充值返 6%（活动截至 2027-01-31）。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "deepseek",
+            "glm",
+            "kimi",
+            "qwen",
+            "minimax",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "stable",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "注册送 $0.1",
+        "score": 9.64,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-19",
+        "check_count": 0,
+        "display_tags": [
+            "19条线路",
+            "1元=1美元",
+            "余额永久有效"
+        ],
+        "display_metrics": [
+            {
+                "label": "线路",
+                "value": "0.08x起",
+                "cls": "green"
+            },
+            {
+                "label": "模型",
+                "value": "100+",
+                "cls": "accent"
+            },
+            {
+                "label": "支付",
+                "value": "支付宝·微信·USDT",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-19"
+    },
+    {
         "url": "https://synterolink.com/register?aff=SMKPQR5Y57Q3",
         "domain": "synterolink.com",
         "name": "synterolink",
@@ -1374,6 +1429,59 @@
         "check_count": 1,
         "likes": 0,
         "dead_reason": "仅显示部署时间信息，无实际服务"
+    },
+    {
+        "url": "https://agentgate.cc/sign-up?aff=NePR",
+        "domain": "agentgate.cc",
+        "name": "AgentGate",
+        "description": "AgentGate 主打「一个 API Key 接全球模型」的轻量原生网关：OpenAI Chat/Responses（/v1）、Anthropic Messages（/v1/messages）、Gemini 原生（/v1beta）三种协议共用一个域名与密钥，原生工具调用与推理字段完整保留，不需要本地转换代理，Cursor、Claude Code、Google GenAI SDK 可直接接入。当前公开 28 个模型，覆盖 GPT-5.6 与 GPT-6.x 全系、Gemini 3.8 Flash 与 Gemini 4 Argon/Carbon/Hydrogen、DeepSeek V4 Pro 与 V4.1 Flash、GLM 5.3、Kimi K3.1 Pro、MiniMax M3.1 Flash、混元 HY4、小米 MiMo V2.6 Pro，另有 gpt-image 2.x 生图系列。1 元 = 1 美元额度，分组倍率公开透明（OpenAI 低至 0.05x/0.07x、Gemini 0.07x、国产模型 0.14x，并预置 Claude 0.14x 分组）。注册直接送 $1，拉新邀请双方各得 $1；支持 GitHub OAuth 与邮箱验证，控制台可给每个 Key 设置额度、限定可用模型与有效期，逐笔查看 token、缓存命中、首字延迟与费用，并实时同步 OpenAI 与 Claude 官方状态页。",
+        "models": [
+            "gpt",
+            "gemini",
+            "claude",
+            "deepseek",
+            "glm",
+            "kimi",
+            "minimax",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs",
+            "smart-route"
+        ],
+        "price": "low",
+        "free_amount": "注册送 $1",
+        "score": 9.56,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-19",
+        "check_count": 0,
+        "display_tags": [
+            "1元=1刀",
+            "注册送$1",
+            "三协议原生"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "3种原生",
+                "cls": "green"
+            },
+            {
+                "label": "模型",
+                "value": "28个",
+                "cls": "accent"
+            },
+            {
+                "label": "倍率",
+                "value": "低至0.05x",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-19"
     },
     {
         "url": "https://rkapi.com/register?aff=zCFG",
