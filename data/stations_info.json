@@ -48,6 +48,53 @@
         "likes": 0
     },
     {
+        "url": "https://www.packyapi.com/register?aff=zrXb",
+        "domain": "packyapi.com",
+        "name": "派客代码 (PackyCode)",
+        "description": "企业级AI控制台平台，统一LLM API网关。支持30+模型、7个全球区域PoP、99.9% SLA。国内最早针对Claude Code优化，已是多家中转站上游。支持阿里百炼/MiniMax/GLM/豆包/DeepSeek/千问等国产模型，注册送$1。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "domestic",
+            "cheap"
+        ],
+        "features": [
+            "cheap",
+            "multi"
+        ],
+        "price": "low",
+        "free_amount": "注册送$1",
+        "score": 9.92,
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-10-31",
+        "check_count": 3,
+        "display_tags": [
+            "最热",
+            "超低价",
+            "上游供应商"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "Claude Code优化",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "超低价",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "多站上游",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://sui-xiang.com/register?aff=5J3USAV9LQEB",
         "domain": "sui-xiang.com",
         "name": "随想",
@@ -138,53 +185,6 @@
             {
                 "label": "口碑",
                 "value": "文档清晰",
-                "cls": ""
-            }
-        ],
-        "likes": 0
-    },
-    {
-        "url": "https://www.packyapi.com/register?aff=zrXb",
-        "domain": "packyapi.com",
-        "name": "派客代码 (PackyCode)",
-        "description": "企业级AI控制台平台，统一LLM API网关。支持30+模型、7个全球区域PoP、99.9% SLA。国内最早针对Claude Code优化，已是多家中转站上游。支持阿里百炼/MiniMax/GLM/豆包/DeepSeek/千问等国产模型，注册送$1。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "domestic",
-            "cheap"
-        ],
-        "features": [
-            "cheap",
-            "multi"
-        ],
-        "price": "low",
-        "free_amount": "注册送$1",
-        "score": 9.83,
-        "response_time": 0.45,
-        "alive": true,
-        "last_check": "2026-10-31",
-        "check_count": 3,
-        "display_tags": [
-            "最热",
-            "超低价",
-            "上游供应商"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "Claude Code优化",
-                "cls": "green"
-            },
-            {
-                "label": "价格",
-                "value": "超低价",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "多站上游",
                 "cls": ""
             }
         ],
