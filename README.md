@@ -81,10 +81,10 @@
 |:----:|------|:----:|------|----------|
 | 🥇 | **TeamoRouter** | 9.94 | 企业级API聚合，高速稳定，智能路由 | [访问](https://teamorouter.com/?i=ad992e768a) |
 | 🥈 | **随想** | 9.86 | 隐私优先，逐字节原样转发，99.97%可用率 | [访问](https://sui-xiang.com/register?aff=5J3USAV9LQEB) |
-| 🥉 | **派客代码** | 9.83 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
-| 4 | **OpenOx** | 9.83 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
-| 5 | **a6api** | 9.75 | Token交易源头市场，3000+渠道，10x保真担保 | [访问](https://a6api.com/?auth=register&aff=AUyB) |
-| 6 | **莱特代码** | 9.72 | 专为编程设计，响应快(0.43s)，1元起充 | [访问](https://rightapi.ai/register?aff=56503380) |
+| 🥉 | **Right Code** | 9.84 | 专为编程设计，响应快(0.43s)，1元起充 | [访问](https://rightapi.ai/register?aff=56503380) |
+| 4 | **派客代码** | 9.83 | 企业级AI控制台，7个全球PoP，99.9% SLA | [访问](https://www.packyapi.com/register?aff=zrXb) |
+| 5 | **OpenOx** | 9.80 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
+| 6 | **a6api** | 9.75 | Token交易源头市场，3000+渠道，10x保真担保 | [访问](https://a6api.com/?auth=register&aff=AUyB) |
 | 7 | **肖恩AI** | 9.71 | 免费公益站，注册送5000额度，新手友好 | [访问](https://free.supxh.xin/register?code=XVGW49) |
 | 8 | **apinebula** | 9.71 | 全球AI API网关，支付宝充值，多模型统一接入 | [访问](https://apinebula.ai/0gDuPn) |
 | 9 | **七牛云** | 9.70 | 企业级云基础设施，大模型API稳定可靠 | [访问](https://s.qiniu.com/aYRV3a) |
@@ -289,6 +289,10 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 ---
 
 ## 📝 更新日志
+
+### v1.7.0 (2026-11-20)
+- ✅ 「莱特代码 (RightCode)」更名为 **Right Code**，评分 9.72 → 9.84，升至第 3
+- ✅ OpenOx 评分 9.83 → 9.80，退至第 5（派客代码回补第 4）；全站按 score 降序重排
 
 ### v1.6.9 (2026-11-19)
 - ✅ 新增「HardysAPI」（9.64，100+模型/19条线路0.08x起/1元=1美元/支付宝·微信·USDT/余额永久有效），排名 #18

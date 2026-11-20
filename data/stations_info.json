@@ -98,6 +98,52 @@
         "likes": 0
     },
     {
+        "url": "https://rightapi.ai/register?aff=56503380",
+        "domain": "rightapi.ai",
+        "name": "Right Code",
+        "description": "专为编程设计，专注Claude/Gemini/GPT接口。文档清晰响应快(0.43s)，1元起充小额测试无压力。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "cheap"
+        ],
+        "features": [
+            "cheap",
+            "fast"
+        ],
+        "price": "low",
+        "free_amount": "1元起充",
+        "score": 9.84,
+        "response_time": 0.46,
+        "alive": true,
+        "last_check": "2026-07-06",
+        "check_count": 3,
+        "display_tags": [
+            "最低价",
+            "响应快",
+            "编程首选"
+        ],
+        "display_metrics": [
+            {
+                "label": "响应",
+                "value": "0.43s",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "最低价",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "文档清晰",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://www.packyapi.com/register?aff=zrXb",
         "domain": "packyapi.com",
         "name": "派客代码 (PackyCode)",
@@ -160,7 +206,7 @@
         ],
         "price": "low",
         "free_amount": "",
-        "score": 9.83,
+        "score": 9.8,
         "response_time": 1,
         "alive": true,
         "last_check": "2026-10-13",
@@ -237,52 +283,6 @@
         ],
         "likes": 0,
         "added": "2026-10-26"
-    },
-    {
-        "url": "https://rightapi.ai/register?aff=56503380",
-        "domain": "rightapi.ai",
-        "name": "莱特代码 (RightCode)",
-        "description": "专为编程设计，专注Claude/Gemini/GPT接口。文档清晰响应快(0.43s)，1元起充小额测试无压力。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "cheap"
-        ],
-        "features": [
-            "cheap",
-            "fast"
-        ],
-        "price": "low",
-        "free_amount": "1元起充",
-        "score": 9.72,
-        "response_time": 0.46,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "display_tags": [
-            "最低价",
-            "响应快",
-            "编程首选"
-        ],
-        "display_metrics": [
-            {
-                "label": "响应",
-                "value": "0.43s",
-                "cls": "green"
-            },
-            {
-                "label": "价格",
-                "value": "最低价",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "文档清晰",
-                "cls": ""
-            }
-        ],
-        "likes": 0
     },
     {
         "url": "https://free.supxh.xin/register?code=XVGW49",
