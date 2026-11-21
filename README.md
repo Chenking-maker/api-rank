@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
   <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
-  <img src="https://img.shields.io/badge/收录平台-175+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-176+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -131,7 +131,7 @@
 ```
 api-rank/
 ├── index.html              # 首页（Top 50 + 动态加载 + 广告位轮播 + 快速选站器 + 随机盲选 + 最新收录）
-├── all-stations.html       # 全部站点页面（175+，无数量限制）
+├── all-stations.html       # 全部站点页面（176+，无数量限制）
 ├── about.html              # 关于本站（介绍 + 使用指南 + 收藏提示）
 ├── tools.html              # 🔥 实用工具（自研AI工具 + 精选服务导航）
 ├── img-prompt.html         # 图片反推提示词工具（多格式输出 + 历史记录）
@@ -143,7 +143,7 @@ api-rank/
 ├── assets/
 │   └── notice.js           # 全站顶部提醒横幅（换域名/收藏提示）
 ├── data/
-│   ├── stations_info.json  # 主站点数据（175个，含added收录日期）
+│   ├── stations_info.json  # 主站点数据（176个，含added收录日期）
 │   ├── dead_sites.json     # 失效站点记录
 │   └── pending_stations.json # 待审核站点
 ├── api/                    # Cloudflare Workers 后端
@@ -217,8 +217,8 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 175+ |
-| 有效站点 | 130 |
+| 收录平台 | 176+ |
+| 有效站点 | 131 |
 | 失效站点 | 26（动态交叉验证） |
 | 支持模型类型 | 7+（含绘画/视频） |
 | 评分范围 | 8.15 - 9.94 |
@@ -289,6 +289,10 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 ---
 
 ## 📝 更新日志
+
+### v1.7.2 (2026-11-21)
+- ✅ 新增「传奇AI工厂」（9.58，统一 Key 网关/OpenAI+Anthropic 双协议兼容/分组管理密钥与额度/Codex·Claude Code·Cursor 直接接入），排名 #28
+- ✅ 收录总数 175 → 176，有效站点 130 → 131；全站按 score 降序重排
 
 ### v1.7.1 (2026-11-20)
 - ✅ 派客代码 (PackyCode) 评分 9.83 → 9.92，升至第 2；随想退至第 3，Right Code 第 4

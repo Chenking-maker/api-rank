@@ -1291,6 +1291,53 @@
         "added": "2026-10-31"
     },
     {
+        "url": "https://api.98742xx.online/register?aff=R7QHVD7RJMB9",
+        "domain": "api.98742xx.online",
+        "name": "传奇AI工厂",
+        "description": "传奇AI工厂是一个统一密钥的 LLM 网关，一个 API Key 即可调用 DeepSeek、GPT、Claude 等主流模型：OpenAI 兼容地址为 https://api.98742xx.online/v1，Anthropic 兼容直接使用根地址，Codex CLI、Codex 桌面版、Claude Code、Cursor、Hermes 等客户端都能按官方教程直接接入。站点以分组管理密钥，不同分组对应不同的模型范围、额度与计费规则；控制台可为每个 Key 单独设置名称、分组与限制，模型广场展示当前可用模型，使用记录按模型、令牌、用量与费用逐笔核对，另有服务状态页与「无限画布」等辅助入口。接入指南覆盖从创建密钥、配置工具到发送首条请求验证的完整流程，适合需要多模型切换但不想维护多套密钥的开发者。",
+        "models": [
+            "claude",
+            "gpt",
+            "deepseek",
+            "domestic"
+        ],
+        "features": [
+            "multi",
+            "docs"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.58,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-21",
+        "check_count": 0,
+        "display_tags": [
+            "统一网关",
+            "双协议兼容",
+            "分组计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "OpenAI+Anthropic",
+                "cls": "green"
+            },
+            {
+                "label": "密钥",
+                "value": "分组管理",
+                "cls": "accent"
+            },
+            {
+                "label": "记录",
+                "value": "逐笔可查",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-21"
+    },
+    {
         "url": "https://coderplan.ai/register?aff=9liD",
         "domain": "coderplan.ai",
         "name": "CoderPlan",
