@@ -8028,5 +8028,42 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+    {
+        "url": "https://gptzzz.ai/",
+        "domain": "gptzzz.ai",
+        "name": "GPTZZZ",
+        "description": "面向开发者的第三方 AI API 中转站，支持 GPT/Codex、Claude、Grok、DeepSeek 和 GLM。提供 OpenAI 兼容接口与 Claude Messages，按分组创建 API Key，同一账号共享余额；按量计费，支持支付宝充值，人民币 10 元起充。",
+        "models": [
+            "gpt",
+            "codex",
+            "claude",
+            "grok",
+            "deepseek",
+            "domestic"
+        ],
+        "features": [
+            "multi",
+            "docs"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "display_tags": [
+            "OpenAI 兼容",
+            "Claude Messages",
+            "按量计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "起充",
+                "value": "¥10",
+                "cls": ""
+            },
+            {
+                "label": "支付",
+                "value": "支付宝",
+                "cls": ""
+            }
+        ]
     }
 ]
