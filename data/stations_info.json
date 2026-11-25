@@ -6012,6 +6012,52 @@
         "added": "2026-10-13"
     },
     {
+        "url": "https://qcode.cc",
+        "domain": "qcode.cc",
+        "name": "QCode.cc",
+        "description": "面向 Claude Code / Codex 的 API 平台，一个 Key 同时支持 Anthropic 与 OpenAI 协议，覆盖 Claude、GPT、GLM、Kimi、DeepSeek、Qwen，按官方价 ×1.0 计费，体验版 ¥63/30 天（$5/天）起，按量包 ¥26 起。",
+        "models": [
+            "claude",
+            "gpt",
+            "glm",
+            "kimi",
+            "deepseek",
+            "qwen"
+        ],
+        "features": [],
+        "price": "medium",
+        "free_amount": "",
+        "score": 0,
+        "response_time": 0,
+        "alive": true,
+        "last_check": "2026-11-25",
+        "check_count": 0,
+        "display_tags": [
+            "官方价1:1",
+            "双协议",
+            "无4小时窗口"
+        ],
+        "display_metrics": [
+            {
+                "label": "计费",
+                "value": "官方价×1.0",
+                "cls": "accent"
+            },
+            {
+                "label": "协议",
+                "value": "Anthropic+OpenAI",
+                "cls": "green"
+            },
+            {
+                "label": "支付",
+                "value": "支付宝/微信/卡/加密",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-25"
+    },
+    {
         "url": "https://api.lingyaai.cn/register?aff=k8I8",
         "domain": "lingyaai.cn",
         "name": "灵芽API",
