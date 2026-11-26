@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/国内访问-GitHub_Pages-blue?style=for-the-badge&logo=github" alt="Domestic"/>
   <img src="https://img.shields.io/badge/国际访问-Vercel-blue?style=for-the-badge&logo=vercel" alt="International"/>
-  <img src="https://img.shields.io/badge/收录平台-176+-green?style=for-the-badge" alt="Platforms"/>
+  <img src="https://img.shields.io/badge/收录平台-181+-green?style=for-the-badge" alt="Platforms"/>
   <img src="https://img.shields.io/badge/更新频率-每日-orange?style=for-the-badge" alt="Update Frequency"/>
   <img src="https://img.shields.io/badge/开源-YES-success?style=for-the-badge" alt="Open Source"/>
 </p>
@@ -84,11 +84,11 @@
 | 🥉 | **随想** | 9.86 | 隐私优先，逐字节原样转发，99.97%可用率 | [访问](https://sui-xiang.com/register?aff=5J3USAV9LQEB) |
 | 4 | **Right Code** | 9.84 | 专为编程设计，响应快(0.43s)，1元起充 | [访问](https://rightapi.ai/register?aff=56503380) |
 | 5 | **OpenOx** | 9.80 | 满血官方模型，订阅最低约0.43折起 | [访问](https://openox.tech/r/46525) |
-| 6 | **a6api** | 9.75 | Token交易源头市场，3000+渠道，10x保真担保 | [访问](https://a6api.com/?auth=register&aff=AUyB) |
-| 7 | **肖恩AI** | 9.71 | 免费公益站，注册送5000额度，新手友好 | [访问](https://free.supxh.xin/register?code=XVGW49) |
-| 8 | **apinebula** | 9.71 | 全球AI API网关，支付宝充值，多模型统一接入 | [访问](https://apinebula.ai/0gDuPn) |
-| 9 | **七牛云** | 9.70 | 企业级云基础设施，大模型API稳定可靠 | [访问](https://s.qiniu.com/aYRV3a) |
-| 10 | **aruhub API** | 9.70 | 前沿模型聚合，分组计价低至0.1倍 | [访问](https://aruhub.com/sign-up?aff=kJbM) |
+| 6 | **优创OPC-AI** | 9.79 | AI漫剧/短剧生产+统一API网关，九图与电商出图特价 | [访问](https://np.token6688.com/signup?ref=K73BVWS45FQ77ZQ2) |
+| 7 | **QCode.cc** | 9.78 | Anthropic+OpenAI 双协议端点，运行486天，官方价×1.0 | [访问](https://qcode.cc/?ref=QC68240BN5MS) |
+| 8 | **aruhub API** | 9.77 | 前沿模型聚合，分组计价低至0.1倍 | [访问](https://aruhub.com/sign-up?aff=kJbM) |
+| 9 | **a6api** | 9.75 | Token交易源头市场，3000+渠道，10x保真担保 | [访问](https://a6api.com/?auth=register&aff=AUyB) |
+| 10 | **肖恩AI** | 9.71 | 免费公益站，注册送5000额度，新手友好 | [访问](https://free.supxh.xin/register?code=XVGW49) |
 
 > 完整排名请访问 [国内网站](https://chenking-maker.github.io/api-rank/) 或 [国际网站](https://api-rank-lake.vercel.app) 查看
 
@@ -131,7 +131,7 @@
 ```
 api-rank/
 ├── index.html              # 首页（Top 50 + 动态加载 + 广告位轮播 + 快速选站器 + 随机盲选 + 最新收录）
-├── all-stations.html       # 全部站点页面（176+，无数量限制）
+├── all-stations.html       # 全部站点页面（181+，无数量限制）
 ├── about.html              # 关于本站（介绍 + 使用指南 + 收藏提示）
 ├── tools.html              # 🔥 实用工具（自研AI工具 + 精选服务导航）
 ├── img-prompt.html         # 图片反推提示词工具（多格式输出 + 历史记录）
@@ -143,7 +143,7 @@ api-rank/
 ├── assets/
 │   └── notice.js           # 全站顶部提醒横幅（换域名/收藏提示）
 ├── data/
-│   ├── stations_info.json  # 主站点数据（176个，含added收录日期）
+│   ├── stations_info.json  # 主站点数据（181个，含added收录日期）
 │   ├── dead_sites.json     # 失效站点记录
 │   └── pending_stations.json # 待审核站点
 ├── api/                    # Cloudflare Workers 后端
@@ -217,8 +217,8 @@ wrangler deploy  # 部署Workers
 
 | 指标 | 数值 |
 |------|------|
-| 收录平台 | 176+ |
-| 有效站点 | 131 |
+| 收录平台 | 181+ |
+| 有效站点 | 136 |
 | 失效站点 | 26（动态交叉验证） |
 | 支持模型类型 | 7+（含绘画/视频） |
 | 评分范围 | 8.15 - 9.94 |
@@ -289,6 +289,11 @@ AI API中转站是聚合多家AI大模型API（如Claude、GPT、Gemini、DeepSe
 ---
 
 ## 📝 更新日志
+
+### v1.7.3 (2026-11-26)
+- ✅ 新增 5 站：优创OPC-AI（9.79，#6）、QCode.cc（9.78，#7）、gptzzz.ai（9.59，#27）、九歌 API（9.55，#38）、雷达皮（9.39，#47）
+- ✅ aruhub API 评分 9.70 → 9.77（升至 #8）；全站按 score 降序重排
+- ✅ 收录总数 176 → 181，有效站点 131 → 136
 
 ### v1.7.2 (2026-11-21)
 - ✅ 新增「传奇AI工厂」（9.58，统一 Key 网关/OpenAI+Anthropic 双协议兼容/分组管理密钥与额度/Codex·Claude Code·Cursor 直接接入），排名 #28

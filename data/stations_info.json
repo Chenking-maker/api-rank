@@ -237,6 +237,156 @@
         "added": "2026-10-13"
     },
     {
+        "url": "https://np.token6688.com/signup?ref=K73BVWS45FQ77ZQ2",
+        "domain": "np.token6688.com",
+        "name": "优创OPC-AI",
+        "description": "优创OPC-AI 是「AI 内容生产 + 统一 API 网关」一体的在线制作平台：一个账户即可进入可视化 AI 工作台、无限画布、模型市场与主流大模型 API，无需在多个站点之间来回切换。主打爆款 AI 漫剧与短剧生产，从故事创意、分镜剧本、角色设定到连续镜头可一次走完，也能生成 AI 真人爽剧与带货视频；出图侧提供九图批量特价与电商图特价，商品主图、详情图、口播素材可直接在工作台产出。API 侧为按量计费、价格透明可查，适合把生成能力接进自有系统或批量跑图跑视频；平台另有免费提示词课程与付费实战训练营，配社群答疑，新手也能从会用工具走到独立交付完整项目。",
+        "models": [
+            "image",
+            "gpt",
+            "claude",
+            "gemini",
+            "domestic"
+        ],
+        "features": [
+            "multi",
+            "fast",
+            "docs"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.79,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-26",
+        "check_count": 0,
+        "display_tags": [
+            "AI漫剧",
+            "九图特价",
+            "电商特价"
+        ],
+        "display_metrics": [
+            {
+                "label": "场景",
+                "value": "漫剧·短剧",
+                "cls": "green"
+            },
+            {
+                "label": "出图",
+                "value": "九图特价",
+                "cls": "accent"
+            },
+            {
+                "label": "电商",
+                "value": "电商特价",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-26"
+    },
+    {
+        "url": "https://qcode.cc/?ref=QC68240BN5MS",
+        "domain": "qcode.cc",
+        "name": "QCode.cc",
+        "description": "QCode.cc 是面向 Claude Code、Codex 等编程工具的多模型 API 平台，同一把密钥同时支持 Anthropic Messages 与 OpenAI（Chat Completions / Responses）协议：Anthropic 端点 https://api.qcode.cc/api，OpenAI 端点 https://api.qcode.cc/openai/v1，并提供 api / asia / us.qcode.cc 三个接入域可直接测速切换，已稳定运行 486 天，累计处理超 2400 亿 tokens、419 万次请求。模型覆盖 Claude、GPT、GLM、Kimi、DeepSeek 与 Qwen，所有套餐共享全部模型、无 4 小时窗口、额度照常计。按官方价 ×1.0 计费，个人订阅按每日美元额度分 7 档，体验版 ¥63 / 30 天（$5/天）起，按量包 ¥26 起（7 天有效、可累加到同一把 Key），另有企业团队版与合作伙伴计划。支持支付宝、微信、Visa/Mastercard、Apple Pay、Google Pay 与加密货币，可开票，付款后自动开通，并提供 Claude Code 一键配置脚本、只读 Token 用量查询接口与文档中心。",
+        "models": [
+            "claude",
+            "gpt",
+            "glm",
+            "kimi",
+            "deepseek",
+            "qwen",
+            "codex"
+        ],
+        "features": [
+            "multi",
+            "stable",
+            "docs"
+        ],
+        "price": "medium",
+        "free_amount": "体验版 ¥63/月",
+        "score": 9.78,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-26",
+        "check_count": 0,
+        "display_tags": [
+            "双协议端点",
+            "运行486天",
+            "官方价1.0x"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "Anthropic+OpenAI",
+                "cls": "green"
+            },
+            {
+                "label": "套餐",
+                "value": "¥63/月起",
+                "cls": "accent"
+            },
+            {
+                "label": "支付",
+                "value": "支付宝·卡·加密货币",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-26"
+    },
+    {
+        "url": "https://aruhub.com/sign-up?aff=kJbM",
+        "domain": "aruhub.com",
+        "name": "aruhub API",
+        "description": "AruHub 聚合型 AI 大模型 API 中转站，一个 Key 即可调用 GPT-6、Claude 5、Gemini 4、Grok 4.7 及 GPT-Image-2.5 等前沿模型，兼容 OpenAI / Anthropic / Gemini / Responses 四种协议。分组计价最低至官方 0.1 倍，支持 Claude Code、Codex、Cursor 等主流客户端一键配置，注册后每日签到可领额度。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "stable",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "每日签到领额度",
+        "score": 9.77,
+        "response_time": 0.75,
+        "alive": true,
+        "last_check": "2026-10-15",
+        "check_count": 1,
+        "display_tags": [
+            "前沿模型",
+            "分组低价",
+            "多客户端"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "GPT-6 / Claude 5",
+                "cls": "green"
+            },
+            {
+                "label": "价格",
+                "value": "低至0.1倍",
+                "cls": "accent"
+            },
+            {
+                "label": "协议",
+                "value": "四种协议",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-15"
+    },
+    {
         "url": "https://a6api.com/?auth=register&aff=AUyB",
         "domain": "a6api.com",
         "name": "a6api",
@@ -419,56 +569,6 @@
             }
         ],
         "likes": 0
-    },
-    {
-        "url": "https://aruhub.com/sign-up?aff=kJbM",
-        "domain": "aruhub.com",
-        "name": "aruhub API",
-        "description": "AruHub 聚合型 AI 大模型 API 中转站，一个 Key 即可调用 GPT-6、Claude 5、Gemini 4、Grok 4.7 及 GPT-Image-2.5 等前沿模型，兼容 OpenAI / Anthropic / Gemini / Responses 四种协议。分组计价最低至官方 0.1 倍，支持 Claude Code、Codex、Cursor 等主流客户端一键配置，注册后每日签到可领额度。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "grok",
-            "image"
-        ],
-        "features": [
-            "multi",
-            "cheap",
-            "stable",
-            "docs"
-        ],
-        "price": "low",
-        "free_amount": "每日签到领额度",
-        "score": 9.7,
-        "response_time": 0.75,
-        "alive": true,
-        "last_check": "2026-10-15",
-        "check_count": 1,
-        "display_tags": [
-            "前沿模型",
-            "分组低价",
-            "多客户端"
-        ],
-        "display_metrics": [
-            {
-                "label": "模型",
-                "value": "GPT-6 / Claude 5",
-                "cls": "green"
-            },
-            {
-                "label": "价格",
-                "value": "低至0.1倍",
-                "cls": "accent"
-            },
-            {
-                "label": "协议",
-                "value": "四种协议",
-                "cls": ""
-            }
-        ],
-        "likes": 0,
-        "added": "2026-10-15"
     },
     {
         "url": "https://cdn.sta1n.cn/sign-up?aff=qaLL",
@@ -1153,6 +1253,56 @@
         "likes": 0
     },
     {
+        "url": "https://gptzzz.ai/register?aff=CF5WGX2MULRK",
+        "domain": "gptzzz.ai",
+        "name": "gptzzz.ai",
+        "description": "gptzzz.ai 是个人运营的第三方 API 中转站，一个账号、一份余额接入 GPT/Codex、Claude、Grok、DeepSeek、GLM 共 5 个模型系列 27 个模型，OpenAI 兼容客户端只需把 Base URL 换成 https://gptzzz.ai/v1，Claude 分组使用 Messages 接口 /v1/messages，OpenAI 分组已实测 /v1/models、/v1/chat/completions（流式、工具调用、JSON 模式）与 /v1/responses。分组倍率全部公开：混合号池pro兜底 0.1x、grok heavy 0.25x、不降智分组 0.25x、claude_kiro 0.4x、国模 0.7x，每个模型的本站价与基准比都在模型广场可查；一个 Key 只属于一个分组，同组切换模型只改 model 参数，余额共用统一结算。充值 ¥1 = $1、支付宝单笔 ¥10–2000 无手续费，未用完余额可随时申请退款，适合先小额试用的开发者。",
+        "models": [
+            "claude",
+            "gpt",
+            "grok",
+            "deepseek",
+            "glm",
+            "codex"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.59,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-26",
+        "check_count": 0,
+        "display_tags": [
+            "分组低至0.1x",
+            "1元=1美元",
+            "余额可退"
+        ],
+        "display_metrics": [
+            {
+                "label": "倍率",
+                "value": "0.1x起",
+                "cls": "green"
+            },
+            {
+                "label": "模型",
+                "value": "27个/5系列",
+                "cls": "accent"
+            },
+            {
+                "label": "充值",
+                "value": "¥10起·可退",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-26"
+    },
+    {
         "url": "https://shop.xuedingtoken.com/?invite=2DPLSD7Z",
         "domain": "shop.xuedingtoken.com",
         "name": "XueDingToken (雪顶Token)",
@@ -1625,6 +1775,55 @@
         "added": "2026-11-08"
     },
     {
+        "url": "https://api.tdcqcx.cn/register?aff=M77DWHAWYDTV",
+        "domain": "api.tdcqcx.cn",
+        "name": "九歌 API",
+        "description": "九歌是第三方多模型 API 聚合中转站，主打「一个地址、一把 Key 调用主流模型」：OpenAI 兼容接口，把 Base URL 换成本站地址即可接入现有 SDK 与客户端，按量/按次两种方式计费。控制台模块完整——总览看余额与用量，密钥页可为不同项目单独建 Key，模型广场列出当前可用模型与价格，接入页给出各客户端配置方法，另有充值、点卡、兑换与工单入口，账单逐笔可查；官方群聊同步新模型上线通知，遇到调用问题可提交工单跟进。适合不想分别对接多家厂商、希望一个 Key 统一切换模型并控制成本的开发者与团队。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "domestic"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs"
+        ],
+        "price": "unknown",
+        "free_amount": "",
+        "score": 9.55,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-26",
+        "check_count": 0,
+        "display_tags": [
+            "一Key多模型",
+            "双价透明",
+            "用量可查"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "OpenAI兼容",
+                "cls": "green"
+            },
+            {
+                "label": "计费",
+                "value": "按量/按次",
+                "cls": "accent"
+            },
+            {
+                "label": "账单",
+                "value": "逐笔可查",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-26"
+    },
+    {
         "url": "https://api.mooko.ai/register?aff=JiqY",
         "domain": "mooko.ai",
         "name": "木瓜AI",
@@ -1991,6 +2190,58 @@
             }
         ],
         "likes": 0
+    },
+    {
+        "url": "https://redapi.vip/register?aff=F33D4QC3Q323",
+        "domain": "redapi.vip",
+        "name": "雷达皮",
+        "description": "Redapi（雷达皮）是统一网关型 AI 中转站：一个接口接入 OpenAI、Claude、Gemini、Grok 以及 DeepSeek、GLM、Kimi、MiniMax 等国产模型，兼容 OpenAI 风格 API，现有 SDK 和客户端只改一行 Base URL（https://redapi.vip/v1）就能用，Claude Code、Cherry Studio 等工具可直接接入，流式输出与联网搜索原样透传。平台内置智能路由，按可用性、延迟与成本自动选路并在上游异常时切换，渠道健康度、响应速度与模型可用性实时监控；计费支持按 Token 与按次两种模式，单价与分组倍率公开可查，每次请求的用量与费用逐条对账。注册后联系站长可领取 $5 站内余额（官方页面另注明进 QQ 群绑定邮箱送 $2 体验额度），几步即可完成从注册到首次调用。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "grok",
+            "deepseek",
+            "glm",
+            "kimi",
+            "minimax"
+        ],
+        "features": [
+            "multi",
+            "stable",
+            "fast"
+        ],
+        "price": "low",
+        "free_amount": "注册送 $5",
+        "score": 9.39,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-26",
+        "check_count": 0,
+        "display_tags": [
+            "注册送$5",
+            "智能路由",
+            "按Token/按次"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "8大系列",
+                "cls": "green"
+            },
+            {
+                "label": "路由",
+                "value": "自动切换",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量·按次",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-26"
     },
     {
         "url": "https://9527code.com/register?aff=ONz5",
