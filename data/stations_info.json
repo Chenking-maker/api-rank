@@ -8279,5 +8279,57 @@
         "display_metrics": [],
         "likes": 0,
         "dead_reason": "域名无法解析 (net::ERR_NAME_NOT_RESOLVED)"
+    },
+{
+        "url": "https://nanke.pro",
+        "domain": "nanke.pro",
+        "name": "楠科 Nanke API",
+        "description": "国内直连的 LLM 模型网关：204 个在架模型，Claude / GPT / Gemini 原厂线 + DeepSeek / GLM / Qwen / Kimi 国内直连，12 个免费档注册即用。OpenAI 兼容，另有 Anthropic Messages 路由（/v1/messages）。按量计费，¥0.43/百万 token 起，支付宝/微信充值，余额不过期。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "glm",
+            "qwen",
+            "kimi",
+            "image",
+            "domestic"
+        ],
+        "features": [
+            "stable",
+            "multi",
+            "cheap",
+            "docs",
+            "image",
+            "free"
+        ],
+        "price": "low",
+        "free_amount": "12 个 :free 免费模型 + 注册赠 ¥0.5",
+        "score": 0,
+        "response_time": 0,
+        "alive": true,
+        "last_check": "2026-11-27",
+        "check_count": 0,
+        "display_tags": [
+            "国内直连",
+            "12 个免费档",
+            "失败不扣费",
+            "双备案"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "204 个",
+                "cls": "green"
+            },
+            {
+                "label": "起步价",
+                "value": "¥0.43/M",
+                "cls": "accent"
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-27"
     }
 ]
