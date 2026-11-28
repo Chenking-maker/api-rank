@@ -526,95 +526,51 @@
         "added": "2026-10-13"
     },
     {
-        "url": "https://s.qiniu.com/aYRV3a",
-        "domain": "qiniu.com",
-        "name": "七牛云",
-        "description": "七牛云AI API服务，依托七牛云企业级云基础设施，提供稳定可靠的大模型API调用服务。支持Claude/GPT/Gemini等主流模型，企业级SLA保障。",
+        "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
+        "domain": "infistar.ai",
+        "name": "无限星河AI",
+        "description": "覆盖92个主流模型，提供模型验真检测，透明计费，自建号池多线路冗余，官方5折优惠。",
         "models": [
             "claude",
             "gpt",
-            "gemini"
+            "gemini",
+            "deepseek",
+            "domestic",
+            "enterprise"
         ],
         "features": [
-            "enterprise",
-            "stable"
+            "multi",
+            "enterprise"
         ],
+        "display_tags": [
+            "92模型",
+            "验真检测",
+            "透明计费"
+        ],
+        "display_metrics": [
+            {
+                "label": "专业",
+                "value": "92模型",
+                "cls": "green"
+            },
+            {
+                "label": "优惠",
+                "value": "官方5折",
+                "cls": "accent"
+            },
+            {
+                "label": "应用",
+                "value": "多线路冗余",
+                "cls": ""
+            }
+        ],
+        "score": 9.69,
         "price": "medium",
-        "free_amount": "",
-        "score": 9.7,
         "response_time": 0.45,
         "alive": true,
-        "last_check": "2026-08-11",
-        "check_count": 1,
-        "display_tags": [
-            "企业级",
-            "云基础设施",
-            "SLA保障"
-        ],
-        "display_metrics": [
-            {
-                "label": "定位",
-                "value": "企业级云服务",
-                "cls": "green"
-            },
-            {
-                "label": "响应",
-                "value": "0.45s",
-                "cls": "accent"
-            },
-            {
-                "label": "口碑",
-                "value": "七牛云品牌",
-                "cls": ""
-            }
-        ],
+        "last_check": "2026-07-06",
+        "check_count": 3,
         "likes": 0
-    },
-    {
-        "url": "https://cdn.sta1n.cn/sign-up?aff=qaLL",
-        "domain": "cdn.sta1n.cn",
-        "name": "STA1N API",
-        "description": "为你的应用连接大模型。选择模型、获取密钥，三步开始第一次调用。提供免费可用模型，支持OpenAI兼容接口，社区活跃。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini"
-        ],
-        "features": [
-            "cheap",
-            "stable"
-        ],
-        "price": "low",
-        "free_amount": "免费模型可用",
-        "score": 9.69,
-        "response_time": 1,
-        "alive": true,
-        "last_check": "2026-10-14",
-        "check_count": 1,
-        "display_tags": [
-            "免费模型",
-            "三步接入",
-            "社区活跃"
-        ],
-        "display_metrics": [
-            {
-                "label": "免费",
-                "value": "有免费模型",
-                "cls": "accent"
-            },
-            {
-                "label": "接入",
-                "value": "三步上手",
-                "cls": "green"
-            },
-            {
-                "label": "特色",
-                "value": "社区活跃",
-                "cls": ""
-            }
-        ],
-        "likes": 0,
-        "added": "2026-10-14"
     },
     {
         "url": "https://aimover.cc/register?aff=4MBD6JFQHZCT",
@@ -663,53 +619,6 @@
         ],
         "likes": 0,
         "added": "2026-10-26"
-    },
-    {
-        "url": "https://infistar.ai/register?aff=E5A9B3X8&ref_source=link",
-        "domain": "infistar.ai",
-        "name": "无限星河AI",
-        "description": "覆盖92个主流模型，提供模型验真检测，透明计费，自建号池多线路冗余，官方5折优惠。",
-        "models": [
-            "claude",
-            "gpt",
-            "gemini",
-            "deepseek",
-            "domestic",
-            "enterprise"
-        ],
-        "features": [
-            "multi",
-            "enterprise"
-        ],
-        "display_tags": [
-            "92模型",
-            "验真检测",
-            "透明计费"
-        ],
-        "display_metrics": [
-            {
-                "label": "专业",
-                "value": "92模型",
-                "cls": "green"
-            },
-            {
-                "label": "优惠",
-                "value": "官方5折",
-                "cls": "accent"
-            },
-            {
-                "label": "应用",
-                "value": "多线路冗余",
-                "cls": ""
-            }
-        ],
-        "score": 9.66,
-        "price": "medium",
-        "response_time": 0.45,
-        "alive": true,
-        "last_check": "2026-07-06",
-        "check_count": 3,
-        "likes": 0
     },
     {
         "url": "https://api.fenno.ai/s/ICUO",
@@ -1103,6 +1012,97 @@
         "added": "2026-10-26"
     },
     {
+        "url": "https://cdn.sta1n.cn/sign-up?aff=qaLL",
+        "domain": "cdn.sta1n.cn",
+        "name": "STA1N API",
+        "description": "为你的应用连接大模型。选择模型、获取密钥，三步开始第一次调用。提供免费可用模型，支持OpenAI兼容接口，社区活跃。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "cheap",
+            "stable"
+        ],
+        "price": "low",
+        "free_amount": "免费模型可用",
+        "score": 9.61,
+        "response_time": 1,
+        "alive": true,
+        "last_check": "2026-10-14",
+        "check_count": 1,
+        "display_tags": [
+            "免费模型",
+            "三步接入",
+            "社区活跃"
+        ],
+        "display_metrics": [
+            {
+                "label": "免费",
+                "value": "有免费模型",
+                "cls": "accent"
+            },
+            {
+                "label": "接入",
+                "value": "三步上手",
+                "cls": "green"
+            },
+            {
+                "label": "特色",
+                "value": "社区活跃",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-10-14"
+    },
+    {
+        "url": "https://s.qiniu.com/aYRV3a",
+        "domain": "qiniu.com",
+        "name": "七牛云",
+        "description": "七牛云AI API服务，依托七牛云企业级云基础设施，提供稳定可靠的大模型API调用服务。支持Claude/GPT/Gemini等主流模型，企业级SLA保障。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini"
+        ],
+        "features": [
+            "enterprise",
+            "stable"
+        ],
+        "price": "medium",
+        "free_amount": "",
+        "score": 9.6,
+        "response_time": 0.45,
+        "alive": true,
+        "last_check": "2026-08-11",
+        "check_count": 1,
+        "display_tags": [
+            "企业级",
+            "云基础设施",
+            "SLA保障"
+        ],
+        "display_metrics": [
+            {
+                "label": "定位",
+                "value": "企业级云服务",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "0.45s",
+                "cls": "accent"
+            },
+            {
+                "label": "口碑",
+                "value": "七牛云品牌",
+                "cls": ""
+            }
+        ],
+        "likes": 0
+    },
+    {
         "url": "https://api.foo/sign-up?aff=GG7D",
         "domain": "api.foo",
         "name": "api.foo",
@@ -1301,6 +1301,61 @@
         ],
         "likes": 0,
         "added": "2026-11-26"
+    },
+    {
+        "url": "https://nanke.pro/sign-up?aff=rUKT",
+        "domain": "nanke.pro",
+        "name": "楠科南科API",
+        "description": "楠科（Nanke API）主打「稳定直连、实时在线」：一个 OpenAI 兼容接口 https://nanke.pro/v1 即可接入 Claude、GPT、Gemini、DeepSeek、Qwen、GLM、Kimi、豆包、MiniMax、Grok 以及 Llama、Mistral、混元、文心等 150+ 在线模型，换模型只需改一个参数。个人注册充值就能享受平台规模采购带来的企业价，按量透明计费、余额不过期，用量与请求日志可查，平均响应低于 200ms，官网页实时展示服务状态。既适合酒馆/角色扮演（SillyTavern 选 OpenAI 兼容、长上下文优先），也适合开发者与团队（OpenAI SDK、LangChain、各类 Agent 框架开箱兼容，迁移通常只改 base_url 与 api_key），并支持多令牌、配额与请求日志管理。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "glm",
+            "kimi",
+            "qwen",
+            "minimax",
+            "grok",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "fast",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.59,
+        "response_time": 0.2,
+        "alive": true,
+        "last_check": "2026-11-28",
+        "check_count": 0,
+        "display_tags": [
+            "150+模型",
+            "余额不过期",
+            "企业采购价"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "150+",
+                "cls": "green"
+            },
+            {
+                "label": "响应",
+                "value": "<200ms",
+                "cls": "accent"
+            },
+            {
+                "label": "计费",
+                "value": "按量·余额不过期",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-28"
     },
     {
         "url": "https://shop.xuedingtoken.com/?invite=2DPLSD7Z",
@@ -1681,6 +1736,55 @@
         "added": "2026-11-19"
     },
     {
+        "url": "https://beiluoxi.xyz/register?aff=ULQ58Q59NE38",
+        "domain": "beiluoxi.xyz",
+        "name": "北洛API",
+        "description": "北洛API 是多模型 API 中转站，一个密钥接入 Claude、GPT、Gemini 与 Antigravity 等模型，主打稳定、低价、即开即用，起充门槛低至 1 元，量大可接下游。支持订阅转 API 与会话保持，按实际用量计费，可为每个 Key 设置配额上限，团队用量一目了然；线路按分组配置调度，出现异常可在控制台查看逐条请求记录。协议侧同时提供 OpenAI 兼容、Anthropic（Claude Code）与 Gemini 原生（含 Antigravity）入口，国产工具可统一填写地址、海外工具按 OpenAI 兼容配置，文档给出 Continue、OpenCode、CC Switch 等工具的完整示例，另有无限制画布与视频生成等高级接口。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "domestic",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.56,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-28",
+        "check_count": 0,
+        "display_tags": [
+            "1元起充",
+            "三协议接入",
+            "会话保持"
+        ],
+        "display_metrics": [
+            {
+                "label": "协议",
+                "value": "OpenAI/Claude/Gemini",
+                "cls": "green"
+            },
+            {
+                "label": "计费",
+                "value": "按量·配额上限",
+                "cls": "accent"
+            },
+            {
+                "label": "门槛",
+                "value": "1元起充",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-28"
+    },
+    {
         "url": "https://rkapi.com/register?aff=zCFG",
         "domain": "rkapi.com",
         "name": "RK API",
@@ -1822,6 +1926,60 @@
         ],
         "likes": 0,
         "added": "2026-11-26"
+    },
+    {
+        "url": "https://tryallapi.com/register?aff=tLZg",
+        "domain": "tryallapi.com",
+        "name": "TryAllAPI",
+        "description": "TryAllAPI（站内亦称 MomoAPI）是第三方多模型 API 聚合网关：一个 OpenAI 兼容 base URL（https://tryallapi.com/v1）加一把 Key，即可调用 GPT、Claude、Gemini 以及 DeepSeek、Qwen、Kimi、Grok、GLM、MiniMax 等 300+ 模型，目录覆盖对话、图像与音视频条目。计费为预充值按量：最低约 $1 起充，余额用多少扣多少且不过期，账单按「官方价 × 分组倍率」计算，分组倍率与控制台实时价格公开可查，支持微信、支付宝与银行卡，大额充值另有折扣。现有 OpenAI SDK、LangChain、LiteLLM、Cursor 自定义 provider 与 WorkBuddy 自定义模型通常只需改 base_url，模型 ID 需与模型广场完全一致；官方文档按模型给出单价说明、调用示例与常见错误排查，适合按需试用多模型的开发者与小团队。",
+        "models": [
+            "claude",
+            "gpt",
+            "gemini",
+            "deepseek",
+            "grok",
+            "glm",
+            "kimi",
+            "qwen",
+            "minimax",
+            "image"
+        ],
+        "features": [
+            "multi",
+            "cheap",
+            "docs"
+        ],
+        "price": "low",
+        "free_amount": "",
+        "score": 9.54,
+        "response_time": 0.0,
+        "alive": true,
+        "last_check": "2026-11-28",
+        "check_count": 0,
+        "display_tags": [
+            "300+模型",
+            "$1起充",
+            "余额不过期"
+        ],
+        "display_metrics": [
+            {
+                "label": "模型",
+                "value": "300+",
+                "cls": "green"
+            },
+            {
+                "label": "计费",
+                "value": "官方价×倍率",
+                "cls": "accent"
+            },
+            {
+                "label": "起充",
+                "value": "$1",
+                "cls": ""
+            }
+        ],
+        "likes": 0,
+        "added": "2026-11-28"
     },
     {
         "url": "https://api.mooko.ai/register?aff=JiqY",
